@@ -1,0 +1,9 @@
+{
+    "python.pythonPath": "venv\\Scripts\\python.exe",
+    "python.envFile": "${workspaceFolder}/.env",
+    "python.testing.cwd": "${workspaceFolder}",
+    "code-runner.executorMap": {
+        "python": "python -u"
+    },
+    "terminal.integrated.cwd": "${workspaceFolder}"
+}

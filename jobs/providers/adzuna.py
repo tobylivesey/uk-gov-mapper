@@ -24,7 +24,7 @@ def fetch(query: str, pages: int = 1, per_page: int = 50) -> Iterable[dict]:
                 yield res
             time.sleep(0.25)
 
-def normalize(_query: str, raw: dict) -> dict:
+def normalize(raw: dict) -> dict:
     company = (raw.get("company") or {}).get("display_name")
     return {
         "provider": "adzuna",
@@ -37,3 +37,13 @@ def normalize(_query: str, raw: dict) -> dict:
         "description_text": (raw.get("description") or "").strip(),  # snippet
         "raw_id": raw.get("id"),
     }
+
+if __name__ == "__main__":
+    results = fetch("cyber security")
+    normalized_jobs = []
+    for job in results:
+        normalized = normalize(job)
+        normalized_jobs.append(normalized)
+    print(f"Found {len(normalized_jobs)} jobs:")
+    for job in normalized_jobs:
+        print(job)

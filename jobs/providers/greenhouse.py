@@ -14,11 +14,11 @@ def fetch(board_token: str) -> Iterable[dict]:
         for j in r.json().get("jobs", []):
             yield j
 
-def normalize(org_token: str, raw: dict) -> dict:
+def normalize(raw: dict) -> dict:
     return {
         "provider": "greenhouse",
-        "org_slug": org_token,
-        "company": (raw.get("company") or {}).get("name") or org_token,
+        "org_slug": (raw.get("company") or {}).get("name") or "unknown",
+        "company": (raw.get("company") or {}).get("name") or "unknown",
         "title": raw.get("title"),
         "url": raw.get("absolute_url"),
         "posted_at": raw.get("updated_at"),
@@ -26,3 +26,17 @@ def normalize(org_token: str, raw: dict) -> dict:
         "description_text": html_to_text(raw.get("content")),
         "raw_id": raw.get("id"),
     }
+
+if __name__ == "__main__":
+    results = fetch("cyber security")
+    normalized_jobs = []
+    for job in results:
+        normalized = normalize(job)
+        normalized_jobs.append(normalized)
+    print(f"Found {len(normalized_jobs)} jobs:")
+    for job in normalized_jobs:
+        print(job)
+if __name__ == "__main__":
+    result = fetch("cyber security")
+    normalized = normalize(result)
+    print(normalized)

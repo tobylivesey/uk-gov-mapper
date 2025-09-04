@@ -1,28 +1,27 @@
 # api with auth
-import os, time, requests
 from typing import Iterable
 from dotenv import load_dotenv
+from jobs.utils import create_session, safe_http_request, rate_limit_sleep, require_env_vars, process_and_normalize_jobs
+
 load_dotenv()
-APP_ID  = os.getenv("ADZUNA_APP_ID")
-APP_KEY = os.getenv("ADZUNA_APP_KEY")
 BASE = "https://api.adzuna.com/v1/api/jobs/gb/search/{page}"
 
 def fetch(query: str, pages: int = 1, per_page: int = 50) -> Iterable[dict]:
-    if not (APP_ID and APP_KEY):
-        raise RuntimeError("Set ADZUNA_APP_ID and ADZUNA_APP_KEY env vars.")
-    with requests.Session() as s:
-        s.headers.update({"User-Agent": "Mozilla/5.0"})
-        for page in range(1, pages + 1):
-            params = {
-                "app_id": APP_ID, "app_key": APP_KEY,
-                "what": query, "results_per_page": per_page,
-                "content-type": "application/json",
-            }
-            r = s.get(BASE.format(page=page), params=params, timeout=20)
-            r.raise_for_status()
-            for res in r.json().get("results", []):
-                yield res
-            time.sleep(0.25)
+    env_vars = require_env_vars("ADZUNA_APP_ID", "ADZUNA_APP_KEY")
+    APP_ID = env_vars["ADZUNA_APP_ID"]
+    APP_KEY = env_vars["ADZUNA_APP_KEY"]
+    
+    session = create_session()
+    for page in range(1, pages + 1):
+        params = {
+            "app_id": APP_ID, "app_key": APP_KEY,
+            "what": query, "results_per_page": per_page,
+            "content-type": "application/json",
+        }
+        r = safe_http_request(session, BASE.format(page=page), params=params, timeout=20)
+        for res in r.json().get("results", []):
+            yield res
+        rate_limit_sleep()
 
 def normalize(raw: dict) -> dict:
     company = (raw.get("company") or {}).get("display_name")
@@ -40,10 +39,6 @@ def normalize(raw: dict) -> dict:
 
 if __name__ == "__main__":
     results = fetch("cyber security")
-    normalized_jobs = []
-    for job in results:
-        normalized = normalize(job)
-        normalized_jobs.append(normalized)
-    print(f"Found {len(normalized_jobs)} jobs:")
+    normalized_jobs = process_and_normalize_jobs(results, normalize, "adzuna")
     for job in normalized_jobs:
         print(job)

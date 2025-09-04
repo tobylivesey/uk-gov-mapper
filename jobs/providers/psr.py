@@ -1,8 +1,10 @@
 # scrape from multiple pages
-import os, time, requests
+import time
 from typing import Iterable
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
+from jobs.utils import create_session, safe_http_request, rate_limit_sleep, is_valid_url, log_progress
+
 load_dotenv()
 
 # PSR format is to return 6 listing listings per page (cannot change), and count based on jobOffset (i.e. +6 for each page)
@@ -25,26 +27,24 @@ def extract_listings(html_text: str) -> list:
     banners = soup.find_all("div", class_="article__header")
     for banner in banners:
         a_tag = banner.find("a")
-        urls.append(a_tag["href"] if a_tag and a_tag.has_attr("href") and a_tag["href"].startswith(('http', 'www')) else None)
+        url = a_tag["href"] if a_tag and a_tag.has_attr("href") else None
+        urls.append(url if is_valid_url(url) else None)
     return urls
 
 def fetch_page(query: str, page: int = 1) -> str:
     '''Take a search query and page number, the page HTML to be parsed for listing listings.'''
-    with requests.Session() as s:
-        s.headers.update({"User-Agent": "Mozilla/5.0"})
-        offset = (page-1)*6
-        r = s.get(BASE.format(search=query, offset=offset), timeout=20)
-        r.raise_for_status()
-        time.sleep(0.25)
-        page_html = r.text
-    return page_html
+    session = create_session()
+    offset = (page-1)*6
+    r = safe_http_request(session, BASE.format(search=query, offset=offset), timeout=20)
+    rate_limit_sleep()
+    return r.text
     
 def extract_all_listing_urls(query: str):
     '''Extract all listing listings for all pages following a query on PSR. Break when no more results.'''
     all_urls = []
     page = 1
     while True:
-        print(f'Fetching page {page}...')
+        log_progress(f'Fetching page {page}')
         page_html = fetch_page(query=query, page=page)
         if not page_html:
             break
@@ -54,20 +54,18 @@ def extract_all_listing_urls(query: str):
             break  # last page
         all_urls.extend(listing_urls)
         page += 1
-    print(f'Found {len(all_urls)} listing listings.')
+    log_progress('Found listing listings', len(all_urls))
     return all_urls
 
 def enrich_listing_details(all_urls: list) -> dict:
     '''Open each listing listing in the list all_urls and scrape details'''
     raw_listing_details = {}
+    session = create_session()
     for u in all_urls:
-        print(f'Scraping listing details from {u}')
-        with requests.Session() as s:
-            s.headers.update({"User-Agent": "Mozilla/5.0"})
-            r = s.get(u, timeout=20)
-            r.raise_for_status()
-            soup = BeautifulSoup(r.text, "html.parser")
-            raw_listing_details[u] = soup
+        log_progress(f'Scraping listing details from {u}')
+        r = safe_http_request(session, u, timeout=20)
+        soup = BeautifulSoup(r.text, "html.parser")
+        raw_listing_details[u] = soup
     return raw_listing_details
 
 def extract_field_value(soup, field_label):

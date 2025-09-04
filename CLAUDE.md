@@ -74,8 +74,20 @@ python -m scripts.run_enrich_jobs
 - **`data/normalized/`**: Normalized job data in NDJSON format
 - Uses NDJSON (newline-delimited JSON) for incremental data collection
 
+### Centralized Utilities (`jobs/utils.py`)
+Common functions used across all providers:
+- **`create_session()`**: Creates configured requests session with standard headers
+- **`safe_http_request()`**: HTTP requests with error handling and retries
+- **`rate_limit_sleep()`**: Standardized rate limiting
+- **`require_env_vars()`**: Validates required environment variables
+- **`process_and_normalize_jobs()`**: Standard pattern for processing generators and normalizing
+- **`log_progress()`**: Consistent progress logging
+- **`is_valid_url()`**: URL validation
+- **`html_to_text()`**: Convert HTML to plain text
+- **`write_json()`** / **`write_ndjson()`**: Data persistence utilities
+
 ### Dependencies
 - **Web scraping**: beautifulsoup4, requests
-- **Data processing**: pandas, pydantic for validation
+- **Data processing**: pandas, pydantic for validation  
 - **Environment**: python-dotenv for configuration
 - **Development**: Uses Python 3.13+ with type hints

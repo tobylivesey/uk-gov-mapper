@@ -5,7 +5,7 @@ import json
 import time
 
 # init
-BASE_URL = "https://www.gov.uk/api/organisations"
+BASE = "https://www.gov.uk/api/organisations"
 organisation = ""
 DATA_DIR = Path("data")
 OUT_DIR = DATA_DIR / "orgs/uk"
@@ -23,7 +23,7 @@ def extract_orgs(data: dict) -> list[dict]:
 def fetch_all_orgs():
     print("Starting fetch of all organisations...")
     all_orgs = []
-    next_url = f"{BASE_URL}?page=61"
+    next_url = f"{BASE}?page=1"
 
     while next_url:
         print(f"Fetching page {next_url}...")
@@ -38,9 +38,9 @@ def fetch_all_orgs():
     print(f"Found {len(all_orgs)} organisations.")
     return all_orgs
 
-def find_external_link(html_text: str) -> str | None:
+def extract_external_link_govuk(html_text: str) -> str | None:
     soup = BeautifulSoup(html_text, "html.parser")
-    #  note: the class name may change - in future may need to update?)
+    #  note: the class name may change
     banner = soup.find("span", class_="gem-c-notice__title govuk-notification-banner__heading")
     if banner:
         a_tag = banner.find("a")
@@ -59,7 +59,7 @@ def enrich_org(org: dict) -> dict:
     try:
         html_text = requests.get(web_url).text
         # todo: parse HTML to remove rest of URL path (i.e. after 3rd /)
-        org["non_govuk_domain"] = find_external_link(html_text)
+        org["non_govuk_domain"] = extract_external_link_govuk(html_text)
         print(f"Enriched {org['title']} with external link: {org['non_govuk_domain']}")
     except Exception as e:
         print(f"Error fetching {web_url}: {e}")
@@ -75,7 +75,7 @@ def persist_to_json(filename: str, data: list[dict]) -> None:
 def main():
     org_list = fetch_all_orgs()
     #enriched_org_list = [enrich_org(o) for o in org_list]
-    enriched_org_list = [enrich_org(o) for o in  org_list if o["details"]["govuk_status"]!="live"]
+    enriched_org_list = [enrich_org(o) for o in org_list if o["details"]["govuk_status"]!="live"]
     persist_to_json(OUT_DIR / "govuk_orgs_enriched.json", enriched_org_list)
     print("Done.")
     

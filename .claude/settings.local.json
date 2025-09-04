@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(/C:\\Users\\tobyl\\Documents\\coding\\civil-service-scraper/**)",
+      "Read(/C:\\Users\\tobyl\\Documents\\coding\\civil-service-scraper\\jobs\\providers/**)",
+      "Read(/C:\\Users\\tobyl\\Documents\\coding\\civil-service-scraper\\scripts/**)",
+      "Read(/C:\\Users\\tobyl\\Documents\\coding\\civil-service-scraper\\jobs\\providers/**)",
+      "Bash(python:*)",
+      "Read(/C:\\Users\\tobyl\\Documents\\coding\\civil-service-scraper\\jobs\\providers/**)",
+      "Read(/C:\\Users\\tobyl\\Documents\\coding\\civil-service-scraper\\jobs\\providers/**)",
+      "Read(/C:\\Users\\tobyl\\Documents\\coding\\civil-service-scraper\\jobs\\providers/**)",
+      "Read(/C:\\Users\\tobyl\\Documents\\coding\\civil-service-scraper\\jobs\\providers/**)",
+      "Read(/C:\\Users\\tobyl\\Documents\\coding\\civil-service-scraper\\jobs/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

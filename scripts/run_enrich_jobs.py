@@ -1,5 +1,5 @@
 import argparse
-from jobs.norm_provider_jobs import run_provider, run_demo
+from job_listings.norm_provider_jobs import run_provider, run_demo
 
 def main():
     ap = argparse.ArgumentParser()

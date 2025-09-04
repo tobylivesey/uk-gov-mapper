@@ -1,7 +1,7 @@
 # api with auth
 from typing import Iterable
 from dotenv import load_dotenv
-from jobs.utils import create_session, safe_http_request, rate_limit_sleep, require_env_vars, process_and_normalize_jobs
+from job_listings.utils import create_session, safe_http_request, rate_limit_sleep, require_env_vars, process_and_normalize_jobs
 
 load_dotenv()
 BASE = "https://api.adzuna.com/v1/api/jobs/gb/search/{page}"

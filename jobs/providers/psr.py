@@ -79,48 +79,49 @@ def extract_field_value(soup, field_label):
             return value_div.get_text(strip=True) if value_div else None
     return None
 
-def fetch(query: str) -> dict:
-    '''Fetch all listing listings for a given query, and scrape details for each listing.'''
+def fetch(query: str) -> Iterable[dict]:
+    '''Fetch all listing listings for a given query, and yield individual raw job data.'''
     all_urls = extract_all_listing_urls(query)
     listing_details = enrich_listing_details(all_urls)
-    normalized = normalize(listing_details)
-    return normalized
+    
+    # Yield individual jobs with their URL as the key for normalize() to process
+    for url, soup in listing_details.items():
+        yield {"url": url, "soup": soup}
 
-def normalize(raw: dict) -> list[dict]:
-    '''Take raw listing details dict and strip, process and normalize to standard format.'''
-    normalized_jobs = []
-    for u, soup in raw.items():
-        # Try meta tags first (fallback approach)
-        provider = soup.find("meta", property="og:site_name")
-        title = soup.find("meta", property="og:title")
-        
-        # Use field extraction for structured data
-        location = extract_field_value(soup, "Location")
-        company = extract_field_value(soup, "Organisation")
-        posted_at = extract_field_value(soup, "Posted")
-        
-        # Get full job description
-        description_text = soup.find("article", class_="article article--details")
-        
-        # Extract ID from URL
-        raw_id = extract_field_value(soup, "Posting ID")
-        if not raw_id:
-                # Fallback: extract from URL if not found in page
-                raw_id = u.split('/')[-1].split('?')[0] if u else None
+def normalize(raw: dict) -> dict:
+    '''Take single raw job data and normalize to standard format.'''
+    url = raw["url"]
+    soup = raw["soup"]
+    
+    # Try meta tags first (fallback approach)
+    provider = soup.find("meta", property="og:site_name")
+    title = soup.find("meta", property="og:title")
+    
+    # Use field extraction for structured data
+    location = extract_field_value(soup, "Location")
+    company = extract_field_value(soup, "Organisation")
+    posted_at = extract_field_value(soup, "Posted")
+    
+    # Get full job description
+    description_text = soup.find("article", class_="article article--details")
+    
+    # Extract ID from URL
+    raw_id = extract_field_value(soup, "Posting ID")
+    if not raw_id:
+        # Fallback: extract from URL if not found in page
+        raw_id = url.split('/')[-1].split('?')[0] if url else None
 
-        job = {
-            "provider": provider["content"] if provider else "psr",
-            "org_slug": company,
-            "company": company,
-            "title": title["content"] if title else None,
-            "url": u,
-            "posted_at": posted_at if posted_at else time.strftime("%Y-%m-%d"),
-            "location": location,
-            "description_text": description_text.get_text(strip=True) if description_text else None,
-            "raw_id": raw_id,
-        }
-        normalized_jobs.append(job)
-    return normalized_jobs
+    return {
+        "provider": provider["content"] if provider else "psr",
+        "org_slug": company,
+        "company": company,
+        "title": title["content"] if title else None,
+        "url": url,
+        "posted_at": posted_at if posted_at else time.strftime("%Y-%m-%d"),
+        "location": location,
+        "description_text": description_text.get_text(strip=True) if description_text else None,
+        "raw_id": raw_id,
+    }
 
 
 # def main():
@@ -129,5 +130,8 @@ def normalize(raw: dict) -> list[dict]:
 #     normalized = normalize("cyber security", listing_details)
 
 if __name__ == "__main__":
-    result = fetch("cyber security")
-    print(result)
+    query = "cyber security"
+    results = fetch(query)
+    for raw_job in results:
+        normalized = normalize(raw_job)
+        print(normalized)

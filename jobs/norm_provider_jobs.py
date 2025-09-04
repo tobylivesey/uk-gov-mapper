@@ -5,19 +5,18 @@ from jobs.utils import write_ndjson
 DATA_DIR = Path("data")
 OUT_DIR = DATA_DIR / "normalized"
 
-# Provider signature: fetch(token) -> Iterable[dict], normalize(token, raw) -> dict
+# Provider signature: fetch(token) -> Iterable[dict], normalize(raw) -> dict
 class Provider:
     def __init__(self, name: str,
                 fetch: Callable[[str], Iterable[dict]],
-                normalize: Callable[[str, dict], dict],
+                normalize: Callable[[dict], dict],
                 outfile: Path):
         self.name = name
         self.fetch = fetch
         self.normalize = normalize
         self.outfile = outfile
 
-# -- registry
-from jobs.providers import greenhouse, adzuna  # noqa
+from jobs.providers import greenhouse, adzuna, psr 
 
 PROVIDERS = {
     "greenhouse": Provider("greenhouse", greenhouse.fetch,
@@ -25,6 +24,7 @@ PROVIDERS = {
     "adzuna": Provider("adzuna",
                         lambda token: adzuna.fetch(token, pages=1, per_page=50),
                         adzuna.normalize, OUT_DIR / "adzuna.ndjson"),
+    "psr": Provider("psr", psr.fetch, psr.normalize, OUT_DIR / "psr.ndjson")
 }
 
 def run_provider(name: str, token: str) -> None:
@@ -33,7 +33,7 @@ def run_provider(name: str, token: str) -> None:
     written = 0
     for raw in p.fetch(token):
         fetched += 1
-        row = p.normalize(token, raw)
+        row = p.normalize(raw)
         write_ndjson(row, p.outfile)
         written += 1
         if written <= 3:
@@ -44,3 +44,4 @@ def run_provider(name: str, token: str) -> None:
 def run_demo():
     run_provider("greenhouse", "recordedfuture")
     run_provider("adzuna", "cyber security")
+    run_provider("psr", "cyber security")

@@ -1,22 +1,22 @@
 from pathlib import Path
 from typing import Callable, Iterable
-from jobs.utils import write_ndjson
+from job_listings.utils import write_ndjson
 
 DATA_DIR = Path("data")
 OUT_DIR = DATA_DIR / "normalized"
 
-# Provider signature: fetch(token) -> Iterable[dict], normalize(raw) -> dict
+# Provider signature: fetch(token) -> Iterable[dict], normalize(token, raw) -> dict
 class Provider:
     def __init__(self, name: str,
                 fetch: Callable[[str], Iterable[dict]],
-                normalize: Callable[[dict], dict],
+                normalize: Callable[[str, dict], dict],
                 outfile: Path):
         self.name = name
         self.fetch = fetch
         self.normalize = normalize
         self.outfile = outfile
 
-from jobs.providers import greenhouse, adzuna, psr 
+from job_listings.providers import greenhouse, adzuna, psr 
 
 PROVIDERS = {
     "greenhouse": Provider("greenhouse", greenhouse.fetch,
@@ -28,12 +28,13 @@ PROVIDERS = {
 }
 
 def run_provider(name: str, token: str) -> None:
+
     p = PROVIDERS[name]
     fetched = 0
     written = 0
     for raw in p.fetch(token):
         fetched += 1
-        row = p.normalize(raw)
+        row = p.normalize(token, raw)
         write_ndjson(row, p.outfile)
         written += 1
         if written <= 3:

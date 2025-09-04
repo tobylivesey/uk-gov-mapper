@@ -3,7 +3,7 @@ import time
 from typing import Iterable
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
-from jobs.utils import create_session, safe_http_request, rate_limit_sleep, is_valid_url, log_progress
+from job_listings.utils import create_session, safe_http_request, rate_limit_sleep, is_valid_url, log_progress
 
 load_dotenv()
 

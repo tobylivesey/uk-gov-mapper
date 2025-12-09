@@ -2,6 +2,9 @@ import requests
 from bs4 import BeautifulSoup
 from pathlib import Path
 import json
+from io import BytesIO
+import pandas as pd
+from data_oscar_ii_download import download_oscar_data, load_oscar_data, join_org_oscar_financials
 import time
 
 # init
@@ -23,7 +26,7 @@ def extract_orgs(data: dict) -> list[dict]:
 def fetch_all_orgs():
     print("Starting fetch of all organisations...")
     all_orgs = []
-    next_url = f"{BASE}?page=1"
+    next_url = f"{BASE}?page=63"
 
     while next_url:
         print(f"Fetching page {next_url}...")
@@ -50,7 +53,14 @@ def extract_external_link_govuk(html_text: str) -> str | None:
     # <span class="gem-c-notice__title govuk-notification-banner__heading">Wallace Collection has a <a href="http://www.wallacecollection.org/">separate website</a></span>
     return None
 
-def enrich_org(org: dict) -> dict: 
+def enrich_org_all(org: dict) -> dict:
+    """Runs all enrichment activity."""
+    enrich_org_weburl(org)
+    enrich_org_financials(org)
+    print("Org enrichment complete")
+    return org
+
+def enrich_org_weburl(org: dict) -> dict: 
     """Enrich the organisation data with additional details."""
     web_url = org.get("web_url")
     if not web_url: 
@@ -67,6 +77,13 @@ def enrich_org(org: dict) -> dict:
     time.sleep(0.2)  
     return org
 
+##### Under testing
+def enrich_org_financials(org: dict) -> dict:
+    """Enriches org data with 24-25 Oscar II financial data from https://assets.publishing.service.gov.uk/media/691b0ebed140bbbaa59a28b1/BUD_24-25.xlsx."""
+    download_oscar_data()
+    return join_org_oscar_financials(org)
+#######
+
 def persist_to_json(filename: str, data: list[dict]) -> None:
     with open(filename, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
@@ -74,8 +91,10 @@ def persist_to_json(filename: str, data: list[dict]) -> None:
 
 def main():
     org_list = fetch_all_orgs()
-    #enriched_org_list = [enrich_org(o) for o in org_list]
-    enriched_org_list = [enrich_org(o) for o in org_list if o["details"]["govuk_status"]!="live"]
+    # enrich with oscar-ii financial data 
+    enriched_org_list = [enrich_org_financials(o) for o in org_list]
+    # enrich the weburl for all orgs that are not live on gov.uk (i.e. have external websites)
+    enriched_org_list += [enrich_org_weburl(o) for o in enriched_org_list if o["details"]["govuk_status"]!="live"] 
     persist_to_json(OUT_DIR / "govuk_orgs_enriched.json", enriched_org_list)
     print("Done.")
     

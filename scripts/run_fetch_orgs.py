@@ -4,7 +4,7 @@ from pathlib import Path
 import json
 from io import BytesIO
 import pandas as pd
-from data_oscar_ii_download import download_oscar_data, get_org_budgets_from_oscar, enrich_orgs_oscar_financials
+from data_oscar_ii_download_enrich import download_oscar_data, get_org_budgets_from_oscar, enrich_orgs_oscar_financials
 import time
 
 # init
@@ -85,16 +85,26 @@ def persist_to_json(filename: str, data: list[dict]) -> None:
     print(f"Wrote {len(data)} records to {filename}")
 
 def main():
-    org_list = fetch_all_orgs()
+    all_orgs = fetch_all_orgs()
+
+    # govuk status can be: live, closed, joining, exempt or transitioning. We aren't interested in closed orgs.
+    extant_orgs = [
+        org for org in all_orgs 
+        if org.get('details', {}).get('govuk_status') != 'closed'
+    ]
+    print(f"\n{'='*60}")
+    print(f"Filtered to {len(extant_orgs)} live organizations")
+    print(f"Skipping {len(all_orgs) - len(extant_orgs)} historical/closed orgs")
+    print(f"{'='*60}\n")
+
+    # enrich with oscar-ii financial data (pass the only live organisations list)
+    enriched_org_list = enrich_orgs_oscar_financials(extant_orgs, budgets)
     
-    # enrich with oscar-ii financial data (pass the whole list)
-    enriched_org_list = enrich_orgs_oscar_financials(org_list, budgets)
-    
-    # enrich the weburl for all orgs that are not live on gov.uk
+    # enrich the weburl for all orgs that are not live on gov.uk (i.e. they have a non-gov.uk website)
     for org in enriched_org_list:
-        if org["details"]["govuk_status"] != "live":
+        if org["details"]["govuk_status"] == "exempt":
             enrich_org_weburl(org)  # mutates in place
-    
+
     persist_to_json(OUT_DIR / "govuk_orgs_enriched.json", enriched_org_list)
     print("Done.")
     

@@ -184,7 +184,7 @@ def get_org_budgets_from_oscar(oscar_file: str = "data/orgs/uk/oscar_data_2024-2
 
     df = pd.read_csv(oscar_file)
     # Filter to core government spending (DEL + AME)    
-    gross_core_budget = df[df['CONTROL_BUDGET_L0_LONG_NAME'].isin(['DEL ADMIN', 'DEL PROG']) & (df['AMOUNT'] > 0)]  
+    gross_core_budget = df[df['CONTROL_BUDGET_L0_LONG_NAME'].isin(['DEL ADMIN', 'DEL PROG']) & (df['AMOUNT'] > 0)]
     org_budgets = gross_core_budget.groupby('ORGANISATION_LONG_NAME')['AMOUNT'].sum()
     # returns a dict of org name: budget amount
     return {org: round(amount, 2) for org, amount in org_budgets.items()}
@@ -349,7 +349,7 @@ def enrich_orgs_oscar_financials(
         
         if not org_name:
             org['oscar_match'] = False
-            org['oscar_budget_£m'] = None
+            org['oscar_budget_£k'] = None
             results.append(org)
             continue
         
@@ -358,8 +358,8 @@ def enrich_orgs_oscar_financials(
             org['oscar_match'] = True
             org['oscar_match_name'] = match_name
             org['oscar_match_score'] = round(score, 3)
-            org['oscar_budget_£m'] = budgets[match_name]
-            logger.info(f"{'Exact' if score == 1.0 else 'Fuzzy'} match ({score:.2f}): {org_name} -> {match_name}: £{budgets[match_name]}m")
+            org['oscar_budget_£k'] = budgets[match_name]
+            logger.info(f"{'Exact' if score == 1.0 else 'Fuzzy'} match ({score:.2f}): {org_name} -> {match_name}: £{budgets[match_name]}k")
         
         # Lower-confidence match - check if it was claimed by someone else
         elif match_name and score >= threshold:
@@ -372,24 +372,24 @@ def enrich_orgs_oscar_financials(
                     org['oscar_match'] = True
                     org['oscar_match_name'] = new_match
                     org['oscar_match_score'] = round(new_score, 3)
-                    org['oscar_budget_£m'] = budgets[new_match]
-                    logger.info(f"Fuzzy match ({new_score:.2f}): {org_name} -> {new_match}: £{budgets[new_match]}m")
+                    org['oscar_budget_£k'] = budgets[new_match]
+                    logger.info(f"Fuzzy match ({new_score:.2f}): {org_name} -> {new_match}: £{budgets[new_match]}k")
                 else:
                     org['oscar_match'] = False
                     org['oscar_match_score'] = None
-                    org['oscar_budget_£m'] = None
+                    org['oscar_budget_£k'] = None
                     logger.debug(f"No OSCAR match for {org_name} (original match claimed)")
             else:
                 org['oscar_match'] = True
                 org['oscar_match_name'] = match_name
                 org['oscar_match_score'] = round(score, 3)
-                org['oscar_budget_£m'] = budgets[match_name]
-                logger.info(f"Fuzzy match ({score:.2f}): {org_name} -> {match_name}: £{budgets[match_name]}m")
+                org['oscar_budget_£k'] = budgets[match_name]
+                logger.info(f"Fuzzy match ({score:.2f}): {org_name} -> {match_name}: £{budgets[match_name]}k")
         
         else:
             org['oscar_match'] = False
             org['oscar_match_score'] = None
-            org['oscar_budget_£m'] = None
+            org['oscar_budget_£k'] = None
             logger.debug(f"No OSCAR match for {org_name}")
         
         results.append(org)

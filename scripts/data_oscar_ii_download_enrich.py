@@ -183,7 +183,8 @@ def get_org_budgets_from_oscar(oscar_file: str = "data/orgs/uk/oscar_data_2024-2
     """    
 
     df = pd.read_csv(oscar_file)
-    # Filter to core government spending (DEL + AME)    
+    # Filter to Delegated (DEL) spending (Administrative and Programme)   
+    # Your aggregation should be:
     gross_core_budget = df[df['CONTROL_BUDGET_L0_LONG_NAME'].isin(['DEL ADMIN', 'DEL PROG']) & (df['AMOUNT'] > 0)]
     org_budgets = gross_core_budget.groupby('ORGANISATION_LONG_NAME')['AMOUNT'].sum()
     # returns a dict of org name: budget amount
@@ -395,3 +396,22 @@ def enrich_orgs_oscar_financials(
         results.append(org)
     
     return results
+
+def main():
+    from run_fetch_orgs import fetch_all_orgs
+
+    oscar_path = download_oscar_data()
+    budgets = get_org_budgets_from_oscar(oscar_path)
+    logger.info(f"Loaded budgets for {len(budgets)} organisations from OSCAR.")
+
+    orgs = fetch_all_orgs()
+    logger.info(f"Fetched {len(orgs)} organisations from GOV.UK.")
+
+    enriched_orgs = enrich_orgs_oscar_financials(orgs, budgets)
+    logger.info("Enriched organisations with OSCAR financial data.")
+
+    logger.info(f"Visualisation generated at {output_path}")
+
+
+if __name__ == "__main__":
+    main()

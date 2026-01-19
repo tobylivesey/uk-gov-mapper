@@ -8,10 +8,11 @@ from pathlib import Path
 SCRIPT_DIR = Path(__file__).parent
 data_path = SCRIPT_DIR / '../data/orgs/uk/govuk_orgs_enriched.json'
 template_path = SCRIPT_DIR/ 'treemap_template.html'
+output_path = SCRIPT_DIR / '../uk_gov_treemap_d3.html'  # Add this
+
 
 # Read JSON data into a CSV DataFrame
 df = pd.read_json(data_path)
-df.to_csv('data.csv', index=False)
 
 # Some orgs have multiple parents. 
 df['number_of_parents'] = df['parent_organisations'].apply(
@@ -153,7 +154,7 @@ def render_html(template: str, hierarchy: dict, stats: dict) -> str:
     return html
 
 
-def main(df, output_path: str = '../uk_gov_treemap_d3.html'):
+def main(df, output_path: str = output_path):
     """Generate the D3 treemap visualisation"""
     
     print("Building hierarchy...")

@@ -8,7 +8,7 @@ from pathlib import Path
 SCRIPT_DIR = Path(__file__).parent
 data_path = SCRIPT_DIR / '../data/orgs/uk/govuk_orgs_enriched.json'
 template_path = SCRIPT_DIR/ 'treemap_template.html'
-output_path = SCRIPT_DIR / '../uk_gov_treemap_d3.html'  # Add this
+output_path = SCRIPT_DIR / '../uk_gov_treemap_d3.html'  
 
 
 # Read JSON data into a CSV DataFrame
@@ -74,7 +74,7 @@ def build_hierarchy(df):
             'id': org_id,
             'name': row['title'],
             'format': row.get('format', 'Other'),
-            'url': row.get('web_url', ''),
+            'url': row.get('best_domain', ''),
             'budget': budget_val,
             'budget_display': format_budget(budget_val),
             'value': value,

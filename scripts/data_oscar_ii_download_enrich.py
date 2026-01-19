@@ -99,6 +99,7 @@ def download_oscar_data(
     save_path: str = "data/orgs/uk/oscar_data_2024-25.csv",
     force_redownload: bool = False
 ) -> Path:
+    
     """
     Downloads OSCAR budget data and saves it locally.
 
@@ -139,8 +140,6 @@ def download_oscar_data(
         
         # Save to file
         temp_xlsx = save_path.with_suffix('.xlsx.tmp')
-
-        
         
         with open(temp_xlsx, 'wb') as f:
             downloaded = 0
@@ -409,9 +408,6 @@ def main():
 
     enriched_orgs = enrich_orgs_oscar_financials(orgs, budgets)
     logger.info("Enriched organisations with OSCAR financial data.")
-
-    logger.info(f"Visualisation generated at {output_path}")
-
 
 if __name__ == "__main__":
     main()

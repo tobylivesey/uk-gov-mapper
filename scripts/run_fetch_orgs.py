@@ -58,7 +58,7 @@ def extract_external_link_govuk(html_text: str) -> str | None:
 def enrich_org_all(org: dict) -> dict:
     """Runs all enrichment activity."""
     enrich_org_weburl(org)
-    enrich_org_financials(org)
+    enrich_orgs_oscar_financials(org)
     print("Org enrichment complete")
     return org
 
@@ -72,6 +72,10 @@ def enrich_org_weburl(org: dict) -> dict:
         html_text = requests.get(web_url).text
         # todo: parse HTML to remove rest of URL path (i.e. after 3rd /)
         org["non_govuk_domain"] = extract_external_link_govuk(html_text)
+        if org["non_govuk_domain"]:
+            org["best_domain"] = org["non_govuk_domain"]
+        else: 
+            org["best_domain"] = org["web_url"]
         print(f"Enriched {org['title']} with external link: {org['non_govuk_domain']}")
     except Exception as e:
         print(f"Error fetching {web_url}: {e}")

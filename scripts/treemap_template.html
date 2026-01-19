@@ -700,14 +700,14 @@
         
         function render() {
             container.innerHTML = '';
-            
+
             const allowedFormats = filterMap[currentFilter];
             const filteredRoot = filterData(currentRoot, allowedFormats);
             sumValues(filteredRoot);
             
             const width = container.clientWidth;
             const height = container.clientHeight;
-            
+            console.log('Treemap dimensions:', width, height);  
             const hierarchy = d3.hierarchy(filteredRoot)
                 .sum(d => {
                     if (d.children && d.children.length) return 0;

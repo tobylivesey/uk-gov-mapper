@@ -714,8 +714,22 @@
                     return currentSizing === 'equal' ? 100 : (d.value || 100);
                 })
                 .sort((a, b) => b.value - a.value);
+
+            // For budget sizing, ensure top-level departments are sized by their own budget
+            // (not just the sum of tracked children)
+            if (currentSizing === 'budget' && hierarchy.children) {
+                hierarchy.children.forEach(child => {
+                    if (child.data.value) {
+                        // Use department's own budget, ensuring it's at least sum of children
+                        child.value = Math.max(child.value, child.data.value);
+                    }
+                });
+                // Recalculate root value to match
+                hierarchy.value = hierarchy.children.reduce((sum, c) => sum + c.value, 0);
+            }
             
             d3.treemap()
+                .tile(d3.treemapSquarify)
                 .size([width, height])
                 .paddingTop(d => d.depth === 1 ? 42 : 2)
                 .paddingRight(2)

@@ -68,7 +68,7 @@ def build_hierarchy(df):
         if budget_val and budget_val > 0:
             value = math.sqrt(budget_val) * 10
         else:
-            value = 100  # Default for orgs without budget
+            value = 3000  # Default for orgs without budget
         
         id_to_data[org_id] = {
             'id': org_id,
@@ -170,7 +170,7 @@ def main(df, output_path: str = output_path):
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(html)
     
-    print(f"\n✓ Saved to {output_path}")
+    print(f"\nSaved to {output_path}")
     return output_path
 
 

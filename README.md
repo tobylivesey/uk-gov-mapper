@@ -1,6 +1,6 @@
 
-### XX_gov_orgs_scraper
-uk_gov_orgs_scraper - Pulls data from "https://www.gov.uk/api/organisations" and enriches
+# uk-gov-m,apepr
+Pulls data from "https://www.gov.uk/api/organisations" and enriches it in various exciting ways
 
 ### Syntax
 - Org - An entity within government
@@ -19,11 +19,6 @@ JSON fields output are:
         "location": Physical location of role
         "description_text": FULL text of job advert - Vital for parsing 
         "raw_id": Literal URL for complete advert
-
-### Init / Use
-python -m scripts.run_fetch_orgs
-python -m scripts.run_enrich_jobs
-
 
 ### Structure
 civil-service-scraper/

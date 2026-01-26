@@ -1,5 +1,5 @@
 
-# uk-gov-m,apepr
+# uk-gov-mapper
 Pulls data from "https://www.gov.uk/api/organisations" and enriches it in various exciting ways
 
 ### Syntax

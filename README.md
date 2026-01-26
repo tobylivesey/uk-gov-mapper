@@ -2,6 +2,10 @@
 ### XX_gov_orgs_scraper
 uk_gov_orgs_scraper - Pulls data from "https://www.gov.uk/api/organisations" and enriches
 
+### Syntax
+- Org - An entity within government
+- Job - A job / vacancy advertised within one or more goverment entities
+
 ### Jobs
 Take Providers (i.e. recruiting providers).
 Each Provider needs to have a Fetch and a Normalize function, returning a standard JSON output

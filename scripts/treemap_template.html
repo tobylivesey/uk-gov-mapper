@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK Government Structure</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #f8f8f8;
+            color: #1a1a1a;
+            min-height: 100vh;
+            font-weight: 300;
+        }
+        
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem;
+        }
+        
+        header {
+            margin-bottom: 2rem;
+        }
+        
+        h1 {
+            font-family: 'Newsreader', Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: -0.03em;
+            color: #0b0c0c;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 0.95rem;
+            color: #505a5f;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        
+        .stats {
+            display: flex;
+            gap: 3rem;
+            margin: 1.5rem 0;
+            padding: 1.25rem 0;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .stat-value {
+            font-family: 'Newsreader', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #0b0c0c;
+        }
+        
+        .stat-label {
+            font-size: 0.7rem;
+            color: #6f777b;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 0.2rem;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: #505a5f;
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .breadcrumb span {
+            cursor: pointer;
+            transition: color 0.15s;
+        }
+        
+        .breadcrumb span:hover {
+            color: #1d70b8;
+        }
+        
+        .breadcrumb .sep {
+            margin: 0 0.4rem;
+            color: #b1b4b6;
+            cursor: default;
+        }
+        
+        .breadcrumb .sep:hover {
+            color: #b1b4b6;
+        }
+        
+        .control-group {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        
+        .control-label {
+            font-size: 0.75rem;
+            color: #6f777b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .btn-group {
+            display: flex;
+        }
+        
+        .btn {
+            padding: 0.4rem 0.75rem;
+            background: #fff;
+            border: 1px solid #ccc;
+            color: #505a5f;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        
+        .btn:first-child {
+            border-radius: 3px 0 0 3px;
+        }
+        
+        .btn:last-child {
+            border-radius: 0 3px 3px 0;
+        }
+        
+        .btn:not(:last-child) {
+            border-right: none;
+        }
+        
+        .btn:hover {
+            background: #f3f3f3;
+            color: #0b0c0c;
+        }
+        
+        .btn.active {
+            background: #0b0c0c;
+            border-color: #0b0c0c;
+            color: #fff;
+        }
+        
+        .btn-icon {
+            padding: 0.4rem 0.6rem;
+            font-size: 0.85rem;
+        }
+        
+        .treemap-wrapper {
+            position: relative;
+        }
+        
+        .treemap-container {
+            background: #fff;
+            border: 1px solid #ddd;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #treemap {
+            width: 100%;
+            height: 72vh;
+            min-height: 550px;
+        }
+        
+        .node {
+            position: absolute;
+            overflow: hidden;
+        }
+        
+        .node-dept {
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .node-dept .node-bg {
+            opacity: 0.95;
+        }
+        
+        .node-child {
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        
+        .node-bg {
+            position: absolute;
+            inset: 0;
+            transition: filter 0.15s;
+        }
+        
+        .node:hover .node-bg {
+            filter: brightness(1.1);
+        }
+        
+        .node-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 6px 10px;
+            background: rgba(0,0,0,0.4);
+            z-index: 2;
+            max-height: 42px;
+            overflow: hidden;
+            transition: max-height 0.2s ease, background 0.2s ease;
+        }
+        
+        .node-dept:hover .node-header {
+            max-height: 100px;
+            background: rgba(0,0,0,0.75);
+        }
+
+        .node-header-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: #fff;
+            line-height: 1.2;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .node-header-budget {
+            font-size: 11px;
+            font-weight: 400;
+            color: rgba(255,255,255,0.8);
+            margin-top: 2px;
+        }
+        
+        .node-label {
+            position: absolute;
+            top: 5px;
+            left: 6px;
+            right: 6px;
+            font-weight: 400;
+            color: #fff;
+            line-height: 1.2;
+            pointer-events: none;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+        }
+        
+        .node-label.size-lg {
+            font-size: 12px;
+            -webkit-line-clamp: 3;
+        }
+        
+        .node-label.size-md {
+            font-size: 10px;
+            -webkit-line-clamp: 2;
+        }
+        
+        .node-label.size-sm {
+            font-size: 8px;
+            -webkit-line-clamp: 2;
+        }
+        
+        .node-label.size-xs {
+            font-size: 6px;
+            -webkit-line-clamp: 1;
+            top: 2px;
+            left: 2px;
+            right: 2px;
+        }
+        
+        .node.has-children {
+            cursor: zoom-in;
+        }
+        
+        .node.leaf {
+            cursor: pointer;
+        }
+        
+        .zoom-controls {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            z-index: 10;
+        }
+        
+        .zoom-btn {
+            width: 32px;
+            height: 32px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #505a5f;
+            transition: all 0.15s;
+        }
+        
+        .zoom-btn:hover {
+            background: #f3f3f3;
+            color: #0b0c0c;
+        }
+        
+        .small-entities {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 220px;
+            max-height: 300px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            z-index: 10;
+            display: none;
+            overflow: hidden;
+        }
+        
+        .small-entities.visible {
+            display: block;
+        }
+        
+        .small-entities-header {
+            padding: 0.6rem 0.75rem;
+            background: #f5f5f5;
+            border-bottom: 1px solid #ddd;
+            font-size: 0.7rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #505a5f;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .small-entities-close {
+            cursor: pointer;
+            font-size: 1rem;
+            line-height: 1;
+            color: #6f777b;
+        }
+        
+        .small-entities-close:hover {
+            color: #0b0c0c;
+        }
+        
+        .small-entities-list {
+            max-height: 250px;
+            overflow-y: auto;
+        }
+        
+        .small-entity {
+            padding: 0.5rem 0.75rem;
+            border-bottom: 1px solid #eee;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: background 0.1s;
+        }
+        
+        .small-entity:hover {
+            background: #f8f8f8;
+        }
+        
+        .small-entity:last-child {
+            border-bottom: none;
+        }
+        
+        .small-entity-name {
+            color: #0b0c0c;
+            margin-bottom: 2px;
+        }
+        
+        .small-entity-type {
+            font-size: 0.7rem;
+            color: #6f777b;
+        }
+        
+        .tooltip {
+            position: fixed;
+            padding: 0.75rem 0.875rem;
+            background: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+            pointer-events: none;
+            z-index: 1000;
+            max-width: 260px;
+            opacity: 0;
+            transition: opacity 0.1s;
+            font-size: 0.85rem;
+        }
+        
+        .tooltip.visible {
+            opacity: 1;
+        }
+        
+        .tooltip-name {
+            font-weight: 500;
+            color: #0b0c0c;
+            margin-bottom: 0.4rem;
+            line-height: 1.25;
+        }
+        
+        .tooltip-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            margin: 0.2rem 0;
+            gap: 1rem;
+        }
+        
+        .tooltip-label {
+            color: #6f777b;
+        }
+        
+        .tooltip-value {
+            color: #0b0c0c;
+            text-align: right;
+        }
+        
+        .tooltip-hint {
+            margin-top: 0.5rem;
+            padding-top: 0.4rem;
+            border-top: 1px solid #eee;
+            font-size: 0.7rem;
+            color: #1d70b8;
+        }
+        
+        footer {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid #ddd;
+            font-size: 0.75rem;
+            color: #6f777b;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        footer a {
+            color: #1d70b8;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem 1rem;
+            }
+            
+            h1 {
+                font-size: 1.75rem;
+            }
+            
+            .stats {
+                gap: 1.5rem;
+            }
+            
+            .controls {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            #treemap {
+                height: 55vh;
+            }
+            
+            .small-entities {
+                width: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>UK Government</h1>
+            <p class="subtitle">
+                Organisational structure, with size weighted by gross budget (OSCAR II, 2024–25).
+            </p>
+        </header>
+        
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value">{{total_orgs}}</div>
+                <div class="stat-label">Organisations</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">{{orgs_with_budget}}</div>
+                <div class="stat-label">With Budget</div>
+            </div>
+            <!-- <div class="stat">
+                <div class="stat-value">£{{total_budget_bn}}bn</div>
+                <div class="stat-label">Total</div>
+            </div> -->
+        </div>
+        
+        <div class="controls">
+            <div class="breadcrumb" id="breadcrumb">
+                <span data-depth="0">All Departments</span>
+            </div>
+            
+            <div class="control-group">
+                <span class="control-label">View</span>
+                <div class="btn-group">
+                    <button class="btn active" data-filter="all">All</button>
+                    <button class="btn" data-filter="dept">Depts</button>
+                    <button class="btn" data-filter="agency">Agencies</button>
+                    <button class="btn" data-filter="ndpb">NDPBs</button>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <span class="control-label">Size</span>
+                <div class="btn-group">
+                    <button class="btn active" data-sizing="budget">Budget</button>
+                    <button class="btn" data-sizing="equal">Equal</button>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <button class="zoom-btn" id="zoomReset" title="Reset view">⌂</button>
+                <button class="btn btn-icon" id="showSmallBtn" title="Show small entities">⋯</button>
+            </div>
+        </div>
+        
+        <div class="treemap-wrapper">
+            <div class="treemap-container">
+                <div id="treemap"></div>
+            </div>
+                        
+            <div class="small-entities" id="smallEntities">
+                <div class="small-entities-header">
+                    <span>Small Entities</span>
+                    <span class="small-entities-close" id="closeSmall">×</span>
+                </div>
+                <div class="small-entities-list" id="smallList"></div>
+            </div>
+        </div>
+        
+        <footer>
+            <span>Data: <a href="https://www.gov.uk/government/organisations">GOV.UK</a> · <a href="https://www.gov.uk/government/collections/oscar-publishing-data-from-the-online-system-for-central-accounting-and-reporting">OSCAR II</a></span>
+            <span>Click department to zoom · Click body to visit page</span>
+        </footer>
+    </div>
+    
+    <div class="tooltip" id="tooltip"></div>
+    
+    <script>
+        const data = {{hierarchy_json}};
+        
+        const deptColors = {
+            'Ministerial department': '#1a4971',
+            'Non-ministerial department': '#1a5235',
+            'Devolved administration': '#1a4971',
+            'Devolved government': '#1a4971',
+        };
+        
+        const childColors = {
+            'Executive agency': '#6b5620',
+            'Executive non-departmental public body': '#4a3772',
+            'Advisory non-departmental public body': '#5c4317',
+            'Public corporation': '#722828',
+            'Executive office': '#1a5235',
+            'Tribunal': '#404952',
+            'Tribunal non-departmental public body': '#404952',
+            'Court': '#404952',
+            'Sub organisation': '#52616b',
+            'Sub-organisation': '#52616b',
+            'Special health authority': '#4a3772',
+            'Other': '#404952'
+        };
+        
+        const filterMap = {
+            'all': null,
+            'dept': ['Ministerial department', 'Non-ministerial department', 'Devolved administration', 'Devolved government'],
+            'agency': ['Executive agency', 'Executive office'],
+            'ndpb': ['Executive non-departmental public body', 'Advisory non-departmental public body', 'Tribunal non-departmental public body']
+        };
+        
+        let currentFilter = 'all';
+        let currentSizing = 'budget';
+        let currentRoot = data;
+        let breadcrumbPath = [{ name: 'All Departments', data: data }];
+        let smallEntitiesVisible = false;
+        
+        const container = document.getElementById('treemap');
+        const tooltip = document.getElementById('tooltip');
+        const breadcrumb = document.getElementById('breadcrumb');
+        const smallPanel = document.getElementById('smallEntities');
+        const smallList = document.getElementById('smallList');
+        
+        function isDepartment(format) {
+            return ['Ministerial department', 'Non-ministerial department', 'Devolved administration', 'Devolved government'].includes(format);
+        }
+        
+        function getColor(format, isTopLevel) {
+            if (isTopLevel || isDepartment(format)) {
+                return deptColors[format] || childColors[format] || '#404952';
+            }
+            return childColors[format] || '#52616b';
+        }
+        
+        function filterData(node, allowedFormats) {
+            if (!allowedFormats) return node;
+            
+            const filtered = { ...node };
+            if (node.children) {
+                filtered.children = node.children
+                    .map(child => filterData(child, allowedFormats))
+                    .filter(child => {
+                        if (child.children && child.children.length > 0) return true;
+                        return allowedFormats.includes(child.format);
+                    });
+            }
+            return filtered;
+        }
+        
+        function getValue(node) {
+            if (currentSizing === 'equal') {
+                return 100;
+            }
+            return node.value || 100;
+        }
+        
+        function sumValues(node) {
+            if (!node.children || node.children.length === 0) {
+                return getValue(node);
+            }
+            let sum = 0;
+            for (const child of node.children) {
+                sum += sumValues(child);
+            }
+            node._computedValue = sum;
+            return sum;
+        }
+        
+        function collectSmallEntities(nodes, threshold) {
+            const small = [];
+            nodes.forEach(d => {
+                const w = d.x1 - d.x0;
+                const h = d.y1 - d.y0;
+                if (w < threshold || h < threshold) {
+                    small.push(d.data);
+                }
+            });
+            return small.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
+        }
+        
+        function updateSmallEntities(entities) {
+            smallList.innerHTML = '';
+            if (entities.length === 0) {
+                smallList.innerHTML = '<div class="small-entity"><em>No small entities at this level</em></div>';
+                return;
+            }
+            
+            entities.slice(0, 50).forEach(entity => {
+                const div = document.createElement('div');
+                div.className = 'small-entity';
+                div.innerHTML = `
+                    <div class="small-entity-name">${entity.name}</div>
+                    <div class="small-entity-type">${entity.format}${entity.budget_display ? ' · ' + entity.budget_display : ''}</div>
+                `;
+                div.addEventListener('click', () => {
+                    if (entity.url) {
+                        window.open(entity.url, '_blank');
+                    }
+                });
+                smallList.appendChild(div);
+            });
+            
+            if (entities.length > 50) {
+                const more = document.createElement('div');
+                more.className = 'small-entity';
+                more.innerHTML = `<em>+${entities.length - 50} more</em>`;
+                smallList.appendChild(more);
+            }
+        }
+        
+        function render() {
+            container.innerHTML = '';
+
+            const allowedFormats = filterMap[currentFilter];
+            const filteredRoot = filterData(currentRoot, allowedFormats);
+            sumValues(filteredRoot);
+            
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+            console.log('Treemap dimensions:', width, height);  
+            const hierarchy = d3.hierarchy(filteredRoot)
+                .sum(d => {
+                    if (d.children && d.children.length) return 0;
+                    return currentSizing === 'equal' ? 100 : (d.value || 100);
+                })
+                .sort((a, b) => b.value - a.value);
+
+            // For budget sizing, ensure top-level departments are sized by their own budget
+            // (not just the sum of tracked children)
+            if (currentSizing === 'budget' && hierarchy.children) {
+                hierarchy.children.forEach(child => {
+                    if (child.data.value) {
+                        // Use department's own budget, ensuring it's at least sum of children
+                        child.value = Math.max(child.value, child.data.value);
+                    }
+                });
+                // Recalculate root value to match
+                hierarchy.value = hierarchy.children.reduce((sum, c) => sum + c.value, 0);
+            }
+            
+            d3.treemap()
+                .tile(d3.treemapSquarify)
+                .size([width, height])
+                .paddingTop(d => d.depth === 1 ? 42 : 2)
+                .paddingRight(2)
+                .paddingBottom(2)
+                .paddingLeft(2)
+                .paddingInner(1)
+                .round(true)(hierarchy);
+            
+            const nodes = hierarchy.descendants().slice(1);
+            
+            const smallEntities = collectSmallEntities(nodes, 40);
+            updateSmallEntities(smallEntities);
+            
+            nodes.forEach(d => {
+                const isTopLevel = d.depth === 1;
+                const hasChildren = d.children && d.children.length > 0;
+                
+                const node = document.createElement('div');
+                node.className = 'node' + (isTopLevel ? ' node-dept' : ' node-child') + (hasChildren ? ' has-children' : ' leaf');
+                node.style.left = d.x0 + 'px';
+                node.style.top = d.y0 + 'px';
+                node.style.width = (d.x1 - d.x0) + 'px';
+                node.style.height = (d.y1 - d.y0) + 'px';
+                
+                const bg = document.createElement('div');
+                bg.className = 'node-bg';
+                bg.style.background = getColor(d.data.format, isTopLevel);
+                node.appendChild(bg);
+                
+                const w = d.x1 - d.x0;
+                const h = d.y1 - d.y0;
+                const area = w * h;
+                
+                if (isTopLevel && w > 80 && h > 40) {
+                    const header = document.createElement('div');
+                    header.className = 'node-header';
+                    
+                    const headerName = document.createElement('div');
+                    headerName.className = 'node-header-name';
+                    headerName.textContent = d.data.name;
+                    header.appendChild(headerName);
+                    
+                    if (d.data.budget_display && w > 120) {
+                        const headerBudget = document.createElement('div');
+                        headerBudget.className = 'node-header-budget';
+                        headerBudget.textContent = d.data.budget_display;
+                        header.appendChild(headerBudget);
+                    }
+                    
+                    node.appendChild(header);
+                }
+                else if (isTopLevel) {
+                    const label = document.createElement('div');
+                    label.className = 'node-label size-sm';
+                    label.textContent = d.data.name;
+                    node.appendChild(label);
+                }
+                else {
+                    const label = document.createElement('div');
+                    label.className = 'node-label';
+                    
+                    if (area > 15000) {
+                        label.classList.add('size-lg');
+                    } else if (area > 5000) {
+                        label.classList.add('size-md');
+                    } else if (area > 1500) {
+                        label.classList.add('size-sm');
+                    } else {
+                        label.classList.add('size-xs');
+                    }
+                    
+                    label.textContent = d.data.name;
+                    node.appendChild(label);
+                }
+                
+                node.addEventListener('mouseenter', (e) => {
+                    const hint = hasChildren ? 'Click to zoom in' : (d.data.url ? 'Click to visit' : '');
+                    tooltip.innerHTML = `
+                        <div class="tooltip-name">${d.data.name}</div>
+                        <div class="tooltip-row">
+                            <span class="tooltip-label">Type</span>
+                            <span class="tooltip-value">${d.data.format}</span>
+                        </div>
+                        ${d.data.budget_display ? `
+                        <div class="tooltip-row">
+                            <span class="tooltip-label">Budget</span>
+                            <span class="tooltip-value">${d.data.budget_display}</span>
+                        </div>
+                        ` : ''}
+                        ${hint ? `<div class="tooltip-hint">${hint}</div>` : ''}
+                    `;
+                    tooltip.classList.add('visible');
+                });
+                
+                node.addEventListener('mousemove', (e) => {
+                    const x = Math.min(e.clientX + 12, window.innerWidth - 280);
+                    const y = Math.min(e.clientY + 12, window.innerHeight - 150);
+                    tooltip.style.left = x + 'px';
+                    tooltip.style.top = y + 'px';
+                });
+                
+                node.addEventListener('mouseleave', () => {
+                    tooltip.classList.remove('visible');
+                });
+                
+                node.addEventListener('click', () => {
+                    tooltip.classList.remove('visible');
+                    if (hasChildren) {
+                        currentRoot = d.data;
+                        breadcrumbPath.push({ name: d.data.name, data: d.data });
+                        updateBreadcrumb();
+                        render();
+                    } else if (d.data.url) {
+                        window.open(d.data.url, '_blank');
+                    }
+                });
+                
+                container.appendChild(node);
+            });
+        }
+        
+        function updateBreadcrumb() {
+            breadcrumb.innerHTML = breadcrumbPath.map((item, i) => {
+                if (i === breadcrumbPath.length - 1) {
+                    return `<span>${item.name}</span>`;
+                }
+                return `<span data-depth="${i}">${item.name}</span><span class="sep">›</span>`;
+            }).join('');
+            
+            breadcrumb.querySelectorAll('span[data-depth]').forEach(span => {
+                span.addEventListener('click', () => {
+                    const depth = parseInt(span.dataset.depth);
+                    breadcrumbPath = breadcrumbPath.slice(0, depth + 1);
+                    currentRoot = breadcrumbPath[depth].data;
+                    updateBreadcrumb();
+                    render();
+                });
+            });
+        }
+        
+        document.querySelectorAll('.btn[data-filter]').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.btn[data-filter]').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentFilter = this.dataset.filter;
+                render();
+            });
+        });
+        
+        document.querySelectorAll('.btn[data-sizing]').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.btn[data-sizing]').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentSizing = this.dataset.sizing;
+                render();
+            });
+        });
+        
+        document.getElementById('zoomReset').addEventListener('click', () => {
+            breadcrumbPath = [{ name: 'All Departments', data: data }];
+            currentRoot = data;
+            updateBreadcrumb();
+            render();
+        });
+        
+        document.getElementById('showSmallBtn').addEventListener('click', () => {
+            smallEntitiesVisible = !smallEntitiesVisible;
+            smallPanel.classList.toggle('visible', smallEntitiesVisible);
+        });
+        
+        document.getElementById('closeSmall').addEventListener('click', () => {
+            smallEntitiesVisible = false;
+            smallPanel.classList.remove('visible');
+        });
+        
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(render, 150);
+        });
+        
+        render();
+    </script>
+</body>
+</html>

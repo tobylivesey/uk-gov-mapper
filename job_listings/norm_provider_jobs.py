@@ -1,6 +1,6 @@
 from pathlib import Path
 from typing import Callable, Iterable
-from job_listings.utils import write_ndjson
+from scripts.utils import write_ndjson
 
 DATA_DIR = Path("data")
 OUT_DIR = DATA_DIR / "normalized"

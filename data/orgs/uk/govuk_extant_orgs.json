@@ -3,7 +3,7 @@
     "id": "https://www.gov.uk/api/organisations/uk-sport",
     "title": "UK Sport",
     "format": "Executive non-departmental public body",
-    "updated_at": "2023-02-14 09:58:51+00:00",
+    "updated_at": "2023-02-14T09:58:51Z",
     "web_url": "https://www.gov.uk/government/organisations/uk-sport",
     "details": {
       "slug": "uk-sport",
@@ -30,18 +30,13 @@
       }
     ],
     "superseded_organisations": [],
-    "superseding_organisations": [],
-    "oscar_match": false,
-    "oscar_match_score": null,
-    "oscar_budget_£k": null,
-    "non_govuk_domain": "http://www.uksport.gov.uk/",
-    "best_domain": "http://www.uksport.gov.uk/"
+    "superseding_organisations": []
   },
   {
     "id": "https://www.gov.uk/api/organisations/uk-statistics-authority",
     "title": "UK Statistics Authority",
     "format": "Non-ministerial department",
-    "updated_at": "2021-04-15 08:59:32+00:00",
+    "updated_at": "2021-04-15T08:59:32Z",
     "web_url": "https://www.gov.uk/government/organisations/uk-statistics-authority",
     "details": {
       "slug": "uk-statistics-authority",
@@ -68,18 +63,13 @@
       }
     ],
     "superseded_organisations": [],
-    "superseding_organisations": [],
-    "oscar_match": false,
-    "oscar_match_score": null,
-    "oscar_budget_£k": null,
-    "non_govuk_domain": "http://www.statisticsauthority.gov.uk/",
-    "best_domain": "http://www.statisticsauthority.gov.uk/"
+    "superseding_organisations": []
   },
   {
     "id": "https://www.gov.uk/api/organisations/uk-visas-and-immigration",
     "title": "UK Visas and Immigration",
     "format": "Sub organisation",
-    "updated_at": "2025-04-03 14:53:02+00:00",
+    "updated_at": "2025-04-03T14:53:02Z",
     "web_url": "https://www.gov.uk/government/organisations/uk-visas-and-immigration",
     "details": {
       "slug": "uk-visas-and-immigration",
@@ -106,16 +96,13 @@
         "web_url": "https://www.gov.uk/government/organisations/uk-border-agency"
       }
     ],
-    "superseding_organisations": [],
-    "oscar_match": false,
-    "oscar_match_score": null,
-    "oscar_budget_£k": null
+    "superseding_organisations": []
   },
   {
     "id": "https://www.gov.uk/api/organisations/united-kingdom-national-nuclear-laboratory",
     "title": "United Kingdom National Nuclear Laboratory",
     "format": "Public corporation",
-    "updated_at": "2024-12-19 10:34:45+00:00",
+    "updated_at": "2024-12-19T10:34:45Z",
     "web_url": "https://www.gov.uk/government/organisations/united-kingdom-national-nuclear-laboratory",
     "details": {
       "slug": "united-kingdom-national-nuclear-laboratory",
@@ -137,18 +124,13 @@
         "web_url": "https://www.gov.uk/government/organisations/national-nuclear-laboratory"
       }
     ],
-    "superseding_organisations": [],
-    "oscar_match": false,
-    "oscar_match_score": null,
-    "oscar_budget_£k": null,
-    "non_govuk_domain": "https://uknnl.com/",
-    "best_domain": "https://uknnl.com/"
+    "superseding_organisations": []
   },
   {
     "id": "https://www.gov.uk/api/organisations/united-kingdom-reserve-forces-association",
     "title": "United Kingdom Reserve Forces Association",
     "format": "Sub organisation",
-    "updated_at": "2021-04-15 09:03:56+00:00",
+    "updated_at": "2021-04-15T09:03:56Z",
     "web_url": "https://www.gov.uk/government/organisations/united-kingdom-reserve-forces-association",
     "details": {
       "slug": "united-kingdom-reserve-forces-association",
@@ -170,16 +152,13 @@
     ],
     "child_organisations": [],
     "superseded_organisations": [],
-    "superseding_organisations": [],
-    "oscar_match": false,
-    "oscar_match_score": null,
-    "oscar_budget_£k": null
+    "superseding_organisations": []
   },
   {
     "id": "https://www.gov.uk/api/organisations/united-kingdom-security-vetting",
     "title": "United Kingdom Security Vetting",
     "format": "Sub organisation",
-    "updated_at": "2024-11-22 16:13:49+00:00",
+    "updated_at": "2024-11-22T16:13:49Z",
     "web_url": "https://www.gov.uk/government/organisations/united-kingdom-security-vetting",
     "details": {
       "slug": "united-kingdom-security-vetting",
@@ -201,16 +180,13 @@
     ],
     "child_organisations": [],
     "superseded_organisations": [],
-    "superseding_organisations": [],
-    "oscar_match": false,
-    "oscar_match_score": null,
-    "oscar_budget_£k": null
+    "superseding_organisations": []
   },
   {
     "id": "https://www.gov.uk/api/organisations/upper-tribunal-administrative-appeals-chamber",
     "title": "Upper Tribunal (Administrative Appeals Chamber)",
     "format": "Tribunal",
-    "updated_at": "2021-04-15 09:04:08+00:00",
+    "updated_at": "2021-04-15T09:04:08Z",
     "web_url": "https://www.gov.uk/government/organisations/upper-tribunal-administrative-appeals-chamber",
     "details": {
       "slug": "upper-tribunal-administrative-appeals-chamber",
@@ -232,16 +208,13 @@
     ],
     "child_organisations": [],
     "superseded_organisations": [],
-    "superseding_organisations": [],
-    "oscar_match": false,
-    "oscar_match_score": null,
-    "oscar_budget_£k": null
+    "superseding_organisations": []
   },
   {
     "id": "https://www.gov.uk/api/organisations/upper-tribunal-immigration-and-asylum-chamber",
     "title": "Upper Tribunal (Immigration and Asylum Chamber)",
     "format": "Tribunal",
-    "updated_at": "2021-04-15 09:04:08+00:00",
+    "updated_at": "2021-04-15T09:04:08Z",
     "web_url": "https://www.gov.uk/government/organisations/upper-tribunal-immigration-and-asylum-chamber",
     "details": {
       "slug": "upper-tribunal-immigration-and-asylum-chamber",
@@ -263,16 +236,13 @@
     ],
     "child_organisations": [],
     "superseded_organisations": [],
-    "superseding_organisations": [],
-    "oscar_match": false,
-    "oscar_match_score": null,
-    "oscar_budget_£k": null
+    "superseding_organisations": []
   },
   {
     "id": "https://www.gov.uk/api/organisations/upper-tribunal-lands-chamber",
     "title": "Upper Tribunal (Lands Chamber)",
     "format": "Tribunal",
-    "updated_at": "2021-04-15 09:04:07+00:00",
+    "updated_at": "2021-04-15T09:04:07Z",
     "web_url": "https://www.gov.uk/government/organisations/upper-tribunal-lands-chamber",
     "details": {
       "slug": "upper-tribunal-lands-chamber",
@@ -294,16 +264,13 @@
     ],
     "child_organisations": [],
     "superseded_organisations": [],
-    "superseding_organisations": [],
-    "oscar_match": false,
-    "oscar_match_score": null,
-    "oscar_budget_£k": null
+    "superseding_organisations": []
   },
   {
     "id": "https://www.gov.uk/api/organisations/upper-tribunal-tax-and-chancery-chamber",
     "title": "Upper Tribunal (Tax and Chancery Chamber)",
     "format": "Tribunal",
-    "updated_at": "2021-04-15 09:04:07+00:00",
+    "updated_at": "2021-04-15T09:04:07Z",
     "web_url": "https://www.gov.uk/government/organisations/upper-tribunal-tax-and-chancery-chamber",
     "details": {
       "slug": "upper-tribunal-tax-and-chancery-chamber",
@@ -325,16 +292,13 @@
     ],
     "child_organisations": [],
     "superseded_organisations": [],
-    "superseding_organisations": [],
-    "oscar_match": false,
-    "oscar_match_score": null,
-    "oscar_budget_£k": null
+    "superseding_organisations": []
   },
   {
     "id": "https://www.gov.uk/api/organisations/valuation-office-agency",
     "title": "Valuation Office Agency",
     "format": "Executive agency",
-    "updated_at": "2025-09-08 10:28:25+00:00",
+    "updated_at": "2025-09-08T10:28:25Z",
     "web_url": "https://www.gov.uk/government/organisations/valuation-office-agency",
     "details": {
       "slug": "valuation-office-agency",
@@ -365,16 +329,13 @@
       }
     ],
     "superseded_organisations": [],
-    "superseding_organisations": [],
-    "oscar_match": false,
-    "oscar_match_score": null,
-    "oscar_budget_£k": null
+    "superseding_organisations": []
   },
   {
     "id": "https://www.gov.uk/api/organisations/valuation-tribunal-for-england",
     "title": "Valuation Tribunal for England ",
     "format": "Tribunal",
-    "updated_at": "2024-07-16 12:58:40+00:00",
+    "updated_at": "2024-07-16T12:58:40Z",
     "web_url": "https://www.gov.uk/government/organisations/valuation-tribunal-for-england",
     "details": {
       "slug": "valuation-tribunal-for-england",
@@ -396,18 +357,13 @@
     ],
     "child_organisations": [],
     "superseded_organisations": [],
-    "superseding_organisations": [],
-    "oscar_match": false,
-    "oscar_match_score": null,
-    "oscar_budget_£k": null,
-    "non_govuk_domain": "https://www.valuationtribunal.gov.uk/about-us/vte",
-    "best_domain": "https://www.valuationtribunal.gov.uk/about-us/vte"
+    "superseding_organisations": []
   },
   {
     "id": "https://www.gov.uk/api/organisations/valuation-tribunal-service-for-england-valuation-tribunal-service",
     "title": "Valuation Tribunal Service",
     "format": "Executive non-departmental public body",
-    "updated_at": "2024-07-16 12:57:04+00:00",
+    "updated_at": "2024-07-16T12:57:04Z",
     "web_url": "https://www.gov.uk/government/organisations/valuation-tribunal-service-for-england-valuation-tribunal-service",
     "details": {
       "slug": "valuation-tribunal-service-for-england-valuation-tribunal-service",
@@ -429,18 +385,13 @@
     ],
     "child_organisations": [],
     "superseded_organisations": [],
-    "superseding_organisations": [],
-    "oscar_match": false,
-    "oscar_match_score": null,
-    "oscar_budget_£k": null,
-    "non_govuk_domain": "http://www.valuationtribunal.gov.uk/",
-    "best_domain": "http://www.valuationtribunal.gov.uk/"
+    "superseding_organisations": []
   },
   {
     "id": "https://www.gov.uk/api/organisations/vehicle-certification-agency",
     "title": "Vehicle Certification Agency",
     "format": "Executive agency",
-    "updated_at": "2021-04-15 08:59:25+00:00",
+    "updated_at": "2021-04-15T08:59:25Z",
     "web_url": "https://www.gov.uk/government/organisations/vehicle-certification-agency",
     "details": {
       "slug": "vehicle-certification-agency",
@@ -462,18 +413,13 @@
     ],
     "child_organisations": [],
     "superseded_organisations": [],
-    "superseding_organisations": [],
-    "oscar_match": false,
-    "oscar_match_score": null,
-    "oscar_budget_£k": null,
-    "non_govuk_domain": "https://www.vehicle-certification-agency.gov.uk/",
-    "best_domain": "https://www.vehicle-certification-agency.gov.uk/"
+    "superseding_organisations": []
   },
   {
     "id": "https://www.gov.uk/api/organisations/veterans-advisory-and-pensions-committees-x13",
     "title": "Veterans Advisory and Pensions Committees",
     "format": "Advisory non-departmental public body",
-    "updated_at": "2022-04-01 09:42:35+00:00",
+    "updated_at": "2022-04-01T09:42:35Z",
     "web_url": "https://www.gov.uk/government/organisations/veterans-advisory-and-pensions-committees-x13",
     "details": {
       "slug": "veterans-advisory-and-pensions-committees-x13",
@@ -495,16 +441,13 @@
     ],
     "child_organisations": [],
     "superseded_organisations": [],
-    "superseding_organisations": [],
-    "oscar_match": false,
-    "oscar_match_score": null,
-    "oscar_budget_£k": null
+    "superseding_organisations": []
   },
   {
     "id": "https://www.gov.uk/api/organisations/veterans-uk",
     "title": "Veterans UK",
     "format": "Sub organisation",
-    "updated_at": "2024-04-24 13:59:26+00:00",
+    "updated_at": "2024-04-24T13:59:26Z",
     "web_url": "https://www.gov.uk/government/organisations/veterans-uk",
     "details": {
       "slug": "veterans-uk",
@@ -531,16 +474,13 @@
         "web_url": "https://www.gov.uk/government/organisations/service-personnel-and-veterans-agency"
       }
     ],
-    "superseding_organisations": [],
-    "oscar_match": false,
-    "oscar_match_score": null,
-    "oscar_budget_£k": null
+    "superseding_organisations": []
   },
   {
     "id": "https://www.gov.uk/api/organisations/veterinary-medicines-directorate",
     "title": "Veterinary Medicines Directorate",
     "format": "Executive agency",
-    "updated_at": "2024-01-29 12:59:43+00:00",
+    "updated_at": "2024-01-29T12:59:43Z",
     "web_url": "https://www.gov.uk/government/organisations/veterinary-medicines-directorate",
     "details": {
       "slug": "veterinary-medicines-directorate",
@@ -562,16 +502,13 @@
     ],
     "child_organisations": [],
     "superseded_organisations": [],
-    "superseding_organisations": [],
-    "oscar_match": false,
-    "oscar_match_score": null,
-    "oscar_budget_£k": null
+    "superseding_organisations": []
   },
   {
     "id": "https://www.gov.uk/api/organisations/veterinary-products-committee",
     "title": "Veterinary Products Committee",
     "format": "Advisory non-departmental public body",
-    "updated_at": "2024-11-19 15:17:14+00:00",
+    "updated_at": "2024-11-19T15:17:14Z",
     "web_url": "https://www.gov.uk/government/organisations/veterinary-products-committee",
     "details": {
       "slug": "veterinary-products-committee",
@@ -593,16 +530,13 @@
     ],
     "child_organisations": [],
     "superseded_organisations": [],
-    "superseding_organisations": [],
-    "oscar_match": false,
-    "oscar_match_score": null,
-    "oscar_budget_£k": null
+    "superseding_organisations": []
   },
   {
     "id": "https://www.gov.uk/api/organisations/victims-commissioner",
     "title": "Victims' Commissioner",
     "format": "Other",
-    "updated_at": "2021-04-15 09:00:19+00:00",
+    "updated_at": "2021-04-15T09:00:19Z",
     "web_url": "https://www.gov.uk/government/organisations/victims-commissioner",
     "details": {
       "slug": "victims-commissioner",
@@ -624,18 +558,13 @@
     ],
     "child_organisations": [],
     "superseded_organisations": [],
-    "superseding_organisations": [],
-    "oscar_match": false,
-    "oscar_match_score": null,
-    "oscar_budget_£k": null,
-    "non_govuk_domain": "http://victimscommissioner.org.uk/",
-    "best_domain": "http://victimscommissioner.org.uk/"
+    "superseding_organisations": []
   },
   {
     "id": "https://www.gov.uk/api/organisations/victoria-and-albert-museum",
     "title": "Victoria and Albert Museum",
     "format": "Executive non-departmental public body",
-    "updated_at": "2023-02-14 09:59:09+00:00",
+    "updated_at": "2023-02-14T09:59:09Z",
     "web_url": "https://www.gov.uk/government/organisations/victoria-and-albert-museum",
     "details": {
       "slug": "victoria-and-albert-museum",
@@ -657,19 +586,13 @@
     ],
     "child_organisations": [],
     "superseded_organisations": [],
-    "superseding_organisations": [],
-    "oscar_match": true,
-    "oscar_match_name": "Victoria and Albert Museum",
-    "oscar_match_score": 1.0,
-    "oscar_budget_£k": 269727,
-    "non_govuk_domain": "http://www.vam.ac.uk",
-    "best_domain": "http://www.vam.ac.uk"
+    "superseding_organisations": []
   },
   {
     "id": "https://www.gov.uk/api/organisations/visitbritain",
     "title": "VisitBritain",
     "format": "Executive non-departmental public body",
-    "updated_at": "2023-02-14 09:59:30+00:00",
+    "updated_at": "2023-02-14T09:59:30Z",
     "web_url": "https://www.gov.uk/government/organisations/visitbritain",
     "details": {
       "slug": "visitbritain",
@@ -691,19 +614,13 @@
     ],
     "child_organisations": [],
     "superseded_organisations": [],
-    "superseding_organisations": [],
-    "oscar_match": true,
-    "oscar_match_name": "Visit Britain",
-    "oscar_match_score": 0.96,
-    "oscar_budget_£k": 75663,
-    "non_govuk_domain": "http://www.visitbritain.org/",
-    "best_domain": "http://www.visitbritain.org/"
+    "superseding_organisations": []
   },
   {
     "id": "https://www.gov.uk/api/organisations/visitengland",
     "title": "VisitEngland",
     "format": "Executive non-departmental public body",
-    "updated_at": "2023-02-14 09:59:47+00:00",
+    "updated_at": "2023-02-14T09:59:47Z",
     "web_url": "https://www.gov.uk/government/organisations/visitengland",
     "details": {
       "slug": "visitengland",
@@ -725,18 +642,13 @@
     ],
     "child_organisations": [],
     "superseded_organisations": [],
-    "superseding_organisations": [],
-    "oscar_match": false,
-    "oscar_match_score": null,
-    "oscar_budget_£k": null,
-    "non_govuk_domain": "http://www.visitengland.com",
-    "best_domain": "http://www.visitengland.com"
+    "superseding_organisations": []
   },
   {
     "id": "https://www.gov.uk/api/organisations/wales-audit-office",
     "title": "Wales Audit Office",
     "format": "Other",
-    "updated_at": "2021-04-15 09:02:55+00:00",
+    "updated_at": "2021-04-15T09:02:55Z",
     "web_url": "https://www.gov.uk/government/organisations/wales-audit-office",
     "details": {
       "slug": "wales-audit-office",
@@ -753,19 +665,13 @@
     "parent_organisations": [],
     "child_organisations": [],
     "superseded_organisations": [],
-    "superseding_organisations": [],
-    "oscar_match": true,
-    "oscar_match_name": "Wales Audit Office",
-    "oscar_match_score": 1.0,
-    "oscar_budget_£k": 26935,
-    "non_govuk_domain": "http://www.wao.gov.uk/",
-    "best_domain": "http://www.wao.gov.uk/"
+    "superseding_organisations": []
   },
   {
     "id": "https://www.gov.uk/api/organisations/wallace-collection",
     "title": "Wallace Collection",
     "format": "Executive non-departmental public body",
-    "updated_at": "2023-02-14 10:00:04+00:00",
+    "updated_at": "2023-02-14T10:00:04Z",
     "web_url": "https://www.gov.uk/government/organisations/wallace-collection",
     "details": {
       "slug": "wallace-collection",
@@ -787,19 +693,13 @@
     ],
     "child_organisations": [],
     "superseded_organisations": [],
-    "superseding_organisations": [],
-    "oscar_match": true,
-    "oscar_match_name": "Wallace Collection",
-    "oscar_match_score": 1.0,
-    "oscar_budget_£k": 8029,
-    "non_govuk_domain": "http://www.wallacecollection.org/",
-    "best_domain": "http://www.wallacecollection.org/"
+    "superseding_organisations": []
   },
   {
     "id": "https://www.gov.uk/api/organisations/welsh-government",
     "title": "Welsh Government",
     "format": "Devolved government",
-    "updated_at": "2025-05-02 12:57:05+00:00",
+    "updated_at": "2025-05-02T12:57:05Z",
     "web_url": "https://www.gov.uk/government/organisations/welsh-government",
     "details": {
       "slug": "welsh-government",
@@ -890,18 +790,13 @@
         "web_url": "https://www.gov.uk/government/organisations/welsh-language-commissioner"
       }
     ],
-    "superseding_organisations": [],
-    "oscar_match": false,
-    "oscar_match_score": null,
-    "oscar_budget_£k": null,
-    "non_govuk_domain": "https://gov.wales",
-    "best_domain": "https://gov.wales"
+    "superseding_organisations": []
   },
   {
     "id": "https://www.gov.uk/api/organisations/welsh-language-commissioner",
     "title": "Welsh Language Commissioner",
     "format": "Other",
-    "updated_at": "2021-04-15 09:03:52+00:00",
+    "updated_at": "2021-04-15T09:03:52Z",
     "web_url": "https://www.gov.uk/government/organisations/welsh-language-commissioner",
     "details": {
       "slug": "welsh-language-commissioner",
@@ -923,18 +818,13 @@
         "id": "https://www.gov.uk/api/organisations/welsh-government",
         "web_url": "https://www.gov.uk/government/organisations/welsh-government"
       }
-    ],
-    "oscar_match": false,
-    "oscar_match_score": null,
-    "oscar_budget_£k": null,
-    "non_govuk_domain": "http://www.comisiynyddygymraeg.org/",
-    "best_domain": "http://www.comisiynyddygymraeg.org/"
+    ]
   },
   {
     "id": "https://www.gov.uk/api/organisations/westminster-foundation-for-democracy",
     "title": "Westminster Foundation for Democracy",
     "format": "Executive non-departmental public body",
-    "updated_at": "2021-04-15 09:00:17+00:00",
+    "updated_at": "2021-04-15T09:00:17Z",
     "web_url": "https://www.gov.uk/government/organisations/westminster-foundation-for-democracy",
     "details": {
       "slug": "westminster-foundation-for-democracy",
@@ -956,19 +846,13 @@
     ],
     "child_organisations": [],
     "superseded_organisations": [],
-    "superseding_organisations": [],
-    "oscar_match": true,
-    "oscar_match_name": "Westminster Foundation for Democracy",
-    "oscar_match_score": 1.0,
-    "oscar_budget_£k": 8500,
-    "non_govuk_domain": "http://www.wfd.org/",
-    "best_domain": "http://www.wfd.org/"
+    "superseding_organisations": []
   },
   {
     "id": "https://www.gov.uk/api/organisations/wilton-park",
     "title": "Wilton Park",
     "format": "Executive agency",
-    "updated_at": "2021-04-15 08:59:17+00:00",
+    "updated_at": "2021-04-15T08:59:17Z",
     "web_url": "https://www.gov.uk/government/organisations/wilton-park",
     "details": {
       "slug": "wilton-park",
@@ -990,18 +874,13 @@
     ],
     "child_organisations": [],
     "superseded_organisations": [],
-    "superseding_organisations": [],
-    "oscar_match": false,
-    "oscar_match_score": null,
-    "oscar_budget_£k": null,
-    "non_govuk_domain": "http://www.wiltonpark.org.uk",
-    "best_domain": "http://www.wiltonpark.org.uk"
+    "superseding_organisations": []
   },
   {
     "id": "https://www.gov.uk/api/organisations/windrush-commemoration-committee",
     "title": "Windrush Commemoration Committee",
     "format": "Sub organisation",
-    "updated_at": "2024-07-22 11:22:41+00:00",
+    "updated_at": "2024-07-22T11:22:41Z",
     "web_url": "https://www.gov.uk/government/organisations/windrush-commemoration-committee",
     "details": {
       "slug": "windrush-commemoration-committee",
@@ -1023,16 +902,13 @@
     ],
     "child_organisations": [],
     "superseded_organisations": [],
-    "superseding_organisations": [],
-    "oscar_match": false,
-    "oscar_match_score": null,
-    "oscar_budget_£k": null
+    "superseding_organisations": []
   },
   {
     "id": "https://www.gov.uk/api/organisations/women-and-equalities-unit",
     "title": "Women and Equalities Unit",
     "format": "Sub organisation",
-    "updated_at": "2024-10-11 08:57:55+00:00",
+    "updated_at": "2024-10-11T08:57:55Z",
     "web_url": "https://www.gov.uk/government/organisations/women-and-equalities-unit",
     "details": {
       "slug": "women-and-equalities-unit",
@@ -1063,16 +939,13 @@
         "web_url": "https://www.gov.uk/government/organisations/government-equalities-office"
       }
     ],
-    "superseding_organisations": [],
-    "oscar_match": false,
-    "oscar_match_score": null,
-    "oscar_budget_£k": null
+    "superseding_organisations": []
   },
   {
     "id": "https://www.gov.uk/api/organisations/yorkshire-dales-national-park-authority",
     "title": "Yorkshire Dales National Park Authority",
     "format": "Other",
-    "updated_at": "2021-04-15 09:01:14+00:00",
+    "updated_at": "2021-04-15T09:01:14Z",
     "web_url": "https://www.gov.uk/government/organisations/yorkshire-dales-national-park-authority",
     "details": {
       "slug": "yorkshire-dales-national-park-authority",
@@ -1094,18 +967,13 @@
     ],
     "child_organisations": [],
     "superseded_organisations": [],
-    "superseding_organisations": [],
-    "oscar_match": false,
-    "oscar_match_score": null,
-    "oscar_budget_£k": null,
-    "non_govuk_domain": "http://www.yorkshiredales.org.uk/",
-    "best_domain": "http://www.yorkshiredales.org.uk/"
+    "superseding_organisations": []
   },
   {
     "id": "https://www.gov.uk/api/organisations/youth-custody-service",
     "title": "Youth Custody Service",
     "format": "Sub organisation",
-    "updated_at": "2024-08-29 10:31:14+00:00",
+    "updated_at": "2024-08-29T10:31:14Z",
     "web_url": "https://www.gov.uk/government/organisations/youth-custody-service",
     "details": {
       "slug": "youth-custody-service",
@@ -1127,16 +995,13 @@
     ],
     "child_organisations": [],
     "superseded_organisations": [],
-    "superseding_organisations": [],
-    "oscar_match": false,
-    "oscar_match_score": null,
-    "oscar_budget_£k": null
+    "superseding_organisations": []
   },
   {
     "id": "https://www.gov.uk/api/organisations/youth-justice-agency-of-northern-ireland",
     "title": "Youth Justice Agency of Northern Ireland",
     "format": "Executive agency",
-    "updated_at": "2024-11-20 14:55:58+00:00",
+    "updated_at": "2024-11-20T14:55:58Z",
     "web_url": "https://www.gov.uk/government/organisations/youth-justice-agency-of-northern-ireland",
     "details": {
       "slug": "youth-justice-agency-of-northern-ireland",
@@ -1163,18 +1028,13 @@
         "id": "https://www.gov.uk/api/organisations/northern-ireland-executive",
         "web_url": "https://www.gov.uk/government/organisations/northern-ireland-executive"
       }
-    ],
-    "oscar_match": false,
-    "oscar_match_score": null,
-    "oscar_budget_£k": null,
-    "non_govuk_domain": "https://www.justice-ni.gov.uk/topics/youth-justice/youth-justice-agency",
-    "best_domain": "https://www.justice-ni.gov.uk/topics/youth-justice/youth-justice-agency"
+    ]
   },
   {
     "id": "https://www.gov.uk/api/organisations/youth-justice-board-for-england-and-wales",
     "title": "Youth Justice Board for England and Wales",
     "format": "Executive non-departmental public body",
-    "updated_at": "2023-02-07 10:45:28+00:00",
+    "updated_at": "2023-02-07T10:45:28Z",
     "web_url": "https://www.gov.uk/government/organisations/youth-justice-board-for-england-and-wales",
     "details": {
       "slug": "youth-justice-board-for-england-and-wales",
@@ -1196,10 +1056,6 @@
     ],
     "child_organisations": [],
     "superseded_organisations": [],
-    "superseding_organisations": [],
-    "oscar_match": true,
-    "oscar_match_name": "Youth Justice Board for England and Wales",
-    "oscar_match_score": 1.0,
-    "oscar_budget_£k": 105268
+    "superseding_organisations": []
   }
 ]

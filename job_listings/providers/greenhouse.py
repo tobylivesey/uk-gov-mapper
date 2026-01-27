@@ -1,6 +1,6 @@
 # api no auth
 from typing import Iterable
-from job_listings.utils import html_to_text, create_session, safe_http_request, process_and_normalize_jobs
+from scripts.utils import html_to_text, create_session, safe_http_request, process_and_normalize_jobs
 
 GREENHOUSE_API = "https://boards-api.greenhouse.io/v1/boards/{token}/jobs?content=true"
 

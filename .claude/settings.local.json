@@ -10,7 +10,8 @@
       "Read(/C:\\Users\\tobyl\\Documents\\coding\\civil-service-scraper\\jobs\\providers/**)",
       "Read(/C:\\Users\\tobyl\\Documents\\coding\\civil-service-scraper\\jobs\\providers/**)",
       "Read(/C:\\Users\\tobyl\\Documents\\coding\\civil-service-scraper\\jobs\\providers/**)",
-      "Read(/C:\\Users\\tobyl\\Documents\\coding\\civil-service-scraper\\jobs/**)"
+      "Read(/C:\\Users\\tobyl\\Documents\\coding\\civil-service-scraper\\jobs/**)",
+      "Bash(dir:*)"
     ],
     "deny": [],
     "ask": []

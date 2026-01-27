@@ -1,6 +1,11 @@
 # UK Government Organisation Mapper
 
+<<<<<<< HEAD
 A toolkit for collecting, enriching, and visualising UK government organisation data. Pulls organisation data from the GOV.UK API, enriches it with OSCAR II budget data, and generates interactive D3 treemap visualisations.
+=======
+# uk-gov-mapper
+Pulls data from "https://www.gov.uk/api/organisations" and enriches it in various exciting ways
+>>>>>>> da9384162cb737b7e918f1e4b9fe78541e9d5d0f
 
 ## Features
 
@@ -10,6 +15,7 @@ A toolkit for collecting, enriching, and visualising UK government organisation 
 - **D3 Treemap Visualisation**: Generates interactive hierarchical treemaps showing org structure and budgets
 - **Job Scraping** (experimental): Collects job postings from multiple recruitment providers
 
+<<<<<<< HEAD
 ## Quick Start
 
 ```bash
@@ -100,3 +106,21 @@ ADZUNA_APP_KEY=your_api_key
 - **Environment**: python-dotenv
 
 Requires Python 3.10+
+=======
+### Structure
+civil-service-scraper/
+├── .vscode/                   
+├── data/                        
+├── jobs/                       
+|   ├── providers/               # Module for each different career website / information provider
+│       ├── __init__.py          # Each Module contains site-relevant methods to pull data (API, API+creds, Scrape)
+│       ├── adzuna.py
+│       ├── psr.py
+│       ├── <etc.>
+│   ├── __init__.py
+│   ├── norm_provider_jobs.py    # Normalises output from each provider
+├── scripts/                     # Entry-point scripts
+│   ├── __init__.py
+│   ├── run_enrich_jobs.py
+│   ├── run_fetch_orgs.py        #
+>>>>>>> da9384162cb737b7e918f1e4b9fe78541e9d5d0f

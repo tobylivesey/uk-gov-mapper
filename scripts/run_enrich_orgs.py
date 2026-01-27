@@ -37,10 +37,9 @@ def enrich_org_weburl(org: dict, session: requests.Session) -> dict:
         response = safe_http_request(session, web_url)
         org["non_govuk_domain"] = extract_external_link_govuk(response.text)
         org["best_domain"] = org["non_govuk_domain"] or org["web_url"]
-        print(f"Enriched {org['title']} with external link: {org['non_govuk_domain']}")
+        print(f"{org['title']} enriched with external link: {org['non_govuk_domain']}")
     except Exception as e:
         print(f"Error fetching {web_url}: {e}")
-        org["non_govuk_domain"] = None
     rate_limit_sleep(0.2)
     return org
 
@@ -65,6 +64,11 @@ def main(extant_orgs=None) -> list[dict]:
     for org in enriched_org_list:
         if org["details"]["govuk_status"] == "exempt":
             enrich_org_weburl(org, session)
+        else: 
+            org["non_govuk_domain"] = None
+            org["best_domain"] = org.get("web_url")
+            print(f"{org['title']} saved with gov.uk link: {org['best_domain']}")
+
 
     write_json(enriched_org_list, OUT_DIR / "govuk_orgs_enriched.json")
     write_csv(enriched_org_list, OUT_DIR / "govuk_orgs_enriched.csv", flatten_org_for_csv)

@@ -109,7 +109,9 @@
     "superseding_organisations": [],
     "oscar_match": false,
     "oscar_match_score": null,
-    "oscar_budget_£k": null
+    "oscar_budget_£k": null,
+    "non_govuk_domain": null,
+    "best_domain": "https://www.gov.uk/government/organisations/uk-visas-and-immigration"
   },
   {
     "id": "https://www.gov.uk/api/organisations/united-kingdom-national-nuclear-laboratory",
@@ -173,7 +175,9 @@
     "superseding_organisations": [],
     "oscar_match": false,
     "oscar_match_score": null,
-    "oscar_budget_£k": null
+    "oscar_budget_£k": null,
+    "non_govuk_domain": null,
+    "best_domain": "https://www.gov.uk/government/organisations/united-kingdom-reserve-forces-association"
   },
   {
     "id": "https://www.gov.uk/api/organisations/united-kingdom-security-vetting",
@@ -204,7 +208,9 @@
     "superseding_organisations": [],
     "oscar_match": false,
     "oscar_match_score": null,
-    "oscar_budget_£k": null
+    "oscar_budget_£k": null,
+    "non_govuk_domain": null,
+    "best_domain": "https://www.gov.uk/government/organisations/united-kingdom-security-vetting"
   },
   {
     "id": "https://www.gov.uk/api/organisations/upper-tribunal-administrative-appeals-chamber",
@@ -235,7 +241,9 @@
     "superseding_organisations": [],
     "oscar_match": false,
     "oscar_match_score": null,
-    "oscar_budget_£k": null
+    "oscar_budget_£k": null,
+    "non_govuk_domain": null,
+    "best_domain": "https://www.gov.uk/government/organisations/upper-tribunal-administrative-appeals-chamber"
   },
   {
     "id": "https://www.gov.uk/api/organisations/upper-tribunal-immigration-and-asylum-chamber",
@@ -266,7 +274,9 @@
     "superseding_organisations": [],
     "oscar_match": false,
     "oscar_match_score": null,
-    "oscar_budget_£k": null
+    "oscar_budget_£k": null,
+    "non_govuk_domain": null,
+    "best_domain": "https://www.gov.uk/government/organisations/upper-tribunal-immigration-and-asylum-chamber"
   },
   {
     "id": "https://www.gov.uk/api/organisations/upper-tribunal-lands-chamber",
@@ -297,7 +307,9 @@
     "superseding_organisations": [],
     "oscar_match": false,
     "oscar_match_score": null,
-    "oscar_budget_£k": null
+    "oscar_budget_£k": null,
+    "non_govuk_domain": null,
+    "best_domain": "https://www.gov.uk/government/organisations/upper-tribunal-lands-chamber"
   },
   {
     "id": "https://www.gov.uk/api/organisations/upper-tribunal-tax-and-chancery-chamber",
@@ -328,7 +340,9 @@
     "superseding_organisations": [],
     "oscar_match": false,
     "oscar_match_score": null,
-    "oscar_budget_£k": null
+    "oscar_budget_£k": null,
+    "non_govuk_domain": null,
+    "best_domain": "https://www.gov.uk/government/organisations/upper-tribunal-tax-and-chancery-chamber"
   },
   {
     "id": "https://www.gov.uk/api/organisations/valuation-office-agency",
@@ -368,7 +382,9 @@
     "superseding_organisations": [],
     "oscar_match": false,
     "oscar_match_score": null,
-    "oscar_budget_£k": null
+    "oscar_budget_£k": null,
+    "non_govuk_domain": null,
+    "best_domain": "https://www.gov.uk/government/organisations/valuation-office-agency"
   },
   {
     "id": "https://www.gov.uk/api/organisations/valuation-tribunal-for-england",
@@ -498,7 +514,9 @@
     "superseding_organisations": [],
     "oscar_match": false,
     "oscar_match_score": null,
-    "oscar_budget_£k": null
+    "oscar_budget_£k": null,
+    "non_govuk_domain": null,
+    "best_domain": "https://www.gov.uk/government/organisations/veterans-advisory-and-pensions-committees-x13"
   },
   {
     "id": "https://www.gov.uk/api/organisations/veterans-uk",
@@ -534,7 +552,9 @@
     "superseding_organisations": [],
     "oscar_match": false,
     "oscar_match_score": null,
-    "oscar_budget_£k": null
+    "oscar_budget_£k": null,
+    "non_govuk_domain": null,
+    "best_domain": "https://www.gov.uk/government/organisations/veterans-uk"
   },
   {
     "id": "https://www.gov.uk/api/organisations/veterinary-medicines-directorate",
@@ -565,7 +585,9 @@
     "superseding_organisations": [],
     "oscar_match": false,
     "oscar_match_score": null,
-    "oscar_budget_£k": null
+    "oscar_budget_£k": null,
+    "non_govuk_domain": null,
+    "best_domain": "https://www.gov.uk/government/organisations/veterinary-medicines-directorate"
   },
   {
     "id": "https://www.gov.uk/api/organisations/veterinary-products-committee",
@@ -596,7 +618,9 @@
     "superseding_organisations": [],
     "oscar_match": false,
     "oscar_match_score": null,
-    "oscar_budget_£k": null
+    "oscar_budget_£k": null,
+    "non_govuk_domain": null,
+    "best_domain": "https://www.gov.uk/government/organisations/veterinary-products-committee"
   },
   {
     "id": "https://www.gov.uk/api/organisations/victims-commissioner",
@@ -1026,7 +1050,9 @@
     "superseding_organisations": [],
     "oscar_match": false,
     "oscar_match_score": null,
-    "oscar_budget_£k": null
+    "oscar_budget_£k": null,
+    "non_govuk_domain": null,
+    "best_domain": "https://www.gov.uk/government/organisations/windrush-commemoration-committee"
   },
   {
     "id": "https://www.gov.uk/api/organisations/women-and-equalities-unit",
@@ -1066,7 +1092,9 @@
     "superseding_organisations": [],
     "oscar_match": false,
     "oscar_match_score": null,
-    "oscar_budget_£k": null
+    "oscar_budget_£k": null,
+    "non_govuk_domain": null,
+    "best_domain": "https://www.gov.uk/government/organisations/women-and-equalities-unit"
   },
   {
     "id": "https://www.gov.uk/api/organisations/yorkshire-dales-national-park-authority",
@@ -1130,7 +1158,9 @@
     "superseding_organisations": [],
     "oscar_match": false,
     "oscar_match_score": null,
-    "oscar_budget_£k": null
+    "oscar_budget_£k": null,
+    "non_govuk_domain": null,
+    "best_domain": "https://www.gov.uk/government/organisations/youth-custody-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/youth-justice-agency-of-northern-ireland",
@@ -1200,6 +1230,8 @@
     "oscar_match": true,
     "oscar_match_name": "Youth Justice Board for England and Wales",
     "oscar_match_score": 1.0,
-    "oscar_budget_£k": 105268
+    "oscar_budget_£k": 105268,
+    "non_govuk_domain": null,
+    "best_domain": "https://www.gov.uk/government/organisations/youth-justice-board-for-england-and-wales"
   }
 ]

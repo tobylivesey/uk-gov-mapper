@@ -1,11 +1,11 @@
 # UK Government Organisation Mapper
 
-<<<<<<< HEAD
-A toolkit for collecting, enriching, and visualising UK government organisation data. Pulls organisation data from the GOV.UK API, enriches it with OSCAR II budget data, and generates interactive D3 treemap visualisations.
+A toolkit for collecting, enriching, and visualising UK government organisation data. Pulls organisation data from the GOV.UK API, enriches it with OSCAR II budget data, and generates interactive D3 treemap visualisations. Ideas from me, written by robots. 
+
 =======
+
 # uk-gov-mapper
 Pulls data from "https://www.gov.uk/api/organisations" and enriches it in various exciting ways
->>>>>>> da9384162cb737b7e918f1e4b9fe78541e9d5d0f
 
 ## Features
 
@@ -15,7 +15,7 @@ Pulls data from "https://www.gov.uk/api/organisations" and enriches it in variou
 - **D3 Treemap Visualisation**: Generates interactive hierarchical treemaps showing org structure and budgets
 - **Job Scraping** (experimental): Collects job postings from multiple recruitment providers
 
-<<<<<<< HEAD
+
 ## Quick Start
 
 ```bash
@@ -35,8 +35,8 @@ python -m scripts.run_visualiser
 |---------|-------------|
 | `python -m scripts.run_fetch_orgs` | Fetch orgs from GOV.UK API, enrich with OSCAR budgets |
 | `python -m scripts.run_visualiser` | Generate D3 treemap HTML visualisation |
-| `python -m scripts.run_enrich_jobs --provider adzuna --token "query"` | Scrape jobs from Adzuna |
-| `python -m scripts.run_enrich_jobs --provider greenhouse --token "board"` | Scrape jobs from Greenhouse |
+| `python -m scripts.run_enrich_jobs --provider adzuna --token "query"` | Scrape jobs from Adzuna (experimental) | 
+| `python -m scripts.run_enrich_jobs --provider greenhouse --token "board"` | Scrape jobs from Greenhouse (experimental) |
 
 ## Project Structure
 
@@ -123,4 +123,4 @@ civil-service-scraper/
 │   ├── __init__.py
 │   ├── run_enrich_jobs.py
 │   ├── run_fetch_orgs.py        #
->>>>>>> da9384162cb737b7e918f1e4b9fe78541e9d5d0f
+

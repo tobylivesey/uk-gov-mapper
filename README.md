@@ -15,7 +15,7 @@ Pulls data from "https://www.gov.uk/api/organisations" and enriches it in variou
 - **D3 Treemap Visualisation**: Generates interactive hierarchical treemaps showing org structure and budgets
 - **Job Scraping** (experimental): Collects job postings from multiple recruitment providers
 
-<<<<<<< HEAD
+
 ## Quick Start
 
 ```bash
@@ -35,8 +35,8 @@ python -m scripts.run_visualiser
 |---------|-------------|
 | `python -m scripts.run_fetch_orgs` | Fetch orgs from GOV.UK API, enrich with OSCAR budgets |
 | `python -m scripts.run_visualiser` | Generate D3 treemap HTML visualisation |
-| `python -m scripts.run_enrich_jobs --provider adzuna --token "query"` | Scrape jobs from Adzuna |
-| `python -m scripts.run_enrich_jobs --provider greenhouse --token "board"` | Scrape jobs from Greenhouse |
+| `python -m scripts.run_enrich_jobs --provider adzuna --token "query"` | Scrape jobs from Adzuna (experimental) | 
+| `python -m scripts.run_enrich_jobs --provider greenhouse --token "board"` | Scrape jobs from Greenhouse (experimental) |
 
 ## Project Structure
 
@@ -123,4 +123,4 @@ civil-service-scraper/
 │   ├── __init__.py
 │   ├── run_enrich_jobs.py
 │   ├── run_fetch_orgs.py        #
->>>>>>> da9384162cb737b7e918f1e4b9fe78541e9d5d0f
+

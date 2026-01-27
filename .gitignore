@@ -10,3 +10,5 @@ __pycache__/
 Claude.md
 scratch_jupyter_notebooks/
 settings.local.json
+job_listings/
+data/jobs

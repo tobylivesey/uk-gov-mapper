@@ -3,7 +3,7 @@ from typing import Callable, Iterable
 from scripts.utils import write_ndjson
 
 DATA_DIR = Path("data")
-OUT_DIR = DATA_DIR / "normalized"
+OUT_DIR = DATA_DIR / "normalized_postings"
 
 # Provider signature: fetch(token) -> Iterable[dict], normalize(token, raw) -> dict
 class Provider:

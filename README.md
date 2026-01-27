@@ -1,11 +1,9 @@
 # UK Government Organisation Mapper
 
-<<<<<<< HEAD
 A toolkit for collecting, enriching, and visualising UK government organisation data. Pulls organisation data from the GOV.UK API, enriches it with OSCAR II budget data, and generates interactive D3 treemap visualisations.
 =======
 # uk-gov-mapper
 Pulls data from "https://www.gov.uk/api/organisations" and enriches it in various exciting ways
->>>>>>> da9384162cb737b7e918f1e4b9fe78541e9d5d0f
 
 ## Features
 

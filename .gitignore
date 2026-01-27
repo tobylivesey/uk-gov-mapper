@@ -9,3 +9,4 @@ __pycache__/
 .vscode/    
 Claude.md
 scratch_jupyter_notebooks/
+settings.local.json

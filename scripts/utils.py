@@ -4,6 +4,7 @@ import json
 import requests
 import time
 import os
+import pandas as pd
 from typing import Callable, Iterable
 
 def html_to_text(html: str | None) -> str:
@@ -82,64 +83,15 @@ def require_env_vars(*var_names: str) -> dict:
     return env_vars
 
 
-def flatten_org_for_csv(org: dict) -> dict:
-    """Flatten nested org structure for CSV export"""
-    details = org.get("details", {})
-
-    # Extract first parent org info
-    parents = org.get("parent_organisations", [])
-    first_parent_id = parents[0]["id"] if parents else None
-    first_parent_url = parents[0].get("web_url") if parents else None
-
-    # Count relationships
-    num_parents = len(parents)
-    num_children = len(org.get("child_organisations", []))
-    num_superseded = len(org.get("superseded_organisations", []))
-    num_superseding = len(org.get("superseding_organisations", []))
-
-    return {
-        "id": org.get("id"),
-        "title": org.get("title"),
-        "format": org.get("format"),
-        "updated_at": org.get("updated_at"),
-        "web_url": org.get("web_url"),
-        "slug": details.get("slug"),
-        "abbreviation": details.get("abbreviation"),
-        "govuk_status": details.get("govuk_status"),
-        "content_id": details.get("content_id"),
-        "analytics_identifier": org.get("analytics_identifier"),
-        "first_parent_id": first_parent_id,
-        "first_parent_url": first_parent_url,
-        "num_parents": num_parents,
-        "num_children": num_children,
-        "num_superseded": num_superseded,
-        "num_superseding": num_superseding,
-        "oscar_match": org.get("oscar_match"),
-        "oscar_match_score": org.get("oscar_match_score"),
-        "oscar_budget_£k": org.get("oscar_budget_£k"),
-        "non_govuk_domain": org.get("non_govuk_domain"),
-        "best_domain": org.get("best_domain"),
-    }
-
-
-def write_csv(data: list[dict], filename: Path, flatten_func: Callable = None) -> None:
-    """Write data to CSV file, optionally flattening nested structures"""
-    import csv
-
+def write_csv(data: list[dict], filename: Path) -> None:
+    """Write data to CSV file, auto-flattening nested structures with pandas"""
     filename.parent.mkdir(parents=True, exist_ok=True)
-
-    if flatten_func:
-        data = [flatten_func(row) for row in data]
 
     if not data:
         print(f"No data to write to {filename}")
         return
 
-    fieldnames = list(data[0].keys())
+    df = pd.json_normalize(data, sep="_")
+    df.to_csv(filename, index=False)
 
-    with open(filename, "w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
-        writer.writeheader()
-        writer.writerows(data)
-
-    print(f"Wrote {len(data)} records to {filename}")
+    print(f"Wrote {len(df)} records to {filename}")

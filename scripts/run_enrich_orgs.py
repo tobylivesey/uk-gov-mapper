@@ -7,7 +7,6 @@ from scripts.utils import (
     rate_limit_sleep,
     write_json,
     write_csv,
-    flatten_org_for_csv,
 )
 import pandas as pd
 from scripts.data_oscar_ii_download_enrich import get_org_budgets_from_oscar, enrich_orgs_oscar_financials
@@ -27,6 +26,15 @@ def extract_external_link_govuk(html_text: str) -> str | None:
     # <span class="gem-c-notice__title govuk-notification-banner__heading">Wallace Collection has a <a href="http://www.wallacecollection.org/">separate website</a></span>
     return None
 
+def extract_email_domain(html_text: str) -> str | None:
+    """Extracts the mail domain from mailto links"""
+    from urllib.parse import unquote
+    soup = BeautifulSoup(html_text, "html.parser")
+    a_tag = soup.find("a", href=lambda h: h and h.startswith("mailto:"))
+    if a_tag:
+        href = unquote(a_tag["href"]).replace("mailto:", "").strip()
+        return href.split("@")[1].strip() if "@" in href else None
+    return None
 
 def enrich_org_weburl(org: dict, session: requests.Session) -> dict:
     web_url = org.get("web_url")
@@ -36,8 +44,9 @@ def enrich_org_weburl(org: dict, session: requests.Session) -> dict:
     try:
         response = safe_http_request(session, web_url)
         org["non_govuk_domain"] = extract_external_link_govuk(response.text)
+        org["email_domain"] = extract_email_domain(response.text)
         org["best_domain"] = org["non_govuk_domain"] or org["web_url"]
-        print(f"{org['title']} enriched with external link: {org['non_govuk_domain']}")
+        print(f"{org['title']} enriched with external link: {org['non_govuk_domain']} and initial email domain {org['email_domain']}")
     except Exception as e:
         print(f"Error fetching {web_url}: {e}")
     rate_limit_sleep(0.2)
@@ -62,16 +71,28 @@ def main(extant_orgs=None) -> list[dict]:
 
     session = create_session()
     for org in enriched_org_list:
+        web_url = org.get("web_url")
         if org["details"]["govuk_status"] == "exempt":
             enrich_org_weburl(org, session)
-        else: 
+        else:
             org["non_govuk_domain"] = None
-            org["best_domain"] = org.get("web_url")
-            print(f"{org['title']} saved with gov.uk link: {org['best_domain']}")
+            org["best_domain"] = web_url
+            org["email_domain"] = None
+            if web_url:
+                try:
+                    response = safe_http_request(session, web_url)
+                    org["email_domain"] = extract_email_domain(response.text)
+                except Exception as e:
+                    print(f"Error fetching {web_url}: {e}")
+                    org["email_domain"] = None
+                rate_limit_sleep(0.2)
+            else:
+                org["email_domain"] = None
+            print(f"{org['title']} saved with gov.uk link: {org['best_domain']}, initial email domain: {org['email_domain']}")
 
 
     write_json(enriched_org_list, OUT_DIR / "govuk_orgs_enriched.json")
-    write_csv(enriched_org_list, OUT_DIR / "govuk_orgs_enriched.csv", flatten_org_for_csv)
+    write_csv(enriched_org_list, OUT_DIR / "govuk_orgs_enriched.csv")
     print("Done.")
     return enriched_org_list
 

@@ -1,14 +1,15 @@
 import json
 import pandas as pd
 import math
-from collections import defaultdict, deque
 from pathlib import Path
 
 
 SCRIPT_DIR = Path(__file__).parent
 data_path = SCRIPT_DIR / '../data/orgs/uk/govuk_orgs_enriched.json'
 template_path = SCRIPT_DIR/ 'treemap_template.html'
-output_path = SCRIPT_DIR / '../uk_gov_treemap_d3.html'  
+hierarchy_template_path = SCRIPT_DIR / 'hierarchy_template.html'
+output_path = SCRIPT_DIR / '../uk_gov_treemap_d3.html'
+hierarchy_output_path = SCRIPT_DIR / '../uk_gov_hierarchy.html'
 
 
 # Read JSON data into a CSV DataFrame
@@ -171,6 +172,114 @@ def main(df, output_path: str = output_path):
         f.write(html)
     
     print(f"\nSaved to {output_path}")
+
+    generate_hierarchy_chart(df)
+
+    return output_path
+
+
+# Tier mapping: format string -> tier index (0 = top of chart)
+FORMAT_TIERS = {
+    'Ministerial department': 0,
+    'Devolved government': 0,
+    'Non-ministerial department': 1,
+    'Executive agency': 2,
+    'Executive office': 2,
+    'Executive non-departmental public body': 3,
+    'Advisory non-departmental public body': 3,
+    'Public corporation': 3,
+    'Special health authority': 3,
+    'Civil service': 4,
+    'Independent monitoring body': 4,
+    'Court': 4,
+    'Tribunal': 4,
+    'Sub organisation': 5,
+    'Ad-hoc advisory group': 5,
+    'Other': 5,
+}
+
+
+def generate_hierarchy_chart(df, output_path: Path = None):
+    """
+    Generate a D3 node-link hierarchy chart showing organisation relationships,
+    with Y-axis stratification by organisation type tier.
+    """
+    if output_path is None:
+        output_path = hierarchy_output_path
+
+    df = df.copy()
+
+    # Build node and link data
+    nodes = []
+    links = []
+    node_ids = set()
+
+    for _, row in df.iterrows():
+        org_id = row['id']
+        node_ids.add(org_id)
+        budget = row.get('oscar_budget_£k')
+        budget_val = None if pd.isna(budget) else budget
+
+        abbrev = ''
+        if isinstance(row.get('details'), dict):
+            abbrev = row['details'].get('abbreviation', '') or ''
+
+        fmt = row.get('format', 'Other')
+        tier = FORMAT_TIERS.get(fmt, 5)
+
+        # Radius: scale by budget, with reasonable defaults
+        if budget_val and budget_val > 0:
+            radius = max(3, min(18, math.sqrt(budget_val) / 30))
+        else:
+            radius = 4
+
+        nodes.append({
+            'id': org_id,
+            'name': row['title'],
+            'format': fmt,
+            'tier': tier,
+            'radius': round(radius, 1),
+            'budget_display': format_budget(budget_val),
+            'domain': row.get('best_domain', ''),
+            'abbrev': abbrev,
+        })
+
+    # Build links from parent_organisations
+    for _, row in df.iterrows():
+        org_id = row['id']
+        parent_orgs = row.get('parent_organisations', [])
+        if parent_orgs:
+            for parent in parent_orgs:
+                parent_id = parent.get('id')
+                if parent_id and parent_id in node_ids:
+                    links.append({
+                        'source': parent_id,
+                        'target': org_id,
+                    })
+
+    graph_data = {'nodes': nodes, 'links': links}
+
+    total_formats = len(set(n['format'] for n in nodes))
+
+    # Load and render template
+    if not hierarchy_template_path.exists():
+        raise FileNotFoundError(f"Template not found: {hierarchy_template_path}")
+
+    with open(hierarchy_template_path, 'r', encoding='utf-8') as f:
+        template = f.read()
+
+    html = template.replace('{{graph_json}}', json.dumps(graph_data))
+    html = html.replace('{{total_orgs}}', f"{len(nodes):,}")
+    html = html.replace('{{total_links}}', f"{len(links):,}")
+    html = html.replace('{{total_formats}}', str(total_formats))
+
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write(html)
+
+    print(f"Hierarchy chart saved to {output_path}")
+    print(f"Total nodes: {len(nodes)}")
+    print(f"Total links: {len(links)}")
+
     return output_path
 
 

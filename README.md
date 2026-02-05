@@ -108,6 +108,7 @@ ADZUNA_APP_KEY=your_api_key
 Requires Python 3.10+
 =======
 ### Structure
+```
 civil-service-scraper/
 ├── .vscode/                   
 ├── data/                        
@@ -123,4 +124,5 @@ civil-service-scraper/
 │   ├── __init__.py
 │   ├── run_enrich_jobs.py
 │   ├── run_fetch_orgs.py        #
+```
 

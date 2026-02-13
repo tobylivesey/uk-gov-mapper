@@ -52,12 +52,30 @@ def enrich_org_weburl(org: dict, session: requests.Session) -> dict:
     rate_limit_sleep(0.2)
     return org
 
-def main(extant_orgs=None) -> list[dict]:
+def main(extant_orgs: list[dict] | None = None) -> list[dict]:
+    """Enrich UK government organization data with financial and web domain info.
+                                                                                                                        
+    Processes organizations in three stages:
+    1. Enriches with OSCAR-II financial/budget data
+    2. For 'exempt' orgs: scrapes gov.uk pages for external website URLs
+    3. For all orgs: extracts email domains from mailto links on gov.uk pages
+
+    Args:
+        extant_orgs: List of org dicts to enrich. If None, loads from
+            data/orgs/uk/govuk_extant_orgs.json
+
+    Returns:
+        List of enriched org dicts with added fields:
+        - non_govuk_domain: External website URL (exempt orgs only)
+        - best_domain: non_govuk_domain or web_url fallback
+        - email_domain: Domain extracted from mailto links
+        - OSCAR-II budget fields from enrich_orgs_oscar_financials()
+
+        Writes to both:
+        - data/orgs/uk/govuk_orgs_enriched.json
+        - data/orgs/uk/govuk_orgs_enriched.csv
     """
-    1. Enrich with oscar-ii financial data for live orgs with data_oscar_ii_download_enrich module.
-    2. Iterate through and enrich weburl
-    3. Save to JSON (overwrite existing file)
-    """
+
     SCRIPT_DIR = Path(__file__).parent
     data_path = SCRIPT_DIR / '../data/orgs/uk/govuk_extant_orgs.json'
 
@@ -88,7 +106,7 @@ def main(extant_orgs=None) -> list[dict]:
                 rate_limit_sleep(0.2)
             else:
                 org["email_domain"] = None
-            print(f"{org['title']} saved with gov.uk link: {org['best_domain']}, initial email domain: {org['email_domain']}")
+            print(f"{org['title']} saved with gov.uk link: {org['best_domain']}, \n First guess of email domain: {org['email_domain']}")
 
 
     write_json(enriched_org_list, OUT_DIR / "govuk_orgs_enriched.json")

@@ -12,18 +12,6 @@ output_path = SCRIPT_DIR / '../uk_gov_treemap_d3.html'
 hierarchy_output_path = SCRIPT_DIR / '../uk_gov_hierarchy.html'
 
 
-# Read JSON data into a CSV DataFrame
-df = pd.read_json(data_path)
-
-# Some orgs have multiple parents. 
-df['number_of_parents'] = df['parent_organisations'].apply(
-    lambda y: len(y)
-)
-
-df['first_parent_id'] = df['parent_organisations'].apply(
-    lambda x: x[0]['id'] if x and len(x) > 0 else None
-)
-
 """
 UK Government Organisational Hierarchy 
 With department headers and zoom controls
@@ -155,9 +143,18 @@ def render_html(template: str, hierarchy: dict, stats: dict) -> str:
     return html
 
 
-def main(df, output_path: str = output_path):
+def main(df=None, output_path: str = output_path):
     """Generate the D3 treemap visualisation"""
-    
+
+    if df is None:
+        df = pd.read_json(data_path)
+        df['number_of_parents'] = df['parent_organisations'].apply(
+            lambda y: len(y)
+        )
+        df['first_parent_id'] = df['parent_organisations'].apply(
+            lambda x: x[0]['id'] if x and len(x) > 0 else None
+        )
+
     print("Building hierarchy...")
     hierarchy, stats = build_hierarchy(df)
     
@@ -284,4 +281,4 @@ def generate_hierarchy_chart(df, output_path: Path = None):
 
 
 if __name__ == "__main__":
-    main(df)
+    main()

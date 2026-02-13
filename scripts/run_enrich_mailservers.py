@@ -29,15 +29,10 @@ def extract_domain_from_url(url: str | None) -> str | None:
         # Remove www. prefix if present
         if domain.startswith("www."):
             domain = domain[4:]
-        if domain == "gov.uk" and "/government/organisations/" in parsed.path:
-            # try the org name from the path and see if that works
-            org_slug = parsed.path.split("/government/organisations/")[1].split("/")[0]
-            domain = f"{org_slug}.gov.uk"
         
         return domain if domain else None   
     except Exception:
         return None
-
 
 def lookup_mx_records(domain: str, timeout: float = 5.0) -> list[dict]:
     """
@@ -48,7 +43,7 @@ def lookup_mx_records(domain: str, timeout: float = 5.0) -> list[dict]:
         return []
     try:
 
-        # debug - test with `dig -t mx royalarmouries.org
+        # debug - test with `dig -t mx royalarmouries.org`
         resolver = dns.resolver.Resolver()
         resolver.timeout = timeout
         resolver.lifetime = timeout
@@ -133,7 +128,6 @@ def enrich_org_mailservers(org: dict) -> dict:
 
     rate_limit_sleep(0.1)  # Be gentle with DNS servers
     return org
-
 
 def main(extant_orgs: list[dict] | None = None) -> list[dict]:
     """

@@ -20,7 +20,6 @@ organisation = ""
 DATA_DIR = Path("data")
 OUT_DIR = DATA_DIR / "orgs/uk"
 mkdirs = OUT_DIR.mkdir(parents=True, exist_ok=True)
-budgets = get_org_budgets_from_oscar()
 
 def get_page(url: str) -> dict:
     response = requests.get(url)

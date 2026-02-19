@@ -377,14 +377,14 @@
     "id": "https://www.gov.uk/api/organisations/advisory-committee-on-the-microbiological-safety-of-food",
     "title": "Advisory Committee on the Microbiological Safety of Food",
     "format": "Advisory non-departmental public body",
-    "updated_at": "2026-01-30T10:07:03Z",
+    "updated_at": "2026-02-17T12:02:47Z",
     "web_url": "https://www.gov.uk/government/organisations/advisory-committee-on-the-microbiological-safety-of-food",
     "details": {
       "slug": "advisory-committee-on-the-microbiological-safety-of-food",
       "abbreviation": "ACMSF",
       "logo_formatted_name": "Advisory Committee <br/>on the Microbiological <br/>Safety of Food",
       "organisation_brand_colour_class_name": null,
-      "organisation_logo_type_class_name": "single-identity",
+      "organisation_logo_type_class_name": "custom",
       "closed_at": null,
       "govuk_status": "joining",
       "govuk_closed_status": null,
@@ -3270,7 +3270,7 @@
     "id": "https://www.gov.uk/api/organisations/committee-on-toxicity-of-chemicals-in-food-consumer-products-and-the-environment",
     "title": "Committee on Toxicity of Chemicals in Food, Consumer Products and the Environment",
     "format": "Advisory non-departmental public body",
-    "updated_at": "2021-04-15T09:01:24Z",
+    "updated_at": "2026-02-17T19:32:24Z",
     "web_url": "https://www.gov.uk/government/organisations/committee-on-toxicity-of-chemicals-in-food-consumer-products-and-the-environment",
     "details": {
       "slug": "committee-on-toxicity-of-chemicals-in-food-consumer-products-and-the-environment",
@@ -3279,7 +3279,7 @@
       "organisation_brand_colour_class_name": null,
       "organisation_logo_type_class_name": "single-identity",
       "closed_at": null,
-      "govuk_status": "exempt",
+      "govuk_status": "joining",
       "govuk_closed_status": null,
       "content_id": "b61e9dd6-8797-4179-830d-7ef98dd00d55"
     },
@@ -4228,7 +4228,7 @@
     "id": "https://www.gov.uk/api/organisations/defence-science-and-technology-laboratory",
     "title": "Defence Science and Technology Laboratory",
     "format": "Executive agency",
-    "updated_at": "2025-02-12T10:11:58Z",
+    "updated_at": "2026-02-12T14:19:29Z",
     "web_url": "https://www.gov.uk/government/organisations/defence-science-and-technology-laboratory",
     "details": {
       "slug": "defence-science-and-technology-laboratory",
@@ -4898,7 +4898,7 @@
     "id": "https://www.gov.uk/api/organisations/department-for-energy-security-and-net-zero",
     "title": "Department for Energy Security and Net Zero",
     "format": "Ministerial department",
-    "updated_at": "2024-11-21T09:51:30Z",
+    "updated_at": "2026-02-16T13:06:39Z",
     "web_url": "https://www.gov.uk/government/organisations/department-for-energy-security-and-net-zero",
     "details": {
       "slug": "department-for-energy-security-and-net-zero",
@@ -11934,7 +11934,7 @@
     "id": "https://www.gov.uk/api/organisations/judicial-appointments-and-conduct-ombudsman",
     "title": "Judicial Appointments and Conduct Ombudsman",
     "format": "Other",
-    "updated_at": "2021-04-15T09:00:21Z",
+    "updated_at": "2026-02-16T10:47:15Z",
     "web_url": "https://www.gov.uk/government/organisations/judicial-appointments-and-conduct-ombudsman",
     "details": {
       "slug": "judicial-appointments-and-conduct-ombudsman",
@@ -12074,7 +12074,7 @@
     "id": "https://www.gov.uk/api/organisations/labour-market-evidence-group",
     "title": "Labour Market Evidence Group",
     "format": "Ad-hoc advisory group",
-    "updated_at": "2025-11-25T16:47:33Z",
+    "updated_at": "2026-02-12T15:16:04Z",
     "web_url": "https://www.gov.uk/government/organisations/labour-market-evidence-group",
     "details": {
       "slug": "labour-market-evidence-group",
@@ -12100,10 +12100,6 @@
       {
         "id": "https://www.gov.uk/api/organisations/home-office",
         "web_url": "https://www.gov.uk/government/organisations/home-office"
-      },
-      {
-        "id": "https://www.gov.uk/api/organisations/department-for-business-and-trade",
-        "web_url": "https://www.gov.uk/government/organisations/department-for-business-and-trade"
       },
       {
         "id": "https://www.gov.uk/api/organisations/hm-treasury",
@@ -14091,7 +14087,12 @@
         "web_url": "https://www.gov.uk/government/organisations/hm-treasury"
       }
     ],
-    "child_organisations": [],
+    "child_organisations": [
+      {
+        "id": "https://www.gov.uk/api/organisations/government-project-delivery",
+        "web_url": "https://www.gov.uk/government/organisations/government-project-delivery"
+      }
+    ],
     "superseded_organisations": [
       {
         "id": "https://www.gov.uk/api/organisations/national-infrastructure-commission",
@@ -16546,7 +16547,7 @@
     "id": "https://www.gov.uk/api/organisations/office-of-the-independent-prevent-commissioner",
     "title": "Office of the Independent Prevent Commissioner",
     "format": "Other",
-    "updated_at": "2026-01-30T15:59:22Z",
+    "updated_at": "2026-02-05T14:40:46Z",
     "web_url": "https://www.gov.uk/government/organisations/office-of-the-independent-prevent-commissioner",
     "details": {
       "slug": "office-of-the-independent-prevent-commissioner",
@@ -16555,7 +16556,7 @@
       "organisation_brand_colour_class_name": "home-office",
       "organisation_logo_type_class_name": "custom",
       "closed_at": null,
-      "govuk_status": "joining",
+      "govuk_status": "live",
       "govuk_closed_status": null,
       "content_id": "03a4164b-a15b-4f42-857b-0a9ffc6e4ae8"
     },
@@ -18315,7 +18316,7 @@
     "id": "https://www.gov.uk/api/organisations/regulatory-policy-committee",
     "title": "Regulatory Policy Committee",
     "format": "Advisory non-departmental public body",
-    "updated_at": "2025-12-30T17:33:56Z",
+    "updated_at": "2026-02-09T12:04:16Z",
     "web_url": "https://www.gov.uk/government/organisations/regulatory-policy-committee",
     "details": {
       "slug": "regulatory-policy-committee",
@@ -21291,7 +21292,7 @@
     "id": "https://www.gov.uk/api/organisations/uk-defence-innovation",
     "title": "UK Defence Innovation",
     "format": "Sub organisation",
-    "updated_at": "2026-02-02T09:37:09Z",
+    "updated_at": "2026-02-16T16:13:23Z",
     "web_url": "https://www.gov.uk/government/organisations/uk-defence-innovation",
     "details": {
       "slug": "uk-defence-innovation",
@@ -21650,7 +21651,7 @@
     "id": "https://www.gov.uk/api/organisations/uk-national-screening-committee",
     "title": "UK National Screening Committee",
     "format": "Sub organisation",
-    "updated_at": "2025-09-22T09:16:11Z",
+    "updated_at": "2026-02-16T11:53:21Z",
     "web_url": "https://www.gov.uk/government/organisations/uk-national-screening-committee",
     "details": {
       "slug": "uk-national-screening-committee",
@@ -22511,6 +22512,34 @@
     "parent_organisations": [],
     "child_organisations": [],
     "superseded_organisations": [],
+    "superseding_organisations": []
+  },
+  {
+    "id": "https://www.gov.uk/api/organisations/wales-office",
+    "title": "Wales Office",
+    "format": "Ministerial department",
+    "updated_at": "2025-10-14T13:52:56Z",
+    "web_url": "https://www.gov.uk/government/organisations/wales-office",
+    "details": {
+      "slug": "wales-office",
+      "abbreviation": "",
+      "logo_formatted_name": "Wales Office",
+      "organisation_brand_colour_class_name": "wales-office",
+      "organisation_logo_type_class_name": "wales",
+      "closed_at": null,
+      "govuk_status": "live",
+      "govuk_closed_status": null,
+      "content_id": "99a5828c-79dd-4533-ab18-18069be289cf"
+    },
+    "analytics_identifier": "OT1422",
+    "parent_organisations": [],
+    "child_organisations": [],
+    "superseded_organisations": [
+      {
+        "id": "https://www.gov.uk/api/organisations/office-of-the-secretary-of-state-for-wales",
+        "web_url": "https://www.gov.uk/government/organisations/office-of-the-secretary-of-state-for-wales"
+      }
+    ],
     "superseding_organisations": []
   },
   {

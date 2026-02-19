@@ -395,7 +395,7 @@ def enrich_orgs_oscar_financials(
     return results
 
 def main():
-    from run_fetch_orgs import fetch_all_orgs
+    from fetch_orgs import fetch_all_orgs
 
     oscar_path = download_oscar_data()
     budgets = get_org_budgets_from_oscar(oscar_path)

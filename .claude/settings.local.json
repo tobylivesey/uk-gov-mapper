@@ -11,7 +11,11 @@
       "Read(/C:\\Users\\tobyl\\Documents\\coding\\civil-service-scraper\\jobs\\providers/**)",
       "Read(/C:\\Users\\tobyl\\Documents\\coding\\civil-service-scraper\\jobs\\providers/**)",
       "Read(/C:\\Users\\tobyl\\Documents\\coding\\civil-service-scraper\\jobs/**)",
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "WebFetch(domain:www.gov.uk)",
+      "WebFetch(domain:assets.publishing.service.gov.uk)",
+      "mcp__claude_ai_Mermaid_Chart__validate_and_render_mermaid_diagram",
+      "Bash(grep:*)"
     ],
     "deny": [],
     "ask": []

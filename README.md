@@ -1,16 +1,12 @@
 # UK Government Organisation Mapper
 
-A toolkit for collecting, enriching, and visualising UK government organisation data. Pulls organisation data from the GOV.UK API, enriches it with OSCAR II budget data, and generates interactive D3 treemap visualisations. Ideas from me, written by robots. 
-
-=======
-
-# uk-gov-mapper
-Pulls data from "https://www.gov.uk/api/organisations" and enriches it in various exciting ways
+A toolkit for collecting, enriching, and visualising UK government organisation data. Pulls organisation data from the GOV.UK API, enriches it with OSCAR II budget data, and generates interactive visualisations.
 
 ## Features
 
 - **Organisation Data Collection**: Fetches all UK government organisations from the GOV.UK API
 - **OSCAR II Budget Enrichment**: Matches organisations with HM Treasury OSCAR II budget data using fuzzy name matching
+- **Email Domain Discovery**: Discovers org email domains via DNS MX lookups and .gov.uk domain list
 - **External Website Discovery**: Identifies non-GOV.UK websites for exempt organisations
 - **D3 Treemap Visualisation**: Generates interactive hierarchical treemaps showing org structure and budgets
 - **Job Scraping** (experimental): Collects job postings from multiple recruitment providers
@@ -23,20 +19,22 @@ Pulls data from "https://www.gov.uk/api/organisations" and enriches it in variou
 pip install -r requirements.txt
 
 # Fetch and enrich UK government organisations
-python -m scripts.run_fetch_orgs
+python -m scripts.fetch_orgs
 
 # Generate the treemap visualisation
-python -m scripts.run_visualiser
+python -m scripts.visualise
 ```
 
 ## Commands
 
 | Command | Description |
 |---------|-------------|
-| `python -m scripts.run_fetch_orgs` | Fetch orgs from GOV.UK API, enrich with OSCAR budgets |
-| `python -m scripts.run_visualiser` | Generate D3 treemap HTML visualisation |
-| `python -m scripts.run_enrich_jobs --provider adzuna --token "query"` | Scrape jobs from Adzuna (experimental) | 
-| `python -m scripts.run_enrich_jobs --provider greenhouse --token "board"` | Scrape jobs from Greenhouse (experimental) |
+| `python -m scripts.fetch_orgs` | Fetch orgs from GOV.UK API, enrich with OSCAR budgets |
+| `python -m scripts.enrich_mailservers` | DNS MX lookups for email domain discovery |
+| `python -m scripts.enrich_govuk_domains` | Fill gaps from official .gov.uk domain list |
+| `python -m scripts.visualise` | Generate D3 treemap HTML visualisation |
+| `python -m scripts.enrich_jobs --provider adzuna --token "query"` | Scrape jobs from Adzuna (experimental) |
+| `python -m scripts.enrich_jobs --provider greenhouse --token "board"` | Scrape jobs from Greenhouse (experimental) |
 
 ## Project Structure
 
@@ -56,10 +54,12 @@ uk-gov-mapper/
 │   ├── norm_provider_jobs.py            # Job normalisation engine
 │   └── utils.py                         # Shared utilities
 ├── scripts/
-│   ├── run_fetch_orgs.py                # Main org data pipeline
-│   ├── run_visualiser.py                # D3 treemap generator
-│   ├── run_enrich_jobs.py               # Job scraping CLI
-│   └── data_oscar_ii_download_enrich.py # OSCAR data downloader & matcher
+│   ├── fetch_orgs.py                    # Main org data pipeline
+│   ├── enrich_mailservers.py            # DNS MX record lookups
+│   ├── enrich_govuk_domains.py          # .gov.uk domain list enrichment
+│   ├── enrich_oscar.py                  # OSCAR budget data matching
+│   ├── visualise.py                     # D3 treemap generator
+│   └── enrich_jobs.py                   # Job scraping CLI
 ├── scratch_jupyter_notebooks/           # Analysis notebooks
 ├── uk_gov_treemap_d3.html              # Generated visualisation output
 └── requirements.txt
@@ -73,6 +73,8 @@ Each organisation record includes:
 - `oscar_match`: Whether budget data was matched
 - `oscar_budget_£k`: Matched budget in £thousands
 - `best_domain`: Primary website URL
+- `email_domain`: Discovered email domain (from MX or .gov.uk list)
+- `has_mx`: Whether MX records were found for the email domain
 
 ### Job Data (NDJSON format)
 Normalised job records with standard fields:
@@ -106,21 +108,3 @@ ADZUNA_APP_KEY=your_api_key
 - **Environment**: python-dotenv
 
 Requires Python 3.10+
-=======
-### Structure
-civil-service-scraper/
-├── .vscode/                   
-├── data/                        
-├── jobs/                       
-|   ├── providers/               # Module for each different career website / information provider
-│       ├── __init__.py          # Each Module contains site-relevant methods to pull data (API, API+creds, Scrape)
-│       ├── adzuna.py
-│       ├── psr.py
-│       ├── <etc.>
-│   ├── __init__.py
-│   ├── norm_provider_jobs.py    # Normalises output from each provider
-├── scripts/                     # Entry-point scripts
-│   ├── __init__.py
-│   ├── run_enrich_jobs.py
-│   ├── run_fetch_orgs.py        #
-

@@ -7,13 +7,13 @@ from scripts.utils import (
     rate_limit_sleep,
     write_json,
     write_csv,
+    add_email_domain,
 )
 import pandas as pd
-from scripts.data_oscar_ii_download_enrich import get_org_budgets_from_oscar, enrich_orgs_oscar_financials
+from scripts.enrich_oscar import get_org_budgets_from_oscar, enrich_orgs_oscar_financials
 
 DATA_DIR = Path("data")
 OUT_DIR = DATA_DIR / "orgs/uk"
-
 
 def extract_external_link_govuk(html_text: str) -> str | None:
     """Extracts the external link from a single website."""
@@ -37,6 +37,7 @@ def extract_email_domain(html_text: str) -> str | None:
     return None
 
 def enrich_org_weburl(org: dict, session: requests.Session) -> dict:
+    """Enrich an org with external domain and mailto-based email domain."""
     web_url = org.get("web_url")
     if not web_url:
         org["non_govuk_domain"] = None
@@ -44,9 +45,15 @@ def enrich_org_weburl(org: dict, session: requests.Session) -> dict:
     try:
         response = safe_http_request(session, web_url)
         org["non_govuk_domain"] = extract_external_link_govuk(response.text)
-        org["email_domain"] = extract_email_domain(response.text)
         org["best_domain"] = org["non_govuk_domain"] or org["web_url"]
-        print(f"{org['title']} enriched with external link: {org['non_govuk_domain']} and initial email domain {org['email_domain']}")
+
+        # Extract email domain from mailto link and add to email_domains list
+        email_domain = extract_email_domain(response.text)
+        if email_domain:
+            add_email_domain(org, email_domain)
+            print(f"{org['title']} enriched with external link: {org['non_govuk_domain']} and mailto domain: {email_domain}")
+        else: # no 'mailto:x@domain.tld' found in the GovUK page for that entity
+            print(f"{org['title']} enriched with external link: {org['non_govuk_domain']} (no mailto found)")
     except Exception as e:
         print(f"Error fetching {web_url}: {e}")
     rate_limit_sleep(0.2)
@@ -54,7 +61,7 @@ def enrich_org_weburl(org: dict, session: requests.Session) -> dict:
 
 def main(extant_orgs: list[dict] | None = None) -> list[dict]:
     """Enrich UK government organization data with financial and web domain info.
-                                                                                                                        
+
     Processes organizations in three stages:
     1. Enriches with OSCAR-II financial/budget data
     2. For 'exempt' orgs: scrapes gov.uk pages for external website URLs
@@ -68,7 +75,8 @@ def main(extant_orgs: list[dict] | None = None) -> list[dict]:
         List of enriched org dicts with added fields:
         - non_govuk_domain: External website URL (exempt orgs only)
         - best_domain: non_govuk_domain or web_url fallback
-        - email_domain: Domain extracted from mailto links
+        - email_domains: List of email domain dicts with MX info
+        - has_mx: True if any email domain has MX records
         - OSCAR-II budget fields from enrich_orgs_oscar_financials()
 
         Writes to both:
@@ -89,24 +97,34 @@ def main(extant_orgs: list[dict] | None = None) -> list[dict]:
 
     session = create_session()
     for org in enriched_org_list:
+        # Initialize email_domains list for all orgs
+        if "email_domains" not in org:
+            org["email_domains"] = []
+        if "has_mx" not in org:
+            org["has_mx"] = False
+        if "mail_providers" not in org:
+            org["mail_providers"] = []
+
         web_url = org.get("web_url")
         if org["details"]["govuk_status"] == "exempt":
             enrich_org_weburl(org, session)
         else:
             org["non_govuk_domain"] = None
             org["best_domain"] = web_url
-            org["email_domain"] = None
             if web_url:
                 try:
                     response = safe_http_request(session, web_url)
-                    org["email_domain"] = extract_email_domain(response.text)
+                    email_domain = extract_email_domain(response.text)
+                    if email_domain:
+                        add_email_domain(org, email_domain)
+                        print(f"{org['title']} saved with gov.uk link: {org['best_domain']}, mailto domain: {email_domain}")
+                    else:
+                        print(f"{org['title']} saved with gov.uk link: {org['best_domain']} (no mailto found)")
                 except Exception as e:
                     print(f"Error fetching {web_url}: {e}")
-                    org["email_domain"] = None
                 rate_limit_sleep(0.2)
             else:
-                org["email_domain"] = None
-            print(f"{org['title']} saved with gov.uk link: {org['best_domain']}, \n First guess of email domain: {org['email_domain']}")
+                print(f"{org['title']} has no web_url")
 
 
     write_json(enriched_org_list, OUT_DIR / "govuk_orgs_enriched.json")

@@ -4321,7 +4321,7 @@
     "id": "https://www.gov.uk/api/organisations/department-for-business-and-trade",
     "title": "Department for Business and Trade",
     "format": "Ministerial department",
-    "updated_at": "2025-06-13T14:04:47Z",
+    "updated_at": "2026-02-19T09:32:17Z",
     "web_url": "https://www.gov.uk/government/organisations/department-for-business-and-trade",
     "details": {
       "slug": "department-for-business-and-trade",
@@ -4456,10 +4456,6 @@
       {
         "id": "https://www.gov.uk/api/organisations/office-for-responsible-business-conduct",
         "web_url": "https://www.gov.uk/government/organisations/office-for-responsible-business-conduct"
-      },
-      {
-        "id": "https://www.gov.uk/api/organisations/labour-market-evidence-group",
-        "web_url": "https://www.gov.uk/government/organisations/labour-market-evidence-group"
       },
       {
         "id": "https://www.gov.uk/api/organisations/fair-work-agency",
@@ -21949,7 +21945,7 @@
     "id": "https://www.gov.uk/api/organisations/united-kingdom-national-nuclear-laboratory",
     "title": "United Kingdom National Nuclear Laboratory",
     "format": "Public corporation",
-    "updated_at": "2024-12-19T10:34:45Z",
+    "updated_at": "2026-02-19T16:18:23Z",
     "web_url": "https://www.gov.uk/government/organisations/united-kingdom-national-nuclear-laboratory",
     "details": {
       "slug": "united-kingdom-national-nuclear-laboratory",
@@ -21963,7 +21959,12 @@
       "content_id": "78c48d24-7f78-4591-a221-b36c2aa1e151"
     },
     "analytics_identifier": "PC1435",
-    "parent_organisations": [],
+    "parent_organisations": [
+      {
+        "id": "https://www.gov.uk/api/organisations/department-for-energy-security-and-net-zero",
+        "web_url": "https://www.gov.uk/government/organisations/department-for-energy-security-and-net-zero"
+      }
+    ],
     "child_organisations": [],
     "superseded_organisations": [
       {

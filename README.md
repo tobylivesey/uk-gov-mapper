@@ -1,6 +1,6 @@
 # UK Government Organisation Mapper
 
-A toolkit for collecting, enriching, and visualising UK government organisation data. Pulls organisation data from the GOV.UK API, enriches it with OSCAR II budget data, and generates interactive visualisations.
+A toolkit for collecting, enriching, and visualising UK government organisation data. Pulls organisation data from the GOV.UK API, enriches it with OSCAR II budget data, mail server information, and generates interactive D3 treemap visualisations.
 
 ## Features
 
@@ -8,9 +8,10 @@ A toolkit for collecting, enriching, and visualising UK government organisation 
 - **OSCAR II Budget Enrichment**: Matches organisations with HM Treasury OSCAR II budget data using fuzzy name matching
 - **Email Domain Discovery**: Discovers org email domains via DNS MX lookups and .gov.uk domain list
 - **External Website Discovery**: Identifies non-GOV.UK websites for exempt organisations
+- **Mail Server Detection**: DNS MX lookups to identify email providers (Microsoft 365, Google Workspace, Mimecast, etc.)
+- **Parent Domain Inheritance**: Organisations without email domains inherit from their parent organisation
 - **D3 Treemap Visualisation**: Generates interactive hierarchical treemaps showing org structure and budgets
 - **Job Scraping** (experimental): Collects job postings from multiple recruitment providers
-
 
 ## Quick Start
 
@@ -18,8 +19,11 @@ A toolkit for collecting, enriching, and visualising UK government organisation 
 # Install dependencies
 pip install -r requirements.txt
 
-# Fetch and enrich UK government organisations
-python -m scripts.fetch_orgs
+# Run the full organisation enrichment pipeline
+python -m scripts.run_fetch_orgs           # Fetch orgs from GOV.UK API
+python -m scripts.run_enrich_orgs          # Enrich with OSCAR budgets & mailto domains
+python -m scripts.run_enrich_mailservers   # DNS MX lookups for email providers
+python -m scripts.run_enrich_parent_domains # Inherit domains from parent orgs
 
 # Generate the treemap visualisation
 python -m scripts.visualise
@@ -29,12 +33,13 @@ python -m scripts.visualise
 
 | Command | Description |
 |---------|-------------|
-| `python -m scripts.fetch_orgs` | Fetch orgs from GOV.UK API, enrich with OSCAR budgets |
-| `python -m scripts.enrich_mailservers` | DNS MX lookups for email domain discovery |
-| `python -m scripts.enrich_govuk_domains` | Fill gaps from official .gov.uk domain list |
-| `python -m scripts.visualise` | Generate D3 treemap HTML visualisation |
-| `python -m scripts.enrich_jobs --provider adzuna --token "query"` | Scrape jobs from Adzuna (experimental) |
-| `python -m scripts.enrich_jobs --provider greenhouse --token "board"` | Scrape jobs from Greenhouse (experimental) |
+| `python -m scripts.run_fetch_orgs` | Fetch orgs from GOV.UK API |
+| `python -m scripts.run_enrich_orgs` | Enrich with OSCAR budgets & scrape mailto links |
+| `python -m scripts.run_enrich_mailservers` | DNS MX lookups, identify mail providers |
+| `python -m scripts.run_enrich_parent_domains` | Inherit email domains from parent orgs |
+| `python -m scripts.run_visualiser` | Generate D3 treemap HTML visualisation |
+| `python -m scripts.run_enrich_jobs --provider adzuna --token "query"` | Scrape jobs from Adzuna |
+| `python -m scripts.run_enrich_jobs --provider greenhouse --token "board"` | Scrape jobs from Greenhouse |
 
 ## Project Structure
 
@@ -42,41 +47,63 @@ python -m scripts.visualise
 uk-gov-mapper/
 ├── data/
 │   ├── orgs/uk/
-│   │   ├── govuk_orgs_enriched.json    # Enriched organisation data
-│   │   └── oscar_data_2024-25.csv      # OSCAR II budget data (auto-downloaded)
-│   ├── normalized/                      # Normalised job data (NDJSON)
-│   └── providers/                       # Raw provider data cache
-├── job_listings/
-│   ├── providers/                       # Job scraping modules
-│   │   ├── adzuna.py                    # Adzuna job board API
-│   │   ├── greenhouse.py                # Greenhouse ATS API
-│   │   └── psr.py                       # PSR scraper
-│   ├── norm_provider_jobs.py            # Job normalisation engine
-│   └── utils.py                         # Shared utilities
+│   │   ├── govuk_extant_orgs.json        # Raw org data from GOV.UK API
+│   │   ├── govuk_orgs_enriched.json      # Fully enriched organisation data
+│   │   ├── govuk_orgs_enriched.csv       # CSV export
+│   │   └── oscar_data_2024-25.csv        # OSCAR II budget data (auto-downloaded)
+│   ├── normalized/                        # Normalised job data (NDJSON)
+│   └── providers/                         # Raw provider data cache
+├── jobs/
+│   └── providers/                         # Job scraping modules (adzuna, greenhouse, psr)
 ├── scripts/
-│   ├── fetch_orgs.py                    # Main org data pipeline
-│   ├── enrich_mailservers.py            # DNS MX record lookups
-│   ├── enrich_govuk_domains.py          # .gov.uk domain list enrichment
-│   ├── enrich_oscar.py                  # OSCAR budget data matching
-│   ├── visualise.py                     # D3 treemap generator
-│   └── enrich_jobs.py                   # Job scraping CLI
-├── scratch_jupyter_notebooks/           # Analysis notebooks
-├── uk_gov_treemap_d3.html              # Generated visualisation output
+│   ├── run_fetch_orgs.py                  # Fetch orgs from GOV.UK API
+│   ├── run_enrich_orgs.py                 # OSCAR & mailto enrichment
+│   ├── run_enrich_mailservers.py          # DNS MX lookups
+│   ├── run_enrich_parent_domains.py       # Parent domain inheritance
+│   ├── run_visualiser.py                  # D3 treemap generator
+│   ├── run_enrich_jobs.py                 # Job scraping CLI
+│   ├── mail_providers.py                  # MX record parser (50+ providers)
+│   ├── utils.py                           # Shared utilities
+│   └── data_oscar_ii_download_enrich.py   # OSCAR data downloader & matcher
+├── scratch_jupyter_notebooks/             # Analysis notebooks
+├── uk_gov_treemap_d3.html                 # Generated visualisation output
 └── requirements.txt
 ```
 
 ## Data Outputs
 
 ### Organisation Data (`govuk_orgs_enriched.json`)
+
 Each organisation record includes:
-- GOV.UK metadata (title, format, parent/child relationships, status)
-- `oscar_match`: Whether budget data was matched
-- `oscar_budget_£k`: Matched budget in £thousands
-- `best_domain`: Primary website URL
-- `email_domain`: Discovered email domain (from MX or .gov.uk list)
-- `has_mx`: Whether MX records were found for the email domain
+
+| Field | Description |
+|-------|-------------|
+| `title` | Organisation name |
+| `format` | Type (Ministerial department, Executive agency, etc.) |
+| `parent_organisations` | Parent org references |
+| `oscar_match` | Whether OSCAR budget data was matched |
+| `oscar_budget_£k` | Matched budget in £thousands |
+| `best_domain` | Primary website URL |
+| `email_domain` | Email domain for the organisation |
+| `email_domain_source` | Where the domain came from (`mailto_scrape`, `url_inferred`, `parent_org`) |
+| `has_mx` | Whether the domain has MX records |
+| `mail_provider` | Detected mail provider (Microsoft 365, Google Workspace, etc.) |
+| `mail_provider_category` | Provider type (`cloud`, `security_gateway`, `government`, `isp`) |
+| `mail_provider_confidence` | Detection confidence (`high`, `medium`, `low`) |
+| `inherited_from_org` | Parent org name (if domain inherited) |
+
+### Mail Provider Detection
+
+The `mail_providers.py` module identifies 50+ mail services from MX records:
+
+- **Cloud Providers**: Microsoft 365, Google Workspace, Amazon SES, Zoho, Fastmail
+- **Security Gateways**: Proofpoint, Mimecast, Sophos, Barracuda, Forcepoint, Trend Micro
+- **UK Government**: GSI, Defence Gateway, MOD, NHS Mail, Police Service
+- **UK ISPs/Hosting**: GoDaddy, 123-Reg, IONOS, BT, Claranet
+- **Self-hosted**: Detected via `mail.domain.tld` patterns
 
 ### Job Data (NDJSON format)
+
 Normalised job records with standard fields:
 ```json
 {
@@ -104,6 +131,7 @@ ADZUNA_APP_KEY=your_api_key
 
 - **Data processing**: pandas, pydantic
 - **Web scraping**: beautifulsoup4, requests
+- **DNS lookups**: dnspython
 - **Visualisation**: plotly, pyvis, networkx, matplotlib
 - **Environment**: python-dotenv
 

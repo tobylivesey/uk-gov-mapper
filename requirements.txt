@@ -58,7 +58,7 @@ python-dateutil==2.9.0.post0
 python-dotenv==1.1.1
 pytz==2025.2
 pyvis==0.3.2
-pywin32==311
+pywin32==311; sys_platform == 'win32'
 pyzmq==27.0.1
 referencing==0.37.0
 requests==2.32.4
@@ -76,3 +76,4 @@ typing_extensions==4.14.1
 tzdata==2025.2
 urllib3==2.5.0
 wcwidth==0.2.13
+dnspython==2.8.0

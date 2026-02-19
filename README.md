@@ -6,6 +6,7 @@ A toolkit for collecting, enriching, and visualising UK government organisation 
 
 - **Organisation Data Collection**: Fetches all UK government organisations from the GOV.UK API
 - **OSCAR II Budget Enrichment**: Matches organisations with HM Treasury OSCAR II budget data using fuzzy name matching
+- **Email Domain Discovery**: Discovers org email domains via DNS MX lookups and .gov.uk domain list
 - **External Website Discovery**: Identifies non-GOV.UK websites for exempt organisations
 - **Mail Server Detection**: DNS MX lookups to identify email providers (Microsoft 365, Google Workspace, Mimecast, etc.)
 - **Parent Domain Inheritance**: Organisations without email domains inherit from their parent organisation
@@ -25,7 +26,7 @@ python -m scripts.run_enrich_mailservers   # DNS MX lookups for email providers
 python -m scripts.run_enrich_parent_domains # Inherit domains from parent orgs
 
 # Generate the treemap visualisation
-python -m scripts.run_visualiser
+python -m scripts.visualise
 ```
 
 ## Commands

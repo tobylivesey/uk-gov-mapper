@@ -1,16 +1,16 @@
 """
-scripts.run_fetch_orgs
+scripts.fetch_orgs
 Description: Fetches organisation data from the UK Government API, enriches it with financial data from Oscar II,
 and saves the enriched data to a JSON file.
 
-Dependencies: data_oscar_ii_download_enrich module for Oscar II data handling.
+Dependencies: enrich_oscar module for Oscar II data handling.
 """
 
 import requests
 from bs4 import BeautifulSoup
 from pathlib import Path
 import pandas as pd
-from scripts.data_oscar_ii_download_enrich import download_oscar_data, get_org_budgets_from_oscar, enrich_orgs_oscar_financials
+from scripts.enrich_oscar import download_oscar_data, get_org_budgets_from_oscar, enrich_orgs_oscar_financials
 from scripts.utils import write_json
 import time
 
@@ -20,7 +20,6 @@ organisation = ""
 DATA_DIR = Path("data")
 OUT_DIR = DATA_DIR / "orgs/uk"
 mkdirs = OUT_DIR.mkdir(parents=True, exist_ok=True)
-budgets = get_org_budgets_from_oscar()
 
 def get_page(url: str) -> dict:
     response = requests.get(url)

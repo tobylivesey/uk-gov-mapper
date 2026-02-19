@@ -6,6 +6,7 @@ import time
 import os
 import pandas as pd
 from typing import Callable, Iterable
+import dns.resolver
 
 def html_to_text(html: str | None) -> str:
     soup = BeautifulSoup(html or "", "html.parser")
@@ -95,3 +96,85 @@ def write_csv(data: list[dict], filename: Path) -> None:
     df.to_csv(filename, index=False)
 
     print(f"Wrote {len(df)} records to {filename}")
+
+
+def lookup_mx_records(domain: str, timeout: float = 5.0) -> list[dict]:
+    """
+    Look up MX records for a domain.
+    Returns a list of dicts with 'host' and 'priority' keys, sorted by priority.
+    """
+    if not domain:
+        return []
+    try:
+        resolver = dns.resolver.Resolver()
+        resolver.timeout = timeout
+        resolver.lifetime = timeout
+        answers = resolver.resolve(domain, "MX")
+        mx_records = []
+        for rdata in answers:
+            mx_records.append({
+                "host": str(rdata.exchange).rstrip("."),
+                "priority": rdata.preference
+            })
+        # Sort by priority (lower is higher priority)
+        return sorted(mx_records, key=lambda x: x["priority"])
+    except (dns.resolver.NXDOMAIN, dns.resolver.NoAnswer,
+            dns.resolver.NoNameservers, dns.resolver.Timeout):
+        return []
+    except Exception as e:
+        print(f"Error looking up MX for {domain}: {e}")
+        return []
+
+
+def get_primary_mail_provider(mx_records: list[dict]) -> str | None:
+    """
+    Determine the primary mail provider from MX records.
+    Returns a simplified provider name based on common patterns.
+    """
+    if not mx_records:
+        return None
+
+    primary_host = mx_records[0]["host"].lower()
+
+    # Common mail providers
+    if "google" in primary_host or "googlemail" in primary_host:
+        return "Google Workspace"
+    elif "outlook" in primary_host or "microsoft" in primary_host:
+        return "Microsoft 365"
+    elif "pphosted" in primary_host or "proofpoint" in primary_host:
+        return "Proofpoint"
+    elif "mimecast" in primary_host:
+        return "Mimecast"
+    elif "messagelabs" in primary_host or "symantec" in primary_host:
+        return "Symantec"
+    elif "barracuda" in primary_host:
+        return "Barracuda"
+    elif "gov.uk" in primary_host:
+        return "gov.uk"
+    elif "sophos" in primary_host:
+        return "Sophos"
+    elif "gsi.gov.uk" in primary_host:
+        return "GSI (Government Secure Intranet)"
+    else:
+        return "Other"
+
+
+def add_email_domain(org: dict, domain: str) -> bool:
+    """
+    Add an email domain to an org's email_domains list.
+
+    Args:
+        org: The org dict to update
+        domain: The email domain to add
+
+    Returns:
+        True if domain was added, False if already present
+    """
+    if "email_domains" not in org:
+        org["email_domains"] = []
+
+    if domain in org["email_domains"]:
+        return False
+
+    org["email_domains"].append(domain)
+    return True

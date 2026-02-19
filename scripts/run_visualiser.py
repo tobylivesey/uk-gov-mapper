@@ -6,22 +6,26 @@ from pathlib import Path
 
 
 SCRIPT_DIR = Path(__file__).parent
-data_path = SCRIPT_DIR / '../data/orgs/uk/govuk_orgs_enriched.json'
-template_path = SCRIPT_DIR/ 'treemap_template.html'
-output_path = SCRIPT_DIR / '../uk_gov_treemap_d3.html'  
+DATA_PATH = SCRIPT_DIR / '../data/orgs/uk/govuk_orgs_enriched.json'
+TEMPLATE_PATH = SCRIPT_DIR / 'treemap_template.html'
+OUTPUT_PATH = SCRIPT_DIR / '../uk_gov_treemap_d3.html'
 
 
-# Read JSON data into a CSV DataFrame
-df = pd.read_json(data_path)
+def load_org_data(df: pd.DataFrame = None) -> pd.DataFrame:
+    """Load org data from DataFrame or JSON file."""
+    if df is None:
+        if not DATA_PATH.exists():
+            raise FileNotFoundError(f"Data file not found: {DATA_PATH}")
+        df = pd.read_json(DATA_PATH)
 
-# Some orgs have multiple parents. 
-df['number_of_parents'] = df['parent_organisations'].apply(
-    lambda y: len(y)
-)
-
-df['first_parent_id'] = df['parent_organisations'].apply(
-    lambda x: x[0]['id'] if x and len(x) > 0 else None
-)
+    # Some orgs have multiple parents
+    df['number_of_parents'] = df['parent_organisations'].apply(
+        lambda y: len(y)
+    )
+    df['first_parent_id'] = df['parent_organisations'].apply(
+        lambda x: x[0]['id'] if x and len(x) > 0 else None
+    )
+    return df
 
 """
 UK Government Organisational Hierarchy 
@@ -128,7 +132,7 @@ def build_hierarchy(df):
     }
 
 
-def load_template(template_path: Path = template_path) -> str:
+def load_template(template_path: Path = TEMPLATE_PATH) -> str:
     """Load the HTML template file"""
     if not template_path.exists():
         raise FileNotFoundError(f"Template not found: {template_path}")
@@ -154,14 +158,16 @@ def render_html(template: str, hierarchy: dict, stats: dict) -> str:
     return html
 
 
-def main(df, output_path: str = output_path):
+def main(df: pd.DataFrame = None, output_path: str = OUTPUT_PATH):
     """Generate the D3 treemap visualisation"""
-    
+
+    df = load_org_data(df)
+
     print("Building hierarchy...")
     hierarchy, stats = build_hierarchy(df)
-    
-    print(f"\nLoading template from {template_path}...")
-    template = load_template(template_path)
+
+    print(f"\nLoading template from {TEMPLATE_PATH}...")
+    template = load_template(TEMPLATE_PATH)
     
     print("Rendering HTML...")
     html = render_html(template, hierarchy, stats)
@@ -175,4 +181,4 @@ def main(df, output_path: str = output_path):
 
 
 if __name__ == "__main__":
-    main(df)
+    main()

@@ -40,15 +40,18 @@ def enrich_org_weburl(org: dict, session: requests.Session) -> dict:
     web_url = org.get("web_url")
     if not web_url:
         org["non_govuk_domain"] = None
+        org["email_domain_source"] = None
         return org
     try:
         response = safe_http_request(session, web_url)
         org["non_govuk_domain"] = extract_external_link_govuk(response.text)
         org["email_domain"] = extract_email_domain(response.text)
+        org["email_domain_source"] = "mailto_scrape" if org["email_domain"] else None
         org["best_domain"] = org["non_govuk_domain"] or org["web_url"]
         print(f"{org['title']} enriched with external link: {org['non_govuk_domain']} and initial email domain {org['email_domain']}")
     except Exception as e:
         print(f"Error fetching {web_url}: {e}")
+        org["email_domain_source"] = None
     rate_limit_sleep(0.2)
     return org
 
@@ -78,16 +81,17 @@ def main(extant_orgs=None) -> list[dict]:
             org["non_govuk_domain"] = None
             org["best_domain"] = web_url
             org["email_domain"] = None
+            org["email_domain_source"] = None
             if web_url:
                 try:
                     response = safe_http_request(session, web_url)
                     org["email_domain"] = extract_email_domain(response.text)
+                    org["email_domain_source"] = "mailto_scrape" if org["email_domain"] else None
                 except Exception as e:
                     print(f"Error fetching {web_url}: {e}")
                     org["email_domain"] = None
+                    org["email_domain_source"] = None
                 rate_limit_sleep(0.2)
-            else:
-                org["email_domain"] = None
             print(f"{org['title']} saved with gov.uk link: {org['best_domain']}, initial email domain: {org['email_domain']}")
 
 

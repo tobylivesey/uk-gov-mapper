@@ -14,6 +14,7 @@ import pandas as pd
 from scripts.run_fetch_orgs import main as run_fetch_orgs
 from scripts.run_enrich_orgs import main as run_enrich_orgs
 from scripts.run_enrich_mailservers import main as run_enrich_mailservers
+from scripts.run_enrich_parent_domains import main as run_enrich_parent_domains
 from scripts.run_visualiser import main as run_visualiser
 
 def main():
@@ -21,17 +22,24 @@ def main():
     print("UK Government Organization Data Pipeline")
     print("=" * 60)
 
-    # Step 1: Fetch and enrich organization data
-    print("\n[Step 1/4] Fetching organization data...")
+    # Step 1: Fetch organization data from gov.uk API
+    print("\n[Step 1/5] Fetching organization data...")
     extant_orgs = run_fetch_orgs()
 
-    print("\n[Step 2/4] Enriching organization data...")
+    # Step 2: Enrich with OSCAR financials and mailto domains
+    print("\n[Step 2/5] Enriching organization data...")
     enriched_orgs = run_enrich_orgs(extant_orgs)
 
-    print("\n [Step 3/4 enriching additional MX domain data...")
+    # Step 3: DNS MX lookups for email domains
+    print("\n[Step 3/5] Enriching MX domain data...")
     enriched_orgs = run_enrich_mailservers(enriched_orgs)
 
-    print("\n[Step 4/4] Generating treemap visualization...")
+    # Step 4: Inherit domains from parent orgs
+    print("\n[Step 4/5] Inheriting parent domains...")
+    enriched_orgs = run_enrich_parent_domains(enriched_orgs)
+
+    # Step 5: Generate visualization
+    print("\n[Step 5/5] Generating treemap visualization...")
     df = pd.DataFrame(enriched_orgs)
     output_path = run_visualiser(df)
 

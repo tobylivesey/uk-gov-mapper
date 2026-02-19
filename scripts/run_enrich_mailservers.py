@@ -13,6 +13,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 import pandas as pd
 from scripts.utils import write_json, write_csv, rate_limit_sleep, log_progress
+from scripts.mail_providers import get_mail_provider
 
 DATA_DIR = Path("data")
 OUT_DIR = DATA_DIR / "orgs/uk"
@@ -69,63 +70,53 @@ def lookup_mx_records(domain: str, timeout: float = 5.0) -> list[dict]:
         return []
 
 
-def get_primary_mail_provider(mx_records: list[dict]) -> str | None:
-    """
-    Determine the primary mail provider from MX records.
-    Returns a simplified provider name based on common patterns.
-    """
-    if not mx_records:
-        return None
-
-    primary_host = mx_records[0]["host"].lower()
-
-    # Common mail providers
-    if "google" in primary_host or "googlemail" in primary_host:
-        return "Google Workspace"
-    elif "outlook" in primary_host or "microsoft" in primary_host:
-        return "Microsoft 365"
-    elif "pphosted" in primary_host or "proofpoint" in primary_host:
-        return "Proofpoint"
-    elif "mimecast" in primary_host:
-        return "Mimecast"
-    elif "messagelabs" in primary_host or "symantec" in primary_host:
-        return "Symantec"
-    elif "barracuda" in primary_host:
-        return "Barracuda"
-    elif "gov.uk" in primary_host:
-        return "gov.uk"
-    elif "sophos" in primary_host:
-        return "Sophos"
-    elif "gsi.gov.uk" in primary_host:
-        return "GSI (Government Secure Intranet)"
-    else:
-        return "Other"
 
 
 def enrich_org_mailservers(org: dict) -> dict:
     """Enrich a single org with mail server information."""
     # Try to get domain from existing fields, or extract from external_url
     # These fields may contain URLs, so always extract the domain
-    mail_domain = (
-        extract_domain_from_url(org.get("email_domain"))
-        or extract_domain_from_url(org.get("best_domain"))
-        or extract_domain_from_url(org.get("external_url"))
-    )
+    existing_domain = org.get("email_domain")
+    existing_source = org.get("email_domain_source")
+
+    mail_domain = extract_domain_from_url(existing_domain)
+    domain_source = existing_source
+
+    # If no domain from scrape, try to infer from URLs
+    if not mail_domain:
+        mail_domain = extract_domain_from_url(org.get("best_domain"))
+        if mail_domain:
+            domain_source = "url_inferred"
+
+    if not mail_domain:
+        mail_domain = extract_domain_from_url(org.get("external_url"))
+        if mail_domain:
+            domain_source = "url_inferred"
 
     if mail_domain:
         mx_records = lookup_mx_records(mail_domain)
         org["email_domain"] = mail_domain
+        org["email_domain_source"] = domain_source
         org["mx_records"] = mx_records
-        org["mail_provider"] = get_primary_mail_provider(mx_records)
+
+        # Use the new comprehensive mail provider parser
+        provider, category, confidence = get_mail_provider(mx_records)
+        org["mail_provider"] = provider
+        org["mail_provider_category"] = category
+        org["mail_provider_confidence"] = confidence
+
         org["has_mx"] = len(mx_records) > 0
         org["primary_mx_host"] = mx_records[0]["host"] if mx_records else None
         org["mx_record_count"] = len(mx_records)
-        status = "found" if mx_records else "no MX"
+        status = f"found ({provider})" if mx_records else "no MX"
         print(f"{org.get('title', 'Unknown')}: {mail_domain} -> {status}")
     else:
         org["email_domain"] = None
+        org["email_domain_source"] = None
         org["mx_records"] = []
         org["mail_provider"] = None
+        org["mail_provider_category"] = None
+        org["mail_provider_confidence"] = None
         org["has_mx"] = False
         org["primary_mx_host"] = None
         org["mx_record_count"] = 0

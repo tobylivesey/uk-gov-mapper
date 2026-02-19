@@ -19,7 +19,7 @@ from scripts.enrich_orgs import main as run_enrich_orgs
 from scripts.enrich_mailservers import main as run_enrich_mailservers
 from scripts.enrich_govuk_domains import main as run_enrich_govuk_domains
 from scripts.visualise import main as run_visualiser
-from scripts.run_enrich_parent_domains import main as run_enrich_parent_domains
+from scripts.enrich_parent_domains import main as run_enrich_parent_domains
 
 def main():
     print("=" * 60)

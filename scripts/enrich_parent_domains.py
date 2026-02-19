@@ -13,7 +13,7 @@ from pathlib import Path
 import pandas as pd
 from scripts.utils import write_json, write_csv, log_progress
 from scripts.mail_providers import get_mail_provider
-from scripts.run_enrich_mailservers import lookup_mx_records
+from scripts.enrich_mailservers import lookup_mx_records
 
 DATA_DIR = Path("data")
 OUT_DIR = DATA_DIR / "orgs/uk"

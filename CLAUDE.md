@@ -96,7 +96,7 @@ python -m scripts.enrich_jobs
 
 - **`enrich_parent_domains.py`**: Inherits domains from parent organizations
   - For orgs without valid MX records, inherits from parent org
-  - Sets `email_domain_source: "parent_org"` for inherited domains
+  - Sets `inherited_from_org` to track source of inherited domains
   - Multiple passes handle deeply nested hierarchies
 
 - **`enrich_govuk_domains.py`**: Adds domains from official .gov.uk list
@@ -106,25 +106,17 @@ python -m scripts.enrich_jobs
   - Matching strategies: slug_exact > abbreviation > slug_variation > fuzzy
 
 ### Email Domains Data Model
-Each org has an `email_domains` list of domain strings with source tracking:
+Each org has an `email_domains` list of domain strings:
 ```json
 {
   "email_domains": ["cabinetoffice.gov.uk", "cabinet-office.gov.uk"],
-  "email_domain": "cabinetoffice.gov.uk",
-  "email_domain_source": "mailto_scrape",  // or "parent_org"
   "has_mx": true,
   "mail_providers": ["Google Workspace"],
   "mail_provider": "Microsoft 365",
-  "inherited_from_org": "Cabinet Office",      // only if source is "parent_org"
-  "inherited_from_org_id": "https://..."       // only if source is "parent_org"
+  "inherited_from_org": "Cabinet Office",      // only if inherited from parent
+  "inherited_from_org_id": "https://..."       // only if inherited from parent
 }
 ```
-
-**email_domain_source values:**
-- `mailto_scrape`: Extracted from mailto links on gov.uk page
-- `parent_org`: Inherited from parent organization
-- `govuk_domain_list`: Matched from official .gov.uk domain list
-- `url_inferred`: Inferred URL where none is given
 
 ### Centralized Utilities (`scripts/utils.py`)
 Common functions used across all scripts:

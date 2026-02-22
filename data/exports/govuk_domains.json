@@ -1,0 +1,5982 @@
+{
+  "generated_at": "2026-02-22T04:43:10.988982+00:00",
+  "record_count": 663,
+  "columns": [
+    "title",
+    "format",
+    "email_domain",
+    "email_domain_source",
+    "has_mx",
+    "mail_provider",
+    "inherited_from_org"
+  ],
+  "data": [
+    {
+      "title": "AI Security Institute",
+      "format": "Sub organisation",
+      "email_domain": "aisi.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": false,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "AWE Nuclear Security Technologies",
+      "format": "Executive non-departmental public body",
+      "email_domain": "awe.co.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Academy for Social Justice",
+      "format": "Other",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Ministry of Justice"
+    },
+    {
+      "title": "Accelerated Capability Environment",
+      "format": "Sub organisation",
+      "email_domain": "homeoffice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "gov.uk domain",
+      "inherited_from_org": "Home Office"
+    },
+    {
+      "title": "Active Travel England",
+      "format": "Executive agency",
+      "email_domain": "activetravelengland.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Administration of Radioactive Substances Advisory Committee",
+      "format": "Other",
+      "email_domain": "ukhsa.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Administrative Court",
+      "format": "Court",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "Admiralty Court",
+      "format": "Court",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "Advanced Research and Invention Agency",
+      "format": "Executive non-departmental public body",
+      "email_domain": "aria.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Advisory Committee on Animal Feedingstuffs",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "food.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Advisory Committee on Business Appointments",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "acoba.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Advisory Committee on Clinical Impact Awards",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "dhsc.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Department of Health and Social Care"
+    },
+    {
+      "title": "Advisory Committee on Conscientious Objectors",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "mod.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Advisory Committee on Novel Foods and Processes",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "food.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Advisory Committee on Releases to the Environment",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "defra.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Advisory Committee on the Microbiological Safety of Food",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "food.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Food Standards Agency"
+    },
+    {
+      "title": "Advisory Committees on Justices of the Peace",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Advisory Council on the Misuse of Drugs",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "homeoffice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Advisory Group on Military and Emergency Response Medicine",
+      "format": "Other",
+      "email_domain": "mod.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Advisory, Conciliation and Arbitration Service",
+      "format": "Executive non-departmental public body",
+      "email_domain": "acas.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Agri-Food and Biosciences Institute (Northern Ireland)",
+      "format": "Executive non-departmental public body",
+      "email_domain": "afbini.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Agriculture and Horticulture Development Board",
+      "format": "Executive non-departmental public body",
+      "email_domain": "ahdb.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Air Accidents Investigation Branch",
+      "format": "Other",
+      "email_domain": "aaib.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Animal and Plant Health Agency",
+      "format": "Executive agency",
+      "email_domain": "apha.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Animals in Science Committee",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "homeoffice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Architects Registration Board",
+      "format": "Public corporation",
+      "email_domain": "arb.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Armed Forces Covenant Fund Trust",
+      "format": "Executive non-departmental public body",
+      "email_domain": "covenantfund.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Armed Forces' Pay Review Body",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "mod.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Ministry of Defence"
+    },
+    {
+      "title": "Arts Council England",
+      "format": "Executive non-departmental public body",
+      "email_domain": "artscouncil.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Arts Council of Northern Ireland",
+      "format": "Other",
+      "email_domain": "artscouncil-ni.org",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Arts Council of Wales",
+      "format": "Other",
+      "email_domain": "arts.wales",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Arts and Humanities Research Council",
+      "format": "Sub organisation",
+      "email_domain": "ahrc.ac.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Attorney General's Office",
+      "format": "Ministerial department",
+      "email_domain": "attorneygeneral.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "BBC",
+      "format": "Public corporation",
+      "email_domain": "bbc.co.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "BBC World Service",
+      "format": "Other",
+      "email_domain": "bbc.co.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Bank of England",
+      "format": "Other",
+      "email_domain": "bankofengland.co.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Biometrics and Surveillance Camera Commissioner",
+      "format": "Independent monitoring body",
+      "email_domain": "obscc.org.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Biotechnology and Biological Sciences Research Council",
+      "format": "Sub organisation",
+      "email_domain": "bbsrc.ac.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Board of Trustees of the Royal Botanic Gardens Kew",
+      "format": "Executive non-departmental public body",
+      "email_domain": "kew.org",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Bona Vacantia",
+      "format": "Sub organisation",
+      "email_domain": "governmentlegal.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Border Force",
+      "format": "Sub organisation",
+      "email_domain": "homeoffice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Border Security Command",
+      "format": "Sub organisation",
+      "email_domain": "homeoffice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Boundary Commission for England",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "communities.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Ministry of Housing, Communities and Local Government"
+    },
+    {
+      "title": "Boundary Commission for Northern Ireland",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "boundarycommission.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Boundary Commission for Scotland",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "bcomm-scotland.independent.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Boundary Commission for Wales",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "bcomm-wales.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "British Business Bank",
+      "format": "Other",
+      "email_domain": "british-business-bank.co.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "British Cattle Movement Service",
+      "format": "Sub organisation",
+      "email_domain": "rpa.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "British Council",
+      "format": "Executive non-departmental public body",
+      "email_domain": "britishcouncil.org",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "British Film Institute",
+      "format": "Executive non-departmental public body",
+      "email_domain": "bfi.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "British Hallmarking Council",
+      "format": "Executive non-departmental public body",
+      "email_domain": "britishhallmarkingcouncil.org",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "British Library",
+      "format": "Executive non-departmental public body",
+      "email_domain": "bl.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "British Museum",
+      "format": "Executive non-departmental public body",
+      "email_domain": "britishmuseum.org",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "British Pharmacopoeia Commission",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "dhsc.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Department of Health and Social Care"
+    },
+    {
+      "title": "British Technology Investments Ltd",
+      "format": "Other",
+      "email_domain": null,
+      "email_domain_source": null,
+      "has_mx": false,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "British Transport Police Authority",
+      "format": "Executive non-departmental public body",
+      "email_domain": "btpa.police.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "British Wool",
+      "format": "Other",
+      "email_domain": "britishwool.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Broads Authority",
+      "format": "Other",
+      "email_domain": "broads-authority.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Building Control Independent Panel",
+      "format": "Ad-hoc advisory group",
+      "email_domain": "communities.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Ministry of Housing, Communities and Local Government"
+    },
+    {
+      "title": "Building Digital UK",
+      "format": "Sub organisation",
+      "email_domain": "dsit.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Building Safety Regulator",
+      "format": "Executive non-departmental public body",
+      "email_domain": "buildingsafety.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Cabinet Office",
+      "format": "Ministerial department",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Cabinet Office Board",
+      "format": "Sub organisation",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Cabinet Office"
+    },
+    {
+      "title": "Cafcass",
+      "format": "Executive non-departmental public body",
+      "email_domain": "cafcass.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Cambridge Growth Company",
+      "format": "Other",
+      "email_domain": "thecgc.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Care Quality Commission",
+      "format": "Executive non-departmental public body",
+      "email_domain": "cqc.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Careers Wales",
+      "format": "Other",
+      "email_domain": "careerswales.com",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Central Advisory Committee on Compensation",
+      "format": "Other",
+      "email_domain": "mod.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Central Arbitration Committee",
+      "format": "Tribunal",
+      "email_domain": "cac.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Centre for Climate and Health Security",
+      "format": "Sub organisation",
+      "email_domain": "ukhsa.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "UK Health Security Agency"
+    },
+    {
+      "title": "Centre for Connected and Autonomous Vehicles ",
+      "format": "Sub organisation",
+      "email_domain": "dvsa.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Department for Transport"
+    },
+    {
+      "title": "Centre for Environment, Fisheries and Aquaculture Science",
+      "format": "Executive agency",
+      "email_domain": "cefas.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Certification Officer",
+      "format": "Other",
+      "email_domain": "certoffice.org",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Chancery Division of the High Court",
+      "format": "Court",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "Channel 4",
+      "format": "Public corporation",
+      "email_domain": "channel4.com",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Chevening Scholarship Programme ",
+      "format": "Other",
+      "email_domain": "chevening.org",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Child Safeguarding Practice Review Panel",
+      "format": "Other",
+      "email_domain": "education.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Churches Conservation Trust",
+      "format": "Other",
+      "email_domain": "visitchurches.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Circuit Commercial Court",
+      "format": "Court",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "Civil Aviation Authority",
+      "format": "Public corporation",
+      "email_domain": "caa.co.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Civil Justice Council",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "judiciary.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Civil Nuclear Constabulary",
+      "format": "Sub organisation",
+      "email_domain": "cnc.police.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Civil Nuclear Police Authority",
+      "format": "Executive non-departmental public body",
+      "email_domain": "cnc.police.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Civil Procedure Rule Committee",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Civil Service",
+      "format": "Civil service",
+      "email_domain": "digital.cabinet-office.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Civil Service Commission",
+      "format": "Executive non-departmental public body",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Cabinet Office"
+    },
+    {
+      "title": "Civil Service Fast Stream",
+      "format": "Sub organisation",
+      "email_domain": "faststream.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Civil Service Group",
+      "format": "Sub organisation",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Cabinet Office"
+    },
+    {
+      "title": "College of Policing",
+      "format": "Other",
+      "email_domain": "college.police.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Commercial Court",
+      "format": "Court",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "Commission for Countering Extremism",
+      "format": "Other",
+      "email_domain": "counteringextremism.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Commission on Human Medicines",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "mhra.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Commissioner for Public Appointments",
+      "format": "Other",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Cabinet Office"
+    },
+    {
+      "title": "Committee on Climate Change",
+      "format": "Executive non-departmental public body",
+      "email_domain": "theccc.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Committee on Fuel Poverty",
+      "format": "Other",
+      "email_domain": "energysecurity.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Committee on Mutagenicity of Chemicals in Food, Consumer Products and the Environment",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "ukhsa.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Committee on Radioactive Waste Management",
+      "format": "Other",
+      "email_domain": "energysecurity.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Committee on Toxicity of Chemicals in Food, Consumer Products and the Environment",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "food.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Food Standards Agency"
+    },
+    {
+      "title": "Commonwealth Scholarship Commission in the UK",
+      "format": "Executive non-departmental public body",
+      "email_domain": "cscuk.org.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Companies House",
+      "format": "Executive agency",
+      "email_domain": "companieshouse.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Companies List",
+      "format": "Court",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "Company Names Tribunal",
+      "format": "Other",
+      "email_domain": "ipo.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Competition Appeal Tribunal",
+      "format": "Tribunal",
+      "email_domain": "catribunal.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Competition Service",
+      "format": "Executive non-departmental public body",
+      "email_domain": "catribunal.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Competition and Markets Authority",
+      "format": "Non-ministerial department",
+      "email_domain": "cma.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Construction Industry Training Board",
+      "format": "Executive non-departmental public body",
+      "email_domain": "citb.co.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Consumer Council for Water",
+      "format": "Executive non-departmental public body",
+      "email_domain": "ccw.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Copyright Tribunal",
+      "format": "Tribunal",
+      "email_domain": "ipo.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Corporate Officers of the House of Commons",
+      "format": "Executive non-departmental public body",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Cabinet Office"
+    },
+    {
+      "title": "Corporate Officers of the House of Lords",
+      "format": "Executive non-departmental public body",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Cabinet Office"
+    },
+    {
+      "title": "Council for Science and Technology",
+      "format": "Other",
+      "email_domain": "go-science.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Court of Appeal Civil Division",
+      "format": "Court",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "Court of Appeal Criminal Division",
+      "format": "Court",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "Court of Protection",
+      "format": "Court",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Covent Garden Market Authority",
+      "format": "Other",
+      "email_domain": "newcoventgardenmarket.com",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Criminal Cases Review Commission",
+      "format": "Executive non-departmental public body",
+      "email_domain": "ccrc.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Criminal Injuries Compensation Authority",
+      "format": "Executive agency",
+      "email_domain": "cica.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Criminal Procedure Rule Committee",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Crossrail International",
+      "format": "Public corporation",
+      "email_domain": "crossrail-international.co.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Crown Commercial Service",
+      "format": "Executive agency",
+      "email_domain": "crowncommercial.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Crown Prosecution Service",
+      "format": "Non-ministerial department",
+      "email_domain": "cps.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Cyber & Specialist Operations Command",
+      "format": "Sub organisation",
+      "email_domain": "mod.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Ministry of Defence"
+    },
+    {
+      "title": "Dartmoor National Park Authority",
+      "format": "Other",
+      "email_domain": "dartmoor.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Defence Academy of the United Kingdom",
+      "format": "Sub organisation",
+      "email_domain": "da.mod.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Defence Equipment and Support",
+      "format": "Executive agency",
+      "email_domain": "mod.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Defence Infrastructure Organisation",
+      "format": "Sub organisation",
+      "email_domain": "mod.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Defence Nuclear Organisation",
+      "format": "Sub organisation",
+      "email_domain": "mod.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Ministry of Defence"
+    },
+    {
+      "title": "Defence Nuclear Safety Expert Committee",
+      "format": "Other",
+      "email_domain": "mod.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Defence Safety Authority",
+      "format": "Sub organisation",
+      "email_domain": "mod.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Defence Science and Technology Laboratory",
+      "format": "Executive agency",
+      "email_domain": "dstl.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Defence Sixth Form College",
+      "format": "Sub organisation",
+      "email_domain": "dsfc.ac.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Defence and Security Media Advisory Committee",
+      "format": "Other",
+      "email_domain": "dsma.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Defra's Science Advisory Council",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "defra.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Department for Business and Trade",
+      "format": "Ministerial department",
+      "email_domain": null,
+      "email_domain_source": null,
+      "has_mx": false,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Department for Communities (Northern Ireland)",
+      "format": "Other",
+      "email_domain": "communities-ni.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Department for Culture, Media and Sport",
+      "format": "Ministerial department",
+      "email_domain": "dcms.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Department for Education",
+      "format": "Ministerial department",
+      "email_domain": "education.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Department for Energy Security and Net Zero",
+      "format": "Ministerial department",
+      "email_domain": "energysecurity.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Department for Environment, Food & Rural Affairs",
+      "format": "Ministerial department",
+      "email_domain": "apha.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Department for Infrastructure (Northern Ireland)",
+      "format": "Other",
+      "email_domain": "infrastructure-ni.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Department for Science, Innovation and Technology",
+      "format": "Ministerial department",
+      "email_domain": null,
+      "email_domain_source": null,
+      "has_mx": false,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Department for Transport",
+      "format": "Ministerial department",
+      "email_domain": "dvsa.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Department for Work and Pensions",
+      "format": "Ministerial department",
+      "email_domain": null,
+      "email_domain_source": null,
+      "has_mx": false,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Department for the Economy (Northern Ireland)",
+      "format": "Other",
+      "email_domain": "economy-ni.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Department of Agriculture, Environment and Rural Affairs (Northern Ireland)",
+      "format": "Other",
+      "email_domain": "daera-ni.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Department of Education (Northern Ireland)",
+      "format": "Other",
+      "email_domain": "education-ni.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Department of Finance (Northern Ireland)",
+      "format": "Other",
+      "email_domain": "finance-ni.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Department of Health (Northern Ireland)",
+      "format": "Other",
+      "email_domain": "health-ni.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Department of Health and Social Care",
+      "format": "Ministerial department",
+      "email_domain": "dhsc.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Department of Justice (Northern Ireland)",
+      "format": "Other",
+      "email_domain": "justice-ni.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "DfT Operator Limited",
+      "format": "Public corporation",
+      "email_domain": "dftoperator.co.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Disability Unit",
+      "format": "Sub organisation",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Disabled Persons Transport Advisory Committee",
+      "format": "Other",
+      "email_domain": "dft.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Disclosure and Barring Service",
+      "format": "Executive non-departmental public body",
+      "email_domain": "dbs.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "District Valuer Services",
+      "format": "Sub organisation",
+      "email_domain": "voa.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Driver and Vehicle Licensing Agency",
+      "format": "Executive agency",
+      "email_domain": "dvsa.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Department for Transport"
+    },
+    {
+      "title": "Driver and Vehicle Standards Agency",
+      "format": "Executive agency",
+      "email_domain": "dvsa.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Department for Transport"
+    },
+    {
+      "title": "East West Railway Company Limited",
+      "format": "Executive non-departmental public body",
+      "email_domain": "eastwestrail.co.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Ebbsfleet Development Corporation",
+      "format": "Executive non-departmental public body",
+      "email_domain": "ebbsfleetdc.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Economic and Social Research Council",
+      "format": "Sub organisation",
+      "email_domain": "esrc.ac.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Electricity Settlements Company",
+      "format": "Other",
+      "email_domain": "lowcarboncontracts.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Employment Agency Standards Inspectorate",
+      "format": "Sub organisation",
+      "email_domain": "businessandtrade.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Employment Appeal Tribunal",
+      "format": "Tribunal",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "Employment Tribunal",
+      "format": "Tribunal",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "Engineering Construction Industry Training Board",
+      "format": "Executive non-departmental public body",
+      "email_domain": "ecitb.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Engineering and Physical Sciences Research Council",
+      "format": "Sub organisation",
+      "email_domain": "epsrc.ac.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "English Institute of Sport",
+      "format": "Other",
+      "email_domain": "eis2win.co.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Environment Agency",
+      "format": "Executive non-departmental public body",
+      "email_domain": "environment-agency.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Equality and Human Rights Commission",
+      "format": "Executive non-departmental public body",
+      "email_domain": "equalityhumanrights.com",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Estyn",
+      "format": "Other",
+      "email_domain": "estyn.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Ethics and Integrity Commission",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Cabinet Office"
+    },
+    {
+      "title": "Evaluation Task Force",
+      "format": "Other",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Exmoor National Park Authority",
+      "format": "Other",
+      "email_domain": "exmoor-nationalpark.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Export Control Joint Unit",
+      "format": "Sub organisation",
+      "email_domain": "businessandtrade.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Export Guarantees Advisory Council",
+      "format": "Other",
+      "email_domain": "ukexportfinance.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "FCDO Services ",
+      "format": "Executive agency",
+      "email_domain": "fcdo.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Foreign, Commonwealth & Development Office"
+    },
+    {
+      "title": "Fair Work Agency",
+      "format": "Executive agency",
+      "email_domain": null,
+      "email_domain_source": null,
+      "has_mx": false,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Family Division of the High Court",
+      "format": "Court",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "Family Justice Council",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "judiciary.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Family Procedure Rule Committee",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Ministry of Justice"
+    },
+    {
+      "title": "Financial Conduct Authority",
+      "format": "Other",
+      "email_domain": "fca.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Financial Remedies Court",
+      "format": "Court",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "Financial Reporting Council",
+      "format": "Executive non-departmental public body",
+      "email_domain": "frc.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Fire Service College",
+      "format": "Other",
+      "email_domain": "fireservicecollege.ac.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "First-tier Tribunal (Asylum Support)",
+      "format": "Tribunal",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "First-tier Tribunal (Care Standards)",
+      "format": "Tribunal",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "First-tier Tribunal (Criminal Injuries Compensation)",
+      "format": "Tribunal",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "First-tier Tribunal (General Regulatory Chamber)",
+      "format": "Tribunal",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "First-tier Tribunal (Immigration and Asylum)",
+      "format": "Tribunal",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "First-tier Tribunal (Mental Health)",
+      "format": "Tribunal",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "First-tier Tribunal (Property Chamber)",
+      "format": "Tribunal",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "First-tier Tribunal (Social Security and Child Support)",
+      "format": "Tribunal",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "First-tier Tribunal (Special Educational Needs and Disability)",
+      "format": "Tribunal",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "First-tier Tribunal (Tax)",
+      "format": "Tribunal",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "First-tier Tribunal (War Pensions and Armed Forces Compensation)",
+      "format": "Tribunal",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "Fleet Air Arm Museum ",
+      "format": "Sub organisation",
+      "email_domain": "fleetairarm.com",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Flood Forecasting Centre",
+      "format": "Other",
+      "email_domain": "environment-agency.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Flood Re",
+      "format": "Other",
+      "email_domain": "floodre.co.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Flood and Coastal Erosion Risk Management Research and Development Programme",
+      "format": "Sub organisation",
+      "email_domain": "environment-agency.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Food Standards Agency",
+      "format": "Non-ministerial department",
+      "email_domain": "food.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Foreign, Commonwealth & Development Office",
+      "format": "Ministerial department",
+      "email_domain": "fcdo.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Forensic Science Regulator",
+      "format": "Other",
+      "email_domain": "forensicscienceregulator.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Forest Research",
+      "format": "Executive agency",
+      "email_domain": "forestresearch.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Forestry Commission",
+      "format": "Non-ministerial department",
+      "email_domain": "forestrycommission.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Forestry England",
+      "format": "Executive agency",
+      "email_domain": "forestryengland.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Further Education Commissioner",
+      "format": "Sub organisation",
+      "email_domain": "education.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Gambling Commission",
+      "format": "Executive non-departmental public body",
+      "email_domain": "gamblingcommission.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Gangmasters Licensing Appeals",
+      "format": "Tribunal",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "Gangmasters and Labour Abuse Authority",
+      "format": "Executive non-departmental public body",
+      "email_domain": "gla.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Gov Facility Services Limited",
+      "format": "Sub organisation",
+      "email_domain": "govfsl.com",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Government Actuary's Department",
+      "format": "Non-ministerial department",
+      "email_domain": "gad.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Government Analysis Function",
+      "format": "Sub organisation",
+      "email_domain": "ons.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Government Chemist",
+      "format": "Sub organisation",
+      "email_domain": "lgcgroup.com",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Government Commercial Function",
+      "format": "Sub organisation",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Government Communication Service",
+      "format": "Sub organisation",
+      "email_domain": "digital.cabinet-office.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Civil Service"
+    },
+    {
+      "title": "Government Communications Headquarters",
+      "format": "Other",
+      "email_domain": "gchq.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Government Corporate Finance Profession",
+      "format": "Sub organisation",
+      "email_domain": "ukgi.org.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Mimecast",
+      "inherited_from_org": "UK Government Investments"
+    },
+    {
+      "title": "Government Data Quality Hub",
+      "format": "Sub organisation",
+      "email_domain": "ons.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Government Debt Management Function",
+      "format": "Other",
+      "email_domain": "hmtreasury.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Government Digital Service",
+      "format": "Sub organisation",
+      "email_domain": null,
+      "email_domain_source": null,
+      "has_mx": false,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Government Economic Service",
+      "format": "Sub organisation",
+      "email_domain": "hmtreasury.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Government Estates Management",
+      "format": "Other",
+      "email_domain": "gem.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Government Finance Function",
+      "format": "Sub organisation",
+      "email_domain": "hmtreasury.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Government Geography Profession",
+      "format": "Sub organisation",
+      "email_domain": "digital.cabinet-office.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Civil Service"
+    },
+    {
+      "title": "Government Internal Audit Agency",
+      "format": "Executive agency",
+      "email_domain": "giaa.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Government Knowledge & Information Management Profession",
+      "format": "Sub organisation",
+      "email_domain": "homeoffice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Government Legal Department",
+      "format": "Non-ministerial department",
+      "email_domain": "governmentlegal.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Government Legal Profession",
+      "format": "Sub organisation",
+      "email_domain": "tmpw.co.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Government Occupational Psychology Profession ",
+      "format": "Sub organisation",
+      "email_domain": "digital.cabinet-office.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Civil Service"
+    },
+    {
+      "title": "Government Office for Science",
+      "format": "Other",
+      "email_domain": "go-science.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Government Office for Technology Transfer",
+      "format": "Sub organisation",
+      "email_domain": "dsit.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Government Operational Research Service",
+      "format": "Sub organisation",
+      "email_domain": "hmrc.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Government Partnerships International",
+      "format": "Sub organisation",
+      "email_domain": null,
+      "email_domain_source": null,
+      "has_mx": false,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Government People Function",
+      "format": "Other",
+      "email_domain": "digital.cabinet-office.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Civil Service"
+    },
+    {
+      "title": "Government People Group",
+      "format": "Sub organisation",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Cabinet Office"
+    },
+    {
+      "title": "Government Planning Inspectors",
+      "format": "Sub organisation",
+      "email_domain": "planninginspectorate.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Government Planning Profession",
+      "format": "Sub organisation",
+      "email_domain": "communities.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Government Project Delivery",
+      "format": "Sub organisation",
+      "email_domain": "projectdelivery.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Government Property Agency",
+      "format": "Executive agency",
+      "email_domain": "gpa.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Government Property Function",
+      "format": "Sub organisation",
+      "email_domain": "digital.cabinet-office.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Civil Service"
+    },
+    {
+      "title": "Government Recruitment Service",
+      "format": "Sub organisation",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Government People Group"
+    },
+    {
+      "title": "Government Science & Engineering Profession",
+      "format": "Sub organisation",
+      "email_domain": "go-science.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Government Security Profession",
+      "format": "Sub organisation",
+      "email_domain": "digital.cabinet-office.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Civil Service"
+    },
+    {
+      "title": "Government Skills",
+      "format": "Sub organisation",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Cabinet Office"
+    },
+    {
+      "title": "Government Social Research Profession",
+      "format": "Sub organisation",
+      "email_domain": "hmtreasury.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Government Statistical Service",
+      "format": "Sub organisation",
+      "email_domain": "digital.cabinet-office.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Civil Service"
+    },
+    {
+      "title": "Government Tax Profession",
+      "format": "Sub organisation",
+      "email_domain": "hmrc.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Government Veterinary Services ",
+      "format": "Sub organisation",
+      "email_domain": "defra.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Great Britain-China Centre",
+      "format": "Executive non-departmental public body",
+      "email_domain": "gbcc.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Great British Energy",
+      "format": "Other",
+      "email_domain": "gbe.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Great British Energy – Nuclear",
+      "format": "Executive non-departmental public body",
+      "email_domain": "greatbritishnuclear.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Groceries Code Adjudicator",
+      "format": "Other",
+      "email_domain": "GroceriesCode.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "HM Courts & Tribunals Service",
+      "format": "Executive agency",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "HM Crown Prosecution Service Inspectorate",
+      "format": "Other",
+      "email_domain": "justiceinspectorates.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "HM Government Communications Centre",
+      "format": "Other",
+      "email_domain": "hmgcc.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "HM Inspectorate of Constabulary and Fire & Rescue Services",
+      "format": "Other",
+      "email_domain": "justiceinspectorates.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "HM Inspectorate of Prisons",
+      "format": "Other",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "HM Inspectorate of Probation",
+      "format": "Other",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "HM Land Registry",
+      "format": "Non-ministerial department",
+      "email_domain": "landregistry.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "HM Nautical Almanac Office",
+      "format": "Sub organisation",
+      "email_domain": "UKHO.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "HM Passport Office",
+      "format": "Sub organisation",
+      "email_domain": "homeoffice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "HM Prison Service",
+      "format": "Sub organisation",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "HM Prison and Probation Service",
+      "format": "Executive agency",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "HM Revenue & Customs",
+      "format": "Non-ministerial department",
+      "email_domain": "hmrc.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "HM Treasury",
+      "format": "Ministerial department",
+      "email_domain": "hmtreasury.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "HSC Business Services Organisation (Northern Ireland)",
+      "format": "Executive non-departmental public body",
+      "email_domain": "health-ni.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Sophos",
+      "inherited_from_org": "Department of Health (Northern Ireland)"
+    },
+    {
+      "title": "Health Equity in Health Protection Initiative",
+      "format": "Sub organisation",
+      "email_domain": "ukhsa.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "UK Health Security Agency"
+    },
+    {
+      "title": "Health Research Authority",
+      "format": "Executive non-departmental public body",
+      "email_domain": "hra.nhs.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Health Services Safety Investigations Body",
+      "format": "Executive non-departmental public body",
+      "email_domain": "hssib.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Health and Safety Executive",
+      "format": "Executive non-departmental public body",
+      "email_domain": "hse.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "High Speed Two (HS2) Limited",
+      "format": "Executive non-departmental public body",
+      "email_domain": "hs2.org.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Higher Education Statistics Agency",
+      "format": "Other",
+      "email_domain": "hesa.ac.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Historic England",
+      "format": "Executive non-departmental public body",
+      "email_domain": "historicengland.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Historic Royal Palaces",
+      "format": "Public corporation",
+      "email_domain": "hrp.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Home Office",
+      "format": "Ministerial department",
+      "email_domain": "homeoffice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Homes England",
+      "format": "Executive non-departmental public body",
+      "email_domain": "homesengland.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Horniman Public Museum and Public Park Trust",
+      "format": "Executive non-departmental public body",
+      "email_domain": "horniman.ac.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Horserace Betting Levy Board",
+      "format": "Executive non-departmental public body",
+      "email_domain": "hblb.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "House of Lords Appointments Commission",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Cabinet Office"
+    },
+    {
+      "title": "Housing Ombudsman",
+      "format": "Executive non-departmental public body",
+      "email_domain": "housing-ombudsman.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Human Fertilisation and Embryology Authority",
+      "format": "Executive non-departmental public body",
+      "email_domain": "hfea.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Human Tissue Authority",
+      "format": "Executive non-departmental public body",
+      "email_domain": "hta.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Immigration Advice Authority",
+      "format": "Executive non-departmental public body",
+      "email_domain": "immigrationadviceauthority.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Immigration Enforcement",
+      "format": "Sub organisation",
+      "email_domain": "homeoffice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Imperial War Museum",
+      "format": "Executive non-departmental public body",
+      "email_domain": "iwm.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Independent Adviser on Ministerial Standards",
+      "format": "Other",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Cabinet Office"
+    },
+    {
+      "title": "Independent Advisory Panel on Deaths in Custody",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Ministry of Justice"
+    },
+    {
+      "title": "Independent Agricultural Appeals Panel",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "rpa.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Independent Anti-slavery Commissioner",
+      "format": "Independent monitoring body",
+      "email_domain": "antislaverycommissioner.co.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Independent Case Examiner",
+      "format": "Other",
+      "email_domain": "ice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Independent Chief Inspector of Borders and Immigration ",
+      "format": "Independent monitoring body",
+      "email_domain": "icibi.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Independent Commission for Aid Impact",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "icai.independent.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Independent Complaints Reviewer",
+      "format": "Other",
+      "email_domain": "icrev.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Independent Dormant Assets Commission ",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "culture.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Independent Family Returns Panel",
+      "format": "Other",
+      "email_domain": "homeoffice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "gov.uk domain",
+      "inherited_from_org": "Home Office"
+    },
+    {
+      "title": "Independent Football Regulator",
+      "format": "Executive non-departmental public body",
+      "email_domain": "footballregulator.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Independent Medical Expert Group",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "mod.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Independent Monitoring Authority for the Citizens’ Rights Agreements",
+      "format": "Executive non-departmental public body",
+      "email_domain": "ima-citizensrights.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Independent Monitoring Boards",
+      "format": "Other",
+      "email_domain": "imb.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Independent Office for Police Conduct",
+      "format": "Executive non-departmental public body",
+      "email_domain": "policeconduct.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Independent Parliamentary Standards Authority ",
+      "format": "Executive non-departmental public body",
+      "email_domain": "theipsa.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Independent Reconfiguration Panel",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "dhsc.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Independent Review Mechanism",
+      "format": "Other",
+      "email_domain": "irm.org.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Independent Reviewer of Terrorism Legislation",
+      "format": "Other",
+      "email_domain": "homeoffice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "gov.uk domain",
+      "inherited_from_org": "Home Office"
+    },
+    {
+      "title": "Independent Water Commission",
+      "format": "Other",
+      "email_domain": null,
+      "email_domain_source": null,
+      "has_mx": false,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Industrial Development Advisory Board",
+      "format": "Other",
+      "email_domain": "businessandtrade.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Industrial Injuries Advisory Council",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "dwp.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Industrial Strategy Advisory Council",
+      "format": "Other",
+      "email_domain": "businessandtrade.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Infected Blood Compensation Authority",
+      "format": "Other",
+      "email_domain": "ibca.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Infected Blood Memorial Committee",
+      "format": "Other",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Information Commissioner's Office",
+      "format": "Executive non-departmental public body",
+      "email_domain": "ico.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Innovate UK",
+      "format": "Sub organisation",
+      "email_domain": "ukri.org",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Insolvency List",
+      "format": "Court",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "Insolvency Rules Committee",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Ministry of Justice"
+    },
+    {
+      "title": "Intellectual Property Enterprise Court",
+      "format": "Court",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "Intellectual Property Office",
+      "format": "Executive agency",
+      "email_domain": "ipo.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Intelligence Analysis ",
+      "format": "Sub organisation",
+      "email_domain": "digital.cabinet-office.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Civil Service"
+    },
+    {
+      "title": "Internal Audit Profession",
+      "format": "Sub organisation",
+      "email_domain": "giaa.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Invest Northern Ireland",
+      "format": "Other",
+      "email_domain": "investni.com",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Investigatory Powers Commissioner's Office",
+      "format": "Other",
+      "email_domain": "ipco.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Investigatory Powers Tribunal",
+      "format": "Tribunal",
+      "email_domain": "ipt-uk.com",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Iraq Inquiry",
+      "format": "Other",
+      "email_domain": "iraqinquiry.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Joint Nature Conservation Committee",
+      "format": "Executive non-departmental public body",
+      "email_domain": "apha.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Department for Environment, Food & Rural Affairs"
+    },
+    {
+      "title": "Judicial Appointments Commission",
+      "format": "Executive non-departmental public body",
+      "email_domain": "judicialappointments.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Judicial Appointments and Conduct Ombudsman",
+      "format": "Other",
+      "email_domain": "judicialombudsman.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Judicial Office",
+      "format": "Other",
+      "email_domain": "judiciary.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "King's Bench Division of the High Court",
+      "format": "Court",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "King's Harbour Master",
+      "format": "Sub organisation",
+      "email_domain": "khm.mod.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "LGBT Veterans Independent Review",
+      "format": "Other",
+      "email_domain": null,
+      "email_domain_source": null,
+      "has_mx": false,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Labour Market Evidence Group",
+      "format": "Ad-hoc advisory group",
+      "email_domain": "mac.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Labour Relations Agency (Northern Ireland)",
+      "format": "Other",
+      "email_domain": "lra.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Lake District National Park Authority",
+      "format": "Other",
+      "email_domain": "lakedistrict.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Lammy Review",
+      "format": "Other",
+      "email_domain": null,
+      "email_domain_source": null,
+      "has_mx": false,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Land Registration Rule Committee",
+      "format": "Other",
+      "email_domain": "communities.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Ministry of Housing, Communities and Local Government"
+    },
+    {
+      "title": "Law Commission",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Ministry of Justice"
+    },
+    {
+      "title": "Leadership College for Government",
+      "format": "Sub organisation",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Cabinet Office"
+    },
+    {
+      "title": "Leasehold Advisory Service",
+      "format": "Executive non-departmental public body",
+      "email_domain": "lease-advice.org",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Legal Aid Agency",
+      "format": "Executive agency",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Legal Services Agency (Northern Ireland)",
+      "format": "Executive agency",
+      "email_domain": "justice-ni.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Legal Services Board",
+      "format": "Executive non-departmental public body",
+      "email_domain": "legalservicesboard.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Life Sciences Organisation",
+      "format": "Other",
+      "email_domain": "trade.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Livestock and Meat Commission for Northern Ireland",
+      "format": "Executive non-departmental public body",
+      "email_domain": "lmcni.com",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Local Government and Social Care Ombudsman",
+      "format": "Other",
+      "email_domain": "lgo.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "LocatED",
+      "format": "Executive non-departmental public body",
+      "email_domain": "located.co.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "London and Continental Railways Limited",
+      "format": "Public corporation",
+      "email_domain": "lcrhq.co.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Low Carbon Contracts Company",
+      "format": "Other",
+      "email_domain": "lowcarboncontracts.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Low Pay Commission",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "lowpay.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Marine Accident Investigation Branch",
+      "format": "Other",
+      "email_domain": "maib.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Marine Management Organisation",
+      "format": "Executive non-departmental public body",
+      "email_domain": "marinemanagement.org.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Maritime and Coastguard Agency",
+      "format": "Executive agency",
+      "email_domain": "mcga.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Marshall Aid Commemoration Commission",
+      "format": "Executive non-departmental public body",
+      "email_domain": "marshallscholarship.org",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Medical Profession",
+      "format": "Sub organisation",
+      "email_domain": "digital.cabinet-office.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Civil Service"
+    },
+    {
+      "title": "Medical Research Council",
+      "format": "Sub organisation",
+      "email_domain": "mrc.ac.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Medicines and Healthcare products Regulatory Agency",
+      "format": "Executive agency",
+      "email_domain": "mhra.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Met Office",
+      "format": "Executive agency",
+      "email_domain": "metoffice.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Migration Advisory Committee",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "mac.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Military Aviation Authority",
+      "format": "Sub organisation",
+      "email_domain": "mod.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Military Engineering Experimental Establishment",
+      "format": "Other",
+      "email_domain": "mexe.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Mining Remediation Authority",
+      "format": "Executive non-departmental public body",
+      "email_domain": "miningremediation.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Ministry of Defence",
+      "format": "Ministerial department",
+      "email_domain": "mod.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Ministry of Housing, Communities and Local Government",
+      "format": "Ministerial department",
+      "email_domain": "communities.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Ministry of Justice",
+      "format": "Ministerial department",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Modernisation and Reform",
+      "format": "Sub organisation",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Cabinet Office"
+    },
+    {
+      "title": "Money and Pensions Service",
+      "format": "Executive non-departmental public body",
+      "email_domain": "moneyandpensionsservice.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": false,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Museum of the Home",
+      "format": "Executive non-departmental public body",
+      "email_domain": "museumofthehome.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "NHS Blood and Transplant",
+      "format": "Special health authority",
+      "email_domain": "nhsbt.nhs.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "NHS Business Services Authority",
+      "format": "Special health authority",
+      "email_domain": "nhsbsa.nhs.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "NHS Counter Fraud Authority",
+      "format": "Special health authority",
+      "email_domain": "cfa.nhs.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "NHS England",
+      "format": "Executive non-departmental public body",
+      "email_domain": "england.nhs.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "NHS Pay Review Body",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "dhsc.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Department of Health and Social Care"
+    },
+    {
+      "title": "NHS Resolution",
+      "format": "Special health authority",
+      "email_domain": "resolution.nhs.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "NHS Wales Informatics Service",
+      "format": "Other",
+      "email_domain": "nwis.nhs.wales",
+      "email_domain_source": "url_inferred",
+      "has_mx": false,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "NS&I",
+      "format": "Non-ministerial department",
+      "email_domain": "nsandi.com",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "National Army Museum",
+      "format": "Executive non-departmental public body",
+      "email_domain": "nam.ac.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "National Counter Terrorism Security Office",
+      "format": "Other",
+      "email_domain": "homeoffice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "gov.uk domain",
+      "inherited_from_org": "Home Office"
+    },
+    {
+      "title": "National Crime Agency",
+      "format": "Non-ministerial department",
+      "email_domain": "nationalcrimeagency.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "National Crime Agency Remuneration Review Body ",
+      "format": "Other",
+      "email_domain": "homeoffice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "gov.uk domain",
+      "inherited_from_org": "Home Office"
+    },
+    {
+      "title": "National Cyber Force",
+      "format": "Sub organisation",
+      "email_domain": "mod.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Ministry of Defence"
+    },
+    {
+      "title": "National Cyber Security Centre",
+      "format": "Sub organisation",
+      "email_domain": "ncsc.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "National Data Guardian",
+      "format": "Other",
+      "email_domain": "nhs.net",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "National Employment Savings Trust (NEST) Corporation",
+      "format": "Public corporation",
+      "email_domain": "nestpensions.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "National Energy System Operator",
+      "format": "Public corporation",
+      "email_domain": "neso.energy",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "National Forest Company",
+      "format": "Other",
+      "email_domain": "nationalforest.org",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "National Gallery",
+      "format": "Executive non-departmental public body",
+      "email_domain": "nationalgallery.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "National Guardian's Office",
+      "format": "Sub organisation",
+      "email_domain": "nationalguardian.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "National Heritage Memorial Fund",
+      "format": "Executive non-departmental public body",
+      "email_domain": "nhmf.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "National Highways",
+      "format": "Executive non-departmental public body",
+      "email_domain": "nationalhighways.co.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "National Infrastructure and Service Transformation Authority",
+      "format": "Other",
+      "email_domain": "hmtreasury.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "National Institute for Health and Care Excellence",
+      "format": "Executive non-departmental public body",
+      "email_domain": "nice.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "National Lottery Heritage Fund",
+      "format": "Other",
+      "email_domain": "heritagefund.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "National Museum of the Royal Navy",
+      "format": "Executive non-departmental public body",
+      "email_domain": "nmrn.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "National Museums Liverpool",
+      "format": "Executive non-departmental public body",
+      "email_domain": "liverpoolmuseums.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "National Physical Laboratory",
+      "format": "Public corporation",
+      "email_domain": "npl.co.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "National Portrait Gallery",
+      "format": "Executive non-departmental public body",
+      "email_domain": "npg.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "National Protective Security Authority",
+      "format": "Sub organisation",
+      "email_domain": "npsa.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "National Security and Intelligence",
+      "format": "Sub organisation",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "National Space Operations Centre",
+      "format": "Sub organisation",
+      "email_domain": "mod.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Ministry of Defence"
+    },
+    {
+      "title": "National Wealth Fund",
+      "format": "Executive non-departmental public body",
+      "email_domain": "hmtreasury.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Mimecast",
+      "inherited_from_org": "HM Treasury"
+    },
+    {
+      "title": "Natural England",
+      "format": "Executive non-departmental public body",
+      "email_domain": "naturalengland.org.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Natural Environment Research Council",
+      "format": "Sub organisation",
+      "email_domain": "nerc.ac.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Natural History Museum",
+      "format": "Executive non-departmental public body",
+      "email_domain": "nhm.ac.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Natural Resources Wales",
+      "format": "Other",
+      "email_domain": "naturalresourceswales.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Network Rail",
+      "format": "Executive non-departmental public body",
+      "email_domain": "networkrail.co.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "New Forest National Park Authority",
+      "format": "Other",
+      "email_domain": "newforestnpa.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "North Sea Transition Authority",
+      "format": "Executive non-departmental public body",
+      "email_domain": "nstauthority.co.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "North York Moors National Park Authority",
+      "format": "Other",
+      "email_domain": "northyorkmoors.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Northern Ireland Cancer Registry",
+      "format": "Other",
+      "email_domain": "qub.ac.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Northern Ireland Council for the Curriculum, Examinations and Assessment",
+      "format": "Executive non-departmental public body",
+      "email_domain": "ccea.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Northern Ireland Courts and Tribunals Service",
+      "format": "Executive agency",
+      "email_domain": "justice-ni.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Northern Ireland Executive",
+      "format": "Devolved government",
+      "email_domain": "northernireland.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": false,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Northern Ireland Housing Executive",
+      "format": "Executive non-departmental public body",
+      "email_domain": "nihe.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Northern Ireland Human Rights Commission",
+      "format": "Executive non-departmental public body",
+      "email_domain": "nihrc.org",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Northern Ireland Office",
+      "format": "Ministerial department",
+      "email_domain": "nio.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Northern Ireland Policing Board",
+      "format": "Executive non-departmental public body",
+      "email_domain": "nipolicingboard.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Northern Ireland Prison Service",
+      "format": "Executive agency",
+      "email_domain": "justice-ni.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Northern Ireland Statistics and Research Agency",
+      "format": "Executive agency",
+      "email_domain": "nisra.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Northern Lighthouse Board",
+      "format": "Executive non-departmental public body",
+      "email_domain": "nlb.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Northumberland National Park Authority",
+      "format": "Other",
+      "email_domain": "apha.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Department for Environment, Food & Rural Affairs"
+    },
+    {
+      "title": "Nuclear Decommissioning Authority",
+      "format": "Executive non-departmental public body",
+      "email_domain": "nda.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Nuclear Liabilities Financing Assurance Board",
+      "format": "Advisory non-departmental public body",
+      "email_domain": null,
+      "email_domain_source": null,
+      "has_mx": false,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Nuclear Research Advisory Council",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "mod.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Ministry of Defence"
+    },
+    {
+      "title": "Nuclear Restoration Services",
+      "format": "Other",
+      "email_domain": "nrservices.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Nuclear Waste Services",
+      "format": "Other",
+      "email_domain": "nuclearwasteservices.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Oak National Academy",
+      "format": "Executive non-departmental public body",
+      "email_domain": "thenational.academy",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Ofcom",
+      "format": "Other",
+      "email_domain": "ofcom.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Office for Budget Responsibility",
+      "format": "Executive non-departmental public body",
+      "email_domain": "obr.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Office for Digital Identities and Attributes",
+      "format": "Sub organisation",
+      "email_domain": null,
+      "email_domain_source": null,
+      "has_mx": false,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Office for Environmental Protection",
+      "format": "Executive non-departmental public body",
+      "email_domain": "theoep.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Office for Equality and Opportunity",
+      "format": "Other",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Office for Health Improvement and Disparities",
+      "format": "Sub organisation",
+      "email_domain": "dhsc.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Office for Investment",
+      "format": "Sub organisation",
+      "email_domain": null,
+      "email_domain_source": null,
+      "has_mx": false,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Office for Investment: Financial Services",
+      "format": "Sub organisation",
+      "email_domain": "officeforinvestment.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Office for Life Sciences",
+      "format": "Sub organisation",
+      "email_domain": "officeforlifesciences.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Office for National Statistics",
+      "format": "Other",
+      "email_domain": "ons.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Office for Nuclear Regulation",
+      "format": "Public corporation",
+      "email_domain": "onr.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Office for Product Safety and Standards",
+      "format": "Sub organisation",
+      "email_domain": "businessandtrade.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Office for Responsible Business Conduct",
+      "format": "Sub organisation",
+      "email_domain": null,
+      "email_domain_source": null,
+      "has_mx": false,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Office for Students",
+      "format": "Executive non-departmental public body",
+      "email_domain": "officeforstudents.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Office for Veterans' Affairs",
+      "format": "Sub organisation",
+      "email_domain": "mod.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Office for Zero Emission Vehicles",
+      "format": "Sub organisation",
+      "email_domain": "ozev.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Office for the Independent Examiner of Complaints",
+      "format": "Sub organisation",
+      "email_domain": "homeoffice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "gov.uk domain",
+      "inherited_from_org": "Home Office"
+    },
+    {
+      "title": "Office for the Internal Market",
+      "format": "Sub organisation",
+      "email_domain": "cma.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Office for the Pay Review Bodies",
+      "format": "Sub organisation",
+      "email_domain": "businessandtrade.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Office of Financial Sanctions Implementation",
+      "format": "Sub organisation",
+      "email_domain": "hmtreasury.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Office of Rail and Road",
+      "format": "Non-ministerial department",
+      "email_domain": "orr.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Office of Trade Sanctions Implementation",
+      "format": "Sub organisation",
+      "email_domain": null,
+      "email_domain_source": null,
+      "has_mx": false,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Office of the Advocate General for Scotland",
+      "format": "Ministerial department",
+      "email_domain": "advocategeneral.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Office of the Chief Electoral Officer for Northern Ireland",
+      "format": "Other",
+      "email_domain": "eoni.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Office of the Children's Commissioner",
+      "format": "Executive non-departmental public body",
+      "email_domain": "childrenscommissioner.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Office of the Independent Prevent Commissioner",
+      "format": "Other",
+      "email_domain": "ipcommissioner.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Office of the Leader of the House of Commons",
+      "format": "Ministerial department",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Office of the Leader of the House of Lords",
+      "format": "Ministerial department",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Office of the Parliamentary Counsel",
+      "format": "Sub organisation",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Office of the Police Ombudsman for Northern Ireland",
+      "format": "Other",
+      "email_domain": "policeombudsman.org",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Office of the Public Guardian",
+      "format": "Executive agency",
+      "email_domain": "publicguardian.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Office of the Registrar of Consultant Lobbyists",
+      "format": "Other",
+      "email_domain": "registrarofconsultantlobbyists.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Office of the Regulator of Community Interest Companies",
+      "format": "Other",
+      "email_domain": "companieshouse.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Office of the Schools Adjudicator",
+      "format": "Other",
+      "email_domain": "education.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Department for Education"
+    },
+    {
+      "title": "Office of the Windrush Commissioner",
+      "format": "Independent monitoring body",
+      "email_domain": "windrushcommissioner.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Official Solicitor and Public Trustee",
+      "format": "Other",
+      "email_domain": "ospt.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Offshore Petroleum Regulator for Environment and Decommissioning",
+      "format": "Sub organisation",
+      "email_domain": "energysecurity.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Ofgem",
+      "format": "Non-ministerial department",
+      "email_domain": "ofgem.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Ofqual",
+      "format": "Non-ministerial department",
+      "email_domain": "education.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Department for Education"
+    },
+    {
+      "title": "Ofsted",
+      "format": "Non-ministerial department",
+      "email_domain": "ofsted.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Online Procedure Rule Committee",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Open Innovation Team",
+      "format": "Other",
+      "email_domain": "openinnovation.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Open Public Services",
+      "format": "Sub organisation",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Cabinet Office"
+    },
+    {
+      "title": "Operational Delivery Profession",
+      "format": "Sub organisation",
+      "email_domain": "hmrc.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Ordnance Survey",
+      "format": "Public corporation",
+      "email_domain": "ordnancesurvey.co.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "PackUK",
+      "format": "Other",
+      "email_domain": "defra.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Parades Commission for Northern Ireland",
+      "format": "Executive non-departmental public body",
+      "email_domain": "nio.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Northern Ireland Office"
+    },
+    {
+      "title": "Parliamentary Contributory Pension Fund",
+      "format": "Other",
+      "email_domain": "parliament.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Parole Board",
+      "format": "Executive non-departmental public body",
+      "email_domain": "paroleboard.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Patents Court",
+      "format": "Court",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "Payment Systems Regulator",
+      "format": "Other",
+      "email_domain": "psr.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Peak District National Park Authority",
+      "format": "Other",
+      "email_domain": "peakdistrict.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Pension Protection Fund",
+      "format": "Public corporation",
+      "email_domain": "ppf.co.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Planning Court",
+      "format": "Court",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "Planning Inspectorate",
+      "format": "Executive agency",
+      "email_domain": "planninginspectorate.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Plant Varieties and Seeds Tribunal",
+      "format": "Tribunal",
+      "email_domain": "defra.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Police Advisory Board for England and Wales",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "homeoffice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Police Discipline Appeals Tribunal",
+      "format": "Tribunal",
+      "email_domain": "homeoffice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "gov.uk domain",
+      "inherited_from_org": "Home Office"
+    },
+    {
+      "title": "Police Remuneration Review Body",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "homeoffice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "gov.uk domain",
+      "inherited_from_org": "Home Office"
+    },
+    {
+      "title": "Police Service of Northern Ireland",
+      "format": "Executive non-departmental public body",
+      "email_domain": "psni.police.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Policy Lab",
+      "format": "Other",
+      "email_domain": null,
+      "email_domain_source": null,
+      "has_mx": false,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Policy Profession",
+      "format": "Sub organisation",
+      "email_domain": "policyprofession.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Porton Biopharma Limited",
+      "format": "Other",
+      "email_domain": "portonbiopharma.com",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Post Office",
+      "format": "Public corporation",
+      "email_domain": "postoffice.co.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Preventing Sexual Violence in Conflict Initiative",
+      "format": "Sub organisation",
+      "email_domain": "fcdo.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Foreign, Commonwealth & Development Office"
+    },
+    {
+      "title": "Prime Minister's Office, 10 Downing Street",
+      "format": "Executive office",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Cabinet Office"
+    },
+    {
+      "title": "Prison Service Pay Review Body",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Ministry of Justice"
+    },
+    {
+      "title": "Prisons and Probation Ombudsman",
+      "format": "Other",
+      "email_domain": "ppo.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Privy Council Office",
+      "format": "Other",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Cabinet Office"
+    },
+    {
+      "title": "Probation Board for Northern Ireland",
+      "format": "Other",
+      "email_domain": "pbni.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Probation Service",
+      "format": "Sub organisation",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Professional Standards Authority for Health and Social Care",
+      "format": "Other",
+      "email_domain": "professionalstandards.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Public Health Agency (Northern Ireland)",
+      "format": "Other",
+      "email_domain": "health-ni.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Sophos",
+      "inherited_from_org": "Department of Health (Northern Ireland)"
+    },
+    {
+      "title": "Public Health Wales",
+      "format": "Other",
+      "email_domain": "phw.nhs.wales",
+      "email_domain_source": "url_inferred",
+      "has_mx": false,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Public Prosecution Service for Northern Ireland",
+      "format": "Other",
+      "email_domain": "ppsni.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Public Sector Fraud Authority",
+      "format": "Sub organisation",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Cabinet Office"
+    },
+    {
+      "title": "Public Services Ombudsman for Wales",
+      "format": "Other",
+      "email_domain": "ombudsman.wales",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Pubs Code Adjudicator",
+      "format": "Other",
+      "email_domain": "pubscodeadjudicator.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": false,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Queen Elizabeth II Conference Centre",
+      "format": "Executive agency",
+      "email_domain": "qeiicentre.london",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Race Equality Unit",
+      "format": "Sub organisation",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Rail Accident Investigation Branch",
+      "format": "Other",
+      "email_domain": "raib.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Rail Safety and Standards Board",
+      "format": "Other",
+      "email_domain": "rssb.co.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Reclaim Fund Ltd",
+      "format": "Executive non-departmental public body",
+      "email_domain": "hmtreasury.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Mimecast",
+      "inherited_from_org": "HM Treasury"
+    },
+    {
+      "title": "Regional Department for Education (DfE) Directors ",
+      "format": "Sub organisation",
+      "email_domain": "education.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Department for Education"
+    },
+    {
+      "title": "Regulator of Social Housing",
+      "format": "Executive non-departmental public body",
+      "email_domain": "rsh.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Regulatory Innovation Office",
+      "format": "Sub organisation",
+      "email_domain": "dsit.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Regulatory Policy Committee",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "rpc.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Remploy Pension Scheme Trustees Ltd ",
+      "format": "Other",
+      "email_domain": null,
+      "email_domain_source": null,
+      "has_mx": false,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Research Collaboration Advice Team",
+      "format": "Sub organisation",
+      "email_domain": null,
+      "email_domain_source": null,
+      "has_mx": false,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Research England",
+      "format": "Sub organisation",
+      "email_domain": "ukri.org",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Reserve Forces Appeal Tribunal",
+      "format": "Tribunal",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "Reserve Forces' and Cadets' Associations (RFCA)",
+      "format": "Other",
+      "email_domain": "rfca.mod.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Review Body on Doctors' and Dentists' Remuneration",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "dhsc.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Department of Health and Social Care"
+    },
+    {
+      "title": "Royal Air Force Museum",
+      "format": "Executive non-departmental public body",
+      "email_domain": "rafmuseum.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Royal Armouries Museum",
+      "format": "Executive non-departmental public body",
+      "email_domain": "royalarmouries.org",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Royal Marines Museum",
+      "format": "Sub organisation",
+      "email_domain": "nmrn.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Royal Mint",
+      "format": "Other",
+      "email_domain": "royalmint.com",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Royal Mint Advisory Committee",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "hmtreasury.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Mimecast",
+      "inherited_from_org": "HM Treasury"
+    },
+    {
+      "title": "Royal Museums Greenwich",
+      "format": "Executive non-departmental public body",
+      "email_domain": "rmg.co.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Royal Navy Submarine Museum",
+      "format": "Sub organisation",
+      "email_domain": "submarine-museum.co.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Royal Parks",
+      "format": "Public corporation",
+      "email_domain": "royalparks.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Rural Payments Agency",
+      "format": "Executive agency",
+      "email_domain": "defra.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "S4C",
+      "format": "Other",
+      "email_domain": "s4c.co.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Salix Finance Ltd",
+      "format": "Executive non-departmental public body",
+      "email_domain": "salixfinance.co.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "School Teachers' Review Body",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "education.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Department for Education"
+    },
+    {
+      "title": "Science Advisory Committees",
+      "format": "Executive non-departmental public body",
+      "email_domain": "food.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Food Standards Agency"
+    },
+    {
+      "title": "Science Museum Group",
+      "format": "Executive non-departmental public body",
+      "email_domain": "dcms.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Department for Culture, Media and Sport"
+    },
+    {
+      "title": "Science and Technology Ethics Advisory Committee",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "homeoffice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Science and Technology Facilities Council",
+      "format": "Sub organisation",
+      "email_domain": "ukri.org",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Scientific Advisory Group for Emergencies",
+      "format": "Other",
+      "email_domain": "go-science.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Seafish",
+      "format": "Executive non-departmental public body",
+      "email_domain": "apha.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Department for Environment, Food & Rural Affairs"
+    },
+    {
+      "title": "Secret Intelligence Service",
+      "format": "Other",
+      "email_domain": "sis.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Security Industry Authority",
+      "format": "Executive non-departmental public body",
+      "email_domain": "homeoffice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "gov.uk domain",
+      "inherited_from_org": "Home Office"
+    },
+    {
+      "title": "Security Vetting Appeals Panel",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Sellafield Ltd",
+      "format": "Other",
+      "email_domain": "sellafieldsites.com",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Senior Courts Costs Office",
+      "format": "Court",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "Senior Salaries Review Body ",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Cabinet Office"
+    },
+    {
+      "title": "Sentencing Council for England and Wales",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Ministry of Justice"
+    },
+    {
+      "title": "Serious Fraud Office",
+      "format": "Non-ministerial department",
+      "email_domain": "sfo.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Service Complaints Ombudsman ",
+      "format": "Other",
+      "email_domain": "scoaf.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Service Prosecuting Authority",
+      "format": "Other",
+      "email_domain": "mod.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Ministry of Defence"
+    },
+    {
+      "title": "Sheffield Forgemasters International Ltd",
+      "format": "Public corporation",
+      "email_domain": "sheffieldforgemasters.com",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Single Source Regulations Office",
+      "format": "Executive non-departmental public body",
+      "email_domain": "ssro.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Sir John Soane's Museum",
+      "format": "Executive non-departmental public body",
+      "email_domain": "dcms.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Department for Culture, Media and Sport"
+    },
+    {
+      "title": "Skills England",
+      "format": "Executive agency",
+      "email_domain": "education.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Small Business Commissioner",
+      "format": "Executive non-departmental public body",
+      "email_domain": null,
+      "email_domain_source": null,
+      "has_mx": false,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Social Mobility Commission",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Cabinet Office"
+    },
+    {
+      "title": "Social Science Research Committee",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "food.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Social Security Advisory Committee",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "ssac.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Social Work England",
+      "format": "Executive non-departmental public body",
+      "email_domain": "socialworkengland.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "South Downs National Park Authority",
+      "format": "Other",
+      "email_domain": "southdowns.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Sport England",
+      "format": "Executive non-departmental public body",
+      "email_domain": "sportengland.org",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Sport Northern Ireland (Sports Council for Northern Ireland)",
+      "format": "Other",
+      "email_domain": "sportni.net",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Sports Council for Wales",
+      "format": "Other",
+      "email_domain": "sport.wales",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Sports Grounds Safety Authority",
+      "format": "Executive non-departmental public body",
+      "email_domain": "dcms.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Department for Culture, Media and Sport"
+    },
+    {
+      "title": "Standards and Testing Agency",
+      "format": "Executive agency",
+      "email_domain": "education.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Student Loans Company",
+      "format": "Executive non-departmental public body",
+      "email_domain": "slc.co.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Submarine Delivery Agency",
+      "format": "Executive agency",
+      "email_domain": "mod.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Ministry of Defence"
+    },
+    {
+      "title": "Subsidy Advice Unit",
+      "format": "Sub organisation",
+      "email_domain": "cma.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Supreme Court of the United Kingdom",
+      "format": "Non-ministerial department",
+      "email_domain": "supremecourt.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Tate",
+      "format": "Executive non-departmental public body",
+      "email_domain": "tate.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Teaching Regulation Agency",
+      "format": "Executive agency",
+      "email_domain": "education.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Technical Advisory Board",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "homeoffice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Technology and Construction Court",
+      "format": "Court",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "The Adjudicator’s Office",
+      "format": "Other",
+      "email_domain": "hmrc.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Revenue & Customs"
+    },
+    {
+      "title": "The Advisory Council on National Records and Archives",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "nationalarchives.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "The Business List",
+      "format": "Court",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "The Business and Property Courts",
+      "format": "Court",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "The Charity Commission",
+      "format": "Non-ministerial department",
+      "email_domain": "charitycommission.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "The Competition List",
+      "format": "Court",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "The Crown Estate",
+      "format": "Other",
+      "email_domain": "thecrownestate.co.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "The Electoral Commission",
+      "format": "Independent monitoring body",
+      "email_domain": "electoralcommission.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "The Executive Office (Northern Ireland)",
+      "format": "Other",
+      "email_domain": "executiveoffice-ni.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "The Financial List",
+      "format": "Court",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "The Independent Commission for Reconciliation and Information Recovery",
+      "format": "Executive non-departmental public body",
+      "email_domain": "icrir.independent-inquiry.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "The Insolvency Service",
+      "format": "Executive agency",
+      "email_domain": "insolvency.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "The Intellectual Property List",
+      "format": "Court",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "The Legal Ombudsman",
+      "format": "Other",
+      "email_domain": "legalombudsman.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "The National Archives",
+      "format": "Non-ministerial department",
+      "email_domain": "nationalarchives.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "The National Lottery Community Fund",
+      "format": "Executive non-departmental public body",
+      "email_domain": "tnlcommunityfund.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "The National Shipbuilding Office",
+      "format": "Other",
+      "email_domain": null,
+      "email_domain_source": null,
+      "has_mx": false,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "The Oil and Pipelines Agency",
+      "format": "Public corporation",
+      "email_domain": "mod.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "The Parliamentary and Health Service Ombudsman ",
+      "format": "Other",
+      "email_domain": "ombudsman.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "The Pension Protection Fund Ombudsman",
+      "format": "Tribunal",
+      "email_domain": "pensions-ombudsman.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "The Pensions Ombudsman",
+      "format": "Tribunal",
+      "email_domain": "pensions-ombudsman.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "The Pensions Regulator",
+      "format": "Executive non-departmental public body",
+      "email_domain": "thepensionsregulator.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "The Property, Trusts and Probate List",
+      "format": "Court",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "The Queen Elizabeth Memorial Committee",
+      "format": "Ad-hoc advisory group",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "The Revenue List",
+      "format": "Court",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "The Reviewing Committee on the Export of Works of Art and Objects of Cultural Interest",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "artscouncil.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "The Scottish Government",
+      "format": "Devolved government",
+      "email_domain": "gov.scot",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "The Security Service",
+      "format": "Other",
+      "email_domain": "mi5.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "The Theatres Trust",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "theatrestrust.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "The Water Services Regulation Authority ",
+      "format": "Non-ministerial department",
+      "email_domain": "ofwat.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Trade Remedies Authority",
+      "format": "Executive non-departmental public body",
+      "email_domain": "traderemedies.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Trade and Agriculture Commission",
+      "format": "Other",
+      "email_domain": "businessandtrade.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Traffic Commissioners for Great Britain",
+      "format": "Tribunal",
+      "email_domain": "otc.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Transport Focus",
+      "format": "Executive non-departmental public body",
+      "email_domain": "transportfocus.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Treasure Valuation Committee",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "finds.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Tribunal Procedure Committee",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Trinity House",
+      "format": "Executive non-departmental public body",
+      "email_domain": "trinityhouse.co.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "UK Anti-Doping",
+      "format": "Executive non-departmental public body",
+      "email_domain": "ukad.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "UK Asset Resolution Limited",
+      "format": "Other",
+      "email_domain": "ukar.co.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "UK Atomic Energy Authority",
+      "format": "Executive non-departmental public body",
+      "email_domain": "ukaea.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "UK Commission on Covid Commemoration",
+      "format": "Other",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "UK Council for Internet Safety",
+      "format": "Sub organisation",
+      "email_domain": "education.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Department for Education"
+    },
+    {
+      "title": "UK Debt Management Office",
+      "format": "Executive agency",
+      "email_domain": "dmo.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "UK Defence Innovation",
+      "format": "Sub organisation",
+      "email_domain": "mod.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "Ministry of Defence"
+    },
+    {
+      "title": "UK Defence and Security Exports",
+      "format": "Sub organisation",
+      "email_domain": "businessandtrade.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "UK Export Finance",
+      "format": "Ministerial department",
+      "email_domain": "ukexportfinance.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "UK Government Investments",
+      "format": "Other",
+      "email_domain": "ukgi.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "UK Health Security Agency",
+      "format": "Executive agency",
+      "email_domain": "ukhsa.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "UK Holocaust Memorial Foundation",
+      "format": "Other",
+      "email_domain": "communities.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "UK Hydrographic Office",
+      "format": "Executive agency",
+      "email_domain": "ukho.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "UK Industrial Fusion Solutions",
+      "format": "Sub organisation",
+      "email_domain": "ukifs.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "UK Infrastructure Bank",
+      "format": "Executive non-departmental public body",
+      "email_domain": "hmtreasury.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Mimecast",
+      "inherited_from_org": "HM Treasury"
+    },
+    {
+      "title": "UK Integrated Security Fund",
+      "format": "Sub organisation",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "UK National Authority for Counter-Eavesdropping",
+      "format": "Sub organisation",
+      "email_domain": "fcdo.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "FCDO Services "
+    },
+    {
+      "title": "UK National Contact Point",
+      "format": "Sub organisation",
+      "email_domain": "businessandtrade.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "UK National Screening Committee",
+      "format": "Sub organisation",
+      "email_domain": "dhsc.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "UK Research and Innovation",
+      "format": "Executive non-departmental public body",
+      "email_domain": "ukri.org",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "UK Resilience Academy",
+      "format": "Sub organisation",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Cabinet Office"
+    },
+    {
+      "title": "UK Shared Business Services Ltd",
+      "format": "Other",
+      "email_domain": "uksbs.co.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "UK Space Agency",
+      "format": "Executive agency",
+      "email_domain": "ukspaceagency.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "UK Sport",
+      "format": "Executive non-departmental public body",
+      "email_domain": "uksport.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "UK Statistics Authority",
+      "format": "Non-ministerial department",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Google Workspace",
+      "inherited_from_org": "Cabinet Office"
+    },
+    {
+      "title": "UK Visas and Immigration",
+      "format": "Sub organisation",
+      "email_domain": "homeoffice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "United Kingdom National Nuclear Laboratory",
+      "format": "Public corporation",
+      "email_domain": "uknnl.com",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "United Kingdom Reserve Forces Association",
+      "format": "Sub organisation",
+      "email_domain": "rfca.mod.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "United Kingdom Security Vetting",
+      "format": "Sub organisation",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Upper Tribunal (Administrative Appeals Chamber)",
+      "format": "Tribunal",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "Upper Tribunal (Immigration and Asylum Chamber)",
+      "format": "Tribunal",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "Upper Tribunal (Lands Chamber)",
+      "format": "Tribunal",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "Upper Tribunal (Tax and Chancery Chamber)",
+      "format": "Tribunal",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "parent_org",
+      "has_mx": true,
+      "mail_provider": "Microsoft 365",
+      "inherited_from_org": "HM Courts & Tribunals Service"
+    },
+    {
+      "title": "Valuation Office Agency",
+      "format": "Executive agency",
+      "email_domain": "voa.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Valuation Tribunal Service",
+      "format": "Executive non-departmental public body",
+      "email_domain": "valuationtribunal.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Valuation Tribunal for England ",
+      "format": "Tribunal",
+      "email_domain": "valuationtribunal.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Vehicle Certification Agency",
+      "format": "Executive agency",
+      "email_domain": "vehicle-certification-agency.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Veterans Advisory and Pensions Committees",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "mod.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Veterans UK",
+      "format": "Sub organisation",
+      "email_domain": "mod.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Veterinary Medicines Directorate",
+      "format": "Executive agency",
+      "email_domain": "vmd.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Veterinary Products Committee",
+      "format": "Advisory non-departmental public body",
+      "email_domain": "vmd.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Victims' Commissioner",
+      "format": "Other",
+      "email_domain": "victimscommissioner.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Victoria and Albert Museum",
+      "format": "Executive non-departmental public body",
+      "email_domain": "vam.ac.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "VisitBritain",
+      "format": "Executive non-departmental public body",
+      "email_domain": "visitbritain.org",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "VisitEngland",
+      "format": "Executive non-departmental public body",
+      "email_domain": "visitengland.com",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Wales Audit Office",
+      "format": "Other",
+      "email_domain": "wao.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Wallace Collection",
+      "format": "Executive non-departmental public body",
+      "email_domain": "wallacecollection.org",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Welsh Government",
+      "format": "Devolved government",
+      "email_domain": "gov.wales",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Welsh Language Commissioner",
+      "format": "Other",
+      "email_domain": "comisiynyddygymraeg.org",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Westminster Foundation for Democracy",
+      "format": "Executive non-departmental public body",
+      "email_domain": "wfd.org",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Wilton Park",
+      "format": "Executive agency",
+      "email_domain": "wiltonpark.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Windrush Commemoration Committee",
+      "format": "Sub organisation",
+      "email_domain": "communities.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Women and Equalities Unit",
+      "format": "Sub organisation",
+      "email_domain": "cabinetoffice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Yorkshire Dales National Park Authority",
+      "format": "Other",
+      "email_domain": "yorkshiredales.org.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Youth Custody Service",
+      "format": "Sub organisation",
+      "email_domain": "justice.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Youth Justice Agency of Northern Ireland",
+      "format": "Executive agency",
+      "email_domain": "justice-ni.gov.uk",
+      "email_domain_source": "url_inferred",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "Youth Justice Board for England and Wales",
+      "format": "Executive non-departmental public body",
+      "email_domain": "yjb.gov.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    },
+    {
+      "title": "jHub Defence Innovation",
+      "format": "Sub organisation",
+      "email_domain": "mod.uk",
+      "email_domain_source": "mailto_scrape",
+      "has_mx": true,
+      "mail_provider": null,
+      "inherited_from_org": null
+    }
+  ]
+}

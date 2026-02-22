@@ -5,9 +5,10 @@ from pathlib import Path
 
 
 SCRIPT_DIR = Path(__file__).parent
+TEMPLATE_DIR = SCRIPT_DIR / '../templates/'
 DATA_PATH = SCRIPT_DIR / '../data/orgs/uk/govuk_orgs_enriched.json'
-TEMPLATE_PATH = SCRIPT_DIR / 'treemap_template.html'
-HIERARCHY_TEMPLATE_PATH = SCRIPT_DIR / 'hierarchy_template.html'
+TEMPLATE_PATH = TEMPLATE_DIR / 'treemap_template.html'
+HIERARCHY_TEMPLATE_PATH = TEMPLATE_DIR / 'hierarchy_template.html'
 OUTPUT_PATH = SCRIPT_DIR / '../uk_gov_treemap_d3.html'
 HIERARCHY_OUTPUT_PATH = SCRIPT_DIR / '../uk_gov_hierarchy.html'
 

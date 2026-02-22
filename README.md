@@ -85,12 +85,11 @@ Each organisation record includes:
 | `oscar_budget_£k` | Matched budget in £thousands |
 | `best_domain` | Primary website URL |
 | `email_domain` | Email domain for the organisation |
-| `email_domain_source` | Where the domain came from (`mailto_scrape`, `url_inferred`, `parent_org`) |
+| `email_domain_source` | Where the domain came from (`mailto_scrape`, `parent_org`, `govuk_domain_list`) |
 | `has_mx` | Whether the domain has MX records |
 | `mail_provider` | Detected mail provider (Microsoft 365, Google Workspace, etc.) |
-| `mail_provider_category` | Provider type (`cloud`, `security_gateway`, `government`, `isp`) |
-| `mail_provider_confidence` | Detection confidence (`high`, `medium`, `low`) |
 | `inherited_from_org` | Parent org name (if domain inherited) |
+| `url_inferred` | URL where none is provided |
 
 ### Mail Provider Detection
 

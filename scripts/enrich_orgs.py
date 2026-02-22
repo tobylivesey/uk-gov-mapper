@@ -120,8 +120,12 @@ def main(extant_orgs: list[dict] | None = None) -> list[dict]:
             if web_url:
                 try:
                     response = safe_http_request(session, web_url)
-                    org["email_domain"] = extract_email_domain(response.text)
-                    org["email_domain_source"] = "mailto_scrape" if org["email_domain"] else None
+                    email_domain = extract_email_domain(response.text)
+                    org["email_domain"] = email_domain
+                    org["email_domain_source"] = "mailto_scrape" if email_domain else None
+                    # Add to email_domains list (same as exempt orgs do)
+                    if email_domain:
+                        add_email_domain(org, email_domain)
                 except Exception as e:
                     print(f"Error fetching {web_url}: {e}")
                     org["email_domain"] = None

@@ -4981,6 +4981,10 @@
       {
         "id": "https://www.gov.uk/api/organisations/great-british-energy-nuclear",
         "web_url": "https://www.gov.uk/government/organisations/great-british-energy-nuclear"
+      },
+      {
+        "id": "https://www.gov.uk/api/organisations/united-kingdom-national-nuclear-laboratory",
+        "web_url": "https://www.gov.uk/government/organisations/united-kingdom-national-nuclear-laboratory"
       }
     ],
     "superseded_organisations": [
@@ -18312,7 +18316,7 @@
     "id": "https://www.gov.uk/api/organisations/regulatory-policy-committee",
     "title": "Regulatory Policy Committee",
     "format": "Advisory non-departmental public body",
-    "updated_at": "2026-02-09T12:04:16Z",
+    "updated_at": "2026-02-20T15:06:41Z",
     "web_url": "https://www.gov.uk/government/organisations/regulatory-policy-committee",
     "details": {
       "slug": "regulatory-policy-committee",
@@ -22513,34 +22517,6 @@
     "parent_organisations": [],
     "child_organisations": [],
     "superseded_organisations": [],
-    "superseding_organisations": []
-  },
-  {
-    "id": "https://www.gov.uk/api/organisations/wales-office",
-    "title": "Wales Office",
-    "format": "Ministerial department",
-    "updated_at": "2025-10-14T13:52:56Z",
-    "web_url": "https://www.gov.uk/government/organisations/wales-office",
-    "details": {
-      "slug": "wales-office",
-      "abbreviation": "",
-      "logo_formatted_name": "Wales Office",
-      "organisation_brand_colour_class_name": "wales-office",
-      "organisation_logo_type_class_name": "wales",
-      "closed_at": null,
-      "govuk_status": "live",
-      "govuk_closed_status": null,
-      "content_id": "99a5828c-79dd-4533-ab18-18069be289cf"
-    },
-    "analytics_identifier": "OT1422",
-    "parent_organisations": [],
-    "child_organisations": [],
-    "superseded_organisations": [
-      {
-        "id": "https://www.gov.uk/api/organisations/office-of-the-secretary-of-state-for-wales",
-        "web_url": "https://www.gov.uk/government/organisations/office-of-the-secretary-of-state-for-wales"
-      }
-    ],
     "superseding_organisations": []
   },
   {

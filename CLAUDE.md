@@ -35,17 +35,11 @@ python -m scripts.enrich_jobs
 ### Data Flow
 1. **Organization Enrichment Pipeline** (run in order):
    ```bash
-<<<<<<< HEAD
-   python -m scripts.fetch_orgs           # Fetch org data from gov.uk API
-   python -m scripts.enrich_orgs          # Initial enrichment (OSCAR, mailto domains)
-   python -m scripts.enrich_mailservers   # DNS MX lookups for email domains
-   python -m scripts.enrich_govuk_domains # Fill gaps from official domain list
-=======
-   python -m scripts.run_fetch_orgs           # Fetch org data from gov.uk API
-   python -m scripts.run_enrich_orgs          # Initial enrichment (OSCAR, mailto domains)
-   python -m scripts.run_enrich_mailservers   # DNS MX lookups for email domains
-   python -m scripts.run_enrich_parent_domains # Inherit domains from parent orgs
->>>>>>> a0b049a01044af8ce17dfe9b1150fb3baf6c1a2d
+   python -m scripts.fetch_orgs             # Fetch org data from gov.uk API
+   python -m scripts.enrich_orgs            # Initial enrichment (OSCAR, mailto domains)
+   python -m scripts.enrich_mailservers     # DNS MX lookups for email domains
+   python -m scripts.enrich_parent_domains  # Inherit domains from parent orgs
+   python -m scripts.enrich_govuk_domains   # Fill gaps from official domain list
    ```
    - Output: `data/orgs/uk/govuk_orgs_enriched.json`
 
@@ -69,7 +63,7 @@ python -m scripts.enrich_jobs
   ```json
   {
     "provider": "source_name",
-    "org_slug": "short_org_name", 
+    "org_slug": "short_org_name",
     "company": "full_org_name",
     "title": "job_title",
     "url": "job_posting_url",
@@ -84,7 +78,6 @@ python -m scripts.enrich_jobs
 - **`data/orgs/uk/`**: Government organization data
   - `govuk_extant_orgs.json`: Raw org data from gov.uk API
   - `govuk_orgs_enriched.json`: Fully enriched org data
-<<<<<<< HEAD
   - `govuk_domain_list.csv`: Cached .gov.uk domain names from official list
   - `oscar_data_2024-25.csv`: Cached OSCAR II budget data
 - **`data/normalized/`**: Normalized job data in NDJSON format
@@ -101,6 +94,11 @@ python -m scripts.enrich_jobs
   - Falls back to URL extraction if no domains exist
   - Sets org-level `has_mx: true` if any domain has MX
 
+- **`enrich_parent_domains.py`**: Inherits domains from parent organizations
+  - For orgs without valid MX records, inherits from parent org
+  - Sets `email_domain_source: "parent_org"` for inherited domains
+  - Multiple passes handle deeply nested hierarchies
+
 - **`enrich_govuk_domains.py`**: Adds domains from official .gov.uk list
   - Source: https://www.gov.uk/government/publications/list-of-gov-uk-domain-names
   - Finds ALL matching domains (not just first match)
@@ -108,48 +106,25 @@ python -m scripts.enrich_jobs
   - Matching strategies: slug_exact > abbreviation > slug_variation > fuzzy
 
 ### Email Domains Data Model
-Each org has an `email_domains` list of domain strings:
+Each org has an `email_domains` list of domain strings with source tracking:
 ```json
 {
   "email_domains": ["cabinetoffice.gov.uk", "cabinet-office.gov.uk"],
-  "has_mx": true,
-  "mail_providers": ["Google Workspace"]
-}
-```
-- **`has_mx`**: True if any email domain has MX records (set by `enrich_mailservers`)
-- **`mail_providers`**: Detected mail providers across all domains (set by `enrich_mailservers`)
-=======
-- **`data/normalized/`**: Normalized job data in NDJSON format
-- Uses NDJSON (newline-delimited JSON) for incremental data collection
-
-### Email Domain Data Model
-Each org has email domain tracking with source attribution:
-```json
-{
   "email_domain": "cabinetoffice.gov.uk",
-  "email_domain_source": "mailto_scrape",  // or "url_inferred", "parent_org"
+  "email_domain_source": "mailto_scrape",  // or "parent_org"
   "has_mx": true,
+  "mail_providers": ["Google Workspace"],
   "mail_provider": "Microsoft 365",
-  "mail_provider_category": "cloud",       // cloud, security_gateway, government, isp, etc.
-  "mail_provider_confidence": "high",      // high, medium, low
-  "inherited_from_org": "Cabinet Office",  // only if source is "parent_org"
-  "inherited_from_org_id": "https://..."   // only if source is "parent_org"
+  "inherited_from_org": "Cabinet Office",      // only if source is "parent_org"
+  "inherited_from_org_id": "https://..."       // only if source is "parent_org"
 }
 ```
 
 **email_domain_source values:**
 - `mailto_scrape`: Extracted from mailto links on gov.uk page
-- `url_inferred`: Derived from the org's website URL
 - `parent_org`: Inherited from parent organization
-
-### Mail Provider Detection (`scripts/mail_providers.py`)
-Comprehensive MX record parser that identifies:
-- **Cloud providers**: Google Workspace, Microsoft 365, Amazon SES, Zoho, etc.
-- **Security gateways**: Proofpoint, Mimecast, Sophos, Barracuda, Forcepoint, etc.
-- **Government**: GSI, Defence Gateway, MOD, NHS Mail, Police
-- **UK ISPs/Hosting**: GoDaddy, 123-Reg, IONOS, BT, etc.
-- **Self-hosted**: Detected via mail.domain.tld patterns
->>>>>>> a0b049a01044af8ce17dfe9b1150fb3baf6c1a2d
+- `govuk_domain_list`: Matched from official .gov.uk domain list
+- `url_inferred`: Inferred URL where none is given
 
 ### Centralized Utilities (`scripts/utils.py`)
 Common functions used across all scripts:
@@ -162,17 +137,19 @@ Common functions used across all scripts:
 - **`require_env_vars()`**: Validates required environment variables
 - **`log_progress()`**: Consistent progress logging
 - **`write_json()`** / **`write_ndjson()`** / **`write_csv()`**: Data persistence utilities
-<<<<<<< HEAD
-=======
 
 ### Mail Provider Detection (`scripts/mail_providers.py`)
 - **`get_mail_provider(mx_records)`**: Returns (provider, category, confidence) tuple
 - **`parse_mx_provider(mx_host)`**: Parse single MX hostname to identify provider
 - Handles 50+ mail providers/services with pattern matching
->>>>>>> a0b049a01044af8ce17dfe9b1150fb3baf6c1a2d
+- **Cloud providers**: Google Workspace, Microsoft 365, Amazon SES, Zoho, etc.
+- **Security gateways**: Proofpoint, Mimecast, Sophos, Barracuda, Forcepoint, etc.
+- **Government**: GSI, Defence Gateway, MOD, NHS Mail, Police
+- **UK ISPs/Hosting**: GoDaddy, 123-Reg, IONOS, BT, etc.
+- **Self-hosted**: Detected via mail.domain.tld patterns
 
 ### Dependencies
 - **Web scraping**: beautifulsoup4, requests
-- **Data processing**: pandas, pydantic for validation  
+- **Data processing**: pandas, pydantic for validation
 - **Environment**: python-dotenv for configuration
 - **Development**: Uses Python 3.13+ with type hints

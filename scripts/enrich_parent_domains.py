@@ -11,7 +11,7 @@ Usage:
 
 from pathlib import Path
 import pandas as pd
-from scripts.utils import write_json, write_csv, log_progress
+from scripts.utils import write_json, write_csv, log_progress, add_email_domain
 from scripts.mail_providers import get_mail_provider
 from scripts.enrich_mailservers import lookup_mx_records
 
@@ -46,17 +46,23 @@ def inherit_parent_domain(org: dict, parent: dict) -> bool:
 
     Returns True if domain was inherited, False otherwise.
     """
-    parent_domain = parent.get("email_domain")
+    # Get first domain from parent's email_domains list
+    parent_domains = parent.get("email_domains", [])
     parent_has_mx = parent.get("has_mx", False)
 
-    if not parent_domain or not parent_has_mx:
+    if not parent_domains or not parent_has_mx:
         return False
 
-    # Copy parent's email configuration
+    parent_domain = parent_domains[0]  # Use first domain from list
+
+    # Copy parent's email configuration (keep singular field for backwards compat)
     org["email_domain"] = parent_domain
     org["email_domain_source"] = "parent_org"
     org["inherited_from_org"] = parent.get("title")
     org["inherited_from_org_id"] = parent.get("id")
+
+    # Add to email_domains list
+    add_email_domain(org, parent_domain)
 
     # Perform MX lookup for the inherited domain (it should work since parent has MX)
     mx_records = lookup_mx_records(parent_domain)
@@ -64,12 +70,11 @@ def inherit_parent_domain(org: dict, parent: dict) -> bool:
 
     provider, category, confidence = get_mail_provider(mx_records)
     org["mail_provider"] = provider
-    org["mail_provider_category"] = category
-    org["mail_provider_confidence"] = confidence
+    if provider:
+        org["mail_providers"] = [provider]  # Set as list for consistency
 
     org["has_mx"] = len(mx_records) > 0
     org["primary_mx_host"] = mx_records[0]["host"] if mx_records else None
-    org["mx_record_count"] = len(mx_records)
 
     return True
 

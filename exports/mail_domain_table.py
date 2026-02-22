@@ -1,14 +1,26 @@
+# scraper/export_for_blog.py
+"""
+Subset and export gov.uk email domain data for the Astro blog.
+Intended to be run as a pre-build step in CodeBuild.
+Output: JSON file consumed by Astro at build time.
+"""
+
+import json
+import sys
+from pathlib import Path
+from datetime import datetime, timezone
+
+# --- Your existing scraper logic produces a DataFrame here ---
 """
 scripts.main
-Main orchestration script for UK Government organization data pipeline.
+Email domain export generating script for UK Government organization data pipeline.
 
-Runs the full enrichment pipeline:
+Runs the full enrichment pipeline, but not :
 1. fetch_orgs: Fetches orgs from gov.uk API
 2. enrich_orgs: Enriches with OSCAR II financials and mailto domains
 3. enrich_mailservers: MX lookups for email domains
 4. enrich_parent_domains: Inherit domains from parent orgs
 5. enrich_govuk_domains: Adds domains from official gov.uk list
-6. visualise: Generates D3 treemap visualization
 
 Usage:
     python -m scripts.main
@@ -60,3 +72,40 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+def prepare_blog_subset(df: pd.DataFrame) -> pd.DataFrame:
+    """Select and clean columns for public display."""
+    cols = ['organisation', 'domain', 'status', 'last_seen']
+    subset = (
+        df[cols]
+        .sort_values('organisation')
+        .reset_index(drop=True)
+    )
+    # Normalise any NaT/NaN to None so json.dumps handles them cleanly
+    return subset.where(subset.notna(), None)
+
+
+def export_json(df: pd.DataFrame, output_path: Path) -> None:
+    """Write DataFrame to JSON with metadata for the Astro component."""
+    payload = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "record_count": len(df),
+        "columns": list(df.columns),
+        # orient='records' gives a list of {col: val} dicts — 
+        # cleanest for JS/Astro to iterate over
+        "data": json.loads(df.to_json(orient='records')),
+    }
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(json.dumps(payload, indent=2))
+    print(f"Exported {len(df)} records to {output_path}")
+
+
+if __name__ == "__main__":
+    # Output path passed as arg by buildspec, defaults to local dev path
+    output = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("govuk_domains.json")
+
+    # df = scrape_govuk_domains()  # your existing function
+    df = prepare_blog_subset(df)
+    export_json(df, output)

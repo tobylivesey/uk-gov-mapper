@@ -297,11 +297,6 @@ def enrich_orgs_with_govuk_domains(
             # Add to email_domains list
             add_email_domain(org, domain)
 
-            # Set source if this is the first domain for this org
-            if not org.get("email_domain"):
-                org["email_domain"] = domain
-                org["email_domain_source"] = "govuk_domain_list"
-
             existing_domains.add(domain)
             domains_added += 1
             org_enriched = True
@@ -448,11 +443,6 @@ def reverse_match_unassigned_domains(
 
         # Add to org
         add_email_domain(org, domain)
-
-        # Set source if this is the first domain for this org
-        if not org.get("email_domain"):
-            org["email_domain"] = domain
-            org["email_domain_source"] = "govuk_domain_list"
 
         domains_added += 1
         logger.info(f"  Reverse matched ({method}, {score:.2f}): {domain} -> {org_title}")

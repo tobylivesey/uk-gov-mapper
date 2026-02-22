@@ -55,9 +55,7 @@ def inherit_parent_domain(org: dict, parent: dict) -> bool:
 
     parent_domain = parent_domains[0]  # Use first domain from list
 
-    # Copy parent's email configuration (keep singular field for backwards compat)
-    org["email_domain"] = parent_domain
-    org["email_domain_source"] = "parent_org"
+    # Track inheritance metadata
     org["inherited_from_org"] = parent.get("title")
     org["inherited_from_org_id"] = parent.get("id")
 
@@ -139,15 +137,11 @@ def main(extant_orgs: list[dict] | None = None) -> list[dict]:
 
     enriched_orgs = enrich_with_parent_domains(extant_orgs)
 
-    # Summary statistics by source
-    sources = {}
-    for org in enriched_orgs:
-        source = org.get("email_domain_source") or "none"
-        sources[source] = sources.get(source, 0) + 1
-
-    print("\nEmail domain sources:")
-    for source, count in sorted(sources.items(), key=lambda x: -x[1]):
-        print(f"  {source}: {count}")
+    # Summary statistics
+    inherited_count = sum(1 for org in enriched_orgs if org.get("inherited_from_org"))
+    with_domains = sum(1 for org in enriched_orgs if org.get("email_domains"))
+    print(f"\nOrgs with inherited domains: {inherited_count}")
+    print(f"Orgs with any email_domains: {with_domains}/{len(enriched_orgs)}")
 
     # Summary by provider
     providers = {}

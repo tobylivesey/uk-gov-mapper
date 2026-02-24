@@ -40,6 +40,7 @@ python -m scripts.visualise
 | `python -m scripts.run_visualiser` | Generate D3 treemap HTML visualisation |
 | `python -m scripts.run_enrich_jobs --provider adzuna --token "query"` | Scrape jobs from Adzuna |
 | `python -m scripts.run_enrich_jobs --provider greenhouse --token "board"` | Scrape jobs from Greenhouse |
+| `python exports/mail_domain_table.py [output.json]` | Export domain data for blog |
 
 ## Project Structure
 
@@ -55,6 +56,8 @@ uk-gov-mapper/
 │   └── providers/                         # Raw provider data cache
 ├── jobs/
 │   └── providers/                         # Job scraping modules (adzuna, greenhouse, psr)
+├── exports/
+│   └── mail_domain_table.py               # Export domain data for Astro blog
 ├── scripts/
 │   ├── run_fetch_orgs.py                  # Fetch orgs from GOV.UK API
 │   ├── run_enrich_orgs.py                 # OSCAR & mailto enrichment
@@ -100,6 +103,26 @@ The `mail_providers.py` module identifies 50+ mail services from MX records:
 - **UK Government**: GSI, Defence Gateway, MOD, NHS Mail, Police Service
 - **UK ISPs/Hosting**: GoDaddy, 123-Reg, IONOS, BT, Claranet
 - **Self-hosted**: Detected via `mail.domain.tld` patterns
+
+### Blog Export (`govuk_domains.json`)
+
+The `exports/mail_domain_table.py` script generates a JSON file for the Astro blog:
+
+```json
+{
+  "generated_at": "2026-02-24T09:05:50.540761+00:00",
+  "record_count": 663,
+  "columns": ["organisation", "domain", "status", "last_seen"],
+  "data": [
+    {
+      "organisation": "Cabinet Office",
+      "domain": "cabinetoffice.gov.uk",
+      "status": "live",
+      "last_seen": "2024-01-15T10:00:00Z"
+    }
+  ]
+}
+```
 
 ### Job Data (NDJSON format)
 

@@ -44,7 +44,10 @@ def export_json(df: pd.DataFrame, output_path: Path) -> None:
 
 if __name__ == "__main__":
     # Output path passed as arg by buildspec, defaults to local dev path
+    # Handle both file paths and directory paths (append default filename if directory)
     output = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("govuk_domains.json")
+    if output.is_dir():
+        output = output / "govuk_domains.json"
 
     # Load enriched org data from the pipeline output
     enriched_path = Path(__file__).parent.parent / "data" / "orgs" / "uk" / "govuk_orgs_enriched.json"

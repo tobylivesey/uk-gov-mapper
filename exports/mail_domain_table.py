@@ -19,7 +19,7 @@ def prepare_blog_subset(df: pd.DataFrame) -> pd.DataFrame:
     subset = pd.DataFrame({
         'organisation': df['title'],
         'domain': df['email_domains'].apply(lambda x: x[0] if x else None),
-        'mail_provider': df['mail_provider'],
+        'mail_providers': df['mail_providers'],
         'domain_source': df['email_domain_source'],
         'last_seen': df['updated_at']
     })

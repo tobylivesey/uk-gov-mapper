@@ -60,7 +60,7 @@ def inherit_parent_domain(org: dict, parent: dict) -> bool:
     org["inherited_from_org_id"] = parent.get("id")
 
     # Add to email_domains list
-    add_email_domain(org, parent_domain)
+    add_email_domain(org, parent_domain, source="parent_org")
 
     # Perform MX lookup for the inherited domain (it should work since parent has MX)
     mx_records = lookup_mx_records(parent_domain)

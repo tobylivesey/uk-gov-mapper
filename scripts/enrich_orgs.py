@@ -50,7 +50,7 @@ def enrich_org_weburl(org: dict, session: requests.Session) -> dict:
         # Extract email domain from mailto link and add to email_domains list
         email_domain = extract_email_domain(response.text)
         if email_domain:
-            add_email_domain(org, email_domain)
+            add_email_domain(org, email_domain, source="mailto_scrape")
             print(f"{org['title']} enriched with external link: {org['non_govuk_domain']} and mailto domain: {email_domain}")
         else:
             print(f"{org['title']} enriched with external link: {org['non_govuk_domain']} (no mailto found)")
@@ -116,7 +116,7 @@ def main(extant_orgs: list[dict] | None = None) -> list[dict]:
                     response = safe_http_request(session, web_url)
                     email_domain = extract_email_domain(response.text)
                     if email_domain:
-                        add_email_domain(org, email_domain)
+                        add_email_domain(org, email_domain, source="mailto_scrape")
                 except Exception as e:
                     print(f"Error fetching {web_url}: {e}")
                 rate_limit_sleep(0.2)

@@ -126,13 +126,15 @@ def lookup_mx_records(domain: str, timeout: float = 5.0) -> list[dict]:
         return []
 
 
-def add_email_domain(org: dict, domain: str) -> bool:
+def add_email_domain(org: dict, domain: str, source: str = None) -> bool:
     """
     Add an email domain to an org's email_domains list.
 
     Args:
         org: The org dict to update
         domain: The email domain to add
+        source: The source of this domain (e.g., 'mailto_scrape', 'url_inferred',
+                'parent_org', 'govuk_domain_list')
 
     Returns:
         True if domain was added, False if already present
@@ -144,4 +146,10 @@ def add_email_domain(org: dict, domain: str) -> bool:
         return False
 
     org["email_domains"].append(domain)
+
+    # Track source in parallel list
+    if "email_domain_sources" not in org:
+        org["email_domain_sources"] = []
+    org["email_domain_sources"].append(source or "unknown")
+
     return True

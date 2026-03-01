@@ -62,7 +62,7 @@ def enrich_org_mailservers(org: dict) -> dict:
             or extract_domain_from_url(org.get("external_url"))
         )
         if fallback_domain and fallback_domain != "gov.uk":
-            add_email_domain(org, fallback_domain)
+            add_email_domain(org, fallback_domain, source="url_inferred")
             print(f"{org_title}: added fallback domain {fallback_domain}")
 
     # Process each email domain - check MX records

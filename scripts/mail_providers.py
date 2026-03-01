@@ -51,13 +51,13 @@ MX_PATTERNS: list[tuple[str, str, str, str]] = [
     (r"mailchimp\.com$|mcsv\.net$", "Mailchimp", "cloud", "high"),
 
     # UK Government specific
-    (r"gsi\.gov\.uk$", "GSI (Government Secure Intranet)", "government", "high"),
-    (r"gcsx\.gov\.uk$", "GCSX", "government", "high"),
-    (r"defencegateway\.mod\.uk$", "Defence Gateway", "government", "high"),
-    (r"gcbps\.mod\.uk$", "MOD Global Communications", "government", "high"),
-    (r"mod\.uk$", "Ministry of Defence", "government", "medium"),
-    (r"nhs\.net$|nhs\.uk$", "NHS Mail", "government", "high"),
-    (r"police\.uk$", "Police Service", "government", "medium"),
+    (r"gsi\.gov\.uk$", "GSI (Government Secure Intranet)", "gov_shared_service", "high"),
+    (r"gcsx\.gov\.uk$", "GCSX", "gov_shared_service", "high"),
+    (r"defencegateway\.mod\.uk$", "Defence Gateway", "gov_shared_service", "high"),
+    (r"gcbps\.mod\.uk$", "MOD Global Communications", "gov_shared_service", "high"),
+    (r"mod\.uk$", "Ministry of Defence", "gov_shared_service", "medium"),
+    (r"nhs\.net$|nhs\.uk$", "NHS Mail", "gov_shared_service", "high"),
+    (r"police\.uk$", "Police Service", "gov_shared_service", "medium"),
 
     # UK ISPs and hosting
     (r"secureserver\.net$", "GoDaddy", "isp", "high"),

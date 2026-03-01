@@ -29,7 +29,7 @@ MX_PATTERNS: list[tuple[str, str, str, str]] = [
     (r"mimecast\.com$|mimecast\.co\.uk$", "Mimecast", "security_gateway", "high"),
     (r"messagelabs\.com$|symantec.*cloud|brightmail", "Symantec/Broadcom", "security_gateway", "high"),
     (r"barracuda\.com$|barracudanetworks\.com$|cuda-inc\.com$", "Barracuda", "security_gateway", "high"),
-    (r"sophos\.com$|reflexion\.net$", "Sophos", "security_gateway", "high"),
+    (r"sophos\.com$|reflexion\.net$|sophosav.*", "Sophos", "security_gateway", "high"),
     (r"forcepoint\.com$|websense\.com$|mailcontrol\.com$", "Forcepoint", "security_gateway", "high"),
     (r"iphmx\.com$|trendmicro\.com$|tmes\.trendmicro\.com$", "Trend Micro", "security_gateway", "high"),
     (r"fortimail\.com$|fortinet\.net$", "Fortinet FortiMail", "security_gateway", "high"),

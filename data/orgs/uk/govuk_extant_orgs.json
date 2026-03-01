@@ -3410,7 +3410,7 @@
     "id": "https://www.gov.uk/api/organisations/competition-and-markets-authority",
     "title": "Competition and Markets Authority",
     "format": "Non-ministerial department",
-    "updated_at": "2025-11-25T14:20:52Z",
+    "updated_at": "2026-02-26T10:42:37Z",
     "web_url": "https://www.gov.uk/government/organisations/competition-and-markets-authority",
     "details": {
       "slug": "competition-and-markets-authority",
@@ -7655,6 +7655,10 @@
       {
         "id": "https://www.gov.uk/api/organisations/science-advisory-committees",
         "web_url": "https://www.gov.uk/government/organisations/science-advisory-committees"
+      },
+      {
+        "id": "https://www.gov.uk/api/organisations/science-council",
+        "web_url": "https://www.gov.uk/government/organisations/science-council"
       }
     ],
     "superseded_organisations": [],
@@ -8881,16 +8885,16 @@
     "id": "https://www.gov.uk/api/organisations/government-project-delivery",
     "title": "Government Project Delivery",
     "format": "Sub organisation",
-    "updated_at": "2026-01-21T15:58:11Z",
+    "updated_at": "2026-02-23T12:07:57Z",
     "web_url": "https://www.gov.uk/government/organisations/government-project-delivery",
     "details": {
       "slug": "government-project-delivery",
       "abbreviation": "",
       "logo_formatted_name": "Government<br/>Project Delivery",
-      "organisation_brand_colour_class_name": "cabinet-office",
+      "organisation_brand_colour_class_name": "hm-revenue-customs",
       "organisation_logo_type_class_name": "single-identity",
       "closed_at": null,
-      "govuk_status": "exempt",
+      "govuk_status": "live",
       "govuk_closed_status": null,
       "content_id": "7a9d8933-f61b-48b9-bfd5-d1170175e682"
     },
@@ -10524,7 +10528,7 @@
     "id": "https://www.gov.uk/api/organisations/homes-england",
     "title": "Homes England",
     "format": "Executive non-departmental public body",
-    "updated_at": "2026-01-21T09:45:41Z",
+    "updated_at": "2026-02-24T13:32:11Z",
     "web_url": "https://www.gov.uk/government/organisations/homes-england",
     "details": {
       "slug": "homes-england",
@@ -10544,7 +10548,12 @@
         "web_url": "https://www.gov.uk/government/organisations/ministry-of-housing-communities-local-government"
       }
     ],
-    "child_organisations": [],
+    "child_organisations": [
+      {
+        "id": "https://www.gov.uk/api/organisations/national-housing-bank",
+        "web_url": "https://www.gov.uk/government/organisations/national-housing-bank"
+      }
+    ],
     "superseded_organisations": [
       {
         "id": "https://www.gov.uk/api/organisations/homes-and-communities-agency",
@@ -14057,6 +14066,34 @@
         "web_url": "https://www.gov.uk/government/organisations/highways-england"
       }
     ],
+    "superseding_organisations": []
+  },
+  {
+    "id": "https://www.gov.uk/api/organisations/national-housing-bank",
+    "title": "National Housing Bank",
+    "format": "Other",
+    "updated_at": "2026-02-24T15:23:43Z",
+    "web_url": "https://www.gov.uk/government/organisations/national-housing-bank",
+    "details": {
+      "slug": "national-housing-bank",
+      "abbreviation": "NHB",
+      "logo_formatted_name": "National<br/>Housing <br/>Bank",
+      "organisation_brand_colour_class_name": "ministry-of-housing-communities-local-government",
+      "organisation_logo_type_class_name": "custom",
+      "closed_at": null,
+      "govuk_status": "joining",
+      "govuk_closed_status": null,
+      "content_id": "ff75095f-3643-46a9-a63e-c553b8e86eed"
+    },
+    "analytics_identifier": "OT1469",
+    "parent_organisations": [
+      {
+        "id": "https://www.gov.uk/api/organisations/homes-england",
+        "web_url": "https://www.gov.uk/government/organisations/homes-england"
+      }
+    ],
+    "child_organisations": [],
+    "superseded_organisations": [],
     "superseding_organisations": []
   },
   {
@@ -18948,6 +18985,34 @@
     "superseding_organisations": []
   },
   {
+    "id": "https://www.gov.uk/api/organisations/science-council",
+    "title": "Science Council",
+    "format": "Other",
+    "updated_at": "2026-02-27T12:09:51Z",
+    "web_url": "https://www.gov.uk/government/organisations/science-council",
+    "details": {
+      "slug": "science-council",
+      "abbreviation": "SC",
+      "logo_formatted_name": "Science<br/>Council",
+      "organisation_brand_colour_class_name": "department-of-health",
+      "organisation_logo_type_class_name": "custom",
+      "closed_at": null,
+      "govuk_status": "joining",
+      "govuk_closed_status": null,
+      "content_id": "47dfdd8b-cb96-4050-84c4-45a6b28bd18e"
+    },
+    "analytics_identifier": "OT1470",
+    "parent_organisations": [
+      {
+        "id": "https://www.gov.uk/api/organisations/food-standards-agency",
+        "web_url": "https://www.gov.uk/government/organisations/food-standards-agency"
+      }
+    ],
+    "child_organisations": [],
+    "superseded_organisations": [],
+    "superseding_organisations": []
+  },
+  {
     "id": "https://www.gov.uk/api/organisations/science-museum-group",
     "title": "Science Museum Group",
     "format": "Executive non-departmental public body",
@@ -20845,7 +20910,7 @@
     "id": "https://www.gov.uk/api/organisations/the-water-services-regulation-authority",
     "title": "The Water Services Regulation Authority ",
     "format": "Non-ministerial department",
-    "updated_at": "2021-04-15T08:59:59Z",
+    "updated_at": "2026-02-24T10:33:44Z",
     "web_url": "https://www.gov.uk/government/organisations/the-water-services-regulation-authority",
     "details": {
       "slug": "the-water-services-regulation-authority",

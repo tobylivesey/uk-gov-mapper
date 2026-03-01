@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-01T13:08:04.150814+00:00",
+  "generated_at": "2026-03-01T13:24:32.440773+00:00",
   "record_count": 663,
   "columns": [
     "organisation",
@@ -44,7 +44,7 @@
         "homeoffice.gov.uk"
       ],
       "mail_providers": [
-        "gov.uk"
+        "Self-hosted"
       ],
       "domain_source": "parent_org",
       "last_seen": "2023-05-24 14:14:28+00:00"
@@ -198,7 +198,7 @@
         "homeoffice.gov.uk"
       ],
       "mail_providers": [
-        "gov.uk"
+        "Self-hosted"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2025-10-14 10:35:35+00:00"
@@ -275,7 +275,7 @@
         "homeoffice.gov.uk"
       ],
       "mail_providers": [
-        "gov.uk"
+        "Self-hosted"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2025-08-19 08:42:20+00:00"
@@ -341,7 +341,7 @@
         "arts.wales"
       ],
       "mail_providers": [
-        "Other"
+        "Forcepoint"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2023-08-16 15:31:48+00:00"
@@ -364,8 +364,8 @@
         "attorney-general.gov.uk"
       ],
       "mail_providers": [
-        "Symantec",
-        "gov.uk"
+        "Symantec/Broadcom",
+        "gov.uk domain"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2024-08-15 12:26:16+00:00"
@@ -376,7 +376,7 @@
         "bbc.co.uk"
       ],
       "mail_providers": [
-        "Symantec"
+        "Symantec/Broadcom"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2023-02-14 10:03:22+00:00"
@@ -387,7 +387,7 @@
         "bbc.co.uk"
       ],
       "mail_providers": [
-        "Symantec"
+        "Symantec/Broadcom"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2024-10-03 13:00:18+00:00"
@@ -409,7 +409,7 @@
         "obscc.org.uk"
       ],
       "mail_providers": [
-        "Other"
+        "Self-hosted"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2025-11-05 10:31:45+00:00"
@@ -443,8 +443,8 @@
         "bonavacantia.gov.uk"
       ],
       "mail_providers": [
-        "Other",
-        "Symantec"
+        "Symantec/Broadcom",
+        "Unknown (co.uk)"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2021-04-15 09:01:20+00:00"
@@ -455,7 +455,7 @@
         "homeoffice.gov.uk"
       ],
       "mail_providers": [
-        "gov.uk"
+        "Self-hosted"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2025-12-15 16:27:38+00:00"
@@ -466,7 +466,7 @@
         "homeoffice.gov.uk"
       ],
       "mail_providers": [
-        "gov.uk"
+        "Self-hosted"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2025-07-11 10:11:52+00:00"
@@ -500,7 +500,7 @@
         "bcomm-scotland.independent.gov.uk"
       ],
       "mail_providers": [
-        "gov.uk"
+        "Self-hosted"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2024-09-26 08:54:00+00:00"
@@ -510,9 +510,7 @@
       "domains": [
         "bcomm-wales.gov.uk"
       ],
-      "mail_providers": [
-        "Other"
-      ],
+      "mail_providers": [],
       "domain_source": "url_inferred",
       "last_seen": "2024-07-16 12:58:02+00:00"
     },
@@ -534,8 +532,7 @@
         "bcms.gov.uk"
       ],
       "mail_providers": [
-        "Microsoft 365",
-        "Other"
+        "Microsoft 365"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2023-02-28 08:52:43+00:00"
@@ -557,7 +554,7 @@
         "bfi.org.uk"
       ],
       "mail_providers": [
-        "Other"
+        "MailAnyone"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2023-02-14 09:41:56+00:00"
@@ -721,7 +718,7 @@
       ],
       "mail_providers": [
         "Mimecast",
-        "Other"
+        "Self-hosted"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2025-07-02 11:53:47+00:00"
@@ -944,7 +941,7 @@
       ],
       "mail_providers": [
         "Google Workspace",
-        "Other"
+        "Zoho Mail"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2025-09-15 13:36:37+00:00"
@@ -1011,7 +1008,7 @@
         "counteringextremism.gov.uk"
       ],
       "mail_providers": [
-        "gov.uk"
+        "Self-hosted"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2025-08-18 10:46:21+00:00"
@@ -1100,8 +1097,8 @@
         "csc.gov.uk"
       ],
       "mail_providers": [
-        "Google Workspace",
-        "Other"
+        "Email Security App",
+        "Google Workspace"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2025-02-20 10:49:51+00:00"
@@ -1112,7 +1109,7 @@
         "companieshouse.gov.uk"
       ],
       "mail_providers": [
-        "Other"
+        "Forcepoint"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2025-10-24 11:46:46+00:00"
@@ -1343,7 +1340,7 @@
         "cps.gov.uk"
       ],
       "mail_providers": [
-        "gov.uk"
+        "gov.uk domain"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2021-04-15 08:59:28+00:00"
@@ -1433,7 +1430,7 @@
       ],
       "mail_providers": [
         "Microsoft 365",
-        "gov.uk"
+        "Self-hosted"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2024-07-10 13:03:20+00:00"
@@ -1444,7 +1441,7 @@
         "dstl.gov.uk"
       ],
       "mail_providers": [
-        "gov.uk"
+        "gov.uk domain"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2026-02-12 14:19:29+00:00"
@@ -1455,7 +1452,7 @@
         "dsfc.ac.uk"
       ],
       "mail_providers": [
-        "Other"
+        "Self-hosted"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2021-04-15 09:00:37+00:00"
@@ -1587,7 +1584,7 @@
         "dwp.gov.uk"
       ],
       "mail_providers": [
-        "Other"
+        "Trend Micro"
       ],
       "domain_source": "govuk_domain_list",
       "last_seen": "2024-10-08 10:38:37+00:00"
@@ -1688,7 +1685,7 @@
       ],
       "mail_providers": [
         "Google Workspace",
-        "Other"
+        "Unknown (netnames.net)"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2024-12-16 12:07:24+00:00"
@@ -1711,7 +1708,7 @@
         "dbs.gov.uk"
       ],
       "mail_providers": [
-        "gov.uk"
+        "Self-hosted"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2025-10-16 13:22:49+00:00"
@@ -1735,7 +1732,7 @@
       ],
       "mail_providers": [
         "Microsoft 365",
-        "gov.uk"
+        "gov.uk domain"
       ],
       "domain_source": "parent_org",
       "last_seen": "2023-10-11 11:46:55+00:00"
@@ -1957,8 +1954,7 @@
         "fcoservices.gov.uk"
       ],
       "mail_providers": [
-        "Microsoft 365",
-        "Other"
+        "Microsoft 365"
       ],
       "domain_source": "parent_org",
       "last_seen": "2025-12-03 09:29:15+00:00"
@@ -2143,7 +2139,7 @@
       ],
       "mail_providers": [
         "Microsoft 365",
-        "Other"
+        "Unknown (netnames.net)"
       ],
       "domain_source": "parent_org",
       "last_seen": "2021-04-15 09:04:09+00:00"
@@ -2242,7 +2238,7 @@
         "forensicscienceregulator.gov.uk"
       ],
       "mail_providers": [
-        "gov.uk"
+        "Self-hosted"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2025-02-13 09:17:36+00:00"
@@ -2319,7 +2315,7 @@
         "gla.gov.uk"
       ],
       "mail_providers": [
-        "gov.uk"
+        "Self-hosted"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2021-04-15 09:04:42+00:00"
@@ -2387,7 +2383,7 @@
       ],
       "mail_providers": [
         "Google Workspace",
-        "gov.uk"
+        "Self-hosted"
       ],
       "domain_source": "parent_org",
       "last_seen": "2021-04-15 09:03:31+00:00"
@@ -2441,9 +2437,7 @@
       "domains": [
         "gds.gov.uk"
       ],
-      "mail_providers": [
-        "Other"
-      ],
+      "mail_providers": [],
       "domain_source": "govuk_domain_list",
       "last_seen": "2025-01-30 12:38:17+00:00"
     },
@@ -2510,7 +2504,7 @@
         "homeoffice.gov.uk"
       ],
       "mail_providers": [
-        "gov.uk"
+        "Self-hosted"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2021-04-15 09:03:35+00:00"
@@ -2521,7 +2515,7 @@
         "governmentlegal.gov.uk"
       ],
       "mail_providers": [
-        "Symantec"
+        "Symantec/Broadcom"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2023-11-01 16:42:26+00:00"
@@ -2578,7 +2572,7 @@
       ],
       "mail_providers": [
         "Microsoft 365",
-        "gov.uk"
+        "Self-hosted"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2025-06-17 16:22:27+00:00"
@@ -2817,8 +2811,8 @@
         "hmcpsi.gov.uk"
       ],
       "mail_providers": [
-        "Other",
-        "gov.uk"
+        "BangDynamics",
+        "gov.uk domain"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2021-04-15 09:00:23+00:00"
@@ -2841,8 +2835,8 @@
         "hmicfrs.gov.uk"
       ],
       "mail_providers": [
-        "Other",
-        "gov.uk"
+        "BangDynamics",
+        "Self-hosted"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2021-04-15 09:04:45+00:00"
@@ -2897,7 +2891,7 @@
         "homeoffice.gov.uk"
       ],
       "mail_providers": [
-        "gov.uk"
+        "Self-hosted"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2024-07-17 16:06:02+00:00"
@@ -3053,7 +3047,7 @@
         "homeoffice.gov.uk"
       ],
       "mail_providers": [
-        "gov.uk"
+        "Self-hosted"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2024-07-23 12:54:13+00:00"
@@ -3130,7 +3124,7 @@
         "hta.gov.uk"
       ],
       "mail_providers": [
-        "Other"
+        "Forcepoint"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2021-04-15 09:00:05+00:00"
@@ -3152,7 +3146,7 @@
         "homeoffice.gov.uk"
       ],
       "mail_providers": [
-        "gov.uk"
+        "Self-hosted"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2024-08-30 09:56:46+00:00"
@@ -3218,7 +3212,7 @@
         "ice.gov.uk"
       ],
       "mail_providers": [
-        "Other"
+        "Trend Micro"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2025-07-30 07:33:03+00:00"
@@ -3229,7 +3223,7 @@
         "icibi.gov.uk"
       ],
       "mail_providers": [
-        "gov.uk"
+        "Self-hosted"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2021-04-15 09:00:11+00:00"
@@ -3273,7 +3267,7 @@
         "homeoffice.gov.uk"
       ],
       "mail_providers": [
-        "gov.uk"
+        "Self-hosted"
       ],
       "domain_source": "parent_org",
       "last_seen": "2021-04-15 09:03:59+00:00"
@@ -3317,7 +3311,7 @@
         "imb.org.uk"
       ],
       "mail_providers": [
-        "Other"
+        "Amazon SES"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2021-04-15 09:00:45+00:00"
@@ -3372,7 +3366,7 @@
         "homeoffice.gov.uk"
       ],
       "mail_providers": [
-        "gov.uk"
+        "Self-hosted"
       ],
       "domain_source": "parent_org",
       "last_seen": "2021-04-15 09:01:00+00:00"
@@ -3401,7 +3395,7 @@
         "dwp.gov.uk"
       ],
       "mail_providers": [
-        "Other"
+        "Trend Micro"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2021-11-12 10:35:44+00:00"
@@ -3493,8 +3487,7 @@
         "intellectual-property.gov.uk"
       ],
       "mail_providers": [
-        "Microsoft 365",
-        "Other"
+        "Microsoft 365"
       ],
       "domain_source": "parent_org",
       "last_seen": "2024-09-27 15:04:59+00:00"
@@ -3506,8 +3499,7 @@
         "intellectual-property.gov.uk"
       ],
       "mail_providers": [
-        "Microsoft 365",
-        "Other"
+        "Microsoft 365"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2025-09-22 09:06:59+00:00"
@@ -3551,7 +3543,7 @@
         "ipco.org.uk"
       ],
       "mail_providers": [
-        "Other"
+        "Self-hosted"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2021-04-15 09:04:51+00:00"
@@ -3562,7 +3554,7 @@
         "ipt-uk.com"
       ],
       "mail_providers": [
-        "Other"
+        "Livemail UK"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2021-04-15 09:00:08+00:00"
@@ -3573,7 +3565,7 @@
         "iraqinquiry.org.uk"
       ],
       "mail_providers": [
-        "Other"
+        "Self-hosted"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2021-04-15 09:04:26+00:00"
@@ -3586,7 +3578,7 @@
       ],
       "mail_providers": [
         "Microsoft 365",
-        "Symantec"
+        "Symantec/Broadcom"
       ],
       "domain_source": "parent_org",
       "last_seen": "2021-04-15 08:59:52+00:00"
@@ -3641,7 +3633,7 @@
         "khm.mod.uk"
       ],
       "mail_providers": [
-        "Other"
+        "Defence Gateway"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2023-02-02 16:16:48+00:00"
@@ -3659,7 +3651,7 @@
         "mac.gov.uk"
       ],
       "mail_providers": [
-        "gov.uk"
+        "Self-hosted"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2026-02-12 15:16:04+00:00"
@@ -3670,7 +3662,7 @@
         "lra.org.uk"
       ],
       "mail_providers": [
-        "Other"
+        "TitanHQ SpamTitan"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2024-11-20 15:43:25+00:00"
@@ -3682,7 +3674,7 @@
         "lake-district.gov.uk"
       ],
       "mail_providers": [
-        "Other"
+        "MailAnyone"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2021-04-15 08:59:56+00:00"
@@ -3803,7 +3795,7 @@
         "lgo.org.uk"
       ],
       "mail_providers": [
-        "Other"
+        "TopSec"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2024-07-16 12:59:42+00:00"
@@ -3826,8 +3818,8 @@
         "london.gov.uk"
       ],
       "mail_providers": [
-        "Microsoft 365",
-        "Other"
+        "Forcepoint",
+        "Microsoft 365"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2021-04-15 09:00:54+00:00"
@@ -3937,7 +3929,7 @@
         "metoffice.gov.uk"
       ],
       "mail_providers": [
-        "gov.uk"
+        "gov.uk domain"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2024-05-30 09:35:57+00:00"
@@ -3948,7 +3940,7 @@
         "mac.gov.uk"
       ],
       "mail_providers": [
-        "gov.uk"
+        "Self-hosted"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2025-08-01 14:15:21+00:00"
@@ -4078,8 +4070,8 @@
         "nhscfa.gov.uk"
       ],
       "mail_providers": [
-        "Barracuda",
-        "Other"
+        "Amazon SES",
+        "Barracuda"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2022-02-17 09:30:47+00:00"
@@ -4141,7 +4133,7 @@
         "nam.ac.uk"
       ],
       "mail_providers": [
-        "Symantec"
+        "Symantec/Broadcom"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2021-04-15 09:00:16+00:00"
@@ -4153,8 +4145,8 @@
         "nactso.gov.uk"
       ],
       "mail_providers": [
-        "Symantec",
-        "gov.uk"
+        "Self-hosted",
+        "Symantec/Broadcom"
       ],
       "domain_source": "parent_org",
       "last_seen": "2022-07-11 12:55:56+00:00"
@@ -4177,7 +4169,7 @@
         "homeoffice.gov.uk"
       ],
       "mail_providers": [
-        "gov.uk"
+        "Self-hosted"
       ],
       "domain_source": "parent_org",
       "last_seen": "2024-01-31 12:06:37+00:00"
@@ -4221,7 +4213,7 @@
         "nestpensions.org.uk"
       ],
       "mail_providers": [
-        "Other"
+        "Unknown (org.uk)"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2021-04-15 08:59:59+00:00"
@@ -4265,7 +4257,7 @@
         "nationalguardian.org.uk"
       ],
       "mail_providers": [
-        "Other"
+        "Unknown (org.uk)"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2025-05-07 13:21:51+00:00"
@@ -4344,7 +4336,7 @@
       ],
       "mail_providers": [
         "Mimecast",
-        "Symantec"
+        "Symantec/Broadcom"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2023-02-14 09:55:14+00:00"
@@ -4366,7 +4358,7 @@
         "npg.org.uk"
       ],
       "mail_providers": [
-        "Other"
+        "Scanscope"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2023-02-14 09:55:31+00:00"
@@ -4378,8 +4370,7 @@
         "nationalprotectivesecurityauthority.gov.uk"
       ],
       "mail_providers": [
-        "Microsoft 365",
-        "Other"
+        "Microsoft 365"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2024-10-14 15:07:27+00:00"
@@ -4812,8 +4803,8 @@
         "onr.gov.uk"
       ],
       "mail_providers": [
-        "Microsoft 365",
-        "Other"
+        "Mailchimp Mandrill",
+        "Microsoft 365"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2021-04-15 09:03:38+00:00"
@@ -4875,7 +4866,7 @@
         "homeoffice.gov.uk"
       ],
       "mail_providers": [
-        "gov.uk"
+        "Self-hosted"
       ],
       "domain_source": "parent_org",
       "last_seen": "2024-02-13 12:03:41+00:00"
@@ -4970,7 +4961,7 @@
         "ipcommissioner.gov.uk"
       ],
       "mail_providers": [
-        "gov.uk"
+        "Self-hosted"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2026-02-05 14:40:46+00:00"
@@ -5037,8 +5028,8 @@
         "orcl.gov.uk"
       ],
       "mail_providers": [
-        "Google Workspace",
-        "Other"
+        "GoDaddy",
+        "Google Workspace"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2021-04-15 09:03:51+00:00"
@@ -5049,7 +5040,7 @@
         "companieshouse.gov.uk"
       ],
       "mail_providers": [
-        "Other"
+        "Forcepoint"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2024-11-01 10:01:32+00:00"
@@ -5071,7 +5062,7 @@
         "windrushcommissioner.uk"
       ],
       "mail_providers": [
-        "Other"
+        "Self-hosted"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2026-01-23 14:20:13+00:00"
@@ -5260,7 +5251,7 @@
         "peakdistrict.gov.uk"
       ],
       "mail_providers": [
-        "Other"
+        "Scanscope"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2021-04-15 09:01:14+00:00"
@@ -5315,7 +5306,7 @@
         "homeoffice.gov.uk"
       ],
       "mail_providers": [
-        "gov.uk"
+        "Self-hosted"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2021-04-15 09:00:09+00:00"
@@ -5326,7 +5317,7 @@
         "homeoffice.gov.uk"
       ],
       "mail_providers": [
-        "gov.uk"
+        "Self-hosted"
       ],
       "domain_source": "parent_org",
       "last_seen": "2021-04-15 09:00:10+00:00"
@@ -5337,7 +5328,7 @@
         "homeoffice.gov.uk"
       ],
       "mail_providers": [
-        "gov.uk"
+        "Self-hosted"
       ],
       "domain_source": "parent_org",
       "last_seen": "2024-01-30 12:26:22+00:00"
@@ -5348,7 +5339,7 @@
         "psni.police.uk"
       ],
       "mail_providers": [
-        "Other"
+        "Police Service"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2021-04-15 09:01:45+00:00"
@@ -5461,7 +5452,7 @@
       ],
       "mail_providers": [
         "Sophos",
-        "Symantec"
+        "Symantec/Broadcom"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2024-11-20 15:41:14+00:00"
@@ -5691,7 +5682,7 @@
         "rfca.mod.uk"
       ],
       "mail_providers": [
-        "Other"
+        "MOD Global Communications"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2025-03-24 10:03:41+00:00"
@@ -5746,7 +5737,7 @@
         "royalmint.com"
       ],
       "mail_providers": [
-        "Other"
+        "MailAnyone"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2021-04-15 08:59:31+00:00"
@@ -5769,8 +5760,7 @@
         "greenwich.gov.uk"
       ],
       "mail_providers": [
-        "Microsoft 365",
-        "Other"
+        "Microsoft 365"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2023-02-14 09:56:29+00:00"
@@ -5815,7 +5805,7 @@
         "s4c.co.uk"
       ],
       "mail_providers": [
-        "Symantec"
+        "Symantec/Broadcom"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2023-02-14 10:06:41+00:00"
@@ -5870,7 +5860,7 @@
         "homeoffice.gov.uk"
       ],
       "mail_providers": [
-        "gov.uk"
+        "Self-hosted"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2025-09-16 10:34:28+00:00"
@@ -5927,7 +5917,7 @@
       ],
       "mail_providers": [
         "Mimecast",
-        "gov.uk"
+        "Self-hosted"
       ],
       "domain_source": "parent_org",
       "last_seen": "2025-02-11 11:32:23+00:00"
@@ -5951,7 +5941,7 @@
         "sellafieldsites.com"
       ],
       "mail_providers": [
-        "Other"
+        "Self-hosted"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2025-04-02 14:03:51+00:00"
@@ -5995,7 +5985,7 @@
         "sfo.gov.uk"
       ],
       "mail_providers": [
-        "Symantec"
+        "Symantec/Broadcom"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2025-03-27 13:23:22+00:00"
@@ -6108,7 +6098,7 @@
         "ssac.gov.uk"
       ],
       "mail_providers": [
-        "Other"
+        "Trend Micro"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2024-02-06 14:15:51+00:00"
@@ -6240,7 +6230,7 @@
         "tate.org.uk"
       ],
       "mail_providers": [
-        "Other"
+        "Scanscope"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2023-02-14 09:58:14+00:00"
@@ -6262,7 +6252,7 @@
         "homeoffice.gov.uk"
       ],
       "mail_providers": [
-        "gov.uk"
+        "Self-hosted"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2021-04-15 09:00:09+00:00"
@@ -6329,7 +6319,7 @@
         "charitycommission.gov.uk"
       ],
       "mail_providers": [
-        "Symantec"
+        "Symantec/Broadcom"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2025-08-07 06:59:58+00:00"
@@ -6418,8 +6408,7 @@
         "intellectual-property.gov.uk"
       ],
       "mail_providers": [
-        "Microsoft 365",
-        "Other"
+        "Microsoft 365"
       ],
       "domain_source": "parent_org",
       "last_seen": "2021-04-15 09:04:40+00:00"
@@ -6570,7 +6559,7 @@
         "gov.scot"
       ],
       "mail_providers": [
-        "Other"
+        "Fortinet FortiMail"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2025-02-13 16:28:56+00:00"
@@ -6713,7 +6702,7 @@
         "ukaea.uk"
       ],
       "mail_providers": [
-        "Sophos"
+        "Unknown (ukaea.uk)"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2025-09-30 07:48:36+00:00"
@@ -6912,8 +6901,8 @@
         "resilience.gov.uk"
       ],
       "mail_providers": [
-        "Google Workspace",
-        "Other"
+        "Amazon SES",
+        "Google Workspace"
       ],
       "domain_source": "parent_org",
       "last_seen": "2025-02-06 11:50:49+00:00"
@@ -6970,7 +6959,7 @@
         "homeoffice.gov.uk"
       ],
       "mail_providers": [
-        "gov.uk"
+        "Self-hosted"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2026-01-30 13:06:42+00:00"
@@ -6992,7 +6981,7 @@
         "rfca.mod.uk"
       ],
       "mail_providers": [
-        "Other"
+        "MOD Global Communications"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2021-04-15 09:03:56+00:00"
@@ -7073,7 +7062,7 @@
       ],
       "mail_providers": [
         "Microsoft 365",
-        "Other"
+        "Unknown (co.uk)"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2024-07-16 12:57:04+00:00"
@@ -7096,8 +7085,8 @@
         "vca.gov.uk"
       ],
       "mail_providers": [
-        "Microsoft 365",
-        "Other"
+        "Livemail UK",
+        "Microsoft 365"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2021-04-15 08:59:25+00:00"
@@ -7121,7 +7110,7 @@
       ],
       "mail_providers": [
         "Microsoft 365",
-        "Other"
+        "Trend Micro"
       ],
       "domain_source": "mailto_scrape",
       "last_seen": "2024-04-24 13:59:26+00:00"
@@ -7176,7 +7165,7 @@
         "visitbritain.org"
       ],
       "mail_providers": [
-        "Symantec"
+        "Symantec/Broadcom"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2023-02-14 09:59:30+00:00"
@@ -7187,7 +7176,7 @@
         "visitengland.com"
       ],
       "mail_providers": [
-        "Symantec"
+        "Symantec/Broadcom"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2023-02-14 09:59:47+00:00"
@@ -7287,7 +7276,7 @@
         "yorkshiredales.org.uk"
       ],
       "mail_providers": [
-        "Other"
+        "MailAnyone"
       ],
       "domain_source": "url_inferred",
       "last_seen": "2021-04-15 09:01:14+00:00"

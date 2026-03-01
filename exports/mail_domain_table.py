@@ -20,7 +20,7 @@ def prepare_blog_subset(df: pd.DataFrame) -> pd.DataFrame:
         'organisation': df['title'],
         'domains': df['email_domains'].apply(lambda x: x if x else []),
         'mail_providers': df['mail_providers'],
-        'domain_source': df['email_domain_source'],
+        'domain_source': df['email_domain_sources'],
         'last_seen': df['updated_at']
     })
     subset = subset.sort_values('organisation').reset_index(drop=True)

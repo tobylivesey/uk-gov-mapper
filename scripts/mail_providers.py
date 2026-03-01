@@ -161,16 +161,17 @@ def get_mail_provider(mx_records: list[dict]) -> tuple[Optional[str], Optional[s
         best = max(cloud_matches, key=lambda m: ("high", "medium", "low").index(m.confidence) if m.confidence in ("high", "medium", "low") else 3)
         return best.provider, best.category, best.confidence
 
+    # Check if it looks like self-hosted (mail.domain.tld or smtp.domain.tld pattern)
+    # This check comes before low-confidence pattern matches to avoid false positives
+    if primary_host and re.match(r"^(mail|smtp)\d*\.", primary_host.lower()):
+        return "Self-hosted", "self_hosted", "medium"
+
     # Otherwise return the best match we have
     if all_matches:
         # Sort by confidence (high > medium > low)
         confidence_order = {"high": 0, "medium": 1, "low": 2}
         best = min(all_matches, key=lambda m: confidence_order.get(m.confidence, 3))
         return best.provider, best.category, best.confidence
-
-    # Check if it looks like self-hosted (mail.domain.tld pattern)
-    if primary_host and re.match(r"^mail\d*\.", primary_host.lower()):
-        return "Self-hosted", "self_hosted", "medium"
 
     # If we have MX records but couldn't identify the provider
     if primary_host:

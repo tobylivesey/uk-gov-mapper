@@ -66,25 +66,26 @@ def enrich_org_mailservers(org: dict) -> dict:
             print(f"{org_title}: added fallback domain {fallback_domain}")
 
     # Process each email domain - check MX records
-    domains_with_mx = 0
+    valid_domains = []
     mx_records_all = []
     providers = set()
 
     for domain in org["email_domains"]:
         mx_records = lookup_mx_records(domain)
         if mx_records:
-            domains_with_mx += 1
+            valid_domains.append(domain)
             mx_records_all.extend(mx_records)
             provider = get_primary_mail_provider(mx_records)
             if provider:
                 providers.add(provider)
             print(f"{org_title}: {domain} -> MX found")
         else:
-            print(f"{org_title}: {domain} -> no MX")
+            print(f"{org_title}: {domain} -> no MX (removed)")
         rate_limit_sleep(0.1)
 
-    # Update org-level flags
-    org["has_mx"] = domains_with_mx > 0
+    # Update org with only valid domains
+    org["email_domains"] = valid_domains
+    org["has_mx"] = len(valid_domains) > 0
     org["mail_providers"] = sorted(providers)
 
     if not org["email_domains"]:

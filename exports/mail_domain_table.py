@@ -18,7 +18,7 @@ def prepare_blog_subset(df: pd.DataFrame) -> pd.DataFrame:
     # Map from enriched data columns to blog display columns
     subset = pd.DataFrame({
         'organisation': df['title'],
-        'domain': df['email_domains'].apply(lambda x: x[0] if x else None),
+        'domains': df['email_domains'].apply(lambda x: x if x else []),
         'mail_providers': df['mail_providers'],
         'domain_source': df['email_domain_source'],
         'last_seen': df['updated_at']

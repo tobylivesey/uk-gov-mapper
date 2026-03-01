@@ -112,7 +112,6 @@ Each org has an `email_domains` list of domain strings:
   "email_domains": ["cabinetoffice.gov.uk", "cabinet-office.gov.uk"],
   "has_mx": true,
   "mail_providers": ["Google Workspace"],
-  "mail_provider": "Microsoft 365",
   "inherited_from_org": "Cabinet Office",      // only if inherited from parent
   "inherited_from_org_id": "https://..."       // only if inherited from parent
 }
@@ -124,13 +123,14 @@ Common functions used across all scripts:
 - **`safe_http_request()`**: HTTP requests with error handling and retries
 - **`rate_limit_sleep()`**: Standardized rate limiting
 - **`lookup_mx_records()`**: DNS MX record lookups
-- **`get_primary_mail_provider()`**: Identify mail provider from MX records
 - **`add_email_domain()`**: Add domain string to org's email_domains list
 - **`require_env_vars()`**: Validates required environment variables
 - **`log_progress()`**: Consistent progress logging
 - **`write_json()`** / **`write_ndjson()`** / **`write_csv()`**: Data persistence utilities
 
 ### Mail Provider Detection (`scripts/mail_providers.py`)
+All mail provider detection functions live here:
+- **`get_mail_provider(mx_records)`**: Returns (provider, category, confidence) tuple
 - **`get_mail_provider(mx_records)`**: Returns (provider, category, confidence) tuple
 - **`parse_mx_provider(mx_host)`**: Parse single MX hostname to identify provider
 - Handles 50+ mail providers/services with pattern matching

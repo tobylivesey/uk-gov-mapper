@@ -67,7 +67,6 @@ def inherit_parent_domain(org: dict, parent: dict) -> bool:
     org["mx_records"] = mx_records
 
     provider, category, confidence = get_mail_provider(mx_records)
-    org["mail_provider"] = provider
     if provider:
         org["mail_providers"] = [provider]  # Set as list for consistency
 
@@ -146,7 +145,8 @@ def main(extant_orgs: list[dict] | None = None) -> list[dict]:
     # Summary by provider
     providers = {}
     for org in enriched_orgs:
-        provider = org.get("mail_provider") or "None"
+        providers_list = org.get("mail_providers", [])
+        provider = providers_list[0] if providers_list else "None"
         providers[provider] = providers.get(provider, 0) + 1
 
     print("\nMail providers:")

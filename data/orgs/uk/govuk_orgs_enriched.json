@@ -51,8 +51,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Ministry of Justice",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-justice",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-justice"
   },
   {
     "id": "https://www.gov.uk/api/organisations/accelerated-capability-environment",
@@ -95,6 +94,10 @@
     "best_domain": "https://www.gov.uk/government/organisations/accelerated-capability-environment",
     "mx_records": [
       {
+        "host": "smtp1.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
         "host": "smtp2.homeoffice.gov.uk",
         "priority": 10
       },
@@ -105,16 +108,11 @@
       {
         "host": "smtp4.homeoffice.gov.uk",
         "priority": 10
-      },
-      {
-        "host": "smtp1.homeoffice.gov.uk",
-        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp2.homeoffice.gov.uk",
+    "primary_mx_host": "smtp1.homeoffice.gov.uk",
     "inherited_from_org": "Home Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/home-office",
-    "mail_provider": "Self-hosted"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/home-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/active-travel-england",
@@ -257,8 +255,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/admiralty-court",
@@ -307,8 +304,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/advanced-research-and-invention-agency",
@@ -536,8 +532,7 @@
     ],
     "primary_mx_host": "dhsc-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Department of Health and Social Care",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-of-health-and-social-care",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-of-health-and-social-care"
   },
   {
     "id": "https://www.gov.uk/api/organisations/advisory-committee-on-conscientious-objectors",
@@ -731,8 +726,7 @@
     ],
     "primary_mx_host": "food-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Food Standards Agency",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/food-standards-agency",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/food-standards-agency"
   },
   {
     "id": "https://www.gov.uk/api/organisations/advisory-committees-on-justices-of-the-peace",
@@ -822,10 +816,6 @@
     "best_domain": "https://www.gov.uk/government/organisations/advisory-council-on-the-misuse-of-drugs",
     "mx_records": [
       {
-        "host": "smtp4.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
       },
@@ -836,9 +826,13 @@
       {
         "host": "smtp3.homeoffice.gov.uk",
         "priority": 10
+      },
+      {
+        "host": "smtp4.homeoffice.gov.uk",
+        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp4.homeoffice.gov.uk"
+    "primary_mx_host": "smtp1.homeoffice.gov.uk"
   },
   {
     "id": "https://www.gov.uk/api/organisations/advisory-group-on-military-medicine",
@@ -1122,15 +1116,15 @@
     "best_domain": "https://www.gov.uk/government/organisations/air-accidents-investigation-branch",
     "mx_records": [
       {
-        "host": "eu-smtp-inbound-1.mimecast.com",
+        "host": "eu-smtp-inbound-2.mimecast.com",
         "priority": 10
       },
       {
-        "host": "eu-smtp-inbound-2.mimecast.com",
+        "host": "eu-smtp-inbound-1.mimecast.com",
         "priority": 10
       }
     ],
-    "primary_mx_host": "eu-smtp-inbound-1.mimecast.com"
+    "primary_mx_host": "eu-smtp-inbound-2.mimecast.com"
   },
   {
     "id": "https://www.gov.uk/api/organisations/animal-and-plant-health-agency",
@@ -1245,6 +1239,10 @@
     "best_domain": "https://www.gov.uk/government/organisations/animals-in-science-committee",
     "mx_records": [
       {
+        "host": "smtp4.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
       },
@@ -1255,13 +1253,9 @@
       {
         "host": "smtp3.homeoffice.gov.uk",
         "priority": 10
-      },
-      {
-        "host": "smtp4.homeoffice.gov.uk",
-        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp1.homeoffice.gov.uk"
+    "primary_mx_host": "smtp4.homeoffice.gov.uk"
   },
   {
     "id": "https://www.gov.uk/api/organisations/architects-registration-board",
@@ -1304,15 +1298,15 @@
     "best_domain": "http://www.arb.org.uk",
     "mx_records": [
       {
-        "host": "eu-smtp-inbound-2.mimecast.com",
+        "host": "eu-smtp-inbound-1.mimecast.com",
         "priority": 10
       },
       {
-        "host": "eu-smtp-inbound-1.mimecast.com",
+        "host": "eu-smtp-inbound-2.mimecast.com",
         "priority": 10
       }
     ],
-    "primary_mx_host": "eu-smtp-inbound-2.mimecast.com"
+    "primary_mx_host": "eu-smtp-inbound-1.mimecast.com"
   },
   {
     "id": "https://www.gov.uk/api/organisations/armed-forces-covenant-fund-trust",
@@ -1409,8 +1403,7 @@
     ],
     "primary_mx_host": "mod-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Ministry of Defence",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-defence",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-defence"
   },
   {
     "id": "https://www.gov.uk/api/organisations/arts-and-humanities-research-council",
@@ -1944,6 +1937,10 @@
     "best_domain": "https://www.gov.uk/government/organisations/biometrics-and-surveillance-camera-commissioner",
     "mx_records": [
       {
+        "host": "smtp4.obscc.org.uk",
+        "priority": 10
+      },
+      {
         "host": "smtp1.obscc.org.uk",
         "priority": 10
       },
@@ -1954,13 +1951,9 @@
       {
         "host": "smtp3.obscc.org.uk",
         "priority": 10
-      },
-      {
-        "host": "smtp4.obscc.org.uk",
-        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp1.obscc.org.uk"
+    "primary_mx_host": "smtp4.obscc.org.uk"
   },
   {
     "id": "https://www.gov.uk/api/organisations/biotechnology-biological-sciences-research-council",
@@ -2154,6 +2147,10 @@
     "best_domain": "https://www.gov.uk/government/organisations/border-force",
     "mx_records": [
       {
+        "host": "smtp3.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
         "host": "smtp4.homeoffice.gov.uk",
         "priority": 10
       },
@@ -2164,13 +2161,9 @@
       {
         "host": "smtp2.homeoffice.gov.uk",
         "priority": 10
-      },
-      {
-        "host": "smtp3.homeoffice.gov.uk",
-        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp4.homeoffice.gov.uk"
+    "primary_mx_host": "smtp3.homeoffice.gov.uk"
   },
   {
     "id": "https://www.gov.uk/api/organisations/border-security-command",
@@ -2213,6 +2206,10 @@
     "best_domain": "https://www.gov.uk/government/organisations/border-security-command",
     "mx_records": [
       {
+        "host": "smtp2.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
         "host": "smtp3.homeoffice.gov.uk",
         "priority": 10
       },
@@ -2223,13 +2220,9 @@
       {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
-      },
-      {
-        "host": "smtp2.homeoffice.gov.uk",
-        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp3.homeoffice.gov.uk"
+    "primary_mx_host": "smtp2.homeoffice.gov.uk"
   },
   {
     "id": "https://www.gov.uk/api/organisations/boundary-commission-for-england",
@@ -2279,8 +2272,7 @@
     ],
     "primary_mx_host": "communities-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Ministry of Housing, Communities and Local Government",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-housing-communities-local-government",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-housing-communities-local-government"
   },
   {
     "id": "https://www.gov.uk/api/organisations/boundary-commission-for-northern-ireland",
@@ -2472,15 +2464,15 @@
     "best_domain": "http://british-business-bank.co.uk/",
     "mx_records": [
       {
-        "host": "eu-smtp-inbound-1.mimecast.com",
+        "host": "eu-smtp-inbound-2.mimecast.com",
         "priority": 10
       },
       {
-        "host": "eu-smtp-inbound-2.mimecast.com",
+        "host": "eu-smtp-inbound-1.mimecast.com",
         "priority": 10
       }
     ],
-    "primary_mx_host": "eu-smtp-inbound-1.mimecast.com"
+    "primary_mx_host": "eu-smtp-inbound-2.mimecast.com"
   },
   {
     "id": "https://www.gov.uk/api/organisations/british-cattle-movement-service",
@@ -2831,8 +2823,7 @@
     ],
     "primary_mx_host": "dhsc-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Department of Health and Social Care",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-of-health-and-social-care",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-of-health-and-social-care"
   },
   {
     "id": "https://www.gov.uk/api/organisations/british-technology-investments-ltd",
@@ -3066,8 +3057,7 @@
     ],
     "primary_mx_host": "communities-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Ministry of Housing, Communities and Local Government",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-housing-communities-local-government",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-housing-communities-local-government"
   },
   {
     "id": "https://www.gov.uk/api/organisations/building-digital-uk",
@@ -3476,11 +3466,11 @@
         "priority": 1
       },
       {
-        "host": "alt2.aspmx.l.google.com",
+        "host": "alt1.aspmx.l.google.com",
         "priority": 5
       },
       {
-        "host": "alt1.aspmx.l.google.com",
+        "host": "alt2.aspmx.l.google.com",
         "priority": 5
       },
       {
@@ -3557,8 +3547,7 @@
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Cabinet Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/children-and-family-court-advisory-and-support-service",
@@ -3911,8 +3900,7 @@
     ],
     "primary_mx_host": "ukhsa-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "UK Health Security Agency",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/uk-health-security-agency",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/uk-health-security-agency"
   },
   {
     "id": "https://www.gov.uk/api/organisations/centre-for-connected-and-autonomous-vehicles",
@@ -3966,8 +3954,7 @@
     ],
     "primary_mx_host": "dvsa-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Department for Transport",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-for-transport",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-for-transport"
   },
   {
     "id": "https://www.gov.uk/api/organisations/centre-for-environment-fisheries-and-aquaculture-science",
@@ -4110,8 +4097,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/channel-4",
@@ -4348,8 +4334,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/civil-aviation-authority",
@@ -4884,8 +4869,7 @@
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Cabinet Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/civil-service-fast-stream",
@@ -5017,8 +5001,7 @@
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Cabinet Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/college-of-policing",
@@ -5115,8 +5098,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/commission-for-countering-extremism",
@@ -5287,8 +5269,7 @@
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Cabinet Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/committee-on-climate-change",
@@ -5525,8 +5506,7 @@
     ],
     "primary_mx_host": "food-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Food Standards Agency",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/food-standards-agency",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/food-standards-agency"
   },
   {
     "id": "https://www.gov.uk/api/organisations/commonwealth-scholarship-commission-in-the-uk",
@@ -5678,8 +5658,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/company-names-tribunal",
@@ -6090,8 +6069,7 @@
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Cabinet Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/corporate-officers-of-the-house-of-lords",
@@ -6146,18 +6124,17 @@
         "priority": 5
       },
       {
-        "host": "alt4.aspmx.l.google.com",
+        "host": "alt3.aspmx.l.google.com",
         "priority": 10
       },
       {
-        "host": "alt3.aspmx.l.google.com",
+        "host": "alt4.aspmx.l.google.com",
         "priority": 10
       }
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Cabinet Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/council-for-science-and-technology",
@@ -6248,8 +6225,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/court-of-appeal-criminal-division",
@@ -6298,8 +6274,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/court-of-protection",
@@ -6629,11 +6604,11 @@
         "priority": 10
       },
       {
-        "host": "alt1.aspmx.l.google.com",
+        "host": "alt2.aspmx.l.google.com",
         "priority": 20
       },
       {
-        "host": "alt2.aspmx.l.google.com",
+        "host": "alt1.aspmx.l.google.com",
         "priority": 20
       },
       {
@@ -6764,8 +6739,7 @@
     ],
     "primary_mx_host": "mod-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Ministry of Defence",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-defence",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-defence"
   },
   {
     "id": "https://www.gov.uk/api/organisations/dartmoor-national-park-authority",
@@ -7068,8 +7042,7 @@
     ],
     "primary_mx_host": "mod-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Ministry of Defence",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-defence",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-defence"
   },
   {
     "id": "https://www.gov.uk/api/organisations/defence-nuclear-safety-committee",
@@ -7272,15 +7245,15 @@
     "best_domain": "http://www.dsfc.ac.uk",
     "mx_records": [
       {
-        "host": "mail2.dsfc.ac.uk",
+        "host": "mail1.dsfc.ac.uk",
         "priority": 10
       },
       {
-        "host": "mail1.dsfc.ac.uk",
+        "host": "mail2.dsfc.ac.uk",
         "priority": 10
       }
     ],
-    "primary_mx_host": "mail2.dsfc.ac.uk"
+    "primary_mx_host": "mail1.dsfc.ac.uk"
   },
   {
     "id": "https://www.gov.uk/api/organisations/science-advisory-council",
@@ -7798,11 +7771,11 @@
         "priority": 5
       },
       {
-        "host": "aspmx3.googlemail.com",
+        "host": "aspmx2.googlemail.com",
         "priority": 10
       },
       {
-        "host": "aspmx2.googlemail.com",
+        "host": "aspmx3.googlemail.com",
         "priority": 10
       }
     ],
@@ -9652,11 +9625,11 @@
         "priority": 1
       },
       {
-        "host": "alt1.aspmx.l.google.com",
+        "host": "alt2.aspmx.l.google.com",
         "priority": 5
       },
       {
-        "host": "alt2.aspmx.l.google.com",
+        "host": "alt1.aspmx.l.google.com",
         "priority": 5
       },
       {
@@ -9760,6 +9733,10 @@
     "best_domain": "https://www.gov.uk/government/organisations/disclosure-and-barring-service",
     "mx_records": [
       {
+        "host": "smtp4.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
       },
@@ -9770,13 +9747,9 @@
       {
         "host": "smtp2.homeoffice.gov.uk",
         "priority": 10
-      },
-      {
-        "host": "smtp4.homeoffice.gov.uk",
-        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp1.homeoffice.gov.uk"
+    "primary_mx_host": "smtp4.homeoffice.gov.uk"
   },
   {
     "id": "https://www.gov.uk/api/organisations/district-valuer-services-dvs",
@@ -9873,8 +9846,7 @@
     ],
     "primary_mx_host": "dvsa-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Department for Transport",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-for-transport",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-for-transport"
   },
   {
     "id": "https://www.gov.uk/api/organisations/driver-and-vehicle-standards-agency",
@@ -9932,8 +9904,7 @@
     ],
     "primary_mx_host": "dvsa-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Department for Transport",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-for-transport",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-for-transport"
   },
   {
     "id": "https://www.gov.uk/api/organisations/east-west-railway-company",
@@ -10222,8 +10193,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/employment-tribunal",
@@ -10272,8 +10242,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/engineering-and-physical-sciences-research-council",
@@ -10629,18 +10598,17 @@
         "priority": 5
       },
       {
-        "host": "alt3.aspmx.l.google.com",
+        "host": "alt4.aspmx.l.google.com",
         "priority": 10
       },
       {
-        "host": "alt4.aspmx.l.google.com",
+        "host": "alt3.aspmx.l.google.com",
         "priority": 10
       }
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Cabinet Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/evaluation-task-force",
@@ -10699,11 +10667,11 @@
         "priority": 5
       },
       {
-        "host": "alt4.aspmx.l.google.com",
+        "host": "alt3.aspmx.l.google.com",
         "priority": 10
       },
       {
-        "host": "alt3.aspmx.l.google.com",
+        "host": "alt4.aspmx.l.google.com",
         "priority": 10
       }
     ],
@@ -10939,8 +10907,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/family-justice-council",
@@ -11036,8 +11003,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Ministry of Justice",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-justice",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-justice"
   },
   {
     "id": "https://www.gov.uk/api/organisations/fcdo-services",
@@ -11081,8 +11047,8 @@
     "oscar_budget_£k": null,
     "email_domains": [
       "fcdo.gov.uk",
-      "fcdoservices.gov.uk",
-      "fcoservices.gov.uk"
+      "fcoservices.gov.uk",
+      "fcdoservices.gov.uk"
     ],
     "has_mx": true,
     "mail_providers": [
@@ -11098,8 +11064,7 @@
     ],
     "primary_mx_host": "fcdo-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Foreign, Commonwealth & Development Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/foreign-commonwealth-development-office",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/foreign-commonwealth-development-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/financial-conduct-authority",
@@ -11199,8 +11164,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/financial-reporting-council",
@@ -11343,8 +11307,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/first-tier-tribunal-care-standards",
@@ -11393,8 +11356,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/first-tier-tribunal-criminal-injuries-compensation",
@@ -11443,8 +11405,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/first-tier-tribunal-general-regulatory-chamber",
@@ -11493,8 +11454,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/first-tier-tribunal-immigration-and-asylum",
@@ -11543,8 +11503,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/first-tier-tribunal-mental-health",
@@ -11593,8 +11552,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/first-tier-tribunal-property-chamber",
@@ -11643,8 +11601,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/first-tier-tribunal-social-security-and-child-support",
@@ -11693,8 +11650,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/first-tier-tribunal-special-educational-needs-and-disability",
@@ -11744,8 +11700,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/first-tier-tribunal-tax",
@@ -11794,8 +11749,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/first-tier-tribunal-war-pensions-and-armed-forces-compensation",
@@ -11844,8 +11798,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/fleet-air-arm-museum",
@@ -12277,6 +12230,10 @@
     "best_domain": "https://www.gov.uk/government/organisations/forensic-science-regulator",
     "mx_records": [
       {
+        "host": "smtp4.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
       },
@@ -12287,13 +12244,9 @@
       {
         "host": "smtp3.homeoffice.gov.uk",
         "priority": 10
-      },
-      {
-        "host": "smtp4.homeoffice.gov.uk",
-        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp1.homeoffice.gov.uk"
+    "primary_mx_host": "smtp4.homeoffice.gov.uk"
   },
   {
     "id": "https://www.gov.uk/api/organisations/forest-research",
@@ -12392,15 +12345,15 @@
     "best_domain": "https://www.gov.uk/government/organisations/forestry-commission",
     "mx_records": [
       {
-        "host": "eu-smtp-inbound-2.mimecast.com",
+        "host": "eu-smtp-inbound-1.mimecast.com",
         "priority": 10
       },
       {
-        "host": "eu-smtp-inbound-1.mimecast.com",
+        "host": "eu-smtp-inbound-2.mimecast.com",
         "priority": 10
       }
     ],
-    "primary_mx_host": "eu-smtp-inbound-2.mimecast.com"
+    "primary_mx_host": "eu-smtp-inbound-1.mimecast.com"
   },
   {
     "id": "https://www.gov.uk/api/organisations/forest-enterprise-england",
@@ -12593,6 +12546,10 @@
     "best_domain": "http://www.gla.gov.uk/",
     "mx_records": [
       {
+        "host": "smtp4.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
       },
@@ -12603,13 +12560,9 @@
       {
         "host": "smtp3.homeoffice.gov.uk",
         "priority": 10
-      },
-      {
-        "host": "smtp4.homeoffice.gov.uk",
-        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp1.homeoffice.gov.uk"
+    "primary_mx_host": "smtp4.homeoffice.gov.uk"
   },
   {
     "id": "https://www.gov.uk/api/organisations/gangmasters-licensing-appeals",
@@ -12659,8 +12612,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/gov-facility-services-limited",
@@ -12995,8 +12947,7 @@
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Civil Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/civil-service",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/civil-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/government-communications-headquarters",
@@ -13113,8 +13064,7 @@
     ],
     "primary_mx_host": "eu-smtp-inbound-psc-1.mimecast.com",
     "inherited_from_org": "UK Government Investments",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/uk-government-investments",
-    "mail_provider": "Mimecast"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/uk-government-investments"
   },
   {
     "id": "https://www.gov.uk/api/organisations/government-data-quality-hub",
@@ -13497,8 +13447,7 @@
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Civil Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/civil-service",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/civil-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/government-internal-audit-agency",
@@ -13592,6 +13541,10 @@
     "best_domain": "https://www.gov.uk/government/organisations/civil-service-government-knowledge-information-management-profession",
     "mx_records": [
       {
+        "host": "smtp1.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
         "host": "smtp2.homeoffice.gov.uk",
         "priority": 10
       },
@@ -13602,13 +13555,9 @@
       {
         "host": "smtp4.homeoffice.gov.uk",
         "priority": 10
-      },
-      {
-        "host": "smtp1.homeoffice.gov.uk",
-        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp2.homeoffice.gov.uk"
+    "primary_mx_host": "smtp1.homeoffice.gov.uk"
   },
   {
     "id": "https://www.gov.uk/api/organisations/government-legal-department",
@@ -13786,8 +13735,7 @@
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Civil Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/civil-service",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/civil-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/government-office-for-science",
@@ -14045,8 +13993,7 @@
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Civil Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/civil-service",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/civil-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/government-people-group",
@@ -14119,11 +14066,11 @@
         "priority": 1
       },
       {
-        "host": "alt2.aspmx.l.google.com",
+        "host": "alt1.aspmx.l.google.com",
         "priority": 5
       },
       {
-        "host": "alt1.aspmx.l.google.com",
+        "host": "alt2.aspmx.l.google.com",
         "priority": 5
       },
       {
@@ -14137,8 +14084,7 @@
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Cabinet Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/civil-service-government-planning-inspectors",
@@ -14429,8 +14375,7 @@
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Civil Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/civil-service",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/civil-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/government-recruitment-service",
@@ -14482,11 +14427,11 @@
         "priority": 1
       },
       {
-        "host": "alt1.aspmx.l.google.com",
+        "host": "alt2.aspmx.l.google.com",
         "priority": 5
       },
       {
-        "host": "alt2.aspmx.l.google.com",
+        "host": "alt1.aspmx.l.google.com",
         "priority": 5
       },
       {
@@ -14500,8 +14445,7 @@
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Government People Group",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/government-people-group",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/government-people-group"
   },
   {
     "id": "https://www.gov.uk/api/organisations/civil-service-government-science-engineering",
@@ -14613,8 +14557,7 @@
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Civil Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/civil-service",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/civil-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/government-skills",
@@ -14688,8 +14631,7 @@
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Cabinet Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/civil-service-government-social-research-profession",
@@ -14805,8 +14747,7 @@
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Civil Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/civil-service",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/civil-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/civil-service-government-tax-profession",
@@ -15195,8 +15136,7 @@
     ],
     "primary_mx_host": "ukhsa-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "UK Health Security Agency",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/uk-health-security-agency",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/uk-health-security-agency"
   },
   {
     "id": "https://www.gov.uk/api/organisations/health-research-authority",
@@ -16117,6 +16057,10 @@
     "best_domain": "https://www.gov.uk/government/organisations/hm-passport-office",
     "mx_records": [
       {
+        "host": "smtp4.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
       },
@@ -16127,13 +16071,9 @@
       {
         "host": "smtp3.homeoffice.gov.uk",
         "priority": 10
-      },
-      {
-        "host": "smtp4.homeoffice.gov.uk",
-        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp1.homeoffice.gov.uk"
+    "primary_mx_host": "smtp4.homeoffice.gov.uk"
   },
   {
     "id": "https://www.gov.uk/api/organisations/hm-prison-and-probation-service",
@@ -16740,6 +16680,10 @@
     "best_domain": "https://www.gov.uk/government/organisations/home-office",
     "mx_records": [
       {
+        "host": "smtp3.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
         "host": "smtp4.homeoffice.gov.uk",
         "priority": 10
       },
@@ -16750,13 +16694,9 @@
       {
         "host": "smtp2.homeoffice.gov.uk",
         "priority": 10
-      },
-      {
-        "host": "smtp3.homeoffice.gov.uk",
-        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp4.homeoffice.gov.uk"
+    "primary_mx_host": "smtp3.homeoffice.gov.uk"
   },
   {
     "id": "https://www.gov.uk/api/organisations/homes-england",
@@ -16963,18 +16903,17 @@
         "priority": 5
       },
       {
-        "host": "alt4.aspmx.l.google.com",
+        "host": "alt3.aspmx.l.google.com",
         "priority": 10
       },
       {
-        "host": "alt3.aspmx.l.google.com",
+        "host": "alt4.aspmx.l.google.com",
         "priority": 10
       }
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Cabinet Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/housing-ombudsman",
@@ -17074,8 +17013,7 @@
     ],
     "primary_mx_host": "mx-01-eu-west-1.prod.hydra.sophos.com",
     "inherited_from_org": "Department of Health (Northern Ireland)",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-of-health-northern-ireland",
-    "mail_provider": "Sophos"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-of-health-northern-ireland"
   },
   {
     "id": "https://www.gov.uk/api/organisations/human-fertilisation-and-embryology-authority",
@@ -17282,6 +17220,10 @@
     "best_domain": "https://www.gov.uk/government/organisations/immigration-enforcement",
     "mx_records": [
       {
+        "host": "smtp2.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
         "host": "smtp3.homeoffice.gov.uk",
         "priority": 10
       },
@@ -17292,13 +17234,9 @@
       {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
-      },
-      {
-        "host": "smtp2.homeoffice.gov.uk",
-        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp3.homeoffice.gov.uk"
+    "primary_mx_host": "smtp2.homeoffice.gov.uk"
   },
   {
     "id": "https://www.gov.uk/api/organisations/imperial-war-museum",
@@ -17415,8 +17353,7 @@
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Cabinet Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/independent-advisory-panel-on-deaths-in-custody",
@@ -17465,8 +17402,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Ministry of Justice",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-justice",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-justice"
   },
   {
     "id": "https://www.gov.uk/api/organisations/independent-agricultural-appeals-panel",
@@ -17564,11 +17500,11 @@
         "priority": 1
       },
       {
-        "host": "alt1.aspmx.l.google.com",
+        "host": "alt2.aspmx.l.google.com",
         "priority": 5
       },
       {
-        "host": "alt2.aspmx.l.google.com",
+        "host": "alt1.aspmx.l.google.com",
         "priority": 5
       },
       {
@@ -17623,15 +17559,15 @@
     "best_domain": "https://www.gov.uk/government/organisations/independent-case-examiner",
     "mx_records": [
       {
-        "host": "mx1.hc1011-45.c3s2.iphmx.com",
+        "host": "mx2.hc1011-45.c3s2.iphmx.com",
         "priority": 0
       },
       {
-        "host": "mx2.hc1011-45.c3s2.iphmx.com",
+        "host": "mx1.hc1011-45.c3s2.iphmx.com",
         "priority": 0
       }
     ],
-    "primary_mx_host": "mx1.hc1011-45.c3s2.iphmx.com"
+    "primary_mx_host": "mx2.hc1011-45.c3s2.iphmx.com"
   },
   {
     "id": "https://www.gov.uk/api/organisations/independent-chief-inspector-of-borders-and-immigration",
@@ -17674,6 +17610,10 @@
     "best_domain": "https://www.gov.uk/government/organisations/independent-chief-inspector-of-borders-and-immigration",
     "mx_records": [
       {
+        "host": "smtp4.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
       },
@@ -17684,13 +17624,9 @@
       {
         "host": "smtp3.homeoffice.gov.uk",
         "priority": 10
-      },
-      {
-        "host": "smtp4.homeoffice.gov.uk",
-        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp1.homeoffice.gov.uk"
+    "primary_mx_host": "smtp4.homeoffice.gov.uk"
   },
   {
     "id": "https://www.gov.uk/api/organisations/independent-commission-for-aid-impact",
@@ -17834,11 +17770,11 @@
         "priority": 5
       },
       {
-        "host": "alt3.aspmx.l.google.com",
+        "host": "alt4.aspmx.l.google.com",
         "priority": 10
       },
       {
-        "host": "alt4.aspmx.l.google.com",
+        "host": "alt3.aspmx.l.google.com",
         "priority": 10
       }
     ],
@@ -17885,6 +17821,10 @@
     "best_domain": "https://www.gov.uk/government/organisations/independent-family-returns-panel",
     "mx_records": [
       {
+        "host": "smtp4.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
       },
@@ -17895,16 +17835,11 @@
       {
         "host": "smtp3.homeoffice.gov.uk",
         "priority": 10
-      },
-      {
-        "host": "smtp4.homeoffice.gov.uk",
-        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp1.homeoffice.gov.uk",
+    "primary_mx_host": "smtp4.homeoffice.gov.uk",
     "inherited_from_org": "Home Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/home-office",
-    "mail_provider": "Self-hosted"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/home-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/independent-football-regulator",
@@ -18333,6 +18268,10 @@
     "best_domain": "https://terrorismlegislationreviewer.independent.gov.uk",
     "mx_records": [
       {
+        "host": "smtp3.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
         "host": "smtp4.homeoffice.gov.uk",
         "priority": 10
       },
@@ -18343,16 +18282,11 @@
       {
         "host": "smtp2.homeoffice.gov.uk",
         "priority": 10
-      },
-      {
-        "host": "smtp3.homeoffice.gov.uk",
-        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp4.homeoffice.gov.uk",
+    "primary_mx_host": "smtp3.homeoffice.gov.uk",
     "inherited_from_org": "Home Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/home-office",
-    "mail_provider": "Self-hosted"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/home-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/independent-water-commission",
@@ -18609,11 +18543,11 @@
         "priority": 1
       },
       {
-        "host": "alt2.aspmx.l.google.com",
+        "host": "alt1.aspmx.l.google.com",
         "priority": 5
       },
       {
-        "host": "alt1.aspmx.l.google.com",
+        "host": "alt2.aspmx.l.google.com",
         "priority": 5
       },
       {
@@ -18775,8 +18709,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/insolvency-rules-committee",
@@ -18826,8 +18759,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Ministry of Justice",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-justice",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-justice"
   },
   {
     "id": "https://www.gov.uk/api/organisations/intellectual-property-enterprise-court",
@@ -18877,8 +18809,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/intellectual-property-office",
@@ -18996,8 +18927,7 @@
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Civil Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/civil-service",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/civil-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/civil-service-internal-audit-profession",
@@ -19159,6 +19089,10 @@
     "best_domain": "https://www.ipco.org.uk",
     "mx_records": [
       {
+        "host": "smtp4.ipco.org.uk",
+        "priority": 10
+      },
+      {
         "host": "smtp1.ipco.org.uk",
         "priority": 10
       },
@@ -19169,13 +19103,9 @@
       {
         "host": "smtp3.ipco.org.uk",
         "priority": 10
-      },
-      {
-        "host": "smtp4.ipco.org.uk",
-        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp1.ipco.org.uk"
+    "primary_mx_host": "smtp4.ipco.org.uk"
   },
   {
     "id": "https://www.gov.uk/api/organisations/investigatory-powers-tribunal",
@@ -19366,8 +19296,7 @@
     ],
     "primary_mx_host": "apha-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Department for Environment, Food & Rural Affairs",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-for-environment-food-rural-affairs",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-for-environment-food-rural-affairs"
   },
   {
     "id": "https://www.gov.uk/api/organisations/judicial-appointments-and-conduct-ombudsman",
@@ -19558,8 +19487,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/kings-harbour-master",
@@ -19661,23 +19589,23 @@
     "best_domain": "https://www.gov.uk/government/organisations/labour-market-evidence-group",
     "mx_records": [
       {
-        "host": "smtp4.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
-        "host": "smtp1.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
         "host": "smtp2.homeoffice.gov.uk",
         "priority": 10
       },
       {
         "host": "smtp3.homeoffice.gov.uk",
         "priority": 10
+      },
+      {
+        "host": "smtp4.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp1.homeoffice.gov.uk",
+        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp4.homeoffice.gov.uk"
+    "primary_mx_host": "smtp2.homeoffice.gov.uk"
   },
   {
     "id": "https://www.gov.uk/api/organisations/labour-relations-agency",
@@ -19879,8 +19807,7 @@
     ],
     "primary_mx_host": "communities-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Ministry of Housing, Communities and Local Government",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-housing-communities-local-government",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-housing-communities-local-government"
   },
   {
     "id": "https://www.gov.uk/api/organisations/law-commission",
@@ -19914,8 +19841,8 @@
     "oscar_budget_£k": null,
     "email_domains": [
       "justice.gov.uk",
-      "nilawcommission.gov.uk",
-      "lawcommission.gov.uk"
+      "lawcommission.gov.uk",
+      "nilawcommission.gov.uk"
     ],
     "has_mx": true,
     "mail_providers": [
@@ -19931,8 +19858,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Ministry of Justice",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-justice",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-justice"
   },
   {
     "id": "https://www.gov.uk/api/organisations/leadership-college-for-government",
@@ -19988,26 +19914,25 @@
         "priority": 1
       },
       {
-        "host": "alt2.aspmx.l.google.com",
-        "priority": 5
-      },
-      {
         "host": "alt1.aspmx.l.google.com",
         "priority": 5
       },
       {
-        "host": "alt3.aspmx.l.google.com",
-        "priority": 10
+        "host": "alt2.aspmx.l.google.com",
+        "priority": 5
       },
       {
         "host": "alt4.aspmx.l.google.com",
+        "priority": 10
+      },
+      {
+        "host": "alt3.aspmx.l.google.com",
         "priority": 10
       }
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Cabinet Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/leasehold-advisory-service",
@@ -20385,15 +20310,15 @@
     "best_domain": "http://www.lgo.org.uk",
     "mx_records": [
       {
-        "host": "mx1.topsec.com",
+        "host": "mx2.topsec.com",
         "priority": 10
       },
       {
-        "host": "mx2.topsec.com",
+        "host": "mx1.topsec.com",
         "priority": 10
       }
     ],
-    "primary_mx_host": "mx1.topsec.com"
+    "primary_mx_host": "mx2.topsec.com"
   },
   {
     "id": "https://www.gov.uk/api/organisations/located",
@@ -20839,8 +20764,7 @@
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Civil Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/civil-service",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/civil-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/medical-research-council",
@@ -21045,23 +20969,23 @@
     "best_domain": "https://www.gov.uk/government/organisations/migration-advisory-committee",
     "mx_records": [
       {
-        "host": "smtp3.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
-        "host": "smtp4.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
       },
       {
         "host": "smtp2.homeoffice.gov.uk",
         "priority": 10
+      },
+      {
+        "host": "smtp3.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp4.homeoffice.gov.uk",
+        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp3.homeoffice.gov.uk"
+    "primary_mx_host": "smtp1.homeoffice.gov.uk"
   },
   {
     "id": "https://www.gov.uk/api/organisations/military-aviation-authority",
@@ -21154,11 +21078,11 @@
         "priority": 1
       },
       {
-        "host": "alt1.aspmx.l.google.com",
+        "host": "alt2.aspmx.l.google.com",
         "priority": 5
       },
       {
-        "host": "alt2.aspmx.l.google.com",
+        "host": "alt1.aspmx.l.google.com",
         "priority": 5
       },
       {
@@ -21931,8 +21855,7 @@
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Cabinet Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/single-financial-guidance-body",
@@ -22118,6 +22041,10 @@
     "best_domain": "https://www.protectuk.police.uk",
     "mx_records": [
       {
+        "host": "smtp2.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
         "host": "smtp3.homeoffice.gov.uk",
         "priority": 10
       },
@@ -22128,16 +22055,11 @@
       {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
-      },
-      {
-        "host": "smtp2.homeoffice.gov.uk",
-        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp3.homeoffice.gov.uk",
+    "primary_mx_host": "smtp2.homeoffice.gov.uk",
     "inherited_from_org": "Home Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/home-office",
-    "mail_provider": "Self-hosted"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/home-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/national-crime-agency",
@@ -22228,6 +22150,10 @@
     "best_domain": "https://www.gov.uk/government/organisations/national-crime-agency-remuneration-review-body",
     "mx_records": [
       {
+        "host": "smtp1.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
         "host": "smtp2.homeoffice.gov.uk",
         "priority": 10
       },
@@ -22238,16 +22164,11 @@
       {
         "host": "smtp4.homeoffice.gov.uk",
         "priority": 10
-      },
-      {
-        "host": "smtp1.homeoffice.gov.uk",
-        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp2.homeoffice.gov.uk",
+    "primary_mx_host": "smtp1.homeoffice.gov.uk",
     "inherited_from_org": "Home Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/home-office",
-    "mail_provider": "Self-hosted"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/home-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/national-cyber-force",
@@ -22308,8 +22229,7 @@
     ],
     "primary_mx_host": "mod-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Ministry of Defence",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-defence",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-defence"
   },
   {
     "id": "https://www.gov.uk/api/organisations/national-cyber-security-centre",
@@ -22451,6 +22371,10 @@
     "best_domain": "http://www.nestpensions.org.uk/",
     "mx_records": [
       {
+        "host": "ukswncipl03.nestpensions.org.uk",
+        "priority": 10
+      },
+      {
         "host": "ukuxbcipl03.nestpensions.org.uk",
         "priority": 10
       },
@@ -22461,13 +22385,9 @@
       {
         "host": "ukswncipl02.nestpensions.org.uk",
         "priority": 10
-      },
-      {
-        "host": "ukswncipl03.nestpensions.org.uk",
-        "priority": 10
       }
     ],
-    "primary_mx_host": "ukuxbcipl03.nestpensions.org.uk"
+    "primary_mx_host": "ukswncipl03.nestpensions.org.uk"
   },
   {
     "id": "https://www.gov.uk/api/organisations/national-energy-system-operator",
@@ -22820,8 +22740,7 @@
     ],
     "primary_mx_host": "homesengland-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Homes England",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/homes-england",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/homes-england"
   },
   {
     "id": "https://www.gov.uk/api/organisations/national-infrastructure-and-service-transformation-authority",
@@ -23083,15 +23002,15 @@
     "best_domain": "http://www.liverpoolmuseums.org.uk/",
     "mx_records": [
       {
-        "host": "eu-smtp-inbound-2.mimecast.com",
+        "host": "eu-smtp-inbound-1.mimecast.com",
         "priority": 10
       },
       {
-        "host": "eu-smtp-inbound-1.mimecast.com",
+        "host": "eu-smtp-inbound-2.mimecast.com",
         "priority": 10
       }
     ],
-    "primary_mx_host": "eu-smtp-inbound-2.mimecast.com"
+    "primary_mx_host": "eu-smtp-inbound-1.mimecast.com"
   },
   {
     "id": "https://www.gov.uk/api/organisations/national-physical-laboratory",
@@ -23306,11 +23225,11 @@
         "priority": 5
       },
       {
-        "host": "alt3.aspmx.l.google.com",
+        "host": "alt4.aspmx.l.google.com",
         "priority": 10
       },
       {
-        "host": "alt4.aspmx.l.google.com",
+        "host": "alt3.aspmx.l.google.com",
         "priority": 10
       }
     ],
@@ -23371,8 +23290,7 @@
     ],
     "primary_mx_host": "mod-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Ministry of Defence",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-defence",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-defence"
   },
   {
     "id": "https://www.gov.uk/api/organisations/national-wealth-fund",
@@ -23426,8 +23344,7 @@
     ],
     "primary_mx_host": "eu-smtp-inbound-psc-1.mimecast.com",
     "inherited_from_org": "HM Treasury",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-treasury",
-    "mail_provider": "Mimecast"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-treasury"
   },
   {
     "id": "https://www.gov.uk/api/organisations/natural-england",
@@ -23987,8 +23904,7 @@
     ],
     "primary_mx_host": "dhsc-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Department of Health and Social Care",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-of-health-and-social-care",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-of-health-and-social-care"
   },
   {
     "id": "https://www.gov.uk/api/organisations/nhs-resolution",
@@ -24174,15 +24090,15 @@
     "best_domain": "http://www.northyorkmoors.org.uk/",
     "mx_records": [
       {
-        "host": "eu-smtp-inbound-1.mimecast.com",
+        "host": "eu-smtp-inbound-2.mimecast.com",
         "priority": 10
       },
       {
-        "host": "eu-smtp-inbound-2.mimecast.com",
+        "host": "eu-smtp-inbound-1.mimecast.com",
         "priority": 10
       }
     ],
-    "primary_mx_host": "eu-smtp-inbound-1.mimecast.com"
+    "primary_mx_host": "eu-smtp-inbound-2.mimecast.com"
   },
   {
     "id": "https://www.gov.uk/api/organisations/northern-ireland-cancer-registry",
@@ -25145,8 +25061,7 @@
     ],
     "primary_mx_host": "apha-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Department for Environment, Food & Rural Affairs",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-for-environment-food-rural-affairs",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-for-environment-food-rural-affairs"
   },
   {
     "id": "https://www.gov.uk/api/organisations/ns-i",
@@ -25193,11 +25108,11 @@
         "priority": 0
       },
       {
-        "host": "mx4.nsandi.com",
+        "host": "mx3.nsandi.com",
         "priority": 10
       },
       {
-        "host": "mx3.nsandi.com",
+        "host": "mx4.nsandi.com",
         "priority": 10
       }
     ],
@@ -25360,8 +25275,7 @@
     ],
     "primary_mx_host": "mod-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Ministry of Defence",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-defence",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-defence"
   },
   {
     "id": "https://www.gov.uk/api/organisations/nuclear-restoration-services",
@@ -25638,15 +25552,15 @@
     "best_domain": "https://obr.uk/",
     "mx_records": [
       {
-        "host": "eu-smtp-inbound-psc-1.mimecast.com",
+        "host": "eu-smtp-inbound-psc-2.mimecast.com",
         "priority": 10
       },
       {
-        "host": "eu-smtp-inbound-psc-2.mimecast.com",
+        "host": "eu-smtp-inbound-psc-1.mimecast.com",
         "priority": 10
       }
     ],
-    "primary_mx_host": "eu-smtp-inbound-psc-1.mimecast.com"
+    "primary_mx_host": "eu-smtp-inbound-psc-2.mimecast.com"
   },
   {
     "id": "https://www.gov.uk/api/organisations/office-for-digital-identities-and-attributes",
@@ -26303,6 +26217,10 @@
     "best_domain": "https://www.gov.uk/government/organisations/office-for-the-independent-examiner-of-complaints",
     "mx_records": [
       {
+        "host": "smtp4.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
       },
@@ -26313,16 +26231,11 @@
       {
         "host": "smtp3.homeoffice.gov.uk",
         "priority": 10
-      },
-      {
-        "host": "smtp4.homeoffice.gov.uk",
-        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp1.homeoffice.gov.uk",
+    "primary_mx_host": "smtp4.homeoffice.gov.uk",
     "inherited_from_org": "Home Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/home-office",
-    "mail_provider": "Self-hosted"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/home-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/office-for-the-internal-market",
@@ -26623,15 +26536,15 @@
     "best_domain": "http://www.orr.gov.uk",
     "mx_records": [
       {
-        "host": "eu-smtp-inbound-1.mimecast.com",
+        "host": "eu-smtp-inbound-2.mimecast.com",
         "priority": 10
       },
       {
-        "host": "eu-smtp-inbound-2.mimecast.com",
+        "host": "eu-smtp-inbound-1.mimecast.com",
         "priority": 10
       }
     ],
-    "primary_mx_host": "eu-smtp-inbound-1.mimecast.com"
+    "primary_mx_host": "eu-smtp-inbound-2.mimecast.com"
   },
   {
     "id": "https://www.gov.uk/api/organisations/office-of-the-advocate-general-for-scotland",
@@ -26826,6 +26739,10 @@
     "best_domain": "https://www.gov.uk/government/organisations/office-of-the-independent-prevent-commissioner",
     "mx_records": [
       {
+        "host": "smtp4.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
       },
@@ -26836,13 +26753,9 @@
       {
         "host": "smtp3.homeoffice.gov.uk",
         "priority": 10
-      },
-      {
-        "host": "smtp4.homeoffice.gov.uk",
-        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp1.homeoffice.gov.uk"
+    "primary_mx_host": "smtp4.homeoffice.gov.uk"
   },
   {
     "id": "https://www.gov.uk/api/organisations/the-office-of-the-leader-of-the-house-of-commons",
@@ -26890,19 +26803,19 @@
         "priority": 1
       },
       {
-        "host": "alt1.aspmx.l.google.com",
-        "priority": 5
-      },
-      {
         "host": "alt2.aspmx.l.google.com",
         "priority": 5
       },
       {
-        "host": "alt4.aspmx.l.google.com",
-        "priority": 10
+        "host": "alt1.aspmx.l.google.com",
+        "priority": 5
       },
       {
         "host": "alt3.aspmx.l.google.com",
+        "priority": 10
+      },
+      {
+        "host": "alt4.aspmx.l.google.com",
         "priority": 10
       }
     ],
@@ -27016,11 +26929,11 @@
         "priority": 1
       },
       {
-        "host": "alt2.aspmx.l.google.com",
+        "host": "alt1.aspmx.l.google.com",
         "priority": 5
       },
       {
-        "host": "alt1.aspmx.l.google.com",
+        "host": "alt2.aspmx.l.google.com",
         "priority": 5
       },
       {
@@ -27287,8 +27200,7 @@
     ],
     "primary_mx_host": "education-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Department for Education",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-for-education",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-for-education"
   },
   {
     "id": "https://www.gov.uk/api/organisations/office-of-the-windrush-commissioner",
@@ -27569,8 +27481,7 @@
     ],
     "primary_mx_host": "education-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Department for Education",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-for-education",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-for-education"
   },
   {
     "id": "https://www.gov.uk/api/organisations/ofsted",
@@ -27753,11 +27664,11 @@
         "priority": 1
       },
       {
-        "host": "alt1.aspmx.l.google.com",
+        "host": "alt2.aspmx.l.google.com",
         "priority": 5
       },
       {
-        "host": "alt2.aspmx.l.google.com",
+        "host": "alt1.aspmx.l.google.com",
         "priority": 5
       },
       {
@@ -27771,8 +27682,7 @@
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Cabinet Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/civil-service-operational-delivery-profession",
@@ -27963,18 +27873,17 @@
         "priority": 5
       },
       {
-        "host": "alt3.aspmx.l.google.com",
+        "host": "alt4.aspmx.l.google.com",
         "priority": 10
       },
       {
-        "host": "alt4.aspmx.l.google.com",
+        "host": "alt3.aspmx.l.google.com",
         "priority": 10
       }
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Northern Ireland Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/northern-ireland-office",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/northern-ireland-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/parliamentary-contributory-pension-fund",
@@ -28117,8 +28026,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/payment-systems-regulator",
@@ -28328,8 +28236,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/planning-inspectorate",
@@ -28466,6 +28373,10 @@
     "best_domain": "https://www.gov.uk/government/organisations/police-advisory-board-for-england-and-wales",
     "mx_records": [
       {
+        "host": "smtp1.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
         "host": "smtp2.homeoffice.gov.uk",
         "priority": 10
       },
@@ -28476,13 +28387,9 @@
       {
         "host": "smtp4.homeoffice.gov.uk",
         "priority": 10
-      },
-      {
-        "host": "smtp1.homeoffice.gov.uk",
-        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp2.homeoffice.gov.uk"
+    "primary_mx_host": "smtp1.homeoffice.gov.uk"
   },
   {
     "id": "https://www.gov.uk/api/organisations/police-discipline-appeals-tribunal",
@@ -28530,6 +28437,10 @@
     "best_domain": "https://www.gov.uk/government/organisations/police-discipline-appeals-tribunal",
     "mx_records": [
       {
+        "host": "smtp3.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
         "host": "smtp4.homeoffice.gov.uk",
         "priority": 10
       },
@@ -28540,16 +28451,11 @@
       {
         "host": "smtp2.homeoffice.gov.uk",
         "priority": 10
-      },
-      {
-        "host": "smtp3.homeoffice.gov.uk",
-        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp4.homeoffice.gov.uk",
+    "primary_mx_host": "smtp3.homeoffice.gov.uk",
     "inherited_from_org": "Home Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/home-office",
-    "mail_provider": "Self-hosted"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/home-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/police-remuneration-review-body",
@@ -28592,6 +28498,10 @@
     "best_domain": "https://www.gov.uk/government/organisations/police-remuneration-review-body",
     "mx_records": [
       {
+        "host": "smtp2.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
         "host": "smtp3.homeoffice.gov.uk",
         "priority": 10
       },
@@ -28602,16 +28512,11 @@
       {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
-      },
-      {
-        "host": "smtp2.homeoffice.gov.uk",
-        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp3.homeoffice.gov.uk",
+    "primary_mx_host": "smtp2.homeoffice.gov.uk",
     "inherited_from_org": "Home Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/home-office",
-    "mail_provider": "Self-hosted"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/home-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/police-service-of-northern-ireland",
@@ -28835,15 +28740,15 @@
     "best_domain": "https://www.postoffice.co.uk/",
     "mx_records": [
       {
-        "host": "eu-smtp-inbound-2.mimecast.com",
+        "host": "eu-smtp-inbound-1.mimecast.com",
         "priority": 5
       },
       {
-        "host": "eu-smtp-inbound-1.mimecast.com",
+        "host": "eu-smtp-inbound-2.mimecast.com",
         "priority": 5
       }
     ],
-    "primary_mx_host": "eu-smtp-inbound-2.mimecast.com"
+    "primary_mx_host": "eu-smtp-inbound-1.mimecast.com"
   },
   {
     "id": "https://www.gov.uk/api/organisations/preventing-sexual-violence-in-conflict-initiative",
@@ -28892,8 +28797,7 @@
     ],
     "primary_mx_host": "fcdo-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Foreign, Commonwealth & Development Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/foreign-commonwealth-development-office",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/foreign-commonwealth-development-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/prime-ministers-office-10-downing-street",
@@ -28948,18 +28852,17 @@
         "priority": 5
       },
       {
-        "host": "alt4.aspmx.l.google.com",
+        "host": "alt3.aspmx.l.google.com",
         "priority": 10
       },
       {
-        "host": "alt3.aspmx.l.google.com",
+        "host": "alt4.aspmx.l.google.com",
         "priority": 10
       }
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Cabinet Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/prison-services-pay-review-body",
@@ -29008,8 +28911,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Ministry of Justice",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-justice",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-justice"
   },
   {
     "id": "https://www.gov.uk/api/organisations/prisons-and-probation-ombudsman",
@@ -29122,8 +29024,7 @@
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Cabinet Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/probation-board-for-northern-ireland",
@@ -29333,8 +29234,7 @@
     ],
     "primary_mx_host": "mx-01-eu-west-1.prod.hydra.sophos.com",
     "inherited_from_org": "Department of Health (Northern Ireland)",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-of-health-northern-ireland",
-    "mail_provider": "Sophos"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-of-health-northern-ireland"
   },
   {
     "id": "https://www.gov.uk/api/organisations/public-health-wales",
@@ -29479,11 +29379,11 @@
         "priority": 1
       },
       {
-        "host": "alt2.aspmx.l.google.com",
+        "host": "alt1.aspmx.l.google.com",
         "priority": 5
       },
       {
-        "host": "alt1.aspmx.l.google.com",
+        "host": "alt2.aspmx.l.google.com",
         "priority": 5
       },
       {
@@ -29497,8 +29397,7 @@
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Cabinet Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/public-services-ombudsman-for-wales",
@@ -29842,8 +29741,7 @@
     ],
     "primary_mx_host": "eu-smtp-inbound-psc-2.mimecast.com",
     "inherited_from_org": "HM Treasury",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-treasury",
-    "mail_provider": "Mimecast"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-treasury"
   },
   {
     "id": "https://www.gov.uk/api/organisations/regional-department-for-education-dfe-directors",
@@ -29897,8 +29795,7 @@
     ],
     "primary_mx_host": "education-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Department for Education",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-for-education",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-for-education"
   },
   {
     "id": "https://www.gov.uk/api/organisations/regulator-of-social-housing",
@@ -30274,8 +30171,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/review-body-on-doctors-and-dentists-remuneration",
@@ -30324,8 +30220,7 @@
     ],
     "primary_mx_host": "dhsc-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Department of Health and Social Care",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-of-health-and-social-care",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-of-health-and-social-care"
   },
   {
     "id": "https://www.gov.uk/api/organisations/royal-air-force-museum",
@@ -30583,8 +30478,7 @@
     ],
     "primary_mx_host": "eu-smtp-inbound-psc-1.mimecast.com",
     "inherited_from_org": "HM Treasury",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-treasury",
-    "mail_provider": "Mimecast"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-treasury"
   },
   {
     "id": "https://www.gov.uk/api/organisations/royal-museums-greenwich",
@@ -30722,15 +30616,15 @@
     "best_domain": "http://www.royalparks.org.uk/",
     "mx_records": [
       {
-        "host": "eu-smtp-inbound-1.mimecast.com",
+        "host": "eu-smtp-inbound-2.mimecast.com",
         "priority": 10
       },
       {
-        "host": "eu-smtp-inbound-2.mimecast.com",
+        "host": "eu-smtp-inbound-1.mimecast.com",
         "priority": 10
       }
     ],
-    "primary_mx_host": "eu-smtp-inbound-1.mimecast.com"
+    "primary_mx_host": "eu-smtp-inbound-2.mimecast.com"
   },
   {
     "id": "https://www.gov.uk/api/organisations/rural-payments-agency",
@@ -30934,8 +30828,7 @@
     ],
     "primary_mx_host": "education-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Department for Education",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-for-education",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-for-education"
   },
   {
     "id": "https://www.gov.uk/api/organisations/science-advisory-committees",
@@ -30989,8 +30882,7 @@
     ],
     "primary_mx_host": "food-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Food Standards Agency",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/food-standards-agency",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/food-standards-agency"
   },
   {
     "id": "https://www.gov.uk/api/organisations/science-and-technology-ethics-advisory-committee",
@@ -31038,6 +30930,10 @@
     "best_domain": "https://www.gov.uk/government/organisations/science-and-technology-ethics-advisory-committee",
     "mx_records": [
       {
+        "host": "smtp4.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
       },
@@ -31048,13 +30944,9 @@
       {
         "host": "smtp3.homeoffice.gov.uk",
         "priority": 10
-      },
-      {
-        "host": "smtp4.homeoffice.gov.uk",
-        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp1.homeoffice.gov.uk"
+    "primary_mx_host": "smtp4.homeoffice.gov.uk"
   },
   {
     "id": "https://www.gov.uk/api/organisations/science-and-technology-facilities-council",
@@ -31150,8 +31042,7 @@
     ],
     "primary_mx_host": "food-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Food Standards Agency",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/food-standards-agency",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/food-standards-agency"
   },
   {
     "id": "https://www.gov.uk/api/organisations/science-museum-group",
@@ -31216,8 +31107,7 @@
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Department for Culture, Media and Sport",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-for-culture-media-and-sport",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-for-culture-media-and-sport"
   },
   {
     "id": "https://www.gov.uk/api/organisations/scientific-advisory-group-for-emergencies",
@@ -31308,8 +31198,7 @@
     ],
     "primary_mx_host": "apha-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Department for Environment, Food & Rural Affairs",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-for-environment-food-rural-affairs",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-for-environment-food-rural-affairs"
   },
   {
     "id": "https://www.gov.uk/api/organisations/secret-intelligence-service",
@@ -31406,6 +31295,10 @@
     "best_domain": "https://www.gov.uk/government/organisations/security-industry-authority",
     "mx_records": [
       {
+        "host": "smtp1.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
         "host": "smtp2.homeoffice.gov.uk",
         "priority": 10
       },
@@ -31416,16 +31309,11 @@
       {
         "host": "smtp4.homeoffice.gov.uk",
         "priority": 10
-      },
-      {
-        "host": "smtp1.homeoffice.gov.uk",
-        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp2.homeoffice.gov.uk",
+    "primary_mx_host": "smtp1.homeoffice.gov.uk",
     "inherited_from_org": "Home Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/home-office",
-    "mail_provider": "Self-hosted"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/home-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/security-vetting-appeals-panel",
@@ -31481,11 +31369,11 @@
         "priority": 5
       },
       {
-        "host": "alt3.aspmx.l.google.com",
+        "host": "alt4.aspmx.l.google.com",
         "priority": 10
       },
       {
-        "host": "alt4.aspmx.l.google.com",
+        "host": "alt3.aspmx.l.google.com",
         "priority": 10
       }
     ],
@@ -31589,8 +31477,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/review-body-on-senior-salaries",
@@ -31645,18 +31532,17 @@
         "priority": 5
       },
       {
-        "host": "alt3.aspmx.l.google.com",
+        "host": "alt4.aspmx.l.google.com",
         "priority": 10
       },
       {
-        "host": "alt4.aspmx.l.google.com",
+        "host": "alt3.aspmx.l.google.com",
         "priority": 10
       }
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Cabinet Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/the-sentencing-council-for-england-and-wales",
@@ -31705,8 +31591,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Ministry of Justice",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-justice",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-justice"
   },
   {
     "id": "https://www.gov.uk/api/organisations/serious-fraud-office",
@@ -31855,8 +31740,7 @@
     ],
     "primary_mx_host": "mod-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Ministry of Defence",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-defence",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-defence"
   },
   {
     "id": "https://www.gov.uk/api/organisations/sheffield-forgemasters-international-ltd",
@@ -31900,15 +31784,15 @@
     "best_domain": "https://www.sheffieldforgemasters.com/",
     "mx_records": [
       {
-        "host": "eu-smtp-inbound-2.mimecast.com",
+        "host": "eu-smtp-inbound-1.mimecast.com",
         "priority": 10
       },
       {
-        "host": "eu-smtp-inbound-1.mimecast.com",
+        "host": "eu-smtp-inbound-2.mimecast.com",
         "priority": 10
       }
     ],
-    "primary_mx_host": "eu-smtp-inbound-2.mimecast.com"
+    "primary_mx_host": "eu-smtp-inbound-1.mimecast.com"
   },
   {
     "id": "https://www.gov.uk/api/organisations/single-source-regulations-office",
@@ -32017,18 +31901,17 @@
         "priority": 5
       },
       {
-        "host": "aspmx2.googlemail.com",
+        "host": "aspmx3.googlemail.com",
         "priority": 10
       },
       {
-        "host": "aspmx3.googlemail.com",
+        "host": "aspmx2.googlemail.com",
         "priority": 10
       }
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Department for Culture, Media and Sport",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-for-culture-media-and-sport",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-for-culture-media-and-sport"
   },
   {
     "id": "https://www.gov.uk/api/organisations/skills-england",
@@ -32186,8 +32069,7 @@
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Cabinet Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/social-science-research-committee",
@@ -32277,15 +32159,15 @@
     "best_domain": "https://www.gov.uk/government/organisations/social-security-advisory-committee",
     "mx_records": [
       {
-        "host": "mx1.hc1011-45.c3s2.iphmx.com",
+        "host": "mx2.hc1011-45.c3s2.iphmx.com",
         "priority": 10
       },
       {
-        "host": "mx2.hc1011-45.c3s2.iphmx.com",
+        "host": "mx1.hc1011-45.c3s2.iphmx.com",
         "priority": 10
       }
     ],
-    "primary_mx_host": "mx1.hc1011-45.c3s2.iphmx.com"
+    "primary_mx_host": "mx2.hc1011-45.c3s2.iphmx.com"
   },
   {
     "id": "https://www.gov.uk/api/organisations/social-work-england",
@@ -32583,11 +32465,11 @@
         "priority": 1
       },
       {
-        "host": "alt1.aspmx.l.google.com",
+        "host": "alt2.aspmx.l.google.com",
         "priority": 5
       },
       {
-        "host": "alt2.aspmx.l.google.com",
+        "host": "alt1.aspmx.l.google.com",
         "priority": 5
       },
       {
@@ -32601,8 +32483,7 @@
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Department for Culture, Media and Sport",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-for-culture-media-and-sport",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-for-culture-media-and-sport"
   },
   {
     "id": "https://www.gov.uk/api/organisations/standards-and-testing-agency",
@@ -32759,8 +32640,7 @@
     ],
     "primary_mx_host": "mod-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Ministry of Defence",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-defence",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-defence"
   },
   {
     "id": "https://www.gov.uk/api/organisations/subsidy-advice-unit",
@@ -33003,6 +32883,10 @@
     "best_domain": "https://www.gov.uk/government/organisations/technical-advisory-board",
     "mx_records": [
       {
+        "host": "smtp3.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
         "host": "smtp4.homeoffice.gov.uk",
         "priority": 10
       },
@@ -33013,13 +32897,9 @@
       {
         "host": "smtp2.homeoffice.gov.uk",
         "priority": 10
-      },
-      {
-        "host": "smtp3.homeoffice.gov.uk",
-        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp4.homeoffice.gov.uk"
+    "primary_mx_host": "smtp3.homeoffice.gov.uk"
   },
   {
     "id": "https://www.gov.uk/api/organisations/technology-and-construction-court",
@@ -33068,8 +32948,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/the-adjudicator-s-office",
@@ -33127,8 +33006,7 @@
     ],
     "primary_mx_host": "hmrc-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Revenue & Customs",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-revenue-customs",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-revenue-customs"
   },
   {
     "id": "https://www.gov.uk/api/organisations/the-advisory-council-on-national-records-and-archives",
@@ -33224,8 +33102,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/the-business-list",
@@ -33274,8 +33151,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/charity-commission",
@@ -33375,8 +33251,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/the-crown-estate",
@@ -33569,8 +33444,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/the-independent-commission-for-reconciliation-and-information-recovery",
@@ -33719,8 +33593,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/the-legal-ombudsman",
@@ -34137,15 +34010,15 @@
     "best_domain": "https://www.thepensionsregulator.gov.uk",
     "mx_records": [
       {
-        "host": "eu-smtp-inbound-psc-1.mimecast.com",
+        "host": "eu-smtp-inbound-psc-2.mimecast.com",
         "priority": 10
       },
       {
-        "host": "eu-smtp-inbound-psc-2.mimecast.com",
+        "host": "eu-smtp-inbound-psc-1.mimecast.com",
         "priority": 10
       }
     ],
-    "primary_mx_host": "eu-smtp-inbound-psc-1.mimecast.com"
+    "primary_mx_host": "eu-smtp-inbound-psc-2.mimecast.com"
   },
   {
     "id": "https://www.gov.uk/api/organisations/the-property-trusts-and-probate-list",
@@ -34194,8 +34067,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/the-queen-elizabeth-memorial-committee",
@@ -34250,11 +34122,11 @@
         "priority": 5
       },
       {
-        "host": "alt4.aspmx.l.google.com",
+        "host": "alt3.aspmx.l.google.com",
         "priority": 10
       },
       {
-        "host": "alt3.aspmx.l.google.com",
+        "host": "alt4.aspmx.l.google.com",
         "priority": 10
       }
     ],
@@ -34307,8 +34179,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/the-reviewing-committee-on-the-export-of-works-of-art-and-objects-of-cultural-interest",
@@ -34926,15 +34797,15 @@
     "best_domain": "http://www.trinityhouse.co.uk/th/about/index.html",
     "mx_records": [
       {
-        "host": "mxa-00254201.gslb.pphosted.com",
+        "host": "mxb-00254201.gslb.pphosted.com",
         "priority": 10
       },
       {
-        "host": "mxb-00254201.gslb.pphosted.com",
+        "host": "mxa-00254201.gslb.pphosted.com",
         "priority": 10
       }
     ],
-    "primary_mx_host": "mxa-00254201.gslb.pphosted.com"
+    "primary_mx_host": "mxb-00254201.gslb.pphosted.com"
   },
   {
     "id": "https://www.gov.uk/api/organisations/uk-anti-doping",
@@ -35074,7 +34945,7 @@
     ],
     "has_mx": true,
     "mail_providers": [
-      "Unknown (ukaea.uk)"
+      "Sophos"
     ],
     "non_govuk_domain": null,
     "best_domain": "https://www.gov.uk/government/organisations/uk-atomic-energy-authority",
@@ -35131,11 +35002,11 @@
         "priority": 1
       },
       {
-        "host": "alt1.aspmx.l.google.com",
+        "host": "alt2.aspmx.l.google.com",
         "priority": 5
       },
       {
-        "host": "alt2.aspmx.l.google.com",
+        "host": "alt1.aspmx.l.google.com",
         "priority": 5
       },
       {
@@ -35204,8 +35075,7 @@
     ],
     "primary_mx_host": "education-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Department for Education",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-for-education",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/department-for-education"
   },
   {
     "id": "https://www.gov.uk/api/organisations/uk-debt-management-office",
@@ -35362,8 +35232,7 @@
     ],
     "primary_mx_host": "mod-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "Ministry of Defence",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-defence",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/ministry-of-defence"
   },
   {
     "id": "https://www.gov.uk/api/organisations/uk-export-finance",
@@ -35406,15 +35275,15 @@
     "best_domain": "https://www.gov.uk/government/organisations/uk-export-finance",
     "mx_records": [
       {
-        "host": "eu-smtp-inbound-1.mimecast.com",
+        "host": "eu-smtp-inbound-2.mimecast.com",
         "priority": 10
       },
       {
-        "host": "eu-smtp-inbound-2.mimecast.com",
+        "host": "eu-smtp-inbound-1.mimecast.com",
         "priority": 10
       }
     ],
-    "primary_mx_host": "eu-smtp-inbound-1.mimecast.com"
+    "primary_mx_host": "eu-smtp-inbound-2.mimecast.com"
   },
   {
     "id": "https://www.gov.uk/api/organisations/uk-government-investments",
@@ -35747,8 +35616,7 @@
     ],
     "primary_mx_host": "eu-smtp-inbound-psc-2.mimecast.com",
     "inherited_from_org": "HM Treasury",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-treasury",
-    "mail_provider": "Mimecast"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-treasury"
   },
   {
     "id": "https://www.gov.uk/api/organisations/uk-integrated-security-fund",
@@ -35800,11 +35668,11 @@
         "priority": 1
       },
       {
-        "host": "alt2.aspmx.l.google.com",
+        "host": "alt1.aspmx.l.google.com",
         "priority": 5
       },
       {
-        "host": "alt1.aspmx.l.google.com",
+        "host": "alt2.aspmx.l.google.com",
         "priority": 5
       },
       {
@@ -35865,8 +35733,7 @@
     ],
     "primary_mx_host": "fcdo-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "FCDO Services ",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/fcdo-services",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/fcdo-services"
   },
   {
     "id": "https://www.gov.uk/api/organisations/uk-national-contact-point",
@@ -36110,26 +35977,25 @@
         "priority": 1
       },
       {
-        "host": "alt1.aspmx.l.google.com",
-        "priority": 5
-      },
-      {
         "host": "alt2.aspmx.l.google.com",
         "priority": 5
       },
       {
-        "host": "alt4.aspmx.l.google.com",
-        "priority": 10
+        "host": "alt1.aspmx.l.google.com",
+        "priority": 5
       },
       {
         "host": "alt3.aspmx.l.google.com",
+        "priority": 10
+      },
+      {
+        "host": "alt4.aspmx.l.google.com",
         "priority": 10
       }
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Cabinet Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/uk-shared-business-services-ltd",
@@ -36351,8 +36217,7 @@
     ],
     "primary_mx_host": "aspmx.l.google.com",
     "inherited_from_org": "Cabinet Office",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office",
-    "mail_provider": "Google Workspace"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/cabinet-office"
   },
   {
     "id": "https://www.gov.uk/api/organisations/uk-visas-and-immigration",
@@ -36400,6 +36265,10 @@
     "best_domain": "https://www.gov.uk/government/organisations/uk-visas-and-immigration",
     "mx_records": [
       {
+        "host": "smtp2.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
         "host": "smtp3.homeoffice.gov.uk",
         "priority": 10
       },
@@ -36410,13 +36279,9 @@
       {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
-      },
-      {
-        "host": "smtp2.homeoffice.gov.uk",
-        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp3.homeoffice.gov.uk"
+    "primary_mx_host": "smtp2.homeoffice.gov.uk"
   },
   {
     "id": "https://www.gov.uk/api/organisations/united-kingdom-national-nuclear-laboratory",
@@ -36632,8 +36497,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/upper-tribunal-immigration-and-asylum-chamber",
@@ -36682,8 +36546,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/upper-tribunal-lands-chamber",
@@ -36732,8 +36595,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/upper-tribunal-tax-and-chancery-chamber",
@@ -36782,8 +36644,7 @@
     ],
     "primary_mx_host": "justice-gov-uk.mail.protection.outlook.com",
     "inherited_from_org": "HM Courts & Tribunals Service",
-    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
-    "mail_provider": "Microsoft 365"
+    "inherited_from_org_id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service"
   },
   {
     "id": "https://www.gov.uk/api/organisations/valuation-office-agency",
@@ -37405,15 +37266,15 @@
     "best_domain": "http://www.wao.gov.uk/",
     "mx_records": [
       {
-        "host": "mxa-004ee501.gslb.pphosted.com",
+        "host": "mxb-004ee501.gslb.pphosted.com",
         "priority": 10
       },
       {
-        "host": "mxb-004ee501.gslb.pphosted.com",
+        "host": "mxa-004ee501.gslb.pphosted.com",
         "priority": 10
       }
     ],
-    "primary_mx_host": "mxa-004ee501.gslb.pphosted.com"
+    "primary_mx_host": "mxb-004ee501.gslb.pphosted.com"
   },
   {
     "id": "https://www.gov.uk/api/organisations/wallace-collection",

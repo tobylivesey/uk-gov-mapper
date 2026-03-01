@@ -106,10 +106,11 @@ python -m scripts.enrich_jobs
   - Matching strategies: slug_exact > abbreviation > slug_variation > fuzzy
 
 ### Email Domains Data Model
-Each org has an `email_domains` list of domain strings:
+Each org has an `email_domains` list of domain strings with a parallel `email_domain_sources` list tracking where each domain came from:
 ```json
 {
   "email_domains": ["cabinetoffice.gov.uk", "cabinet-office.gov.uk"],
+  "email_domain_sources": ["mailto_scrape", "govuk_domain_list"],
   "has_mx": true,
   "mail_providers": ["Google Workspace"],
   "inherited_from_org": "Cabinet Office",      // only if inherited from parent
@@ -117,13 +118,19 @@ Each org has an `email_domains` list of domain strings:
 }
 ```
 
+**Domain sources**:
+- `mailto_scrape` - extracted from mailto links on gov.uk pages
+- `url_inferred` - inferred from URL domain (fallback when no mailto found)
+- `parent_org` - inherited from parent organization
+- `govuk_domain_list` - matched from official .gov.uk domain list
+
 ### Centralized Utilities (`scripts/utils.py`)
 Common functions used across all scripts:
 - **`create_session()`**: Creates configured requests session with standard headers
 - **`safe_http_request()`**: HTTP requests with error handling and retries
 - **`rate_limit_sleep()`**: Standardized rate limiting
 - **`lookup_mx_records()`**: DNS MX record lookups
-- **`add_email_domain()`**: Add domain string to org's email_domains list
+- **`add_email_domain(org, domain, source)`**: Add domain string to org's email_domains list with source tracking
 - **`require_env_vars()`**: Validates required environment variables
 - **`log_progress()`**: Consistent progress logging
 - **`write_json()`** / **`write_ndjson()`** / **`write_csv()`**: Data persistence utilities

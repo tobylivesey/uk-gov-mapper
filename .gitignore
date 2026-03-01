@@ -7,7 +7,7 @@ __pycache__/
 *.sqlite3
 .claude/
 .vscode/    
-Claude.md
+CLAUDE.md
 scratch_jupyter_notebooks/
 settings.local.json
 job_listings/

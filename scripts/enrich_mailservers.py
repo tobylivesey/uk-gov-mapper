@@ -17,9 +17,9 @@ from scripts.utils import (
     rate_limit_sleep,
     log_progress,
     lookup_mx_records,
-    get_primary_mail_provider,
     add_email_domain,
 )
+from scripts.mail_providers import get_mail_provider
 
 DATA_DIR = Path("data")
 OUT_DIR = DATA_DIR / "orgs/uk"
@@ -75,7 +75,7 @@ def enrich_org_mailservers(org: dict) -> dict:
         if mx_records:
             valid_domains.append(domain)
             mx_records_all.extend(mx_records)
-            provider = get_primary_mail_provider(mx_records)
+            provider, _, _ = get_mail_provider(mx_records)
             if provider:
                 providers.add(provider)
             print(f"{org_title}: {domain} -> MX found")
@@ -87,6 +87,8 @@ def enrich_org_mailservers(org: dict) -> dict:
     org["email_domains"] = valid_domains
     org["has_mx"] = len(valid_domains) > 0
     org["mail_providers"] = sorted(providers)
+    org["mx_records"] = mx_records_all
+    org["primary_mx_host"] = mx_records_all[0]["host"] if mx_records_all else None
 
     if not org["email_domains"]:
         print(f"{org_title}: no domains to check")

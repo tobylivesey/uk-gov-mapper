@@ -126,39 +126,6 @@ def lookup_mx_records(domain: str, timeout: float = 5.0) -> list[dict]:
         return []
 
 
-def get_primary_mail_provider(mx_records: list[dict]) -> str | None:
-    """
-    Determine the primary mail provider from MX records.
-    Returns a simplified provider name based on common patterns.
-    """
-    if not mx_records:
-        return None
-
-    primary_host = mx_records[0]["host"].lower()
-
-    # Common mail providers
-    if "google" in primary_host or "googlemail" in primary_host:
-        return "Google Workspace"
-    elif "outlook" in primary_host or "microsoft" in primary_host:
-        return "Microsoft 365"
-    elif "pphosted" in primary_host or "proofpoint" in primary_host:
-        return "Proofpoint"
-    elif "mimecast" in primary_host:
-        return "Mimecast"
-    elif "messagelabs" in primary_host or "symantec" in primary_host:
-        return "Symantec"
-    elif "barracuda" in primary_host:
-        return "Barracuda"
-    elif "gov.uk" in primary_host:
-        return "gov.uk"
-    elif "sophos" in primary_host:
-        return "Sophos"
-    elif "gsi.gov.uk" in primary_host:
-        return "GSI (Government Secure Intranet)"
-    else:
-        return "Other"
-
-
 def add_email_domain(org: dict, domain: str) -> bool:
     """
     Add an email domain to an org's email_domains list.

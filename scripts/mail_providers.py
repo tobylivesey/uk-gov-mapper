@@ -189,10 +189,3 @@ def _extract_base_domain(hostname: str) -> str:
     return hostname
 
 
-def get_primary_mail_provider(mx_records: list[dict]) -> Optional[str]:
-    """
-    Legacy function signature for backwards compatibility.
-    Returns just the provider name.
-    """
-    provider, _, _ = get_mail_provider(mx_records)
-    return provider

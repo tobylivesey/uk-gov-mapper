@@ -100,10 +100,14 @@ def main(extant_orgs: list[dict] | None = None) -> list[dict]:
         # Initialize email_domains list for all orgs
         if "email_domains" not in org:
             org["email_domains"] = []
+        if "email_domain_sources" not in org:
+            org["email_domain_sources"] = []
         if "has_mx" not in org:
             org["has_mx"] = False
         if "mail_providers" not in org:
             org["mail_providers"] = []
+        if "mail_provider_categories" not in org:
+            org["mail_provider_categories"] = []
 
         web_url = org.get("web_url")
         if org["details"]["govuk_status"] == "exempt":

@@ -69,6 +69,8 @@ def inherit_parent_domain(org: dict, parent: dict) -> bool:
     provider, category, confidence = get_mail_provider(mx_records)
     if provider:
         org["mail_providers"] = [provider]  # Set as list for consistency
+    if category:
+        org["mail_provider_categories"] = [category]
 
     org["has_mx"] = len(mx_records) > 0
     org["primary_mx_host"] = mx_records[0]["host"] if mx_records else None

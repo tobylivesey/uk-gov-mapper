@@ -27,11 +27,11 @@ MX_PATTERNS: list[tuple[str, str, str, str]] = [
     (r"outlook\.com$|mail\.protection\.outlook\.com$", "Microsoft 365", "cloud", "high"),
     (r"pphosted\.com$|proofpoint\.com$|ppe-hosted\.com$", "Proofpoint", "security_gateway", "high"),
     (r"mimecast\.com$|mimecast\.co\.uk$", "Mimecast", "security_gateway", "high"),
-    (r"messagelabs\.com$|symantec.*cloud|brightmail", "Symantec/Broadcom", "security_gateway", "high"),
+    (r"messagelabs\.com$|symantec.*cloud|brightmail", "Broadcom", "security_gateway", "high"),
     (r"barracuda\.com$|barracudanetworks\.com$|cuda-inc\.com$", "Barracuda", "security_gateway", "high"),
     (r"sophos\.com$|reflexion\.net$|sophosav.*", "Sophos", "security_gateway", "high"),
     (r"forcepoint\.com$|websense\.com$|mailcontrol\.com$", "Forcepoint", "security_gateway", "high"),
-    (r"iphmx\.com$|trendmicro\.com$|tmes\.trendmicro\.com$", "Trend Micro", "security_gateway", "high"),
+    (r"trendmicro\.com$|tmes\.trendmicro\.com$", "Trend Micro", "security_gateway", "high"),
     (r"fortimail\.com$|fortinet\.net$", "Fortinet FortiMail", "security_gateway", "high"),
     (r"titanhq\.com$|spamtitan\.com$", "TitanHQ SpamTitan", "security_gateway", "high"),
     (r"mailanyone\.net$", "MailAnyone", "security_gateway", "high"),
@@ -88,6 +88,7 @@ MX_PATTERNS: list[tuple[str, str, str, str]] = [
     (r"hornetsecurity\.com$", "Hornetsecurity", "security_gateway", "high"),
     (r"mailroute\.net$", "MailRoute", "security_gateway", "high"),
     (r"zix\.com$|zixmail\.net$", "Zix", "security_gateway", "high"),
+    (r"iphmx\.com$|cisco.*", "Cisco", "security_gateway", "high"),
 
     # Generic gov.uk domains (lower confidence - could be self-hosted)
     (r"\.gov\.uk$", "gov.uk domain", "government", "low"),
@@ -161,10 +162,14 @@ def get_mail_provider(mx_records: list[dict]) -> tuple[Optional[str], Optional[s
         best = max(cloud_matches, key=lambda m: ("high", "medium", "low").index(m.confidence) if m.confidence in ("high", "medium", "low") else 3)
         return best.provider, best.category, best.confidence
 
-    # Check if it looks like self-hosted (mail.domain.tld or smtp.domain.tld pattern)
+    # Check if it looks like self-managed (mail.domain.tld or smtp.domain.tld pattern)
     # This check comes before low-confidence pattern matches to avoid false positives
-    if primary_host and re.match(r"^(mail|smtp)\d*\.", primary_host.lower()):
-        return "Self-hosted", "self_hosted", "medium"
+    if primary_host and re.match(
+        r"^(mail|smtp|relay|mx|mgw|gateway|gw|mta)\d*[-.]",
+        primary_host.lower(),
+        re.IGNORECASE
+    ):
+        return "Self-managed", "self_managed", "medium"
 
     # Otherwise return the best match we have
     if all_matches:
@@ -175,17 +180,6 @@ def get_mail_provider(mx_records: list[dict]) -> tuple[Optional[str], Optional[s
 
     # If we have MX records but couldn't identify the provider
     if primary_host:
-        return f"Unknown ({_extract_base_domain(primary_host)})", "unknown", "low"
+        return f"Unidentified", "unknown", "low"
 
     return None, None, None
-
-
-def _extract_base_domain(hostname: str) -> str:
-    """Extract a meaningful identifier from a hostname."""
-    parts = hostname.lower().rstrip(".").split(".")
-    if len(parts) >= 2:
-        # Return last two parts (e.g., "example.com")
-        return ".".join(parts[-2:])
-    return hostname
-
-

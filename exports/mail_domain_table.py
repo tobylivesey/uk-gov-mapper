@@ -18,10 +18,9 @@ def prepare_blog_subset(df: pd.DataFrame) -> pd.DataFrame:
     # Map from enriched data columns to blog display columns
     subset = pd.DataFrame({
         'organisation': df['title'],
-        'domains': df['email_domains'].apply(lambda x: x if x else []),
+        'domains': df['email_domains'].apply(lambda x: x if x else ['No Domain Found']),
         'mail_providers': df['mail_providers'],
-        'domain_source': df['email_domain_sources'],
-        'last_seen': df['updated_at']
+        'mail_provider_categories': df['mail_provider_categories'] if 'mail_provider_categories' in df.columns else [[]]*len(df),
     })
     subset = subset.sort_values('organisation').reset_index(drop=True)
     # Normalise any NaT/NaN to None so json.dumps handles them cleanly

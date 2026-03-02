@@ -68,9 +68,7 @@ def enrich_org_mailservers(org: dict) -> dict:
     # Process each email domain - check MX records
     valid_domains = []
     mx_records_all = []
-    providers = set()
-
-    categories = set()
+    provider_to_category = {}  # {provider: category} to maintain pairing
 
     for domain in org["email_domains"]:
         mx_records = lookup_mx_records(domain)
@@ -79,9 +77,7 @@ def enrich_org_mailservers(org: dict) -> dict:
             mx_records_all.extend(mx_records)
             provider, category, _ = get_mail_provider(mx_records)
             if provider:
-                providers.add(provider)
-            if category:
-                categories.add(category)
+                provider_to_category[provider] = category
             print(f"{org_title}: {domain} -> MX found")
         else:
             print(f"{org_title}: {domain} -> no MX (removed)")
@@ -90,8 +86,8 @@ def enrich_org_mailservers(org: dict) -> dict:
     # Update org with only valid domains
     org["email_domains"] = valid_domains
     org["has_mx"] = len(valid_domains) > 0
-    org["mail_providers"] = sorted(providers)
-    org["mail_provider_categories"] = sorted(categories)
+    org["mail_providers"] = sorted(provider_to_category.keys())
+    org["mail_provider_categories"] = [provider_to_category[p] for p in org["mail_providers"]]
     org["mx_records"] = mx_records_all
     org["primary_mx_host"] = mx_records_all[0]["host"] if mx_records_all else None
 

@@ -94,6 +94,9 @@ MX_PATTERNS: list[tuple[str, str, str, str]] = [
     (r"\.gov\.uk$", "gov.uk domain", "government", "low"),
     (r"\.ac\.uk$", "UK Academic", "academic", "low"),
     (r"\.nhs\.uk$", "NHS domain", "government", "low"),
+
+    # Null MX (RFC 7505) - domain explicitly does not accept email
+    (r"^\.$|", "Null MX", "null_mx", "high"),
 ]
 
 

@@ -41,6 +41,7 @@ python -m scripts.visualise
 | `python -m scripts.run_enrich_jobs --provider adzuna --token "query"` | Scrape jobs from Adzuna |
 | `python -m scripts.run_enrich_jobs --provider greenhouse --token "board"` | Scrape jobs from Greenhouse |
 | `python exports/mail_domain_table.py [output.json]` | Export domain data for blog |
+| `python exports/treemap.py [output.json]` | Export treemap hierarchy for blog |
 
 ## Project Structure
 

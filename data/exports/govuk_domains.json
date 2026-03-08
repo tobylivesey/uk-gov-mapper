@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-02T06:35:55.018642+00:00",
+  "generated_at": "2026-03-02T07:00:45.310071+00:00",
   "record_count": 665,
   "columns": [
     "organisation",
@@ -445,10 +445,10 @@
         "obscc.org.uk"
       ],
       "mail_providers": [
-        "Self-managed"
+        "Null MX"
       ],
       "mail_provider_categories": [
-        "self_managed"
+        "null_mx"
       ]
     },
     {
@@ -483,11 +483,11 @@
       ],
       "mail_providers": [
         "Broadcom",
-        "Unidentified"
+        "Null MX"
       ],
       "mail_provider_categories": [
         "security_gateway",
-        "unknown"
+        "null_mx"
       ]
     },
     {
@@ -781,11 +781,11 @@
       ],
       "mail_providers": [
         "Mimecast",
-        "Self-managed"
+        "Null MX"
       ],
       "mail_provider_categories": [
         "security_gateway",
-        "self_managed"
+        "null_mx"
       ]
     },
     {
@@ -1028,6 +1028,7 @@
         "Zoho Mail"
       ],
       "mail_provider_categories": [
+        "cloud",
         "cloud"
       ]
     },
@@ -1839,11 +1840,11 @@
       ],
       "mail_providers": [
         "Google Workspace",
-        "Self-managed"
+        "Null MX"
       ],
       "mail_provider_categories": [
         "cloud",
-        "self_managed"
+        "null_mx"
       ]
     },
     {
@@ -2336,11 +2337,11 @@
       ],
       "mail_providers": [
         "Microsoft 365",
-        "Self-managed"
+        "Null MX"
       ],
       "mail_provider_categories": [
         "cloud",
-        "self_managed"
+        "null_mx"
       ]
     },
     {
@@ -2713,6 +2714,7 @@
         "Microsoft 365"
       ],
       "mail_provider_categories": [
+        "cloud",
         "cloud"
       ]
     },
@@ -3866,10 +3868,10 @@
         "ipco.org.uk"
       ],
       "mail_providers": [
-        "Self-managed"
+        "Null MX"
       ],
       "mail_provider_categories": [
-        "self_managed"
+        "null_mx"
       ]
     },
     {
@@ -3890,10 +3892,10 @@
         "iraqinquiry.org.uk"
       ],
       "mail_providers": [
-        "Self-managed"
+        "Null MX"
       ],
       "mail_provider_categories": [
-        "self_managed"
+        "null_mx"
       ]
     },
     {
@@ -3907,8 +3909,8 @@
         "Microsoft 365"
       ],
       "mail_provider_categories": [
-        "cloud",
-        "security_gateway"
+        "security_gateway",
+        "cloud"
       ]
     },
     {
@@ -4172,8 +4174,8 @@
         "Microsoft 365"
       ],
       "mail_provider_categories": [
-        "cloud",
-        "security_gateway"
+        "security_gateway",
+        "cloud"
       ]
     },
     {
@@ -4602,10 +4604,10 @@
         "nestpensions.org.uk"
       ],
       "mail_providers": [
-        "Unidentified"
+        "Null MX"
       ],
       "mail_provider_categories": [
-        "unknown"
+        "null_mx"
       ]
     },
     {
@@ -4650,10 +4652,10 @@
         "nationalguardian.org.uk"
       ],
       "mail_providers": [
-        "Unidentified"
+        "Null MX"
       ],
       "mail_provider_categories": [
-        "unknown"
+        "null_mx"
       ]
     },
     {
@@ -4751,6 +4753,7 @@
         "Mimecast"
       ],
       "mail_provider_categories": [
+        "security_gateway",
         "security_gateway"
       ]
     },
@@ -5263,6 +5266,7 @@
         "Microsoft 365"
       ],
       "mail_provider_categories": [
+        "cloud",
         "cloud"
       ]
     },
@@ -5509,8 +5513,8 @@
         "Google Workspace"
       ],
       "mail_provider_categories": [
-        "cloud",
-        "isp"
+        "isp",
+        "cloud"
       ]
     },
     {
@@ -5543,10 +5547,10 @@
         "windrushcommissioner.uk"
       ],
       "mail_providers": [
-        "Self-managed"
+        "Null MX"
       ],
       "mail_provider_categories": [
-        "self_managed"
+        "null_mx"
       ]
     },
     {
@@ -5971,6 +5975,7 @@
         "Sophos"
       ],
       "mail_provider_categories": [
+        "security_gateway",
         "security_gateway"
       ]
     },
@@ -6506,6 +6511,7 @@
         "Microsoft 365"
       ],
       "mail_provider_categories": [
+        "cloud",
         "cloud"
       ]
     },
@@ -6515,10 +6521,10 @@
         "sellafieldsites.com"
       ],
       "mail_providers": [
-        "Self-managed"
+        "Null MX"
       ],
       "mail_provider_categories": [
-        "self_managed"
+        "null_mx"
       ]
     },
     {
@@ -7567,6 +7573,7 @@
         "Google Workspace"
       ],
       "mail_provider_categories": [
+        "cloud",
         "cloud"
       ]
     },
@@ -7617,6 +7624,7 @@
         "Microsoft 365"
       ],
       "mail_provider_categories": [
+        "cloud",
         "cloud"
       ]
     },
@@ -7667,6 +7675,7 @@
         "Microsoft 365"
       ],
       "mail_provider_categories": [
+        "cloud",
         "cloud"
       ]
     },
@@ -7738,11 +7747,11 @@
       ],
       "mail_providers": [
         "Microsoft 365",
-        "Self-managed"
+        "Null MX"
       ],
       "mail_provider_categories": [
         "cloud",
-        "self_managed"
+        "null_mx"
       ]
     },
     {
@@ -7768,8 +7777,8 @@
         "Microsoft 365"
       ],
       "mail_provider_categories": [
-        "cloud",
-        "isp"
+        "isp",
+        "cloud"
       ]
     },
     {
@@ -7795,8 +7804,8 @@
         "Microsoft 365"
       ],
       "mail_provider_categories": [
-        "cloud",
-        "security_gateway"
+        "security_gateway",
+        "cloud"
       ]
     },
     {

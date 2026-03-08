@@ -101,23 +101,23 @@
     "best_domain": "https://www.gov.uk/government/organisations/accelerated-capability-environment",
     "mx_records": [
       {
-        "host": "smtp3.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
-        "host": "smtp4.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
       },
       {
         "host": "smtp2.homeoffice.gov.uk",
         "priority": 10
+      },
+      {
+        "host": "smtp3.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp4.homeoffice.gov.uk",
+        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp3.homeoffice.gov.uk",
+    "primary_mx_host": "smtp1.homeoffice.gov.uk",
     "inherited_from_org": "Home Office",
     "inherited_from_org_id": "https://www.gov.uk/api/organisations/home-office",
     "email_domain_sources": [
@@ -938,23 +938,23 @@
     "best_domain": "https://www.gov.uk/government/organisations/advisory-council-on-the-misuse-of-drugs",
     "mx_records": [
       {
-        "host": "smtp2.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
-        "host": "smtp3.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
         "host": "smtp4.homeoffice.gov.uk",
         "priority": 10
       },
       {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
+      },
+      {
+        "host": "smtp2.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp3.homeoffice.gov.uk",
+        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp2.homeoffice.gov.uk",
+    "primary_mx_host": "smtp4.homeoffice.gov.uk",
     "inherited_from_org": null,
     "inherited_from_org_id": null,
     "email_domain_sources": [
@@ -1247,6 +1247,8 @@
       "url_inferred",
       "url_inferred",
       "url_inferred",
+      "url_inferred",
+      "url_inferred",
       "url_inferred"
     ],
     "oscar_match_name": null,
@@ -1434,23 +1436,23 @@
     "best_domain": "https://www.gov.uk/government/organisations/animals-in-science-committee",
     "mx_records": [
       {
-        "host": "smtp1.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
-        "host": "smtp2.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
         "host": "smtp3.homeoffice.gov.uk",
         "priority": 10
       },
       {
         "host": "smtp4.homeoffice.gov.uk",
         "priority": 10
+      },
+      {
+        "host": "smtp1.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp2.homeoffice.gov.uk",
+        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp1.homeoffice.gov.uk",
+    "primary_mx_host": "smtp3.homeoffice.gov.uk",
     "inherited_from_org": null,
     "inherited_from_org_id": null,
     "email_domain_sources": [
@@ -1502,15 +1504,15 @@
     "best_domain": "http://www.arb.org.uk",
     "mx_records": [
       {
-        "host": "eu-smtp-inbound-2.mimecast.com",
+        "host": "eu-smtp-inbound-1.mimecast.com",
         "priority": 10
       },
       {
-        "host": "eu-smtp-inbound-1.mimecast.com",
+        "host": "eu-smtp-inbound-2.mimecast.com",
         "priority": 10
       }
     ],
-    "primary_mx_host": "eu-smtp-inbound-2.mimecast.com",
+    "primary_mx_host": "eu-smtp-inbound-1.mimecast.com",
     "inherited_from_org": null,
     "inherited_from_org_id": null,
     "email_domain_sources": [
@@ -2251,19 +2253,11 @@
     ],
     "has_mx": true,
     "mail_providers": [
-      "Self-managed"
+      "Null MX"
     ],
     "non_govuk_domain": null,
     "best_domain": "https://www.gov.uk/government/organisations/biometrics-and-surveillance-camera-commissioner",
     "mx_records": [
-      {
-        "host": "smtp3.obscc.org.uk",
-        "priority": 10
-      },
-      {
-        "host": "smtp4.obscc.org.uk",
-        "priority": 10
-      },
       {
         "host": "smtp1.obscc.org.uk",
         "priority": 10
@@ -2271,9 +2265,17 @@
       {
         "host": "smtp2.obscc.org.uk",
         "priority": 10
+      },
+      {
+        "host": "smtp3.obscc.org.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp4.obscc.org.uk",
+        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp3.obscc.org.uk",
+    "primary_mx_host": "smtp1.obscc.org.uk",
     "inherited_from_org": null,
     "inherited_from_org_id": null,
     "email_domain_sources": [
@@ -2281,7 +2283,7 @@
     ],
     "oscar_match_name": null,
     "mail_provider_categories": [
-      "self_managed"
+      "null_mx"
     ]
   },
   {
@@ -2437,7 +2439,7 @@
     "has_mx": true,
     "mail_providers": [
       "Broadcom",
-      "Unidentified"
+      "Null MX"
     ],
     "non_govuk_domain": null,
     "best_domain": "https://www.gov.uk/government/organisations/bona-vacantia",
@@ -2465,7 +2467,7 @@
     "oscar_match_name": null,
     "mail_provider_categories": [
       "security_gateway",
-      "unknown"
+      "null_mx"
     ]
   },
   {
@@ -2509,23 +2511,23 @@
     "best_domain": "https://www.gov.uk/government/organisations/border-force",
     "mx_records": [
       {
-        "host": "smtp4.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
-        "host": "smtp1.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
         "host": "smtp2.homeoffice.gov.uk",
         "priority": 10
       },
       {
         "host": "smtp3.homeoffice.gov.uk",
         "priority": 10
+      },
+      {
+        "host": "smtp4.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp1.homeoffice.gov.uk",
+        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp4.homeoffice.gov.uk",
+    "primary_mx_host": "smtp2.homeoffice.gov.uk",
     "inherited_from_org": null,
     "inherited_from_org_id": null,
     "email_domain_sources": [
@@ -2577,23 +2579,23 @@
     "best_domain": "https://www.gov.uk/government/organisations/border-security-command",
     "mx_records": [
       {
-        "host": "smtp3.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
-        "host": "smtp4.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
       },
       {
         "host": "smtp2.homeoffice.gov.uk",
         "priority": 10
+      },
+      {
+        "host": "smtp3.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp4.homeoffice.gov.uk",
+        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp3.homeoffice.gov.uk",
+    "primary_mx_host": "smtp1.homeoffice.gov.uk",
     "inherited_from_org": null,
     "inherited_from_org_id": null,
     "email_domain_sources": [
@@ -4207,7 +4209,7 @@
     "has_mx": true,
     "mail_providers": [
       "Mimecast",
-      "Self-managed"
+      "Null MX"
     ],
     "non_govuk_domain": "https://thecgc.org.uk/",
     "best_domain": "https://thecgc.org.uk/",
@@ -4243,7 +4245,7 @@
     "oscar_match_name": null,
     "mail_provider_categories": [
       "security_gateway",
-      "self_managed"
+      "null_mx"
     ]
   },
   {
@@ -5589,6 +5591,7 @@
     ],
     "oscar_match_name": null,
     "mail_provider_categories": [
+      "cloud",
       "cloud"
     ]
   },
@@ -6486,11 +6489,11 @@
         "priority": 5
       },
       {
-        "host": "aspmx5.googlemail.com",
+        "host": "aspmx3.googlemail.com",
         "priority": 10
       },
       {
-        "host": "aspmx3.googlemail.com",
+        "host": "aspmx5.googlemail.com",
         "priority": 10
       }
     ],
@@ -9022,11 +9025,11 @@
         "priority": 1
       },
       {
-        "host": "alt2.aspmx.l.google.com",
+        "host": "alt1.aspmx.l.google.com",
         "priority": 5
       },
       {
-        "host": "alt1.aspmx.l.google.com",
+        "host": "alt2.aspmx.l.google.com",
         "priority": 5
       },
       {
@@ -10323,15 +10326,15 @@
     "best_domain": "https://www.gov.uk/government/organisations/department-for-work-pensions",
     "mx_records": [
       {
-        "host": "mx1.hc1011-45.c3s2.iphmx.com",
+        "host": "mx2.hc1011-45.c3s2.iphmx.com",
         "priority": 10
       },
       {
-        "host": "mx2.hc1011-45.c3s2.iphmx.com",
+        "host": "mx1.hc1011-45.c3s2.iphmx.com",
         "priority": 10
       }
     ],
-    "primary_mx_host": "mx1.hc1011-45.c3s2.iphmx.com",
+    "primary_mx_host": "mx2.hc1011-45.c3s2.iphmx.com",
     "inherited_from_org": null,
     "inherited_from_org_id": null,
     "email_domain_sources": [
@@ -11041,7 +11044,7 @@
     "has_mx": true,
     "mail_providers": [
       "Google Workspace",
-      "Self-managed"
+      "Null MX"
     ],
     "non_govuk_domain": null,
     "best_domain": "https://www.gov.uk/government/organisations/disability-unit",
@@ -11085,7 +11088,7 @@
     "oscar_match_name": null,
     "mail_provider_categories": [
       "cloud",
-      "self_managed"
+      "null_mx"
     ]
   },
   {
@@ -11191,10 +11194,6 @@
     "best_domain": "https://www.gov.uk/government/organisations/disclosure-and-barring-service",
     "mx_records": [
       {
-        "host": "smtp1.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
         "host": "smtp3.homeoffice.gov.uk",
         "priority": 10
       },
@@ -11203,11 +11202,15 @@
         "priority": 10
       },
       {
+        "host": "smtp1.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
         "host": "smtp4.homeoffice.gov.uk",
         "priority": 10
       }
     ],
-    "primary_mx_host": "smtp1.homeoffice.gov.uk",
+    "primary_mx_host": "smtp3.homeoffice.gov.uk",
     "inherited_from_org": null,
     "inherited_from_org_id": null,
     "email_domain_sources": [
@@ -13480,7 +13483,7 @@
     "has_mx": true,
     "mail_providers": [
       "Microsoft 365",
-      "Self-managed"
+      "Null MX"
     ],
     "non_govuk_domain": null,
     "best_domain": "https://www.gov.uk/government/organisations/first-tier-tribunal-special-educational-needs-and-disability",
@@ -13508,7 +13511,7 @@
     "oscar_match_name": null,
     "mail_provider_categories": [
       "cloud",
-      "self_managed"
+      "null_mx"
     ]
   },
   {
@@ -14105,23 +14108,23 @@
     "best_domain": "https://www.gov.uk/government/organisations/forensic-science-regulator",
     "mx_records": [
       {
-        "host": "smtp3.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
-        "host": "smtp4.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
       },
       {
         "host": "smtp2.homeoffice.gov.uk",
         "priority": 10
+      },
+      {
+        "host": "smtp3.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp4.homeoffice.gov.uk",
+        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp3.homeoffice.gov.uk",
+    "primary_mx_host": "smtp1.homeoffice.gov.uk",
     "inherited_from_org": null,
     "inherited_from_org_id": null,
     "email_domain_sources": [
@@ -14238,15 +14241,15 @@
     "best_domain": "https://www.gov.uk/government/organisations/forestry-commission",
     "mx_records": [
       {
-        "host": "eu-smtp-inbound-1.mimecast.com",
+        "host": "eu-smtp-inbound-2.mimecast.com",
         "priority": 10
       },
       {
-        "host": "eu-smtp-inbound-2.mimecast.com",
+        "host": "eu-smtp-inbound-1.mimecast.com",
         "priority": 10
       }
     ],
-    "primary_mx_host": "eu-smtp-inbound-1.mimecast.com",
+    "primary_mx_host": "eu-smtp-inbound-2.mimecast.com",
     "inherited_from_org": null,
     "inherited_from_org_id": null,
     "email_domain_sources": [
@@ -14475,23 +14478,23 @@
     "best_domain": "http://www.gla.gov.uk/",
     "mx_records": [
       {
-        "host": "smtp3.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
-        "host": "smtp4.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
       },
       {
         "host": "smtp2.homeoffice.gov.uk",
         "priority": 10
+      },
+      {
+        "host": "smtp3.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp4.homeoffice.gov.uk",
+        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp3.homeoffice.gov.uk",
+    "primary_mx_host": "smtp1.homeoffice.gov.uk",
     "inherited_from_org": null,
     "inherited_from_org_id": null,
     "email_domain_sources": [
@@ -15536,6 +15539,7 @@
     ],
     "oscar_match_name": null,
     "mail_provider_categories": [
+      "cloud",
       "cloud"
     ]
   },
@@ -15640,23 +15644,23 @@
     "best_domain": "https://www.gov.uk/government/organisations/civil-service-government-knowledge-information-management-profession",
     "mx_records": [
       {
-        "host": "smtp2.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
-        "host": "smtp3.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
         "host": "smtp4.homeoffice.gov.uk",
         "priority": 10
       },
       {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
+      },
+      {
+        "host": "smtp2.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp3.homeoffice.gov.uk",
+        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp2.homeoffice.gov.uk",
+    "primary_mx_host": "smtp4.homeoffice.gov.uk",
     "inherited_from_org": null,
     "inherited_from_org_id": null,
     "email_domain_sources": [
@@ -18257,19 +18261,19 @@
         "priority": 20
       },
       {
-        "host": "smtp3.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
-        "host": "smtp4.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
       },
       {
         "host": "smtp2.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp3.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp4.homeoffice.gov.uk",
         "priority": 10
       }
     ],
@@ -18555,23 +18559,23 @@
     "best_domain": "https://www.gov.uk/government/organisations/hm-passport-office",
     "mx_records": [
       {
-        "host": "smtp1.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
-        "host": "smtp2.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
         "host": "smtp3.homeoffice.gov.uk",
         "priority": 10
       },
       {
         "host": "smtp4.homeoffice.gov.uk",
         "priority": 10
+      },
+      {
+        "host": "smtp1.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp2.homeoffice.gov.uk",
+        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp1.homeoffice.gov.uk",
+    "primary_mx_host": "smtp3.homeoffice.gov.uk",
     "inherited_from_org": null,
     "inherited_from_org_id": null,
     "email_domain_sources": [
@@ -19229,23 +19233,23 @@
     "best_domain": "https://www.gov.uk/government/organisations/home-office",
     "mx_records": [
       {
-        "host": "smtp4.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
-        "host": "smtp1.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
         "host": "smtp2.homeoffice.gov.uk",
         "priority": 10
       },
       {
         "host": "smtp3.homeoffice.gov.uk",
         "priority": 10
+      },
+      {
+        "host": "smtp4.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp1.homeoffice.gov.uk",
+        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp4.homeoffice.gov.uk",
+    "primary_mx_host": "smtp2.homeoffice.gov.uk",
     "inherited_from_org": null,
     "inherited_from_org_id": null,
     "email_domain_sources": [
@@ -19854,23 +19858,23 @@
     "best_domain": "https://www.gov.uk/government/organisations/immigration-enforcement",
     "mx_records": [
       {
-        "host": "smtp3.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
-        "host": "smtp4.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
       },
       {
         "host": "smtp2.homeoffice.gov.uk",
         "priority": 10
+      },
+      {
+        "host": "smtp3.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp4.homeoffice.gov.uk",
+        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp3.homeoffice.gov.uk",
+    "primary_mx_host": "smtp1.homeoffice.gov.uk",
     "inherited_from_org": null,
     "inherited_from_org_id": null,
     "email_domain_sources": [
@@ -20183,11 +20187,11 @@
         "priority": 5
       },
       {
-        "host": "aspmx3.googlemail.com",
+        "host": "aspmx2.googlemail.com",
         "priority": 10
       },
       {
-        "host": "aspmx2.googlemail.com",
+        "host": "aspmx3.googlemail.com",
         "priority": 10
       }
     ],
@@ -20303,23 +20307,23 @@
     "best_domain": "https://www.gov.uk/government/organisations/independent-chief-inspector-of-borders-and-immigration",
     "mx_records": [
       {
-        "host": "smtp3.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
-        "host": "smtp4.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
       },
       {
         "host": "smtp2.homeoffice.gov.uk",
         "priority": 10
+      },
+      {
+        "host": "smtp3.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp4.homeoffice.gov.uk",
+        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp3.homeoffice.gov.uk",
+    "primary_mx_host": "smtp1.homeoffice.gov.uk",
     "inherited_from_org": null,
     "inherited_from_org_id": null,
     "email_domain_sources": [
@@ -20481,11 +20485,11 @@
         "priority": 2
       },
       {
-        "host": "aspmx2.googlemail.com",
+        "host": "aspmx.l.google.com",
         "priority": 5
       },
       {
-        "host": "aspmx.l.google.com",
+        "host": "aspmx2.googlemail.com",
         "priority": 5
       },
       {
@@ -20549,23 +20553,23 @@
     "best_domain": "https://www.gov.uk/government/organisations/independent-family-returns-panel",
     "mx_records": [
       {
-        "host": "smtp2.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
-        "host": "smtp3.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
         "host": "smtp4.homeoffice.gov.uk",
         "priority": 10
       },
       {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
+      },
+      {
+        "host": "smtp2.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp3.homeoffice.gov.uk",
+        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp2.homeoffice.gov.uk",
+    "primary_mx_host": "smtp4.homeoffice.gov.uk",
     "inherited_from_org": "Home Office",
     "inherited_from_org_id": "https://www.gov.uk/api/organisations/home-office",
     "email_domain_sources": [
@@ -21073,23 +21077,23 @@
     "best_domain": "https://terrorismlegislationreviewer.independent.gov.uk",
     "mx_records": [
       {
-        "host": "smtp1.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
-        "host": "smtp2.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
         "host": "smtp3.homeoffice.gov.uk",
         "priority": 10
       },
       {
         "host": "smtp4.homeoffice.gov.uk",
         "priority": 10
+      },
+      {
+        "host": "smtp1.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp2.homeoffice.gov.uk",
+        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp1.homeoffice.gov.uk",
+    "primary_mx_host": "smtp3.homeoffice.gov.uk",
     "inherited_from_org": "Home Office",
     "inherited_from_org_id": "https://www.gov.uk/api/organisations/home-office",
     "email_domain_sources": [
@@ -21231,15 +21235,15 @@
     "best_domain": "https://www.gov.uk/government/organisations/industrial-injuries-advisory-council",
     "mx_records": [
       {
-        "host": "mx2.hc1011-45.c3s2.iphmx.com",
+        "host": "mx1.hc1011-45.c3s2.iphmx.com",
         "priority": 10
       },
       {
-        "host": "mx1.hc1011-45.c3s2.iphmx.com",
+        "host": "mx2.hc1011-45.c3s2.iphmx.com",
         "priority": 10
       }
     ],
-    "primary_mx_host": "mx2.hc1011-45.c3s2.iphmx.com",
+    "primary_mx_host": "mx1.hc1011-45.c3s2.iphmx.com",
     "inherited_from_org": null,
     "inherited_from_org_id": null,
     "email_domain_sources": [
@@ -21973,15 +21977,15 @@
     "best_domain": "https://www.investni.com/",
     "mx_records": [
       {
-        "host": "eu-smtp-inbound-2.mimecast.com",
+        "host": "eu-smtp-inbound-1.mimecast.com",
         "priority": 5
       },
       {
-        "host": "eu-smtp-inbound-1.mimecast.com",
+        "host": "eu-smtp-inbound-2.mimecast.com",
         "priority": 5
       }
     ],
-    "primary_mx_host": "eu-smtp-inbound-2.mimecast.com",
+    "primary_mx_host": "eu-smtp-inbound-1.mimecast.com",
     "inherited_from_org": null,
     "inherited_from_org_id": null,
     "email_domain_sources": [
@@ -22044,19 +22048,11 @@
     ],
     "has_mx": true,
     "mail_providers": [
-      "Self-managed"
+      "Null MX"
     ],
     "non_govuk_domain": "https://www.ipco.org.uk",
     "best_domain": "https://www.ipco.org.uk",
     "mx_records": [
-      {
-        "host": "smtp3.ipco.org.uk",
-        "priority": 10
-      },
-      {
-        "host": "smtp4.ipco.org.uk",
-        "priority": 10
-      },
       {
         "host": "smtp1.ipco.org.uk",
         "priority": 10
@@ -22064,9 +22060,17 @@
       {
         "host": "smtp2.ipco.org.uk",
         "priority": 10
+      },
+      {
+        "host": "smtp3.ipco.org.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp4.ipco.org.uk",
+        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp3.ipco.org.uk",
+    "primary_mx_host": "smtp1.ipco.org.uk",
     "inherited_from_org": null,
     "inherited_from_org_id": null,
     "email_domain_sources": [
@@ -22074,7 +22078,7 @@
     ],
     "oscar_match_name": null,
     "mail_provider_categories": [
-      "self_managed"
+      "null_mx"
     ]
   },
   {
@@ -22163,7 +22167,7 @@
     ],
     "has_mx": true,
     "mail_providers": [
-      "Self-managed"
+      "Null MX"
     ],
     "non_govuk_domain": "http://www.iraqinquiry.org.uk",
     "best_domain": "http://www.iraqinquiry.org.uk",
@@ -22181,7 +22185,7 @@
     ],
     "oscar_match_name": null,
     "mail_provider_categories": [
-      "self_managed"
+      "null_mx"
     ]
   },
   {
@@ -22309,8 +22313,8 @@
     ],
     "oscar_match_name": "Joint Nature Conservation Committee",
     "mail_provider_categories": [
-      "cloud",
-      "security_gateway"
+      "security_gateway",
+      "cloud"
     ]
   },
   {
@@ -23675,8 +23679,8 @@
     ],
     "oscar_match_name": null,
     "mail_provider_categories": [
-      "cloud",
-      "security_gateway"
+      "security_gateway",
+      "cloud"
     ]
   },
   {
@@ -25327,6 +25331,8 @@
       "url_inferred",
       "url_inferred",
       "url_inferred",
+      "url_inferred",
+      "url_inferred",
       "url_inferred"
     ],
     "oscar_match_name": null,
@@ -25491,19 +25497,19 @@
     "best_domain": "https://www.protectuk.police.uk",
     "mx_records": [
       {
-        "host": "smtp4.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
-        "host": "smtp1.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
         "host": "smtp2.homeoffice.gov.uk",
         "priority": 10
       },
       {
         "host": "smtp3.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp4.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
       },
       {
@@ -25515,7 +25521,7 @@
         "priority": 10
       }
     ],
-    "primary_mx_host": "smtp4.homeoffice.gov.uk",
+    "primary_mx_host": "smtp2.homeoffice.gov.uk",
     "inherited_from_org": "Home Office",
     "inherited_from_org_id": "https://www.gov.uk/api/organisations/home-office",
     "email_domain_sources": [
@@ -25631,23 +25637,23 @@
     "best_domain": "https://www.gov.uk/government/organisations/national-crime-agency-remuneration-review-body",
     "mx_records": [
       {
-        "host": "smtp3.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
-        "host": "smtp4.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
       },
       {
         "host": "smtp2.homeoffice.gov.uk",
         "priority": 10
+      },
+      {
+        "host": "smtp3.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp4.homeoffice.gov.uk",
+        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp3.homeoffice.gov.uk",
+    "primary_mx_host": "smtp1.homeoffice.gov.uk",
     "inherited_from_org": "Home Office",
     "inherited_from_org_id": "https://www.gov.uk/api/organisations/home-office",
     "email_domain_sources": [
@@ -25878,15 +25884,11 @@
     ],
     "has_mx": true,
     "mail_providers": [
-      "Unidentified"
+      "Null MX"
     ],
     "non_govuk_domain": "http://www.nestpensions.org.uk/",
     "best_domain": "http://www.nestpensions.org.uk/",
     "mx_records": [
-      {
-        "host": "ukswncipl03.nestpensions.org.uk",
-        "priority": 10
-      },
       {
         "host": "ukuxbcipl03.nestpensions.org.uk",
         "priority": 10
@@ -25898,9 +25900,13 @@
       {
         "host": "ukswncipl02.nestpensions.org.uk",
         "priority": 10
+      },
+      {
+        "host": "ukswncipl03.nestpensions.org.uk",
+        "priority": 10
       }
     ],
-    "primary_mx_host": "ukswncipl03.nestpensions.org.uk",
+    "primary_mx_host": "ukuxbcipl03.nestpensions.org.uk",
     "inherited_from_org": null,
     "inherited_from_org_id": null,
     "email_domain_sources": [
@@ -25908,7 +25914,7 @@
     ],
     "oscar_match_name": null,
     "mail_provider_categories": [
-      "unknown"
+      "null_mx"
     ]
   },
   {
@@ -26122,7 +26128,7 @@
     ],
     "has_mx": true,
     "mail_providers": [
-      "Unidentified"
+      "Null MX"
     ],
     "non_govuk_domain": "https://nationalguardian.org.uk/",
     "best_domain": "https://nationalguardian.org.uk/",
@@ -26140,7 +26146,7 @@
     ],
     "oscar_match_name": null,
     "mail_provider_categories": [
-      "unknown"
+      "null_mx"
     ]
   },
   {
@@ -26640,6 +26646,7 @@
     ],
     "oscar_match_name": "National Museums Liverpool",
     "mail_provider_categories": [
+      "security_gateway",
       "security_gateway"
     ]
   },
@@ -27800,6 +27807,8 @@
       "url_inferred",
       "url_inferred",
       "url_inferred",
+      "url_inferred",
+      "url_inferred",
       "url_inferred"
     ],
     "oscar_match_name": null,
@@ -28481,6 +28490,8 @@
     "inherited_from_org": null,
     "inherited_from_org_id": null,
     "email_domain_sources": [
+      "url_inferred",
+      "url_inferred",
       "url_inferred",
       "url_inferred",
       "url_inferred",
@@ -29559,15 +29570,15 @@
     "best_domain": "https://obr.uk/",
     "mx_records": [
       {
-        "host": "eu-smtp-inbound-psc-1.mimecast.com",
+        "host": "eu-smtp-inbound-psc-2.mimecast.com",
         "priority": 10
       },
       {
-        "host": "eu-smtp-inbound-psc-2.mimecast.com",
+        "host": "eu-smtp-inbound-psc-1.mimecast.com",
         "priority": 10
       }
     ],
-    "primary_mx_host": "eu-smtp-inbound-psc-1.mimecast.com",
+    "primary_mx_host": "eu-smtp-inbound-psc-2.mimecast.com",
     "inherited_from_org": null,
     "inherited_from_org_id": null,
     "email_domain_sources": [
@@ -30136,6 +30147,7 @@
     ],
     "oscar_match_name": null,
     "mail_provider_categories": [
+      "cloud",
       "cloud"
     ]
   },
@@ -30349,23 +30361,23 @@
     "best_domain": "https://www.gov.uk/government/organisations/office-for-the-independent-examiner-of-complaints",
     "mx_records": [
       {
-        "host": "smtp2.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
-        "host": "smtp3.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
         "host": "smtp4.homeoffice.gov.uk",
         "priority": 10
       },
       {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
+      },
+      {
+        "host": "smtp2.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp3.homeoffice.gov.uk",
+        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp2.homeoffice.gov.uk",
+    "primary_mx_host": "smtp4.homeoffice.gov.uk",
     "inherited_from_org": "Home Office",
     "inherited_from_org_id": "https://www.gov.uk/api/organisations/home-office",
     "email_domain_sources": [
@@ -30959,23 +30971,23 @@
     "best_domain": "https://www.gov.uk/government/organisations/office-of-the-independent-prevent-commissioner",
     "mx_records": [
       {
-        "host": "smtp3.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
-        "host": "smtp4.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
       },
       {
         "host": "smtp2.homeoffice.gov.uk",
         "priority": 10
+      },
+      {
+        "host": "smtp3.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp4.homeoffice.gov.uk",
+        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp3.homeoffice.gov.uk",
+    "primary_mx_host": "smtp1.homeoffice.gov.uk",
     "inherited_from_org": null,
     "inherited_from_org_id": null,
     "email_domain_sources": [
@@ -31403,8 +31415,8 @@
     ],
     "oscar_match_name": null,
     "mail_provider_categories": [
-      "cloud",
-      "isp"
+      "isp",
+      "cloud"
     ]
   },
   {
@@ -31558,7 +31570,7 @@
     ],
     "has_mx": true,
     "mail_providers": [
-      "Self-managed"
+      "Null MX"
     ],
     "non_govuk_domain": "https://www.windrushcommissioner.uk/",
     "best_domain": "https://www.windrushcommissioner.uk/",
@@ -31576,7 +31588,7 @@
     ],
     "oscar_match_name": null,
     "mail_provider_categories": [
-      "self_managed"
+      "null_mx"
     ]
   },
   {
@@ -32308,11 +32320,11 @@
         "priority": 5
       },
       {
-        "host": "alt4.aspmx.l.google.com",
+        "host": "alt3.aspmx.l.google.com",
         "priority": 10
       },
       {
-        "host": "alt3.aspmx.l.google.com",
+        "host": "alt4.aspmx.l.google.com",
         "priority": 10
       }
     ],
@@ -32898,23 +32910,23 @@
     "best_domain": "https://www.gov.uk/government/organisations/police-advisory-board-for-england-and-wales",
     "mx_records": [
       {
-        "host": "smtp1.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
-        "host": "smtp2.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
         "host": "smtp3.homeoffice.gov.uk",
         "priority": 10
       },
       {
         "host": "smtp4.homeoffice.gov.uk",
         "priority": 10
+      },
+      {
+        "host": "smtp1.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp2.homeoffice.gov.uk",
+        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp1.homeoffice.gov.uk",
+    "primary_mx_host": "smtp3.homeoffice.gov.uk",
     "inherited_from_org": null,
     "inherited_from_org_id": null,
     "email_domain_sources": [
@@ -32971,23 +32983,23 @@
     "best_domain": "https://www.gov.uk/government/organisations/police-discipline-appeals-tribunal",
     "mx_records": [
       {
-        "host": "smtp4.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
-        "host": "smtp1.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
         "host": "smtp2.homeoffice.gov.uk",
         "priority": 10
       },
       {
         "host": "smtp3.homeoffice.gov.uk",
         "priority": 10
+      },
+      {
+        "host": "smtp4.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp1.homeoffice.gov.uk",
+        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp4.homeoffice.gov.uk",
+    "primary_mx_host": "smtp2.homeoffice.gov.uk",
     "inherited_from_org": "Home Office",
     "inherited_from_org_id": "https://www.gov.uk/api/organisations/home-office",
     "email_domain_sources": [
@@ -33039,23 +33051,23 @@
     "best_domain": "https://www.gov.uk/government/organisations/police-remuneration-review-body",
     "mx_records": [
       {
-        "host": "smtp3.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
-        "host": "smtp4.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
       },
       {
         "host": "smtp2.homeoffice.gov.uk",
         "priority": 10
+      },
+      {
+        "host": "smtp3.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp4.homeoffice.gov.uk",
+        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp3.homeoffice.gov.uk",
+    "primary_mx_host": "smtp1.homeoffice.gov.uk",
     "inherited_from_org": "Home Office",
     "inherited_from_org_id": "https://www.gov.uk/api/organisations/home-office",
     "email_domain_sources": [
@@ -33758,6 +33770,7 @@
     ],
     "oscar_match_name": null,
     "mail_provider_categories": [
+      "security_gateway",
       "security_gateway"
     ]
   },
@@ -33979,6 +33992,8 @@
     "inherited_from_org": null,
     "inherited_from_org_id": null,
     "email_domain_sources": [
+      "url_inferred",
+      "url_inferred",
       "url_inferred",
       "url_inferred",
       "url_inferred",
@@ -35922,23 +35937,23 @@
     "best_domain": "https://www.gov.uk/government/organisations/science-and-technology-ethics-advisory-committee",
     "mx_records": [
       {
-        "host": "smtp2.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
-        "host": "smtp3.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
         "host": "smtp4.homeoffice.gov.uk",
         "priority": 10
       },
       {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
+      },
+      {
+        "host": "smtp2.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp3.homeoffice.gov.uk",
+        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp2.homeoffice.gov.uk",
+    "primary_mx_host": "smtp4.homeoffice.gov.uk",
     "inherited_from_org": null,
     "inherited_from_org_id": null,
     "email_domain_sources": [
@@ -36114,11 +36129,11 @@
         "priority": 5
       },
       {
-        "host": "aspmx2.googlemail.com",
+        "host": "aspmx3.googlemail.com",
         "priority": 10
       },
       {
-        "host": "aspmx3.googlemail.com",
+        "host": "aspmx2.googlemail.com",
         "priority": 10
       }
     ],
@@ -36346,19 +36361,19 @@
     "best_domain": "https://www.gov.uk/government/organisations/security-industry-authority",
     "mx_records": [
       {
-        "host": "smtp1.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
-        "host": "smtp2.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
         "host": "smtp3.homeoffice.gov.uk",
         "priority": 10
       },
       {
         "host": "smtp4.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp1.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp2.homeoffice.gov.uk",
         "priority": 10
       },
       {
@@ -36370,7 +36385,7 @@
         "priority": 10
       }
     ],
-    "primary_mx_host": "smtp1.homeoffice.gov.uk",
+    "primary_mx_host": "smtp3.homeoffice.gov.uk",
     "inherited_from_org": "Home Office",
     "inherited_from_org_id": "https://www.gov.uk/api/organisations/home-office",
     "email_domain_sources": [
@@ -36459,6 +36474,7 @@
     ],
     "oscar_match_name": null,
     "mail_provider_categories": [
+      "cloud",
       "cloud"
     ]
   },
@@ -36497,7 +36513,7 @@
     ],
     "has_mx": true,
     "mail_providers": [
-      "Self-managed"
+      "Null MX"
     ],
     "non_govuk_domain": null,
     "best_domain": "https://www.gov.uk/government/organisations/sellafield-ltd",
@@ -36519,7 +36535,7 @@
     ],
     "oscar_match_name": null,
     "mail_provider_categories": [
-      "self_managed"
+      "null_mx"
     ]
   },
   {
@@ -37757,11 +37773,11 @@
         "priority": 5
       },
       {
-        "host": "aspmx3.googlemail.com",
+        "host": "aspmx2.googlemail.com",
         "priority": 10
       },
       {
-        "host": "aspmx2.googlemail.com",
+        "host": "aspmx3.googlemail.com",
         "priority": 10
       }
     ],
@@ -38235,23 +38251,23 @@
     "best_domain": "https://www.gov.uk/government/organisations/technical-advisory-board",
     "mx_records": [
       {
-        "host": "smtp4.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
-        "host": "smtp1.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
         "host": "smtp2.homeoffice.gov.uk",
         "priority": 10
       },
       {
         "host": "smtp3.homeoffice.gov.uk",
         "priority": 10
+      },
+      {
+        "host": "smtp4.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp1.homeoffice.gov.uk",
+        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp4.homeoffice.gov.uk",
+    "primary_mx_host": "smtp2.homeoffice.gov.uk",
     "inherited_from_org": null,
     "inherited_from_org_id": null,
     "email_domain_sources": [
@@ -39557,11 +39573,11 @@
     "best_domain": "https://www.thepensionsregulator.gov.uk",
     "mx_records": [
       {
-        "host": "eu-smtp-inbound-psc-1.mimecast.com",
+        "host": "eu-smtp-inbound-psc-2.mimecast.com",
         "priority": 10
       },
       {
-        "host": "eu-smtp-inbound-psc-2.mimecast.com",
+        "host": "eu-smtp-inbound-psc-1.mimecast.com",
         "priority": 10
       },
       {
@@ -39573,7 +39589,7 @@
         "priority": 10
       }
     ],
-    "primary_mx_host": "eu-smtp-inbound-psc-1.mimecast.com",
+    "primary_mx_host": "eu-smtp-inbound-psc-2.mimecast.com",
     "inherited_from_org": null,
     "inherited_from_org_id": null,
     "email_domain_sources": [
@@ -41036,15 +41052,15 @@
     "best_domain": "https://www.gov.uk/government/organisations/uk-export-finance",
     "mx_records": [
       {
-        "host": "eu-smtp-inbound-2.mimecast.com",
+        "host": "eu-smtp-inbound-1.mimecast.com",
         "priority": 10
       },
       {
-        "host": "eu-smtp-inbound-1.mimecast.com",
+        "host": "eu-smtp-inbound-2.mimecast.com",
         "priority": 10
       }
     ],
-    "primary_mx_host": "eu-smtp-inbound-2.mimecast.com",
+    "primary_mx_host": "eu-smtp-inbound-1.mimecast.com",
     "inherited_from_org": null,
     "inherited_from_org_id": null,
     "email_domain_sources": [
@@ -41871,6 +41887,7 @@
     ],
     "oscar_match_name": null,
     "mail_provider_categories": [
+      "cloud",
       "cloud"
     ]
   },
@@ -42134,6 +42151,7 @@
     ],
     "oscar_match_name": null,
     "mail_provider_categories": [
+      "cloud",
       "cloud"
     ]
   },
@@ -42183,23 +42201,23 @@
     "best_domain": "https://www.gov.uk/government/organisations/uk-visas-and-immigration",
     "mx_records": [
       {
-        "host": "smtp3.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
-        "host": "smtp4.homeoffice.gov.uk",
-        "priority": 10
-      },
-      {
         "host": "smtp1.homeoffice.gov.uk",
         "priority": 10
       },
       {
         "host": "smtp2.homeoffice.gov.uk",
         "priority": 10
+      },
+      {
+        "host": "smtp3.homeoffice.gov.uk",
+        "priority": 10
+      },
+      {
+        "host": "smtp4.homeoffice.gov.uk",
+        "priority": 10
       }
     ],
-    "primary_mx_host": "smtp3.homeoffice.gov.uk",
+    "primary_mx_host": "smtp1.homeoffice.gov.uk",
     "inherited_from_org": null,
     "inherited_from_org_id": null,
     "email_domain_sources": [
@@ -42407,6 +42425,7 @@
     ],
     "oscar_match_name": null,
     "mail_provider_categories": [
+      "cloud",
       "cloud"
     ]
   },
@@ -42792,7 +42811,7 @@
     "has_mx": true,
     "mail_providers": [
       "Microsoft 365",
-      "Self-managed"
+      "Null MX"
     ],
     "non_govuk_domain": "http://www.valuationtribunal.gov.uk/",
     "best_domain": "http://www.valuationtribunal.gov.uk/",
@@ -42816,7 +42835,7 @@
     "oscar_match_name": null,
     "mail_provider_categories": [
       "cloud",
-      "self_managed"
+      "null_mx"
     ]
   },
   {
@@ -42879,8 +42898,8 @@
     ],
     "oscar_match_name": null,
     "mail_provider_categories": [
-      "cloud",
-      "isp"
+      "isp",
+      "cloud"
     ]
   },
   {
@@ -43008,8 +43027,8 @@
     ],
     "oscar_match_name": null,
     "mail_provider_categories": [
-      "cloud",
-      "security_gateway"
+      "security_gateway",
+      "cloud"
     ]
   },
   {

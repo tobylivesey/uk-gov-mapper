@@ -11,7 +11,7 @@ from scripts.utils import (
 )
 import pandas as pd
 from scripts.enrich_oscar import get_org_budgets_from_oscar, enrich_orgs_oscar_financials
-from scripts.enrich_headcount import download_headcount_data, get_org_headcounts, enrich_orgs_headcount
+from scripts.enrich_headcount import get_org_headcounts, enrich_orgs_headcount
 
 DATA_DIR = Path("data")
 OUT_DIR = DATA_DIR / "orgs/uk"
@@ -98,8 +98,7 @@ def main(extant_orgs: list[dict] | None = None) -> list[dict]:
     budgets = get_org_budgets_from_oscar()
     enriched_org_list = enrich_orgs_oscar_financials(extant_orgs, budgets)
 
-    # Enrich with Civil Service headcount data
-    download_headcount_data()
+    # Enrich with Civil Service headcount data (auto-downloads if not cached)
     headcounts = get_org_headcounts()
     enriched_org_list = enrich_orgs_headcount(enriched_org_list, headcounts)
 

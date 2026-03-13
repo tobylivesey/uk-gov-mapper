@@ -93,9 +93,16 @@ def get_org_headcounts(stats_file: str = "data/orgs/uk/civil_service_stats_2025.
 
     Strips "(excl. agencies)" suffix so parent depts match their gov.uk names.
 
+    Downloads the data file if not already cached.
+
     Returns:
         Dict mapping org name -> headcount (int)
     """
+    # Ensure data is downloaded
+    stats_path = Path(stats_file)
+    if not stats_path.exists():
+        download_headcount_data(stats_file)
+
     df = pd.read_excel(stats_file, engine='odf', sheet_name='table_8', header=None)
 
     # Data starts at row 6, columns: 0=parent_dept, 1=organisation, 35=total_headcount

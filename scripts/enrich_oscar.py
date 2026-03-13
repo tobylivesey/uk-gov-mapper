@@ -22,6 +22,29 @@ LEGAL_SUFFIXES = re.compile(
     re.IGNORECASE
 )
 
+# Known aliases mapping abbreviations to full names (bidirectional lookup)
+# Keys and values should both be normalized (lowercase, no punctuation) for matching
+ORG_ALIASES = {
+    # Regulatory bodies with Of- abbreviations
+    'ofsted': 'office for standards in education children s services and skills',
+    'ofgem': 'office of gas and electricity markets',
+    'ofqual': 'office of qualifications and examinations regulation',
+    'ofwat': 'water services regulation authority',
+    'office for standards in education children s services and skills': 'ofsted',
+    'office of gas and electricity markets': 'ofgem',
+    'office of qualifications and examinations regulation': 'ofqual',
+    'water services regulation authority': 'ofwat',
+    # Supreme Court
+    'uk supreme court': 'supreme court of the united kingdom',
+    'supreme court of the united kingdom': 'uk supreme court',
+    # NS&I
+    'ns and i': 'national savings and investments',
+    'national savings and investments': 'ns and i',
+    # QEII Centre
+    'queen elizabeth ii centre': 'queen elizabeth ii conference centre',
+    'queen elizabeth ii conference centre': 'queen elizabeth ii centre',
+}
+
 # Stopwords that don't contribute to meaningful matches
 STOPWORDS = {
     # Articles/prepositions
@@ -192,9 +215,20 @@ def get_org_budgets_from_oscar(oscar_file: str = "data/orgs/uk/oscar_data_2024-2
 
 def normalise_org_name(name: str) -> str:
     name = name.lower().strip()
+    # Strip leading "the " prefix
+    if name.startswith('the '):
+        name = name[4:]
+    # Convert ampersand to 'and' before stripping punctuation
+    name = name.replace('&', ' and ')
     name = re.sub(r'[^\w\s]', ' ', name)
     name = LEGAL_SUFFIXES.sub('', name)
     return ' '.join(name.split())
+
+
+def get_alias(name: str) -> str | None:
+    """Return the alias for a normalized org name, if one exists."""
+    norm = normalise_org_name(name)
+    return ORG_ALIASES.get(norm)
 
 def get_significant_tokens(name: str) -> set[str]:
     tokens = set(normalise_org_name(name).split())
@@ -246,7 +280,15 @@ def fuzzy_match_org(
         # Exact normalised match
         if oscar_norm == target_norm:
             return oscar_name, 1.0
-        
+
+        # Alias match - check if target's alias matches oscar_norm or vice versa
+        target_alias = get_alias(target_name)
+        oscar_alias = get_alias(oscar_name)
+        if target_alias and target_alias == oscar_norm:
+            return oscar_name, 0.99  # High confidence alias match
+        if oscar_alias and oscar_alias == target_norm:
+            return oscar_name, 0.99
+
         # Must have 3+ significant tokens on both sides
         if len(oscar_sig_tokens) < 3 or len(target_sig_tokens) < 3:
             continue

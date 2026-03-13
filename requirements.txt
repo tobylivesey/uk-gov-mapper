@@ -77,3 +77,4 @@ tzdata==2025.2
 urllib3==2.5.0
 wcwidth==0.2.13
 dnspython==2.8.0
+odfpy>=1.4.1

@@ -11,6 +11,7 @@ from scripts.utils import (
 )
 import pandas as pd
 from scripts.enrich_oscar import get_org_budgets_from_oscar, enrich_orgs_oscar_financials
+from scripts.enrich_headcount import download_headcount_data, get_org_headcounts, enrich_orgs_headcount
 
 DATA_DIR = Path("data")
 OUT_DIR = DATA_DIR / "orgs/uk"
@@ -60,12 +61,13 @@ def enrich_org_weburl(org: dict, session: requests.Session) -> dict:
     return org
 
 def main(extant_orgs: list[dict] | None = None) -> list[dict]:
-    """Enrich UK government organization data with financial and web domain info.
+    """Enrich UK government organization data with financial, headcount, and web domain info.
 
-    Processes organizations in three stages:
+    Processes organizations in four stages:
     1. Enriches with OSCAR-II financial/budget data
-    2. For 'exempt' orgs: scrapes gov.uk pages for external website URLs
-    3. For all orgs: extracts email domains from mailto links on gov.uk pages
+    2. Enriches with Civil Service Statistics headcount data
+    3. For 'exempt' orgs: scrapes gov.uk pages for external website URLs
+    4. For all orgs: extracts email domains from mailto links on gov.uk pages
 
     Args:
         extant_orgs: List of org dicts to enrich. If None, loads from
@@ -78,6 +80,7 @@ def main(extant_orgs: list[dict] | None = None) -> list[dict]:
         - email_domains: List of email domain dicts with MX info
         - has_mx: True if any email domain has MX records
         - OSCAR-II budget fields from enrich_orgs_oscar_financials()
+        - headcount: Civil Service headcount from enrich_orgs_headcount()
 
         Writes to both:
         - data/orgs/uk/govuk_orgs_enriched.json
@@ -94,6 +97,11 @@ def main(extant_orgs: list[dict] | None = None) -> list[dict]:
 
     budgets = get_org_budgets_from_oscar()
     enriched_org_list = enrich_orgs_oscar_financials(extant_orgs, budgets)
+
+    # Enrich with Civil Service headcount data
+    download_headcount_data()
+    headcounts = get_org_headcounts()
+    enriched_org_list = enrich_orgs_headcount(enriched_org_list, headcounts)
 
     session = create_session()
     for org in enriched_org_list:

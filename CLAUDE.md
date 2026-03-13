@@ -80,14 +80,24 @@ python -m scripts.enrich_jobs
   - `govuk_orgs_enriched.json`: Fully enriched org data
   - `govuk_domain_list.csv`: Cached .gov.uk domain names from official list
   - `oscar_data_2024-25.csv`: Cached OSCAR II budget data
+  - `civil_service_stats_2025.ods`: Cached Civil Service Statistics (headcount data)
 - **`data/normalized/`**: Normalized job data in NDJSON format
 - Uses NDJSON (newline-delimited JSON) for incremental data collection
 
 ### Organization Enrichment Modules
-- **`enrich_orgs.py`**: Initial enrichment with OSCAR data and mailto domains
+- **`enrich_orgs.py`**: Initial enrichment with OSCAR, headcount, and mailto domains
   - Scrapes gov.uk pages for mailto links
   - Adds OSCAR-II budget data via `enrich_oscar.py`
+  - Adds Civil Service headcount data via `enrich_headcount.py`
   - Initializes `email_domains: []` list for each org
+
+- **`enrich_headcount.py`**: Civil Service Statistics headcount enrichment
+  - Source: Civil Service Statistics 2025 (Table 8)
+  - Downloads/caches ODS file from gov.uk publications
+  - Extracts total headcount per organisation
+  - Filters out "Overall" aggregate rows (e.g., "Cabinet Office Overall")
+  - Strips "(excl. agencies)" suffix to match parent orgs
+  - Uses same fuzzy matching approach as OSCAR enrichment
 
 - **`enrich_mailservers.py`**: DNS MX record lookups for all email domains
   - Iterates `email_domains` list, adds MX info to each entry
@@ -149,6 +159,6 @@ All mail provider detection functions live here:
 
 ### Dependencies
 - **Web scraping**: beautifulsoup4, requests
-- **Data processing**: pandas, pydantic for validation
+- **Data processing**: pandas, odfpy (ODS files), pydantic for validation
 - **Environment**: python-dotenv for configuration
 - **Development**: Uses Python 3.13+ with type hints

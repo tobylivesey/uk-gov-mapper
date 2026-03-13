@@ -12,3 +12,7 @@ scratch_jupyter_notebooks/
 settings.local.json
 job_listings/
 data/jobs
+
+# Generated HTML visualizations (JSON exports used by blog instead)
+uk_gov_treemap_d3.html
+uk_gov_hierarchy.html

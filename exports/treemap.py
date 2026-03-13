@@ -20,6 +20,7 @@ def export_treemap(output_path: Path) -> None:
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "total_orgs": stats["total_orgs"],
         "orgs_with_budget": stats["orgs_with_budget"],
+        "orgs_with_headcount": stats["orgs_with_headcount"],
         "hierarchy": hierarchy,
     }
 

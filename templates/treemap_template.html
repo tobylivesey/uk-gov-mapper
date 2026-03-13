@@ -535,6 +535,7 @@
                 <span class="control-label">Size</span>
                 <div class="btn-group">
                     <button class="btn active" data-sizing="budget">Budget</button>
+                    <button class="btn" data-sizing="headcount">Headcount</button>
                     <button class="btn" data-sizing="equal">Equal</button>
                 </div>
             </div>
@@ -641,6 +642,9 @@
             if (currentSizing === 'equal') {
                 return 100;
             }
+            if (currentSizing === 'headcount') {
+                return node.headcount_value || 100;
+            }
             return node.value || 100;
         }
         
@@ -711,17 +715,20 @@
             const hierarchy = d3.hierarchy(filteredRoot)
                 .sum(d => {
                     if (d.children && d.children.length) return 0;
-                    return currentSizing === 'equal' ? 100 : (d.value || 100);
+                    if (currentSizing === 'equal') return 100;
+                    if (currentSizing === 'headcount') return d.headcount_value || 100;
+                    return d.value || 100;
                 })
                 .sort((a, b) => b.value - a.value);
 
-            // For budget sizing, ensure top-level departments are sized by their own budget
+            // For budget/headcount sizing, ensure top-level departments are sized by their own value
             // (not just the sum of tracked children)
-            if (currentSizing === 'budget' && hierarchy.children) {
+            if ((currentSizing === 'budget' || currentSizing === 'headcount') && hierarchy.children) {
+                const valueKey = currentSizing === 'headcount' ? 'headcount_value' : 'value';
                 hierarchy.children.forEach(child => {
-                    if (child.data.value) {
-                        // Use department's own budget, ensuring it's at least sum of children
-                        child.value = Math.max(child.value, child.data.value);
+                    if (child.data[valueKey]) {
+                        // Use department's own value, ensuring it's at least sum of children
+                        child.value = Math.max(child.value, child.data[valueKey]);
                     }
                 });
                 // Recalculate root value to match
@@ -807,20 +814,27 @@
                 
                 node.addEventListener('mouseenter', (e) => {
                     const hint = hasChildren ? 'Click to zoom in' : (d.data.url ? 'Click to visit' : '');
-                    tooltip.innerHTML = `
-                        <div class="tooltip-name">${d.data.name}</div>
+                    let tooltipContent = `<div class="tooltip-name">${d.data.name}</div>
                         <div class="tooltip-row">
                             <span class="tooltip-label">Type</span>
                             <span class="tooltip-value">${d.data.format}</span>
-                        </div>
-                        ${d.data.budget_display ? `
-                        <div class="tooltip-row">
+                        </div>`;
+                    if (d.data.budget_display) {
+                        tooltipContent += `<div class="tooltip-row">
                             <span class="tooltip-label">Budget</span>
                             <span class="tooltip-value">${d.data.budget_display}</span>
-                        </div>
-                        ` : ''}
-                        ${hint ? `<div class="tooltip-hint">${hint}</div>` : ''}
-                    `;
+                        </div>`;
+                    }
+                    if (d.data.headcount_display) {
+                        tooltipContent += `<div class="tooltip-row">
+                            <span class="tooltip-label">Headcount</span>
+                            <span class="tooltip-value">${d.data.headcount_display}</span>
+                        </div>`;
+                    }
+                    if (hint) {
+                        tooltipContent += `<div class="tooltip-hint">${hint}</div>`;
+                    }
+                    tooltip.innerHTML = tooltipContent;
                     tooltip.classList.add('visible');
                 });
                 

@@ -1,8 +1,11 @@
+# -*- coding: utf-8 -*-
 import json
 import pandas as pd
 import math
 from pathlib import Path
 
+# Column name constant to avoid encoding issues
+BUDGET_COL = 'oscar_budget_\u00a3k'  # oscar_budget_£k
 
 SCRIPT_DIR = Path(__file__).parent
 TEMPLATE_DIR = SCRIPT_DIR / '../templates/'
@@ -51,9 +54,20 @@ def format_budget(budget):
     if budget >= 1000000:
         return f"£{budget/1000000:.1f}bn"
     elif budget >= 1000:
-        return f"£{budget/1000:.1f}m"  
+        return f"£{budget/1000:.1f}m"
     else:
         return f"£{budget:.0f}k"
+
+
+def format_headcount(headcount):
+    """Format headcount for display"""
+    if headcount is None or (isinstance(headcount, float) and math.isnan(headcount)):
+        return None
+    headcount = int(headcount)
+    if headcount >= 1000:
+        return f"{headcount/1000:.1f}k staff"
+    else:
+        return f"{headcount:,} staff"
 
 def build_hierarchy(df):
     """Convert flat dataframe to nested hierarchy for D3"""
@@ -68,15 +82,23 @@ def build_hierarchy(df):
     id_to_data = {}
     for _, row in df.iterrows():
         org_id = row['org_id']
-        budget = row.get('oscar_budget_£k')
+        budget = row.get(BUDGET_COL)
         budget_val = None if pd.isna(budget) else budget
-        
-        # Calculate value for sizing
+        headcount = row.get('headcount')
+        headcount_val = None if pd.isna(headcount) else int(headcount)
+
+        # Calculate value for sizing (budget-based, used as default)
         if budget_val and budget_val > 0:
             value = math.sqrt(budget_val) * 10
         else:
             value = 3000  # Default for orgs without budget
-        
+
+        # Calculate headcount value for sizing
+        if headcount_val and headcount_val > 0:
+            headcount_value = math.sqrt(headcount_val) * 50
+        else:
+            headcount_value = 3000  # Default for orgs without headcount
+
         id_to_data[org_id] = {
             'id': org_id,
             'name': row['title'],
@@ -84,7 +106,10 @@ def build_hierarchy(df):
             'url': row.get('best_domain', ''),
             'budget': budget_val,
             'budget_display': format_budget(budget_val),
+            'headcount': headcount_val,
+            'headcount_display': format_headcount(headcount_val),
             'value': value,
+            'headcount_value': headcount_value,
             'children': []
         }
     
@@ -111,8 +136,9 @@ def build_hierarchy(df):
     
     # Calculate stats
     total_orgs = len(df)
-    orgs_with_budget = df['oscar_budget_£k'].notna().sum()
-    total_budget = df['oscar_budget_£k'].sum()
+    orgs_with_budget = df[BUDGET_COL].notna().sum()
+    total_budget = df[BUDGET_COL].sum()
+    orgs_with_headcount = df['headcount'].notna().sum() if 'headcount' in df.columns else 0
     
     print(f"Total organizations: {len(df)}")
     print(f"Root organizations (no parents): {len(roots)}")
@@ -131,6 +157,7 @@ def build_hierarchy(df):
     }, {
         'total_orgs': total_orgs,
         'orgs_with_budget': int(orgs_with_budget),
+        'orgs_with_headcount': int(orgs_with_headcount),
         'total_budget': total_budget
     }
 
@@ -225,7 +252,7 @@ def generate_hierarchy_chart(df, output_path: Path = None):
     for _, row in df.iterrows():
         org_id = row['id']
         node_ids.add(org_id)
-        budget = row.get('oscar_budget_£k')
+        budget = row.get(BUDGET_COL)
         budget_val = None if pd.isna(budget) else budget
 
         abbrev = ''

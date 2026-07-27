@@ -298,6 +298,7 @@ def generate_hierarchy_chart(df, output_path: Path = None):
             'cyber_jobs': int(row.get('cyber_job_count', 0) or 0),
             'has_soc': bool(row.get('has_soc', False)),
             'soc_evidence': row.get('soc_evidence', []) if row.get('has_soc') else [],
+            'tech_stack': row.get('cyber_tech_stack', {}) if int(row.get('cyber_job_count', 0) or 0) > 0 else {},
         })
 
     # Build links from parent_organisations

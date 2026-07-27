@@ -1085,6 +1085,49 @@
                 detailBody.appendChild(section);
             }
 
+            // Tech stack (only when cyber mode active)
+            if (cyberFilterActive && d.tech_stack) {
+                const catLabels = {
+                    siem: 'SIEM', edr: 'EDR', ndr: 'NDR', soar: 'SOAR',
+                    firewall: 'Firewall', iam: 'IAM', vulnerability_management: 'Vuln Mgmt'
+                };
+                const entries = [];
+                Object.entries(catLabels).forEach(([cat, label]) => {
+                    const vendors = d.tech_stack[cat] || [];
+                    if (vendors.length > 0) {
+                        entries.push({ label, vendors });
+                    }
+                });
+
+                if (entries.length > 0) {
+                    const section = document.createElement('div');
+                    section.style.cssText = 'margin-top:0.75rem;border-top:1px solid #1d70b8;padding-top:0.5rem';
+                    const hdr = document.createElement('div');
+                    hdr.className = 'detail-key';
+                    hdr.style.cssText = 'color:#1d70b8;margin-bottom:0.4rem';
+                    hdr.textContent = 'Tech stack';
+                    section.appendChild(hdr);
+
+                    entries.forEach(({ label, vendors }) => {
+                        const row = document.createElement('div');
+                        row.style.cssText = 'font-size:0.75rem;margin-bottom:0.25rem;display:flex;gap:0.4rem';
+                        const catSpan = document.createElement('span');
+                        catSpan.style.cssText = 'color:#6f777b;min-width:55px;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.03em';
+                        catSpan.textContent = label;
+                        row.appendChild(catSpan);
+                        const valSpan = document.createElement('span');
+                        valSpan.textContent = vendors.map(v => {
+                            const name = v.vendor || v;
+                            const conf = v.confidence === 'example' ? ' (?)' : '';
+                            return name + conf;
+                        }).join(', ');
+                        row.appendChild(valSpan);
+                        section.appendChild(row);
+                    });
+                    detailBody.appendChild(section);
+                }
+            }
+
             updateDetailHighlightBtn();
             detailPanel.classList.add("visible");
         });

@@ -10,7 +10,7 @@ import pandas as pd
 from pathlib import Path
 from datetime import datetime, timezone
 
-from scripts.visualise import load_org_data, FORMAT_TIERS, format_budget
+from scripts.visualise import load_org_data, FORMAT_TIERS, format_budget, format_headcount
 
 
 def export_graph(output_path: Path) -> None:
@@ -27,6 +27,8 @@ def export_graph(output_path: Path) -> None:
         node_ids.add(org_id)
         budget = row.get('oscar_budget_£k')
         budget_val = None if pd.isna(budget) else budget
+        headcount = row.get('headcount')
+        headcount_val = None if pd.isna(headcount) else int(headcount)
 
         abbrev = ''
         if isinstance(row.get('details'), dict):
@@ -41,6 +43,11 @@ def export_graph(output_path: Path) -> None:
         else:
             radius = 4
 
+        # Cyber data
+        cyber_job_count = row.get('cyber_job_count', 0) or 0
+        cyber_tech_stack = row.get('cyber_tech_stack', {})
+        cyber_roles_sample = row.get('cyber_roles_sample', [])
+
         nodes.append({
             'id': org_id,
             'name': row['title'],
@@ -48,8 +55,13 @@ def export_graph(output_path: Path) -> None:
             'tier': tier,
             'radius': round(radius, 1),
             'budget_display': format_budget(budget_val),
+            'headcount': headcount_val,
+            'headcount_display': format_headcount(headcount_val),
             'domain': row.get('best_domain', ''),
             'abbrev': abbrev,
+            'cyber_job_count': cyber_job_count,
+            'cyber_tech_stack': cyber_tech_stack if cyber_job_count > 0 else {},
+            'cyber_roles_sample': cyber_roles_sample,
         })
 
     # Build links from parent_organisations

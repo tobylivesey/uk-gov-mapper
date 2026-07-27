@@ -22,6 +22,7 @@
             height: 100vh;
             font-weight: 300;
             overflow: hidden;
+            transition: background 0.4s, color 0.4s;
         }
 
         .container {
@@ -168,6 +169,8 @@
             top: 1rem;
             right: 1rem;
             width: 280px;
+            max-height: calc(100% - 2rem);
+            overflow-y: auto;
             background: #fff;
             border: 1px solid #ddd;
             padding: 1.25rem;
@@ -291,6 +294,415 @@
             height: 8px;
             border-radius: 50%;
         }
+
+        .btn-group {
+            display: flex;
+            gap: 0;
+        }
+
+        .btn-group .filter-btn {
+            border-radius: 0;
+            margin-left: -1px;
+        }
+
+        .btn-group .filter-btn:first-child {
+            border-radius: 3px 0 0 3px;
+            margin-left: 0;
+        }
+
+        .btn-group .filter-btn:last-child {
+            border-radius: 0 3px 3px 0;
+        }
+
+        .filter-btn {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 400;
+            padding: 0.3rem 0.7rem;
+            border: 1px solid #b1b4b6;
+            border-radius: 3px;
+            background: #fff;
+            color: #505a5f;
+            cursor: pointer;
+            letter-spacing: 0.03em;
+            white-space: nowrap;
+        }
+
+        .filter-btn:hover {
+            background: #f3f3f3;
+            color: #0b0c0c;
+        }
+
+        .filter-btn.active {
+            background: #1d70b8;
+            border-color: #1d70b8;
+            color: #fff;
+        }
+
+        .node circle.soc-ring {
+            stroke: #d4351c;
+            stroke-width: 2.5px;
+        }
+
+/* Cyber dark mode */
+        body.cyber-mode {
+            background: #1e2530;
+            color: #d0d4da;
+        }
+
+        body.cyber-mode .chart-wrapper {
+            background: #252c38;
+            border-color: #3a4250;
+        }
+
+        body.cyber-mode h1 {
+            color: #d0d4da;
+        }
+
+        body.cyber-mode .stat-value {
+            color: #d0d4da;
+        }
+
+        body.cyber-mode .stat-label,
+        body.cyber-mode .legend-item {
+            color: #8a92a0;
+        }
+
+        body.cyber-mode .tier-label {
+            color: #8a92a0;
+            background: rgba(37,44,56,0.9);
+        }
+
+        body.cyber-mode .tier-line {
+            stroke: #3a4250;
+        }
+
+        body.cyber-mode .link {
+            stroke: #556;
+            stroke-opacity: 0.5;
+        }
+
+        body.cyber-mode .link.highlighted {
+            stroke: #d0d4da;
+        }
+
+        body.cyber-mode .node text {
+            fill: #8a92a0;
+        }
+
+        body.cyber-mode .node.dimmed circle {
+            opacity: 0.15;
+        }
+
+        body.cyber-mode .node.dimmed text {
+            opacity: 0.1;
+        }
+
+        body.cyber-mode .link.dimmed {
+            stroke-opacity: 0.08;
+        }
+
+        body.cyber-mode .detail-panel {
+            background: #2a3240;
+            border-color: #3a4250;
+            color: #d0d4da;
+        }
+
+        body.cyber-mode .detail-panel h3 {
+            color: #d0d4da;
+        }
+
+        body.cyber-mode .detail-key {
+            color: #8a92a0;
+        }
+
+        body.cyber-mode .detail-value {
+            color: #d0d4da;
+        }
+
+        body.cyber-mode .detail-row {
+            border-bottom-color: #3a4250;
+        }
+
+        body.cyber-mode .filter-btn {
+            background: #2a3240;
+            border-color: #3a4250;
+            color: #8a92a0;
+        }
+
+        body.cyber-mode .filter-btn:hover {
+            background: #353e4e;
+            color: #d0d4da;
+        }
+
+        body.cyber-mode .filter-btn.active {
+            background: #1d70b8;
+            border-color: #1d70b8;
+            color: #fff;
+        }
+
+        body.cyber-mode .zoom-btn {
+            background: #2a3240;
+            border-color: #3a4250;
+            color: #8a92a0;
+        }
+
+        body.cyber-mode .zoom-btn:hover {
+            background: #353e4e;
+            color: #d0d4da;
+        }
+
+        .chart-wrapper {
+            transition: background 0.4s, border-color 0.4s;
+        }
+
+        /* Cyber legend */
+        .cyber-legend {
+            display: none;
+            gap: 1rem;
+            align-items: center;
+            font-size: 0.65rem;
+            color: #999;
+        }
+
+        body.cyber-mode .cyber-legend {
+            display: flex;
+        }
+
+        .cyber-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .cyber-legend-ring {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 2.5px solid;
+            background: transparent;
+        }
+
+        /* Highlight feature */
+        .highlight-control {
+            position: relative;
+        }
+
+        .highlight-btn {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 400;
+            padding: 0.3rem 0.7rem;
+            border: 1px solid #b1b4b6;
+            border-radius: 3px;
+            background: #fff;
+            color: #505a5f;
+            cursor: pointer;
+            letter-spacing: 0.03em;
+        }
+
+        .highlight-btn:hover {
+            background: #f3f3f3;
+            color: #0b0c0c;
+        }
+
+        .highlight-btn.active {
+            background: #1d70b8;
+            border-color: #1d70b8;
+            color: #fff;
+        }
+
+        .highlight-btn .count {
+            font-size: 0.6rem;
+            background: #fff;
+            color: #1d70b8;
+            border-radius: 8px;
+            padding: 0 0.35rem;
+            margin-left: 0.25rem;
+            font-weight: 500;
+        }
+
+        .highlight-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: 0.3rem;
+            width: 280px;
+            background: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            z-index: 30;
+            border-radius: 3px;
+        }
+
+        .highlight-dropdown.open {
+            display: block;
+        }
+
+        .highlight-dropdown .highlight-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0.6rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .highlight-dropdown .highlight-header button {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.65rem;
+            background: none;
+            border: none;
+            color: #1d70b8;
+            cursor: pointer;
+            padding: 0.15rem 0.3rem;
+        }
+
+        .highlight-dropdown .highlight-header button:hover {
+            text-decoration: underline;
+        }
+
+        .highlight-search-wrap {
+            padding: 0.4rem 0.6rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .highlight-search-wrap input {
+            width: 100%;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            padding: 0.3rem 0.5rem;
+            border: 1px solid #b1b4b6;
+            border-radius: 3px;
+            outline: none;
+            color: #0b0c0c;
+        }
+
+        .highlight-search-wrap input:focus {
+            border-color: #1d70b8;
+        }
+
+        .highlight-list {
+            max-height: 260px;
+            overflow-y: auto;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.3rem 0.6rem;
+            cursor: pointer;
+            font-size: 0.75rem;
+            color: #0b0c0c;
+        }
+
+        .highlight-item:hover {
+            background: #f3f3f3;
+        }
+
+        .highlight-item input[type="checkbox"] {
+            margin: 0;
+            cursor: pointer;
+        }
+
+        .highlight-item label {
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .node.highlighted circle {
+            stroke: #f47738;
+            stroke-width: 2.5px;
+        }
+
+        svg.has-highlights .node:not(.highlighted) circle {
+            opacity: 0.15;
+        }
+
+        svg.has-highlights .node:not(.highlighted) text {
+            opacity: 0.1;
+        }
+
+        svg.has-highlights .link {
+            stroke-opacity: 0.05;
+        }
+
+        .detail-highlight-btn {
+            display: block;
+            width: 100%;
+            margin-top: 0.75rem;
+            padding: 0.4rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            border: 1px solid #b1b4b6;
+            border-radius: 3px;
+            background: #fff;
+            color: #505a5f;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .detail-highlight-btn:hover {
+            background: #f3f3f3;
+            color: #0b0c0c;
+        }
+
+        .detail-highlight-btn.active {
+            background: #f47738;
+            border-color: #f47738;
+            color: #fff;
+        }
+
+        /* Dark mode overrides for highlight */
+        body.cyber-mode .highlight-btn {
+            background: #2a3240;
+            border-color: #3a4250;
+            color: #8a92a0;
+        }
+
+        body.cyber-mode .highlight-btn:hover {
+            background: #353e4e;
+            color: #d0d4da;
+        }
+
+        body.cyber-mode .highlight-dropdown {
+            background: #2a3240;
+            border-color: #3a4250;
+        }
+
+        body.cyber-mode .highlight-dropdown .highlight-header {
+            border-bottom-color: #3a4250;
+        }
+
+        body.cyber-mode .highlight-search-wrap {
+            border-bottom-color: #3a4250;
+        }
+
+        body.cyber-mode .highlight-search-wrap input {
+            background: #1e2530;
+            border-color: #3a4250;
+            color: #d0d4da;
+        }
+
+        body.cyber-mode .highlight-item {
+            color: #d0d4da;
+        }
+
+        body.cyber-mode .highlight-item:hover {
+            background: #353e4e;
+        }
+
+        body.cyber-mode .detail-highlight-btn {
+            background: #2a3240;
+            border-color: #3a4250;
+            color: #8a92a0;
+        }
+
+        body.cyber-mode .detail-highlight-btn:hover {
+            background: #353e4e;
+            color: #d0d4da;
+        }
     </style>
 </head>
 <body>
@@ -301,6 +713,31 @@
                 <div class="stat"><span class="stat-value">{{total_orgs}}</span><span class="stat-label">orgs</span></div>
                 <div class="stat"><span class="stat-value">{{total_links}}</span><span class="stat-label">links</span></div>
                 <div class="stat"><span class="stat-value">{{total_formats}}</span><span class="stat-label">types</span></div>
+            </div>
+            <div class="btn-group">
+                <button class="filter-btn active" id="size-budget">Budget</button>
+                <button class="filter-btn" id="size-headcount">Headcount</button>
+                <button class="filter-btn" id="size-equal">Equal</button>
+            </div>
+            <div class="highlight-control">
+                <button class="highlight-btn" id="highlight-btn">Highlight <span class="count" id="highlight-count" style="display:none">0</span></button>
+                <div class="highlight-dropdown" id="highlight-dropdown">
+                    <div class="highlight-header">
+                        <button id="highlight-clear">Clear all</button>
+                        <button id="highlight-close">Close</button>
+                    </div>
+                    <div class="highlight-search-wrap">
+                        <input type="text" id="highlight-search" placeholder="Search organisations...">
+                    </div>
+                    <div class="highlight-list" id="highlight-list"></div>
+                </div>
+            </div>
+            <button class="filter-btn" id="cyber-toggle">Cyber Landscape</button>
+            <div class="cyber-legend" id="cyber-legend">
+                <div class="cyber-legend-item">
+                    <div class="cyber-legend-ring" style="border-color:#d4351c"></div>
+                    <span>SOC detected</span>
+                </div>
             </div>
             <div class="legend" id="legend"></div>
         </header>
@@ -313,6 +750,7 @@
                 <button class="detail-close" id="detail-close">&times;</button>
                 <h3 id="detail-name"></h3>
                 <div id="detail-body"></div>
+                <button class="detail-highlight-btn" id="detail-highlight-btn"><span id="detail-highlight-text">Add to highlights</span></button>
             </div>
 
             <div class="zoom-controls">
@@ -327,12 +765,13 @@
         const graphData = {{graph_json}};
 
         const tierOrder = [
-            "Ministerial department / Devolved government",
-            "Non-ministerial department",
-            "Executive agency / office",
-            "Non-departmental body",
-            "Tribunal / Court / Monitoring Body",
-            "Other"
+            "Ministerial Departments & Devolved Government",
+            "Non-Ministerial Departments",
+            "Executive Agencies & Offices",
+            "Non-Departmental Public Bodies",
+            "Public Corporations & Health Authorities",
+            "Judicial & Oversight Bodies",
+            "Sub-organisations & Other"
         ];
 
         const tierColours = [
@@ -340,7 +779,8 @@
             "#4c2c92",
             "#28a197",
             "#d53880",
-            "#f47738",
+            "#f46a25",
+            "#b58840",
             "#6f777b"
         ];
 
@@ -502,8 +942,11 @@
             .style("font-size", d => d.radius > 5 ? "9px" : "7px")
             .style("display", d => d.tier === 0 ? "block" : "none");
 
-        // Highlight helpers
+        // ========== Highlight state ==========
+        const highlightedNodes = new Set();
+        let highlightListNeedsRebuild = false;
         let pinnedNode = null;
+        let currentDetailNode = null;
 
         function applyHighlight(d) {
             node.classed("dimmed", o => !isConnected(d.id, o.id));
@@ -525,7 +968,6 @@
         });
 
         node.on("mouseleave", function() {
-            // If a node is pinned, revert to its highlight; otherwise clear
             if (pinnedNode) {
                 applyHighlight(pinnedNode);
             } else {
@@ -533,34 +975,75 @@
             }
         });
 
-        // Click to show details and pin highlight
+        // Detail panel
         const detailPanel = document.getElementById("detail-panel");
         const detailName = document.getElementById("detail-name");
         const detailBody = document.getElementById("detail-body");
+        const detailHighlightBtn = document.getElementById("detail-highlight-btn");
+        const detailHighlightText = document.getElementById("detail-highlight-text");
+
+        function updateDetailHighlightBtn() {
+            if (!currentDetailNode) return;
+            const isHL = highlightedNodes.has(currentDetailNode.id);
+            detailHighlightBtn.classList.toggle('active', isHL);
+            detailHighlightText.textContent = isHL ? 'Remove from highlights' : 'Add to highlights';
+        }
+
+        detailHighlightBtn.addEventListener('click', () => {
+            if (!currentDetailNode) return;
+            if (highlightedNodes.has(currentDetailNode.id)) {
+                highlightedNodes.delete(currentDetailNode.id);
+            } else {
+                highlightedNodes.add(currentDetailNode.id);
+            }
+            updateHighlights();
+            updateDetailHighlightBtn();
+            highlightListNeedsRebuild = true;
+        });
 
         document.getElementById("detail-close").addEventListener("click", () => {
             detailPanel.classList.remove("visible");
             pinnedNode = null;
+            currentDetailNode = null;
             clearHighlight();
         });
+
+        function createDetailRow(key, value, isLink, href) {
+            const row = document.createElement('div');
+            row.className = 'detail-row';
+            const k = document.createElement('span');
+            k.className = 'detail-key';
+            k.textContent = key;
+            const v = document.createElement('span');
+            v.className = 'detail-value';
+            if (isLink && href) {
+                const a = document.createElement('a');
+                a.href = href;
+                a.target = '_blank';
+                a.textContent = value;
+                v.appendChild(a);
+            } else {
+                v.textContent = value;
+            }
+            row.appendChild(k);
+            row.appendChild(v);
+            return row;
+        }
 
         node.on("click", function(event, d) {
             event.stopPropagation();
             pinnedNode = d;
+            currentDetailNode = d;
             applyHighlight(d);
 
             detailName.textContent = d.name;
+            while (detailBody.firstChild) detailBody.removeChild(detailBody.firstChild);
 
-            let rows = [
-                { key: "Type", value: d.format },
-            ];
-            if (d.budget_display) {
-                rows.push({ key: "Gross Budget", value: d.budget_display });
-            }
-            if (d.domain) {
-                rows.push({ key: "Domain", value: `<a href="${d.domain}" target="_blank">${d.domain.replace(/^https?:\/\//, '')}</a>` });
-            }
-            // Count connections
+            detailBody.appendChild(createDetailRow('Type', d.format));
+            if (d.budget_display) detailBody.appendChild(createDetailRow('Gross Budget', d.budget_display));
+            if (d.headcount_display) detailBody.appendChild(createDetailRow('Headcount', d.headcount_display));
+            if (d.domain) detailBody.appendChild(createDetailRow('Domain', d.domain.replace(/^https?:\/\//, ''), true, d.domain));
+
             let parentCount = 0, childCount = 0;
             graphData.links.forEach(l => {
                 const sid = typeof l.source === 'object' ? l.source.id : l.source;
@@ -568,20 +1051,199 @@
                 if (tid === d.id) parentCount++;
                 if (sid === d.id) childCount++;
             });
-            rows.push({ key: "Parents", value: parentCount });
-            rows.push({ key: "Children", value: childCount });
+            detailBody.appendChild(createDetailRow('Parents', String(parentCount)));
+            detailBody.appendChild(createDetailRow('Children', String(childCount)));
 
-            detailBody.innerHTML = rows.map(r =>
-                `<div class="detail-row"><span class="detail-key">${r.key}</span><span class="detail-value">${r.value}</span></div>`
-            ).join('');
+            // SOC evidence (only when cyber mode active)
+            if (cyberFilterActive && d.soc_evidence && d.soc_evidence.length > 0) {
+                const section = document.createElement('div');
+                section.style.cssText = 'margin-top:0.75rem;border-top:1px solid #d4351c;padding-top:0.5rem';
+                const hdr = document.createElement('div');
+                hdr.className = 'detail-key';
+                hdr.style.cssText = 'color:#d4351c;margin-bottom:0.4rem';
+                hdr.textContent = 'SOC evidence';
+                section.appendChild(hdr);
+                d.soc_evidence.forEach(ev => {
+                    const item = document.createElement('div');
+                    item.style.cssText = 'font-size:0.75rem;margin-bottom:0.3rem';
+                    if (ev.url) {
+                        const a = document.createElement('a');
+                        a.href = ev.url;
+                        a.target = '_blank';
+                        a.style.cssText = 'color:#1d70b8;text-decoration:none';
+                        a.textContent = ev.title;
+                        item.appendChild(a);
+                    } else {
+                        item.appendChild(document.createTextNode(ev.title));
+                    }
+                    const meta = document.createElement('div');
+                    meta.style.cssText = 'color:#6f777b;font-size:0.65rem';
+                    meta.textContent = ev.source + (ev.date ? ' (' + ev.date + ')' : '');
+                    item.appendChild(meta);
+                    section.appendChild(item);
+                });
+                detailBody.appendChild(section);
+            }
 
+            updateDetailHighlightBtn();
             detailPanel.classList.add("visible");
         });
 
         svg.on("click", () => {
             pinnedNode = null;
+            currentDetailNode = null;
             detailPanel.classList.remove("visible");
             clearHighlight();
+        });
+
+        // ========== Highlight selector dropdown ==========
+        const highlightBtn = document.getElementById('highlight-btn');
+        const highlightDropdown = document.getElementById('highlight-dropdown');
+        const highlightList = document.getElementById('highlight-list');
+        const highlightSearch = document.getElementById('highlight-search');
+        const highlightCount = document.getElementById('highlight-count');
+        const highlightClear = document.getElementById('highlight-clear');
+        const highlightClose = document.getElementById('highlight-close');
+
+        const sortedNodes = [...graphData.nodes].sort((a, b) => a.name.localeCompare(b.name));
+
+        function buildHighlightList(filter) {
+            filter = filter || '';
+            while (highlightList.firstChild) highlightList.removeChild(highlightList.firstChild);
+            const lowerFilter = filter.toLowerCase();
+
+            sortedNodes.forEach(n => {
+                if (filter && !n.name.toLowerCase().includes(lowerFilter)) return;
+
+                const item = document.createElement('div');
+                item.className = 'highlight-item';
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.checked = highlightedNodes.has(n.id);
+                const label = document.createElement('label');
+                label.textContent = n.name;
+
+                item.addEventListener('click', (e) => {
+                    if (e.target !== checkbox) checkbox.checked = !checkbox.checked;
+                    if (checkbox.checked) {
+                        highlightedNodes.add(n.id);
+                    } else {
+                        highlightedNodes.delete(n.id);
+                    }
+                    updateHighlights();
+                });
+
+                item.appendChild(checkbox);
+                item.appendChild(label);
+                highlightList.appendChild(item);
+            });
+        }
+
+        function updateHighlights() {
+            node.classed('highlighted', d => highlightedNodes.has(d.id));
+            const count = highlightedNodes.size;
+            if (count > 0) {
+                highlightCount.textContent = count;
+                highlightCount.style.display = 'inline';
+                highlightBtn.classList.add('active');
+                svg.classed('has-highlights', true);
+            } else {
+                highlightCount.style.display = 'none';
+                highlightBtn.classList.remove('active');
+                svg.classed('has-highlights', false);
+            }
+        }
+
+        buildHighlightList();
+
+        highlightBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            highlightDropdown.classList.toggle('open');
+            if (highlightDropdown.classList.contains('open')) {
+                if (highlightListNeedsRebuild) {
+                    buildHighlightList(highlightSearch.value);
+                    highlightListNeedsRebuild = false;
+                }
+                highlightSearch.focus();
+            }
+        });
+
+        highlightSearch.addEventListener('input', () => {
+            buildHighlightList(highlightSearch.value);
+        });
+
+        highlightClear.addEventListener('click', () => {
+            highlightedNodes.clear();
+            buildHighlightList(highlightSearch.value);
+            updateHighlights();
+        });
+
+        highlightClose.addEventListener('click', () => {
+            highlightDropdown.classList.remove('open');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!highlightDropdown.contains(e.target) && e.target !== highlightBtn) {
+                highlightDropdown.classList.remove('open');
+            }
+        });
+
+        highlightDropdown.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+
+        // ========== Cyber landscape toggle ==========
+        let cyberFilterActive = false;
+        const cyberToggle = document.getElementById("cyber-toggle");
+        const socNodeIds = new Set(graphData.nodes.filter(n => n.has_soc).map(n => n.id));
+
+        cyberToggle.addEventListener("click", () => {
+            cyberFilterActive = !cyberFilterActive;
+            cyberToggle.classList.toggle("active", cyberFilterActive);
+            document.body.classList.toggle("cyber-mode", cyberFilterActive);
+            pinnedNode = null;
+            currentDetailNode = null;
+            detailPanel.classList.remove("visible");
+            applyCyberFilter();
+        });
+
+        function applyCyberFilter() {
+            node.select("circle").classed("soc-ring", cyberFilterActive ? d => socNodeIds.has(d.id) : false);
+            if (!cyberFilterActive) {
+                clearHighlight();
+            }
+        }
+
+        // ========== Sizing toggle ==========
+        const sizeBtns = {
+            budget: document.getElementById("size-budget"),
+            headcount: document.getElementById("size-headcount"),
+            equal: document.getElementById("size-equal"),
+        };
+        const defaultRadius = 5;
+
+        function getRadius(d, mode) {
+            if (mode === "headcount") return d.hc_radius;
+            if (mode === "equal") return defaultRadius;
+            return d.radius;
+        }
+
+        function applySizing(mode) {
+            Object.entries(sizeBtns).forEach(([key, btn]) => {
+                btn.classList.toggle("active", key === mode);
+            });
+
+            node.select("circle").transition().duration(400)
+                .attr("r", d => getRadius(d, mode));
+
+            simulation.force("collide", d3.forceCollide(d =>
+                getRadius(d, mode) + 2
+            ).strength(0.7));
+            simulation.alpha(0.3).restart();
+        }
+
+        Object.entries(sizeBtns).forEach(([mode, btn]) => {
+            btn.addEventListener("click", () => applySizing(mode));
         });
 
         // Drag behaviour

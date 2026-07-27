@@ -40,6 +40,7 @@ python -m scripts.enrich_jobs
    python -m scripts.enrich_mailservers     # DNS MX lookups for email domains
    python -m scripts.enrich_parent_domains  # Inherit domains from parent orgs
    python -m scripts.enrich_govuk_domains   # Fill gaps from official domain list
+   python -m scripts.enrich_cyber           # Cyber team & tech stack from job postings
    ```
    - Output: `data/orgs/uk/govuk_orgs_enriched.json`
 
@@ -80,14 +81,24 @@ python -m scripts.enrich_jobs
   - `govuk_orgs_enriched.json`: Fully enriched org data
   - `govuk_domain_list.csv`: Cached .gov.uk domain names from official list
   - `oscar_data_2024-25.csv`: Cached OSCAR II budget data
+  - `civil_service_stats_2025.ods`: Cached Civil Service Statistics (headcount data)
 - **`data/normalized/`**: Normalized job data in NDJSON format
 - Uses NDJSON (newline-delimited JSON) for incremental data collection
 
 ### Organization Enrichment Modules
-- **`enrich_orgs.py`**: Initial enrichment with OSCAR data and mailto domains
+- **`enrich_orgs.py`**: Initial enrichment with OSCAR, headcount, and mailto domains
   - Scrapes gov.uk pages for mailto links
   - Adds OSCAR-II budget data via `enrich_oscar.py`
+  - Adds Civil Service headcount data via `enrich_headcount.py`
   - Initializes `email_domains: []` list for each org
+
+- **`enrich_headcount.py`**: Civil Service Statistics headcount enrichment
+  - Source: Civil Service Statistics 2025 (Table 8)
+  - Downloads/caches ODS file from gov.uk publications
+  - Extracts total headcount per organisation
+  - Filters out "Overall" aggregate rows (e.g., "Cabinet Office Overall")
+  - Strips "(excl. agencies)" suffix to match parent orgs
+  - Uses same fuzzy matching approach as OSCAR enrichment
 
 - **`enrich_mailservers.py`**: DNS MX record lookups for all email domains
   - Iterates `email_domains` list, adds MX info to each entry
@@ -104,6 +115,46 @@ python -m scripts.enrich_jobs
   - Finds ALL matching domains (not just first match)
   - MX validates each domain before adding
   - Matching strategies: slug_exact > abbreviation > slug_variation > fuzzy
+
+- **`enrich_cyber.py`**: Cyber security intelligence from job postings
+  - Sources: cs-jobs-scraper S3 CSV, normalized postings (PSR, Adzuna, Greenhouse)
+  - Classifies cyber roles via title/description keyword matching
+  - Extracts technology vendor mentions using `cyber/tech_taxonomy.py`
+  - Fuzzy-matches job departments to gov.uk org titles
+  - Adds `cyber_job_count`, `cyber_roles_sample`, `cyber_tech_stack` per org
+
+### Cyber Security Data Model
+Each org gets cyber intelligence fields derived from job posting analysis:
+```json
+{
+  "cyber_job_count": 12,
+  "cyber_roles_sample": ["Senior Cyber Security Analyst", "SOC Manager"],
+  "cyber_tech_stack": {
+    "siem": ["Splunk", "Microsoft Sentinel"],
+    "edr": ["CrowdStrike Falcon"],
+    "ndr": [],
+    "soar": [],
+    "firewall": ["Palo Alto Networks"],
+    "iam": ["CyberArk"],
+    "vulnerability_management": ["Qualys"]
+  }
+}
+```
+
+**Technology categories** (SOC-CMM aligned):
+- `siem` - Security Information & Event Management (Visibility Triad: Log Monitoring)
+- `edr` - Endpoint Detection & Response (Visibility Triad: Endpoint Monitoring)
+- `ndr` - Network Detection & Response (Visibility Triad: Network Monitoring)
+- `soar` - Security Orchestration, Automation & Response
+- `firewall` - Firewall / Network Security
+- `iam` - Identity & Access Management / Privileged Access Management
+- `vulnerability_management` - Vulnerability scanning & management
+
+### Cyber Module (`cyber/`)
+- **`tech_taxonomy.py`**: Vendor keyword registry mapping 7 categories to vendor names and search patterns
+- **`extract.py`**: Text analysis functions:
+  - `is_cyber_role(title, description)` - classify jobs as cyber-related
+  - `extract_tech_mentions(description)` - scan for vendor/product mentions
 
 ### Email Domains Data Model
 Each org has an `email_domains` list of domain strings with a parallel `email_domain_sources` list tracking where each domain came from:
@@ -149,6 +200,7 @@ All mail provider detection functions live here:
 
 ### Dependencies
 - **Web scraping**: beautifulsoup4, requests
-- **Data processing**: pandas, pydantic for validation
+- **Data processing**: pandas, odfpy (ODS files), pydantic for validation
+- **AWS**: boto3 for S3 access (cs-jobs-scraper data)
 - **Environment**: python-dotenv for configuration
 - **Development**: Uses Python 3.13+ with type hints

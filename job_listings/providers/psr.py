@@ -62,8 +62,12 @@ def enrich_listing_details(all_urls: list) -> dict:
     raw_listing_details = {}
     session = create_session()
     for u in all_urls:
+        if u is None:
+            continue
         log_progress(f'Scraping listing details from {u}')
         r = safe_http_request(session, u, timeout=20)
+        if r is None:
+            continue
         soup = BeautifulSoup(r.text, "html.parser")
         raw_listing_details[u] = soup
     return raw_listing_details

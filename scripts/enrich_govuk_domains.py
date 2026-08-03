@@ -451,6 +451,144 @@ def reverse_match_unassigned_domains(
     return domains_added
 
 
+# Common subdomain prefixes used by government digital/cyber teams
+SUBDOMAIN_PREFIXES = [
+    'digital',
+    'cyber',
+    'data',
+    'tech',
+    'ict',
+    'it',
+    'security',
+]
+
+
+def probe_subdomain_email(
+    orgs: list[dict],
+) -> int:
+    """
+    Probe for subdomain email setups (e.g. digital.hmrc.gov.uk).
+
+    Government digital and cyber teams frequently run their own mail
+    on a subdomain of their parent org's domain. This function tries
+    common prefixes against all known .gov.uk domains and assigns
+    hits to the appropriate child org where one exists.
+
+    Detects wildcard DNS (domains that resolve any subdomain) by
+    testing a nonsense prefix first and skipping those domains.
+
+    Args:
+        orgs: List of org dicts (modified in place)
+
+    Returns:
+        Number of subdomain domains added
+    """
+    # Collect all known .gov.uk domains and which org owns them.
+    domain_to_org: dict[str, dict] = {}
+    for org in orgs:
+        for d in org.get('email_domains', []):
+            if d.endswith('.gov.uk'):
+                domain_to_org[d] = org
+
+    # Also include high-confidence matches from the official .gov.uk domain
+    # list, even if the parent domain had no MX and wasn't assigned.
+    # Subdomains can have MX when the parent doesn't
+    # (e.g. cabinet-office.gov.uk has no MX, but digital.cabinet-office.gov.uk does).
+    # Use slug-exact match to assign to the right org even if a child org
+    # scraped the same domain from a mailto link first.
+    govuk_domains = load_govuk_domains()
+    for org in orgs:
+        slug = org.get('details', {}).get('slug', '')
+        abbr = (org.get('details', {}).get('abbreviation', '') or '').lower()
+        # Only try exact slug and abbreviation matches (fast, no fuzzy)
+        candidates = []
+        if slug:
+            candidates.append(f'{slug}.gov.uk')
+        if abbr and len(abbr) >= 3:
+            candidates.append(f'{abbr}.gov.uk')
+        for d in candidates:
+            if d in govuk_domains:
+                # Slug-exact match takes priority — reassign even if a child
+                # org scraped this domain from a mailto link first
+                domain_to_org[d] = org
+
+    # Collect all domains already assigned (to avoid duplicates)
+    all_assigned = set()
+    for org in orgs:
+        all_assigned.update(org.get('email_domains', []))
+
+    # Detect wildcard DNS: test a nonsense subdomain for each parent domain
+    wildcard_domains = set()
+    for parent_domain in sorted(domain_to_org.keys()):
+        rate_limit_sleep(0.1)
+        canary = f'xq9z7nonsense.{parent_domain}'
+        if lookup_mx_records(canary):
+            wildcard_domains.add(parent_domain)
+            logger.debug(f"  Wildcard DNS detected: *.{parent_domain} — skipping")
+
+    if wildcard_domains:
+        logger.info(
+            f"Skipping {len(wildcard_domains)} domains with wildcard DNS: "
+            f"{', '.join(sorted(wildcard_domains)[:5])}{'...' if len(wildcard_domains) > 5 else ''}"
+        )
+
+    # Build reverse lookup: domain -> org that has it
+    domain_owner: dict[str, dict] = {}
+    for org in orgs:
+        for d in org.get('email_domains', []):
+            domain_owner[d] = org
+
+    domains_added = 0
+    probed = 0
+
+    for parent_domain, parent_org in sorted(domain_to_org.items()):
+        if parent_domain in wildcard_domains:
+            continue
+
+        for prefix in SUBDOMAIN_PREFIXES:
+            subdomain = f'{prefix}.{parent_domain}'
+
+            if subdomain in all_assigned:
+                # If already assigned to a different org, also add to the
+                # slug-matched parent (e.g. digital.cabinet-office.gov.uk
+                # was scraped from Civil Service but should also be on
+                # Cabinet Office since cabinet-office is its slug).
+                existing_owner = domain_owner.get(subdomain)
+                if existing_owner and existing_owner.get('id') != parent_org.get('id'):
+                    parent_domains = set(parent_org.get('email_domains', []))
+                    if subdomain not in parent_domains:
+                        add_email_domain(parent_org, subdomain, source='subdomain_probe')
+                        domains_added += 1
+                        logger.info(
+                            f"  Subdomain shared: {subdomain} -> {parent_org['title']} "
+                            f"(also on {existing_owner.get('title', '?')})"
+                        )
+                continue
+
+            probed += 1
+            rate_limit_sleep(0.1)
+            mx_records = lookup_mx_records(subdomain)
+
+            if not mx_records:
+                continue
+
+            # Assign to the org that owns the parent domain.
+            # We don't try to guess which child org uses the subdomain —
+            # the parent is the known owner of the domain.
+            add_email_domain(parent_org, subdomain, source='subdomain_probe')
+            all_assigned.add(subdomain)
+            domains_added += 1
+
+            mx_host = mx_records[0].get('host', '') if mx_records else ''
+            logger.info(
+                f"  Subdomain hit: {subdomain} -> {parent_org['title']} "
+                f"(MX: {mx_host})"
+            )
+
+    logger.info(f"Subdomain probing: {domains_added} domains added ({probed} probed)")
+    return domains_added
+
+
 def main(orgs_enriched: list[dict] | None = None) -> list[dict]:
     """
     Main enrichment pipeline:
@@ -487,6 +625,9 @@ def main(orgs_enriched: list[dict] | None = None) -> list[dict]:
 
     # Reverse matching: find orgs for unassigned domains
     reverse_match_unassigned_domains(enriched_orgs, domains)
+
+    # Subdomain probing: find digital.*, cyber.* etc. subdomains
+    probe_subdomain_email(enriched_orgs)
 
     # Summary statistics
     orgs_with_domains = sum(1 for org in enriched_orgs if org.get("email_domains"))

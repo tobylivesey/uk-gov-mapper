@@ -703,6 +703,22 @@
             background: #353e4e;
             color: #d0d4da;
         }
+
+        /* Cyber glitch transition */
+        .glitch-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .glitch-overlay canvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 <body>
@@ -1240,14 +1256,107 @@
         const cyberToggle = document.getElementById("cyber-toggle");
         const socNodeIds = new Set(graphData.nodes.filter(n => n.has_soc).map(n => n.id));
 
+        function triggerCyberTransition(entering, callback) {
+            const W = window.innerWidth, H = window.innerHeight;
+            const overlay = document.createElement('div');
+            overlay.className = 'glitch-overlay';
+            const canvas = document.createElement('canvas');
+            canvas.width = W;
+            canvas.height = H;
+            overlay.appendChild(canvas);
+            document.body.appendChild(overlay);
+            const ctx = canvas.getContext('2d');
+
+            const duration = 420;
+            const start = performance.now();
+            let switched = false;
+
+            function drawFrame(now) {
+                const t = Math.min((now - start) / duration, 1);
+                ctx.clearRect(0, 0, W, H);
+
+                // Intensity peaks in the middle, fades at edges
+                const intensity = Math.sin(t * Math.PI);
+                if (intensity < 0.01) {
+                    if (t >= 1) { overlay.remove(); return; }
+                    requestAnimationFrame(drawFrame);
+                    return;
+                }
+
+                // Switch mode at midpoint behind the glitch
+                if (!switched && t >= 0.4) {
+                    switched = true;
+                    callback();
+                }
+
+                // 1. Scan lines — thin horizontal lines with slight green tint
+                ctx.fillStyle = 'rgba(0, ' + (180 + Math.random() * 75 | 0) + ', 20, ' + (0.04 * intensity) + ')';
+                for (let y = 0; y < H; y += 2) {
+                    ctx.fillRect(0, y, W, 1);
+                }
+
+                // 2. Screen tear — horizontal slices displaced sideways
+                const tearCount = 2 + (intensity * 5 | 0);
+                for (let i = 0; i < tearCount; i++) {
+                    const y = Math.random() * H | 0;
+                    const sliceH = 1 + Math.random() * 4 | 0;
+                    const offset = (Math.random() - 0.5) * 40 * intensity;
+                    // Draw a bright green line at the tear edge
+                    ctx.fillStyle = 'rgba(0, 255, 65, ' + (0.15 * intensity) + ')';
+                    ctx.fillRect(offset, y, W, sliceH);
+                    // Bright seam
+                    ctx.fillStyle = 'rgba(0, 255, 65, ' + (0.4 * intensity) + ')';
+                    ctx.fillRect(0, y, W, 1);
+                }
+
+                // 3. Pixel block displacement — random rectangles shifted
+                const blockCount = 3 + (intensity * 8 | 0);
+                for (let i = 0; i < blockCount; i++) {
+                    const bx = Math.random() * W | 0;
+                    const by = Math.random() * H | 0;
+                    const bw = 20 + Math.random() * 120 | 0;
+                    const bh = 2 + Math.random() * 15 | 0;
+                    const shift = (Math.random() - 0.5) * 30 * intensity;
+
+                    // Shifted colour block (RGB channel split feel)
+                    ctx.globalAlpha = 0.12 * intensity;
+                    ctx.fillStyle = '#00ff41';
+                    ctx.fillRect(bx + shift, by, bw, bh);
+                    ctx.fillStyle = '#00ccff';
+                    ctx.fillRect(bx - shift * 0.5, by, bw, bh);
+                    ctx.globalAlpha = 1;
+                }
+
+                // 4. Occasional large horizontal displacement band
+                if (Math.random() < 0.3 * intensity) {
+                    const bandY = Math.random() * H | 0;
+                    const bandH = 10 + Math.random() * 40 | 0;
+                    const bandShift = (Math.random() - 0.5) * 80 * intensity;
+                    ctx.fillStyle = 'rgba(0, 255, 65, ' + (0.06 * intensity) + ')';
+                    ctx.fillRect(bandShift, bandY, W, bandH);
+                    // White flash line at band edges
+                    ctx.fillStyle = 'rgba(200, 255, 200, ' + (0.2 * intensity) + ')';
+                    ctx.fillRect(0, bandY, W, 1);
+                    ctx.fillRect(0, bandY + bandH, W, 1);
+                }
+
+                requestAnimationFrame(drawFrame);
+            }
+
+            requestAnimationFrame(drawFrame);
+        }
+
         cyberToggle.addEventListener("click", () => {
-            cyberFilterActive = !cyberFilterActive;
-            cyberToggle.classList.toggle("active", cyberFilterActive);
-            document.body.classList.toggle("cyber-mode", cyberFilterActive);
-            pinnedNode = null;
-            currentDetailNode = null;
-            detailPanel.classList.remove("visible");
-            applyCyberFilter();
+            const entering = !cyberFilterActive;
+            triggerCyberTransition(entering, () => {
+                cyberFilterActive = entering;
+                cyberToggle.classList.toggle("active", cyberFilterActive);
+                document.body.classList.toggle("cyber-mode", cyberFilterActive);
+                pinnedNode = null;
+                currentDetailNode = null;
+                detailPanel.classList.remove("visible");
+                applyCyberFilter();
+            });
         });
 
         function applyCyberFilter() {

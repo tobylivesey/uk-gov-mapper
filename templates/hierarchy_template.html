@@ -1331,9 +1331,10 @@
             clearHighlight();
         });
 
-        function createDetailRow(key, value, isLink, href) {
+        function createDetailRow(key, value, isLink, href, tooltip) {
             const row = document.createElement('div');
             row.className = 'detail-row';
+            if (tooltip) row.title = tooltip;
             const k = document.createElement('span');
             k.className = 'detail-key';
             k.textContent = key;
@@ -1363,8 +1364,8 @@
             while (detailBody.firstChild) detailBody.removeChild(detailBody.firstChild);
 
             detailBody.appendChild(createDetailRow('Type', d.format));
-            if (d.budget_display) detailBody.appendChild(createDetailRow('Gross Budget', d.budget_display));
-            if (d.headcount_display) detailBody.appendChild(createDetailRow('Headcount', d.headcount_display));
+            if (d.budget_display) detailBody.appendChild(createDetailRow('Gross Budget', d.budget_display, false, null, 'Source: OSCAR II 2024-25'));
+            if (d.headcount_display) detailBody.appendChild(createDetailRow('Headcount', d.headcount_display, false, null, 'Source: Civil Service Statistics 2025 (Table 8)'));
             if (d.domain) detailBody.appendChild(createDetailRow('Domain', d.domain.replace(/^https?:\/\//, ''), true, d.domain));
             if (d.email_domains && d.email_domains.length > 0) {
                 detailBody.appendChild(createDetailRow('Email Domains', d.email_domains.join(', ')));
@@ -1435,7 +1436,7 @@
                 const hdr = document.createElement('div');
                 hdr.className = 'detail-key';
                 hdr.style.cssText = 'color:#1d70b8;margin-bottom:0.4rem';
-                hdr.textContent = 'Tech stack';
+                hdr.textContent = 'Implied Tech stack';
                 section.appendChild(hdr);
 
                 const table = document.createElement('table');

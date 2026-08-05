@@ -43,6 +43,12 @@ def export_graph(output_path: Path) -> None:
         else:
             radius = 4
 
+        # Headcount-based radius
+        if headcount_val and headcount_val > 0:
+            hc_radius = max(3, min(18, math.sqrt(headcount_val) / 8))
+        else:
+            hc_radius = 4
+
         # Cyber data
         cyber_job_count = row.get('cyber_job_count', 0) or 0
         cyber_tech_stack = row.get('cyber_tech_stack', {})
@@ -54,14 +60,19 @@ def export_graph(output_path: Path) -> None:
             'format': fmt,
             'tier': tier,
             'radius': round(radius, 1),
+            'hc_radius': round(hc_radius, 1),
             'budget_display': format_budget(budget_val),
             'headcount': headcount_val,
             'headcount_display': format_headcount(headcount_val),
             'domain': row.get('best_domain', ''),
             'abbrev': abbrev,
-            'cyber_job_count': cyber_job_count,
-            'cyber_tech_stack': cyber_tech_stack if cyber_job_count > 0 else {},
+            'cyber_jobs': cyber_job_count,
+            'has_soc': bool(row.get('has_soc', False)),
+            'soc_evidence': row.get('soc_evidence', []) if row.get('has_soc') else [],
+            'tech_stack': cyber_tech_stack,
             'cyber_roles_sample': cyber_roles_sample,
+            'mail_providers': row.get('mail_providers', []),
+            'email_domains': row.get('email_domains', []),
         })
 
     # Build links from parent_organisations

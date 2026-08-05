@@ -27,6 +27,7 @@ python -m scripts.enrich_jobs
 ### Environment Setup
 - Create `.env` file with API credentials:
   - `ADZUNA_APP_ID` and `ADZUNA_APP_KEY` for Adzuna provider
+  - `SHODAN_API_KEY` for Shodan edge device discovery
 - Virtual environment: `venv/` directory contains Python dependencies
 - Install dependencies: `pip install -r requirements.txt`
 
@@ -40,7 +41,7 @@ python -m scripts.enrich_jobs
    python -m scripts.enrich_mailservers     # DNS MX lookups for email domains
    python -m scripts.enrich_parent_domains  # Inherit domains from parent orgs
    python -m scripts.enrich_govuk_domains   # Fill gaps from official domain list
-   python -m scripts.enrich_cyber           # Cyber team & tech stack from job postings
+   python -m scripts.enrich_cyber --shodan --ripe  # Cyber, Shodan edge devices & RIPE IP ranges
    ```
    - Output: `data/orgs/uk/govuk_orgs_enriched.json`
 
@@ -116,15 +117,18 @@ python -m scripts.enrich_jobs
   - MX validates each domain before adding
   - Matching strategies: slug_exact > abbreviation > slug_variation > fuzzy
 
-- **`enrich_cyber.py`**: Cyber security intelligence from job postings
-  - Sources: cs-jobs-scraper S3 CSV, normalized postings (PSR, Adzuna, Greenhouse)
+- **`enrich_cyber.py`**: Cyber security intelligence from job postings, Shodan & RIPE
+  - Sources: cs-jobs-scraper S3 CSV, normalized postings (PSR, Adzuna, Greenhouse), Shodan API, RIPEstat/RIPE DB APIs
   - Classifies cyber roles via title/description keyword matching
   - Extracts technology vendor mentions using `cyber/tech_taxonomy.py`
   - Fuzzy-matches job departments to gov.uk org titles
   - Adds `cyber_job_count`, `cyber_roles_sample`, `cyber_tech_stack` per org
+  - RIPE enrichment (`--ripe`): searches by org abbreviation, verifies country=GB via RIPE DB REST, gets announced prefixes
+  - Excludes cloud/ISP ASNs (AWS, Azure, Google, Cloudflare, BT, etc.)
+  - Adds `ripe_asns` (with holder name and prefixes) and `ripe_prefixes` per org
 
 ### Cyber Security Data Model
-Each org gets cyber intelligence fields derived from job posting analysis:
+Each org gets cyber intelligence fields derived from job posting analysis and Shodan:
 ```json
 {
   "cyber_job_count": 12,
@@ -137,7 +141,16 @@ Each org gets cyber intelligence fields derived from job posting analysis:
     "firewall": ["Palo Alto Networks"],
     "iam": ["CyberArk"],
     "vulnerability_management": ["Qualys"]
-  }
+  },
+  "shodan_edge_devices": [
+    {"vendor": "Palo Alto GlobalProtect", "filter": "os:\"PAN-OS\""}
+  ],
+  "shodan_asns": ["AS16509"],
+  "shodan_orgs": ["UK Cabinet Office"],
+  "ripe_asns": [
+    {"asn": "AS204222", "holder": "His Majesty's Revenue and Customs", "prefixes": ["163.171.0.0/18"]}
+  ],
+  "ripe_prefixes": ["163.171.0.0/18"]
 }
 ```
 
@@ -146,9 +159,24 @@ Each org gets cyber intelligence fields derived from job posting analysis:
 - `edr` - Endpoint Detection & Response (Visibility Triad: Endpoint Monitoring)
 - `ndr` - Network Detection & Response (Visibility Triad: Network Monitoring)
 - `soar` - Security Orchestration, Automation & Response
-- `firewall` - Firewall / Network Security
+- `firewall` - Firewall / Network Security (also merged into Edge Devices in visualisation)
 - `iam` - Identity & Access Management / Privileged Access Management
 - `vulnerability_management` - Vulnerability scanning & management
+
+**Shodan edge device discovery** (`--shodan` flag):
+- Searches Shodan by hostname across .gov.uk, .mod.uk, .police.uk TLDs
+- Detects: Palo Alto PAN-OS, Cisco ASA, Check Point, Citrix NetScaler, F5 BIG-IP, Fortinet, Juniper, Pulse/Ivanti, SonicWall
+- Matches hostnames to orgs via `email_domains`, preferring parent departments over child advisory bodies
+- Caches results in `data/shodan/edge_devices.json` (use `--shodan-cache` to reuse)
+- Requires `SHODAN_API_KEY` env var (dev plan: ~5-10 credits per run)
+
+**RIPE IP range discovery** (`--ripe` flag):
+- Three-phase approach: Search RIPEstat by org abbreviation → Verify country=GB via RIPE DB REST → Get announced prefixes
+- Excludes cloud/ISP ASNs (AWS, Azure, Google, Cloudflare, BT, etc.) via `CLOUD_ISP_ASNS` set
+- Matches RIPE org names to gov.uk orgs via `fuzzy_match_org()` (threshold=0.90)
+- Caches results in `data/ripe/ripe_asns.json` (use `--ripe-cache` to reuse)
+- No API key required (RIPEstat and RIPE DB REST are public APIs)
+- Adds `ripe_asns` (list of `{asn, holder, prefixes}`) and `ripe_prefixes` (flat list) per org
 
 ### Cyber Module (`cyber/`)
 - **`tech_taxonomy.py`**: Vendor keyword registry mapping 7 categories to vendor names and search patterns

@@ -32,6 +32,7 @@ TAXONOMY: dict[str, dict[str, list[str]]] = {
             "qradar",
         ],
         "Elastic Security": [
+            "elastic",
             "elastic siem",
             "elastic security",
             "elasticsearch security",

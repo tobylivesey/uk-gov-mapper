@@ -116,7 +116,7 @@ def build_hierarchy(df):
             'value': value,
             'headcount_value': headcount_value,
             'cyber_job_count': cyber_job_count,
-            'cyber_tech_stack': cyber_tech_stack if cyber_job_count > 0 else {},
+            'cyber_tech_stack': cyber_tech_stack,
             'cyber_roles_sample': cyber_roles_sample,
             'children': []
         }
@@ -298,7 +298,13 @@ def generate_hierarchy_chart(df, output_path: Path = None):
             'cyber_jobs': int(row.get('cyber_job_count', 0) or 0),
             'has_soc': bool(row.get('has_soc', False)),
             'soc_evidence': row.get('soc_evidence', []) if row.get('has_soc') else [],
-            'tech_stack': row.get('cyber_tech_stack', {}) if int(row.get('cyber_job_count', 0) or 0) > 0 else {},
+            'tech_stack': row.get('cyber_tech_stack', {}),
+            'mail_providers': row.get('mail_providers', []),
+            'email_domains': row.get('email_domains', []),
+            'edge_devices': row.get('shodan_edge_devices', []),
+            'ripe_asns': row.get('ripe_asns', []),
+            'ripe_inetnums': row.get('ripe_inetnums', []),
+            'ripe_prefixes': row.get('ripe_prefixes', []),
         })
 
     # Build links from parent_organisations

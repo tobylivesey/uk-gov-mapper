@@ -34,6 +34,12 @@ ORG_ALIASES = {
     'office of gas and electricity markets': 'ofgem',
     'office of qualifications and examinations regulation': 'ofqual',
     'water services regulation authority': 'ofwat',
+    # HMRC
+    'his majesty s revenue and customs': 'hm revenue and customs',
+    'hm revenue and customs': 'his majesty s revenue and customs',
+    # NPL
+    'npl management': 'national physical laboratory',
+    'national physical laboratory': 'npl management',
     # Supreme Court
     'uk supreme court': 'supreme court of the united kingdom',
     'supreme court of the united kingdom': 'uk supreme court',

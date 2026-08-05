@@ -158,20 +158,23 @@ _EXAMPLE_INDICATORS = re.compile(
     re.IGNORECASE,
 )
 
-# Sentence boundaries that close an example window
-_SENTENCE_END = re.compile(r"[.\n;]")
+# Sentence boundaries that close an example window.
+# Matches: period followed by space/end (real sentence end, not abbreviations),
+# newline, semicolon, or closing parenthesis.
+_SENTENCE_END = re.compile(r"\.(?:\s|$)|\n|;|\)")
 
 
 def _find_example_spans(text: str) -> list[tuple[int, int]]:
     """Find character ranges where tech mentions are likely examples, not confirmed usage."""
     spans = []
     for m in _EXAMPLE_INDICATORS.finditer(text):
-        start = m.start()
-        # Window extends to the next sentence boundary, or 200 chars max
-        rest = text[start:]
+        indicator_end = m.end()
+        # Search for sentence boundary AFTER the indicator text itself,
+        # so periods inside "e.g." don't close the window immediately.
+        rest = text[indicator_end:]
         end_match = _SENTENCE_END.search(rest)
-        end = start + end_match.start() if end_match else min(start + 200, len(text))
-        spans.append((start, end))
+        end = indicator_end + end_match.start() if end_match else min(indicator_end + 200, len(text))
+        spans.append((m.start(), end))
     return spans
 
 
@@ -223,25 +226,55 @@ def is_soc_role(title: str, description: str = "") -> bool:
     return False
 
 
+def _get_containing_span(pos: int, spans: list[tuple[int, int]]) -> tuple[int, int] | None:
+    """Return the example span containing a position, or None."""
+    for start, end in spans:
+        if start <= pos <= end:
+            return (start, end)
+    return None
+
+
+def _extract_sentence(text: str, pos: int, max_len: int = 200) -> str:
+    """Extract the sentence containing position `pos`, trimmed to max_len."""
+    # Search backwards for sentence start
+    start = 0
+    for i in range(pos - 1, -1, -1):
+        if text[i] in "\n" or (text[i] == "." and i + 1 < len(text) and text[i + 1] == " "):
+            start = i + 1
+            break
+
+    # Search forwards for sentence end
+    end = len(text)
+    for i in range(pos, len(text)):
+        if text[i] == "\n" or (text[i] == "." and i + 1 < len(text) and text[i + 1] == " "):
+            end = i + 1
+            break
+
+    sentence = text[start:end].strip()
+    if len(sentence) > max_len:
+        # Trim around the match position, keeping it centered
+        offset = pos - start
+        trim_start = max(0, offset - max_len // 2)
+        trim_end = min(len(sentence), trim_start + max_len)
+        sentence = ("..." if trim_start > 0 else "") + sentence[trim_start:trim_end].strip() + ("..." if trim_end < len(sentence) else "")
+
+    return sentence
+
+
 def extract_tech_mentions(text: str) -> dict[str, list[dict]]:
     """
     Scan text for cybersecurity vendor/product mentions with confidence tagging.
 
-    Each match is tagged "confirmed" (org likely uses this tool) or "example"
-    (mentioned as a desirable skill or example, e.g. "tools such as Splunk").
+    Confidence levels:
+    - "confirmed": mentioned outside any example/desirable context
+    - "probable": sole vendor named in an example context (e.g. "experience
+      with Splunk") — likely what the org actually uses
+    - "example": one of multiple vendors listed in an example context
+      (e.g. "tools such as Splunk, QRadar") — illustrative, not specific
 
     Returns a dict mapping each category to a list of
-    {"vendor": str, "confidence": str} dicts. Empty categories are included.
-
-    Example return:
-        {
-            "siem": [
-                {"vendor": "Microsoft Sentinel", "confidence": "confirmed"},
-                {"vendor": "Splunk", "confidence": "example"},
-            ],
-            "edr": [],
-            ...
-        }
+    {"vendor": str, "confidence": str, "snippet": str} dicts.
+    Empty categories are included.
     """
     if not text:
         return {cat: [] for cat in CATEGORIES}
@@ -250,20 +283,46 @@ def extract_tech_mentions(text: str) -> dict[str, list[dict]]:
 
     result = {}
     for cat in CATEGORIES:
-        found: dict[str, str] = {}  # vendor -> best confidence
+        # First pass: find all vendor matches with positions
+        found: dict[str, dict] = {}  # vendor -> {confidence, pos, snippet}
         for vendor, pattern in _compiled_taxonomy[cat]:
             if vendor in found:
                 continue
             m = pattern.search(text)
             if m:
-                confidence = "example" if _in_example_context(m.start(), example_spans) else "confirmed"
-                found[vendor] = confidence
+                in_example = _in_example_context(m.start(), example_spans)
+                found[vendor] = {
+                    "confidence": "example" if in_example else "confirmed",
+                    "pos": m.start(),
+                    "snippet": _extract_sentence(text, m.start()),
+                }
+
+        # Second pass: upgrade lone example vendors to "probable".
+        # If only one vendor from this category appears in an example span,
+        # it's likely the specific tool the org uses, not a generic example.
+        # But NOT if the span text contains list connectors (& / and / or / ,)
+        # which suggest multiple items even if we only recognise one.
+        example_vendors = [v for v, d in found.items() if d["confidence"] == "example"]
+        if example_vendors:
+            for vendor in example_vendors:
+                span = _get_containing_span(found[vendor]["pos"], example_spans)
+                if span:
+                    others_in_span = sum(
+                        1 for v in example_vendors
+                        if v != vendor and _get_containing_span(found[v]["pos"], example_spans) == span
+                    )
+                    if others_in_span == 0:
+                        # Check for list connectors in the span text
+                        span_text = text[span[0]:span[1]]
+                        has_list_connector = bool(re.search(
+                            r'\s+(?:&|and|or)\s+|,\s*\w', span_text, re.IGNORECASE
+                        ))
+                        if not has_list_connector:
+                            found[vendor]["confidence"] = "probable"
+
         result[cat] = sorted(
-            [{"vendor": v, "confidence": c} for v, c in found.items()],
+            [{"vendor": v, "confidence": d["confidence"], "snippet": d["snippet"]} for v, d in found.items()],
             key=lambda d: d["vendor"],
         )
 
     return result
-
-
-    return None

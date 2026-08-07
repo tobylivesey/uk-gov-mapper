@@ -28,6 +28,7 @@ python -m scripts.enrich_jobs
 - Create `.env` file with API credentials:
   - `ADZUNA_APP_ID` and `ADZUNA_APP_KEY` for Adzuna provider
   - `SHODAN_API_KEY` for Shodan edge device discovery
+  - `RIPE_DB_API_KEY` for RIPE DB REST API (base64-encoded key from https://my.ripe.net/#/api-keys)
 - Virtual environment: `venv/` directory contains Python dependencies
 - Install dependencies: `pip install -r requirements.txt`
 
@@ -175,7 +176,8 @@ Each org gets cyber intelligence fields derived from job posting analysis and Sh
 - Excludes cloud/ISP ASNs (AWS, Azure, Google, Cloudflare, BT, etc.) via `CLOUD_ISP_ASNS` set
 - Matches RIPE org names to gov.uk orgs via `fuzzy_match_org()` (threshold=0.90)
 - Caches results in `data/ripe/ripe_asns.json` (use `--ripe-cache` to reuse)
-- No API key required (RIPEstat and RIPE DB REST are public APIs)
+- Optional `RIPE_DB_API_KEY` env var for authenticated access (may reduce rate limiting)
+- Resumable: saves progress after each lookup, subsequent `--ripe` runs skip already-searched orgs/terms
 - Adds `ripe_asns` (list of `{asn, holder, prefixes}`) and `ripe_prefixes` (flat list) per org
 
 ### Cyber Module (`cyber/`)

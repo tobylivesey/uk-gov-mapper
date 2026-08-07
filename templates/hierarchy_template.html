@@ -577,6 +577,7 @@
             color: #505a5f;
             cursor: pointer;
             letter-spacing: 0.03em;
+            position: relative;
         }
 
         .highlight-btn:hover {
@@ -591,13 +592,24 @@
         }
 
         .highlight-btn .count {
-            font-size: 0.6rem;
+            position: absolute;
+            top: -0.45rem;
+            right: -0.45rem;
+            font-size: 0.55rem;
+            line-height: 1;
+            background: #1d70b8;
+            color: #fff;
+            border-radius: 9px;
+            padding: 0.15rem 0.35rem;
+            font-weight: 600;
+            min-width: 0.6rem;
+            text-align: center;
+            pointer-events: none;
+        }
+
+        .highlight-btn.active .count {
             background: #fff;
             color: #1d70b8;
-            border-radius: 8px;
-            padding: 0 0.35rem;
-            margin-left: 0.25rem;
-            font-weight: 500;
         }
 
         .highlight-dropdown {
@@ -1012,7 +1024,7 @@
                 <button class="filter-btn" id="size-equal">Equal</button>
             </div>
             <div class="highlight-control">
-                <button class="highlight-btn" id="highlight-btn">Highlight <span class="count" id="highlight-count" style="display:none">0</span></button>
+                <button class="highlight-btn" id="highlight-btn">Highlight<span class="count" id="highlight-count" style="display:none">0</span></button>
                 <div class="highlight-dropdown" id="highlight-dropdown">
                     <div class="highlight-header">
                         <button id="highlight-clear">Clear all</button>

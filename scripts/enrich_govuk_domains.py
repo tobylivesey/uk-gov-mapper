@@ -310,78 +310,6 @@ def enrich_orgs_with_govuk_domains(
     return orgs
 
 
-def find_best_org_for_domain(
-    domain: str,
-    orgs: list[dict],
-    threshold: float = 0.75
-) -> tuple[dict, float, str] | None:
-    """
-    Reverse matching: find the best org match for an unassigned domain.
-
-    Args:
-        domain: The domain to match
-        orgs: List of org dicts to search
-        threshold: Minimum score to accept
-
-    Returns:
-        Tuple of (org, score, method) or None if no good match
-    """
-    prefix = extract_domain_prefix(domain)
-    prefix_normalized = normalize_for_matching(prefix.replace('-', ' '))
-    prefix_words = set(prefix_normalized.split()) - STOPWORDS
-
-    best_match = None
-    best_score = 0.0
-    best_method = None
-
-    for org in orgs:
-        org_title = org.get("title", "")
-        org_slug = org.get("details", {}).get("slug", "")
-        org_abbr = org.get("details", {}).get("abbreviation", "")
-
-        title_normalized = normalize_for_matching(org_title)
-        title_words = set(title_normalized.split()) - STOPWORDS
-
-        score = 0.0
-        method = None
-
-        # Check if domain prefix matches slug (exact match, works for stopword domains)
-        if prefix == org_slug:
-            score = 1.0
-            method = "reverse_slug_exact"
-
-        # Check abbreviation match (exact match, works for stopword domains)
-        elif org_abbr and len(org_abbr) >= 3 and prefix.lower() == org_abbr.lower():
-            score = 0.95
-            method = "reverse_abbreviation"
-
-        # Only try fuzzy strategies if prefix has meaningful words
-        elif prefix_words:
-            # Check word overlap (need at least 2 meaningful words)
-            if len(title_words) >= 1:
-                word_overlap = title_words & prefix_words
-                if len(word_overlap) >= 2:
-                    overlap_ratio = len(word_overlap) / max(len(prefix_words), 1)
-                    score = 0.75 + (overlap_ratio * 0.15)
-                    method = "reverse_word_overlap"
-
-            # Fuzzy match for longer prefixes
-            if not method and len(prefix) >= 6:
-                ratio = SequenceMatcher(None, prefix_normalized, title_normalized).ratio()
-                if ratio >= 0.75:
-                    score = ratio * 0.85
-                    method = "reverse_fuzzy"
-
-        if score > best_score and score >= threshold:
-            best_score = score
-            best_match = org
-            best_method = method
-
-    if best_match:
-        return (best_match, best_score, best_method)
-    return None
-
-
 def reverse_match_unassigned_domains(
     orgs: list[dict],
     domains: set[str],
@@ -389,6 +317,9 @@ def reverse_match_unassigned_domains(
 ) -> int:
     """
     Find orgs for domains that weren't matched in the forward pass.
+
+    Uses pre-built indexes for slug/abbreviation lookups (O(1) each),
+    only falling back to fuzzy matching for domains that don't hit those.
 
     Args:
         orgs: List of org dicts (modified in place)
@@ -410,7 +341,6 @@ def reverse_match_unassigned_domains(
             continue
         if any(pattern in domain for pattern in DOMAIN_DENYLIST_PATTERNS):
             continue
-        # Skip very short prefixes
         prefix = extract_domain_prefix(domain)
         if len(prefix) < 4:
             continue
@@ -418,16 +348,65 @@ def reverse_match_unassigned_domains(
 
     logger.info(f"\nReverse matching: {len(unassigned)} unassigned domains")
 
+    # Pre-build O(1) lookup indexes
+    slug_to_org: dict[str, dict] = {}
+    abbr_to_org: dict[str, dict] = {}
+    # Pre-compute normalized titles and word sets once
+    org_index: list[tuple[dict, str, set[str]]] = []
+    for org in orgs:
+        slug = org.get("details", {}).get("slug", "")
+        abbr = (org.get("details", {}).get("abbreviation", "") or "").strip()
+        if slug:
+            slug_to_org[slug] = org
+        if abbr and len(abbr) >= 3:
+            abbr_to_org[abbr.lower()] = org
+        title_normalized = normalize_for_matching(org.get("title", ""))
+        title_words = set(title_normalized.split()) - STOPWORDS
+        org_index.append((org, title_normalized, title_words))
+
     domains_added = 0
 
-    for domain in unassigned:
-        result = find_best_org_for_domain(domain, orgs, threshold)
+    for di, domain in enumerate(unassigned):
+        if di > 0 and di % 500 == 0:
+            logger.info(f"  Reverse matching progress: {di}/{len(unassigned)}")
 
-        if not result:
+        prefix = extract_domain_prefix(domain)
+        org = None
+        score = 0.0
+        method = None
+
+        # Fast path: slug exact match (O(1))
+        if prefix in slug_to_org:
+            org = slug_to_org[prefix]
+            score = 1.0
+            method = "reverse_slug_exact"
+
+        # Fast path: abbreviation match (O(1))
+        if not org and prefix.lower() in abbr_to_org:
+            org = abbr_to_org[prefix.lower()]
+            score = 0.95
+            method = "reverse_abbreviation"
+
+        # Word overlap (only if fast paths missed)
+        if not org:
+            prefix_normalized = normalize_for_matching(prefix.replace('-', ' '))
+            prefix_words = set(prefix_normalized.split()) - STOPWORDS
+            if prefix_words:
+                best_score = 0.0
+                for cand_org, _, title_words in org_index:
+                    if title_words:
+                        word_overlap = title_words & prefix_words
+                        if len(word_overlap) >= 2:
+                            overlap_ratio = len(word_overlap) / max(len(prefix_words), 1)
+                            s = 0.75 + (overlap_ratio * 0.15)
+                            if s > best_score and s >= threshold:
+                                best_score = s
+                                org = cand_org
+                                score = s
+                                method = "reverse_word_overlap"
+
+        if not org or score < threshold:
             continue
-
-        org, score, method = result
-        org_title = org.get("title", "Unknown")
 
         # Check if org already has this domain
         if domain in org.get("email_domains", []):
@@ -443,6 +422,7 @@ def reverse_match_unassigned_domains(
 
         # Add to org
         add_email_domain(org, domain, source="govuk_domain_list")
+        org_title = org.get("title", "Unknown")
 
         domains_added += 1
         logger.info(f"  Reverse matched ({method}, {score:.2f}): {domain} -> {org_title}")

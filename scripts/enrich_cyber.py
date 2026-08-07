@@ -487,9 +487,13 @@ def _shodan_search(api, query: str, label: str) -> list[dict]:
     time.sleep(1.1)
     try:
         results = api.search(query)
-        if results["total"] > 0:
-            logger.info(f"  {label} | {query} -> {results['total']} hits")
-        return results.get("matches", [])
+        total = results["total"]
+        matches = results.get("matches", [])
+        if total > 0:
+            logger.info(f"  {label} | {query} -> {total} hits ({len(matches)} returned)")
+        else:
+            logger.debug(f"  {label} | {query} -> 0 hits")
+        return matches
     except Exception as e:
         if "upgrade" in str(e).lower() or "access denied" in str(e).lower():
             logger.warning(f"  {label} | {query} -> API limit: {e}")
@@ -613,10 +617,15 @@ def aggregate_shodan_results(
         if r.get("org"):
             data["shodan_orgs"].add(r["org"])
 
+    logger.info(f"Shodan: {len(results) - len(unmatched)}/{len(results)} results matched to {len(org_data)} orgs")
+    for oid, data in sorted(org_data.items(), key=lambda x: -len(x[1]["edge_devices"])):
+        org_title = org_by_id[oid]["title"] if oid in org_by_id else oid
+        logger.info(f"  {org_title}: {len(data['edge_devices'])} devices, {len(data['ip_addresses'])} IPs")
+
     if unmatched:
-        logger.info(f"Shodan: {len(unmatched)} results unmatched to any org")
-        for r in unmatched[:5]:
-            logger.info(f"  {r.get('hostnames', [])} - {r.get('org', '?')}")
+        logger.info(f"Shodan: {len(unmatched)} results unmatched to any org:")
+        for r in unmatched[:10]:
+            logger.info(f"  {r['ip_str']} {r.get('hostnames', [])} - {r.get('org', '?')} ({r.get('_device_label', '?')})")
 
     return org_data
 
@@ -679,13 +688,6 @@ def run_shodan_enrichment(orgs: list[dict], use_cache: bool = False) -> dict[str
         logger.info(f"Shodan credits remaining: {info.get('query_credits')}")
 
     org_data = aggregate_shodan_results(results, domain_to_org, orgs)
-
-    # Summary
-    for org_id, data in sorted(org_data.items(), key=lambda x: len(x[1]["edge_devices"]), reverse=True):
-        org_title = next((o["title"] for o in orgs if o["id"] == org_id), org_id)
-        vendors = sorted(set(d["vendor"] for d in data["edge_devices"]))
-        logger.info(f"  {org_title}: {', '.join(vendors)} ({len(data['edge_devices'])} hosts)")
-
     return org_data
 
 
@@ -737,8 +739,9 @@ def _ripe_get(endpoint: str, params: dict, timeout: float = 15.0) -> dict | None
         )
         if r.status_code == 200:
             return r.json().get("data", {})
+        logger.warning(f"RIPEstat {endpoint} returned {r.status_code} for {params.get('resource', '?')}")
     except Exception as e:
-        logger.debug(f"RIPE API error ({endpoint}): {e}")
+        logger.warning(f"RIPEstat {endpoint} error for {params.get('resource', '?')}: {e}")
     return None
 
 
@@ -787,9 +790,10 @@ def _ripe_db_get(path: str, timeout: float = 5.0) -> dict | None:
             _ripe_db_consecutive_429s = 0  # Reset on success
             if r.status_code == 200:
                 return r.json()
+            logger.debug(f"RIPE DB {path} returned {r.status_code}")
             return None
         except Exception as e:
-            logger.debug(f"RIPE DB error ({path}): {e}")
+            logger.warning(f"RIPE DB error ({path}): {e}")
             return None
     return None
 
@@ -1031,11 +1035,13 @@ def run_ripe_enrichment(orgs: list[dict], use_cache: bool = False) -> dict[str, 
 
         ripe_name, resources = _search_ripe_org_resources(org_title, org_abbrev)
         if not resources:
+            logger.debug(f"RIPE DB: {org_title} -> no resources found")
             continue
 
         # Fuzzy-verify the RIPE org name matches our gov.uk org
         match_name, score = fuzzy_match_org(ripe_name, org_titles, set(), threshold=0.90)
         if not match_name:
+            logger.info(f"RIPE DB: {org_title} -> {ripe_name} (no fuzzy match, skipped)")
             continue
         matched_id = org_id_by_title.get(match_name, "")
 
@@ -1067,6 +1073,11 @@ def run_ripe_enrichment(orgs: list[dict], use_cache: bool = False) -> dict[str, 
         )
 
     logger.info(f"RIPE Strategy A: found {sum(1 for d in org_ripe.values() if d['asns'] or d['inetnums'])} orgs with resources")
+
+    # Reset rate-limit counter between strategies — Strategy B searches use
+    # RIPEstat (different API), and verification uses RIPE DB REST which may
+    # have recovered by the time we reach it
+    _ripe_db_consecutive_429s = 0
 
     # --- Strategy B: RIPEstat abbreviation search for ASNs ---
     # Catches orgs whose RIPE org-name differs from gov.uk title
@@ -1108,7 +1119,7 @@ def run_ripe_enrichment(orgs: list[dict], use_cache: bool = False) -> dict[str, 
 
         # Filter 2: Cap candidates per abbreviation
         if len(results) > MAX_CANDIDATES_PER_TERM:
-            logger.debug(f"RIPE: skipping '{term}' — {len(results)} ASNs (too ambiguous)")
+            logger.info(f"RIPE: skipping '{term}' — {len(results)} ASNs (too ambiguous)")
             skipped_ambiguous += 1
             continue
 
@@ -1117,6 +1128,8 @@ def run_ripe_enrichment(orgs: list[dict], use_cache: bool = False) -> dict[str, 
         org_tokens = get_significant_tokens(org_title)
         term_lower = term.lower()
 
+        term_accepted = 0
+        term_rejected = 0
         for asn, desc in results:
             if asn in CLOUD_ISP_ASNS or asn in seen_asns:
                 continue
@@ -1130,8 +1143,14 @@ def run_ripe_enrichment(orgs: list[dict], use_cache: bool = False) -> dict[str, 
 
             if term_in_desc or token_overlap:
                 candidate_asns[asn].add(org_id)
+                term_accepted += 1
+                logger.debug(f"RIPE: '{term}' -> {asn} ({desc}) ACCEPTED")
             else:
                 skipped_no_overlap += 1
+                term_rejected += 1
+
+        if term_accepted or len(results) > 0:
+            logger.info(f"RIPE: '{term}' ({org_title}): {len(results)} results, {term_accepted} accepted, {term_rejected} filtered")
 
     logger.info(
         f"RIPE: found {len(candidate_asns)} new candidate ASNs "
@@ -1149,11 +1168,15 @@ def run_ripe_enrichment(orgs: list[dict], use_cache: bool = False) -> dict[str, 
         if _ripe_db_consecutive_429s >= 10:
             logger.warning(f"RIPE DB: bailing out of ASN verification at {i}/{len(candidate_asns)} due to persistent rate limiting")
             break
-        if i > 0 and i % 200 == 0:
+        if i > 0 and i % 25 == 0:
             logger.info(f"RIPE verify progress: {i}/{len(candidate_asns)}")
 
         org_name, country = _check_asn_gb(asn)
-        if country != "GB" or not org_name:
+        if not org_name:
+            logger.debug(f"RIPE: {asn} -> no org data found")
+            continue
+        if country != "GB":
+            logger.debug(f"RIPE: {asn} = {org_name} -> country={country} (skipped, not GB)")
             continue
 
         match_name, score = fuzzy_match_org(org_name, org_titles, set(), threshold=0.90)

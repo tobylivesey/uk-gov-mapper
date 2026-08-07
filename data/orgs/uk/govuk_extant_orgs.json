@@ -4764,6 +4764,10 @@
       {
         "id": "https://www.gov.uk/api/organisations/independent-football-regulator",
         "web_url": "https://www.gov.uk/government/organisations/independent-football-regulator"
+      },
+      {
+        "id": "https://www.gov.uk/api/organisations/office-for-digital-identities-and-attributes",
+        "web_url": "https://www.gov.uk/government/organisations/office-for-digital-identities-and-attributes"
       }
     ],
     "superseded_organisations": [
@@ -15998,13 +16002,13 @@
     "id": "https://www.gov.uk/api/organisations/office-for-digital-identities-and-attributes",
     "title": "Office for Digital Identities and Attributes",
     "format": "Sub organisation",
-    "updated_at": "2025-07-03T15:04:38Z",
+    "updated_at": "2026-08-06T10:30:34Z",
     "web_url": "https://www.gov.uk/government/organisations/office-for-digital-identities-and-attributes",
     "details": {
       "slug": "office-for-digital-identities-and-attributes",
       "abbreviation": "OfDIA",
       "logo_formatted_name": "Office for Digital<br/>Identities &amp; Attributes",
-      "organisation_brand_colour_class_name": "department-for-science-innovation-technology",
+      "organisation_brand_colour_class_name": "department-for-culture-media-sport",
       "organisation_logo_type_class_name": "single-identity",
       "closed_at": null,
       "govuk_status": "live",
@@ -16014,8 +16018,8 @@
     "analytics_identifier": "OT1429",
     "parent_organisations": [
       {
-        "id": "https://www.gov.uk/api/organisations/department-for-science-innovation-and-technology",
-        "web_url": "https://www.gov.uk/government/organisations/department-for-science-innovation-and-technology"
+        "id": "https://www.gov.uk/api/organisations/department-for-culture-media-and-sport",
+        "web_url": "https://www.gov.uk/government/organisations/department-for-culture-media-and-sport"
       }
     ],
     "child_organisations": [],
@@ -16825,7 +16829,7 @@
     "id": "https://www.gov.uk/api/organisations/office-of-the-public-guardian",
     "title": "Office of the Public Guardian",
     "format": "Executive agency",
-    "updated_at": "2026-06-09T11:22:41Z",
+    "updated_at": "2026-08-06T11:42:32Z",
     "web_url": "https://www.gov.uk/government/organisations/office-of-the-public-guardian",
     "details": {
       "slug": "office-of-the-public-guardian",
@@ -18302,6 +18306,34 @@
         "web_url": "https://www.gov.uk/government/organisations/race-disparity-unit"
       }
     ],
+    "superseding_organisations": []
+  },
+  {
+    "id": "https://www.gov.uk/api/organisations/radiation-protection-sciences",
+    "title": "Radiation Protection Sciences",
+    "format": "Sub organisation",
+    "updated_at": "2026-08-06T15:48:18Z",
+    "web_url": "https://www.gov.uk/government/organisations/radiation-protection-sciences",
+    "details": {
+      "slug": "radiation-protection-sciences",
+      "abbreviation": "RPS",
+      "logo_formatted_name": "Radiation Protection Sciences",
+      "organisation_brand_colour_class_name": "department-of-health-social-care",
+      "organisation_logo_type_class_name": "single-identity",
+      "closed_at": null,
+      "govuk_status": "joining",
+      "govuk_closed_status": null,
+      "content_id": "bc52354a-748d-4853-a2e7-aa1b61301df9"
+    },
+    "analytics_identifier": "OT1485",
+    "parent_organisations": [
+      {
+        "id": "https://www.gov.uk/api/organisations/uk-health-security-agency",
+        "web_url": "https://www.gov.uk/government/organisations/uk-health-security-agency"
+      }
+    ],
+    "child_organisations": [],
+    "superseded_organisations": [],
     "superseding_organisations": []
   },
   {
@@ -21698,6 +21730,10 @@
       {
         "id": "https://www.gov.uk/api/organisations/health-equity-in-health-protection-initiative",
         "web_url": "https://www.gov.uk/government/organisations/health-equity-in-health-protection-initiative"
+      },
+      {
+        "id": "https://www.gov.uk/api/organisations/radiation-protection-sciences",
+        "web_url": "https://www.gov.uk/government/organisations/radiation-protection-sciences"
       }
     ],
     "superseded_organisations": [

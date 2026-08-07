@@ -119,7 +119,8 @@ def lookup_mx_records(domain: str, timeout: float = 5.0) -> list[dict]:
         # Sort by priority (lower is higher priority)
         return sorted(mx_records, key=lambda x: x["priority"])
     except (dns.resolver.NXDOMAIN, dns.resolver.NoAnswer,
-            dns.resolver.NoNameservers, dns.resolver.Timeout):
+            dns.resolver.NoNameservers, dns.resolver.Timeout,
+            OSError):
         return []
     except Exception as e:
         print(f"Error looking up MX for {domain}: {e}")

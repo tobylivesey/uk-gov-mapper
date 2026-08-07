@@ -73,6 +73,10 @@ def export_graph(output_path: Path) -> None:
             'cyber_roles_sample': cyber_roles_sample,
             'mail_providers': row.get('mail_providers', []),
             'email_domains': row.get('email_domains', []),
+            'ripe_asns': row.get('ripe_asns', []) or [],
+            'ripe_prefixes': row.get('ripe_prefixes', []) or [],
+            'ripe_inetnums': row.get('ripe_inetnums', []) or [],
+            'shodan_edge_devices': row.get('shodan_edge_devices', []) or [],
         })
 
     # Build links from parent_organisations

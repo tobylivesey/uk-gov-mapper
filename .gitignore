@@ -13,6 +13,9 @@ settings.local.json
 job_listings/
 data/jobs
 
+# RIPE bulk data downloads (~225MB, re-downloadable)
+data/ripe/bulk/
+
 # Generated HTML visualizations (JSON exports used by blog instead)
 uk_gov_treemap_d3.html
 uk_gov_hierarchy.html

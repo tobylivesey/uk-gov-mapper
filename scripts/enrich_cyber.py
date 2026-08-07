@@ -19,6 +19,7 @@ shodan_edge_devices fields to govuk_orgs_enriched.json
 import argparse
 import base64
 import csv
+import gzip
 import io
 import json
 import logging
@@ -697,6 +698,15 @@ def run_shodan_enrichment(orgs: list[dict], use_cache: bool = False) -> dict[str
 
 RIPE_CACHE_DIR = DATA_DIR / "ripe"
 
+# RIPE DB REST API authentication — reduces rate limiting for authenticated users.
+# Create an API key at https://my.ripe.net/#/api-keys (requires RIPE NCC Access account).
+# Set RIPE_DB_API_KEY in .env as the base64-encoded key shown on creation.
+load_dotenv()
+_ripe_db_api_key = os.getenv("RIPE_DB_API_KEY", "").strip()
+_ripe_db_auth_headers = {"Accept": "application/json"}
+if _ripe_db_api_key:
+    _ripe_db_auth_headers["Authorization"] = f"Basic {_ripe_db_api_key}"
+
 # Cloud/ISP ASNs to exclude — these are infrastructure providers, not org-owned
 CLOUD_ISP_ASNS = {
     "AS16509",   # Amazon (AWS)
@@ -775,7 +785,7 @@ def _ripe_db_get(path: str, timeout: float = 5.0) -> dict | None:
         try:
             r = http_requests.get(
                 f"https://rest.db.ripe.net/ripe/{path}.json",
-                headers={"Accept": "application/json"},
+                headers=_ripe_db_auth_headers,
                 timeout=timeout,
             )
             if r.status_code == 429:
@@ -840,6 +850,310 @@ def _get_announced_prefixes(asn: str) -> list[str]:
     return [p["prefix"] for p in data.get("prefixes", [])]
 
 
+# ---------------------------------------------------------------------------
+# RIPE bulk data import — download daily DB dumps instead of REST API queries
+# ---------------------------------------------------------------------------
+
+RIPE_FTP_BASE = "https://ftp.ripe.net/ripe/dbase/split"
+RIPE_BULK_FILES = {
+    "organisation": "ripe.db.organisation.gz",
+    "aut-num": "ripe.db.aut-num.gz",
+    "inetnum": "ripe.db.inetnum.gz",
+}
+
+
+def _download_ripe_bulk(filename: str, cache_dir: Path) -> Path:
+    """Download a RIPE DB bulk file if not already cached."""
+    local_path = cache_dir / filename
+    if local_path.exists():
+        age_hours = (time.time() - local_path.stat().st_mtime) / 3600
+        if age_hours < 24:
+            logger.info(f"RIPE bulk: using cached {filename} ({age_hours:.0f}h old)")
+            return local_path
+        logger.info(f"RIPE bulk: re-downloading {filename} (cached file is {age_hours:.0f}h old)")
+
+    url = f"{RIPE_FTP_BASE}/{filename}"
+    logger.info(f"RIPE bulk: downloading {url} ...")
+    r = http_requests.get(url, stream=True, timeout=120)
+    r.raise_for_status()
+
+    cache_dir.mkdir(parents=True, exist_ok=True)
+    total = int(r.headers.get("content-length", 0))
+    downloaded = 0
+    with open(local_path, "wb") as f:
+        for chunk in r.iter_content(chunk_size=1024 * 256):
+            f.write(chunk)
+            downloaded += len(chunk)
+            if total and downloaded % (1024 * 1024 * 10) < 1024 * 256:
+                logger.info(f"  {downloaded / 1024 / 1024:.0f} / {total / 1024 / 1024:.0f} MB")
+
+    logger.info(f"RIPE bulk: saved {filename} ({downloaded / 1024 / 1024:.1f} MB)")
+    return local_path
+
+
+def _parse_rpsl_objects(gz_path: Path, wanted_attrs: set[str]) -> list[dict]:
+    """Parse a gzipped RPSL file into a list of attribute dicts.
+
+    Only extracts attributes listed in wanted_attrs (plus '_type' from the first attr).
+    Objects are separated by blank lines in RPSL format.
+    """
+    objects = []
+    current: dict[str, str] = {}
+    current_key = None
+
+    with gzip.open(gz_path, "rt", encoding="latin-1", errors="replace") as f:
+        for line in f:
+            # Skip comments and remarks
+            if line.startswith("%") or line.startswith("#"):
+                current_key = None
+                continue
+
+            # Blank line = end of object
+            if not line.strip():
+                if current:
+                    objects.append(current)
+                    current = {}
+                    current_key = None
+                continue
+
+            # Continuation line (starts with whitespace or +)
+            if line[0] in (" ", "\t", "+") and current_key:
+                if current_key in wanted_attrs:
+                    current[current_key] = current[current_key] + " " + line.strip().lstrip("+")
+                continue
+
+            # Regular attribute line: "key:  value"
+            if ":" in line:
+                key, _, value = line.partition(":")
+                key = key.strip().lower()
+                value = value.strip()
+                current_key = key
+
+                if not current:
+                    # First attribute = object type
+                    current["_type"] = key
+
+                if key in wanted_attrs:
+                    if key in current:
+                        # Some attrs repeat (e.g. mnt-by) — keep first only
+                        pass
+                    else:
+                        current[key] = value
+
+    # Final object
+    if current:
+        objects.append(current)
+
+    return objects
+
+
+def run_ripe_bulk_import(orgs: list[dict]) -> dict[str, dict]:
+    """Populate RIPE data from bulk database dumps instead of REST API.
+
+    Downloads organisation, aut-num, and inetnum files from RIPE FTP,
+    filters for GB entries, and matches to gov.uk organisations.
+
+    Matching strategy: match each gov.uk org (667) against the ~4K GB RIPE
+    org names, not the other way round — avoids 37K × 667 fuzzy comparisons.
+    Uses token overlap pre-filtering for speed.
+    """
+    cache_dir = RIPE_CACHE_DIR / "bulk"
+
+    # --- Step 1: Download bulk files ---
+    org_file = _download_ripe_bulk(RIPE_BULK_FILES["organisation"], cache_dir)
+    autnum_file = _download_ripe_bulk(RIPE_BULK_FILES["aut-num"], cache_dir)
+    inetnum_file = _download_ripe_bulk(RIPE_BULK_FILES["inetnum"], cache_dir)
+
+    # --- Step 2: Parse GB organisations ---
+    logger.info("RIPE bulk: parsing organisation objects...")
+    org_objects = _parse_rpsl_objects(org_file, {"organisation", "org-name", "country"})
+    gb_orgs: dict[str, str] = {}  # org_ref -> org_name
+    for o in org_objects:
+        if o.get("country", "").upper() == "GB" and o.get("organisation"):
+            gb_orgs[o["organisation"]] = o.get("org-name", "")
+    logger.info(f"RIPE bulk: {len(gb_orgs)} GB organisations (out of {len(org_objects)} total)")
+
+    # --- Step 3: Parse aut-num objects linked to GB orgs ---
+    logger.info("RIPE bulk: parsing aut-num objects...")
+    autnum_objects = _parse_rpsl_objects(autnum_file, {"aut-num", "as-name", "org", "country"})
+    # org_ref -> list of ASN info dicts
+    asns_by_org: dict[str, list[dict]] = defaultdict(list)
+    for obj in autnum_objects:
+        asn = obj.get("aut-num", "")
+        org_ref = obj.get("org", "")
+        country = obj.get("country", "").upper()
+        if not asn or asn in CLOUD_ISP_ASNS:
+            continue
+        if org_ref in gb_orgs:
+            asns_by_org[org_ref].append({
+                "asn": asn,
+                "holder": gb_orgs[org_ref],
+                "as_name": obj.get("as-name", ""),
+            })
+        elif country == "GB" and org_ref:
+            asns_by_org[org_ref].append({
+                "asn": asn,
+                "holder": obj.get("as-name", asn),
+                "as_name": obj.get("as-name", ""),
+            })
+    total_gb_asns = sum(len(v) for v in asns_by_org.values())
+    logger.info(f"RIPE bulk: {total_gb_asns} GB ASNs across {len(asns_by_org)} orgs (excluding cloud/ISP)")
+
+    # --- Step 4: Parse inetnum objects linked to GB orgs ---
+    # Only parse inetnums for org_refs that have a GB organisation record
+    # This avoids loading 80K+ ranges for random GB businesses
+    logger.info("RIPE bulk: parsing inetnum objects (filtering to known GB orgs)...")
+    inetnum_objects = _parse_rpsl_objects(inetnum_file, {"inetnum", "netname", "org", "country"})
+    inetnums_by_org: dict[str, list[str]] = defaultdict(list)
+    for obj in inetnum_objects:
+        inetnum = obj.get("inetnum", "")
+        org_ref = obj.get("org", "")
+        if not inetnum or not org_ref:
+            continue
+        if org_ref in gb_orgs:
+            inetnums_by_org[org_ref].append(inetnum)
+    total_gb_inetnums = sum(len(v) for v in inetnums_by_org.values())
+    logger.info(f"RIPE bulk: {total_gb_inetnums} GB inetnum ranges across {len(inetnums_by_org)} orgs")
+
+    # --- Step 5: Match gov.uk orgs -> RIPE orgs ---
+    # Direction: iterate 667 gov.uk orgs, find matching RIPE org_ref.
+    # Pre-build token index for fast candidate narrowing.
+    ripe_org_names = list(gb_orgs.values())
+    ripe_ref_by_name: dict[str, list[str]] = defaultdict(list)
+    for ref, name in gb_orgs.items():
+        ripe_ref_by_name[name].append(ref)
+
+    # Build inverted token index: token -> set of RIPE org names
+    ripe_token_index: dict[str, set[str]] = defaultdict(set)
+    for name in set(ripe_org_names):
+        for token in get_significant_tokens(name):
+            ripe_token_index[token].add(name)
+
+    org_ref_to_govuk: dict[str, str] = {}  # RIPE org_ref -> gov.uk org_id
+    matched_count = 0
+
+    logger.info(f"RIPE bulk: matching {len(orgs)} gov.uk orgs against {len(gb_orgs)} RIPE GB orgs")
+    for i, org in enumerate(orgs):
+        if i > 0 and i % 100 == 0:
+            logger.info(f"  Matching progress: {i}/{len(orgs)} ({matched_count} matched)")
+
+        org_title = org.get("title", "")
+        org_id = org.get("id", "")
+        org_tokens = get_significant_tokens(org_title)
+        details = org.get("details", {})
+        abbrev = ""
+        if isinstance(details, dict):
+            abbrev = (details.get("abbreviation", "") or "").strip().lower()
+
+        # Find candidate RIPE names that share at least one significant token
+        candidate_names: set[str] = set()
+        for token in org_tokens:
+            if token in ripe_token_index:
+                candidate_names.update(ripe_token_index[token])
+
+        # Also check if abbreviation appears in any RIPE org name
+        if abbrev and len(abbrev) >= 3:
+            for name in ripe_org_names:
+                if abbrev in name.lower().split():
+                    candidate_names.add(name)
+
+        if not candidate_names:
+            continue
+
+        # Fuzzy match against candidates only (not all 4K names)
+        match_name, score = fuzzy_match_org(
+            org_title, list(candidate_names), set(), threshold=0.90
+        )
+        if match_name:
+            matched_count += 1
+            for ref in ripe_ref_by_name.get(match_name, []):
+                org_ref_to_govuk[ref] = org_id
+            logger.debug(f"RIPE bulk: '{org_title}' -> '{match_name}' (score={score:.2f})")
+
+    logger.info(f"RIPE bulk: matched {matched_count}/{len(orgs)} gov.uk orgs to RIPE organisations")
+
+    # --- Step 6: Build result structure ---
+    org_ripe: dict[str, dict] = {}
+
+    def _ensure_org(org_id: str):
+        if org_id not in org_ripe:
+            org_ripe[org_id] = {"asns": [], "inetnums": []}
+
+    seen_asns: set[str] = set()
+    for org_ref, asn_list in asns_by_org.items():
+        govuk_id = org_ref_to_govuk.get(org_ref)
+        if not govuk_id:
+            continue
+        for info in asn_list:
+            asn = info["asn"]
+            if asn in seen_asns:
+                continue
+            seen_asns.add(asn)
+            _ensure_org(govuk_id)
+            org_ripe[govuk_id]["asns"].append({
+                "asn": asn,
+                "holder": info["holder"],
+                "prefixes": [],
+            })
+
+    for org_ref, inet_list in inetnums_by_org.items():
+        govuk_id = org_ref_to_govuk.get(org_ref)
+        if not govuk_id:
+            continue
+        _ensure_org(govuk_id)
+        org_ripe[govuk_id]["inetnums"].extend(inet_list)
+
+    # --- Step 7: Fetch announced prefixes via RIPEstat (not rate-limited) ---
+    all_asn_entries = [
+        (org_id, a) for org_id, d in org_ripe.items() for a in d["asns"]
+    ]
+    logger.info(f"RIPE bulk: fetching announced prefixes for {len(all_asn_entries)} ASNs via RIPEstat")
+    for i, (org_id, asn_info) in enumerate(all_asn_entries):
+        if i > 0 and i % 25 == 0:
+            logger.info(f"  Prefix fetch progress: {i}/{len(all_asn_entries)}")
+        prefixes = _get_announced_prefixes(asn_info["asn"])
+        asn_info["prefixes"] = prefixes
+
+    # Remove empty entries
+    org_ripe = {oid: d for oid, d in org_ripe.items() if d["asns"] or d["inetnums"]}
+
+    # Save as standard RIPE cache (compatible with --ripe-cache and incremental --ripe)
+    cache_path = RIPE_CACHE_DIR / "ripe_asns.json"
+    # Mark all Strategy A orgs and Strategy B terms as searched so incremental
+    # runs don't redo them
+    all_org_ids = {o.get("id", "") for o in orgs}
+    all_abbrevs = set()
+    for o in orgs:
+        details = o.get("details", {})
+        if isinstance(details, dict):
+            abbr = (details.get("abbreviation", "") or "").strip()
+            if abbr and len(abbr) >= 3:
+                all_abbrevs.add(abbr)
+
+    _save_ripe_cache(
+        cache_path, org_ripe,
+        searched_org_ids=all_org_ids,
+        searched_terms=all_abbrevs,
+        verified_asns=seen_asns,
+    )
+
+    # Summary
+    total_asns = sum(len(d["asns"]) for d in org_ripe.values())
+    total_inetnums = sum(len(d["inetnums"]) for d in org_ripe.values())
+    total_prefixes = sum(len(a["prefixes"]) for d in org_ripe.values() for a in d["asns"])
+    logger.info(f"RIPE bulk: {len(org_ripe)} orgs, {total_asns} ASNs, {total_inetnums} IP ranges, {total_prefixes} announced prefixes")
+    for org_id, data in org_ripe.items():
+        org_title = next((o["title"] for o in orgs if o["id"] == org_id), org_id)
+        parts = []
+        for a in data["asns"]:
+            parts.append(f"{a['asn']} ({len(a['prefixes'])} prefixes)")
+        if data["inetnums"]:
+            parts.append(f"{len(data['inetnums'])} direct IP ranges")
+        logger.info(f"  {org_title}: {', '.join(parts)}")
+
+    return org_ripe
+
+
 def _ripe_db_search(query: str, type_filter: str = "organisation",
                     inverse_attr: str | None = None) -> list[dict]:
     """Search RIPE DB REST API. Returns list of parsed objects."""
@@ -855,7 +1169,7 @@ def _ripe_db_search(query: str, type_filter: str = "organisation",
             r = http_requests.get(
                 "https://rest.db.ripe.net/search.json",
                 params=params,
-                headers={"Accept": "application/json"},
+                headers=_ripe_db_auth_headers,
                 timeout=10,
             )
             if r.status_code == 429:
@@ -958,6 +1272,51 @@ def _search_ripe_org_resources(org_title: str, abbrev: str = "") -> tuple[str | 
     return org_name, resources
 
 
+def _load_ripe_cache(cache_path: Path) -> tuple[dict[str, dict], set[str], set[str], set[str]]:
+    """Load RIPE cache with progress metadata for resumable enrichment.
+
+    Returns (results, searched_org_ids, searched_terms, verified_asns).
+    Handles both old format (flat dict) and new format (with _progress key).
+    """
+    if not cache_path.exists():
+        return {}, set(), set(), set()
+
+    with open(cache_path, encoding="utf-8") as f:
+        cached = json.load(f)
+
+    # New format: has _progress key with search metadata
+    if "_progress" in cached:
+        progress = cached.pop("_progress")
+        return (
+            cached,
+            set(progress.get("searched_org_ids", [])),
+            set(progress.get("searched_terms", [])),
+            set(progress.get("verified_asns", [])),
+        )
+
+    # Old format: flat org_id -> {asns, inetnums} dict — no progress info
+    return cached, set(), set(), set()
+
+
+def _save_ripe_cache(
+    cache_path: Path,
+    org_ripe: dict[str, dict],
+    searched_org_ids: set[str],
+    searched_terms: set[str],
+    verified_asns: set[str],
+) -> None:
+    """Save RIPE results with progress metadata for resume on next run."""
+    payload = dict(org_ripe)  # shallow copy
+    payload["_progress"] = {
+        "searched_org_ids": sorted(searched_org_ids),
+        "searched_terms": sorted(searched_terms),
+        "verified_asns": sorted(verified_asns),
+    }
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(cache_path, "w", encoding="utf-8") as f:
+        json.dump(payload, f, indent=2, ensure_ascii=False)
+
+
 def run_ripe_enrichment(orgs: list[dict], use_cache: bool = False) -> dict[str, dict]:
     """Look up RIPE-registered IP ranges and ASNs for government organisations.
 
@@ -969,31 +1328,54 @@ def run_ripe_enrichment(orgs: list[dict], use_cache: bool = False) -> dict[str, 
        verify country=GB, get announced prefixes. Catches orgs like HMRC
        whose RIPE org-name differs from the gov.uk title.
 
+    Resumable: saves progress after each successful lookup so subsequent runs
+    skip already-searched orgs/terms/ASNs and accumulate results over time.
+
     Returns dict mapping org id -> {asns: [...], inetnums: [...]}.
     """
+    global _ripe_db_consecutive_429s
     cache_path = RIPE_CACHE_DIR / "ripe_asns.json"
 
+    if _ripe_db_api_key:
+        logger.info("RIPE DB: using authenticated API key")
+    else:
+        logger.info("RIPE DB: unauthenticated (set RIPE_DB_API_KEY for better rate limits)")
+
     if use_cache and cache_path.exists():
-        with open(cache_path, encoding="utf-8") as f:
-            cached = json.load(f)
+        cached, _, _, _ = _load_ripe_cache(cache_path)
         logger.info(f"Loaded {len(cached)} cached RIPE results from {cache_path}")
         return cached
+
+    # Load existing progress for resume
+    org_ripe, prev_searched_orgs, prev_searched_terms, prev_verified_asns = _load_ripe_cache(cache_path)
+    if prev_searched_orgs or prev_searched_terms or prev_verified_asns:
+        logger.info(
+            f"Resuming RIPE enrichment: {len(org_ripe)} orgs with results, "
+            f"{len(prev_searched_orgs)} Strategy A orgs done, "
+            f"{len(prev_searched_terms)} Strategy B terms done, "
+            f"{len(prev_verified_asns)} ASNs verified"
+        )
+
+    # Track progress for this run (union with previous)
+    searched_org_ids = set(prev_searched_orgs)
+    searched_terms = set(prev_searched_terms)
+    verified_asns = set(prev_verified_asns)
 
     # Build lookup structures
     org_titles = [o.get("title", "") for o in orgs]
     org_id_by_title = {o.get("title", ""): o.get("id", "") for o in orgs}
 
-    # Result accumulator: org_id -> {asns: [...], inetnums: [...]}
-    org_ripe: dict[str, dict] = {}
-    seen_asns: set[str] = set()  # Track ASNs already found to avoid duplicates
+    # Collect ASNs already found to avoid duplicates
+    seen_asns: set[str] = set()
+    for d in org_ripe.values():
+        for a in d.get("asns", []):
+            seen_asns.add(a["asn"])
 
     def _ensure_org(org_id: str):
         if org_id not in org_ripe:
             org_ripe[org_id] = {"asns": [], "inetnums": []}
 
     # --- Strategy A: RIPE DB org search by title ---
-    # Search major org types (departments, agencies, NDPBs) by full title.
-    # Uses RIPE DB REST API which has strict rate limits — check availability first.
     searchable_formats = {
         "Ministerial department", "Non-ministerial department",
         "Executive agency", "Executive office",
@@ -1001,86 +1383,83 @@ def run_ripe_enrichment(orgs: list[dict], use_cache: bool = False) -> dict[str, 
     }
     search_orgs = [o for o in orgs if o.get("format") in searchable_formats]
 
-    # Quick availability check — skip Strategy A if RIPE DB is rate-limiting us
-    try:
-        _probe = http_requests.get(
-            "https://rest.db.ripe.net/search.json",
-            params={"query-string": "test", "type-filter": "organisation", "source": "ripe"},
-            headers={"Accept": "application/json"},
-            timeout=5,
-        )
-        ripe_db_available = _probe.status_code != 429
-    except Exception:
-        ripe_db_available = False
-
-    if not ripe_db_available:
-        logger.warning("RIPE DB REST API is rate-limited — skipping Strategy A (org search)")
-        logger.warning("Re-run later or use --ripe-cache to include these results")
-        search_orgs = []
-    else:
-        logger.info(f"RIPE Strategy A: searching {len(search_orgs)} orgs by title in RIPE DB")
-
-    for i, org in enumerate(search_orgs):
-        if _ripe_db_consecutive_429s >= 10:
-            logger.warning(f"RIPE DB: bailing out of Strategy A at org {i}/{len(search_orgs)} due to persistent rate limiting")
-            break
-        if i > 0 and i % 50 == 0:
-            logger.info(f"RIPE DB search progress: {i}/{len(search_orgs)}")
-        org_id = org.get("id", "")
-        org_title = org.get("title", "")
-        details = org.get("details", {})
-        org_abbrev = ""
-        if isinstance(details, dict):
-            org_abbrev = (details.get("abbreviation", "") or "").strip()
-
-        ripe_name, resources = _search_ripe_org_resources(org_title, org_abbrev)
-        if not resources:
-            logger.debug(f"RIPE DB: {org_title} -> no resources found")
-            continue
-
-        # Fuzzy-verify the RIPE org name matches our gov.uk org
-        match_name, score = fuzzy_match_org(ripe_name, org_titles, set(), threshold=0.90)
-        if not match_name:
-            logger.info(f"RIPE DB: {org_title} -> {ripe_name} (no fuzzy match, skipped)")
-            continue
-        matched_id = org_id_by_title.get(match_name, "")
-
-        _ensure_org(matched_id)
-        for res in resources:
-            res_type = res.get("_type", "")
-            if res_type == "aut-num":
-                asn = res.get("aut-num", "")
-                if asn and asn not in CLOUD_ISP_ASNS and asn not in seen_asns:
-                    seen_asns.add(asn)
-                    org_ripe[matched_id]["asns"].append({
-                        "asn": asn,
-                        "holder": ripe_name,
-                        "prefixes": [],  # Filled in later
-                    })
-            elif res_type == "inetnum":
-                inetnum = res.get("inetnum", "")
-                if inetnum:
-                    org_ripe[matched_id]["inetnums"].append(inetnum)
-            elif res_type == "inet6num":
-                inet6num = res.get("inet6num", "")
-                if inet6num:
-                    org_ripe[matched_id]["inetnums"].append(inet6num)
-
+    # Filter out already-searched orgs
+    remaining_a = [o for o in search_orgs if o.get("id", "") not in searched_org_ids]
+    if remaining_a:
         logger.info(
-            f"RIPE DB: {org_title} -> {ripe_name}: "
-            f"{sum(1 for r in resources if r['_type'] == 'aut-num')} ASNs, "
-            f"{sum(1 for r in resources if r['_type'] in ('inetnum', 'inet6num'))} IP ranges"
+            f"RIPE Strategy A: {len(remaining_a)} orgs remaining "
+            f"({len(searched_org_ids)} already searched in previous runs)"
         )
 
-    logger.info(f"RIPE Strategy A: found {sum(1 for d in org_ripe.values() if d['asns'] or d['inetnums'])} orgs with resources")
+        for i, org in enumerate(remaining_a):
+            if _ripe_db_consecutive_429s >= 10:
+                logger.warning(f"RIPE DB: bailing out of Strategy A at org {i}/{len(remaining_a)} due to persistent rate limiting")
+                break
+            if i > 0 and i % 50 == 0:
+                logger.info(f"RIPE DB search progress: {i}/{len(remaining_a)}")
+            org_id = org.get("id", "")
+            org_title = org.get("title", "")
+            details = org.get("details", {})
+            org_abbrev = ""
+            if isinstance(details, dict):
+                org_abbrev = (details.get("abbreviation", "") or "").strip()
 
-    # Reset rate-limit counter between strategies — Strategy B searches use
-    # RIPEstat (different API), and verification uses RIPE DB REST which may
-    # have recovered by the time we reach it
+            ripe_name, resources = _search_ripe_org_resources(org_title, org_abbrev)
+
+            # Mark as searched regardless of results
+            searched_org_ids.add(org_id)
+
+            if not resources:
+                logger.debug(f"RIPE DB: {org_title} -> no resources found")
+                _save_ripe_cache(cache_path, org_ripe, searched_org_ids, searched_terms, verified_asns)
+                continue
+
+            # Fuzzy-verify the RIPE org name matches our gov.uk org
+            match_name, score = fuzzy_match_org(ripe_name, org_titles, set(), threshold=0.90)
+            if not match_name:
+                logger.info(f"RIPE DB: {org_title} -> {ripe_name} (no fuzzy match, skipped)")
+                _save_ripe_cache(cache_path, org_ripe, searched_org_ids, searched_terms, verified_asns)
+                continue
+            matched_id = org_id_by_title.get(match_name, "")
+
+            _ensure_org(matched_id)
+            for res in resources:
+                res_type = res.get("_type", "")
+                if res_type == "aut-num":
+                    asn = res.get("aut-num", "")
+                    if asn and asn not in CLOUD_ISP_ASNS and asn not in seen_asns:
+                        seen_asns.add(asn)
+                        org_ripe[matched_id]["asns"].append({
+                            "asn": asn,
+                            "holder": ripe_name,
+                            "prefixes": [],  # Filled in later
+                        })
+                elif res_type == "inetnum":
+                    inetnum = res.get("inetnum", "")
+                    if inetnum:
+                        org_ripe[matched_id]["inetnums"].append(inetnum)
+                elif res_type == "inet6num":
+                    inet6num = res.get("inet6num", "")
+                    if inet6num:
+                        org_ripe[matched_id]["inetnums"].append(inet6num)
+
+            logger.info(
+                f"RIPE DB: {org_title} -> {ripe_name}: "
+                f"{sum(1 for r in resources if r['_type'] == 'aut-num')} ASNs, "
+                f"{sum(1 for r in resources if r['_type'] in ('inetnum', 'inet6num'))} IP ranges"
+            )
+
+            # Save progress after each org with results
+            _save_ripe_cache(cache_path, org_ripe, searched_org_ids, searched_terms, verified_asns)
+    else:
+        logger.info(f"RIPE Strategy A: all {len(search_orgs)} orgs already searched in previous runs")
+
+    logger.info(f"RIPE Strategy A: {sum(1 for d in org_ripe.values() if d['asns'] or d['inetnums'])} orgs with resources total")
+
+    # Reset rate-limit counter between strategies
     _ripe_db_consecutive_429s = 0
 
     # --- Strategy B: RIPEstat abbreviation search for ASNs ---
-    # Catches orgs whose RIPE org-name differs from gov.uk title
     strategy_a_org_ids = {o.get("id", "") for o in search_orgs}
     org_title_by_id = {o.get("id", ""): o.get("title", "") for o in orgs}
 
@@ -1097,25 +1476,31 @@ def run_ripe_enrichment(orgs: list[dict], use_cache: bool = False) -> dict[str, 
             if abbrev and len(abbrev) >= 3:
                 search_terms.append((abbrev, org_id))
 
+    # Filter out already-searched terms
+    remaining_terms = [(t, oid) for t, oid in search_terms if t not in searched_terms]
     logger.info(
-        f"RIPE Strategy B: searching {len(search_terms)} abbreviations via RIPEstat "
-        f"(skipped {skipped_strategy_a} orgs already in Strategy A)"
+        f"RIPE Strategy B: {len(remaining_terms)} abbreviations remaining "
+        f"({len(search_terms) - len(remaining_terms)} already searched, "
+        f"{skipped_strategy_a} skipped as Strategy A orgs)"
     )
 
     candidate_asns: dict[str, set[str]] = defaultdict(set)
-    searched_cache: dict[str, list[tuple[str, str]]] = {}  # dedup searches
+    searched_dedup: dict[str, list[tuple[str, str]]] = {}  # dedup within this run
     skipped_ambiguous = 0
     skipped_no_overlap = 0
-    for i, (term, org_id) in enumerate(search_terms):
+    for i, (term, org_id) in enumerate(remaining_terms):
         if i > 0 and i % 50 == 0:
-            logger.info(f"RIPE abbreviation search progress: {i}/{len(search_terms)}")
+            logger.info(f"RIPE abbreviation search progress: {i}/{len(remaining_terms)}")
 
-        # Filter 4: Deduplicate search terms
-        if term in searched_cache:
-            results = searched_cache[term]
+        # Filter 4: Deduplicate search terms within this run
+        if term in searched_dedup:
+            results = searched_dedup[term]
         else:
             results = _search_ripe_asns(term)
-            searched_cache[term] = results
+            searched_dedup[term] = results
+
+        # Mark term as searched
+        searched_terms.add(term)
 
         # Filter 2: Cap candidates per abbreviation
         if len(results) > MAX_CANDIDATES_PER_TERM:
@@ -1152,36 +1537,45 @@ def run_ripe_enrichment(orgs: list[dict], use_cache: bool = False) -> dict[str, 
         if term_accepted or len(results) > 0:
             logger.info(f"RIPE: '{term}' ({org_title}): {len(results)} results, {term_accepted} accepted, {term_rejected} filtered")
 
+    # Save progress after Strategy B search phase
+    _save_ripe_cache(cache_path, org_ripe, searched_org_ids, searched_terms, verified_asns)
+
     logger.info(
-        f"RIPE: found {len(candidate_asns)} new candidate ASNs "
+        f"RIPE: {len(candidate_asns)} new candidate ASNs from this run "
         f"(skipped {skipped_ambiguous} ambiguous terms, "
         f"{skipped_no_overlap} ASNs with no holder overlap)"
     )
 
-    # Verify each candidate ASN via RIPE DB REST (also rate-limited)
-    if not ripe_db_available:
-        logger.warning("RIPE DB REST API unavailable — skipping ASN verification")
-        candidate_asns = {}
+    # Filter out already-verified ASNs from previous runs
+    unverified = {asn: orgs for asn, orgs in candidate_asns.items() if asn not in verified_asns}
+    if len(unverified) < len(candidate_asns):
+        logger.info(f"RIPE: {len(candidate_asns) - len(unverified)} candidate ASNs already verified in previous runs")
 
+    # Verify each candidate ASN via RIPE DB REST (also rate-limited)
     gb_unmatched = []
-    for i, asn in enumerate(sorted(candidate_asns.keys())):
+    for i, asn in enumerate(sorted(unverified.keys())):
         if _ripe_db_consecutive_429s >= 10:
-            logger.warning(f"RIPE DB: bailing out of ASN verification at {i}/{len(candidate_asns)} due to persistent rate limiting")
+            logger.warning(f"RIPE DB: bailing out of ASN verification at {i}/{len(unverified)} due to persistent rate limiting")
             break
         if i > 0 and i % 25 == 0:
-            logger.info(f"RIPE verify progress: {i}/{len(candidate_asns)}")
+            logger.info(f"RIPE verify progress: {i}/{len(unverified)}")
 
         org_name, country = _check_asn_gb(asn)
+        verified_asns.add(asn)  # Mark as verified regardless of result
+
         if not org_name:
             logger.debug(f"RIPE: {asn} -> no org data found")
+            _save_ripe_cache(cache_path, org_ripe, searched_org_ids, searched_terms, verified_asns)
             continue
         if country != "GB":
             logger.debug(f"RIPE: {asn} = {org_name} -> country={country} (skipped, not GB)")
+            _save_ripe_cache(cache_path, org_ripe, searched_org_ids, searched_terms, verified_asns)
             continue
 
         match_name, score = fuzzy_match_org(org_name, org_titles, set(), threshold=0.90)
         if not match_name:
             gb_unmatched.append((asn, org_name))
+            _save_ripe_cache(cache_path, org_ripe, searched_org_ids, searched_terms, verified_asns)
             continue
 
         matched_org_id = org_id_by_title.get(match_name)
@@ -1194,34 +1588,44 @@ def run_ripe_enrichment(orgs: list[dict], use_cache: bool = False) -> dict[str, 
         })
         logger.info(f"RIPE: confirmed {asn} = {org_name} -> {match_name} (score={score:.2f})")
 
+        # Save progress after each successful match
+        _save_ripe_cache(cache_path, org_ripe, searched_org_ids, searched_terms, verified_asns)
+
     if gb_unmatched:
         logger.info(f"RIPE: {len(gb_unmatched)} GB ASNs couldn't match to orgs:")
         for asn, name in gb_unmatched[:10]:
             logger.info(f"  {asn}: {name}")
 
-    # --- Get announced prefixes for all discovered ASNs ---
-    all_asns = [(org_id, a) for org_id, d in org_ripe.items() for a in d["asns"]]
-    logger.info(f"RIPE: fetching announced prefixes for {len(all_asns)} ASNs")
-    for org_id, asn_info in all_asns:
-        prefixes = _get_announced_prefixes(asn_info["asn"])
-        asn_info["prefixes"] = prefixes
-        if prefixes:
-            logger.info(f"RIPE: {asn_info['asn']} ({asn_info['holder']}) announces {len(prefixes)} prefixes")
+    # --- Get announced prefixes for ASNs that don't have them yet ---
+    asns_needing_prefixes = [
+        (org_id, a) for org_id, d in org_ripe.items() for a in d["asns"]
+        if not a.get("prefixes")
+    ]
+    if asns_needing_prefixes:
+        logger.info(f"RIPE: fetching announced prefixes for {len(asns_needing_prefixes)} ASNs")
+        for org_id, asn_info in asns_needing_prefixes:
+            prefixes = _get_announced_prefixes(asn_info["asn"])
+            asn_info["prefixes"] = prefixes
+            if prefixes:
+                logger.info(f"RIPE: {asn_info['asn']} ({asn_info['holder']}) announces {len(prefixes)} prefixes")
 
     # Remove empty entries
     org_ripe = {oid: d for oid, d in org_ripe.items() if d["asns"] or d["inetnums"]}
 
-    # Cache results
-    cache_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(cache_path, "w", encoding="utf-8") as f:
-        json.dump(org_ripe, f, indent=2, ensure_ascii=False)
-    logger.info(f"Cached RIPE results to {cache_path}")
+    # Final save
+    _save_ripe_cache(cache_path, org_ripe, searched_org_ids, searched_terms, verified_asns)
+    logger.info(f"Saved RIPE progress to {cache_path}")
 
     # Summary
     total_asns = sum(len(d["asns"]) for d in org_ripe.values())
     total_inetnums = sum(len(d["inetnums"]) for d in org_ripe.values())
     total_prefixes = sum(len(a["prefixes"]) for d in org_ripe.values() for a in d["asns"])
     logger.info(f"RIPE: {len(org_ripe)} orgs, {total_asns} ASNs, {total_inetnums} IP ranges, {total_prefixes} announced prefixes")
+    logger.info(
+        f"RIPE progress: Strategy A {len(searched_org_ids)}/{len(search_orgs)} orgs, "
+        f"Strategy B {len(searched_terms)}/{len(search_terms)} terms, "
+        f"{len(verified_asns)} ASNs verified"
+    )
     for org_id, data in org_ripe.items():
         org_title = next((o["title"] for o in orgs if o["id"] == org_id), org_id)
         parts = []
@@ -1324,6 +1728,8 @@ def main():
                         help="Look up RIPE ASNs and IP ranges for orgs")
     parser.add_argument("--ripe-cache", action="store_true",
                         help="Use cached RIPE results instead of querying API")
+    parser.add_argument("--ripe-bulk", action="store_true",
+                        help="Populate RIPE data from bulk DB dumps (bypasses rate limits)")
     args = parser.parse_args()
 
     # Load orgs
@@ -1355,7 +1761,9 @@ def main():
 
     # RIPE IP range discovery
     ripe_data = {}
-    if args.ripe or args.ripe_cache:
+    if args.ripe_bulk:
+        ripe_data = run_ripe_bulk_import(orgs)
+    elif args.ripe or args.ripe_cache:
         ripe_data = run_ripe_enrichment(orgs, use_cache=args.ripe_cache)
 
     # Print summary

@@ -1033,7 +1033,8 @@
                 <option value="firewall">Colour by Firewall</option>
                 <option value="iam">Colour by IAM</option>
                 <option value="vulnerability_management">Colour by Vuln Mgmt</option>
-                <option value="email">Colour by Email Provider</option>
+                <option value="email">Colour by Mail Gateway</option>
+                <option value="ip_range">Colour by IP Range / ASN</option>
             </select>
             <div class="cyber-legend" id="cyber-legend">
                 <div class="cyber-legend-item">
@@ -1616,18 +1617,31 @@
                         ripeAsns.forEach((a, i) => {
                             if (i > 0) tdSrc.appendChild(document.createTextNode(', '));
                             const link = document.createElement('a');
-                            link.href = 'https://stat.ripe.net/resource/' + a.asn + '#tab=overview';
+                            link.href = 'https://stat.ripe.net/' + a.asn + '#tab=at-a-glance';
                             link.target = '_blank';
                             link.rel = 'noopener';
                             link.textContent = a.asn;
                             link.style.color = '#1d70b8';
-                            if (a.holder) link.title = a.holder;
+                            link.title = a.holder || 'View in RIPEstat';
                             tdSrc.appendChild(link);
                         });
-                    } else {
-                        tdSrc.textContent = 'RIPE DB';
-                        tdSrc.style.color = '#505a5f';
-                        tdSrc.style.fontSize = '0.85em';
+                    }
+                    if (ripeInetnums.length > 0 && ripeAsns.length > 0) {
+                        tdSrc.appendChild(document.createTextNode(' + '));
+                    }
+                    if (ripeInetnums.length > 0) {
+                        const dbLink = document.createElement('a');
+                        dbLink.href = 'https://apps.db.ripe.net/db-web-ui/query?searchtext=' + encodeURIComponent(ripeInetnums[0]);
+                        dbLink.target = '_blank';
+                        dbLink.rel = 'noopener';
+                        dbLink.textContent = ripeInetnums.length + ' inetnum' + (ripeInetnums.length > 1 ? 's' : '');
+                        dbLink.style.color = '#1d70b8';
+                        dbLink.title = ripeInetnums.slice(0, 10).join('\n') + (ripeInetnums.length > 10 ? '\n...' : '');
+                        tdSrc.appendChild(dbLink);
+                    }
+                    if (ripeAsns.length === 0 && ripeInetnums.length === 0) {
+                        tdSrc.textContent = '—';
+                        tdSrc.className = 'empty-val';
                     }
                     tr.appendChild(tdSrc);
                     tbody.appendChild(tr);
@@ -1803,7 +1817,16 @@
         sortedEmail.forEach((v, i) => { emailMap[v] = vendorPalette[i % vendorPalette.length]; });
         vendorColourMaps['email'] = emailMap;
 
+        // Binary colour scheme for IP range / ASN presence
+        const ipRangeColours = { has: '#51cf66', none: noVendorColour };
+
         function getNodeVendorColour(d, category) {
+            if (category === 'ip_range') {
+                const hasASN = (d.ripe_asns || []).length > 0;
+                const hasPrefix = (d.ripe_prefixes || []).length > 0;
+                const hasInetnum = (d.ripe_inetnums || []).length > 0;
+                return (hasASN || hasPrefix || hasInetnum) ? ipRangeColours.has : ipRangeColours.none;
+            }
             if (category === 'email') {
                 const mps = d.mail_providers || [];
                 if (mps.length === 0) return noVendorColour;
@@ -1830,6 +1853,28 @@
 
         function buildVendorLegend(category) {
             while (legendEl.firstChild) legendEl.removeChild(legendEl.firstChild);
+            if (category === 'ip_range') {
+                const count = graphData.nodes.filter(n =>
+                    (n.ripe_asns || []).length > 0 || (n.ripe_prefixes || []).length > 0 ||
+                    (n.ripe_inetnums || []).length > 0
+                ).length;
+                [['Has IP range / ASN', ipRangeColours.has], ['No data', ipRangeColours.none]].forEach(([label, colour]) => {
+                    const item = document.createElement('div');
+                    item.className = 'legend-item';
+                    const dot = document.createElement('div');
+                    dot.className = 'legend-dot';
+                    dot.style.background = colour;
+                    item.appendChild(dot);
+                    item.appendChild(document.createTextNode(label));
+                    legendEl.appendChild(item);
+                });
+                const info = document.createElement('div');
+                info.className = 'legend-item';
+                info.style.opacity = '0.7';
+                info.textContent = `${count} orgs with IP presence`;
+                legendEl.appendChild(info);
+                return;
+            }
             const map = vendorColourMaps[category];
             Object.entries(map).sort((a, b) => a[0].localeCompare(b[0])).forEach(([vendor, colour]) => {
                 const item = document.createElement('div');

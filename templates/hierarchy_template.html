@@ -1051,7 +1051,7 @@
             <div class="cyber-legend" id="cyber-legend">
                 <div class="cyber-legend-item">
                     <div class="cyber-legend-ring" style="border-color:#d4351c"></div>
-                    <span>SOC detected</span>
+                    <span>SOC</span>
                 </div>
             </div>
             <div class="legend" id="legend"></div>
@@ -1401,8 +1401,97 @@
                 const hdr = document.createElement('div');
                 hdr.className = 'detail-key';
                 hdr.style.cssText = 'color:#d4351c;margin-bottom:0.4rem';
-                hdr.textContent = 'SOC';
+                const hdrLabel = document.createTextNode('SOC ');
+                hdr.appendChild(hdrLabel);
+                const hdrCount = document.createElement('span');
+                hdrCount.style.cssText = 'font-weight:400;font-size:0.7rem;color:#6f777b;margin-left:0.3rem';
+                hdrCount.textContent = d.soc_evidence.length + ' posting' + (d.soc_evidence.length !== 1 ? 's' : '');
+                hdr.appendChild(hdrCount);
                 section.appendChild(hdr);
+
+                // --- Source breakdown bar ---
+                const sourceColours = {
+                    'cs-jobs': '#1d70b8', 'psr-s3': '#00703c', 'psr': '#00703c',
+                    'adzuna': '#f47738', 'greenhouse': '#912b88',
+                };
+                const defaultSourceColour = '#6f777b';
+                const sourceCounts = {};
+                d.soc_evidence.forEach(ev => {
+                    const s = ev.source || 'unknown';
+                    sourceCounts[s] = (sourceCounts[s] || 0) + 1;
+                });
+                const sources = Object.keys(sourceCounts);
+                const ns = 'http://www.w3.org/2000/svg';
+
+                // Source key
+                const keyRow = document.createElement('div');
+                keyRow.style.cssText = 'display:flex;flex-wrap:wrap;gap:0.4rem 0.7rem;margin-bottom:0.4rem';
+                sources.forEach(s => {
+                    const item = document.createElement('span');
+                    item.style.cssText = 'display:inline-flex;align-items:center;gap:3px;font-size:0.65rem;color:#b1b4b6';
+                    const swatch = document.createElement('span');
+                    swatch.style.cssText = 'display:inline-block;width:8px;height:8px;border-radius:2px;background:' + (sourceColours[s] || defaultSourceColour);
+                    item.appendChild(swatch);
+                    item.appendChild(document.createTextNode(s + ' (' + sourceCounts[s] + ')'));
+                    keyRow.appendChild(item);
+                });
+                section.appendChild(keyRow);
+
+                // --- Timeline sparkline ---
+                const datesValid = d.soc_evidence.filter(ev => ev.date && ev.date.length >= 7);
+                if (datesValid.length > 0) {
+                    const timestamps = datesValid.map(ev => new Date(ev.date).getTime()).sort((a, b) => a - b);
+                    const tMin = timestamps[0], tMax = timestamps[timestamps.length - 1];
+                    const sparkW = 200, sparkH = 24, pad = 6;
+                    const sparkSvg = document.createElementNS(ns, 'svg');
+                    sparkSvg.setAttribute('width', sparkW);
+                    sparkSvg.setAttribute('height', sparkH);
+                    sparkSvg.style.display = 'block';
+                    sparkSvg.style.marginBottom = '0.4rem';
+                    const axis = document.createElementNS(ns, 'line');
+                    axis.setAttribute('x1', pad);
+                    axis.setAttribute('y1', sparkH - 4);
+                    axis.setAttribute('x2', sparkW - pad);
+                    axis.setAttribute('y2', sparkH - 4);
+                    axis.setAttribute('stroke', '#505a5f');
+                    axis.setAttribute('stroke-width', '0.5');
+                    sparkSvg.appendChild(axis);
+                    const fmtDate = ts => { const dt = new Date(ts); return dt.toLocaleDateString('en-GB', {month:'short', year:'2-digit'}); };
+                    [tMin, tMax].forEach((ts, i) => {
+                        const lbl = document.createElementNS(ns, 'text');
+                        lbl.setAttribute('x', i === 0 ? pad : sparkW - pad);
+                        lbl.setAttribute('y', sparkH);
+                        lbl.setAttribute('text-anchor', i === 0 ? 'start' : 'end');
+                        lbl.setAttribute('fill', '#b1b4b6');
+                        lbl.setAttribute('font-size', '7');
+                        lbl.setAttribute('font-family', 'Inter, sans-serif');
+                        lbl.textContent = fmtDate(ts);
+                        sparkSvg.appendChild(lbl);
+                    });
+                    const range = tMax - tMin || 1;
+                    datesValid.forEach(ev => {
+                        const ts = new Date(ev.date).getTime();
+                        const x = pad + ((ts - tMin) / range) * (sparkW - 2 * pad);
+                        const dot = document.createElementNS(ns, 'circle');
+                        dot.setAttribute('cx', x);
+                        dot.setAttribute('cy', sparkH - 10);
+                        dot.setAttribute('r', 3);
+                        dot.setAttribute('fill', sourceColours[ev.source] || defaultSourceColour);
+                        dot.setAttribute('opacity', '0.85');
+                        const tipEl = document.createElementNS(ns, 'title');
+                        tipEl.textContent = ev.title + ' (' + ev.date + ')';
+                        dot.appendChild(tipEl);
+                        sparkSvg.appendChild(dot);
+                    });
+                    section.appendChild(sparkSvg);
+                }
+
+                // --- Collapsible evidence table ---
+                const details = document.createElement('details');
+                const summary = document.createElement('summary');
+                summary.style.cssText = 'font-size:0.7rem;color:#6f777b;cursor:pointer;margin-top:0.2rem';
+                summary.textContent = 'Show ' + d.soc_evidence.length + ' posting' + (d.soc_evidence.length !== 1 ? 's' : '');
+                details.appendChild(summary);
 
                 const table = document.createElement('table');
                 table.className = 'detail-table';
@@ -1433,7 +1522,8 @@
                     tbody.appendChild(tr);
                 });
                 table.appendChild(tbody);
-                section.appendChild(table);
+                details.appendChild(table);
+                section.appendChild(details);
                 detailBody.appendChild(section);
             }
 

@@ -12,7 +12,9 @@ A toolkit for collecting, enriching, and visualising UK government organisation 
 - **Mail Server Detection**: DNS MX lookups to identify email providers (Microsoft 365, Google Workspace, Mimecast, etc.)
 - **Parent Domain Inheritance**: Organisations without email domains inherit from their parent organisation
 - **Cyber Security Intelligence**: Extracts cyber team size and technology stacks from job postings
+- **SOC Detection**: Identifies Security Operations Centre capability from job posting evidence
 - **Edge Device Discovery**: Identifies VPN gateways, firewalls, and load balancers via Shodan API
+- **RIPE IP Range Discovery**: Finds org-owned ASNs and announced IP prefixes via RIPEstat/RIPE DB APIs
 - **D3 Visualisations**: Interactive treemap (budget/headcount sizing) and hierarchy chart (7-tier HMG classification)
 - **Job Scraping**: Collects job postings from multiple recruitment providers (Adzuna, Greenhouse, PSR)
 
@@ -121,6 +123,8 @@ Each organisation record includes:
 | `cyber_job_count` | Number of cyber security job postings found |
 | `cyber_roles_sample` | Sample cyber role titles |
 | `cyber_tech_stack` | Detected security tools by category (SIEM, EDR, etc.) |
+| `has_soc` | Whether SOC (Security Operations Centre) evidence was found |
+| `soc_evidence` | SOC job postings with title, date, source, and CS Jobs ID |
 | `shodan_edge_devices` | Edge devices detected via Shodan (VPN gateways, firewalls) |
 | `shodan_asns` | Autonomous System Numbers associated with the org |
 | `ripe_asns` | RIPE-registered ASNs owned by the org (with holder name and prefixes) |
@@ -139,6 +143,12 @@ An interactive D3 force-directed graph showing organisation relationships, with 
 | 4 | Public Corporations & Health Authorities |
 | 5 | Judicial & Oversight Bodies |
 | 6 | Sub-organisations & Other |
+
+**Interactive features:**
+- **Node sizing**: Toggle between OSCAR budget, Civil Service headcount, or equal sizing
+- **Cyber mode**: Toggle to reveal cyber security landscape overlay:
+  - Red ring on nodes with SOC evidence; click for source breakdown, timeline sparkline, and full posting table
+  - Colour-by dropdown for tech categories (SIEM, EDR, NDR, SOAR, Firewall, IAM, Vuln Mgmt, Mail Gateway, IP Range/ASN)
 
 ### Mail Provider Detection
 
@@ -194,6 +204,7 @@ Create a `.env` file:
 ADZUNA_APP_ID=your_app_id        # For Adzuna job scraping
 ADZUNA_APP_KEY=your_api_key
 SHODAN_API_KEY=your_api_key      # For edge device discovery (dev plan: 100 queries/month)
+RIPE_DB_API_KEY=your_api_key     # Optional: RIPE DB REST API (reduces rate limiting)
 ```
 
 ## Dependencies

@@ -26,6 +26,7 @@ TAXONOMY: dict[str, dict[str, list[str]]] = {
             "azure sentinel",
             "ms sentinel",
             "sentinel siem",
+            "sentinel",
         ],
         "IBM QRadar": [
             "ibm qradar",

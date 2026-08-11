@@ -1018,19 +1018,10 @@
       "iam": [],
       "vulnerability_management": []
     },
-    "shodan_edge_devices": [
-      {
-        "vendor": "Cisco ASA",
-        "filter": "product:\"Cisco ASA\""
-      }
-    ],
-    "shodan_ip_count": 1,
-    "shodan_asns": [
-      "AS206347"
-    ],
-    "shodan_orgs": [
-      "Wessex Internet Limited"
-    ],
+    "shodan_edge_devices": [],
+    "shodan_ip_count": 0,
+    "shodan_asns": [],
+    "shodan_orgs": [],
     "ripe_asns": [],
     "ripe_inetnums": [],
     "ripe_prefixes": [],
@@ -6202,7 +6193,14 @@
       "Security Operations Analyst"
     ],
     "cyber_tech_stack": {
-      "siem": [],
+      "siem": [
+        {
+          "vendor": "Microsoft Sentinel",
+          "confidence": "example",
+          "source": "cs-jobs",
+          "snippet": "Hands-on experience using Microsoft security tools such as Sentinel, Defender XDR, or Entra to monitor, detect, and respond to threats."
+        }
+      ],
       "edr": [],
       "ndr": [],
       "soar": [],
@@ -62478,7 +62476,14 @@
       "Senior Infrastructure Engineer - Security"
     ],
     "cyber_tech_stack": {
-      "siem": [],
+      "siem": [
+        {
+          "vendor": "Microsoft Sentinel",
+          "confidence": "confirmed",
+          "source": "cs-jobs",
+          "snippet": "...s in the management of at least three of a range of security technologies such as:-SIEM, Defender, Sentinel, EDR-XDR, Certificate authorities, AD, Mainframe security, Nessus, DDoS, WAF, LDAP, HSMs, PA..."
+        }
+      ],
       "edr": [],
       "ndr": [],
       "soar": [],
@@ -62979,6 +62984,12 @@
     ],
     "cyber_tech_stack": {
       "siem": [
+        {
+          "vendor": "Microsoft Sentinel",
+          "confidence": "example",
+          "source": "cs-jobs",
+          "snippet": "Familiarity with SIEM or SOAR tooling like Splunk, Sentinel, etc."
+        },
         {
           "vendor": "Splunk",
           "confidence": "confirmed",
@@ -71164,10 +71175,19 @@
       "iam": [],
       "vulnerability_management": []
     },
-    "shodan_edge_devices": [],
-    "shodan_ip_count": 0,
-    "shodan_asns": [],
-    "shodan_orgs": [],
+    "shodan_edge_devices": [
+      {
+        "vendor": "Cisco ASA",
+        "filter": "product:\"Cisco ASA\""
+      }
+    ],
+    "shodan_ip_count": 1,
+    "shodan_asns": [
+      "AS206347"
+    ],
+    "shodan_orgs": [
+      "Wessex Internet Limited"
+    ],
     "ripe_asns": [
       {
         "asn": "AS203665",
@@ -92697,6 +92717,12 @@
           "confidence": "confirmed",
           "source": "cs-jobs",
           "snippet": "...-based applications with AWS, GitHub, GitLab, Codespaces, Kubernetes, Okta, CrowdStrike, Sentinel, ExaBeam and similar technologies would be highly beneficial.  Does this sound like the kind of work t..."
+        },
+        {
+          "vendor": "Microsoft Sentinel",
+          "confidence": "confirmed",
+          "source": "cs-jobs",
+          "snippet": "...acing, web-based applications with AWS, GitHub, GitLab, Codespaces, Kubernetes, Okta, CrowdStrike, Sentinel, ExaBeam and similar technologies would be highly beneficial.  Does this sound like the kind..."
         }
       ],
       "edr": [
@@ -94670,7 +94696,14 @@
       "Deputy Director Cyber Security"
     ],
     "cyber_tech_stack": {
-      "siem": [],
+      "siem": [
+        {
+          "vendor": "Microsoft Sentinel",
+          "confidence": "example",
+          "source": "cs-jobs",
+          "snippet": "Knowledge of automated compliance tooling (e.g., AWS Config, Azure Policy, Prisma, Sentinel)."
+        }
+      ],
       "edr": [],
       "ndr": [],
       "soar": [],

@@ -284,6 +284,13 @@ def generate_hierarchy_chart(df, output_path: Path = None):
         else:
             hc_radius = 4
 
+        # GitHub repos radius
+        github_repos = int(row.get('github_repos', 0) or 0)
+        if github_repos > 0:
+            gh_radius = max(3, min(18, math.sqrt(github_repos) / 3))
+        else:
+            gh_radius = 3
+
         nodes.append({
             'id': org_id,
             'name': row['title'],
@@ -291,6 +298,7 @@ def generate_hierarchy_chart(df, output_path: Path = None):
             'tier': tier,
             'radius': round(radius, 1),
             'hc_radius': round(hc_radius, 1),
+            'gh_radius': round(gh_radius, 1),
             'budget_display': format_budget(budget_val),
             'headcount_display': format_headcount(headcount_val),
             'domain': row.get('best_domain', ''),

@@ -441,7 +441,22 @@ def _build_domain_to_org(orgs: list[dict]) -> dict[str, dict]:
     mapping = {}
     for domain, candidates in domain_candidates.items():
         if len(candidates) == 1:
-            mapping[domain] = candidates[0]
+            org = candidates[0]
+            # If the sole candidate is a child body and the domain is a
+            # government infrastructure TLD (e.g. mod.uk), assign to the
+            # parent department which owns the infrastructure.
+            gov_tlds = {"gov.uk", "mod.uk", "police.uk", "nhs.net"}
+            if (not org.get("child_organisations")
+                    and org.get("parent_organisations")
+                    and domain in gov_tlds):
+                for parent_ref in org.get("parent_organisations", []):
+                    parent_id = parent_ref.get("id")
+                    if parent_id and parent_id in org_by_id:
+                        parent = org_by_id[parent_id]
+                        if parent.get("child_organisations"):
+                            org = parent
+                            break
+            mapping[domain] = org
             continue
 
         # Multiple orgs share this domain — pick the infrastructure owner

@@ -49,6 +49,13 @@ def export_graph(output_path: Path) -> None:
         else:
             hc_radius = 4
 
+        # GitHub repos radius
+        github_repos = int(row.get('github_repos', 0) or 0)
+        if github_repos > 0:
+            gh_radius = max(3, min(18, math.sqrt(github_repos) / 3))
+        else:
+            gh_radius = 3
+
         # Cyber data
         cyber_job_count = row.get('cyber_job_count', 0) or 0
         cyber_tech_stack = row.get('cyber_tech_stack', {})
@@ -61,6 +68,7 @@ def export_graph(output_path: Path) -> None:
             'tier': tier,
             'radius': round(radius, 1),
             'hc_radius': round(hc_radius, 1),
+            'gh_radius': round(gh_radius, 1),
             'budget_display': format_budget(budget_val),
             'headcount': headcount_val,
             'headcount_display': format_headcount(headcount_val),

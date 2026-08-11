@@ -1,0 +1,1496 @@
+{
+  "https://www.gov.uk/api/organisations/foreign-commonwealth-development-office": {
+    "login": "uktrade",
+    "name": "Department for Business, Innovation, Science and Trade",
+    "description": "",
+    "public_repos": 37,
+    "url": "https://github.com/uktrade",
+    "blog": "https://www.gov.uk/dbt",
+    "followers": 155
+  },
+  "https://www.gov.uk/api/organisations/home-office": {
+    "login": "UKHomeOffice",
+    "name": "",
+    "description": "",
+    "public_repos": 1248,
+    "url": "https://github.com/UKHomeOffice",
+    "blog": "homeoffice.gov.uk",
+    "followers": 348
+  },
+  "https://www.gov.uk/api/organisations/office-for-national-statistics": {
+    "login": "ONSdigital",
+    "name": "ONS Digital",
+    "description": "We are the UK’s largest independent producer of official statistics and its recognised national statistical institute.",
+    "public_repos": 1471,
+    "url": "https://github.com/ONSdigital",
+    "blog": "https://www.ons.gov.uk/",
+    "followers": 444
+  },
+  "https://www.gov.uk/api/organisations/active-travel-england": {
+    "login": "acteng",
+    "name": "Active Travel England",
+    "description": "",
+    "public_repos": 7,
+    "url": "https://github.com/acteng",
+    "blog": "https://www.activetravelengland.gov.uk",
+    "followers": 15
+  },
+  "https://www.gov.uk/api/organisations/bank-of-england": {
+    "login": "bank-of-england",
+    "name": "Bank of England",
+    "description": "",
+    "public_repos": 11,
+    "url": "https://github.com/bank-of-england",
+    "blog": "www.bankofengland.co.uk",
+    "followers": 157
+  },
+  "https://www.gov.uk/api/organisations/bbc": {
+    "login": "bbc",
+    "name": "BBC",
+    "description": "Open source code used on public facing services, internal services and educational resources.",
+    "public_repos": 975,
+    "url": "https://github.com/bbc",
+    "blog": "https://bbc.co.uk/opensource/",
+    "followers": 1378
+  },
+  "https://www.gov.uk/api/organisations/biometrics-and-surveillance-camera-commissioner": {
+    "login": "bscc",
+    "name": "",
+    "description": "",
+    "public_repos": 1,
+    "url": "https://github.com/bscc",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/biotechnology-biological-sciences-research-council": {
+    "login": "BBSRC",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/BBSRC",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/boundary-commission-for-england": {
+    "login": "bce",
+    "name": "",
+    "description": "",
+    "public_repos": 2,
+    "url": "https://github.com/bce",
+    "blog": "",
+    "followers": 1
+  },
+  "https://www.gov.uk/api/organisations/boundary-commission-for-northern-ireland": {
+    "login": "BCNI",
+    "name": "",
+    "description": "",
+    "public_repos": 2,
+    "url": "https://github.com/BCNI",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/british-business-bank": {
+    "login": "BritishBusinessBank",
+    "name": "British Business Bank",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/BritishBusinessBank",
+    "blog": "",
+    "followers": 13
+  },
+  "https://www.gov.uk/api/organisations/british-council": {
+    "login": "britishcouncil",
+    "name": "The British Council",
+    "description": "",
+    "public_repos": 15,
+    "url": "https://github.com/britishcouncil",
+    "blog": "https://www.britishcouncil.org",
+    "followers": 10
+  },
+  "https://www.gov.uk/api/organisations/british-hallmarking-council": {
+    "login": "BHC",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/BHC",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/british-library": {
+    "login": "britishlibrary",
+    "name": "The British Library",
+    "description": "",
+    "public_repos": 49,
+    "url": "https://github.com/britishlibrary",
+    "blog": "https://bl.uk/",
+    "followers": 50
+  },
+  "https://www.gov.uk/api/organisations/british-museum": {
+    "login": "BritishMuseum",
+    "name": "The British Museum",
+    "description": "The Museum houses a vast collection of world art and artefacts and is free to all visitors. ",
+    "public_repos": 20,
+    "url": "https://github.com/BritishMuseum",
+    "blog": "http://britishmuseum.org",
+    "followers": 30
+  },
+  "https://www.gov.uk/api/organisations/british-wool": {
+    "login": "BritishWool",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/BritishWool",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/broads-authority": {
+    "login": "BroadsAuthority",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/BroadsAuthority",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/cabinet-office": {
+    "login": "cabinetoffice",
+    "name": "Cabinet Office",
+    "description": "",
+    "public_repos": 115,
+    "url": "https://github.com/cabinetoffice",
+    "blog": "https://cabinetoffice.gov.uk",
+    "followers": 151
+  },
+  "https://www.gov.uk/api/organisations/children-and-family-court-advisory-and-support-service": {
+    "login": "Cafcass",
+    "name": "Cafcass",
+    "description": "The Children and Family Court Advisory and Support Service",
+    "public_repos": 0,
+    "url": "https://github.com/Cafcass",
+    "blog": "https://www.cafcass.gov.uk/",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/care-quality-commission": {
+    "login": "CQCDigital",
+    "name": "Care Quality Commission",
+    "description": "Public repository for tools and technologies developed within CQC.",
+    "public_repos": 5,
+    "url": "https://github.com/CQCDigital",
+    "blog": "https://www.cqc.org.uk/",
+    "followers": 2
+  },
+  "https://www.gov.uk/api/organisations/the-centre-for-climate-health-security": {
+    "login": "CCHS",
+    "name": "",
+    "description": "",
+    "public_repos": 1,
+    "url": "https://github.com/CCHS",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/centre-for-connected-and-autonomous-vehicles": {
+    "login": "ccav",
+    "name": "",
+    "description": "",
+    "public_repos": 5,
+    "url": "https://github.com/ccav",
+    "blog": "",
+    "followers": 1
+  },
+  "https://www.gov.uk/api/organisations/channel-4": {
+    "login": "channel4",
+    "name": "Channel 4 Television",
+    "description": "",
+    "public_repos": 9,
+    "url": "https://github.com/channel4",
+    "blog": "https://www.channel4.com",
+    "followers": 8
+  },
+  "https://www.gov.uk/api/organisations/civil-aviation-authority": {
+    "login": "Civil-Aviation-Authority",
+    "name": "Civil Aviation Authority",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/Civil-Aviation-Authority",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/civil-nuclear-police-authority": {
+    "login": "CNPA",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/CNPA",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/college-of-policing": {
+    "login": "College-of-Policing",
+    "name": "College of Policing",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/College-of-Policing",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/companies-house": {
+    "login": "companieshouse",
+    "name": "Companies House",
+    "description": "",
+    "public_repos": 656,
+    "url": "https://github.com/companieshouse",
+    "blog": "",
+    "followers": 149
+  },
+  "https://www.gov.uk/api/organisations/competition-and-markets-authority": {
+    "login": "cmagovuk",
+    "name": "Competition and Markets Authority",
+    "description": "Competition and Markets Authority official github repository",
+    "public_repos": 12,
+    "url": "https://github.com/cmagovuk",
+    "blog": "https://www.gov.uk/government/organisations/competition-and-markets-authority",
+    "followers": 11
+  },
+  "https://www.gov.uk/api/organisations/council-for-science-and-technology": {
+    "login": "cst",
+    "name": "",
+    "description": "",
+    "public_repos": 1,
+    "url": "https://github.com/cst",
+    "blog": "",
+    "followers": 4
+  },
+  "https://www.gov.uk/api/organisations/court-of-protection": {
+    "login": "COP",
+    "name": "",
+    "description": "",
+    "public_repos": 2,
+    "url": "https://github.com/COP",
+    "blog": "",
+    "followers": 1
+  },
+  "https://www.gov.uk/api/organisations/criminal-cases-review-commission": {
+    "login": "CCRC",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/CCRC",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/criminal-injuries-compensation-authority": {
+    "login": "CriminalInjuriesCompensationAuthority",
+    "name": "Criminal Injuries Compensation Authority",
+    "description": "",
+    "public_repos": 22,
+    "url": "https://github.com/CriminalInjuriesCompensationAuthority",
+    "blog": "",
+    "followers": 7
+  },
+  "https://www.gov.uk/api/organisations/dartmoor-national-park-authority": {
+    "login": "DNPA",
+    "name": "Dutch National Police Agency",
+    "description": "",
+    "public_repos": 26,
+    "url": "https://github.com/DNPA",
+    "blog": "",
+    "followers": 6
+  },
+  "https://www.gov.uk/api/organisations/defence-science-and-technology-laboratory": {
+    "login": "dstl",
+    "name": "Dstl",
+    "description": "Defence Science and Technology Laboratory, UK",
+    "public_repos": 32,
+    "url": "https://github.com/dstl",
+    "blog": "https://www.gov.uk/dstl",
+    "followers": 130
+  },
+  "https://www.gov.uk/api/organisations/department-for-culture-media-and-sport": {
+    "login": "DCMS",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/DCMS",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/department-for-education": {
+    "login": "DFE-Digital",
+    "name": "Department for Education - Digital",
+    "description": "",
+    "public_repos": 833,
+    "url": "https://github.com/DFE-Digital",
+    "blog": "http://education.gov.uk/",
+    "followers": 239
+  },
+  "https://www.gov.uk/api/organisations/department-for-environment-food-rural-affairs": {
+    "login": "DEFRA",
+    "name": "Defra",
+    "description": "UK government department responsible for safeguarding our natural environment, supporting our food & farming industry, and sustaining a thriving rural economy.",
+    "public_repos": 1861,
+    "url": "https://github.com/DEFRA",
+    "blog": "https://www.gov.uk/government/organisations/department-for-environment-food-rural-affairs",
+    "followers": 251
+  },
+  "https://www.gov.uk/api/organisations/department-for-transport": {
+    "login": "department-for-transport",
+    "name": "Department for Transport",
+    "description": "",
+    "public_repos": 19,
+    "url": "https://github.com/department-for-transport",
+    "blog": "http://dft.gov.uk",
+    "followers": 133
+  },
+  "https://www.gov.uk/api/organisations/department-for-work-pensions": {
+    "login": "dwp",
+    "name": "Department for Work and Pensions",
+    "description": "Public repository for tools and technologies developed within the DWP.",
+    "public_repos": 646,
+    "url": "https://github.com/dwp",
+    "blog": "https://gov.uk/dwp",
+    "followers": 82
+  },
+  "https://www.gov.uk/api/organisations/department-of-education": {
+    "login": "department-of-education",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/department-of-education",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/driver-and-vehicle-standards-agency": {
+    "login": "dvsa",
+    "name": "Driver & Vehicle Standards Agency",
+    "description": "Driver & Vehicle Standards Agency part of Department for Transport",
+    "public_repos": 278,
+    "url": "https://github.com/dvsa",
+    "blog": "https://www.gov.uk/dvsa",
+    "followers": 112
+  },
+  "https://www.gov.uk/api/organisations/english-institute-of-sport": {
+    "login": "English-Institute-of-Sport",
+    "name": "UK Sports Institute",
+    "description": "",
+    "public_repos": 4,
+    "url": "https://github.com/English-Institute-of-Sport",
+    "blog": "",
+    "followers": 13
+  },
+  "https://www.gov.uk/api/organisations/environment-agency": {
+    "login": "Environment-Agency",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/Environment-Agency",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/equality-and-human-rights-commission": {
+    "login": "EqualityAndHumanRightsCommission",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/EqualityAndHumanRightsCommission",
+    "blog": "",
+    "followers": 3
+  },
+  "https://www.gov.uk/api/organisations/export-guarantees-advisory-council": {
+    "login": "egac",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/egac",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/financial-conduct-authority": {
+    "login": "FCA",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/FCA",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/fire-service-college": {
+    "login": "fsc",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/fsc",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/food-standards-agency": {
+    "login": "FoodStandardsAgency",
+    "name": "Food Standards Agency",
+    "description": "",
+    "public_repos": 12,
+    "url": "https://github.com/FoodStandardsAgency",
+    "blog": "food.gov.uk",
+    "followers": 21
+  },
+  "https://www.gov.uk/api/organisations/forest-research": {
+    "login": "forestresearch",
+    "name": "Forest Research",
+    "description": "",
+    "public_repos": 3,
+    "url": "https://github.com/forestresearch",
+    "blog": "https://www.forestresearch.gov.uk/",
+    "followers": 28
+  },
+  "https://www.gov.uk/api/organisations/forestry-commission": {
+    "login": "Forestry-Commission",
+    "name": "Forestry Commission",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/Forestry-Commission",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/government-commercial-agency": {
+    "login": "Crown-Commercial-Service",
+    "name": "Government Commercial Agency (Formerly CCS)",
+    "description": "",
+    "public_repos": 191,
+    "url": "https://github.com/Crown-Commercial-Service",
+    "blog": "https://www.gca.gov.uk/",
+    "followers": 29
+  },
+  "https://www.gov.uk/api/organisations/government-commercial-function": {
+    "login": "Government-Commercial-Function",
+    "name": "",
+    "description": "",
+    "public_repos": 2,
+    "url": "https://github.com/Government-Commercial-Function",
+    "blog": "",
+    "followers": 1
+  },
+  "https://www.gov.uk/api/organisations/government-communications-headquarters": {
+    "login": "gchq",
+    "name": "GCHQ",
+    "description": "We are the UK's intelligence, security and cyber agency. Our mission is to help keep the country safe.",
+    "public_repos": 73,
+    "url": "https://github.com/gchq",
+    "blog": "https://gchq.gov.uk",
+    "followers": 2422
+  },
+  "https://www.gov.uk/api/organisations/government-people-group": {
+    "login": "Government-People-Group",
+    "name": "",
+    "description": "",
+    "public_repos": 20,
+    "url": "https://github.com/Government-People-Group",
+    "blog": "",
+    "followers": 9
+  },
+  "https://www.gov.uk/api/organisations/health-and-safety-executive": {
+    "login": "hse",
+    "name": "Health & Safety Executive",
+    "description": "",
+    "public_repos": 1,
+    "url": "https://github.com/hse",
+    "blog": "www.hse.gov.uk",
+    "followers": 1
+  },
+  "https://www.gov.uk/api/organisations/health-research-authority": {
+    "login": "Health-Research-Authority",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/Health-Research-Authority",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/historic-england": {
+    "login": "HistoricEngland",
+    "name": "Historic England",
+    "description": "",
+    "public_repos": 22,
+    "url": "https://github.com/HistoricEngland",
+    "blog": "www.historicengland.org.uk",
+    "followers": 6
+  },
+  "https://www.gov.uk/api/organisations/historic-royal-palaces": {
+    "login": "Historic-Royal-Palaces",
+    "name": "Historic Royal Palaces",
+    "description": "WE ARE A TEAM OF PEOPLE WHO LOVE AND LOOK AFTER SIX OF THE MOST WONDERFUL PALACES IN THE WORLD",
+    "public_repos": 0,
+    "url": "https://github.com/Historic-Royal-Palaces",
+    "blog": "https://www.hrp.org.uk",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service": {
+    "login": "hmcts",
+    "name": "HM Courts & Tribunals Service",
+    "description": "",
+    "public_repos": 1864,
+    "url": "https://github.com/hmcts",
+    "blog": "https://www.gov.uk/government/organisations/hm-courts-and-tribunals-service",
+    "followers": 454
+  },
+  "https://www.gov.uk/api/organisations/hm-government-communications-centre": {
+    "login": "hmgcc",
+    "name": "HMGCC",
+    "description": "National Security Engineering",
+    "public_repos": 4,
+    "url": "https://github.com/hmgcc",
+    "blog": "https://hmgcc.gov.uk/",
+    "followers": 8
+  },
+  "https://www.gov.uk/api/organisations/land-registry": {
+    "login": "LandRegistry",
+    "name": "HM Land Registry",
+    "description": "HM Land Registry for England and Wales",
+    "public_repos": 289,
+    "url": "https://github.com/LandRegistry",
+    "blog": "https://www.gov.uk/land-registry",
+    "followers": 27
+  },
+  "https://www.gov.uk/api/organisations/hm-revenue-customs": {
+    "login": "hmrc",
+    "name": "HM Revenue & Customs",
+    "description": "",
+    "public_repos": 1791,
+    "url": "https://github.com/hmrc",
+    "blog": "http://hmrc.github.io/",
+    "followers": 431
+  },
+  "https://www.gov.uk/api/organisations/hm-treasury": {
+    "login": "HM-Treasury",
+    "name": "HM Treasury",
+    "description": "HM Treasury",
+    "public_repos": 0,
+    "url": "https://github.com/HM-Treasury",
+    "blog": "www.hmtreasury.gov.uk",
+    "followers": 2
+  },
+  "https://www.gov.uk/api/organisations/homes-england": {
+    "login": "homesengland",
+    "name": "Homes England",
+    "description": "",
+    "public_repos": 9,
+    "url": "https://github.com/homesengland",
+    "blog": "",
+    "followers": 7
+  },
+  "https://www.gov.uk/api/organisations/horniman-museum": {
+    "login": "Horniman",
+    "name": "",
+    "description": "",
+    "public_repos": 1,
+    "url": "https://github.com/Horniman",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/human-fertilisation-and-embryology-authority": {
+    "login": "hfea",
+    "name": "The Human Fertilisation and Embryology Authority",
+    "description": "",
+    "public_repos": 1,
+    "url": "https://github.com/hfea",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/human-tissue-authority": {
+    "login": "Human-Tissue-Authority",
+    "name": "",
+    "description": "",
+    "public_repos": 1,
+    "url": "https://github.com/Human-Tissue-Authority",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/infected-blood-compensation-authority": {
+    "login": "Infected-Blood-Compensation-Authority",
+    "name": "Infected Blood Compensation Authority",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/Infected-Blood-Compensation-Authority",
+    "blog": "",
+    "followers": 22
+  },
+  "https://www.gov.uk/api/organisations/innovate-uk": {
+    "login": "innovate-uk",
+    "name": "innovate-uk",
+    "description": "Innovate UK GitHub Enterprise Organisation",
+    "public_repos": 0,
+    "url": "https://github.com/innovate-uk",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/intellectual-property-office": {
+    "login": "intellectual-property-office",
+    "name": "Intellectual Property Office",
+    "description": "Part of the Dept for Business, Energy & Industrial Strategy (BEIS). Managing framework for patents, designs, trade marks & copyright.",
+    "public_repos": 15,
+    "url": "https://github.com/intellectual-property-office",
+    "blog": "",
+    "followers": 22
+  },
+  "https://www.gov.uk/api/organisations/investigatory-powers-commissioners-office": {
+    "login": "ipco",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/ipco",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/joint-nature-conservation-committee": {
+    "login": "jncc",
+    "name": "Joint Nature Conservation Committee",
+    "description": "JNCC is the statutory adviser to Government on UK and international nature conservation.",
+    "public_repos": 79,
+    "url": "https://github.com/jncc",
+    "blog": "http://jncc.gov.uk/",
+    "followers": 21
+  },
+  "https://www.gov.uk/api/organisations/lake-district-national-park-authority": {
+    "login": "LDNP",
+    "name": "",
+    "description": "",
+    "public_repos": 6,
+    "url": "https://github.com/LDNP",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/medicines-and-healthcare-products-regulatory-agency": {
+    "login": "MHRA",
+    "name": "Medicines and Healthcare products Regulatory Agency",
+    "description": "Medicines and Healthcare products Regulatory Agency (UK Government)",
+    "public_repos": 8,
+    "url": "https://github.com/MHRA",
+    "blog": "https://www.gov.uk/government/organisations/medicines-and-healthcare-products-regulatory-agency",
+    "followers": 79
+  },
+  "https://www.gov.uk/api/organisations/met-office": {
+    "login": "MetOffice",
+    "name": "Met Office",
+    "description": "The Met Office is the UK's National Weather Service",
+    "public_repos": 115,
+    "url": "https://github.com/MetOffice",
+    "blog": "www.metoffice.gov.uk",
+    "followers": 514
+  },
+  "https://www.gov.uk/api/organisations/ministry-of-defence": {
+    "login": "defencedigital",
+    "name": "Defence Digital Service",
+    "description": "Digital projects in the UK Ministry of Defence.",
+    "public_repos": 65,
+    "url": "https://github.com/defencedigital",
+    "blog": "https://www.gov.uk/government/organisations/ministry-of-defence",
+    "followers": 349
+  },
+  "https://www.gov.uk/api/organisations/ministry-of-justice": {
+    "login": "ministryofjustice",
+    "name": "Ministry of Justice",
+    "description": "",
+    "public_repos": 2578,
+    "url": "https://github.com/ministryofjustice",
+    "blog": "https://www.justice.gov.uk/",
+    "followers": 887
+  },
+  "https://www.gov.uk/api/organisations/single-financial-guidance-body": {
+    "login": "moneyadviceservice",
+    "name": "Money and Pensions Service",
+    "description": "The Money and Pensions Service (MaPS) is an arm’s-length body sponsored by the Department for Work and Pensions, established at the beginning of 2019.",
+    "public_repos": 100,
+    "url": "https://github.com/moneyadviceservice",
+    "blog": "https://maps.org.uk/en",
+    "followers": 11
+  },
+  "https://www.gov.uk/api/organisations/national-army-museum": {
+    "login": "nationalarmymuseum",
+    "name": "National Army Museum",
+    "description": "Git Org for the National Army Museum",
+    "public_repos": 1,
+    "url": "https://github.com/nationalarmymuseum",
+    "blog": "nam.ac.uk",
+    "followers": 1
+  },
+  "https://www.gov.uk/api/organisations/national-crime-agency": {
+    "login": "NationalCrimeAgency",
+    "name": "National Crime Agency",
+    "description": "National Crime Agency. Leading the UK's fight to cut serious and organised crime. ",
+    "public_repos": 15,
+    "url": "https://github.com/NationalCrimeAgency",
+    "blog": "http://www.nationalcrimeagency.gov.uk/",
+    "followers": 23
+  },
+  "https://www.gov.uk/api/organisations/national-forest-company": {
+    "login": "Nfc",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/Nfc",
+    "blog": "",
+    "followers": 9
+  },
+  "https://www.gov.uk/api/organisations/national-gallery": {
+    "login": "national-gallery",
+    "name": "The National Gallery",
+    "description": "",
+    "public_repos": 4,
+    "url": "https://github.com/national-gallery",
+    "blog": "https://www.nationalgallery.org.uk/",
+    "followers": 2
+  },
+  "https://www.gov.uk/api/organisations/national-infrastructure-and-service-transformation-authority": {
+    "login": "nista",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/nista",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/national-museums-liverpool": {
+    "login": "National-Museums-Liverpool",
+    "name": "National Museums Liverpool",
+    "description": "",
+    "public_repos": 2,
+    "url": "https://github.com/National-Museums-Liverpool",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/national-physical-laboratory": {
+    "login": "NationalPhysicalLaboratory",
+    "name": "National Physical Laboratory",
+    "description": "The National Physical Laboratory (NPL) is the UK's National Metrology Institute (NMI), developing and maintaining the national primary measurement standards.",
+    "public_repos": 1,
+    "url": "https://github.com/NationalPhysicalLaboratory",
+    "blog": "https://www.npl.co.uk/",
+    "followers": 6
+  },
+  "https://www.gov.uk/api/organisations/national-portrait-gallery": {
+    "login": "National-Portrait-Gallery",
+    "name": "National Portrait Gallery",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/National-Portrait-Gallery",
+    "blog": "https://www.npg.org.uk/",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/national-security": {
+    "login": "National-Security",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/National-Security",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/natural-england": {
+    "login": "naturalengland",
+    "name": "Natural England",
+    "description": "",
+    "public_repos": 12,
+    "url": "https://github.com/naturalengland",
+    "blog": "",
+    "followers": 44
+  },
+  "https://www.gov.uk/api/organisations/natural-environment-research-council": {
+    "login": "NERC",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/NERC",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/natural-history-museum": {
+    "login": "NaturalHistoryMuseum",
+    "name": "Natural History Museum",
+    "description": "",
+    "public_repos": 190,
+    "url": "https://github.com/NaturalHistoryMuseum",
+    "blog": "https://www.nhm.ac.uk",
+    "followers": 92
+  },
+  "https://www.gov.uk/api/organisations/natural-resources-wales": {
+    "login": "natural-resources-wales",
+    "name": "Natural Resources Wales",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/natural-resources-wales",
+    "blog": "https://naturalresourceswales.gov.uk/",
+    "followers": 1
+  },
+  "https://www.gov.uk/api/organisations/network-rail": {
+    "login": "Network-Rail",
+    "name": "",
+    "description": "",
+    "public_repos": 2,
+    "url": "https://github.com/Network-Rail",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/nhs-blood-and-transplant": {
+    "login": "NHS-Blood-and-Transplant",
+    "name": "NHS Blood and Transplant",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/NHS-Blood-and-Transplant",
+    "blog": "",
+    "followers": 1
+  },
+  "https://www.gov.uk/api/organisations/nhs-business-services-authority": {
+    "login": "nhsbsa",
+    "name": "NHS Business Services Authority",
+    "description": "",
+    "public_repos": 181,
+    "url": "https://github.com/nhsbsa",
+    "blog": "http://www.nhsbsa.nhs.uk/",
+    "followers": 55
+  },
+  "https://www.gov.uk/api/organisations/nhs-england": {
+    "login": "nhsengland",
+    "name": "NHS England",
+    "description": "Open Source projects from NHS England and NHS Improvement",
+    "public_repos": 226,
+    "url": "https://github.com/nhsengland",
+    "blog": "http://england.nhs.uk",
+    "followers": 453
+  },
+  "https://www.gov.uk/api/organisations/north-sea-transition-authority": {
+    "login": "North-Sea-Transition-Authority",
+    "name": "The North Sea Transition Authority",
+    "description": "",
+    "public_repos": 12,
+    "url": "https://github.com/North-Sea-Transition-Authority",
+    "blog": "https://www.nstauthority.co.uk",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/northern-ireland-court-service": {
+    "login": "NICTS",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/NICTS",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/ns-i": {
+    "login": "nsi",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/nsi",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/nuclear-decommissioning-authority": {
+    "login": "nda",
+    "name": "",
+    "description": "",
+    "public_repos": 1,
+    "url": "https://github.com/nda",
+    "blog": "",
+    "followers": 1
+  },
+  "https://www.gov.uk/api/organisations/nuclear-liabilities-financing-assurance-board": {
+    "login": "NLFAB",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/NLFAB",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/ofcom": {
+    "login": "OFCOM",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/OFCOM",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/office-for-product-safety-and-standards": {
+    "login": "OfficeForProductSafetyAndStandards",
+    "name": "Office for Product Safety and Standards",
+    "description": "",
+    "public_repos": 3,
+    "url": "https://github.com/OfficeForProductSafetyAndStandards",
+    "blog": "https://www.gov.uk/government/organisations/office-for-product-safety-and-standards",
+    "followers": 15
+  },
+  "https://www.gov.uk/api/organisations/office-for-responsible-business-conduct": {
+    "login": "orbc",
+    "name": "",
+    "description": "",
+    "public_repos": 1,
+    "url": "https://github.com/orbc",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/office-for-students": {
+    "login": "office-for-students",
+    "name": "",
+    "description": "",
+    "public_repos": 19,
+    "url": "https://github.com/office-for-students",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/office-of-rail-and-road": {
+    "login": "officeofrailandroad",
+    "name": "Office of Rail and Road",
+    "description": "",
+    "public_repos": 1,
+    "url": "https://github.com/officeofrailandroad",
+    "blog": "",
+    "followers": 4
+  },
+  "https://www.gov.uk/api/organisations/the-office-of-the-leader-of-the-house-of-commons": {
+    "login": "OLHC",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/OLHC",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/office-of-the-parliamentary-counsel": {
+    "login": "opc",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/opc",
+    "blog": "",
+    "followers": 1
+  },
+  "https://www.gov.uk/api/organisations/office-of-the-public-guardian": {
+    "login": "opg",
+    "name": "",
+    "description": "",
+    "public_repos": 4,
+    "url": "https://github.com/opg",
+    "blog": "",
+    "followers": 2
+  },
+  "https://www.gov.uk/api/organisations/ofgem": {
+    "login": "ofgem",
+    "name": "",
+    "description": "",
+    "public_repos": 1,
+    "url": "https://github.com/ofgem",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/ofsted": {
+    "login": "Ofsted",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/Ofsted",
+    "blog": "",
+    "followers": 1
+  },
+  "https://www.gov.uk/api/organisations/open-innovation-team": {
+    "login": "Open-innovation-team",
+    "name": "Open-innovation-team",
+    "description": "",
+    "public_repos": 1,
+    "url": "https://github.com/Open-innovation-team",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/ordnance-survey": {
+    "login": "OrdnanceSurvey",
+    "name": "Ordnance Survey",
+    "description": "Britain's mapping agency ",
+    "public_repos": 173,
+    "url": "https://github.com/OrdnanceSurvey",
+    "blog": "https://www.ordnancesurvey.co.uk",
+    "followers": 227
+  },
+  "https://www.gov.uk/api/organisations/planning-inspectorate": {
+    "login": "Planning-Inspectorate",
+    "name": "Planning Inspectorate",
+    "description": "",
+    "public_repos": 61,
+    "url": "https://github.com/Planning-Inspectorate",
+    "blog": "https://www.gov.uk/government/organisations/planning-inspectorate",
+    "followers": 39
+  },
+  "https://www.gov.uk/api/organisations/post-office": {
+    "login": "Payzone-UK",
+    "name": "Post Office Limited",
+    "description": "Post Office Ltd ",
+    "public_repos": 5,
+    "url": "https://github.com/Payzone-UK",
+    "blog": "http:\\\\www.payzone.co.uk",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/public-health-wales": {
+    "login": "Public-Health-Wales",
+    "name": "Public Health Wales",
+    "description": "",
+    "public_repos": 4,
+    "url": "https://github.com/Public-Health-Wales",
+    "blog": "https://nhs.wales/",
+    "followers": 42
+  },
+  "https://www.gov.uk/api/organisations/rail-safety-and-standards-board": {
+    "login": "rssb",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/rssb",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/research-england": {
+    "login": "ResearchEngland",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/ResearchEngland",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/royal-museums-greenwich": {
+    "login": "RoyalMuseumsGreenwich",
+    "name": "Royal Museums Greenwich",
+    "description": "",
+    "public_repos": 8,
+    "url": "https://github.com/RoyalMuseumsGreenwich",
+    "blog": "http://www.rmg.co.uk",
+    "followers": 1
+  },
+  "https://www.gov.uk/api/organisations/rural-payments-agency": {
+    "login": "RuralPaymentsAgency",
+    "name": "",
+    "description": "",
+    "public_repos": 1,
+    "url": "https://github.com/RuralPaymentsAgency",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/s4c": {
+    "login": "S4c",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/S4c",
+    "blog": "",
+    "followers": 1
+  },
+  "https://www.gov.uk/api/organisations/science-and-technology-facilities-council": {
+    "login": "stfc",
+    "name": "UKRI Science and Technology Facilities Council",
+    "description": "",
+    "public_repos": 228,
+    "url": "https://github.com/stfc",
+    "blog": "https://www.scd.stfc.ac.uk",
+    "followers": 89
+  },
+  "https://www.gov.uk/api/organisations/science-museum-group": {
+    "login": "TheScienceMuseum",
+    "name": "The Science Museum Group",
+    "description": "Historic collections, awe-inspiring galleries and inspirational exhibitions",
+    "public_repos": 38,
+    "url": "https://github.com/TheScienceMuseum",
+    "blog": "https://www.sciencemuseumgroup.org.uk",
+    "followers": 14
+  },
+  "https://www.gov.uk/api/organisations/secret-intelligence-service": {
+    "login": "mi6",
+    "name": "Secret Intelligence Service (MI6)",
+    "description": "We are SIS – the UK’s Secret Intelligence Service - also known as MI6. Our people work secretly around the world to make the UK safer and more prosperous.",
+    "public_repos": 5,
+    "url": "https://github.com/mi6",
+    "blog": "https://sis.gov.uk",
+    "followers": 306
+  },
+  "https://www.gov.uk/api/organisations/security-industry-authority": {
+    "login": "sia",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/sia",
+    "blog": "",
+    "followers": 1
+  },
+  "https://www.gov.uk/api/organisations/social-work-england": {
+    "login": "Social-Work-England",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/Social-Work-England",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/sport-england": {
+    "login": "Sport-England",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/Sport-England",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/student-loans-company": {
+    "login": "studentloanscompany",
+    "name": "Student Loans Company",
+    "description": "",
+    "public_repos": 3,
+    "url": "https://github.com/studentloanscompany",
+    "blog": "http://www.slc.co.uk",
+    "followers": 1
+  },
+  "https://www.gov.uk/api/organisations/insolvency-service": {
+    "login": "InsolvencyService",
+    "name": "The Insolvency Service",
+    "description": "",
+    "public_repos": 14,
+    "url": "https://github.com/InsolvencyService",
+    "blog": "",
+    "followers": 22
+  },
+  "https://www.gov.uk/api/organisations/the-national-archives": {
+    "login": "nationalarchives",
+    "name": "The National Archives, UK",
+    "description": "Official archive of the UK government. Discover our online collections, research guides and educational resources spanning 1,000 years",
+    "public_repos": 619,
+    "url": "https://github.com/nationalarchives",
+    "blog": "https://nationalarchives.gov.uk/",
+    "followers": 95
+  },
+  "https://www.gov.uk/api/organisations/the-pensions-regulator": {
+    "login": "thepensionsregulator",
+    "name": "TPR",
+    "description": "",
+    "public_repos": 22,
+    "url": "https://github.com/thepensionsregulator",
+    "blog": "https://www.thepensionsregulator.gov.uk",
+    "followers": 10
+  },
+  "https://www.gov.uk/api/organisations/the-water-services-regulation-authority": {
+    "login": "Ofwat",
+    "name": "",
+    "description": "",
+    "public_repos": 14,
+    "url": "https://github.com/Ofwat",
+    "blog": "",
+    "followers": 3
+  },
+  "https://www.gov.uk/api/organisations/trinity-house": {
+    "login": "Trinity-House",
+    "name": "Trinity",
+    "description": "Building the future!",
+    "public_repos": 1,
+    "url": "https://github.com/Trinity-House",
+    "blog": "",
+    "followers": 2
+  },
+  "https://www.gov.uk/api/organisations/uk-anti-doping": {
+    "login": "UK-Anti-Doping",
+    "name": "UK Anti-Doping",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/UK-Anti-Doping",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/uk-atomic-energy-authority": {
+    "login": "ukaea",
+    "name": "UK Atomic Energy Authority",
+    "description": "",
+    "public_repos": 70,
+    "url": "https://github.com/ukaea",
+    "blog": "https://www.gov.uk/government/organisations/uk-atomic-energy-authority",
+    "followers": 101
+  },
+  "https://www.gov.uk/api/organisations/uk-debt-management-office": {
+    "login": "UKDebtManagementOffice",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/UKDebtManagementOffice",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/uk-export-finance": {
+    "login": "UK-Export-Finance",
+    "name": "UK Export Finance",
+    "description": "We advance prosperity by ensuring no viable UK export fails for lack of finance or insurance, doing that sustainably and at no net cost to the taxpayer.",
+    "public_repos": 18,
+    "url": "https://github.com/UK-Export-Finance",
+    "blog": "https://www.gov.uk/government/organisations/uk-export-finance",
+    "followers": 23
+  },
+  "https://www.gov.uk/api/organisations/uk-health-security-agency": {
+    "login": "UK-Health-Security-Agency",
+    "name": "UK Health Security Agency",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/UK-Health-Security-Agency",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/uk-hydrographic-office": {
+    "login": "UKHO",
+    "name": "UK Hydrographic Office",
+    "description": "",
+    "public_repos": 118,
+    "url": "https://github.com/UKHO",
+    "blog": "https://www.gov.uk/government/organisations/uk-hydrographic-office",
+    "followers": 64
+  },
+  "https://www.gov.uk/api/organisations/uk-space-agency": {
+    "login": "UKSpaceAgency",
+    "name": "UK Space Agency",
+    "description": "UK Space Agency",
+    "public_repos": 7,
+    "url": "https://github.com/UKSpaceAgency",
+    "blog": "https://www.gov.uk/government/organisations/uk-space-agency",
+    "followers": 18
+  },
+  "https://www.gov.uk/api/organisations/uk-sport": {
+    "login": "uksp",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/uksp",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/uk-statistics-authority": {
+    "login": "office-for-statistics-regulation",
+    "name": "Office for Statistics Regulation",
+    "description": "Regulatory arm of the UK Statistics Authority",
+    "public_repos": 1,
+    "url": "https://github.com/office-for-statistics-regulation",
+    "blog": "https://www.statisticsauthority.gov.uk/osr/",
+    "followers": 3
+  },
+  "https://www.gov.uk/api/organisations/valuation-tribunal-for-england": {
+    "login": "vte",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/vte",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/visitbritain": {
+    "login": "visitbritain",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/visitbritain",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/women-and-equalities-unit": {
+    "login": "weu",
+    "name": "",
+    "description": "",
+    "public_repos": 0,
+    "url": "https://github.com/weu",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/yorkshire-dales-national-park-authority": {
+    "login": "YDNP",
+    "name": "",
+    "description": "",
+    "public_repos": 1,
+    "url": "https://github.com/YDNP",
+    "blog": "",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/british-film-institute": {
+    "login": "bfi-digital",
+    "name": "British Film Institute",
+    "description": "",
+    "public_repos": 5,
+    "url": "https://github.com/bfi-digital",
+    "blog": "https://www.bfi.org.uk",
+    "followers": 10
+  },
+  "https://www.gov.uk/api/organisations/civil-service": {
+    "login": "crossgovernmentservices",
+    "name": "Civil Service Digital",
+    "description": "Improving all the stuff Civil Servants do in their job that isn't their actual job - because Civil Servants are users too.",
+    "public_repos": 49,
+    "url": "https://github.com/crossgovernmentservices",
+    "blog": "https://governmentasaplatform.blog.gov.uk/category/civil-service-digital/",
+    "followers": 1
+  },
+  "https://www.gov.uk/api/organisations/crown-prosecution-service": {
+    "login": "CPS-Innovation",
+    "name": "CPS Digital and Innovation",
+    "description": "The Crown Prosecution Service Digital and Innovation",
+    "public_repos": 58,
+    "url": "https://github.com/CPS-Innovation",
+    "blog": "www.cps.gov.uk",
+    "followers": 36
+  },
+  "https://www.gov.uk/api/organisations/department-of-health-and-social-care": {
+    "login": "department-of-health-zz",
+    "name": "Department of Health and Social Care",
+    "description": "Digital strategy and technology team",
+    "public_repos": 12,
+    "url": "https://github.com/department-of-health-zz",
+    "blog": "",
+    "followers": 11
+  },
+  "https://www.gov.uk/api/organisations/disclosure-and-barring-service": {
+    "login": "dbsdigital",
+    "name": "Disclosure and Barring Service",
+    "description": "We help employers make safer recruitment decisions. We are a non-departmental public body sponsored by Home Office",
+    "public_repos": 2,
+    "url": "https://github.com/dbsdigital",
+    "blog": "",
+    "followers": 1
+  },
+  "https://www.gov.uk/api/organisations/government-analysis-function": {
+    "login": "best-practice-and-impact",
+    "name": "Analysis Function ",
+    "description": "The UK Government Analysis Function is a network for all civil servants working in UK government analysis.",
+    "public_repos": 32,
+    "url": "https://github.com/best-practice-and-impact",
+    "blog": "https://analysisfunction.civilservice.gov.uk/",
+    "followers": 114
+  },
+  "https://www.gov.uk/api/organisations/civil-service-government-communication-service": {
+    "login": "Government-Communication-Service",
+    "name": "Government Communication Service",
+    "description": "",
+    "public_repos": 2,
+    "url": "https://github.com/Government-Communication-Service",
+    "blog": "",
+    "followers": 9
+  },
+  "https://www.gov.uk/api/organisations/government-digital-service": {
+    "login": "alphagov",
+    "name": "Government Digital Service",
+    "description": "",
+    "public_repos": 1530,
+    "url": "https://github.com/alphagov",
+    "blog": "https://gds.blog.gov.uk/",
+    "followers": 1589
+  },
+  "https://www.gov.uk/api/organisations/hm-passport-office": {
+    "login": "HMPO",
+    "name": "HM Passport Office",
+    "description": "",
+    "public_repos": 27,
+    "url": "https://github.com/HMPO",
+    "blog": "",
+    "followers": 13
+  },
+  "https://www.gov.uk/api/organisations/judicial-appointments-commission": {
+    "login": "jac-uk",
+    "name": "Judicial Appointments Commission UK",
+    "description": "Become a judge.",
+    "public_repos": 9,
+    "url": "https://github.com/jac-uk",
+    "blog": "https://judicialappointments.gov.uk",
+    "followers": 1
+  },
+  "https://www.gov.uk/api/organisations/maritime-and-coastguard-agency": {
+    "login": "mcga-gov-uk",
+    "name": "Maritime and Coastguard Agency",
+    "description": "",
+    "public_repos": 3,
+    "url": "https://github.com/mcga-gov-uk",
+    "blog": "",
+    "followers": 1
+  },
+  "https://www.gov.uk/api/organisations/national-cyber-security-centre": {
+    "login": "ukncsc",
+    "name": "The National Cyber Security Centre",
+    "description": "Helping to make the UK the safest place to live and do business online",
+    "public_repos": 20,
+    "url": "https://github.com/ukncsc",
+    "blog": "https://ncsc.gov.uk",
+    "followers": 351
+  },
+  "https://www.gov.uk/api/organisations/oak-national-academy": {
+    "login": "oaknational",
+    "name": "Oak National Academy",
+    "description": "Creating an openly licensed, fully resourced and AI-enabled curriculum for teachers and pupils as a not for profit and independent Arm's Length Body of UK Gov",
+    "public_repos": 29,
+    "url": "https://github.com/oaknational",
+    "blog": "https://www.thenational.academy/",
+    "followers": 49
+  },
+  "https://www.gov.uk/api/organisations/office-for-digital-identities-and-attributes": {
+    "login": "ofdia-uk",
+    "name": "Office for Digital Identities and Attributes",
+    "description": "",
+    "public_repos": 3,
+    "url": "https://github.com/ofdia-uk",
+    "blog": "https://www.gov.uk/ofdia",
+    "followers": 6
+  },
+  "https://www.gov.uk/api/organisations/office-for-equality-and-opportunity": {
+    "login": "ukgov-equality-hub",
+    "name": "UK Government Office for Equality and Opportunity",
+    "description": "",
+    "public_repos": 26,
+    "url": "https://github.com/ukgov-equality-hub",
+    "blog": "https://www.gov.uk/government/organisations/office-for-equality-and-opportunity",
+    "followers": 10
+  },
+  "https://www.gov.uk/api/organisations/ofqual": {
+    "login": "OfqualGovUK",
+    "name": "Ofqual",
+    "description": "The regulator for qualifications and exams in England",
+    "public_repos": 10,
+    "url": "https://github.com/OfqualGovUK",
+    "blog": "https://gov.uk/ofqual",
+    "followers": 11
+  },
+  "https://www.gov.uk/api/organisations/platform4": {
+    "login": "platform45",
+    "name": "Platform45",
+    "description": "Turning the world into a software world",
+    "public_repos": 28,
+    "url": "https://github.com/platform45",
+    "blog": "https://www.platform45.com",
+    "followers": 39
+  },
+  "https://www.gov.uk/api/organisations/the-national-lottery-community-fund": {
+    "login": "biglotteryfund",
+    "name": "The National Lottery Community Fund",
+    "description": "The National Lottery Community Fund distributes over £500m a year to communities across the UK, raised by players of The National Lottery.",
+    "public_repos": 16,
+    "url": "https://github.com/biglotteryfund",
+    "blog": "https://www.tnlcommunityfund.org.uk",
+    "followers": 0
+  },
+  "https://www.gov.uk/api/organisations/the-scottish-government": {
+    "login": "scottishgovernment",
+    "name": "Scottish Government",
+    "description": "The Scottish Government Digital Publishing team develop www.gov.scot, www.mygov.scot, and provide a shared service for hosting other sites.",
+    "public_repos": 33,
+    "url": "https://github.com/scottishgovernment",
+    "blog": "https://www.gov.scot",
+    "followers": 46
+  },
+  "https://www.gov.uk/api/organisations/veterinary-medicines-directorate": {
+    "login": "VMDDTE",
+    "name": "Veterinary Medicines Directorate (VMD)",
+    "description": "The Veterinary Medicines Directorate (VMD) protects animal health, public health and the environment. VMD is an executive agency, sponsored DEFRA",
+    "public_repos": 5,
+    "url": "https://github.com/VMDDTE",
+    "blog": "https://www.gov.uk/government/organisations/veterinary-medicines-directorate",
+    "followers": 5
+  },
+  "https://www.gov.uk/api/organisations/victoria-and-albert-museum": {
+    "login": "vanda",
+    "name": "Victoria and Albert Museum",
+    "description": "",
+    "public_repos": 40,
+    "url": "https://github.com/vanda",
+    "blog": "http://www.vam.ac.uk",
+    "followers": 25
+  }
+}

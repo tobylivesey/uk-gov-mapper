@@ -425,8 +425,12 @@ def _build_domain_to_org(orgs: list[dict]) -> dict[str, dict]:
     When a domain is shared (e.g. dwp.gov.uk used by DWP + its advisory bodies),
     assigns to the parent department — the org whose slug or abbreviation matches
     the domain prefix, or failing that, the org with child organisations.
+    If no candidate owns the domain directly, walks up the parent hierarchy
+    to find the department (e.g. mod.uk → Ministry of Defence).
     """
     from collections import defaultdict
+
+    org_by_id = {o["id"]: o for o in orgs}
 
     # Collect all orgs per domain
     domain_candidates: dict[str, list[dict]] = defaultdict(list)
@@ -465,6 +469,21 @@ def _build_domain_to_org(orgs: list[dict]) -> dict[str, dict]:
         parents = [o for o in candidates if o.get("child_organisations")]
         if len(parents) == 1:
             mapping[domain] = parents[0]
+            continue
+
+        # Priority 4: walk up parent hierarchy from any candidate to find
+        # the department that owns the infrastructure (e.g. mod.uk → MOD)
+        for org in candidates:
+            for parent_ref in org.get("parent_organisations", []):
+                parent_id = parent_ref.get("id")
+                if parent_id and parent_id in org_by_id:
+                    parent = org_by_id[parent_id]
+                    if parent.get("child_organisations"):
+                        mapping[domain] = parent
+                        break
+            if domain in mapping:
+                break
+        if domain in mapping:
             continue
 
         # Fallback: first org (arbitrary but stable)
@@ -563,26 +582,11 @@ def aggregate_shodan_results(
 ) -> dict[str, dict]:
     """Match Shodan results to orgs and aggregate.
 
-    When a match lands on a small body (no children), walks up to the parent
-    department — edge devices belong to the department, not advisory committees.
-
     Returns dict keyed by org id -> {edge_devices, ip_count, asns, shodan_orgs}.
     """
-    # Build parent lookup for walking up hierarchy
     org_by_id = {}
     if orgs:
         org_by_id = {o["id"]: o for o in orgs}
-
-    def _find_infra_owner(org: dict) -> dict:
-        """Walk up the org hierarchy to find the department that owns the infra."""
-        if org.get("child_organisations"):
-            return org  # Already a department
-        # Walk up to parent
-        for parent_ref in org.get("parent_organisations", []):
-            parent_id = parent_ref.get("id")
-            if parent_id and parent_id in org_by_id:
-                return org_by_id[parent_id]
-        return org  # No parent found, keep original
 
     org_data: dict[str, dict] = defaultdict(lambda: {
         "edge_devices": [],
@@ -602,8 +606,6 @@ def aggregate_shodan_results(
             unmatched.append(r)
             continue
 
-        # Walk up to parent department for infra attribution
-        matched_org = _find_infra_owner(matched_org)
         org_id = matched_org["id"]
         data = org_data[org_id]
         data["edge_devices"].append({

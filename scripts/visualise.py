@@ -305,6 +305,9 @@ def generate_hierarchy_chart(df, output_path: Path = None):
             'ripe_asns': row.get('ripe_asns', []),
             'ripe_inetnums': row.get('ripe_inetnums', []),
             'ripe_prefixes': row.get('ripe_prefixes', []),
+            'github_org': row.get('github_org', ''),
+            'github_repos': int(row.get('github_repos', 0) or 0),
+            'github_url': row.get('github_url', ''),
         })
 
     # Build links from parent_organisations

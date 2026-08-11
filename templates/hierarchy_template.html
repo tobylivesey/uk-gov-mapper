@@ -1018,9 +1018,10 @@
                 <div class="stat"><span class="stat-value">{{total_links}}</span><span class="stat-label">links</span></div>
                 <div class="stat"><span class="stat-value">{{total_formats}}</span><span class="stat-label">types</span></div>
             </div>
-            <div class="btn-group">
+            <div class="btn-group" id="size-group">
                 <button class="filter-btn active" id="size-budget">Budget</button>
                 <button class="filter-btn" id="size-headcount">Headcount</button>
+                <button class="filter-btn" id="size-soc" style="display:none">SOC postings</button>
                 <button class="filter-btn" id="size-equal">Equal</button>
             </div>
             <div class="highlight-control">
@@ -1042,7 +1043,7 @@
                 <option value="edr">Colour by EDR</option>
                 <option value="ndr">Colour by NDR</option>
                 <option value="soar">Colour by SOAR</option>
-                <option value="firewall">Colour by Firewall</option>
+                <option value="edge_device">Colour by Edge Device</option>
                 <option value="iam">Colour by IAM</option>
                 <option value="vulnerability_management">Colour by Vuln Mgmt</option>
                 <option value="email">Colour by Mail Gateway</option>
@@ -1632,14 +1633,14 @@
 
                 // Edge Devices — merge Shodan detections + firewall mentions from jobs
                 const edgeDevices = d.edge_devices || [];
-                const firewallVendors = (d.tech_stack && d.tech_stack.firewall) || [];
+                const edgeDeviceVendors = (d.tech_stack && d.tech_stack.edge_device) || [];
                 const shodanDomain = (d.email_domains && d.email_domains[0]) || '';
                 const shodanVendorNames = new Set(edgeDevices.map(e => e.vendor.toLowerCase()));
                 const edgeRows = [];
                 edgeDevices.forEach(e => {
                     edgeRows.push({ vendor: e.vendor, source: 'shodan', filter: e.filter, confidence: null });
                 });
-                firewallVendors.forEach(v => {
+                edgeDeviceVendors.forEach(v => {
                     if (!shodanVendorNames.has((v.vendor || v).toLowerCase())) {
                         edgeRows.push({ vendor: v.vendor || v, source: v.source || '', confidence: v.confidence, filter: null });
                     }
@@ -1898,10 +1899,14 @@
 
         // Build vendor -> colour maps for each tech category
         const vendorColourMaps = {};
-        ['siem','edr','ndr','soar','firewall','iam','vulnerability_management'].forEach(cat => {
+        ['siem','edr','ndr','soar','edge_device','iam','vulnerability_management'].forEach(cat => {
             const vendors = new Set();
             graphData.nodes.forEach(n => {
                 ((n.tech_stack || {})[cat] || []).forEach(v => vendors.add(v.vendor));
+                // Include Shodan edge devices in edge_device colour map
+                if (cat === 'edge_device') {
+                    (n.edge_devices || []).forEach(d => vendors.add(d.vendor));
+                }
             });
             const sorted = [...vendors].sort();
             const map = {};
@@ -1935,6 +1940,11 @@
                 return vendorColourMaps['email'][mps[0]] || noVendorColour;
             }
             const vendors = ((d.tech_stack || {})[category] || []);
+            // For edge_device, merge in Shodan edge devices
+            if (category === 'edge_device' && vendors.length === 0) {
+                const shodan = d.edge_devices || [];
+                if (shodan.length > 0) return vendorColourMaps[category][shodan[0].vendor] || noVendorColour;
+            }
             if (vendors.length === 0) return noVendorColour;
             return vendorColourMaps[category][vendors[0].vendor] || noVendorColour;
         }
@@ -2120,8 +2130,13 @@
                 applyCyberFilter();
 
                 if (cyberFilterActive) {
+                    preCyberSizeMode = currentSizeMode;
+                    sizeBtns.soc.style.display = "";
+                    applySizing("soc");
                     applyCyberColour(cyberColourBy.value);
                 } else {
+                    sizeBtns.soc.style.display = "none";
+                    applySizing(preCyberSizeMode);
                     restoreFormatColours();
                 }
             });
@@ -2138,17 +2153,40 @@
         const sizeBtns = {
             budget: document.getElementById("size-budget"),
             headcount: document.getElementById("size-headcount"),
+            soc: document.getElementById("size-soc"),
             equal: document.getElementById("size-equal"),
         };
         const defaultRadius = 5;
+        const cyberEqualRadius = 10;
+        let preCyberSizeMode = "budget";
+        let currentSizeMode = "budget";
+
+        // Pre-compute SOC radius per node: count soc_evidence postings from last 12 months
+        const oneYearAgo = new Date();
+        oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
+        const oneYearAgoStr = oneYearAgo.toISOString().slice(0, 10);
+
+        let maxSocCount = 0;
+        graphData.nodes.forEach(n => {
+            const recent = (n.soc_evidence || []).filter(ev => ev.date && ev.date >= oneYearAgoStr);
+            n.soc_count = recent.length;
+            if (n.soc_count > maxSocCount) maxSocCount = n.soc_count;
+        });
+        graphData.nodes.forEach(n => {
+            n.soc_radius = n.soc_count > 0
+                ? Math.max(4, Math.min(18, 4 + (n.soc_count / Math.max(1, maxSocCount)) * 14))
+                : 3;
+        });
 
         function getRadius(d, mode) {
             if (mode === "headcount") return d.hc_radius;
-            if (mode === "equal") return defaultRadius;
+            if (mode === "soc") return d.soc_radius;
+            if (mode === "equal") return cyberFilterActive ? cyberEqualRadius : defaultRadius;
             return d.radius;
         }
 
         function applySizing(mode) {
+            currentSizeMode = mode;
             Object.entries(sizeBtns).forEach(([key, btn]) => {
                 btn.classList.toggle("active", key === mode);
             });
@@ -2191,10 +2229,10 @@
         // Force simulation
         const simulation = d3.forceSimulation(graphData.nodes)
             .force("link", d3.forceLink(graphData.links).id(d => d.id).distance(40).strength(0.15))
-            .force("charge", d3.forceManyBody().strength(-50).distanceMax(200))
+            .force("charge", d3.forceManyBody().strength(-80).distanceMax(250))
             .force("x", d3.forceX(width / 2).strength(0.03))
             .force("y", d3.forceY(d => tierY(d.tier)).strength(1.2))
-            .force("collide", d3.forceCollide(d => d.radius + 2).strength(0.7))
+            .force("collide", d3.forceCollide(d => d.radius + 5).strength(0.9))
             .alphaDecay(0.02)
             .on("tick", () => {
                 // Clamp X to prevent horizontal leaking

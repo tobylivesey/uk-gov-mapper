@@ -226,7 +226,7 @@ TAXONOMY: dict[str, dict[str, list[str]]] = {
 
     # --- Adjacent Security Controls ---
 
-    "firewall": {
+    "edge_device": {
         "Palo Alto Networks": [
             "palo alto networks firewall",
             "palo alto firewall",

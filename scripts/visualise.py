@@ -99,6 +99,11 @@ def build_hierarchy(df):
         else:
             headcount_value = 3000  # Default for orgs without headcount
 
+        # Cyber data
+        cyber_job_count = row.get('cyber_job_count', 0) or 0
+        cyber_tech_stack = row.get('cyber_tech_stack', {})
+        cyber_roles_sample = row.get('cyber_roles_sample', [])
+
         id_to_data[org_id] = {
             'id': org_id,
             'name': row['title'],
@@ -110,6 +115,9 @@ def build_hierarchy(df):
             'headcount_display': format_headcount(headcount_val),
             'value': value,
             'headcount_value': headcount_value,
+            'cyber_job_count': cyber_job_count,
+            'cyber_tech_stack': cyber_tech_stack,
+            'cyber_roles_sample': cyber_roles_sample,
             'children': []
         }
     
@@ -222,15 +230,15 @@ FORMAT_TIERS = {
     'Executive office': 2,
     'Executive non-departmental public body': 3,
     'Advisory non-departmental public body': 3,
-    'Public corporation': 3,
-    'Special health authority': 3,
-    'Civil service': 4,
-    'Independent monitoring body': 4,
-    'Court': 4,
-    'Tribunal': 4,
-    'Sub organisation': 5,
-    'Ad-hoc advisory group': 5,
-    'Other': 5,
+    'Public corporation': 4,
+    'Special health authority': 4,
+    'Civil service': 5,
+    'Independent monitoring body': 5,
+    'Court': 5,
+    'Tribunal': 5,
+    'Sub organisation': 6,
+    'Ad-hoc advisory group': 6,
+    'Other': 6,
 }
 
 
@@ -254,6 +262,8 @@ def generate_hierarchy_chart(df, output_path: Path = None):
         node_ids.add(org_id)
         budget = row.get(BUDGET_COL)
         budget_val = None if pd.isna(budget) else budget
+        headcount = row.get('headcount')
+        headcount_val = None if pd.isna(headcount) else int(headcount)
 
         abbrev = ''
         if isinstance(row.get('details'), dict):
@@ -268,15 +278,36 @@ def generate_hierarchy_chart(df, output_path: Path = None):
         else:
             radius = 4
 
+        # Headcount-based radius
+        if headcount_val and headcount_val > 0:
+            hc_radius = max(3, min(18, math.sqrt(headcount_val) / 8))
+        else:
+            hc_radius = 4
+
         nodes.append({
             'id': org_id,
             'name': row['title'],
             'format': fmt,
             'tier': tier,
             'radius': round(radius, 1),
+            'hc_radius': round(hc_radius, 1),
             'budget_display': format_budget(budget_val),
+            'headcount_display': format_headcount(headcount_val),
             'domain': row.get('best_domain', ''),
             'abbrev': abbrev,
+            'cyber_jobs': int(row.get('cyber_job_count', 0) or 0),
+            'has_soc': bool(row.get('has_soc', False)),
+            'soc_evidence': row.get('soc_evidence', []) if row.get('has_soc') else [],
+            'tech_stack': row.get('cyber_tech_stack', {}),
+            'mail_providers': row.get('mail_providers', []),
+            'email_domains': row.get('email_domains', []),
+            'edge_devices': row.get('shodan_edge_devices', []),
+            'ripe_asns': row.get('ripe_asns', []),
+            'ripe_inetnums': row.get('ripe_inetnums', []),
+            'ripe_prefixes': row.get('ripe_prefixes', []),
+            'github_org': row.get('github_org', ''),
+            'github_repos': int(row.get('github_repos', 0) or 0),
+            'github_url': row.get('github_url', ''),
         })
 
     # Build links from parent_organisations

@@ -310,78 +310,6 @@ def enrich_orgs_with_govuk_domains(
     return orgs
 
 
-def find_best_org_for_domain(
-    domain: str,
-    orgs: list[dict],
-    threshold: float = 0.75
-) -> tuple[dict, float, str] | None:
-    """
-    Reverse matching: find the best org match for an unassigned domain.
-
-    Args:
-        domain: The domain to match
-        orgs: List of org dicts to search
-        threshold: Minimum score to accept
-
-    Returns:
-        Tuple of (org, score, method) or None if no good match
-    """
-    prefix = extract_domain_prefix(domain)
-    prefix_normalized = normalize_for_matching(prefix.replace('-', ' '))
-    prefix_words = set(prefix_normalized.split()) - STOPWORDS
-
-    best_match = None
-    best_score = 0.0
-    best_method = None
-
-    for org in orgs:
-        org_title = org.get("title", "")
-        org_slug = org.get("details", {}).get("slug", "")
-        org_abbr = org.get("details", {}).get("abbreviation", "")
-
-        title_normalized = normalize_for_matching(org_title)
-        title_words = set(title_normalized.split()) - STOPWORDS
-
-        score = 0.0
-        method = None
-
-        # Check if domain prefix matches slug (exact match, works for stopword domains)
-        if prefix == org_slug:
-            score = 1.0
-            method = "reverse_slug_exact"
-
-        # Check abbreviation match (exact match, works for stopword domains)
-        elif org_abbr and len(org_abbr) >= 3 and prefix.lower() == org_abbr.lower():
-            score = 0.95
-            method = "reverse_abbreviation"
-
-        # Only try fuzzy strategies if prefix has meaningful words
-        elif prefix_words:
-            # Check word overlap (need at least 2 meaningful words)
-            if len(title_words) >= 1:
-                word_overlap = title_words & prefix_words
-                if len(word_overlap) >= 2:
-                    overlap_ratio = len(word_overlap) / max(len(prefix_words), 1)
-                    score = 0.75 + (overlap_ratio * 0.15)
-                    method = "reverse_word_overlap"
-
-            # Fuzzy match for longer prefixes
-            if not method and len(prefix) >= 6:
-                ratio = SequenceMatcher(None, prefix_normalized, title_normalized).ratio()
-                if ratio >= 0.75:
-                    score = ratio * 0.85
-                    method = "reverse_fuzzy"
-
-        if score > best_score and score >= threshold:
-            best_score = score
-            best_match = org
-            best_method = method
-
-    if best_match:
-        return (best_match, best_score, best_method)
-    return None
-
-
 def reverse_match_unassigned_domains(
     orgs: list[dict],
     domains: set[str],
@@ -389,6 +317,9 @@ def reverse_match_unassigned_domains(
 ) -> int:
     """
     Find orgs for domains that weren't matched in the forward pass.
+
+    Uses pre-built indexes for slug/abbreviation lookups (O(1) each),
+    only falling back to fuzzy matching for domains that don't hit those.
 
     Args:
         orgs: List of org dicts (modified in place)
@@ -410,7 +341,6 @@ def reverse_match_unassigned_domains(
             continue
         if any(pattern in domain for pattern in DOMAIN_DENYLIST_PATTERNS):
             continue
-        # Skip very short prefixes
         prefix = extract_domain_prefix(domain)
         if len(prefix) < 4:
             continue
@@ -418,16 +348,65 @@ def reverse_match_unassigned_domains(
 
     logger.info(f"\nReverse matching: {len(unassigned)} unassigned domains")
 
+    # Pre-build O(1) lookup indexes
+    slug_to_org: dict[str, dict] = {}
+    abbr_to_org: dict[str, dict] = {}
+    # Pre-compute normalized titles and word sets once
+    org_index: list[tuple[dict, str, set[str]]] = []
+    for org in orgs:
+        slug = org.get("details", {}).get("slug", "")
+        abbr = (org.get("details", {}).get("abbreviation", "") or "").strip()
+        if slug:
+            slug_to_org[slug] = org
+        if abbr and len(abbr) >= 3:
+            abbr_to_org[abbr.lower()] = org
+        title_normalized = normalize_for_matching(org.get("title", ""))
+        title_words = set(title_normalized.split()) - STOPWORDS
+        org_index.append((org, title_normalized, title_words))
+
     domains_added = 0
 
-    for domain in unassigned:
-        result = find_best_org_for_domain(domain, orgs, threshold)
+    for di, domain in enumerate(unassigned):
+        if di > 0 and di % 500 == 0:
+            logger.info(f"  Reverse matching progress: {di}/{len(unassigned)}")
 
-        if not result:
+        prefix = extract_domain_prefix(domain)
+        org = None
+        score = 0.0
+        method = None
+
+        # Fast path: slug exact match (O(1))
+        if prefix in slug_to_org:
+            org = slug_to_org[prefix]
+            score = 1.0
+            method = "reverse_slug_exact"
+
+        # Fast path: abbreviation match (O(1))
+        if not org and prefix.lower() in abbr_to_org:
+            org = abbr_to_org[prefix.lower()]
+            score = 0.95
+            method = "reverse_abbreviation"
+
+        # Word overlap (only if fast paths missed)
+        if not org:
+            prefix_normalized = normalize_for_matching(prefix.replace('-', ' '))
+            prefix_words = set(prefix_normalized.split()) - STOPWORDS
+            if prefix_words:
+                best_score = 0.0
+                for cand_org, _, title_words in org_index:
+                    if title_words:
+                        word_overlap = title_words & prefix_words
+                        if len(word_overlap) >= 2:
+                            overlap_ratio = len(word_overlap) / max(len(prefix_words), 1)
+                            s = 0.75 + (overlap_ratio * 0.15)
+                            if s > best_score and s >= threshold:
+                                best_score = s
+                                org = cand_org
+                                score = s
+                                method = "reverse_word_overlap"
+
+        if not org or score < threshold:
             continue
-
-        org, score, method = result
-        org_title = org.get("title", "Unknown")
 
         # Check if org already has this domain
         if domain in org.get("email_domains", []):
@@ -443,11 +422,150 @@ def reverse_match_unassigned_domains(
 
         # Add to org
         add_email_domain(org, domain, source="govuk_domain_list")
+        org_title = org.get("title", "Unknown")
 
         domains_added += 1
         logger.info(f"  Reverse matched ({method}, {score:.2f}): {domain} -> {org_title}")
 
     logger.info(f"Reverse matching added {domains_added} domains")
+    return domains_added
+
+
+# Common subdomain prefixes used by government digital/cyber teams
+SUBDOMAIN_PREFIXES = [
+    'digital',
+    'cyber',
+    'data',
+    'tech',
+    'ict',
+    'it',
+    'security',
+]
+
+
+def probe_subdomain_email(
+    orgs: list[dict],
+) -> int:
+    """
+    Probe for subdomain email setups (e.g. digital.hmrc.gov.uk).
+
+    Government digital and cyber teams frequently run their own mail
+    on a subdomain of their parent org's domain. This function tries
+    common prefixes against all known .gov.uk domains and assigns
+    hits to the appropriate child org where one exists.
+
+    Detects wildcard DNS (domains that resolve any subdomain) by
+    testing a nonsense prefix first and skipping those domains.
+
+    Args:
+        orgs: List of org dicts (modified in place)
+
+    Returns:
+        Number of subdomain domains added
+    """
+    # Collect all known .gov.uk domains and which org owns them.
+    domain_to_org: dict[str, dict] = {}
+    for org in orgs:
+        for d in org.get('email_domains', []):
+            if d.endswith('.gov.uk'):
+                domain_to_org[d] = org
+
+    # Also include high-confidence matches from the official .gov.uk domain
+    # list, even if the parent domain had no MX and wasn't assigned.
+    # Subdomains can have MX when the parent doesn't
+    # (e.g. cabinet-office.gov.uk has no MX, but digital.cabinet-office.gov.uk does).
+    # Use slug-exact match to assign to the right org even if a child org
+    # scraped the same domain from a mailto link first.
+    govuk_domains = load_govuk_domains()
+    for org in orgs:
+        slug = org.get('details', {}).get('slug', '')
+        abbr = (org.get('details', {}).get('abbreviation', '') or '').lower()
+        # Only try exact slug and abbreviation matches (fast, no fuzzy)
+        candidates = []
+        if slug:
+            candidates.append(f'{slug}.gov.uk')
+        if abbr and len(abbr) >= 3:
+            candidates.append(f'{abbr}.gov.uk')
+        for d in candidates:
+            if d in govuk_domains:
+                # Slug-exact match takes priority — reassign even if a child
+                # org scraped this domain from a mailto link first
+                domain_to_org[d] = org
+
+    # Collect all domains already assigned (to avoid duplicates)
+    all_assigned = set()
+    for org in orgs:
+        all_assigned.update(org.get('email_domains', []))
+
+    # Detect wildcard DNS: test a nonsense subdomain for each parent domain
+    wildcard_domains = set()
+    for parent_domain in sorted(domain_to_org.keys()):
+        rate_limit_sleep(0.1)
+        canary = f'xq9z7nonsense.{parent_domain}'
+        if lookup_mx_records(canary):
+            wildcard_domains.add(parent_domain)
+            logger.debug(f"  Wildcard DNS detected: *.{parent_domain} — skipping")
+
+    if wildcard_domains:
+        logger.info(
+            f"Skipping {len(wildcard_domains)} domains with wildcard DNS: "
+            f"{', '.join(sorted(wildcard_domains)[:5])}{'...' if len(wildcard_domains) > 5 else ''}"
+        )
+
+    # Build reverse lookup: domain -> org that has it
+    domain_owner: dict[str, dict] = {}
+    for org in orgs:
+        for d in org.get('email_domains', []):
+            domain_owner[d] = org
+
+    domains_added = 0
+    probed = 0
+
+    for parent_domain, parent_org in sorted(domain_to_org.items()):
+        if parent_domain in wildcard_domains:
+            continue
+
+        for prefix in SUBDOMAIN_PREFIXES:
+            subdomain = f'{prefix}.{parent_domain}'
+
+            if subdomain in all_assigned:
+                # If already assigned to a different org, also add to the
+                # slug-matched parent (e.g. digital.cabinet-office.gov.uk
+                # was scraped from Civil Service but should also be on
+                # Cabinet Office since cabinet-office is its slug).
+                existing_owner = domain_owner.get(subdomain)
+                if existing_owner and existing_owner.get('id') != parent_org.get('id'):
+                    parent_domains = set(parent_org.get('email_domains', []))
+                    if subdomain not in parent_domains:
+                        add_email_domain(parent_org, subdomain, source='subdomain_probe')
+                        domains_added += 1
+                        logger.info(
+                            f"  Subdomain shared: {subdomain} -> {parent_org['title']} "
+                            f"(also on {existing_owner.get('title', '?')})"
+                        )
+                continue
+
+            probed += 1
+            rate_limit_sleep(0.1)
+            mx_records = lookup_mx_records(subdomain)
+
+            if not mx_records:
+                continue
+
+            # Assign to the org that owns the parent domain.
+            # We don't try to guess which child org uses the subdomain —
+            # the parent is the known owner of the domain.
+            add_email_domain(parent_org, subdomain, source='subdomain_probe')
+            all_assigned.add(subdomain)
+            domains_added += 1
+
+            mx_host = mx_records[0].get('host', '') if mx_records else ''
+            logger.info(
+                f"  Subdomain hit: {subdomain} -> {parent_org['title']} "
+                f"(MX: {mx_host})"
+            )
+
+    logger.info(f"Subdomain probing: {domains_added} domains added ({probed} probed)")
     return domains_added
 
 
@@ -487,6 +605,9 @@ def main(orgs_enriched: list[dict] | None = None) -> list[dict]:
 
     # Reverse matching: find orgs for unassigned domains
     reverse_match_unassigned_domains(enriched_orgs, domains)
+
+    # Subdomain probing: find digital.*, cyber.* etc. subdomains
+    probe_subdomain_email(enriched_orgs)
 
     # Summary statistics
     orgs_with_domains = sum(1 for org in enriched_orgs if org.get("email_domains"))

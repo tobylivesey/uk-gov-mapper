@@ -1,0 +1,2685 @@
+[
+  {
+    "ip_str": "185.32.110.66",
+    "port": 443,
+    "hostnames": [
+      "rushcliffe.gov.uk"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "Ineedbroadband Ltd",
+    "asn": "AS201715",
+    "timestamp": "2026-08-10T11:25:06.847420",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "149.40.104.142",
+    "port": 443,
+    "hostnames": [
+      "vpn.hertfordshire.gov.uk",
+      "wlapahfrs.hertfordshire.gov.uk",
+      "wlapaip.hertfordshire.gov.uk",
+      "wlapa.hertfordshire.gov.uk",
+      "wlapaloan.hertfordshire.gov.uk",
+      "wlapa3p.hertfordshire.gov.uk"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "ITS Technology Group Limited",
+    "asn": "AS41354",
+    "timestamp": "2026-08-10T11:20:24.329237",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "31.25.4.57",
+    "port": 443,
+    "hostnames": [
+      "northyorks.gov.uk"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "NYCC internet",
+    "asn": "AS41484",
+    "timestamp": "2026-08-10T01:49:11.356325",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "82.45.152.173",
+    "port": 443,
+    "hostnames": [
+      "haringey.gov.uk"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "Virgin Media Limited",
+    "asn": "AS5089",
+    "timestamp": "2026-08-09T21:37:24.902959",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "195.11.111.28",
+    "port": 443,
+    "hostnames": [
+      "vpn.hertfordshire.gov.uk",
+      "wlapahfrs.hertfordshire.gov.uk",
+      "wlapaip.hertfordshire.gov.uk",
+      "wlapa.hertfordshire.gov.uk",
+      "wlapaloan.hertfordshire.gov.uk",
+      "wlapa3p.hertfordshire.gov.uk"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "HERTFORDSHIRE-COUNTY-COUNCIL",
+    "asn": "AS1273",
+    "timestamp": "2026-08-09T12:39:48.147456",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "149.40.104.143",
+    "port": 443,
+    "hostnames": [
+      "vpn.hertfordshire.gov.uk",
+      "wlapahfrs.hertfordshire.gov.uk",
+      "wlapaip.hertfordshire.gov.uk",
+      "wlapa.hertfordshire.gov.uk",
+      "wlapaloan.hertfordshire.gov.uk",
+      "wlapa3p.hertfordshire.gov.uk"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "ITS Technology Group Limited",
+    "asn": "AS41354",
+    "timestamp": "2026-08-09T07:30:40.760167",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "51.149.8.63",
+    "port": 443,
+    "hostnames": [
+      "portal.uat.cabinetoffice.gov.uk",
+      "www.portal.uat.cabinetoffice.gov.uk"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "UK Cabinet Office",
+    "asn": "AS16509",
+    "timestamp": "2026-08-09T05:59:40.230154",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "51.149.8.2",
+    "port": 443,
+    "hostnames": [
+      "portal.mobile.cabinetoffice.gov.uk",
+      "www.portal.mobile.cabinetoffice.gov.uk"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "UK Cabinet Office",
+    "asn": "AS16509",
+    "timestamp": "2026-08-08T13:39:15.252223",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "208.127.204.116",
+    "port": 8443,
+    "hostnames": [
+      "gateshead.gov.uk"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "Palo Alto Networks, Inc",
+    "asn": "AS16509",
+    "timestamp": "2026-08-07T17:03:08.081911",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "51.149.8.1",
+    "port": 443,
+    "hostnames": [
+      "www.portal.client.cabinetoffice.gov.uk",
+      "portal.client.cabinetoffice.gov.uk"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "UK Cabinet Office",
+    "asn": "AS16509",
+    "timestamp": "2026-08-07T07:38:36.587176",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "193.35.234.168",
+    "port": 443,
+    "hostnames": [
+      "bristol.gov.uk",
+      "www.ask.bristol.gov.uk"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "Bristol City Council",
+    "asn": "AS44403",
+    "timestamp": "2026-08-06T01:52:03.215097",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "51.149.8.61",
+    "port": 443,
+    "hostnames": [
+      "www.portal.client.cabinetoffice.gov.uk",
+      "portal.client.cabinetoffice.gov.uk"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "UK Cabinet Office",
+    "asn": "AS16509",
+    "timestamp": "2026-08-05T20:09:11.615978",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "195.11.111.35",
+    "port": 443,
+    "hostnames": [
+      "vpn.hertfordshire.gov.uk",
+      "wlapahfrs.hertfordshire.gov.uk",
+      "wlapaip.hertfordshire.gov.uk",
+      "wlapa.hertfordshire.gov.uk",
+      "wlapaloan.hertfordshire.gov.uk",
+      "wlapa3p.hertfordshire.gov.uk"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "HERTFORDSHIRE-COUNTY-COUNCIL",
+    "asn": "AS1273",
+    "timestamp": "2026-08-05T05:39:13.274583",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "62.254.107.103",
+    "port": 443,
+    "hostnames": [
+      "rushcliffe.gov.uk",
+      "103.107-254-62.static.virginmediabusiness.co.uk"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "RUSHCLIFFE-BOROUGH-COUNCIL",
+    "asn": "AS5089",
+    "timestamp": "2026-08-04T03:30:17.131343",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "51.149.8.42",
+    "port": 443,
+    "hostnames": [
+      "portal.mobile.cabinetoffice.gov.uk",
+      "www.portal.mobile.cabinetoffice.gov.uk"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "UK Cabinet Office",
+    "asn": "AS16509",
+    "timestamp": "2026-08-03T18:53:26.498605",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "51.149.8.102",
+    "port": 443,
+    "hostnames": [
+      "portal.mobile.cabinetoffice.gov.uk",
+      "www.portal.mobile.cabinetoffice.gov.uk"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "UK Cabinet Office",
+    "asn": "AS16509",
+    "timestamp": "2026-08-02T12:36:56.290767",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "195.11.111.26",
+    "port": 443,
+    "hostnames": [
+      "vpn.hertfordshire.gov.uk",
+      "wlapahfrs.hertfordshire.gov.uk",
+      "wlapaip.hertfordshire.gov.uk",
+      "wlapa.hertfordshire.gov.uk",
+      "wlapaloan.hertfordshire.gov.uk",
+      "wlapa3p.hertfordshire.gov.uk"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "HERTFORDSHIRE-COUNTY-COUNCIL",
+    "asn": "AS1273",
+    "timestamp": "2026-07-30T16:39:21.383196",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "66.159.217.31",
+    "port": 8443,
+    "hostnames": [
+      "gateshead.gov.uk"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "Palo Alto Networks, Inc",
+    "asn": "AS394089",
+    "timestamp": "2026-07-30T15:32:34.395888",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "51.149.8.62",
+    "port": 443,
+    "hostnames": [
+      "portal.mobile.cabinetoffice.gov.uk",
+      "www.portal.mobile.cabinetoffice.gov.uk"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "UK Cabinet Office",
+    "asn": "AS16509",
+    "timestamp": "2026-07-30T08:24:12.281603",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "195.11.111.34",
+    "port": 443,
+    "hostnames": [
+      "vpn.hertfordshire.gov.uk",
+      "wlapahfrs.hertfordshire.gov.uk",
+      "wlapaip.hertfordshire.gov.uk",
+      "wlapa.hertfordshire.gov.uk",
+      "wlapaloan.hertfordshire.gov.uk",
+      "wlapa3p.hertfordshire.gov.uk"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "HERTFORDSHIRE-COUNTY-COUNCIL",
+    "asn": "AS1273",
+    "timestamp": "2026-07-29T20:30:47.019989",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "195.11.111.25",
+    "port": 443,
+    "hostnames": [
+      "vpn.hertfordshire.gov.uk",
+      "wlapahfrs.hertfordshire.gov.uk",
+      "wlapaip.hertfordshire.gov.uk",
+      "wlapa.hertfordshire.gov.uk",
+      "wlapaloan.hertfordshire.gov.uk",
+      "wlapa3p.hertfordshire.gov.uk"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "HERTFORDSHIRE-COUNTY-COUNCIL",
+    "asn": "AS1273",
+    "timestamp": "2026-07-29T16:01:24.135234",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "51.149.8.101",
+    "port": 443,
+    "hostnames": [
+      "www.portal.client.cabinetoffice.gov.uk",
+      "portal.client.cabinetoffice.gov.uk"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "UK Cabinet Office",
+    "asn": "AS16509",
+    "timestamp": "2026-07-28T01:06:39.290502",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "51.149.8.83",
+    "port": 443,
+    "hostnames": [
+      "portal.uat.cabinetoffice.gov.uk",
+      "www.portal.uat.cabinetoffice.gov.uk"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "UK Cabinet Office",
+    "asn": "AS16509",
+    "timestamp": "2026-07-26T08:41:21.902281",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "91.216.55.181",
+    "port": 443,
+    "hostnames": [
+      "anyconnect.lambeth.gov.uk",
+      "lambeth.gov.uk"
+    ],
+    "os": null,
+    "product": "Cisco ASA SSL VPN",
+    "org": "London Borough of LAMBETH",
+    "asn": "AS5089",
+    "timestamp": "2026-08-10T09:57:08.960817",
+    "_device_label": "Cisco ASA",
+    "_device_filter": "product:\"Cisco ASA\""
+  },
+  {
+    "ip_str": "212.250.208.110",
+    "port": 443,
+    "hostnames": [
+      "vpn.companieshouse.gov.uk",
+      "110-208-250-212.static.virginm.net"
+    ],
+    "os": null,
+    "product": "Cisco ASA SSL VPN",
+    "org": "COMPANIES HOUSE",
+    "asn": "AS5089",
+    "timestamp": "2026-08-09T21:44:03.846903",
+    "_device_label": "Cisco ASA",
+    "_device_filter": "product:\"Cisco ASA\""
+  },
+  {
+    "ip_str": "62.254.241.110",
+    "port": 443,
+    "hostnames": [
+      "vpn.companieshouse.gov.uk",
+      "110-241-254-62.static.virginm.net"
+    ],
+    "os": null,
+    "product": "Cisco ASA SSL VPN",
+    "org": "Companies House",
+    "asn": "AS5089",
+    "timestamp": "2026-08-09T14:34:59.762577",
+    "_device_label": "Cisco ASA",
+    "_device_filter": "product:\"Cisco ASA\""
+  },
+  {
+    "ip_str": "193.39.182.250",
+    "port": 443,
+    "hostnames": [
+      "bexley.gov.uk"
+    ],
+    "os": null,
+    "product": "Cisco ASA SSL VPN",
+    "org": "London Borough of Bexley",
+    "asn": "AS41354",
+    "timestamp": "2026-08-09T13:19:56.553120",
+    "_device_label": "Cisco ASA",
+    "_device_filter": "product:\"Cisco ASA\""
+  },
+  {
+    "ip_str": "62.254.107.171",
+    "port": 443,
+    "hostnames": [
+      "171.107-254-62.static.virginmediabusiness.co.uk",
+      "remoteapps01.sps.gov.uk"
+    ],
+    "os": null,
+    "product": "Cisco ASA SSL VPN",
+    "org": "Virgin Media Limited",
+    "asn": "AS5089",
+    "timestamp": "2026-08-09T11:35:43.389145",
+    "_device_label": "Cisco ASA",
+    "_device_filter": "product:\"Cisco ASA\""
+  },
+  {
+    "ip_str": "62.254.107.186",
+    "port": 443,
+    "hostnames": [
+      "186.107-254-62.static.virginmediabusiness.co.uk",
+      "ra2.sps.gov.uk"
+    ],
+    "os": null,
+    "product": "Cisco ASA SSL VPN",
+    "org": "Virgin Media Limited",
+    "asn": "AS5089",
+    "timestamp": "2026-08-09T10:32:59.372093",
+    "_device_label": "Cisco ASA",
+    "_device_filter": "product:\"Cisco ASA\""
+  },
+  {
+    "ip_str": "195.99.215.10",
+    "port": 443,
+    "hostnames": [
+      "vpn.companieshouse.gov.uk"
+    ],
+    "os": null,
+    "product": "Cisco ASA SSL VPN",
+    "org": "BT Infrastructure Layer",
+    "asn": "AS2856",
+    "timestamp": "2026-08-08T21:42:34.283851",
+    "_device_label": "Cisco ASA",
+    "_device_filter": "product:\"Cisco ASA\""
+  },
+  {
+    "ip_str": "185.22.224.218",
+    "port": 443,
+    "hostnames": [
+      "spedge02.fco.gov.uk"
+    ],
+    "os": null,
+    "product": "Cisco ASA SSL VPN",
+    "org": "Foreign and Commonwealth Office",
+    "asn": "AS60962",
+    "timestamp": "2026-08-08T11:04:55.349081",
+    "_device_label": "Cisco ASA",
+    "_device_filter": "product:\"Cisco ASA\""
+  },
+  {
+    "ip_str": "62.254.107.170",
+    "port": 443,
+    "hostnames": [
+      "170.107-254-62.static.virginmediabusiness.co.uk",
+      "ra1.sps.gov.uk"
+    ],
+    "os": null,
+    "product": "Cisco ASA SSL VPN",
+    "org": "Virgin Media Limited",
+    "asn": "AS5089",
+    "timestamp": "2026-08-07T18:24:02.561380",
+    "_device_label": "Cisco ASA",
+    "_device_filter": "product:\"Cisco ASA\""
+  },
+  {
+    "ip_str": "194.75.36.10",
+    "port": 443,
+    "hostnames": [
+      "vpn.companieshouse.gov.uk"
+    ],
+    "os": null,
+    "product": "Cisco ASA SSL VPN",
+    "org": "BT Infrastructure Layer",
+    "asn": "AS2856",
+    "timestamp": "2026-08-06T15:27:06.746811",
+    "_device_label": "Cisco ASA",
+    "_device_filter": "product:\"Cisco ASA\""
+  },
+  {
+    "ip_str": "213.249.133.136",
+    "port": 443,
+    "hostnames": [
+      "eastriding.gov.uk",
+      "www.eastriding.gov.uk"
+    ],
+    "os": null,
+    "product": "Cisco ASA SSL VPN",
+    "org": "East Riding of Yorkshire Council #1030",
+    "asn": "AS12390",
+    "timestamp": "2026-08-06T05:32:45.770292",
+    "_device_label": "Cisco ASA",
+    "_device_filter": "product:\"Cisco ASA\""
+  },
+  {
+    "ip_str": "91.216.55.117",
+    "port": 443,
+    "hostnames": [
+      "anyconnect.lambeth.gov.uk",
+      "lambeth.gov.uk"
+    ],
+    "os": null,
+    "product": "Cisco ASA SSL VPN",
+    "org": "London Borough of LAMBETH",
+    "asn": "AS5089",
+    "timestamp": "2026-08-04T12:47:08.985125",
+    "_device_label": "Cisco ASA",
+    "_device_filter": "product:\"Cisco ASA\""
+  },
+  {
+    "ip_str": "164.134.137.137",
+    "port": 443,
+    "hostnames": [
+      "www.vpn01.moray.gov.uk",
+      "vpn01.moray.gov.uk"
+    ],
+    "os": null,
+    "product": "Cisco ASA SSL VPN",
+    "org": "NHS National Services Scotland",
+    "asn": "AS2856",
+    "timestamp": "2026-07-31T04:14:43.309774",
+    "_device_label": "Cisco ASA",
+    "_device_filter": "product:\"Cisco ASA\""
+  },
+  {
+    "ip_str": "77.86.30.20",
+    "port": 443,
+    "hostnames": [
+      "eastriding.gov.uk",
+      "www.eastriding.gov.uk"
+    ],
+    "os": null,
+    "product": "Cisco ASA SSL VPN",
+    "org": "East Riding of Yorkshire Council #1115",
+    "asn": "AS12390",
+    "timestamp": "2026-07-30T15:57:29.909218",
+    "_device_label": "Cisco ASA",
+    "_device_filter": "product:\"Cisco ASA\""
+  },
+  {
+    "ip_str": "195.188.50.200",
+    "port": 443,
+    "hostnames": [
+      "officelink.sefton.gov.uk"
+    ],
+    "os": null,
+    "product": "Check Point SVN foundation httpd",
+    "org": "INTERNET",
+    "asn": "AS5089",
+    "timestamp": "2026-08-10T09:33:50.430157",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "62.7.174.62",
+    "port": 443,
+    "hostnames": [
+      "ra.cumbria.gov.uk"
+    ],
+    "os": null,
+    "product": "Connectra Check Point Web Security httpd",
+    "org": "FTIP003311059 Cumbria County Council",
+    "asn": "AS2856",
+    "timestamp": "2026-08-10T09:17:27.534517",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "194.82.255.187",
+    "port": 264,
+    "hostnames": [
+      "burmese.southtyneside.gov.uk"
+    ],
+    "os": null,
+    "product": "Check Point Firewall",
+    "org": "South Tyneside Council",
+    "asn": "AS786",
+    "timestamp": "2026-08-10T07:03:06.804412",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "194.82.255.189",
+    "port": 264,
+    "hostnames": [
+      "no-reverse-defined.southtyneside.gov.uk"
+    ],
+    "os": null,
+    "product": "Check Point Firewall",
+    "org": "South Tyneside Council",
+    "asn": "AS786",
+    "timestamp": "2026-08-10T05:18:55.314463",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "194.82.255.188",
+    "port": 264,
+    "hostnames": [
+      "no-reverse-defined.southtyneside.gov.uk"
+    ],
+    "os": null,
+    "product": "Check Point Firewall",
+    "org": "South Tyneside Council",
+    "asn": "AS786",
+    "timestamp": "2026-08-10T04:49:19.329398",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "83.100.176.215",
+    "port": 264,
+    "hostnames": [
+      "humbersidefire.gov.uk"
+    ],
+    "os": null,
+    "product": "Check Point Firewall",
+    "org": "Humberside Fire Brigade",
+    "asn": "AS12390",
+    "timestamp": "2026-08-10T04:47:42.424639",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "138.124.227.132",
+    "port": 443,
+    "hostnames": [
+      "portsmouth.gov.uk"
+    ],
+    "os": null,
+    "product": "Connectra Check Point Web Security httpd",
+    "org": "MLL Telecom Ltd.",
+    "asn": "AS199713",
+    "timestamp": "2026-08-09T18:55:42.739194",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "62.254.172.6",
+    "port": 443,
+    "hostnames": [
+      "6-172-254-62.static.virginm.net",
+      "www.hartremote.hart.gov.uk",
+      "hartremote.hart.gov.uk"
+    ],
+    "os": null,
+    "product": "Connectra Check Point Web Security httpd",
+    "org": "Virgin Media Limited",
+    "asn": "AS5089",
+    "timestamp": "2026-08-09T11:13:27.669834",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "20.254.234.5",
+    "port": 443,
+    "hostnames": [
+      "oriondr.barnet.gov.uk"
+    ],
+    "os": null,
+    "product": "Connectra Check Point Web Security httpd",
+    "org": "Microsoft Corporation",
+    "asn": "AS8075",
+    "timestamp": "2026-08-09T10:49:41.154191",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "4.159.34.187",
+    "port": 443,
+    "hostnames": [
+      "orion.barnet.gov.uk"
+    ],
+    "os": null,
+    "product": "Connectra Check Point Web Security httpd",
+    "org": "Microsoft Corporation",
+    "asn": "AS8075",
+    "timestamp": "2026-08-09T05:51:54.834928",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "138.124.227.4",
+    "port": 443,
+    "hostnames": [
+      "portsmouth.gov.uk"
+    ],
+    "os": null,
+    "product": "Connectra Check Point Web Security httpd",
+    "org": "MLL Telecom Ltd.",
+    "asn": "AS199713",
+    "timestamp": "2026-08-09T04:19:00.057366",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "83.100.176.215",
+    "port": 443,
+    "hostnames": [
+      "humbersidefire.gov.uk"
+    ],
+    "os": null,
+    "product": "Connectra Check Point Web Security httpd",
+    "org": "Humberside Fire Brigade",
+    "asn": "AS12390",
+    "timestamp": "2026-08-08T18:30:07.072953",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "62.7.174.55",
+    "port": 443,
+    "hostnames": [
+      "ra.cumbria.gov.uk"
+    ],
+    "os": null,
+    "product": "Connectra Check Point Web Security httpd",
+    "org": "FTIP003311059 Cumbria County Council",
+    "asn": "AS2856",
+    "timestamp": "2026-08-08T18:18:48.728340",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "86.53.252.250",
+    "port": 443,
+    "hostnames": [
+      "cpvpn.kirklees.gov.uk",
+      "www.cpvpn.kirklees.gov.uk"
+    ],
+    "os": null,
+    "product": "Connectra Check Point Web Security httpd",
+    "org": "GTT - EMEA Ltd.",
+    "asn": "AS3257",
+    "timestamp": "2026-08-08T16:41:36.580028",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "194.73.203.3",
+    "port": 18264,
+    "hostnames": [
+      "no-reverse-defined.eastlothian.gov.uk"
+    ],
+    "os": null,
+    "product": "Check Point SVN foundation httpd",
+    "org": "BT Infrastructure Layer",
+    "asn": "AS2856",
+    "timestamp": "2026-08-08T15:48:03.158325",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "62.253.155.132",
+    "port": 443,
+    "hostnames": [
+      "132.155-253-62.static.virginmediabusiness.co.uk",
+      "dacorum.gov.uk"
+    ],
+    "os": null,
+    "product": "Connectra Check Point Web Security httpd",
+    "org": "DACORUM-BOROUGH-COUNCIL",
+    "asn": "AS5089",
+    "timestamp": "2026-08-08T03:59:30.482673",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "51.142.221.108",
+    "port": 443,
+    "hostnames": [
+      "orion.barnet.gov.uk"
+    ],
+    "os": null,
+    "product": "Connectra Check Point Web Security httpd",
+    "org": "Microsoft Limited UK",
+    "asn": "AS8075",
+    "timestamp": "2026-08-07T17:12:58.926100",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "195.89.73.90",
+    "port": 443,
+    "hostnames": [
+      "north-norfolk.gov.uk"
+    ],
+    "os": null,
+    "product": "Connectra Check Point Web Security httpd",
+    "org": "North Norfolk District Council",
+    "asn": "AS1273",
+    "timestamp": "2026-08-07T09:13:44.679787",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "193.62.43.209",
+    "port": 443,
+    "hostnames": [
+      "no-reverse-defined.moray-edunet.gov.uk",
+      "vpn.moray-edunet.gov.uk",
+      "www.vpn.moray-edunet.gov.uk"
+    ],
+    "os": null,
+    "product": "Connectra Check Point Web Security httpd",
+    "org": "The Moray Council",
+    "asn": "AS786",
+    "timestamp": "2026-08-06T06:28:12.675179",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "86.53.252.251",
+    "port": 443,
+    "hostnames": [
+      "cpvpn.kirklees.gov.uk",
+      "www.cpvpn.kirklees.gov.uk"
+    ],
+    "os": null,
+    "product": "Connectra Check Point Web Security httpd",
+    "org": "GTT - EMEA Ltd.",
+    "asn": "AS3257",
+    "timestamp": "2026-08-05T12:06:16.228973",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "51.140.69.213",
+    "port": 443,
+    "hostnames": [
+      "mail.uksport.gov.uk"
+    ],
+    "os": null,
+    "product": "Check Point SVN foundation httpd",
+    "org": "Microsoft Limited UK",
+    "asn": "AS8075",
+    "timestamp": "2026-08-05T08:14:49.549837",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "217.114.50.138",
+    "port": 443,
+    "hostnames": [
+      "138-50-114-217.reverse.luns.net.uk",
+      "ra.cumbria.gov.uk"
+    ],
+    "os": null,
+    "product": "Connectra Check Point Web Security httpd",
+    "org": "Agilisys Carlisle Services",
+    "asn": "AS30847",
+    "timestamp": "2026-08-04T19:41:33.331790",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "217.114.50.133",
+    "port": 443,
+    "hostnames": [
+      "133-50-114-217.reverse.luns.net.uk",
+      "ra.cumbria.gov.uk"
+    ],
+    "os": null,
+    "product": "Connectra Check Point Web Security httpd",
+    "org": "Agilisys Carlisle Services",
+    "asn": "AS30847",
+    "timestamp": "2026-08-04T19:39:41.027893",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "212.219.86.129",
+    "port": 443,
+    "hostnames": [
+      "kent.gov.uk",
+      "cantium.net"
+    ],
+    "os": null,
+    "product": "Connectra Check Point Web Security httpd",
+    "org": "Kent County Council",
+    "asn": "AS786",
+    "timestamp": "2026-08-04T14:32:55.980131",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "62.254.5.125",
+    "port": 264,
+    "hostnames": [
+      "statichost-125.worthing.gov.uk"
+    ],
+    "os": null,
+    "product": "Check Point Firewall",
+    "org": "Worthing Borough Council",
+    "asn": "AS5089",
+    "timestamp": "2026-08-03T00:09:23.955562",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "62.253.155.134",
+    "port": 443,
+    "hostnames": [
+      "134.155-253-62.static.virginmediabusiness.co.uk",
+      "dacorum.gov.uk"
+    ],
+    "os": null,
+    "product": "Connectra Check Point Web Security httpd",
+    "org": "DACORUM-BOROUGH-COUNCIL",
+    "asn": "AS5089",
+    "timestamp": "2026-08-10T13:49:41.031027",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "80.1.64.65",
+    "port": 264,
+    "hostnames": [
+      "mhq.tamworth.gov.uk"
+    ],
+    "os": null,
+    "product": "Check Point Firewall",
+    "org": "TAMWORTH BOROUGH COUNCIL",
+    "asn": "AS5089",
+    "timestamp": "2026-08-02T18:37:27.979573",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "62.253.155.148",
+    "port": 443,
+    "hostnames": [
+      "dacorum.gov.uk",
+      "148.155-253-62.static.virginmediabusiness.co.uk"
+    ],
+    "os": null,
+    "product": "Connectra Check Point Web Security httpd",
+    "org": "DACORUM-BOROUGH-COUNCIL",
+    "asn": "AS5089",
+    "timestamp": "2026-08-01T14:48:17.186351",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "194.82.255.189",
+    "port": 18264,
+    "hostnames": [
+      "no-reverse-defined.southtyneside.gov.uk"
+    ],
+    "os": null,
+    "product": "Check Point SVN foundation httpd",
+    "org": "South Tyneside Council",
+    "asn": "AS786",
+    "timestamp": "2026-08-01T04:52:24.921066",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "78.40.235.142",
+    "port": 18264,
+    "hostnames": [
+      "mail.staffordshirefire.gov.uk"
+    ],
+    "os": null,
+    "product": "Check Point SVN foundation httpd",
+    "org": "Staffordshire County Council",
+    "asn": "AS29626",
+    "timestamp": "2026-08-01T04:42:14.254780",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "62.253.155.133",
+    "port": 443,
+    "hostnames": [
+      "133.155-253-62.static.virginmediabusiness.co.uk",
+      "dacorum.gov.uk"
+    ],
+    "os": null,
+    "product": "Connectra Check Point Web Security httpd",
+    "org": "DACORUM-BOROUGH-COUNCIL",
+    "asn": "AS5089",
+    "timestamp": "2026-07-30T18:02:51.256869",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "195.188.50.3",
+    "port": 443,
+    "hostnames": [
+      "officelink.sefton.gov.uk"
+    ],
+    "os": null,
+    "product": "Check Point SVN foundation httpd",
+    "org": "INTERNET",
+    "asn": "AS5089",
+    "timestamp": "2026-07-30T15:05:23.985064",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "195.89.73.66",
+    "port": 443,
+    "hostnames": [
+      "north-norfolk.gov.uk"
+    ],
+    "os": null,
+    "product": "Connectra Check Point Web Security httpd",
+    "org": "North Norfolk District Council",
+    "asn": "AS1273",
+    "timestamp": "2026-07-29T23:40:30.204727",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "193.62.43.209",
+    "port": 264,
+    "hostnames": [
+      "no-reverse-defined.moray-edunet.gov.uk"
+    ],
+    "os": null,
+    "product": "Check Point Firewall",
+    "org": "The Moray Council",
+    "asn": "AS786",
+    "timestamp": "2026-07-29T19:21:41.628032",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "195.188.50.2",
+    "port": 443,
+    "hostnames": [
+      "officelink.sefton.gov.uk"
+    ],
+    "os": null,
+    "product": "Check Point SVN foundation httpd",
+    "org": "INTERNET",
+    "asn": "AS5089",
+    "timestamp": "2026-07-29T06:33:24.802258",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "213.106.210.142",
+    "port": 18264,
+    "hostnames": [
+      "portal.newark-sherwooddc.gov.uk"
+    ],
+    "os": null,
+    "product": "Check Point SVN foundation httpd",
+    "org": "Newark and Sherwood District Council",
+    "asn": "AS5089",
+    "timestamp": "2026-07-29T05:19:11.800831",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "217.38.165.124",
+    "port": 18264,
+    "hostnames": [
+      "no-reverse-defined.southtyneside.gov.uk"
+    ],
+    "os": null,
+    "product": "Check Point SVN foundation httpd",
+    "org": "FTIP004391425 South Tyneside Council",
+    "asn": "AS2856",
+    "timestamp": "2026-07-28T16:27:44.383075",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "194.73.203.4",
+    "port": 18264,
+    "hostnames": [
+      "no-reverse-defined.eastlothian.gov.uk"
+    ],
+    "os": null,
+    "product": "Check Point SVN foundation httpd",
+    "org": "BT Infrastructure Layer",
+    "asn": "AS2856",
+    "timestamp": "2026-07-28T16:25:47.421191",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "217.38.165.66",
+    "port": 264,
+    "hostnames": [
+      "no-reverse-defined.southtyneside.gov.uk"
+    ],
+    "os": null,
+    "product": "Check Point Firewall",
+    "org": "FTIP004391425 South Tyneside Council",
+    "asn": "AS2856",
+    "timestamp": "2026-07-28T09:16:02.377186",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "62.7.75.67",
+    "port": 18264,
+    "hostnames": [
+      "webmail2.jncc.gov.uk"
+    ],
+    "os": null,
+    "product": "Check Point SVN foundation httpd",
+    "org": "BT Infrastructure Layer",
+    "asn": "AS2856",
+    "timestamp": "2026-07-27T19:04:31.602312",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "83.100.176.215",
+    "port": 18264,
+    "hostnames": [
+      "humbersidefire.gov.uk"
+    ],
+    "os": null,
+    "product": "Check Point SVN foundation httpd",
+    "org": "Humberside Fire Brigade",
+    "asn": "AS12390",
+    "timestamp": "2026-07-27T18:20:31.694041",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "62.254.5.122",
+    "port": 264,
+    "hostnames": [
+      "statichost-122.worthing.gov.uk"
+    ],
+    "os": null,
+    "product": "Check Point Firewall",
+    "org": "Worthing Borough Council",
+    "asn": "AS5089",
+    "timestamp": "2026-07-26T14:14:32.244677",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "213.106.210.139",
+    "port": 18264,
+    "hostnames": [
+      "chestnut.newark-sherwooddc.gov.uk"
+    ],
+    "os": null,
+    "product": "Check Point SVN foundation httpd",
+    "org": "Newark and Sherwood District Council",
+    "asn": "AS5089",
+    "timestamp": "2026-07-17T01:08:22.450804",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "159.86.218.58",
+    "port": 264,
+    "hostnames": [
+      "cp2-1.cyfoethnaturiolcymru.gov.uk"
+    ],
+    "os": null,
+    "product": "Check Point Firewall",
+    "org": "Welsh Government",
+    "asn": "AS786",
+    "timestamp": "2026-07-15T23:04:11.310935",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "194.165.29.247",
+    "port": 443,
+    "hostnames": [
+      "sccgateway.southampton.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Southampton City Council",
+    "asn": "AS5089",
+    "timestamp": "2026-08-10T12:29:52.340656",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "91.244.229.186",
+    "port": 443,
+    "hostnames": [
+      "myappshc.york.gov.uk",
+      "myapps.york.gov.uk",
+      "secureappswo.york.gov.uk",
+      "myappswo.york.gov.uk",
+      "otp.york.gov.uk",
+      "secureappshc.york.gov.uk",
+      "secureapps.york.gov.uk",
+      "appstest.york.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "City of York Council",
+    "asn": "AS199131",
+    "timestamp": "2026-08-10T11:16:23.399665",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "91.244.229.187",
+    "port": 443,
+    "hostnames": [
+      "myappshc.york.gov.uk",
+      "myapps.york.gov.uk",
+      "secureappswo.york.gov.uk",
+      "myappswo.york.gov.uk",
+      "otp.york.gov.uk",
+      "secureappshc.york.gov.uk",
+      "secureapps.york.gov.uk",
+      "appstest.york.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "City of York Council",
+    "asn": "AS199131",
+    "timestamp": "2026-08-10T10:38:11.048123",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "137.221.146.105",
+    "port": 443,
+    "hostnames": [
+      "myappshc.york.gov.uk",
+      "myapps.york.gov.uk",
+      "secureappswo.york.gov.uk",
+      "myappswo.york.gov.uk",
+      "no-dns-yet.convergencegroup.co.uk",
+      "otp.york.gov.uk",
+      "secureappshc.york.gov.uk",
+      "secureapps.york.gov.uk",
+      "appstest.york.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Convergence (Group Networks) Limited",
+    "asn": "AS41811",
+    "timestamp": "2026-08-10T09:47:32.476012",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "82.144.244.117",
+    "port": 443,
+    "hostnames": [
+      "epsom-ewell.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Southern Communications Ltd",
+    "asn": "AS59395",
+    "timestamp": "2026-08-10T08:28:35.478666",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "213.123.36.116",
+    "port": 443,
+    "hostnames": [
+      "derby.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "BT Infrastructure Layer",
+    "asn": "AS2856",
+    "timestamp": "2026-08-10T07:16:21.792463",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "62.254.196.33",
+    "port": 443,
+    "hostnames": [
+      "rdsgw.bradford.gov.uk",
+      "33-196-254-62.static.virginm.net",
+      "bradford.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "YHPSN CITY OF BRADFORD MDC",
+    "asn": "AS5089",
+    "timestamp": "2026-08-10T04:22:46.023612",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "137.221.146.104",
+    "port": 443,
+    "hostnames": [
+      "myappshc.york.gov.uk",
+      "myapps.york.gov.uk",
+      "secureappswo.york.gov.uk",
+      "myappswo.york.gov.uk",
+      "no-dns-yet.convergencegroup.co.uk",
+      "otp.york.gov.uk",
+      "secureappshc.york.gov.uk",
+      "secureapps.york.gov.uk",
+      "appstest.york.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Convergence (Group Networks) Limited",
+    "asn": "AS41811",
+    "timestamp": "2026-08-09T21:37:19.051530",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "46.249.197.178",
+    "port": 443,
+    "hostnames": [
+      "landcharges.enfield.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Pulsant (Scotland) Ltd",
+    "asn": "AS12703",
+    "timestamp": "2026-08-09T19:10:32.971109",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "188.127.68.147",
+    "port": 443,
+    "hostnames": [
+      "testappscb.leics-fire.gov.uk",
+      "appsdr.leics-fire.gov.uk",
+      "apps.leics-fire.gov.uk",
+      "testdrapps.leics-fire.gov.uk",
+      "appsdrcb.leics-fire.gov.uk",
+      "testapps.leics-fire.gov.uk",
+      "appscb.leics-fire.gov.uk",
+      "testdrappscb.leics-fire.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Vaioni Group Ltd",
+    "asn": "AS35575",
+    "timestamp": "2026-08-09T14:33:22.719937",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "213.123.36.115",
+    "port": 443,
+    "hostnames": [
+      "derby.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "BT Infrastructure Layer",
+    "asn": "AS2856",
+    "timestamp": "2026-08-09T14:30:40.385134",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "91.194.221.141",
+    "port": 443,
+    "hostnames": [
+      "mosaic.westsussex.gov.uk",
+      "westsussex.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "West Sussex County Council",
+    "asn": "AS56670",
+    "timestamp": "2026-08-09T12:06:45.052228",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "159.86.187.80",
+    "port": 443,
+    "hostnames": [
+      "auth.southwales-fire.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Welsh Government",
+    "asn": "AS786",
+    "timestamp": "2026-08-09T04:14:19.515174",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "195.89.179.23",
+    "port": 443,
+    "hostnames": [
+      "sunderland.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Sunderland City Council",
+    "asn": "AS1273",
+    "timestamp": "2026-08-08T20:22:52.441939",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "194.168.194.202",
+    "port": 443,
+    "hostnames": [
+      "testappscb.leics-fire.gov.uk",
+      "appsdr.leics-fire.gov.uk",
+      "apps.leics-fire.gov.uk",
+      "testdrapps.leics-fire.gov.uk",
+      "appsdrcb.leics-fire.gov.uk",
+      "testapps.leics-fire.gov.uk",
+      "appscb.leics-fire.gov.uk",
+      "testdrappscb.leics-fire.gov.uk",
+      "202-194-168-194.static.virginm.net"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "LEICESTERSHIRE-FIRE-AND-RESCUE",
+    "asn": "AS5089",
+    "timestamp": "2026-08-08T19:34:31.967487",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "80.168.187.55",
+    "port": 443,
+    "hostnames": [
+      "mail.west-norfolk.gov.uk",
+      "owa.west-norfolk.gov.uk",
+      "west-norfolk.gov.uk",
+      "autodiscover.west-norfolk.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Routed Connection",
+    "asn": "AS8426",
+    "timestamp": "2026-08-08T18:22:19.854780",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "82.44.134.107",
+    "port": 443,
+    "hostnames": [
+      "citrix.spelthorne.gov.uk",
+      "spelthorne.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "SPELTHORNE-BOROUGH-COUNCIL",
+    "asn": "AS5089",
+    "timestamp": "2026-08-08T12:58:26.364132",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "83.100.179.137",
+    "port": 443,
+    "hostnames": [
+      "eastriding.gov.uk",
+      "www.eastriding.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "East Riding of Yorkshire Council",
+    "asn": "AS12390",
+    "timestamp": "2026-08-08T08:16:28.419275",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "62.189.181.73",
+    "port": 443,
+    "hostnames": [
+      "woking.gov.uk",
+      "remote.woking.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "WOKING BOROUGH COUNCIL",
+    "asn": "AS702",
+    "timestamp": "2026-08-08T03:03:10.609497",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "62.254.233.54",
+    "port": 443,
+    "hostnames": [
+      "54-233-254-62.static.virginm.net",
+      "rushmoor.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Rushmoor Borough Council",
+    "asn": "AS5089",
+    "timestamp": "2026-08-08T00:04:47.785785",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "82.71.226.234",
+    "port": 443,
+    "hostnames": [
+      "erewash.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Erewash Borough Council",
+    "asn": "AS13037",
+    "timestamp": "2026-08-07T11:02:29.658408",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "3.10.63.20",
+    "port": 443,
+    "hostnames": [
+      "vpn1.dwp.gov.uk",
+      "ec2-3-10-63-20.eu-west-2.compute.amazonaws.com"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Amazon Data Services UK",
+    "asn": "AS16509",
+    "timestamp": "2026-08-07T08:50:22.232530",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "78.40.233.189",
+    "port": 80,
+    "hostnames": [
+      "cdn.staffordshire.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Staffordshire County Council Infrastructure",
+    "asn": "AS29626",
+    "timestamp": "2026-08-07T02:09:58.267007",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "164.134.138.16",
+    "port": 443,
+    "hostnames": [
+      "angus.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "NHS National Services Scotland",
+    "asn": "AS2856",
+    "timestamp": "2026-08-06T21:32:20.086228",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "35.178.25.207",
+    "port": 443,
+    "hostnames": [
+      "ec2-35-178-25-207.eu-west-2.compute.amazonaws.com",
+      "remote1.dwp.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Amazon Data Services UK",
+    "asn": "AS16509",
+    "timestamp": "2026-08-06T15:55:23.339551",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "91.231.90.27",
+    "port": 443,
+    "hostnames": [
+      "brighton-hove.gov.uk",
+      "portal.brighton-hove.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "BRIGHTON AND HOVE CITY COUNCIL",
+    "asn": "AS199713",
+    "timestamp": "2026-08-06T13:13:31.608108",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "193.62.43.46",
+    "port": 443,
+    "hostnames": [
+      "denbighshire.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Denbighshire County Council",
+    "asn": "AS786",
+    "timestamp": "2026-08-06T06:06:30.766066",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "194.74.71.156",
+    "port": 443,
+    "hostnames": [
+      "rochdale.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "FTIP003927533 ROCHDALE METROPOLITAN BOROUGH COUNCIL",
+    "asn": "AS2856",
+    "timestamp": "2026-08-06T05:17:52.977207",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "81.19.58.93",
+    "port": 443,
+    "hostnames": [
+      "elmbridge.gov.uk",
+      "no-reverse-dns.qubems.com"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "vXtream Ltd",
+    "asn": "AS29668",
+    "timestamp": "2026-08-06T04:07:48.834873",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "91.194.221.219",
+    "port": 443,
+    "hostnames": [
+      "appspace.westsussex.gov.uk",
+      "westsussex.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "West Sussex County Council",
+    "asn": "AS56670",
+    "timestamp": "2026-08-05T21:59:31.195848",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "194.168.148.100",
+    "port": 443,
+    "hostnames": [
+      "nsauth.leeds.gov.uk",
+      "leeds.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Virgin Media Limited",
+    "asn": "AS5089",
+    "timestamp": "2026-08-05T14:31:25.815222",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "62.255.98.153",
+    "port": 443,
+    "hostnames": [
+      "sccdr.southampton.gov.uk",
+      "sccpartner.southampton.gov.uk",
+      "sccpriority.southampton.gov.uk",
+      "sccgateway.southampton.gov.uk",
+      "153.98-255-62.static.virginmediabusiness.co.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "UPDATA INFRASTRUCTURE UK",
+    "asn": "AS5089",
+    "timestamp": "2026-08-05T08:00:19.773903",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "194.73.182.7",
+    "port": 443,
+    "hostnames": [
+      "ealing.gov.uk",
+      "vas.ealing.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "BT Infrastructure Layer",
+    "asn": "AS2856",
+    "timestamp": "2026-08-05T06:22:20.649691",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "159.86.187.81",
+    "port": 443,
+    "hostnames": [
+      "southwales-fire.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Welsh Government",
+    "asn": "AS786",
+    "timestamp": "2026-08-05T00:23:53.087786",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "91.194.221.161",
+    "port": 443,
+    "hostnames": [
+      "mosaic-test.westsussex.gov.uk",
+      "westsussex.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "West Sussex County Council",
+    "asn": "AS56670",
+    "timestamp": "2026-08-04T16:13:58.205464",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "194.140.226.242",
+    "port": 443,
+    "hostnames": [
+      "eastsussex.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "East Sussex County Council",
+    "asn": "AS199713",
+    "timestamp": "2026-08-04T12:04:44.418593",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "91.231.91.40",
+    "port": 443,
+    "hostnames": [
+      "brighton-hove.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "BRIGHTON AND HOVE CITY COUNCIL",
+    "asn": "AS199713",
+    "timestamp": "2026-08-03T08:23:20.567447",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "164.134.138.6",
+    "port": 443,
+    "hostnames": [
+      "angus.gov.uk",
+      "remote3.angus.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "NHS National Services Scotland",
+    "asn": "AS2856",
+    "timestamp": "2026-08-03T06:12:58.690403",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "195.89.179.19",
+    "port": 443,
+    "hostnames": [
+      "sunderland.gov.uk",
+      "auth.sunderland.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Sunderland City Council",
+    "asn": "AS1273",
+    "timestamp": "2026-08-03T00:00:41.025391",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "91.194.221.145",
+    "port": 443,
+    "hostnames": [
+      "fs.westsussex.gov.uk",
+      "westsussex.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "West Sussex County Council",
+    "asn": "AS56670",
+    "timestamp": "2026-08-02T22:10:17.484374",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "194.74.71.170",
+    "port": 443,
+    "hostnames": [
+      "rochdale.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "FTIP003927533 ROCHDALE METROPOLITAN BOROUGH COUNCIL",
+    "asn": "AS2856",
+    "timestamp": "2026-08-02T13:13:04.454407",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "194.140.226.206",
+    "port": 443,
+    "hostnames": [
+      "eastsussex.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "East Sussex County Council",
+    "asn": "AS199713",
+    "timestamp": "2026-08-02T12:15:41.138384",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "51.140.61.60",
+    "port": 443,
+    "hostnames": [
+      "www.azcitrix.croydon.gov.uk",
+      "azcitrix.croydon.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Microsoft Limited UK",
+    "asn": "AS8075",
+    "timestamp": "2026-08-02T11:56:11.191682",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "193.35.158.15",
+    "port": 443,
+    "hostnames": [
+      "www.portal.cornwall.gov.uk",
+      "portal.cornwall.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Local Government Network",
+    "asn": "AS2856",
+    "timestamp": "2026-08-02T06:13:43.208030",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "62.255.98.155",
+    "port": 443,
+    "hostnames": [
+      "sccdr2019.southampton.gov.uk",
+      "155.98-255-62.static.virginmediabusiness.co.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "UPDATA INFRASTRUCTURE UK",
+    "asn": "AS5089",
+    "timestamp": "2026-08-01T15:49:40.619604",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "81.19.58.107",
+    "port": 443,
+    "hostnames": [
+      "elmbridge.gov.uk",
+      "no-reverse-dns.qubems.com"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "vXtream Ltd",
+    "asn": "AS29668",
+    "timestamp": "2026-08-01T09:51:19.915868",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "74.177.219.5",
+    "port": 443,
+    "hostnames": [
+      "london-fire.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Microsoft Corporation",
+    "asn": "AS8075",
+    "timestamp": "2026-08-01T07:23:56.703831",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "20.108.104.88",
+    "port": 443,
+    "hostnames": [
+      "cagtest.sthelens.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Microsoft Corporation",
+    "asn": "AS8075",
+    "timestamp": "2026-08-01T07:00:06.782658",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "91.194.221.151",
+    "port": 443,
+    "hostnames": [
+      "ispace.westsussex.gov.uk",
+      "westsussex.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "West Sussex County Council",
+    "asn": "AS56670",
+    "timestamp": "2026-08-01T06:45:45.414701",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "62.189.181.93",
+    "port": 443,
+    "hostnames": [
+      "woking.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "WOKING BOROUGH COUNCIL",
+    "asn": "AS702",
+    "timestamp": "2026-08-01T01:54:18.860270",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "91.194.221.178",
+    "port": 443,
+    "hostnames": [
+      "theintranet.westsussex.gov.uk",
+      "westsussex.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "West Sussex County Council",
+    "asn": "AS56670",
+    "timestamp": "2026-07-30T21:45:06.344273",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "91.231.91.27",
+    "port": 443,
+    "hostnames": [
+      "brighton-hove.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "BRIGHTON AND HOVE CITY COUNCIL",
+    "asn": "AS199713",
+    "timestamp": "2026-07-30T09:36:36.058834",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "62.254.196.24",
+    "port": 443,
+    "hostnames": [
+      "24-196-254-62.static.virginm.net",
+      "bradford.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "YHPSN CITY OF BRADFORD MDC",
+    "asn": "AS5089",
+    "timestamp": "2026-07-29T11:41:43.248841",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "195.89.179.24",
+    "port": 443,
+    "hostnames": [
+      "sunderland.gov.uk",
+      "ibcm.sunderland.gov.uk",
+      "sslvpn-uat.sunderland.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Sunderland City Council",
+    "asn": "AS1273",
+    "timestamp": "2026-07-29T03:04:47.324815",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "194.140.226.208",
+    "port": 443,
+    "hostnames": [
+      "eastsussex.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "East Sussex County Council",
+    "asn": "AS199713",
+    "timestamp": "2026-07-28T23:36:26.612503",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "194.168.148.106",
+    "port": 443,
+    "hostnames": [
+      "nsauth-exch.leeds.gov.uk",
+      "nsauthexch.leeds.gov.uk",
+      "leeds.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Virgin Media Limited",
+    "asn": "AS5089",
+    "timestamp": "2026-07-28T21:12:47.434098",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "20.26.41.118",
+    "port": 443,
+    "hostnames": [
+      "cagtest.sthelens.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Microsoft Corporation",
+    "asn": "AS8075",
+    "timestamp": "2026-07-28T17:06:34.039727",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "194.81.212.150",
+    "port": 443,
+    "hostnames": [
+      "medway.gov.uk",
+      "vdi.medway.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Medway Council",
+    "asn": "AS786",
+    "timestamp": "2026-07-28T15:43:27.521520",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "80.240.83.204",
+    "port": 443,
+    "hostnames": [
+      "leicester.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "GCI Network Solutions Limited",
+    "asn": "AS8851",
+    "timestamp": "2026-07-28T07:35:45.977485",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "89.197.70.2",
+    "port": 443,
+    "hostnames": [
+      "89-197-70-2.virtual1.co.uk",
+      "spelthorne.gov.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Resolute Management",
+    "asn": "AS47474",
+    "timestamp": "2026-07-28T00:11:57.053929",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "18.168.78.214",
+    "port": 443,
+    "hostnames": [
+      "vpn2.dwp.gov.uk",
+      "ec2-18-168-78-214.eu-west-2.compute.amazonaws.com"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Amazon Data Services UK",
+    "asn": "AS16509",
+    "timestamp": "2026-07-22T22:13:02.567410",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "185.193.169.146",
+    "port": 443,
+    "hostnames": [
+      "dev-vpn1.ec2sphd.mod.uk",
+      "185.193.169.146.ranston.net"
+    ],
+    "os": null,
+    "product": "Cisco ASA SSL VPN",
+    "org": "Wessex Internet Limited",
+    "asn": "AS206347",
+    "timestamp": "2026-08-09T19:18:51.074463",
+    "_device_label": "Cisco ASA",
+    "_device_filter": "product:\"Cisco ASA\""
+  },
+  {
+    "ip_str": "20.58.16.117",
+    "port": 443,
+    "hostnames": [
+      "www.vpn1.cnc.police.uk",
+      "vpn1.cnc.police.uk"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "Microsoft Corporation",
+    "asn": "AS8075",
+    "timestamp": "2026-08-09T00:08:07.914149",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "212.250.136.107",
+    "port": 443,
+    "hostnames": [
+      "mobileb.northants.police.uk",
+      "fireremotea.northants.police.uk",
+      "mobilea.northants.police.uk",
+      "portal.northants.police.uk",
+      "remotea.northants.police.uk",
+      "portalb.northants.police.uk",
+      "portala.northants.police.uk",
+      "fireremoteb.northants.police.uk",
+      "www.remote.northants.police.uk",
+      "fireremote.northants.police.uk",
+      "mobile.northants.police.uk",
+      "107-136-250-212.static.virginm.net",
+      "remote.northants.police.uk",
+      "remoteb.northants.police.uk"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "Virgin Media Limited",
+    "asn": "AS5089",
+    "timestamp": "2026-08-03T18:52:54.558457",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "212.250.136.109",
+    "port": 443,
+    "hostnames": [
+      "mobileb.northants.police.uk",
+      "fireremotea.northants.police.uk",
+      "mobilea.northants.police.uk",
+      "portal.northants.police.uk",
+      "remotea.northants.police.uk",
+      "portalb.northants.police.uk",
+      "portala.northants.police.uk",
+      "fireremoteb.northants.police.uk",
+      "www.remote.northants.police.uk",
+      "fireremote.northants.police.uk",
+      "mobile.northants.police.uk",
+      "remote.northants.police.uk",
+      "remoteb.northants.police.uk",
+      "109-136-250-212.static.virginm.net"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "Virgin Media Limited",
+    "asn": "AS5089",
+    "timestamp": "2026-08-02T16:27:11.966945",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "62.6.172.107",
+    "port": 443,
+    "hostnames": [
+      "mdt.dyfed-powys.police.uk"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "FTIP004982425 Dyfed powys police",
+    "asn": "AS2856",
+    "timestamp": "2026-07-31T18:41:38.344541",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "62.6.172.98",
+    "port": 443,
+    "hostnames": [
+      "remote.dyfed-powys.police.uk"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "FTIP004982425 Dyfed powys police",
+    "asn": "AS2856",
+    "timestamp": "2026-07-27T21:39:09.956919",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "195.171.191.4",
+    "port": 443,
+    "hostnames": [
+      "ras.wiltshire.police.uk"
+    ],
+    "os": null,
+    "product": "Connectra Check Point Web Security httpd",
+    "org": "BT Infrastructure Layer",
+    "asn": "AS2856",
+    "timestamp": "2026-07-30T07:20:44.178822",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "80.0.251.181",
+    "port": 443,
+    "hostnames": [
+      "181-251-0-80.static.virginm.net",
+      "rsp.access.bch.police.uk"
+    ],
+    "os": null,
+    "product": "Connectra Check Point Web Security httpd",
+    "org": "CAL-49618-HC",
+    "asn": "AS5089",
+    "timestamp": "2026-07-30T00:23:35.382932",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "213.48.60.110",
+    "port": 443,
+    "hostnames": [
+      "213-48-60-110.kew.org",
+      "dmz.kew.org"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "Virgin Media Limited",
+    "asn": "AS5089",
+    "timestamp": "2026-08-10T09:31:05.674206",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "213.48.60.58",
+    "port": 443,
+    "hostnames": [
+      "213-48-60-58.kew.org",
+      "kew.org",
+      "kvpn1.kew.org"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "Virgin Media Limited",
+    "asn": "AS5089",
+    "timestamp": "2026-08-10T05:24:30.164058",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "213.48.60.109",
+    "port": 443,
+    "hostnames": [
+      "213-48-60-109.kew.org",
+      "dmz.kew.org"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "Virgin Media Limited",
+    "asn": "AS5089",
+    "timestamp": "2026-07-31T08:08:17.038552",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "217.111.161.204",
+    "port": 443,
+    "hostnames": [
+      "testappstore.bfi.org.uk",
+      "appstore.bfi.org.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "CARE OF CIENA MERRILL LYNCH",
+    "asn": "AS8220",
+    "timestamp": "2026-08-09T05:52:04.761539",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "80.169.34.188",
+    "port": 443,
+    "hostnames": [
+      "xmgateway.bfi.org.uk",
+      "xmgateway.gslb.bfi.org.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "BRITISH FILM INSTITUTE",
+    "asn": "AS8220",
+    "timestamp": "2026-08-08T14:23:10.075940",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "195.143.128.9",
+    "port": 443,
+    "hostnames": [
+      "vpn.citb.co.uk",
+      "citb.co.uk"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "Customer P2P interface addresses in GB",
+    "asn": "AS3257",
+    "timestamp": "2026-08-06T04:14:47.545726",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "194.80.194.98",
+    "port": 443,
+    "hostnames": [
+      "iwm-dux.iwm.org.uk",
+      "duxford-fw1.iwm.org.uk",
+      "no-reverse-defined.iwm.ac.uk"
+    ],
+    "os": null,
+    "product": "Check Point SVN foundation httpd",
+    "org": "Imperial War Museum",
+    "asn": "AS786",
+    "timestamp": "2026-08-10T10:56:57.792888",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "194.80.194.130",
+    "port": 443,
+    "hostnames": [
+      "asa-fw1.iwm.org.uk",
+      "iwm-lon.iwm.org.uk",
+      "no-reverse-defined.iwm.ac.uk"
+    ],
+    "os": null,
+    "product": "Check Point SVN foundation httpd",
+    "org": "Imperial War Museum",
+    "asn": "AS786",
+    "timestamp": "2026-08-10T10:32:25.216352",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "194.80.194.162",
+    "port": 443,
+    "hostnames": [
+      "iwmn-fw1.iwm.org.uk",
+      "iwmn-man.iwm.org.uk",
+      "no-reverse-defined.iwm.ac.uk"
+    ],
+    "os": null,
+    "product": "Check Point SVN foundation httpd",
+    "org": "Imperial War Museum",
+    "asn": "AS786",
+    "timestamp": "2026-08-10T09:48:13.787090",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "194.80.194.141",
+    "port": 443,
+    "hostnames": [
+      "connect-sf.iwm.org.uk",
+      "no-reverse-defined.iwm.ac.uk",
+      "connectra.iwm.org.uk",
+      "connect.iwm.org.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Imperial War Museum",
+    "asn": "AS786",
+    "timestamp": "2026-08-10T09:42:54.392245",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "194.80.194.104",
+    "port": 443,
+    "hostnames": [
+      "connect-sf.iwm.org.uk",
+      "no-reverse-defined.iwm.ac.uk",
+      "connectra.iwm.org.uk",
+      "connect.iwm.org.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Imperial War Museum",
+    "asn": "AS786",
+    "timestamp": "2026-08-10T07:23:07.921969",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "193.60.222.3",
+    "port": 264,
+    "hostnames": [
+      "vpn.lms.mrc.ac.uk"
+    ],
+    "os": null,
+    "product": "Check Point Firewall",
+    "org": "MRC London Institute of Medical Sciences",
+    "asn": "AS786",
+    "timestamp": "2026-08-05T04:55:59.839197",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "193.60.222.3",
+    "port": 443,
+    "hostnames": [
+      "vpn.lms.mrc.ac.uk"
+    ],
+    "os": null,
+    "product": "Check Point SVN foundation httpd",
+    "org": "MRC London Institute of Medical Sciences",
+    "asn": "AS786",
+    "timestamp": "2026-08-01T09:28:56.111779",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "195.99.217.140",
+    "port": 443,
+    "hostnames": [
+      "odtonline-npd.nhsbt.nhs.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "BT Infrastructure Layer",
+    "asn": "AS2856",
+    "timestamp": "2026-08-09T05:35:21.317987",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "195.99.217.142",
+    "port": 443,
+    "hostnames": [
+      "online.nhsbt.nhs.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "BT Infrastructure Layer",
+    "asn": "AS2856",
+    "timestamp": "2026-08-07T13:55:44.131195",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "194.227.110.19",
+    "port": 443,
+    "hostnames": [
+      "livingpath-training.nhsbt.nhs.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "NHS Blood and Transplant (T1460)",
+    "asn": "AS1273",
+    "timestamp": "2026-08-05T10:27:19.739549",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "80.195.154.180",
+    "port": 443,
+    "hostnames": [
+      "connect-a.nhsbsa.nhs.uk",
+      "connect-b.nhsbsa.nhs.uk",
+      "connect.nhsbsa.nhs.uk",
+      "180.154-195-80.static.virginmediabusiness.co.uk"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "Virgin Media Limited",
+    "asn": "AS5089",
+    "timestamp": "2026-08-09T03:21:54.384468",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "213.105.55.133",
+    "port": 443,
+    "hostnames": [
+      "connect-a.nhsbsa.nhs.uk",
+      "connect-b.nhsbsa.nhs.uk",
+      "connect.nhsbsa.nhs.uk",
+      "133.55-105-213.static.virginmediabusiness.co.uk"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "NHSBSA",
+    "asn": "AS5089",
+    "timestamp": "2026-08-03T02:11:27.338442",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "157.203.60.158",
+    "port": 443,
+    "hostnames": [
+      "citrix.nsandi.com"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Atos IT Services UK Ltd",
+    "asn": "AS21369",
+    "timestamp": "2026-08-08T14:45:46.953469",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "20.108.121.57",
+    "port": 443,
+    "hostnames": [
+      "ukwgw1.theoep.org.uk",
+      "uksgw2.theoep.org.uk",
+      "sda.theoep.org.uk",
+      "uksgw1.theoep.org.uk"
+    ],
+    "os": "PAN-OS",
+    "product": "",
+    "org": "Microsoft Corporation",
+    "asn": "AS8075",
+    "timestamp": "2026-08-04T04:08:06.094887",
+    "_device_label": "Palo Alto GlobalProtect",
+    "_device_filter": "os:\"PAN-OS\""
+  },
+  {
+    "ip_str": "188.39.240.85",
+    "port": 443,
+    "hostnames": [
+      "vpn3.royalmint.com",
+      "188-39-240-85.static.enta.net",
+      "www.vpn3.royalmint.com"
+    ],
+    "os": null,
+    "product": "Connectra Check Point Web Security httpd",
+    "org": "Cityfibre Limited",
+    "asn": "AS8468",
+    "timestamp": "2026-08-09T17:41:34.594878",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "188.39.240.70",
+    "port": 443,
+    "hostnames": [
+      "vpn3.royalmint.com",
+      "188-39-240-70.static.enta.net",
+      "www.vpn3.royalmint.com"
+    ],
+    "os": null,
+    "product": "Connectra Check Point Web Security httpd",
+    "org": "Cityfibre Limited",
+    "asn": "AS8468",
+    "timestamp": "2026-08-07T20:59:28.303580",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "188.39.240.83",
+    "port": 443,
+    "hostnames": [
+      "vpn3.royalmint.com",
+      "www.vpn3.royalmint.com",
+      "188-39-240-83.static.enta.net"
+    ],
+    "os": null,
+    "product": "Connectra Check Point Web Security httpd",
+    "org": "Cityfibre Limited",
+    "asn": "AS8468",
+    "timestamp": "2026-08-02T17:28:10.053255",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "149.155.50.238",
+    "port": 18264,
+    "hostnames": [
+      "149-155-50-238.uksbs.co.uk"
+    ],
+    "os": null,
+    "product": "Check Point SVN foundation httpd",
+    "org": "Biotechnology and Biological Sciences Research Council",
+    "asn": "AS786",
+    "timestamp": "2026-07-22T08:09:14.823406",
+    "_device_label": "Check Point",
+    "_device_filter": "product:\"Check Point\""
+  },
+  {
+    "ip_str": "83.244.141.193",
+    "port": 443,
+    "hostnames": [
+      "vam.ac.uk",
+      "83-244-141-193.cust-83.exponential-e.net"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Customer Allocation - Internet Service",
+    "asn": "AS25180",
+    "timestamp": "2026-08-09T19:38:16.912026",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  },
+  {
+    "ip_str": "83.244.141.192",
+    "port": 443,
+    "hostnames": [
+      "vam.ac.uk",
+      "83-244-141-192.cust-83.exponential-e.net",
+      "citrix.vam.ac.uk"
+    ],
+    "os": null,
+    "product": "Citrix Netscaler",
+    "org": "Customer Allocation - Internet Service",
+    "asn": "AS25180",
+    "timestamp": "2026-08-05T22:58:10.540665",
+    "_device_label": "Citrix NetScaler",
+    "_device_filter": "product:\"Citrix NetScaler\""
+  }
+]

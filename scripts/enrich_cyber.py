@@ -411,12 +411,58 @@ EDGE_DEVICE_QUERIES = [
     ("Cisco ASA", 'product:"Cisco ASA"'),
     ("Check Point", 'product:"Check Point"'),
     ("Citrix NetScaler", 'product:"Citrix NetScaler"'),
+    ("Citrix Gateway", 'product:"Citrix Gateway"'),
     ("F5 BIG-IP", 'product:"Big-IP"'),
     ("Fortinet FortiGate", 'os:"FortiOS"'),
     ("Juniper", 'os:"JunOS"'),
     ("Pulse/Ivanti VPN", 'product:"Pulse Connect Secure"'),
+    ("Ivanti Connect Secure", 'product:"Ivanti Connect Secure"'),
     ("SonicWall", 'product:"SonicWall"'),
+    ("Sophos", 'product:"Sophos"'),
+    ("Barracuda", 'product:"Barracuda"'),
+    ("WatchGuard", 'product:"WatchGuard"'),
+    ("Zscaler", 'product:"Zscaler"'),
 ]
+
+
+def _classify_result(result: dict) -> tuple[str, str]:
+    """Classify an unfiltered Shodan result by product/OS/port. Returns (label, filter)."""
+    product = result.get("product") or ""
+    os_info = result.get("os") or ""
+    port = result.get("port", 0)
+
+    # Try known edge device signatures first
+    for label, device_filter in EDGE_DEVICE_QUERIES:
+        if "os:" in device_filter:
+            val = device_filter.split('"')[1] if '"' in device_filter else ""
+            if val and val.lower() in os_info.lower():
+                return label, device_filter
+        if "product:" in device_filter:
+            val = device_filter.split('"')[1] if '"' in device_filter else ""
+            if val and val.lower() in product.lower():
+                return label, device_filter
+
+    # Generic service classification
+    pl = product.lower()
+    if any(w in pl for w in ("nginx", "apache", "iis", "litespeed", "caddy")):
+        return f"Web Server ({product})", f'product:"{product}"'
+    if any(w in pl for w in ("mysql", "postgresql", "mariadb", "mongodb", "redis", "elastic")):
+        return f"Database ({product})", f'product:"{product}"'
+    if port == 3389 or "rdp" in pl:
+        return "Remote Desktop (RDP)", "port:3389"
+    if "vnc" in pl:
+        return f"VNC ({product})", f'product:"{product}"'
+    if any(w in pl for w in ("postfix", "exim", "exchange", "sendmail", "smtp")):
+        return f"Mail Server ({product})", f'product:"{product}"'
+    if "ftp" in pl or port == 21:
+        return "FTP", "port:21"
+    if "openssh" in pl or port == 22:
+        return "SSH", "port:22"
+    if "openvpn" in pl:
+        return "OpenVPN", f'product:"{product}"'
+    if product:
+        return f"Other ({product})", f'product:"{product}"'
+    return f"Other (port {port})", f"port:{port}"
 
 
 def _build_domain_to_org(orgs: list[dict]) -> dict[str, dict]:
@@ -517,78 +563,180 @@ def _match_hostname_to_org(hostname: str, domain_to_org: dict[str, dict]) -> dic
     return None
 
 
-def _shodan_search(api, query: str, label: str) -> list[dict]:
-    """Execute a Shodan search with rate limiting."""
-    time.sleep(1.1)
-    try:
-        results = api.search(query)
-        total = results["total"]
-        matches = results.get("matches", [])
-        if total > 0:
-            logger.info(f"  {label} | {query} -> {total} hits ({len(matches)} returned)")
-        else:
-            logger.debug(f"  {label} | {query} -> 0 hits")
-        return matches
-    except Exception as e:
-        if "upgrade" in str(e).lower() or "access denied" in str(e).lower():
-            logger.warning(f"  {label} | {query} -> API limit: {e}")
-        else:
-            logger.error(f"  {label} | {query} -> Error: {e}")
-        return []
+def _shodan_search(api, query: str, label: str, max_pages: int = 1) -> list[dict]:
+    """Execute a Shodan search with rate limiting and pagination.
 
-
-def search_shodan_edge_devices(api, domain_to_org: dict[str, dict]) -> list[dict]:
-    """Search Shodan for edge devices across all org domains.
-
-    Strategy: broad sweeps by TLD, then per-domain for non-standard TLDs.
+    Each page costs 1 Shodan query credit and returns up to 100 results.
     """
-    # Group domains by TLD
-    # Only sweep government-specific TLDs broadly; generic TLDs (.co.uk, .org.uk, .com)
-    # return too much noise from unrelated companies
-    broad_sweep_tlds = {"gov.uk", "mod.uk", "police.uk", "nhs.net"}
-    tld_domains = defaultdict(set)
-    individual_domains = []
+    all_matches = []
+    for page in range(1, max_pages + 1):
+        time.sleep(1.1)
+        try:
+            results = api.search(query, page=page)
+            total = results["total"]
+            matches = results.get("matches", [])
+            if page == 1:
+                if total > 0:
+                    pages_avail = (total + 99) // 100
+                    pages_to_fetch = min(pages_avail, max_pages)
+                    logger.info(
+                        f"  {label} | {query} -> {total} hits"
+                        f" (fetching {pages_to_fetch}/{pages_avail} pages)"
+                    )
+                else:
+                    logger.debug(f"  {label} | {query} -> 0 hits")
+                    return []
+            all_matches.extend(matches)
+            # Stop if we've fetched everything or got an empty page
+            if len(all_matches) >= total or not matches:
+                break
+        except Exception as e:
+            if "upgrade" in str(e).lower() or "access denied" in str(e).lower():
+                logger.warning(f"  {label} | {query} -> API limit: {e}")
+            else:
+                logger.error(f"  {label} | {query} -> Error: {e}")
+            break
+    return all_matches
 
+
+def search_shodan_edge_devices(
+    api,
+    domain_to_org: dict[str, dict],
+    orgs: list[dict] | None = None,
+    deep: bool = False,
+) -> list[dict]:
+    """Search Shodan for devices across all org domains, IPs, and org names.
+
+    Phases 1-2 always run (targeted edge device searches by hostname).
+    Phases 3-6 require deep=True (broad discovery — more expensive in credits).
+      3: RIPE net-range searches (unfiltered)
+      4: Org-name searches (departments only, unfiltered)
+      5: SSL certificate CN searches
+      6: Unfiltered hostname sweep
+    """
+    # Government-specific TLDs — always swept broadly; generic TLDs (.co.uk,
+    # .org.uk, .com) return too much noise from unrelated companies.
+    BROAD_SWEEP_TLDS = {
+        "gov.uk", "mod.uk", "police.uk", "nhs.net",
+        "nhs.uk", "judiciary.uk", "parliament.uk", "gov.scot", "gov.wales",
+    }
+
+    # Identify which domains fall under broad-sweep TLDs vs. need individual queries
+    individual_domains = []
     for domain in domain_to_org:
         parts = domain.split(".")
         tld2 = ".".join(parts[-2:]) if len(parts) >= 2 else None
-        if tld2 and tld2 in broad_sweep_tlds and len(parts) >= 3:
-            tld_domains[tld2].add(domain)
+        if tld2 and tld2 in BROAD_SWEEP_TLDS and len(parts) >= 3:
+            pass  # covered by the TLD-wide sweep
         else:
             individual_domains.append(domain)
+
+    # Always sweep all government TLDs, even if no org domains match yet
+    broad_tlds = sorted(BROAD_SWEEP_TLDS)
 
     all_results = []
     seen = set()
 
-    # Phase 1: Broad TLD sweeps
-    broad_tlds = sorted(tld_domains.keys())
-    logger.info(f"Shodan phase 1: sweeping {len(broad_tlds)} TLDs: {broad_tlds}")
+    def _add_results(matches, device_label, device_filter, phase):
+        for r in matches:
+            key = f"{r['ip_str']}:{r['port']}"
+            if key not in seen:
+                seen.add(key)
+                r["_device_label"] = device_label
+                r["_device_filter"] = device_filter
+                r["_search_phase"] = phase
+                all_results.append(r)
+
+    def _add_and_classify(matches, phase):
+        """Add unfiltered results with post-hoc classification."""
+        for r in matches:
+            key = f"{r['ip_str']}:{r['port']}"
+            if key not in seen:
+                seen.add(key)
+                label, filt = _classify_result(r)
+                r["_device_label"] = label
+                r["_device_filter"] = filt
+                r["_search_phase"] = phase
+                all_results.append(r)
+
+    # Phase 1: Broad TLD sweeps with device filters
+    logger.info(
+        f"Shodan phase 1: sweeping {len(broad_tlds)} TLDs "
+        f"with {len(EDGE_DEVICE_QUERIES)} device filters"
+    )
     for tld in broad_tlds:
         for device_label, device_filter in EDGE_DEVICE_QUERIES:
             query = f"hostname:.{tld} {device_filter}"
-            for r in _shodan_search(api, query, device_label):
-                key = f"{r['ip_str']}:{r['port']}"
-                if key not in seen:
-                    seen.add(key)
-                    r["_device_label"] = device_label
-                    r["_device_filter"] = device_filter
-                    all_results.append(r)
+            matches = _shodan_search(api, query, device_label, max_pages=3)
+            _add_results(matches, device_label, device_filter, "tld_sweep")
 
-    # Phase 2: Individual non-standard domains
+    # Phase 2: Individual non-standard domains with device filters
     if individual_domains:
-        logger.info(f"Shodan phase 2: searching {len(individual_domains)} individual domains")
+        logger.info(f"Shodan phase 2: {len(individual_domains)} individual domains")
         for domain in individual_domains:
             for device_label, device_filter in EDGE_DEVICE_QUERIES:
                 query = f"hostname:{domain} {device_filter}"
-                for r in _shodan_search(api, query, device_label):
-                    key = f"{r['ip_str']}:{r['port']}"
-                    if key not in seen:
-                        seen.add(key)
-                        r["_device_label"] = device_label
-                        r["_device_filter"] = device_filter
-                        all_results.append(r)
+                matches = _shodan_search(api, query, device_label)
+                _add_results(matches, device_label, device_filter, "domain_sweep")
 
-    logger.info(f"Shodan: {len(all_results)} unique edge device results")
+    if not deep:
+        logger.info(
+            f"Shodan: {len(all_results)} results from targeted search. "
+            f"Use --shodan-deep for net-range, org, SSL, and unfiltered sweeps."
+        )
+        return all_results
+
+    # --- Deep discovery phases (--shodan-deep) ---
+
+    # Phase 3: RIPE net-range searches (unfiltered — finds everything in gov IP space)
+    ripe_prefixes = set()
+    if orgs:
+        for org in orgs:
+            for prefix in org.get("ripe_prefixes", []):
+                ripe_prefixes.add(prefix)
+    if ripe_prefixes:
+        logger.info(
+            f"Shodan phase 3: searching {len(ripe_prefixes)} RIPE net ranges (unfiltered)"
+        )
+        for prefix in sorted(ripe_prefixes):
+            query = f"net:{prefix}"
+            matches = _shodan_search(api, query, f"net:{prefix}", max_pages=3)
+            _add_and_classify(matches, "ripe_net")
+    else:
+        logger.info(
+            "Shodan phase 3: no RIPE prefixes available "
+            "(run with --ripe first to populate)"
+        )
+
+    # Phase 4: Org-name searches (departments only, unfiltered)
+    if orgs:
+        departments = [o for o in orgs if o.get("child_organisations")]
+        dept_names = sorted(set(o["title"] for o in departments if o.get("title")))
+        logger.info(f"Shodan phase 4: searching {len(dept_names)} department org names")
+        for name in dept_names:
+            query = f'org:"{name}"'
+            matches = _shodan_search(api, query, f"org:{name}", max_pages=2)
+            _add_and_classify(matches, "org_name")
+    else:
+        logger.info("Shodan phase 4: no orgs provided, skipping org-name search")
+
+    # Phase 5: SSL certificate CN search (finds services with gov TLD certs
+    # even when the hostname doesn't match)
+    logger.info(f"Shodan phase 5: SSL cert CN search for {len(broad_tlds)} TLDs")
+    for tld in broad_tlds:
+        query = f"ssl.cert.subject.CN:.{tld}"
+        matches = _shodan_search(api, query, f"ssl:{tld}", max_pages=3)
+        _add_and_classify(matches, "ssl_cert")
+
+    # Phase 6: Unfiltered hostname sweep (broad discovery — catches databases,
+    # RDP, IoT, printers, webcams, or anything else that wasn't pre-filtered)
+    logger.info(f"Shodan phase 6: unfiltered hostname sweep for {len(broad_tlds)} TLDs")
+    for tld in broad_tlds:
+        query = f"hostname:.{tld}"
+        matches = _shodan_search(api, query, f"all:{tld}", max_pages=5)
+        _add_and_classify(matches, "unfiltered")
+
+    logger.info(f"Shodan: {len(all_results)} unique results across all phases")
     return all_results
 
 

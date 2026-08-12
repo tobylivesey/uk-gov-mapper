@@ -13,7 +13,7 @@ A toolkit for collecting, enriching, and visualising UK government organisation 
 - **Parent Domain Inheritance**: Organisations without email domains inherit from their parent organisation
 - **Cyber Security Intelligence**: Extracts cyber team size and technology stacks from job postings
 - **SOC Detection**: Identifies Security Operations Centre capability from job posting evidence
-- **Edge Device Discovery**: Identifies VPN gateways, firewalls, and load balancers via Shodan API
+- **Edge Device Discovery**: Identifies VPN gateways, firewalls, and load balancers via Shodan API (Palo Alto, Cisco ASA, Check Point, Citrix, F5, Fortinet, Juniper, Ivanti, SonicWall, Sophos, Barracuda, WatchGuard, Zscaler)
 - **RIPE IP Range Discovery**: Finds org-owned ASNs and announced IP prefixes via RIPEstat/RIPE DB APIs
 - **D3 Visualisations**: Interactive treemap (budget/headcount sizing) and hierarchy chart (7-tier HMG classification)
 - **Job Scraping**: Collects job postings from multiple recruitment providers (Adzuna, Greenhouse, PSR)
@@ -49,6 +49,7 @@ python -m scripts.visualise              # 7. Outputs treemap + hierarchy chart
 | `python -m scripts.enrich_cyber --shodan-cache` | Same but reuse cached Shodan results (0 API credits) |
 | `python -m scripts.enrich_cyber --ripe` | RIPE ASN lookup for org-owned IP ranges |
 | `python -m scripts.enrich_cyber --ripe-cache` | Same but reuse cached RIPE results (0 API calls) |
+| `python -m scripts.enrich_cyber --ripe-bulk` | Populate RIPE data from bulk DB dumps (bypasses rate limits) |
 | `python -m scripts.visualise` | Generate D3 treemap + hierarchy chart |
 | `python -m scripts.enrich_jobs --provider adzuna --token "query"` | Scrape jobs from Adzuna |
 | `python -m scripts.enrich_jobs --provider greenhouse --token "board"` | Scrape jobs from Greenhouse |
@@ -85,7 +86,7 @@ uk-gov-mapper/
 │   ├── enrich_mailservers.py              # DNS MX lookups
 │   ├── enrich_parent_domains.py           # Parent domain inheritance
 │   ├── enrich_govuk_domains.py            # Official .gov.uk domain list matching
-│   ├── enrich_cyber.py                    # Cyber intelligence, tech stack & Shodan edge devices
+│   ├── enrich_cyber.py                    # Cyber intelligence, tech stack, Shodan & RIPE enrichment
 │   ├── enrich_headcount.py                # Civil Service Statistics headcount
 │   ├── enrich_jobs.py                     # Job scraping CLI
 │   ├── visualise.py                       # D3 treemap + hierarchy chart generator
@@ -125,7 +126,7 @@ Each organisation record includes:
 | `cyber_tech_stack` | Detected security tools by category (SIEM, EDR, etc.) |
 | `has_soc` | Whether SOC (Security Operations Centre) evidence was found |
 | `soc_evidence` | SOC job postings with title, date, source, and CS Jobs ID |
-| `shodan_edge_devices` | Edge devices detected via Shodan (VPN gateways, firewalls) |
+| `shodan_edge_devices` | Edge devices detected via Shodan (VPN gateways, firewalls, load balancers) |
 | `shodan_asns` | Autonomous System Numbers associated with the org |
 | `ripe_asns` | RIPE-registered ASNs owned by the org (with holder name and prefixes) |
 | `ripe_prefixes` | Announced IP prefixes (ranges) from RIPE, excluding cloud/ISP |

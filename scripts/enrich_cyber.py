@@ -826,7 +826,7 @@ def _load_shodan_cache(cache_path: Path) -> list[dict] | None:
     return None
 
 
-def run_shodan_enrichment(orgs: list[dict], use_cache: bool = False) -> dict[str, dict]:
+def run_shodan_enrichment(orgs: list[dict], use_cache: bool = False, deep: bool = False) -> dict[str, dict]:
     """Run Shodan edge device discovery. Returns org_id -> shodan data mapping."""
     load_dotenv()
     api_key = os.getenv("SHODAN_API_KEY")
@@ -848,7 +848,7 @@ def run_shodan_enrichment(orgs: list[dict], use_cache: bool = False) -> dict[str
         results = _load_shodan_cache(cache_path)
 
     if results is None:
-        results = search_shodan_edge_devices(api, domain_to_org)
+        results = search_shodan_edge_devices(api, domain_to_org, orgs=orgs, deep=deep)
         _cache_shodan_results(results, cache_path)
         info = api.info()
         logger.info(f"Shodan credits remaining: {info.get('query_credits')}")
@@ -1889,6 +1889,8 @@ def main():
                         help="Query Shodan for edge devices (requires SHODAN_API_KEY)")
     parser.add_argument("--shodan-cache", action="store_true",
                         help="Use cached Shodan results instead of querying API")
+    parser.add_argument("--shodan-deep", action="store_true",
+                        help="Deep Shodan discovery: RIPE net-range, org-name, SSL cert & unfiltered sweeps (uses more credits)")
     parser.add_argument("--ripe", action="store_true",
                         help="Look up RIPE ASNs and IP ranges for orgs")
     parser.add_argument("--ripe-cache", action="store_true",
@@ -1921,8 +1923,8 @@ def main():
 
     # Shodan edge device discovery
     shodan_data = {}
-    if args.shodan or args.shodan_cache:
-        shodan_data = run_shodan_enrichment(orgs, use_cache=args.shodan_cache)
+    if args.shodan or args.shodan_cache or args.shodan_deep:
+        shodan_data = run_shodan_enrichment(orgs, use_cache=args.shodan_cache, deep=args.shodan_deep)
 
     # RIPE IP range discovery
     ripe_data = {}

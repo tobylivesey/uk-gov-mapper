@@ -8,12 +8,14 @@ Runs the full enrichment pipeline:
 3. enrich_mailservers: DNS MX lookups for email domains
 4. enrich_parent_domains: Inherit domains from parent orgs
 5. enrich_govuk_domains: Adds domains from official .gov.uk list
-6. enrich_cyber: Cyber intelligence, Shodan edge devices & RIPE IP ranges
-7. visualise: Generates D3 treemap + hierarchy chart
+6. enrich_github: Discovers GitHub org accounts & public repo counts
+7. enrich_cyber: Cyber intelligence, Shodan edge devices & RIPE IP ranges
+8. visualise: Generates D3 treemap + hierarchy chart
 
 Usage:
     python -m scripts.main
     python -m scripts.main --shodan --ripe   # include Shodan + RIPE lookups
+    python -m scripts.main --shodan-deep     # deep Shodan discovery
 """
 
 import sys
@@ -36,7 +38,10 @@ STEPS = [
     ("Adding domains from official .gov.uk list",
      [sys.executable, "-m", "scripts.enrich_govuk_domains"]),
 
-    # Step 6 gets extra flags passed through from CLI
+    ("Discovering GitHub organisation accounts",
+     [sys.executable, "-m", "scripts.enrich_github"]),
+
+    # Cyber step gets extra flags passed through from CLI
     ("Cyber intelligence enrichment",
      [sys.executable, "-m", "scripts.enrich_cyber"]),
 

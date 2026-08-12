@@ -16,10 +16,12 @@ Usage:
     python -m scripts.main
     python -m scripts.main --shodan --ripe   # include Shodan + RIPE lookups
     python -m scripts.main --shodan-deep     # deep Shodan discovery
+    python -m scripts.main --no-github       # skip GitHub enrichment (uses cached data)
 """
 
 import sys
 import subprocess
+import argparse
 
 
 STEPS = [
@@ -51,15 +53,22 @@ STEPS = [
 
 
 def main():
-    # Collect flags to pass through to enrich_cyber (e.g. --shodan, --ripe)
-    passthrough = sys.argv[1:]
+    parser = argparse.ArgumentParser(description="UK Government Organisation Data Pipeline")
+    parser.add_argument("--no-github", action="store_true",
+                        help="Skip GitHub enrichment (uses cached data)")
+    args, passthrough = parser.parse_known_args()
 
-    total = len(STEPS)
+    steps = STEPS[:]
+    if args.no_github:
+        steps = [(desc, cmd) for desc, cmd in steps
+                 if "enrich_github" not in cmd[-1]]
+
+    total = len(steps)
     print("=" * 60)
     print("UK Government Organisation Data Pipeline")
     print("=" * 60)
 
-    for i, (desc, cmd) in enumerate(STEPS, 1):
+    for i, (desc, cmd) in enumerate(steps, 1):
         print(f"\n[Step {i}/{total}] {desc}...")
 
         # Pass CLI flags through to enrich_cyber

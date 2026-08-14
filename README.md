@@ -46,6 +46,7 @@ python -m scripts.visualise              # 7. Outputs treemap + hierarchy chart
 | `python -m scripts.enrich_parent_domains` | Inherit email domains from parent orgs |
 | `python -m scripts.enrich_govuk_domains` | Fill gaps from official .gov.uk domain list |
 | `python -m scripts.enrich_cyber --shodan` | Cyber intelligence, tech stack & Shodan edge devices |
+| `python -m scripts.enrich_cyber --shodan-deep` | Deep Shodan: adds RIPE net, org, SSL & unfiltered sweeps (needs membership) |
 | `python -m scripts.enrich_cyber --shodan-cache` | Same but reuse cached Shodan results (0 API credits) |
 | `python -m scripts.enrich_cyber --ripe` | RIPE ASN lookup for org-owned IP ranges |
 | `python -m scripts.enrich_cyber --ripe-cache` | Same but reuse cached RIPE results (0 API calls) |
@@ -204,7 +205,7 @@ Create a `.env` file:
 ```
 ADZUNA_APP_ID=your_app_id        # For Adzuna job scraping
 ADZUNA_APP_KEY=your_api_key
-SHODAN_API_KEY=your_api_key      # For edge device discovery (dev plan: 100 queries/month)
+SHODAN_API_KEY=your_api_key      # For edge device discovery (dev plan: phases 1-2 & 6 only; membership required for net/org/ssl filters in phases 3-5)
 RIPE_DB_API_KEY=your_api_key     # Optional: RIPE DB REST API (reduces rate limiting)
 ```
 

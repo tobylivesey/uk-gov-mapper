@@ -675,14 +675,15 @@ def search_shodan_edge_devices(
             matches = _shodan_search(api, query, device_label, max_pages=3)
             _add_results(matches, device_label, device_filter, "tld_sweep")
 
-    # Phase 2: Individual non-standard domains with device filters
+    # Phase 2: Individual non-standard domains (unfiltered, then classify)
+    # Previous approach ran 15 device-filter queries per domain — extremely slow.
+    # Instead, do one unfiltered query per domain and classify results post-hoc.
     if individual_domains:
-        logger.info(f"Shodan phase 2: {len(individual_domains)} individual domains")
+        logger.info(f"Shodan phase 2: {len(individual_domains)} individual domains (unfiltered)")
         for domain in individual_domains:
-            for device_label, device_filter in EDGE_DEVICE_QUERIES:
-                query = f"hostname:{domain} {device_filter}"
-                matches = _shodan_search(api, query, device_label)
-                _add_results(matches, device_label, device_filter, "domain_sweep")
+            query = f"hostname:{domain}"
+            matches = _shodan_search(api, query, domain)
+            _add_and_classify(matches, "domain_sweep")
 
     if not deep:
         logger.info(

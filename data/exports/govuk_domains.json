@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-03-02T07:00:45.310071+00:00",
-  "record_count": 665,
+  "generated_at": "2026-08-14T13:12:17.620059+00:00",
+  "record_count": 667,
   "columns": [
     "organisation",
     "domains",
@@ -113,6 +113,18 @@
       ]
     },
     {
+      "organisation": "Advisory Committee for Social Science",
+      "domains": [
+        "food.gov.uk"
+      ],
+      "mail_providers": [
+        "Microsoft 365"
+      ],
+      "mail_provider_categories": [
+        "cloud"
+      ]
+    },
+    {
       "organisation": "Advisory Committee on Animal Feedingstuffs",
       "domains": [
         "food.gov.uk"
@@ -139,14 +151,10 @@
     {
       "organisation": "Advisory Committee on Clinical Impact Awards",
       "domains": [
-        "dhsc.gov.uk"
+        "No Domain Found"
       ],
-      "mail_providers": [
-        "Microsoft 365"
-      ],
-      "mail_provider_categories": [
-        "cloud"
-      ]
+      "mail_providers": [],
+      "mail_provider_categories": []
     },
     {
       "organisation": "Advisory Committee on Conscientious Objectors",
@@ -317,6 +325,18 @@
       ]
     },
     {
+      "organisation": "Armed Forces Commissioner",
+      "domains": [
+        "afcommissioner.org.uk"
+      ],
+      "mail_providers": [
+        "Microsoft 365"
+      ],
+      "mail_provider_categories": [
+        "cloud"
+      ]
+    },
+    {
       "organisation": "Armed Forces Covenant Fund Trust",
       "domains": [
         "covenantfund.org.uk"
@@ -395,12 +415,10 @@
         "attorney-general.gov.uk"
       ],
       "mail_providers": [
-        "Broadcom",
-        "Self-managed"
+        "gov.uk domain"
       ],
       "mail_provider_categories": [
-        "security_gateway",
-        "self_managed"
+        "government"
       ]
     },
     {
@@ -482,12 +500,10 @@
         "bonavacantia.gov.uk"
       ],
       "mail_providers": [
-        "Broadcom",
-        "Null MX"
+        "Broadcom"
       ],
       "mail_provider_categories": [
-        "security_gateway",
-        "null_mx"
+        "security_gateway"
       ]
     },
     {
@@ -647,14 +663,10 @@
     {
       "organisation": "British Pharmacopoeia Commission",
       "domains": [
-        "dhsc.gov.uk"
+        "No Domain Found"
       ],
-      "mail_providers": [
-        "Microsoft 365"
-      ],
-      "mail_provider_categories": [
-        "cloud"
-      ]
+      "mail_providers": [],
+      "mail_provider_categories": []
     },
     {
       "organisation": "British Technology Investments Ltd",
@@ -740,7 +752,8 @@
     {
       "organisation": "Cabinet Office",
       "domains": [
-        "cabinetoffice.gov.uk"
+        "cabinetoffice.gov.uk",
+        "digital.cabinet-office.gov.uk"
       ],
       "mail_providers": [
         "Google Workspace"
@@ -780,11 +793,9 @@
         "cambridge.gov.uk"
       ],
       "mail_providers": [
-        "Mimecast",
         "Null MX"
       ],
       "mail_provider_categories": [
-        "security_gateway",
         "null_mx"
       ]
     },
@@ -1024,11 +1035,9 @@
         "civilservice.gov.uk"
       ],
       "mail_providers": [
-        "Google Workspace",
-        "Zoho Mail"
+        "Google Workspace"
       ],
       "mail_provider_categories": [
-        "cloud",
         "cloud"
       ]
     },
@@ -1196,11 +1205,9 @@
         "csc.gov.uk"
       ],
       "mail_providers": [
-        "Google Workspace",
         "Self-managed"
       ],
       "mail_provider_categories": [
-        "cloud",
         "self_managed"
       ]
     },
@@ -1445,27 +1452,15 @@
       ]
     },
     {
-      "organisation": "Crown Commercial Service",
-      "domains": [
-        "crowncommercial.gov.uk"
-      ],
-      "mail_providers": [
-        "Google Workspace"
-      ],
-      "mail_provider_categories": [
-        "cloud"
-      ]
-    },
-    {
       "organisation": "Crown Prosecution Service",
       "domains": [
         "cps.gov.uk"
       ],
       "mail_providers": [
-        "Self-managed"
+        "gov.uk domain"
       ],
       "mail_provider_categories": [
-        "self_managed"
+        "government"
       ]
     },
     {
@@ -1529,6 +1524,18 @@
       ]
     },
     {
+      "organisation": "Defence Nuclear Enterprise",
+      "domains": [
+        "mod.gov.uk"
+      ],
+      "mail_providers": [
+        "Microsoft 365"
+      ],
+      "mail_provider_categories": [
+        "cloud"
+      ]
+    },
+    {
       "organisation": "Defence Nuclear Organisation",
       "domains": [
         "mod.gov.uk"
@@ -1559,12 +1566,10 @@
         "dsa.gov.uk"
       ],
       "mail_providers": [
-        "Microsoft 365",
-        "Self-managed"
+        "Microsoft 365"
       ],
       "mail_provider_categories": [
-        "cloud",
-        "self_managed"
+        "cloud"
       ]
     },
     {
@@ -1624,17 +1629,27 @@
       "mail_provider_categories": []
     },
     {
+      "organisation": "Department for Business, Innovation, Science and Trade",
+      "domains": [
+        "businessandtrade.gov.uk"
+      ],
+      "mail_providers": [
+        "Microsoft 365"
+      ],
+      "mail_provider_categories": [
+        "cloud"
+      ]
+    },
+    {
       "organisation": "Department for Communities (Northern Ireland)",
       "domains": [
         "communities-ni.gov.uk",
         "communities.gov.uk"
       ],
       "mail_providers": [
-        "Microsoft 365",
         "Sophos"
       ],
       "mail_provider_categories": [
-        "cloud",
         "security_gateway"
       ]
     },
@@ -1649,6 +1664,14 @@
       "mail_provider_categories": [
         "cloud"
       ]
+    },
+    {
+      "organisation": "Department for Digital, Culture, Media and Sport",
+      "domains": [
+        "dcms.gov.uk"
+      ],
+      "mail_providers": [],
+      "mail_provider_categories": []
     },
     {
       "organisation": "Department for Education",
@@ -1677,7 +1700,6 @@
     {
       "organisation": "Department for Environment, Food & Rural Affairs",
       "domains": [
-        "apha.gov.uk",
         "defra.gov.uk"
       ],
       "mail_providers": [
@@ -1704,12 +1726,8 @@
       "domains": [
         "dsit.gov.uk"
       ],
-      "mail_providers": [
-        "Microsoft 365"
-      ],
-      "mail_provider_categories": [
-        "cloud"
-      ]
+      "mail_providers": [],
+      "mail_provider_categories": []
     },
     {
       "organisation": "Department for Transport",
@@ -1729,12 +1747,8 @@
       "domains": [
         "dwp.gov.uk"
       ],
-      "mail_providers": [
-        "Cisco"
-      ],
-      "mail_provider_categories": [
-        "security_gateway"
-      ]
+      "mail_providers": [],
+      "mail_provider_categories": []
     },
     {
       "organisation": "Department for the Economy (Northern Ireland)",
@@ -1801,12 +1815,8 @@
       "domains": [
         "dhsc.gov.uk"
       ],
-      "mail_providers": [
-        "Microsoft 365"
-      ],
-      "mail_provider_categories": [
-        "cloud"
-      ]
+      "mail_providers": [],
+      "mail_provider_categories": []
     },
     {
       "organisation": "Department of Justice (Northern Ireland)",
@@ -1839,12 +1849,10 @@
         "disability.gov.uk"
       ],
       "mail_providers": [
-        "Google Workspace",
-        "Null MX"
+        "Google Workspace"
       ],
       "mail_provider_categories": [
-        "cloud",
-        "null_mx"
+        "cloud"
       ]
     },
     {
@@ -1875,7 +1883,8 @@
     {
       "organisation": "District Valuer Services",
       "domains": [
-        "voa.gov.uk"
+        "voa.gov.uk",
+        "digital.voa.gov.uk"
       ],
       "mail_providers": [
         "Microsoft 365"
@@ -1888,15 +1897,14 @@
       "organisation": "Driver and Vehicle Licensing Agency",
       "domains": [
         "dvsa.gov.uk",
-        "dvla.gov.uk"
+        "dvla.gov.uk",
+        "digital.dvla.gov.uk"
       ],
       "mail_providers": [
-        "Microsoft 365",
-        "gov.uk domain"
+        "Microsoft 365"
       ],
       "mail_provider_categories": [
-        "cloud",
-        "government"
+        "cloud"
       ]
     },
     {
@@ -1951,18 +1959,6 @@
       "organisation": "Electricity Settlements Company",
       "domains": [
         "lowcarboncontracts.uk"
-      ],
-      "mail_providers": [
-        "Microsoft 365"
-      ],
-      "mail_provider_categories": [
-        "cloud"
-      ]
-    },
-    {
-      "organisation": "Employment Agency Standards Inspectorate",
-      "domains": [
-        "businessandtrade.gov.uk"
       ],
       "mail_providers": [
         "Microsoft 365"
@@ -2131,8 +2127,8 @@
       "organisation": "FCDO Services ",
       "domains": [
         "fcdo.gov.uk",
-        "fcdoservices.gov.uk",
-        "fcoservices.gov.uk"
+        "fcoservices.gov.uk",
+        "fcdoservices.gov.uk"
       ],
       "mail_providers": [
         "Microsoft 365"
@@ -2144,10 +2140,14 @@
     {
       "organisation": "Fair Work Agency",
       "domains": [
-        "No Domain Found"
+        "fairworkagency.gov.uk"
       ],
-      "mail_providers": [],
-      "mail_provider_categories": []
+      "mail_providers": [
+        "Microsoft 365"
+      ],
+      "mail_provider_categories": [
+        "cloud"
+      ]
     },
     {
       "organisation": "Family Division of the High Court",
@@ -2336,12 +2336,10 @@
         "disability.gov.uk"
       ],
       "mail_providers": [
-        "Microsoft 365",
-        "Null MX"
+        "Microsoft 365"
       ],
       "mail_provider_categories": [
-        "cloud",
-        "null_mx"
+        "cloud"
       ]
     },
     {
@@ -2431,7 +2429,8 @@
     {
       "organisation": "Foreign, Commonwealth & Development Office",
       "domains": [
-        "fcdo.gov.uk"
+        "fcdo.gov.uk",
+        "digital.fcdo.gov.uk"
       ],
       "mail_providers": [
         "Microsoft 365"
@@ -2525,18 +2524,6 @@
       ]
     },
     {
-      "organisation": "Gangmasters and Labour Abuse Authority",
-      "domains": [
-        "gla.gov.uk"
-      ],
-      "mail_providers": [
-        "Self-managed"
-      ],
-      "mail_provider_categories": [
-        "self_managed"
-      ]
-    },
-    {
       "organisation": "Gov Facility Services Limited",
       "domains": [
         "govfsl.com"
@@ -2585,6 +2572,18 @@
       ]
     },
     {
+      "organisation": "Government Commercial Agency",
+      "domains": [
+        "gca.gov.uk"
+      ],
+      "mail_providers": [
+        "Google Workspace"
+      ],
+      "mail_provider_categories": [
+        "cloud"
+      ]
+    },
+    {
       "organisation": "Government Commercial Function",
       "domains": [
         "cabinetoffice.gov.uk"
@@ -2599,16 +2598,13 @@
     {
       "organisation": "Government Communication Service",
       "domains": [
-        "digital.cabinet-office.gov.uk",
-        "gcs.gov.uk"
+        "digital.cabinet-office.gov.uk"
       ],
       "mail_providers": [
-        "Google Workspace",
-        "Self-managed"
+        "Google Workspace"
       ],
       "mail_provider_categories": [
-        "cloud",
-        "self_managed"
+        "cloud"
       ]
     },
     {
@@ -2634,6 +2630,14 @@
       "mail_provider_categories": [
         "security_gateway"
       ]
+    },
+    {
+      "organisation": "Government Cyber Profession",
+      "domains": [
+        "No Domain Found"
+      ],
+      "mail_providers": [],
+      "mail_provider_categories": []
     },
     {
       "organisation": "Government Data Quality Hub",
@@ -2710,11 +2714,9 @@
         "geography.gov.uk"
       ],
       "mail_providers": [
-        "Google Workspace",
-        "Microsoft 365"
+        "Google Workspace"
       ],
       "mail_provider_categories": [
-        "cloud",
         "cloud"
       ]
     },
@@ -2809,12 +2811,10 @@
         "operational-research.gov.uk"
       ],
       "mail_providers": [
-        "Microsoft 365",
-        "Self-managed"
+        "Microsoft 365"
       ],
       "mail_provider_categories": [
-        "cloud",
-        "self_managed"
+        "cloud"
       ]
     },
     {
@@ -2888,7 +2888,8 @@
     {
       "organisation": "Government Property Agency",
       "domains": [
-        "gpa.gov.uk"
+        "gpa.gov.uk",
+        "digital.gpa.gov.uk"
       ],
       "mail_providers": [
         "Google Workspace"
@@ -3042,6 +3043,19 @@
       ]
     },
     {
+      "organisation": "Greater Cambridge Development Corporation",
+      "domains": [
+        "communities.gov.uk",
+        "cambridge.gov.uk"
+      ],
+      "mail_providers": [
+        "Microsoft 365"
+      ],
+      "mail_provider_categories": [
+        "cloud"
+      ]
+    },
+    {
       "organisation": "Groceries Code Adjudicator",
       "domains": [
         "GroceriesCode.gov.uk"
@@ -3130,7 +3144,9 @@
     {
       "organisation": "HM Land Registry",
       "domains": [
-        "landregistry.gov.uk"
+        "landregistry.gov.uk",
+        "digital.landregistry.gov.uk",
+        "data.landregistry.gov.uk"
       ],
       "mail_providers": [
         "Microsoft 365"
@@ -3190,7 +3206,8 @@
     {
       "organisation": "HM Revenue & Customs",
       "domains": [
-        "hmrc.gov.uk"
+        "hmrc.gov.uk",
+        "digital.hmrc.gov.uk"
       ],
       "mail_providers": [
         "Microsoft 365"
@@ -3203,7 +3220,8 @@
       "organisation": "HM Treasury",
       "domains": [
         "hmtreasury.gov.uk",
-        "hm-treasury.gov.uk"
+        "hm-treasury.gov.uk",
+        "hmt.gov.uk"
       ],
       "mail_providers": [
         "Mimecast"
@@ -3466,7 +3484,7 @@
       ]
     },
     {
-      "organisation": "Independent Advisory Panel on Deaths in Custody",
+      "organisation": "Independent Advisory Panel on Deaths in Detention",
       "domains": [
         "justice.gov.uk"
       ],
@@ -3544,18 +3562,6 @@
       ],
       "mail_providers": [
         "Microsoft 365"
-      ],
-      "mail_provider_categories": [
-        "cloud"
-      ]
-    },
-    {
-      "organisation": "Independent Dormant Assets Commission ",
-      "domains": [
-        "culture.gov.uk"
-      ],
-      "mail_providers": [
-        "Google Workspace"
       ],
       "mail_provider_categories": [
         "cloud"
@@ -3901,15 +3907,13 @@
     {
       "organisation": "Joint Nature Conservation Committee",
       "domains": [
-        "apha.gov.uk",
+        "defra.gov.uk",
         "jncc.gov.uk"
       ],
       "mail_providers": [
-        "Broadcom",
         "Microsoft 365"
       ],
       "mail_provider_categories": [
-        "security_gateway",
         "cloud"
       ]
     },
@@ -4019,14 +4023,6 @@
       ]
     },
     {
-      "organisation": "Lammy Review",
-      "domains": [
-        "No Domain Found"
-      ],
-      "mail_providers": [],
-      "mail_provider_categories": []
-    },
-    {
       "organisation": "Land Registration Rule Committee",
       "domains": [
         "communities.gov.uk"
@@ -4046,12 +4042,10 @@
         "nilawcommission.gov.uk"
       ],
       "mail_providers": [
-        "Microsoft 365",
-        "Sophos"
+        "Microsoft 365"
       ],
       "mail_provider_categories": [
-        "cloud",
-        "security_gateway"
+        "cloud"
       ]
     },
     {
@@ -4118,7 +4112,9 @@
     {
       "organisation": "Life Sciences Organisation",
       "domains": [
-        "trade.gov.uk"
+        "trade.gov.uk",
+        "digital.trade.gov.uk",
+        "data.trade.gov.uk"
       ],
       "mail_providers": [
         "Microsoft 365"
@@ -4140,6 +4136,18 @@
       ]
     },
     {
+      "organisation": "Local Audit Office",
+      "domains": [
+        "communities.gov.uk"
+      ],
+      "mail_providers": [
+        "Microsoft 365"
+      ],
+      "mail_provider_categories": [
+        "cloud"
+      ]
+    },
+    {
       "organisation": "Local Government and Social Care Ombudsman",
       "domains": [
         "lgo.org.uk"
@@ -4149,33 +4157,6 @@
       ],
       "mail_provider_categories": [
         "security_gateway"
-      ]
-    },
-    {
-      "organisation": "LocatED",
-      "domains": [
-        "located.co.uk"
-      ],
-      "mail_providers": [
-        "Microsoft 365"
-      ],
-      "mail_provider_categories": [
-        "cloud"
-      ]
-    },
-    {
-      "organisation": "London and Continental Railways Limited",
-      "domains": [
-        "lcrhq.co.uk",
-        "london.gov.uk"
-      ],
-      "mail_providers": [
-        "Forcepoint",
-        "Microsoft 365"
-      ],
-      "mail_provider_categories": [
-        "security_gateway",
-        "cloud"
       ]
     },
     {
@@ -4349,7 +4330,8 @@
     {
       "organisation": "Ministry of Defence",
       "domains": [
-        "mod.gov.uk"
+        "mod.gov.uk",
+        "digital.mod.gov.uk"
       ],
       "mail_providers": [
         "Microsoft 365"
@@ -4446,12 +4428,10 @@
         "nhscfa.gov.uk"
       ],
       "mail_providers": [
-        "Amazon SES",
-        "Barracuda"
+        "Amazon SES"
       ],
       "mail_provider_categories": [
-        "cloud",
-        "security_gateway"
+        "cloud"
       ]
     },
     {
@@ -4469,14 +4449,10 @@
     {
       "organisation": "NHS Pay Review Body",
       "domains": [
-        "dhsc.gov.uk"
+        "No Domain Found"
       ],
-      "mail_providers": [
-        "Microsoft 365"
-      ],
-      "mail_provider_categories": [
-        "cloud"
-      ]
+      "mail_providers": [],
+      "mail_provider_categories": []
     },
     {
       "organisation": "NHS Resolution",
@@ -4529,11 +4505,9 @@
         "nactso.gov.uk"
       ],
       "mail_providers": [
-        "Broadcom",
         "Self-managed"
       ],
       "mail_provider_categories": [
-        "security_gateway",
         "self_managed"
       ]
     },
@@ -4577,7 +4551,8 @@
     {
       "organisation": "National Cyber Security Centre",
       "domains": [
-        "ncsc.gov.uk"
+        "ncsc.gov.uk",
+        "digital.ncsc.gov.uk"
       ],
       "mail_providers": [
         "Microsoft 365"
@@ -4731,29 +4706,15 @@
       ]
     },
     {
-      "organisation": "National Museum of the Royal Navy",
-      "domains": [
-        "nmrn.org.uk"
-      ],
-      "mail_providers": [
-        "Microsoft 365"
-      ],
-      "mail_provider_categories": [
-        "cloud"
-      ]
-    },
-    {
       "organisation": "National Museums Liverpool",
       "domains": [
         "liverpoolmuseums.org.uk",
         "liverpool.gov.uk"
       ],
       "mail_providers": [
-        "Broadcom",
         "Mimecast"
       ],
       "mail_provider_categories": [
-        "security_gateway",
         "security_gateway"
       ]
     },
@@ -5037,11 +4998,9 @@
         "statistics.gov.uk"
       ],
       "mail_providers": [
-        "Microsoft 365",
         "Sophos"
       ],
       "mail_provider_categories": [
-        "cloud",
         "security_gateway"
       ]
     },
@@ -5060,7 +5019,7 @@
     {
       "organisation": "Northumberland National Park Authority",
       "domains": [
-        "apha.gov.uk",
+        "defra.gov.uk",
         "northumberland.gov.uk"
       ],
       "mail_providers": [
@@ -5073,7 +5032,8 @@
     {
       "organisation": "Nuclear Decommissioning Authority",
       "domains": [
-        "nda.gov.uk"
+        "nda.gov.uk",
+        "ict.nda.gov.uk"
       ],
       "mail_providers": [
         "Microsoft 365"
@@ -5091,7 +5051,7 @@
       "mail_provider_categories": []
     },
     {
-      "organisation": "Nuclear Research Advisory Council",
+      "organisation": "Nuclear Research Advisory Committee",
       "domains": [
         "mod.gov.uk"
       ],
@@ -5197,26 +5157,18 @@
     {
       "organisation": "Office for Health Improvement and Disparities",
       "domains": [
-        "dhsc.gov.uk"
+        "No Domain Found"
       ],
-      "mail_providers": [
-        "Microsoft 365"
-      ],
-      "mail_provider_categories": [
-        "cloud"
-      ]
+      "mail_providers": [],
+      "mail_provider_categories": []
     },
     {
       "organisation": "Office for Investment",
       "domains": [
         "officeforinvestment.gov.uk"
       ],
-      "mail_providers": [
-        "Microsoft 365"
-      ],
-      "mail_provider_categories": [
-        "cloud"
-      ]
+      "mail_providers": [],
+      "mail_provider_categories": []
     },
     {
       "organisation": "Office for Investment: Financial Services",
@@ -5262,11 +5214,9 @@
         "onr.gov.uk"
       ],
       "mail_providers": [
-        "Mailchimp Mandrill",
-        "Microsoft 365"
+        "Mailchimp Mandrill"
       ],
       "mail_provider_categories": [
-        "cloud",
         "cloud"
       ]
     },
@@ -5285,10 +5235,14 @@
     {
       "organisation": "Office for Responsible Business Conduct",
       "domains": [
-        "No Domain Found"
+        "businessandtrade.gov.uk"
       ],
-      "mail_providers": [],
-      "mail_provider_categories": []
+      "mail_providers": [
+        "Microsoft 365"
+      ],
+      "mail_provider_categories": [
+        "cloud"
+      ]
     },
     {
       "organisation": "Office for Students",
@@ -5509,12 +5463,10 @@
         "orcl.gov.uk"
       ],
       "mail_providers": [
-        "GoDaddy",
-        "Google Workspace"
+        "GoDaddy"
       ],
       "mail_provider_categories": [
-        "isp",
-        "cloud"
+        "isp"
       ]
     },
     {
@@ -5808,6 +5760,18 @@
       ]
     },
     {
+      "organisation": "Platform4",
+      "domains": [
+        "platform4.com"
+      ],
+      "mail_providers": [
+        "Microsoft 365"
+      ],
+      "mail_provider_categories": [
+        "cloud"
+      ]
+    },
+    {
       "organisation": "Police Advisory Board for England and Wales",
       "domains": [
         "homeoffice.gov.uk"
@@ -5860,12 +5824,8 @@
       "domains": [
         "policylab.gov.uk"
       ],
-      "mail_providers": [
-        "Microsoft 365"
-      ],
-      "mail_provider_categories": [
-        "cloud"
-      ]
+      "mail_providers": [],
+      "mail_provider_categories": []
     },
     {
       "organisation": "Policy Profession",
@@ -5971,11 +5931,9 @@
         "pbni.gov.uk"
       ],
       "mail_providers": [
-        "Broadcom",
-        "Sophos"
+        "Broadcom"
       ],
       "mail_provider_categories": [
-        "security_gateway",
         "security_gateway"
       ]
     },
@@ -6064,12 +6022,8 @@
       "domains": [
         "pubscodeadjudicator.gov.uk"
       ],
-      "mail_providers": [
-        "Microsoft 365"
-      ],
-      "mail_provider_categories": [
-        "cloud"
-      ]
+      "mail_providers": [],
+      "mail_provider_categories": []
     },
     {
       "organisation": "Queen Elizabeth II Conference Centre",
@@ -6090,6 +6044,18 @@
       ],
       "mail_providers": [
         "Google Workspace"
+      ],
+      "mail_provider_categories": [
+        "cloud"
+      ]
+    },
+    {
+      "organisation": "Radiation Protection Sciences",
+      "domains": [
+        "ukhsa.gov.uk"
+      ],
+      "mail_providers": [
+        "Microsoft 365"
       ],
       "mail_provider_categories": [
         "cloud"
@@ -6234,14 +6200,10 @@
     {
       "organisation": "Review Body on Doctors' and Dentists' Remuneration",
       "domains": [
-        "dhsc.gov.uk"
+        "No Domain Found"
       ],
-      "mail_providers": [
-        "Microsoft 365"
-      ],
-      "mail_provider_categories": [
-        "cloud"
-      ]
+      "mail_providers": [],
+      "mail_provider_categories": []
     },
     {
       "organisation": "Royal Air Force Museum",
@@ -6308,6 +6270,18 @@
       "domains": [
         "rmg.co.uk",
         "greenwich.gov.uk"
+      ],
+      "mail_providers": [
+        "Microsoft 365"
+      ],
+      "mail_provider_categories": [
+        "cloud"
+      ]
+    },
+    {
+      "organisation": "Royal Navy Museums",
+      "domains": [
+        "nmrn.org.uk"
       ],
       "mail_providers": [
         "Microsoft 365"
@@ -6462,9 +6436,22 @@
       ]
     },
     {
+      "organisation": "Scotland Office",
+      "domains": [
+        "ukgovscotland.gov.uk",
+        "scotland.gov.uk"
+      ],
+      "mail_providers": [
+        "Google Workspace"
+      ],
+      "mail_provider_categories": [
+        "cloud"
+      ]
+    },
+    {
       "organisation": "Seafish",
       "domains": [
-        "apha.gov.uk"
+        "defra.gov.uk"
       ],
       "mail_providers": [
         "Microsoft 365"
@@ -6492,11 +6479,9 @@
         "sia.gov.uk"
       ],
       "mail_providers": [
-        "Mimecast",
         "Self-managed"
       ],
       "mail_provider_categories": [
-        "security_gateway",
         "self_managed"
       ]
     },
@@ -6507,11 +6492,9 @@
         "vetting.gov.uk"
       ],
       "mail_providers": [
-        "Google Workspace",
-        "Microsoft 365"
+        "Google Workspace"
       ],
       "mail_provider_categories": [
-        "cloud",
         "cloud"
       ]
     },
@@ -6521,10 +6504,10 @@
         "sellafieldsites.com"
       ],
       "mail_providers": [
-        "Null MX"
+        "Microsoft 365"
       ],
       "mail_provider_categories": [
-        "null_mx"
+        "cloud"
       ]
     },
     {
@@ -6569,22 +6552,10 @@
         "sfo.gov.uk"
       ],
       "mail_providers": [
-        "Broadcom"
+        "Mimecast"
       ],
       "mail_provider_categories": [
         "security_gateway"
-      ]
-    },
-    {
-      "organisation": "Service Complaints Ombudsman ",
-      "domains": [
-        "scoaf.org.uk"
-      ],
-      "mail_providers": [
-        "Microsoft 365"
-      ],
-      "mail_provider_categories": [
-        "cloud"
       ]
     },
     {
@@ -6606,11 +6577,9 @@
         "sheffield.gov.uk"
       ],
       "mail_providers": [
-        "Microsoft 365",
         "Mimecast"
       ],
       "mail_provider_categories": [
-        "cloud",
         "security_gateway"
       ]
     },
@@ -6641,13 +6610,13 @@
     {
       "organisation": "Skills England",
       "domains": [
-        "education.gov.uk"
+        "DWP.gov.uk"
       ],
       "mail_providers": [
-        "Microsoft 365"
+        "Cisco"
       ],
       "mail_provider_categories": [
-        "cloud"
+        "security_gateway"
       ]
     },
     {
@@ -6655,30 +6624,14 @@
       "domains": [
         "smallbusinesscommissioner.gov.uk"
       ],
-      "mail_providers": [
-        "Microsoft 365"
-      ],
-      "mail_provider_categories": [
-        "cloud"
-      ]
+      "mail_providers": [],
+      "mail_provider_categories": []
     },
     {
       "organisation": "Social Mobility Commission",
       "domains": [
-        "cabinetoffice.gov.uk",
+        "communities.gov.uk",
         "socialmobilitycommission.gov.uk"
-      ],
-      "mail_providers": [
-        "Google Workspace"
-      ],
-      "mail_provider_categories": [
-        "cloud"
-      ]
-    },
-    {
-      "organisation": "Social Science Research Committee",
-      "domains": [
-        "food.gov.uk"
       ],
       "mail_providers": [
         "Microsoft 365"
@@ -6956,6 +6909,19 @@
       "organisation": "The Crown Estate",
       "domains": [
         "thecrownestate.co.uk"
+      ],
+      "mail_providers": [
+        "Microsoft 365"
+      ],
+      "mail_provider_categories": [
+        "cloud"
+      ]
+    },
+    {
+      "organisation": "The Drinking Water Inspectorate",
+      "domains": [
+        "defra.gov.uk",
+        "dwi.gov.uk"
       ],
       "mail_providers": [
         "Microsoft 365"
@@ -7373,7 +7339,8 @@
     {
       "organisation": "UK Council for Internet Safety",
       "domains": [
-        "education.gov.uk"
+        "education.gov.uk",
+        "digital.education.gov.uk"
       ],
       "mail_providers": [
         "Microsoft 365"
@@ -7431,6 +7398,18 @@
       ]
     },
     {
+      "organisation": "UK Fusion Energy",
+      "domains": [
+        "ukifs.uk"
+      ],
+      "mail_providers": [
+        "Microsoft 365"
+      ],
+      "mail_provider_categories": [
+        "cloud"
+      ]
+    },
+    {
       "organisation": "UK Government Investments",
       "domains": [
         "ukgi.org.uk"
@@ -7479,18 +7458,6 @@
       ]
     },
     {
-      "organisation": "UK Industrial Fusion Solutions",
-      "domains": [
-        "ukifs.uk"
-      ],
-      "mail_providers": [
-        "Microsoft 365"
-      ],
-      "mail_provider_categories": [
-        "cloud"
-      ]
-    },
-    {
       "organisation": "UK Infrastructure Bank",
       "domains": [
         "hmtreasury.gov.uk"
@@ -7518,18 +7485,6 @@
       "organisation": "UK National Authority for Counter-Eavesdropping",
       "domains": [
         "fcdo.gov.uk"
-      ],
-      "mail_providers": [
-        "Microsoft 365"
-      ],
-      "mail_provider_categories": [
-        "cloud"
-      ]
-    },
-    {
-      "organisation": "UK National Contact Point",
-      "domains": [
-        "businessandtrade.gov.uk"
       ],
       "mail_providers": [
         "Microsoft 365"
@@ -7569,11 +7524,9 @@
         "resilience.gov.uk"
       ],
       "mail_providers": [
-        "Amazon SES",
         "Google Workspace"
       ],
       "mail_provider_categories": [
-        "cloud",
         "cloud"
       ]
     },
@@ -7592,6 +7545,7 @@
     {
       "organisation": "UK Space Agency",
       "domains": [
+        "dsit.gov.uk",
         "ukspaceagency.gov.uk"
       ],
       "mail_providers": [
@@ -7620,18 +7574,17 @@
         "statistics.gov.uk"
       ],
       "mail_providers": [
-        "Google Workspace",
-        "Microsoft 365"
+        "Google Workspace"
       ],
       "mail_provider_categories": [
-        "cloud",
         "cloud"
       ]
     },
     {
       "organisation": "UK Visas and Immigration",
       "domains": [
-        "homeoffice.gov.uk"
+        "homeoffice.gov.uk",
+        "digital.homeoffice.gov.uk"
       ],
       "mail_providers": [
         "Self-managed"
@@ -7671,11 +7624,9 @@
         "vetting.gov.uk"
       ],
       "mail_providers": [
-        "Google Workspace",
-        "Microsoft 365"
+        "Google Workspace"
       ],
       "mail_provider_categories": [
-        "cloud",
         "cloud"
       ]
     },
@@ -7728,30 +7679,16 @@
       ]
     },
     {
-      "organisation": "Valuation Office Agency",
-      "domains": [
-        "voa.gov.uk"
-      ],
-      "mail_providers": [
-        "Microsoft 365"
-      ],
-      "mail_provider_categories": [
-        "cloud"
-      ]
-    },
-    {
       "organisation": "Valuation Tribunal Service",
       "domains": [
         "valuationtribunal.gov.uk",
         "valuation-tribunals.gov.uk"
       ],
       "mail_providers": [
-        "Microsoft 365",
-        "Null MX"
+        "Microsoft 365"
       ],
       "mail_provider_categories": [
-        "cloud",
-        "null_mx"
+        "cloud"
       ]
     },
     {
@@ -7773,12 +7710,10 @@
         "vca.gov.uk"
       ],
       "mail_providers": [
-        "Livemail UK",
-        "Microsoft 365"
+        "Livemail UK"
       ],
       "mail_provider_categories": [
-        "isp",
-        "cloud"
+        "isp"
       ]
     },
     {
@@ -7800,17 +7735,16 @@
         "veterans-uk.gov.uk"
       ],
       "mail_providers": [
-        "Cisco",
         "Microsoft 365"
       ],
       "mail_provider_categories": [
-        "security_gateway",
         "cloud"
       ]
     },
     {
       "organisation": "Veterinary Medicines Directorate",
       "domains": [
+        "defra.gov.uk",
         "vmd.gov.uk"
       ],
       "mail_providers": [
@@ -7956,7 +7890,8 @@
     {
       "organisation": "Windrush Commemoration Committee",
       "domains": [
-        "communities.gov.uk"
+        "communities.gov.uk",
+        "digital.communities.gov.uk"
       ],
       "mail_providers": [
         "Microsoft 365"
@@ -7992,7 +7927,8 @@
     {
       "organisation": "Youth Custody Service",
       "domains": [
-        "justice.gov.uk"
+        "justice.gov.uk",
+        "digital.justice.gov.uk"
       ],
       "mail_providers": [
         "Microsoft 365"

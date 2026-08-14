@@ -1492,5 +1492,14 @@
     "url": "https://github.com/vanda",
     "blog": "http://www.vam.ac.uk",
     "followers": 25
+  },
+  "https://www.gov.uk/api/organisations/ministry-of-housing-communities-local-government": {
+    "login": "communitiesuk",
+    "name": "Ministry of Housing, Communities and Local Government",
+    "description": "",
+    "public_repos": 197,
+    "url": "https://github.com/communitiesuk",
+    "blog": "https://www.gov.uk/government/organisations/ministry-of-housing-communities-local-government",
+    "followers": 209
   }
 }

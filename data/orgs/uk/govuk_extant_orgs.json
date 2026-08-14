@@ -1809,13 +1809,13 @@
     "id": "https://www.gov.uk/api/organisations/building-digital-uk",
     "title": "Building Digital UK",
     "format": "Sub organisation",
-    "updated_at": "2026-07-24T08:41:39Z",
+    "updated_at": "2026-08-13T14:02:00Z",
     "web_url": "https://www.gov.uk/government/organisations/building-digital-uk",
     "details": {
       "slug": "building-digital-uk",
       "abbreviation": "BDUK",
       "logo_formatted_name": "Building Digital UK",
-      "organisation_brand_colour_class_name": "department-for-culture-media-sport",
+      "organisation_brand_colour_class_name": "department-for-science-innovation-technology",
       "organisation_logo_type_class_name": "single-identity",
       "closed_at": null,
       "govuk_status": "live",
@@ -1825,8 +1825,8 @@
     "analytics_identifier": "EA1352",
     "parent_organisations": [
       {
-        "id": "https://www.gov.uk/api/organisations/department-for-digital-culture-media-and-sport",
-        "web_url": "https://www.gov.uk/government/organisations/department-for-digital-culture-media-and-sport"
+        "id": "https://www.gov.uk/api/organisations/department-for-science-innovation-and-technology",
+        "web_url": "https://www.gov.uk/government/organisations/department-for-science-innovation-and-technology"
       }
     ],
     "child_organisations": [],
@@ -4518,12 +4518,7 @@
     },
     "analytics_identifier": "D1480",
     "parent_organisations": [],
-    "child_organisations": [
-      {
-        "id": "https://www.gov.uk/api/organisations/government-office-for-science",
-        "web_url": "https://www.gov.uk/government/organisations/government-office-for-science"
-      }
-    ],
+    "child_organisations": [],
     "superseded_organisations": [],
     "superseding_organisations": []
   },
@@ -4768,6 +4763,10 @@
       {
         "id": "https://www.gov.uk/api/organisations/office-for-digital-identities-and-attributes",
         "web_url": "https://www.gov.uk/government/organisations/office-for-digital-identities-and-attributes"
+      },
+      {
+        "id": "https://www.gov.uk/api/organisations/charity-commission",
+        "web_url": "https://www.gov.uk/government/organisations/charity-commission"
       }
     ],
     "superseded_organisations": [
@@ -5467,10 +5466,6 @@
         "web_url": "https://www.gov.uk/government/organisations/incubator-for-artificial-intelligence"
       },
       {
-        "id": "https://www.gov.uk/api/organisations/office-for-digital-identities-and-attributes",
-        "web_url": "https://www.gov.uk/government/organisations/office-for-digital-identities-and-attributes"
-      },
-      {
         "id": "https://www.gov.uk/api/organisations/ai-security-institute",
         "web_url": "https://www.gov.uk/government/organisations/ai-security-institute"
       },
@@ -5481,6 +5476,18 @@
       {
         "id": "https://www.gov.uk/api/organisations/government-cyber-profession",
         "web_url": "https://www.gov.uk/government/organisations/government-cyber-profession"
+      },
+      {
+        "id": "https://www.gov.uk/api/organisations/government-office-for-science",
+        "web_url": "https://www.gov.uk/government/organisations/government-office-for-science"
+      },
+      {
+        "id": "https://www.gov.uk/api/organisations/building-digital-uk",
+        "web_url": "https://www.gov.uk/government/organisations/building-digital-uk"
+      },
+      {
+        "id": "https://www.gov.uk/api/organisations/office-for-digital-identities-and-attributes",
+        "web_url": "https://www.gov.uk/government/organisations/office-for-digital-identities-and-attributes"
       }
     ],
     "superseded_organisations": [
@@ -5809,10 +5816,6 @@
       {
         "id": "https://www.gov.uk/api/organisations/independent-case-examiner",
         "web_url": "https://www.gov.uk/government/organisations/independent-case-examiner"
-      },
-      {
-        "id": "https://www.gov.uk/api/organisations/office-for-nuclear-regulation",
-        "web_url": "https://www.gov.uk/government/organisations/office-for-nuclear-regulation"
       },
       {
         "id": "https://www.gov.uk/api/organisations/office-for-disability-issues",
@@ -8736,7 +8739,7 @@
     "id": "https://www.gov.uk/api/organisations/government-office-for-science",
     "title": "Government Office for Science",
     "format": "Other",
-    "updated_at": "2026-08-04T12:27:47Z",
+    "updated_at": "2026-08-13T14:01:57Z",
     "web_url": "https://www.gov.uk/government/organisations/government-office-for-science",
     "details": {
       "slug": "government-office-for-science",
@@ -8752,8 +8755,8 @@
     "analytics_identifier": "OT555",
     "parent_organisations": [
       {
-        "id": "https://www.gov.uk/api/organisations/department-for-business-innovation-science-and-trade",
-        "web_url": "https://www.gov.uk/government/organisations/department-for-business-innovation-science-and-trade"
+        "id": "https://www.gov.uk/api/organisations/department-for-science-innovation-and-technology",
+        "web_url": "https://www.gov.uk/government/organisations/department-for-science-innovation-and-technology"
       }
     ],
     "child_organisations": [],
@@ -16002,13 +16005,13 @@
     "id": "https://www.gov.uk/api/organisations/office-for-digital-identities-and-attributes",
     "title": "Office for Digital Identities and Attributes",
     "format": "Sub organisation",
-    "updated_at": "2026-08-06T10:30:34Z",
+    "updated_at": "2026-08-13T14:02:03Z",
     "web_url": "https://www.gov.uk/government/organisations/office-for-digital-identities-and-attributes",
     "details": {
       "slug": "office-for-digital-identities-and-attributes",
       "abbreviation": "OfDIA",
       "logo_formatted_name": "Office for Digital<br/>Identities &amp; Attributes",
-      "organisation_brand_colour_class_name": "department-for-culture-media-sport",
+      "organisation_brand_colour_class_name": "department-for-science-innovation-technology",
       "organisation_logo_type_class_name": "single-identity",
       "closed_at": null,
       "govuk_status": "live",
@@ -16018,8 +16021,8 @@
     "analytics_identifier": "OT1429",
     "parent_organisations": [
       {
-        "id": "https://www.gov.uk/api/organisations/department-for-culture-media-and-sport",
-        "web_url": "https://www.gov.uk/government/organisations/department-for-culture-media-and-sport"
+        "id": "https://www.gov.uk/api/organisations/department-for-science-innovation-and-technology",
+        "web_url": "https://www.gov.uk/government/organisations/department-for-science-innovation-and-technology"
       }
     ],
     "child_organisations": [],
@@ -20339,7 +20342,7 @@
     "id": "https://www.gov.uk/api/organisations/charity-commission",
     "title": "The Charity Commission",
     "format": "Non-ministerial department",
-    "updated_at": "2026-08-04T09:28:44Z",
+    "updated_at": "2026-08-12T15:50:21Z",
     "web_url": "https://www.gov.uk/government/organisations/charity-commission",
     "details": {
       "slug": "charity-commission",
@@ -20355,8 +20358,8 @@
     "analytics_identifier": "D98",
     "parent_organisations": [
       {
-        "id": "https://www.gov.uk/api/organisations/department-for-digital-culture-media-and-sport",
-        "web_url": "https://www.gov.uk/government/organisations/department-for-digital-culture-media-and-sport"
+        "id": "https://www.gov.uk/api/organisations/department-for-culture-media-and-sport",
+        "web_url": "https://www.gov.uk/government/organisations/department-for-culture-media-and-sport"
       }
     ],
     "child_organisations": [],
@@ -20642,7 +20645,7 @@
     "id": "https://www.gov.uk/api/organisations/the-national-archives",
     "title": "The National Archives",
     "format": "Non-ministerial department",
-    "updated_at": "2026-08-04T09:37:34Z",
+    "updated_at": "2026-08-12T15:49:49Z",
     "web_url": "https://www.gov.uk/government/organisations/the-national-archives",
     "details": {
       "slug": "the-national-archives",
@@ -20660,10 +20663,6 @@
       {
         "id": "https://www.gov.uk/api/organisations/department-for-culture-media-and-sport",
         "web_url": "https://www.gov.uk/government/organisations/department-for-culture-media-and-sport"
-      },
-      {
-        "id": "https://www.gov.uk/api/organisations/department-for-digital-culture-media-and-sport",
-        "web_url": "https://www.gov.uk/government/organisations/department-for-digital-culture-media-and-sport"
       }
     ],
     "child_organisations": [],

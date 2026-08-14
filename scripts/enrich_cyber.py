@@ -425,44 +425,52 @@ EDGE_DEVICE_QUERIES = [
 ]
 
 
-def _classify_result(result: dict) -> tuple[str, str]:
-    """Classify an unfiltered Shodan result by product/OS/port. Returns (label, filter)."""
+def _classify_result(result: dict) -> tuple[str, str, bool]:
+    """Classify an unfiltered Shodan result by product/OS/port.
+
+    Returns (label, filter, is_relevant) where is_relevant=True for edge
+    devices and security-noteworthy services (RDP, VNC, FTP, databases,
+    OpenVPN).  Web servers, mail, SSH, CDNs, and unidentified ports are
+    marked is_relevant=False so callers can filter the noise.
+    """
     product = result.get("product") or ""
     os_info = result.get("os") or ""
     port = result.get("port", 0)
 
-    # Try known edge device signatures first
+    # Try known edge device signatures first — always relevant
     for label, device_filter in EDGE_DEVICE_QUERIES:
         if "os:" in device_filter:
             val = device_filter.split('"')[1] if '"' in device_filter else ""
             if val and val.lower() in os_info.lower():
-                return label, device_filter
+                return label, device_filter, True
         if "product:" in device_filter:
             val = device_filter.split('"')[1] if '"' in device_filter else ""
             if val and val.lower() in product.lower():
-                return label, device_filter
+                return label, device_filter, True
 
-    # Generic service classification
+    # Security-noteworthy services — relevant
     pl = product.lower()
-    if any(w in pl for w in ("nginx", "apache", "iis", "litespeed", "caddy")):
-        return f"Web Server ({product})", f'product:"{product}"'
     if any(w in pl for w in ("mysql", "postgresql", "mariadb", "mongodb", "redis", "elastic")):
-        return f"Database ({product})", f'product:"{product}"'
+        return f"Database ({product})", f'product:"{product}"', True
     if port == 3389 or "rdp" in pl:
-        return "Remote Desktop (RDP)", "port:3389"
+        return "Remote Desktop (RDP)", "port:3389", True
     if "vnc" in pl:
-        return f"VNC ({product})", f'product:"{product}"'
-    if any(w in pl for w in ("postfix", "exim", "exchange", "sendmail", "smtp")):
-        return f"Mail Server ({product})", f'product:"{product}"'
+        return f"VNC ({product})", f'product:"{product}"', True
     if "ftp" in pl or port == 21:
-        return "FTP", "port:21"
-    if "openssh" in pl or port == 22:
-        return "SSH", "port:22"
+        return "FTP", "port:21", True
     if "openvpn" in pl:
-        return "OpenVPN", f'product:"{product}"'
+        return "OpenVPN", f'product:"{product}"', True
+
+    # Everything else — not relevant for edge device discovery
+    if any(w in pl for w in ("nginx", "apache", "iis", "litespeed", "caddy")):
+        return f"Web Server ({product})", f'product:"{product}"', False
+    if any(w in pl for w in ("postfix", "exim", "exchange", "sendmail", "smtp")):
+        return f"Mail Server ({product})", f'product:"{product}"', False
+    if "openssh" in pl or port == 22:
+        return "SSH", "port:22", False
     if product:
-        return f"Other ({product})", f'product:"{product}"'
-    return f"Other (port {port})", f"port:{port}"
+        return f"Other ({product})", f'product:"{product}"', False
+    return f"Other (port {port})", f"port:{port}", False
 
 
 def _build_domain_to_org(orgs: list[dict]) -> dict[str, dict]:
@@ -653,12 +661,14 @@ def search_shodan_edge_devices(
                 all_results.append(r)
 
     def _add_and_classify(matches, phase):
-        """Add unfiltered results with post-hoc classification."""
+        """Add unfiltered results, keeping only edge devices and security-noteworthy services."""
         for r in matches:
             key = f"{r['ip_str']}:{r['port']}"
             if key not in seen:
                 seen.add(key)
-                label, filt = _classify_result(r)
+                label, filt, relevant = _classify_result(r)
+                if not relevant:
+                    continue
                 r["_device_label"] = label
                 r["_device_filter"] = filt
                 r["_search_phase"] = phase

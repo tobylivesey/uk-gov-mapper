@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T17:06:01.473340+00:00",
+  "generated_at": "2026-08-14T19:10:16.860079+00:00",
   "record_count": 667,
   "columns": [
     "organisation",
@@ -55,6 +55,7 @@
     {
       "organisation": "Active Travel England",
       "domains": [
+        "dvsa.gov.uk",
         "activetravelengland.gov.uk"
       ],
       "mail_providers": [
@@ -3883,13 +3884,13 @@
     {
       "organisation": "Investigatory Powers Tribunal",
       "domains": [
-        "ipt-uk.com"
+        "homeoffice.gov.uk"
       ],
       "mail_providers": [
-        "Livemail UK"
+        "Self-managed"
       ],
       "mail_provider_categories": [
-        "isp"
+        "self_managed"
       ]
     },
     {
@@ -4038,7 +4039,6 @@
       "organisation": "Law Commission",
       "domains": [
         "justice.gov.uk",
-        "nilawcommission.gov.uk",
         "lawcommission.gov.uk"
       ],
       "mail_providers": [
@@ -4174,14 +4174,10 @@
     {
       "organisation": "Low Pay Commission",
       "domains": [
-        "lowpay.gov.uk"
+        "No Domain Found"
       ],
-      "mail_providers": [
-        "Microsoft 365"
-      ],
-      "mail_provider_categories": [
-        "cloud"
-      ]
+      "mail_providers": [],
+      "mail_provider_categories": []
     },
     {
       "organisation": "Marine Accident Investigation Branch",
@@ -4564,14 +4560,10 @@
     {
       "organisation": "National Data Guardian",
       "domains": [
-        "nhs.net"
+        "No Domain Found"
       ],
-      "mail_providers": [
-        "Microsoft 365"
-      ],
-      "mail_provider_categories": [
-        "cloud"
-      ]
+      "mail_providers": [],
+      "mail_provider_categories": []
     },
     {
       "organisation": "National Employment Savings Trust (NEST) Corporation",
@@ -6630,8 +6622,7 @@
     {
       "organisation": "Social Mobility Commission",
       "domains": [
-        "communities.gov.uk",
-        "socialmobilitycommission.gov.uk"
+        "communities.gov.uk"
       ],
       "mail_providers": [
         "Microsoft 365"
@@ -7793,13 +7784,13 @@
     {
       "organisation": "VisitBritain",
       "domains": [
-        "visitbritain.org"
+        "dcms.gov.uk"
       ],
       "mail_providers": [
-        "Broadcom"
+        "Google Workspace"
       ],
       "mail_provider_categories": [
-        "security_gateway"
+        "cloud"
       ]
     },
     {

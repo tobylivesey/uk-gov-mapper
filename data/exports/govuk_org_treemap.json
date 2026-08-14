@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T13:38:38.801719+00:00",
+  "generated_at": "2026-08-14T17:06:00.909179+00:00",
   "total_orgs": 667,
   "orgs_with_budget": 122,
   "orgs_with_headcount": 82,
@@ -3041,7 +3041,32 @@
           "vulnerability_management": []
         },
         "cyber_roles_sample": [],
-        "children": []
+        "children": [
+          {
+            "id": "https://www.gov.uk/api/organisations/regulatory-policy-committee",
+            "name": "Regulatory Policy Committee",
+            "format": "Advisory non-departmental public body",
+            "url": "https://www.gov.uk/government/organisations/regulatory-policy-committee",
+            "budget": null,
+            "budget_display": null,
+            "headcount": null,
+            "headcount_display": null,
+            "value": 3000,
+            "headcount_value": 3000,
+            "cyber_job_count": 0,
+            "cyber_tech_stack": {
+              "siem": [],
+              "edr": [],
+              "ndr": [],
+              "soar": [],
+              "edge_device": [],
+              "iam": [],
+              "vulnerability_management": []
+            },
+            "cyber_roles_sample": [],
+            "children": []
+          }
+        ]
       },
       {
         "id": "https://www.gov.uk/api/organisations/department-for-culture-media-and-sport",
@@ -9402,19 +9427,19 @@
             {
               "vendor": "Cortex XDR",
               "confidence": "example",
-              "source": "psr",
+              "source": "AMS PSR",
               "snippet": "...e monitoring solutions.Desirable:Experience with Microsoft Defender XDR, CrowdStrike, SentinelOne, Cortex XDR, or equivalent platforms.Experience with Microsoft Intune, SCCM, Ansible, or other deploym..."
             },
             {
               "vendor": "CrowdStrike Falcon",
               "confidence": "example",
-              "source": "psr",
+              "source": "AMS PSR",
               "snippet": "...alytics, and infrastructure monitoring solutions.Desirable:Experience with Microsoft Defender XDR, CrowdStrike, SentinelOne, Cortex XDR, or equivalent platforms.Experience with Microsoft Intune, SCCM,..."
             },
             {
               "vendor": "SentinelOne",
               "confidence": "example",
-              "source": "psr",
+              "source": "AMS PSR",
               "snippet": "...infrastructure monitoring solutions.Desirable:Experience with Microsoft Defender XDR, CrowdStrike, SentinelOne, Cortex XDR, or equivalent platforms.Experience with Microsoft Intune, SCCM, Ansible, or..."
             }
           ],
@@ -9425,7 +9450,7 @@
             {
               "vendor": "Microsoft Entra ID",
               "confidence": "example",
-              "source": "psr",
+              "source": "AMS PSR",
               "snippet": "...Ansible, or other deployment tools.Experience with Terraform, Bicep, or ARM templates.Knowledge of Microsoft Entra ID and Defender for Cloud.Familiarity with DevOps practices and CI/CD pipelines.Under..."
             }
           ],

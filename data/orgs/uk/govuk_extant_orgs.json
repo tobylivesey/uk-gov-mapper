@@ -4518,7 +4518,12 @@
     },
     "analytics_identifier": "D1480",
     "parent_organisations": [],
-    "child_organisations": [],
+    "child_organisations": [
+      {
+        "id": "https://www.gov.uk/api/organisations/regulatory-policy-committee",
+        "web_url": "https://www.gov.uk/government/organisations/regulatory-policy-committee"
+      }
+    ],
     "superseded_organisations": [],
     "superseding_organisations": []
   },
@@ -18521,7 +18526,7 @@
     "id": "https://www.gov.uk/api/organisations/regulatory-policy-committee",
     "title": "Regulatory Policy Committee",
     "format": "Advisory non-departmental public body",
-    "updated_at": "2026-02-20T15:06:41Z",
+    "updated_at": "2026-08-14T13:22:19Z",
     "web_url": "https://www.gov.uk/government/organisations/regulatory-policy-committee",
     "details": {
       "slug": "regulatory-policy-committee",
@@ -18537,8 +18542,8 @@
     "analytics_identifier": "PB354",
     "parent_organisations": [
       {
-        "id": "https://www.gov.uk/api/organisations/department-for-business-and-trade",
-        "web_url": "https://www.gov.uk/government/organisations/department-for-business-and-trade"
+        "id": "https://www.gov.uk/api/organisations/department-for-business-innovation-science-and-trade",
+        "web_url": "https://www.gov.uk/government/organisations/department-for-business-innovation-science-and-trade"
       }
     ],
     "child_organisations": [],

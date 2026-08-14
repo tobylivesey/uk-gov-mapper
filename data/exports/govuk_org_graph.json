@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T13:38:38.222316+00:00",
+  "generated_at": "2026-08-14T17:06:00.147390+00:00",
   "total_nodes": 667,
   "total_links": 639,
   "total_formats": 16,
@@ -119,10 +119,15 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
-      "github_org": "acteng",
-      "github_repos": 7,
-      "github_url": "https://github.com/acteng"
+      "shodan_edge_devices": [
+        {
+          "vendor": "Other (port 443)",
+          "filter": "port:443"
+        }
+      ],
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/administration-of-radioactive-substances-advisory-committee",
@@ -1442,9 +1447,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "bank-of-england",
-      "github_repos": 11,
-      "github_url": "https://github.com/bank-of-england"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/bbc",
@@ -1453,7 +1458,7 @@
       "tier": 4,
       "radius": 4,
       "hc_radius": 4,
-      "gh_radius": 10.4,
+      "gh_radius": 3,
       "budget_display": null,
       "headcount": null,
       "headcount_display": null,
@@ -1525,9 +1530,9 @@
         "193.41.0.0 - 193.41.1.255"
       ],
       "shodan_edge_devices": [],
-      "github_org": "bbc",
-      "github_repos": 975,
-      "github_url": "https://github.com/bbc"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/bbc-world-service",
@@ -1605,9 +1610,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "bscc",
-      "github_repos": 1,
-      "github_url": "https://github.com/bscc"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/biotechnology-biological-sciences-research-council",
@@ -1645,9 +1650,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "BBSRC",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/BBSRC"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/board-of-trustees-of-the-royal-botanic-gardens-kew",
@@ -1684,7 +1689,12 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
+      "shodan_edge_devices": [
+        {
+          "vendor": "Palo Alto GlobalProtect",
+          "filter": "os:\"PAN-OS\""
+        }
+      ],
       "github_org": "",
       "github_repos": 0,
       "github_url": ""
@@ -1847,9 +1857,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "bce",
-      "github_repos": 2,
-      "github_url": "https://github.com/bce"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/boundary-commission-for-northern-ireland",
@@ -1887,9 +1897,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "BCNI",
-      "github_repos": 2,
-      "github_url": "https://github.com/BCNI"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/boundary-commission-for-scotland",
@@ -2005,9 +2015,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "BritishBusinessBank",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/BritishBusinessBank"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/british-cattle-movement-service",
@@ -2086,9 +2096,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "britishcouncil",
-      "github_repos": 15,
-      "github_url": "https://github.com/britishcouncil"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/british-film-institute",
@@ -2125,10 +2135,15 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
-      "github_org": "bfi-digital",
-      "github_repos": 5,
-      "github_url": "https://github.com/bfi-digital"
+      "shodan_edge_devices": [
+        {
+          "vendor": "Citrix NetScaler",
+          "filter": "product:\"Citrix NetScaler\""
+        }
+      ],
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/british-hallmarking-council",
@@ -2166,9 +2181,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "BHC",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/BHC"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/british-library",
@@ -2206,9 +2221,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "britishlibrary",
-      "github_repos": 49,
-      "github_url": "https://github.com/britishlibrary"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/british-museum",
@@ -2246,9 +2261,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "BritishMuseum",
-      "github_repos": 20,
-      "github_url": "https://github.com/BritishMuseum"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/british-pharmacopoeia",
@@ -2398,9 +2413,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "BritishWool",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/BritishWool"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/broads-authority",
@@ -2438,9 +2453,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "BroadsAuthority",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/BroadsAuthority"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/building-control-independent-panel",
@@ -2570,7 +2585,7 @@
       "tier": 0,
       "radius": 18,
       "hc_radius": 10.4,
-      "gh_radius": 3.6,
+      "gh_radius": 3,
       "budget_display": "\u00a32.9bn",
       "headcount": 6890,
       "headcount_display": "6.9k staff",
@@ -2618,10 +2633,27 @@
       ],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
-      "github_org": "cabinetoffice",
-      "github_repos": 115,
-      "github_url": "https://github.com/cabinetoffice"
+      "shodan_edge_devices": [
+        {
+          "vendor": "Other (AWS ELB)",
+          "filter": "product:\"AWS ELB\""
+        },
+        {
+          "vendor": "Other (port 443)",
+          "filter": "port:443"
+        },
+        {
+          "vendor": "Palo Alto GlobalProtect",
+          "filter": "os:\"PAN-OS\""
+        },
+        {
+          "vendor": "Web Server (nginx)",
+          "filter": "product:\"nginx\""
+        }
+      ],
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/cabinet-office-board",
@@ -2699,9 +2731,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "Cafcass",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/Cafcass"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/cambridge-growth-company",
@@ -2796,9 +2828,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "CQCDigital",
-      "github_repos": 5,
-      "github_url": "https://github.com/CQCDigital"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/careers-wales",
@@ -2835,7 +2867,12 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
+      "shodan_edge_devices": [
+        {
+          "vendor": "Other (Microsoft HTTPAPI httpd)",
+          "filter": "product:\"Microsoft HTTPAPI httpd\""
+        }
+      ],
       "github_org": "",
       "github_repos": 0,
       "github_url": ""
@@ -2956,9 +2993,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "CCHS",
-      "github_repos": 1,
-      "github_url": "https://github.com/CCHS"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/centre-for-connected-and-autonomous-vehicles",
@@ -2997,9 +3034,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "ccav",
-      "github_repos": 5,
-      "github_url": "https://github.com/ccav"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/centre-for-environment-fisheries-and-aquaculture-science",
@@ -3169,9 +3206,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "channel4",
-      "github_repos": 9,
-      "github_url": "https://github.com/channel4"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/chevening-foundation",
@@ -3369,9 +3406,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "Civil-Aviation-Authority",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/Civil-Aviation-Authority"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/civil-justice-council",
@@ -3448,7 +3485,12 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
+      "shodan_edge_devices": [
+        {
+          "vendor": "Palo Alto GlobalProtect",
+          "filter": "os:\"PAN-OS\""
+        }
+      ],
       "github_org": "",
       "github_repos": 0,
       "github_url": ""
@@ -3489,9 +3531,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "CNPA",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/CNPA"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/civil-procedure-rules-committee",
@@ -3570,9 +3612,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "crossgovernmentservices",
-      "github_repos": 49,
-      "github_url": "https://github.com/crossgovernmentservices"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/civil-service-commission",
@@ -3732,10 +3774,31 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
-      "github_org": "College-of-Policing",
+      "shodan_edge_devices": [
+        {
+          "vendor": "Other (AWS ELB)",
+          "filter": "product:\"AWS ELB\""
+        },
+        {
+          "vendor": "Other (Microsoft Azure Application Gateway)",
+          "filter": "product:\"Microsoft Azure Application Gateway\""
+        },
+        {
+          "vendor": "Other (port 443)",
+          "filter": "port:443"
+        },
+        {
+          "vendor": "Web Server (Apache httpd)",
+          "filter": "product:\"Apache httpd\""
+        },
+        {
+          "vendor": "Web Server (Microsoft IIS httpd)",
+          "filter": "product:\"Microsoft IIS httpd\""
+        }
+      ],
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/College-of-Policing"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/commercial-court",
@@ -4145,7 +4208,7 @@
       "tier": 2,
       "radius": 4,
       "hc_radius": 5.4,
-      "gh_radius": 8.5,
+      "gh_radius": 3,
       "budget_display": null,
       "headcount": 1865,
       "headcount_display": "1.9k staff",
@@ -4173,10 +4236,15 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
-      "github_org": "companieshouse",
-      "github_repos": 656,
-      "github_url": "https://github.com/companieshouse"
+      "shodan_edge_devices": [
+        {
+          "vendor": "Cisco ASA",
+          "filter": "product:\"Cisco ASA\""
+        }
+      ],
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/companies-list",
@@ -4324,9 +4392,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "cmagovuk",
-      "github_repos": 12,
-      "github_url": "https://github.com/cmagovuk"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/competition-appeal-tribunal",
@@ -4443,7 +4511,12 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
+      "shodan_edge_devices": [
+        {
+          "vendor": "Palo Alto GlobalProtect",
+          "filter": "os:\"PAN-OS\""
+        }
+      ],
       "github_org": "",
       "github_repos": 0,
       "github_url": ""
@@ -4644,9 +4717,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "cst",
-      "github_repos": 1,
-      "github_url": "https://github.com/cst"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/court-of-appeal-civil-division",
@@ -4764,9 +4837,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "COP",
-      "github_repos": 2,
-      "github_url": "https://github.com/COP"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/covent-garden-market-authority",
@@ -4844,9 +4917,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "CCRC",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/CCRC"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/criminal-injuries-compensation-authority",
@@ -4884,9 +4957,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "CriminalInjuriesCompensationAuthority",
-      "github_repos": 22,
-      "github_url": "https://github.com/CriminalInjuriesCompensationAuthority"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/criminal-procedure-rule-committee",
@@ -5014,9 +5087,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "CPS-Innovation",
-      "github_repos": 58,
-      "github_url": "https://github.com/CPS-Innovation"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/cyber-and-specialist-operations-command",
@@ -5094,9 +5167,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "DNPA",
-      "github_repos": 26,
-      "github_url": "https://github.com/DNPA"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/defence-academy",
@@ -5133,7 +5206,20 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
+      "shodan_edge_devices": [
+        {
+          "vendor": "Other (Microsoft Azure Application Gateway)",
+          "filter": "product:\"Microsoft Azure Application Gateway\""
+        },
+        {
+          "vendor": "Other (port 443)",
+          "filter": "port:443"
+        },
+        {
+          "vendor": "Other (port 80)",
+          "filter": "port:80"
+        }
+      ],
       "github_org": "",
       "github_repos": 0,
       "github_url": ""
@@ -5515,10 +5601,15 @@
         "192.35.94.0 - 192.35.94.255",
         "192.67.43.0 - 192.67.43.255"
       ],
-      "shodan_edge_devices": [],
-      "github_org": "dstl",
-      "github_repos": 32,
-      "github_url": "https://github.com/dstl"
+      "shodan_edge_devices": [
+        {
+          "vendor": "Web Server (Apache httpd)",
+          "filter": "product:\"Apache httpd\""
+        }
+      ],
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/defence-sixth-form-college",
@@ -5716,7 +5807,12 @@
         "85.209.208.0 - 85.209.211.255",
         "77.95.115.0 - 77.95.115.255"
       ],
-      "shodan_edge_devices": [],
+      "shodan_edge_devices": [
+        {
+          "vendor": "Other (port 443)",
+          "filter": "port:443"
+        }
+      ],
       "github_org": "",
       "github_repos": 0,
       "github_url": ""
@@ -5757,7 +5853,12 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
+      "shodan_edge_devices": [
+        {
+          "vendor": "Other (port 80)",
+          "filter": "port:80"
+        }
+      ],
       "github_org": "",
       "github_repos": 0,
       "github_url": ""
@@ -5803,9 +5904,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "DCMS",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/DCMS"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/department-for-digital-culture-media-and-sport",
@@ -5852,7 +5953,7 @@
       "tier": 0,
       "radius": 18,
       "hc_radius": 10.6,
-      "gh_radius": 9.6,
+      "gh_radius": 3,
       "budget_display": "\u00a3107.0bn",
       "headcount": 7215,
       "headcount_display": "7.2k staff",
@@ -5884,9 +5985,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "DFE-Digital",
-      "github_repos": 833,
-      "github_url": "https://github.com/DFE-Digital"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/department-for-energy-security-and-net-zero",
@@ -5941,7 +6042,12 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
+      "shodan_edge_devices": [
+        {
+          "vendor": "Other (AWS ELB)",
+          "filter": "product:\"AWS ELB\""
+        }
+      ],
       "github_org": "",
       "github_repos": 0,
       "github_url": ""
@@ -5953,7 +6059,7 @@
       "tier": 0,
       "radius": 18,
       "hc_radius": 10.3,
-      "gh_radius": 14.4,
+      "gh_radius": 3,
       "budget_display": "\u00a313.9bn",
       "headcount": 6840,
       "headcount_display": "6.8k staff",
@@ -5990,10 +6096,19 @@
         "148.253.216.0 - 148.253.223.255",
         "148.253.0.0 - 148.253.15.255"
       ],
-      "shodan_edge_devices": [],
-      "github_org": "DEFRA",
-      "github_repos": 1861,
-      "github_url": "https://github.com/DEFRA"
+      "shodan_edge_devices": [
+        {
+          "vendor": "Other (AWS ELB)",
+          "filter": "product:\"AWS ELB\""
+        },
+        {
+          "vendor": "Other (port 443)",
+          "filter": "port:443"
+        }
+      ],
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/department-for-infrastructure-northern-ireland",
@@ -6030,7 +6145,12 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
+      "shodan_edge_devices": [
+        {
+          "vendor": "Other (port 443)",
+          "filter": "port:443"
+        }
+      ],
       "github_org": "",
       "github_repos": 0,
       "github_url": ""
@@ -6155,10 +6275,19 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
-      "github_org": "department-for-transport",
-      "github_repos": 19,
-      "github_url": "https://github.com/department-for-transport"
+      "shodan_edge_devices": [
+        {
+          "vendor": "Other (port 443)",
+          "filter": "port:443"
+        },
+        {
+          "vendor": "Web Server (Apache httpd)",
+          "filter": "product:\"Apache httpd\""
+        }
+      ],
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/department-for-work-pensions",
@@ -6167,7 +6296,7 @@
       "tier": 0,
       "radius": 18,
       "hc_radius": 18,
-      "gh_radius": 8.5,
+      "gh_radius": 3,
       "budget_display": "\u00a310.7bn",
       "headcount": 93805,
       "headcount_display": "93.8k staff",
@@ -6249,10 +6378,15 @@
         "51.2.0.0 - 51.2.255.255",
         "51.62.0.0 - 51.63.255.255"
       ],
-      "shodan_edge_devices": [],
-      "github_org": "dwp",
-      "github_repos": 646,
-      "github_url": "https://github.com/dwp"
+      "shodan_edge_devices": [
+        {
+          "vendor": "Citrix NetScaler",
+          "filter": "product:\"Citrix NetScaler\""
+        }
+      ],
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/department-of-agriculture-environment-and-rural-affairs-northern-ireland",
@@ -6330,9 +6464,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "department-of-education",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/department-of-education"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/department-of-finance-northern-ireland",
@@ -6459,10 +6593,35 @@
       "ripe_inetnums": [
         "91.218.39.0 - 91.218.39.255"
       ],
-      "shodan_edge_devices": [],
-      "github_org": "department-of-health-zz",
-      "github_repos": 12,
-      "github_url": "https://github.com/department-of-health-zz"
+      "shodan_edge_devices": [
+        {
+          "vendor": "Other (Microsoft Azure Application Gateway)",
+          "filter": "product:\"Microsoft Azure Application Gateway\""
+        },
+        {
+          "vendor": "Other (port 25)",
+          "filter": "port:25"
+        },
+        {
+          "vendor": "Other (port 443)",
+          "filter": "port:443"
+        },
+        {
+          "vendor": "Other (port 53)",
+          "filter": "port:53"
+        },
+        {
+          "vendor": "Other (port 587)",
+          "filter": "port:587"
+        },
+        {
+          "vendor": "Web Server (Microsoft IIS httpd)",
+          "filter": "product:\"Microsoft IIS httpd\""
+        }
+      ],
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/department-of-justice-northern-ireland",
@@ -6664,9 +6823,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "dbsdigital",
-      "github_repos": 2,
-      "github_url": "https://github.com/dbsdigital"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/district-valuer-services-dvs",
@@ -6777,7 +6936,12 @@
       "ripe_inetnums": [
         "185.206.16.0 - 185.206.19.255"
       ],
-      "shodan_edge_devices": [],
+      "shodan_edge_devices": [
+        {
+          "vendor": "Palo Alto GlobalProtect",
+          "filter": "os:\"PAN-OS\""
+        }
+      ],
       "github_org": "",
       "github_repos": 0,
       "github_url": ""
@@ -6789,7 +6953,7 @@
       "tier": 2,
       "radius": 4,
       "hc_radius": 8.8,
-      "gh_radius": 5.6,
+      "gh_radius": 3,
       "budget_display": null,
       "headcount": 4955,
       "headcount_display": "5.0k staff",
@@ -6817,10 +6981,27 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
-      "github_org": "dvsa",
-      "github_repos": 278,
-      "github_url": "https://github.com/dvsa"
+      "shodan_edge_devices": [
+        {
+          "vendor": "Other (port 31337)",
+          "filter": "port:31337"
+        },
+        {
+          "vendor": "Other (port 7443)",
+          "filter": "port:7443"
+        },
+        {
+          "vendor": "Other (port 8081)",
+          "filter": "port:8081"
+        },
+        {
+          "vendor": "Other (port 9943)",
+          "filter": "port:9943"
+        }
+      ],
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/east-west-railway-company",
@@ -7178,9 +7359,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "English-Institute-of-Sport",
-      "github_repos": 4,
-      "github_url": "https://github.com/English-Institute-of-Sport"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/environment-agency",
@@ -7226,9 +7407,9 @@
         "91.195.82.0 - 91.195.83.255"
       ],
       "shodan_edge_devices": [],
-      "github_org": "Environment-Agency",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/Environment-Agency"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/equality-and-human-rights-commission",
@@ -7266,9 +7447,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "EqualityAndHumanRightsCommission",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/EqualityAndHumanRightsCommission"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/estyn",
@@ -7506,9 +7687,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "egac",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/egac"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/fair-work-agency",
@@ -7706,8 +7887,8 @@
       ],
       "email_domains": [
         "fcdo.gov.uk",
-        "fcoservices.gov.uk",
-        "fcdoservices.gov.uk"
+        "fcdoservices.gov.uk",
+        "fcoservices.gov.uk"
       ],
       "ripe_asns": [],
       "ripe_prefixes": [],
@@ -7754,10 +7935,15 @@
       "ripe_inetnums": [
         "185.201.96.0 - 185.201.99.255"
       ],
-      "shodan_edge_devices": [],
-      "github_org": "FCA",
+      "shodan_edge_devices": [
+        {
+          "vendor": "Other (AkamaiGHost)",
+          "filter": "product:\"AkamaiGHost\""
+        }
+      ],
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/FCA"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/financial-remedies-court",
@@ -7875,9 +8061,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "fsc",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/fsc"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/first-tier-tribunal-asylum-support",
@@ -8516,9 +8702,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "FoodStandardsAgency",
-      "github_repos": 12,
-      "github_url": "https://github.com/FoodStandardsAgency"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/foreign-commonwealth-development-office",
@@ -8542,19 +8728,19 @@
           {
             "vendor": "Cortex XDR",
             "confidence": "example",
-            "source": "psr",
+            "source": "AMS PSR",
             "snippet": "...e monitoring solutions.Desirable:Experience with Microsoft Defender XDR, CrowdStrike, SentinelOne, Cortex XDR, or equivalent platforms.Experience with Microsoft Intune, SCCM, Ansible, or other deploym..."
           },
           {
             "vendor": "CrowdStrike Falcon",
             "confidence": "example",
-            "source": "psr",
+            "source": "AMS PSR",
             "snippet": "...alytics, and infrastructure monitoring solutions.Desirable:Experience with Microsoft Defender XDR, CrowdStrike, SentinelOne, Cortex XDR, or equivalent platforms.Experience with Microsoft Intune, SCCM,..."
           },
           {
             "vendor": "SentinelOne",
             "confidence": "example",
-            "source": "psr",
+            "source": "AMS PSR",
             "snippet": "...infrastructure monitoring solutions.Desirable:Experience with Microsoft Defender XDR, CrowdStrike, SentinelOne, Cortex XDR, or equivalent platforms.Experience with Microsoft Intune, SCCM, Ansible, or..."
           }
         ],
@@ -8565,7 +8751,7 @@
           {
             "vendor": "Microsoft Entra ID",
             "confidence": "example",
-            "source": "psr",
+            "source": "AMS PSR",
             "snippet": "...Ansible, or other deployment tools.Experience with Terraform, Bicep, or ARM templates.Knowledge of Microsoft Entra ID and Defender for Cloud.Familiarity with DevOps practices and CI/CD pipelines.Under..."
           }
         ],
@@ -8586,9 +8772,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "uktrade",
-      "github_repos": 37,
-      "github_url": "https://github.com/uktrade"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/forensic-science-regulator",
@@ -8666,9 +8852,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "forestresearch",
-      "github_repos": 3,
-      "github_url": "https://github.com/forestresearch"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/forestry-commission",
@@ -8708,9 +8894,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "Forestry-Commission",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/Forestry-Commission"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/forest-enterprise-england",
@@ -8988,9 +9174,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "best-practice-and-impact",
-      "github_repos": 32,
-      "github_url": "https://github.com/best-practice-and-impact"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/government-chemist",
@@ -9039,7 +9225,7 @@
       "tier": 2,
       "radius": 4,
       "hc_radius": 4,
-      "gh_radius": 4.6,
+      "gh_radius": 3,
       "budget_display": null,
       "headcount": null,
       "headcount_display": null,
@@ -9077,9 +9263,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "Crown-Commercial-Service",
-      "github_repos": 191,
-      "github_url": "https://github.com/Crown-Commercial-Service"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/government-commercial-function",
@@ -9117,9 +9303,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "Government-Commercial-Function",
-      "github_repos": 2,
-      "github_url": "https://github.com/Government-Commercial-Function"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/civil-service-government-communication-service",
@@ -9157,9 +9343,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "Government-Communication-Service",
-      "github_repos": 2,
-      "github_url": "https://github.com/Government-Communication-Service"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/government-communications-headquarters",
@@ -9202,9 +9388,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "gchq",
-      "github_repos": 73,
-      "github_url": "https://github.com/gchq"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/civil-service-corporate-finance-profession-cfp",
@@ -9369,7 +9555,7 @@
       "tier": 6,
       "radius": 4,
       "hc_radius": 4,
-      "gh_radius": 13.0,
+      "gh_radius": 3,
       "budget_display": null,
       "headcount": null,
       "headcount_display": null,
@@ -9402,9 +9588,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "alphagov",
-      "github_repos": 1530,
-      "github_url": "https://github.com/alphagov"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/civil-service-government-economic-service",
@@ -10000,9 +10186,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "Government-People-Group",
-      "github_repos": 20,
-      "github_url": "https://github.com/Government-People-Group"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/civil-service-government-planning-inspectors",
@@ -47206,10 +47392,15 @@
         "80.235.228.176 - 80.235.228.183",
         "62.31.30.183 - 62.31.30.183"
       ],
-      "shodan_edge_devices": [],
-      "github_org": "hse",
-      "github_repos": 1,
-      "github_url": "https://github.com/hse"
+      "shodan_edge_devices": [
+        {
+          "vendor": "Other (port 2087)",
+          "filter": "port:2087"
+        }
+      ],
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/health-equity-in-health-protection-initiative",
@@ -47286,10 +47477,15 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
-      "github_org": "Health-Research-Authority",
+      "shodan_edge_devices": [
+        {
+          "vendor": "Other (port 443)",
+          "filter": "port:443"
+        }
+      ],
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/Health-Research-Authority"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/health-services-safety-investigations-body",
@@ -47479,9 +47675,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "HistoricEngland",
-      "github_repos": 22,
-      "github_url": "https://github.com/HistoricEngland"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/historic-royal-palaces",
@@ -47519,9 +47715,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "Historic-Royal-Palaces",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/Historic-Royal-Palaces"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/hm-courts-and-tribunals-service",
@@ -47530,7 +47726,7 @@
       "tier": 2,
       "radius": 4,
       "hc_radius": 15.7,
-      "gh_radius": 14.4,
+      "gh_radius": 3,
       "budget_display": null,
       "headcount": 15860,
       "headcount_display": "15.9k staff",
@@ -47561,10 +47757,15 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
-      "github_org": "hmcts",
-      "github_repos": 1864,
-      "github_url": "https://github.com/hmcts"
+      "shodan_edge_devices": [
+        {
+          "vendor": "Other (Microsoft Azure Application Gateway)",
+          "filter": "product:\"Microsoft Azure Application Gateway\""
+        }
+      ],
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/hm-crown-prosecution-service-inspectorate",
@@ -47643,9 +47844,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "hmgcc",
-      "github_repos": 4,
-      "github_url": "https://github.com/hmgcc"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/hm-inspectorate-of-constabulary-and-fire-rescue-services",
@@ -47788,7 +47989,7 @@
       "tier": 1,
       "radius": 18,
       "hc_radius": 10.4,
-      "gh_radius": 5.7,
+      "gh_radius": 3,
       "budget_display": "\u00a3555.7m",
       "headcount": 6865,
       "headcount_display": "6.9k staff",
@@ -47851,9 +48052,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "LandRegistry",
-      "github_repos": 289,
-      "github_url": "https://github.com/LandRegistry"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/hm-nautical-almanac-office",
@@ -47931,9 +48132,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "HMPO",
-      "github_repos": 27,
-      "github_url": "https://github.com/HMPO"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/hm-prison-and-probation-service",
@@ -48025,7 +48226,7 @@
       "tier": 1,
       "radius": 18,
       "hc_radius": 18,
-      "gh_radius": 14.1,
+      "gh_radius": 3,
       "budget_display": "\u00a38.4bn",
       "headcount": 66945,
       "headcount_display": "66.9k staff",
@@ -48092,10 +48293,23 @@
       "ripe_inetnums": [
         "163.171.0.0 - 163.171.63.255"
       ],
-      "shodan_edge_devices": [],
-      "github_org": "hmrc",
-      "github_repos": 1791,
-      "github_url": "https://github.com/hmrc"
+      "shodan_edge_devices": [
+        {
+          "vendor": "Other (AWS ELB)",
+          "filter": "product:\"AWS ELB\""
+        },
+        {
+          "vendor": "Other (AkamaiGHost)",
+          "filter": "product:\"AkamaiGHost\""
+        },
+        {
+          "vendor": "Other (port 443)",
+          "filter": "port:443"
+        }
+      ],
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/hm-treasury",
@@ -48137,9 +48351,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "HM-Treasury",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/HM-Treasury"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/home-office",
@@ -48148,7 +48362,7 @@
       "tier": 0,
       "radius": 18,
       "hc_radius": 18,
-      "gh_radius": 11.8,
+      "gh_radius": 3,
       "budget_display": "\u00a332.5bn",
       "headcount": 50655,
       "headcount_display": "50.7k staff",
@@ -48207,10 +48421,15 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
-      "github_org": "UKHomeOffice",
-      "github_repos": 1248,
-      "github_url": "https://github.com/UKHomeOffice"
+      "shodan_edge_devices": [
+        {
+          "vendor": "Other (port 443)",
+          "filter": "port:443"
+        }
+      ],
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/homes-england",
@@ -48248,9 +48467,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "homesengland",
-      "github_repos": 9,
-      "github_url": "https://github.com/homesengland"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/horniman-museum",
@@ -48288,9 +48507,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "Horniman",
-      "github_repos": 1,
-      "github_url": "https://github.com/Horniman"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/horserace-betting-levy-board",
@@ -48488,9 +48707,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "hfea",
-      "github_repos": 1,
-      "github_url": "https://github.com/hfea"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/human-tissue-authority",
@@ -48528,9 +48747,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "Human-Tissue-Authority",
-      "github_repos": 1,
-      "github_url": "https://github.com/Human-Tissue-Authority"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/immigration-advice-authority",
@@ -48647,7 +48866,16 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
+      "shodan_edge_devices": [
+        {
+          "vendor": "Check Point",
+          "filter": "product:\"Check Point\""
+        },
+        {
+          "vendor": "Citrix NetScaler",
+          "filter": "product:\"Citrix NetScaler\""
+        }
+      ],
       "github_org": "",
       "github_repos": 0,
       "github_url": ""
@@ -49566,9 +49794,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "Infected-Blood-Compensation-Authority",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/Infected-Blood-Compensation-Authority"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/the-infected-blood-memorial-committee",
@@ -49699,9 +49927,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "innovate-uk",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/innovate-uk"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/insolvency-list",
@@ -49866,10 +50094,15 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
-      "github_org": "intellectual-property-office",
-      "github_repos": 15,
-      "github_url": "https://github.com/intellectual-property-office"
+      "shodan_edge_devices": [
+        {
+          "vendor": "Other (CloudFlare)",
+          "filter": "product:\"CloudFlare\""
+        }
+      ],
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/civil-service-intelligence-analysis-profession",
@@ -50027,9 +50260,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "ipco",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/ipco"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/investigatory-powers-tribunal",
@@ -50187,10 +50420,15 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
-      "github_org": "jncc",
-      "github_repos": 79,
-      "github_url": "https://github.com/jncc"
+      "shodan_edge_devices": [
+        {
+          "vendor": "Check Point",
+          "filter": "product:\"Check Point\""
+        }
+      ],
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/judicial-appointments-and-conduct-ombudsman",
@@ -50268,9 +50506,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "jac-uk",
-      "github_repos": 9,
-      "github_url": "https://github.com/jac-uk"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/judicial-office",
@@ -50509,9 +50747,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "LDNP",
-      "github_repos": 6,
-      "github_url": "https://github.com/LDNP"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/land-registration-rule-committee",
@@ -50584,8 +50822,8 @@
       ],
       "email_domains": [
         "justice.gov.uk",
-        "lawcommission.gov.uk",
-        "nilawcommission.gov.uk"
+        "nilawcommission.gov.uk",
+        "lawcommission.gov.uk"
       ],
       "ripe_asns": [],
       "ripe_prefixes": [],
@@ -50989,7 +51227,12 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
+      "shodan_edge_devices": [
+        {
+          "vendor": "Sophos",
+          "filter": "product:\"Sophos\""
+        }
+      ],
       "github_org": "",
       "github_repos": 0,
       "github_url": ""
@@ -51193,9 +51436,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "mcga-gov-uk",
-      "github_repos": 3,
-      "github_url": "https://github.com/mcga-gov-uk"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/marshall-aid-commemoration-commission",
@@ -51312,7 +51555,12 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
+      "shodan_edge_devices": [
+        {
+          "vendor": "Check Point",
+          "filter": "product:\"Check Point\""
+        }
+      ],
       "github_org": "",
       "github_repos": 0,
       "github_url": ""
@@ -51354,10 +51602,15 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
-      "github_org": "MHRA",
-      "github_repos": 8,
-      "github_url": "https://github.com/MHRA"
+      "shodan_edge_devices": [
+        {
+          "vendor": "Other (Microsoft Azure Application Gateway)",
+          "filter": "product:\"Microsoft Azure Application Gateway\""
+        }
+      ],
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/met-office",
@@ -51366,7 +51619,7 @@
       "tier": 2,
       "radius": 4,
       "hc_radius": 6.2,
-      "gh_radius": 3.6,
+      "gh_radius": 3,
       "budget_display": null,
       "headcount": 2480,
       "headcount_display": "2.5k staff",
@@ -51425,10 +51678,15 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
-      "github_org": "MetOffice",
-      "github_repos": 115,
-      "github_url": "https://github.com/MetOffice"
+      "shodan_edge_devices": [
+        {
+          "vendor": "Other (AkamaiGHost)",
+          "filter": "product:\"AkamaiGHost\""
+        }
+      ],
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/migration-advisory-committee",
@@ -51680,10 +51938,75 @@
         "25.0.0.0 - 25.255.255.255",
         "195.130.16.0 - 195.130.23.255"
       ],
-      "shodan_edge_devices": [],
-      "github_org": "defencedigital",
-      "github_repos": 65,
-      "github_url": "https://github.com/defencedigital"
+      "shodan_edge_devices": [
+        {
+          "vendor": "Cisco ASA",
+          "filter": "product:\"Cisco ASA\""
+        },
+        {
+          "vendor": "FTP",
+          "filter": "port:21"
+        },
+        {
+          "vendor": "Mail Server (Postfix smtpd)",
+          "filter": "product:\"Postfix smtpd\""
+        },
+        {
+          "vendor": "Other (AWS ELB)",
+          "filter": "product:\"AWS ELB\""
+        },
+        {
+          "vendor": "Other (Keycloak)",
+          "filter": "product:\"Keycloak\""
+        },
+        {
+          "vendor": "Other (Kubernetes)",
+          "filter": "product:\"Kubernetes\""
+        },
+        {
+          "vendor": "Other (Microsoft Azure Application Gateway)",
+          "filter": "product:\"Microsoft Azure Application Gateway\""
+        },
+        {
+          "vendor": "Other (Microsoft HTTPAPI httpd)",
+          "filter": "product:\"Microsoft HTTPAPI httpd\""
+        },
+        {
+          "vendor": "Other (port 179)",
+          "filter": "port:179"
+        },
+        {
+          "vendor": "Other (port 25)",
+          "filter": "port:25"
+        },
+        {
+          "vendor": "Other (port 443)",
+          "filter": "port:443"
+        },
+        {
+          "vendor": "Other (port 6443)",
+          "filter": "port:6443"
+        },
+        {
+          "vendor": "Other (port 80)",
+          "filter": "port:80"
+        },
+        {
+          "vendor": "Web Server (Apache httpd)",
+          "filter": "product:\"Apache httpd\""
+        },
+        {
+          "vendor": "Web Server (Microsoft IIS httpd)",
+          "filter": "product:\"Microsoft IIS httpd\""
+        },
+        {
+          "vendor": "Web Server (nginx)",
+          "filter": "product:\"nginx\""
+        }
+      ],
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/ministry-of-housing-communities-local-government",
@@ -51692,7 +52015,7 @@
       "tier": 0,
       "radius": 4,
       "hc_radius": 7.8,
-      "gh_radius": 4.7,
+      "gh_radius": 3,
       "budget_display": null,
       "headcount": 3900,
       "headcount_display": "3.9k staff",
@@ -51748,10 +52071,99 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
-      "github_org": "communitiesuk",
-      "github_repos": 197,
-      "github_url": "https://github.com/communitiesuk"
+      "shodan_edge_devices": [
+        {
+          "vendor": "Other (AWS ELB)",
+          "filter": "product:\"AWS ELB\""
+        },
+        {
+          "vendor": "Other (port 10000)",
+          "filter": "port:10000"
+        },
+        {
+          "vendor": "Other (port 1337)",
+          "filter": "port:1337"
+        },
+        {
+          "vendor": "Other (port 1965)",
+          "filter": "port:1965"
+        },
+        {
+          "vendor": "Other (port 2083)",
+          "filter": "port:2083"
+        },
+        {
+          "vendor": "Other (port 3001)",
+          "filter": "port:3001"
+        },
+        {
+          "vendor": "Other (port 3269)",
+          "filter": "port:3269"
+        },
+        {
+          "vendor": "Other (port 3790)",
+          "filter": "port:3790"
+        },
+        {
+          "vendor": "Other (port 443)",
+          "filter": "port:443"
+        },
+        {
+          "vendor": "Other (port 444)",
+          "filter": "port:444"
+        },
+        {
+          "vendor": "Other (port 4443)",
+          "filter": "port:4443"
+        },
+        {
+          "vendor": "Other (port 5006)",
+          "filter": "port:5006"
+        },
+        {
+          "vendor": "Other (port 636)",
+          "filter": "port:636"
+        },
+        {
+          "vendor": "Other (port 6443)",
+          "filter": "port:6443"
+        },
+        {
+          "vendor": "Other (port 8009)",
+          "filter": "port:8009"
+        },
+        {
+          "vendor": "Other (port 8083)",
+          "filter": "port:8083"
+        },
+        {
+          "vendor": "Other (port 8089)",
+          "filter": "port:8089"
+        },
+        {
+          "vendor": "Other (port 8443)",
+          "filter": "port:8443"
+        },
+        {
+          "vendor": "Other (port 8834)",
+          "filter": "port:8834"
+        },
+        {
+          "vendor": "Other (port 8880)",
+          "filter": "port:8880"
+        },
+        {
+          "vendor": "Other (port 8889)",
+          "filter": "port:8889"
+        },
+        {
+          "vendor": "Other (port 9002)",
+          "filter": "port:9002"
+        }
+      ],
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/ministry-of-justice",
@@ -51760,7 +52172,7 @@
       "tier": 0,
       "radius": 18,
       "hc_radius": 11.3,
-      "gh_radius": 16.9,
+      "gh_radius": 3,
       "budget_display": "\u00a315.5bn",
       "headcount": 8210,
       "headcount_display": "8.2k staff",
@@ -51835,10 +52247,27 @@
       "ripe_inetnums": [
         "194.33.192.0 - 194.33.255.255"
       ],
-      "shodan_edge_devices": [],
-      "github_org": "ministryofjustice",
-      "github_repos": 2578,
-      "github_url": "https://github.com/ministryofjustice"
+      "shodan_edge_devices": [
+        {
+          "vendor": "Other (AWS ELB)",
+          "filter": "product:\"AWS ELB\""
+        },
+        {
+          "vendor": "Other (Microsoft Azure Application Gateway)",
+          "filter": "product:\"Microsoft Azure Application Gateway\""
+        },
+        {
+          "vendor": "Other (port 443)",
+          "filter": "port:443"
+        },
+        {
+          "vendor": "Other (port 80)",
+          "filter": "port:80"
+        }
+      ],
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/modernisation-and-reform",
@@ -51887,7 +52316,7 @@
       "tier": 3,
       "radius": 4,
       "hc_radius": 4,
-      "gh_radius": 3.3,
+      "gh_radius": 3,
       "budget_display": null,
       "headcount": null,
       "headcount_display": null,
@@ -51914,9 +52343,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "moneyadviceservice",
-      "github_repos": 100,
-      "github_url": "https://github.com/moneyadviceservice"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/geffrye-museum",
@@ -51994,9 +52423,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "nationalarmymuseum",
-      "github_repos": 1,
-      "github_url": "https://github.com/nationalarmymuseum"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/national-counter-terrorism-security-office",
@@ -52082,9 +52511,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "NationalCrimeAgency",
-      "github_repos": 15,
-      "github_url": "https://github.com/NationalCrimeAgency"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/national-crime-agency-remuneration-review-body",
@@ -52202,10 +52631,23 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
-      "github_org": "ukncsc",
-      "github_repos": 20,
-      "github_url": "https://github.com/ukncsc"
+      "shodan_edge_devices": [
+        {
+          "vendor": "Other (port 2087)",
+          "filter": "port:2087"
+        },
+        {
+          "vendor": "Other (port 443)",
+          "filter": "port:443"
+        },
+        {
+          "vendor": "Other (port 8080)",
+          "filter": "port:8080"
+        }
+      ],
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/national-data-guardian",
@@ -52363,9 +52805,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "Nfc",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/Nfc"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/national-gallery",
@@ -52403,9 +52845,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "national-gallery",
-      "github_repos": 4,
-      "github_url": "https://github.com/national-gallery"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/national-guardians-office",
@@ -52603,9 +53045,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "nista",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/nista"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/national-institute-for-clinical-excellence",
@@ -52724,9 +53166,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "National-Museums-Liverpool",
-      "github_repos": 2,
-      "github_url": "https://github.com/National-Museums-Liverpool"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/national-physical-laboratory",
@@ -52782,9 +53224,9 @@
         "139.143.0.0 - 139.143.255.255"
       ],
       "shodan_edge_devices": [],
-      "github_org": "NationalPhysicalLaboratory",
-      "github_repos": 1,
-      "github_url": "https://github.com/NationalPhysicalLaboratory"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/national-portrait-gallery",
@@ -52822,9 +53264,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "National-Portrait-Gallery",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/National-Portrait-Gallery"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/national-protective-security-authority",
@@ -52903,9 +53345,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "National-Security",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/National-Security"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/national-space-operations-centre",
@@ -53023,9 +53465,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "naturalengland",
-      "github_repos": 12,
-      "github_url": "https://github.com/naturalengland"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/natural-environment-research-council",
@@ -53063,9 +53505,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "NERC",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/NERC"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/natural-history-museum",
@@ -53074,7 +53516,7 @@
       "tier": 3,
       "radius": 17.7,
       "hc_radius": 4,
-      "gh_radius": 4.6,
+      "gh_radius": 3,
       "budget_display": "\u00a3282.4m",
       "headcount": null,
       "headcount_display": null,
@@ -53103,9 +53545,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "NaturalHistoryMuseum",
-      "github_repos": 190,
-      "github_url": "https://github.com/NaturalHistoryMuseum"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/natural-resources-wales",
@@ -53143,9 +53585,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "natural-resources-wales",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/natural-resources-wales"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/network-rail",
@@ -53183,9 +53625,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "Network-Rail",
-      "github_repos": 2,
-      "github_url": "https://github.com/Network-Rail"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/new-forest-national-park-authority",
@@ -53262,10 +53704,19 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
-      "github_org": "NHS-Blood-and-Transplant",
+      "shodan_edge_devices": [
+        {
+          "vendor": "Citrix NetScaler",
+          "filter": "product:\"Citrix NetScaler\""
+        },
+        {
+          "vendor": "Other (port 443)",
+          "filter": "port:443"
+        }
+      ],
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/NHS-Blood-and-Transplant"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/nhs-business-services-authority",
@@ -53274,7 +53725,7 @@
       "tier": 4,
       "radius": 4,
       "hc_radius": 4,
-      "gh_radius": 4.5,
+      "gh_radius": 3,
       "budget_display": null,
       "headcount": null,
       "headcount_display": null,
@@ -53302,10 +53753,27 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
-      "github_org": "nhsbsa",
-      "github_repos": 181,
-      "github_url": "https://github.com/nhsbsa"
+      "shodan_edge_devices": [
+        {
+          "vendor": "Other (AWS ELB)",
+          "filter": "product:\"AWS ELB\""
+        },
+        {
+          "vendor": "Other (port 443)",
+          "filter": "port:443"
+        },
+        {
+          "vendor": "Palo Alto GlobalProtect",
+          "filter": "os:\"PAN-OS\""
+        },
+        {
+          "vendor": "Web Server (nginx)",
+          "filter": "product:\"nginx\""
+        }
+      ],
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/nhs-counter-fraud-authority",
@@ -53355,7 +53823,7 @@
       "tier": 3,
       "radius": 4,
       "hc_radius": 4,
-      "gh_radius": 5.0,
+      "gh_radius": 3,
       "budget_display": null,
       "headcount": null,
       "headcount_display": null,
@@ -53402,10 +53870,163 @@
         "212.196.0.0 - 212.196.255.255",
         "155.231.0.0 - 155.231.255.255"
       ],
-      "shodan_edge_devices": [],
-      "github_org": "nhsengland",
-      "github_repos": 226,
-      "github_url": "https://github.com/nhsengland"
+      "shodan_edge_devices": [
+        {
+          "vendor": "Other (AWS ELB)",
+          "filter": "product:\"AWS ELB\""
+        },
+        {
+          "vendor": "Other (CloudFront httpd)",
+          "filter": "product:\"CloudFront httpd\""
+        },
+        {
+          "vendor": "Other (Microsoft Azure Application Gateway)",
+          "filter": "product:\"Microsoft Azure Application Gateway\""
+        },
+        {
+          "vendor": "Other (Tableau Server)",
+          "filter": "product:\"Tableau Server\""
+        },
+        {
+          "vendor": "Other (port 2087)",
+          "filter": "port:2087"
+        },
+        {
+          "vendor": "Other (port 2376)",
+          "filter": "port:2376"
+        },
+        {
+          "vendor": "Other (port 31337)",
+          "filter": "port:31337"
+        },
+        {
+          "vendor": "Other (port 3790)",
+          "filter": "port:3790"
+        },
+        {
+          "vendor": "Other (port 443)",
+          "filter": "port:443"
+        },
+        {
+          "vendor": "Other (port 4434)",
+          "filter": "port:4434"
+        },
+        {
+          "vendor": "Other (port 444)",
+          "filter": "port:444"
+        },
+        {
+          "vendor": "Other (port 4443)",
+          "filter": "port:4443"
+        },
+        {
+          "vendor": "Other (port 4444)",
+          "filter": "port:4444"
+        },
+        {
+          "vendor": "Other (port 5001)",
+          "filter": "port:5001"
+        },
+        {
+          "vendor": "Other (port 5006)",
+          "filter": "port:5006"
+        },
+        {
+          "vendor": "Other (port 55443)",
+          "filter": "port:55443"
+        },
+        {
+          "vendor": "Other (port 5986)",
+          "filter": "port:5986"
+        },
+        {
+          "vendor": "Other (port 7071)",
+          "filter": "port:7071"
+        },
+        {
+          "vendor": "Other (port 7443)",
+          "filter": "port:7443"
+        },
+        {
+          "vendor": "Other (port 80)",
+          "filter": "port:80"
+        },
+        {
+          "vendor": "Other (port 8009)",
+          "filter": "port:8009"
+        },
+        {
+          "vendor": "Other (port 8081)",
+          "filter": "port:8081"
+        },
+        {
+          "vendor": "Other (port 8083)",
+          "filter": "port:8083"
+        },
+        {
+          "vendor": "Other (port 8085)",
+          "filter": "port:8085"
+        },
+        {
+          "vendor": "Other (port 8089)",
+          "filter": "port:8089"
+        },
+        {
+          "vendor": "Other (port 8139)",
+          "filter": "port:8139"
+        },
+        {
+          "vendor": "Other (port 8140)",
+          "filter": "port:8140"
+        },
+        {
+          "vendor": "Other (port 8443)",
+          "filter": "port:8443"
+        },
+        {
+          "vendor": "Other (port 8880)",
+          "filter": "port:8880"
+        },
+        {
+          "vendor": "Other (port 8889)",
+          "filter": "port:8889"
+        },
+        {
+          "vendor": "Other (port 9002)",
+          "filter": "port:9002"
+        },
+        {
+          "vendor": "Other (port 9095)",
+          "filter": "port:9095"
+        },
+        {
+          "vendor": "Other (port 9398)",
+          "filter": "port:9398"
+        },
+        {
+          "vendor": "Other (port 9443)",
+          "filter": "port:9443"
+        },
+        {
+          "vendor": "Other (port 9876)",
+          "filter": "port:9876"
+        },
+        {
+          "vendor": "Other (port 9943)",
+          "filter": "port:9943"
+        },
+        {
+          "vendor": "Web Server (Apache httpd)",
+          "filter": "product:\"Apache httpd\""
+        },
+        {
+          "vendor": "Web Server (nginx)",
+          "filter": "product:\"nginx\""
+        }
+      ],
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/nhs-pay-review-body",
@@ -53557,9 +54178,9 @@
         "157.207.64.0 - 157.207.67.255"
       ],
       "shodan_edge_devices": [],
-      "github_org": "North-Sea-Transition-Authority",
-      "github_repos": 12,
-      "github_url": "https://github.com/North-Sea-Transition-Authority"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/north-york-moors-national-park",
@@ -53717,9 +54338,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "NICTS",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/NICTS"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/northern-ireland-executive",
@@ -54114,10 +54735,15 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
-      "github_org": "nsi",
+      "shodan_edge_devices": [
+        {
+          "vendor": "Citrix NetScaler",
+          "filter": "product:\"Citrix NetScaler\""
+        }
+      ],
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/nsi"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/nuclear-decommissioning-authority",
@@ -54158,9 +54784,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "nda",
-      "github_repos": 1,
-      "github_url": "https://github.com/nda"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/nuclear-liabilities-financing-assurance-board",
@@ -54194,9 +54820,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "NLFAB",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/NLFAB"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/nuclear-research-advisory-committee",
@@ -54354,9 +54980,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "oaknational",
-      "github_repos": 29,
-      "github_url": "https://github.com/oaknational"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/ofcom",
@@ -54394,9 +55020,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "OFCOM",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/OFCOM"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/office-for-budget-responsibility",
@@ -54470,9 +55096,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "ofdia-uk",
-      "github_repos": 3,
-      "github_url": "https://github.com/ofdia-uk"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/office-for-environmental-protection",
@@ -54509,7 +55135,12 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
+      "shodan_edge_devices": [
+        {
+          "vendor": "Palo Alto GlobalProtect",
+          "filter": "os:\"PAN-OS\""
+        }
+      ],
       "github_org": "",
       "github_repos": 0,
       "github_url": ""
@@ -54550,9 +55181,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "ukgov-equality-hub",
-      "github_repos": 26,
-      "github_url": "https://github.com/ukgov-equality-hub"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/office-for-health-improvement-and-disparities",
@@ -54715,7 +55346,7 @@
       "tier": 6,
       "radius": 4,
       "hc_radius": 4,
-      "gh_radius": 12.8,
+      "gh_radius": 3,
       "budget_display": null,
       "headcount": null,
       "headcount_display": null,
@@ -54763,10 +55394,15 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
-      "github_org": "ONSdigital",
-      "github_repos": 1471,
-      "github_url": "https://github.com/ONSdigital"
+      "shodan_edge_devices": [
+        {
+          "vendor": "Web Server (nginx)",
+          "filter": "product:\"nginx\""
+        }
+      ],
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/office-for-nuclear-regulation",
@@ -54847,9 +55483,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "OfficeForProductSafetyAndStandards",
-      "github_repos": 3,
-      "github_url": "https://github.com/OfficeForProductSafetyAndStandards"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/office-for-responsible-business-conduct",
@@ -54887,9 +55523,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "orbc",
-      "github_repos": 1,
-      "github_url": "https://github.com/orbc"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/office-for-students",
@@ -54927,9 +55563,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "office-for-students",
-      "github_repos": 19,
-      "github_url": "https://github.com/office-for-students"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/office-for-the-independent-examiner-of-complaints",
@@ -55207,9 +55843,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "officeofrailandroad",
-      "github_repos": 1,
-      "github_url": "https://github.com/officeofrailandroad"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/office-of-the-advocate-general-for-scotland",
@@ -55407,9 +56043,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "OLHC",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/OLHC"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/office-of-the-leader-of-the-house-of-lords",
@@ -55487,9 +56123,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "opc",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/opc"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/office-of-the-police-ombudsman-for-northern-ireland",
@@ -55567,9 +56203,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "opg",
-      "github_repos": 4,
-      "github_url": "https://github.com/opg"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/office-of-the-registrar-of-consultant-lobbyists",
@@ -55890,9 +56526,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "ofgem",
-      "github_repos": 1,
-      "github_url": "https://github.com/ofgem"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/ofqual",
@@ -55933,9 +56569,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "OfqualGovUK",
-      "github_repos": 10,
-      "github_url": "https://github.com/OfqualGovUK"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/ofsted",
@@ -55976,9 +56612,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "Ofsted",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/Ofsted"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/online-procedure-rule-committee",
@@ -56056,9 +56692,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "Open-innovation-team",
-      "github_repos": 1,
-      "github_url": "https://github.com/Open-innovation-team"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/open-public-services",
@@ -56147,7 +56783,7 @@
       "tier": 4,
       "radius": 4,
       "hc_radius": 4,
-      "gh_radius": 4.4,
+      "gh_radius": 3,
       "budget_display": null,
       "headcount": null,
       "headcount_display": null,
@@ -56176,9 +56812,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "OrdnanceSurvey",
-      "github_repos": 173,
-      "github_url": "https://github.com/OrdnanceSurvey"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/packuk",
@@ -56295,7 +56931,16 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
+      "shodan_edge_devices": [
+        {
+          "vendor": "Other (port 443)",
+          "filter": "port:443"
+        },
+        {
+          "vendor": "Web Server (Microsoft IIS httpd)",
+          "filter": "product:\"Microsoft IIS httpd\""
+        }
+      ],
       "github_org": "",
       "github_repos": 0,
       "github_url": ""
@@ -56599,9 +57244,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "Planning-Inspectorate",
-      "github_repos": 61,
-      "github_url": "https://github.com/Planning-Inspectorate"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/plant-varieties-and-seeds-tribunal",
@@ -56679,9 +57324,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "platform45",
-      "github_repos": 28,
-      "github_url": "https://github.com/platform45"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/police-advisory-board-for-england-and-wales",
@@ -56838,7 +57483,24 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
+      "shodan_edge_devices": [
+        {
+          "vendor": "Mail Server (Unrecognized SMTP service)",
+          "filter": "product:\"Unrecognized SMTP service\""
+        },
+        {
+          "vendor": "Other (AWS ELB)",
+          "filter": "product:\"AWS ELB\""
+        },
+        {
+          "vendor": "Other (Microsoft Azure Application Gateway)",
+          "filter": "product:\"Microsoft Azure Application Gateway\""
+        },
+        {
+          "vendor": "Other (port 443)",
+          "filter": "port:443"
+        }
+      ],
       "github_org": "",
       "github_repos": 0,
       "github_url": ""
@@ -56997,9 +57659,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "Payzone-UK",
-      "github_repos": 5,
-      "github_url": "https://github.com/Payzone-UK"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/preventing-sexual-violence-in-conflict-initiative",
@@ -57395,9 +58057,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "Public-Health-Wales",
-      "github_repos": 4,
-      "github_url": "https://github.com/Public-Health-Wales"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/public-prosecution-service-for-northern-ireland",
@@ -57753,9 +58415,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "rssb",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/rssb"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/reclaim-fund-ltd",
@@ -58065,9 +58727,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "ResearchEngland",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/ResearchEngland"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/reserve-forces-and-cadets-associations",
@@ -58340,7 +59002,12 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
+      "shodan_edge_devices": [
+        {
+          "vendor": "Check Point",
+          "filter": "product:\"Check Point\""
+        }
+      ],
       "github_org": "",
       "github_repos": 0,
       "github_url": ""
@@ -58422,9 +59089,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "RoyalMuseumsGreenwich",
-      "github_repos": 8,
-      "github_url": "https://github.com/RoyalMuseumsGreenwich"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/royal-naval-museum",
@@ -58583,9 +59250,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "RuralPaymentsAgency",
-      "github_repos": 1,
-      "github_url": "https://github.com/RuralPaymentsAgency"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/s4c",
@@ -58623,9 +59290,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "S4c",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/S4c"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/salix-finance-ltd",
@@ -58794,7 +59461,7 @@
       "tier": 6,
       "radius": 4,
       "hc_radius": 4,
-      "gh_radius": 5.0,
+      "gh_radius": 3,
       "budget_display": null,
       "headcount": null,
       "headcount_display": null,
@@ -58832,9 +59499,9 @@
         "130.246.0.0 - 130.246.255.255"
       ],
       "shodan_edge_devices": [],
-      "github_org": "stfc",
-      "github_repos": 228,
-      "github_url": "https://github.com/stfc"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/science-council",
@@ -58912,9 +59579,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "TheScienceMuseum",
-      "github_repos": 38,
-      "github_url": "https://github.com/TheScienceMuseum"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/scientific-advisory-group-for-emergencies",
@@ -59076,9 +59743,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "mi6",
-      "github_repos": 5,
-      "github_url": "https://github.com/mi6"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/security-industry-authority",
@@ -59119,9 +59786,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "sia",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/sia"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/security-vetting-appeals-panel",
@@ -59720,9 +60387,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "Social-Work-England",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/Social-Work-England"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/south-downs-national-park-authority",
@@ -59800,9 +60467,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "Sport-England",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/Sport-England"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/sports-council-for-northern-ireland",
@@ -60002,9 +60669,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "studentloanscompany",
-      "github_repos": 3,
-      "github_url": "https://github.com/studentloanscompany"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/submarine-delivery-agency",
@@ -60806,9 +61473,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "InsolvencyService",
-      "github_repos": 14,
-      "github_url": "https://github.com/InsolvencyService"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/the-intellectual-property-list",
@@ -60898,7 +61565,7 @@
       "tier": 1,
       "radius": 9.1,
       "hc_radius": 3.2,
-      "gh_radius": 8.3,
+      "gh_radius": 3,
       "budget_display": "\u00a375.1m",
       "headcount": 645,
       "headcount_display": "645 staff",
@@ -60927,9 +61594,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "nationalarchives",
-      "github_repos": 619,
-      "github_url": "https://github.com/nationalarchives"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/the-national-lottery-community-fund",
@@ -60967,9 +61634,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "biglotteryfund",
-      "github_repos": 16,
-      "github_url": "https://github.com/biglotteryfund"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/the-national-shipbuilding-office",
@@ -61204,9 +61871,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "thepensionsregulator",
-      "github_repos": 22,
-      "github_url": "https://github.com/thepensionsregulator"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/the-property-trusts-and-probate-list",
@@ -61437,10 +62104,47 @@
       "ripe_inetnums": [
         "194.62.24.0 - 194.62.27.255"
       ],
-      "shodan_edge_devices": [],
-      "github_org": "scottishgovernment",
-      "github_repos": 33,
-      "github_url": "https://github.com/scottishgovernment"
+      "shodan_edge_devices": [
+        {
+          "vendor": "Other (AWS ELB)",
+          "filter": "product:\"AWS ELB\""
+        },
+        {
+          "vendor": "Other (Microsoft Azure Application Gateway)",
+          "filter": "product:\"Microsoft Azure Application Gateway\""
+        },
+        {
+          "vendor": "Other (port 25)",
+          "filter": "port:25"
+        },
+        {
+          "vendor": "Other (port 443)",
+          "filter": "port:443"
+        },
+        {
+          "vendor": "Other (port 80)",
+          "filter": "port:80"
+        },
+        {
+          "vendor": "Other (port 9443)",
+          "filter": "port:9443"
+        },
+        {
+          "vendor": "Web Server (Apache httpd)",
+          "filter": "product:\"Apache httpd\""
+        },
+        {
+          "vendor": "Web Server (Microsoft IIS httpd)",
+          "filter": "product:\"Microsoft IIS httpd\""
+        },
+        {
+          "vendor": "Web Server (nginx)",
+          "filter": "product:\"nginx\""
+        }
+      ],
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/the-security-service-mi5",
@@ -61570,9 +62274,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "Ofwat",
-      "github_repos": 14,
-      "github_url": "https://github.com/Ofwat"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/trade-and-agriculture-commission",
@@ -61850,9 +62554,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "Trinity-House",
-      "github_repos": 1,
-      "github_url": "https://github.com/Trinity-House"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/uk-anti-doping",
@@ -61890,9 +62594,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "UK-Anti-Doping",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/UK-Anti-Doping"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/uk-asset-resolution-limited",
@@ -61970,9 +62674,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "ukaea",
-      "github_repos": 70,
-      "github_url": "https://github.com/ukaea"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/uk-commission-on-covid-commemoration",
@@ -62091,9 +62795,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "UKDebtManagementOffice",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/UKDebtManagementOffice"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/uk-defence-and-security-exports",
@@ -62214,9 +62918,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "UK-Export-Finance",
-      "github_repos": 18,
-      "github_url": "https://github.com/UK-Export-Finance"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/uk-fusion-energy",
@@ -62363,9 +63067,9 @@
         "158.119.0.0 - 158.119.255.255"
       ],
       "shodan_edge_devices": [],
-      "github_org": "UK-Health-Security-Agency",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/UK-Health-Security-Agency"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/uk-holocaust-memorial-foundation",
@@ -62414,7 +63118,7 @@
       "tier": 2,
       "radius": 4,
       "hc_radius": 3.9,
-      "gh_radius": 3.6,
+      "gh_radius": 3,
       "budget_display": null,
       "headcount": 975,
       "headcount_display": "975 staff",
@@ -62442,10 +63146,15 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
-      "github_org": "UKHO",
-      "github_repos": 118,
-      "github_url": "https://github.com/UKHO"
+      "shodan_edge_devices": [
+        {
+          "vendor": "Web Server (nginx)",
+          "filter": "product:\"nginx\""
+        }
+      ],
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/uk-infrastructure-bank",
@@ -62739,7 +63448,16 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
+      "shodan_edge_devices": [
+        {
+          "vendor": "Other (port 443)",
+          "filter": "port:443"
+        },
+        {
+          "vendor": "Web Server (Microsoft IIS httpd)",
+          "filter": "product:\"Microsoft IIS httpd\""
+        }
+      ],
       "github_org": "",
       "github_repos": 0,
       "github_url": ""
@@ -62779,7 +63497,12 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
+      "shodan_edge_devices": [
+        {
+          "vendor": "Check Point",
+          "filter": "product:\"Check Point\""
+        }
+      ],
       "github_org": "",
       "github_repos": 0,
       "github_url": ""
@@ -62821,9 +63544,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "UKSpaceAgency",
-      "github_repos": 7,
-      "github_url": "https://github.com/UKSpaceAgency"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/uk-sport",
@@ -62860,10 +63583,15 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
-      "github_org": "uksp",
+      "shodan_edge_devices": [
+        {
+          "vendor": "Check Point",
+          "filter": "product:\"Check Point\""
+        }
+      ],
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/uksp"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/uk-statistics-authority",
@@ -62902,9 +63630,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "office-for-statistics-regulation",
-      "github_repos": 1,
-      "github_url": "https://github.com/office-for-statistics-regulation"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/uk-visas-and-immigration",
@@ -63264,9 +63992,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "vte",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/vte"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/valuation-tribunal-service-for-england-valuation-tribunal-service",
@@ -63468,9 +64196,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "VMDDTE",
-      "github_repos": 5,
-      "github_url": "https://github.com/VMDDTE"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/veterinary-products-committee",
@@ -63587,10 +64315,15 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
-      "github_org": "vanda",
-      "github_repos": 40,
-      "github_url": "https://github.com/vanda"
+      "shodan_edge_devices": [
+        {
+          "vendor": "Citrix NetScaler",
+          "filter": "product:\"Citrix NetScaler\""
+        }
+      ],
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/visitbritain",
@@ -63628,9 +64361,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "visitbritain",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/visitbritain"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/visitengland",
@@ -63800,7 +64533,68 @@
         "159.86.0.0 - 159.86.255.255",
         "45.154.40.0 - 45.154.43.255"
       ],
-      "shodan_edge_devices": [],
+      "shodan_edge_devices": [
+        {
+          "vendor": "Other (AWS ELB)",
+          "filter": "product:\"AWS ELB\""
+        },
+        {
+          "vendor": "Other (CloudFront httpd)",
+          "filter": "product:\"CloudFront httpd\""
+        },
+        {
+          "vendor": "Other (Istio Service Mesh)",
+          "filter": "product:\"Istio Service Mesh\""
+        },
+        {
+          "vendor": "Other (Kestrel)",
+          "filter": "product:\"Kestrel\""
+        },
+        {
+          "vendor": "Other (Microsoft Azure Application Gateway)",
+          "filter": "product:\"Microsoft Azure Application Gateway\""
+        },
+        {
+          "vendor": "Other (Microsoft HTTPAPI httpd)",
+          "filter": "product:\"Microsoft HTTPAPI httpd\""
+        },
+        {
+          "vendor": "Other (OpenResty)",
+          "filter": "product:\"OpenResty\""
+        },
+        {
+          "vendor": "Other (port 443)",
+          "filter": "port:443"
+        },
+        {
+          "vendor": "Other (port 53)",
+          "filter": "port:53"
+        },
+        {
+          "vendor": "Other (port 80)",
+          "filter": "port:80"
+        },
+        {
+          "vendor": "Other (port 8010)",
+          "filter": "port:8010"
+        },
+        {
+          "vendor": "Web Server (Apache httpd)",
+          "filter": "product:\"Apache httpd\""
+        },
+        {
+          "vendor": "Web Server (LiteSpeed httpd)",
+          "filter": "product:\"LiteSpeed httpd\""
+        },
+        {
+          "vendor": "Web Server (Microsoft IIS httpd)",
+          "filter": "product:\"Microsoft IIS httpd\""
+        },
+        {
+          "vendor": "Web Server (nginx)",
+          "filter": "product:\"nginx\""
+        }
+      ],
       "github_org": "",
       "github_repos": 0,
       "github_url": ""
@@ -63881,7 +64675,12 @@
       "ripe_asns": [],
       "ripe_prefixes": [],
       "ripe_inetnums": [],
-      "shodan_edge_devices": [],
+      "shodan_edge_devices": [
+        {
+          "vendor": "Other (port 443)",
+          "filter": "port:443"
+        }
+      ],
       "github_org": "",
       "github_repos": 0,
       "github_url": ""
@@ -64003,9 +64802,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "weu",
+      "github_org": "",
       "github_repos": 0,
-      "github_url": "https://github.com/weu"
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/yorkshire-dales-national-park-authority",
@@ -64043,9 +64842,9 @@
       "ripe_prefixes": [],
       "ripe_inetnums": [],
       "shodan_edge_devices": [],
-      "github_org": "YDNP",
-      "github_repos": 1,
-      "github_url": "https://github.com/YDNP"
+      "github_org": "",
+      "github_repos": 0,
+      "github_url": ""
     },
     {
       "id": "https://www.gov.uk/api/organisations/youth-custody-service",
@@ -66135,7 +66934,7 @@
       "target": "https://www.gov.uk/api/organisations/regulatory-innovation-office"
     },
     {
-      "source": "https://www.gov.uk/api/organisations/department-for-business-and-trade",
+      "source": "https://www.gov.uk/api/organisations/department-for-business-innovation-science-and-trade",
       "target": "https://www.gov.uk/api/organisations/regulatory-policy-committee"
     },
     {

@@ -604,16 +604,21 @@ def search_shodan_edge_devices(
     domain_to_org: dict[str, dict],
     orgs: list[dict] | None = None,
     deep: bool = False,
+    plan: str = "",
 ) -> list[dict]:
     """Search Shodan for devices across all org domains, IPs, and org names.
 
     Phases 1-2 always run (targeted edge device searches by hostname).
     Phases 3-6 require deep=True (broad discovery — more expensive in credits).
-      3: RIPE net-range searches (unfiltered)
-      4: Org-name searches (departments only, unfiltered)
-      5: SSL certificate CN searches
+      3: RIPE net-range searches (unfiltered)  — requires membership
+      4: Org-name searches (departments only, unfiltered)  — requires membership
+      5: SSL certificate CN searches  — requires membership
       6: Unfiltered hostname sweep
     """
+    # Shodan dev plan doesn't support net:, org:, ssl: filters — they require
+    # a paid membership.  Skip those phases to avoid hundreds of wasted sleeps.
+    MEMBERSHIP_PLANS = {"member", "small_business", "enterprise", "edu"}
+    has_membership = plan.lower() in MEMBERSHIP_PLANS if plan else True  # assume yes if unknown
     # Government-specific TLDs — always swept broadly; generic TLDs (.co.uk,
     # .org.uk, .com) return too much noise from unrelated companies.
     BROAD_SWEEP_TLDS = {
@@ -688,28 +693,40 @@ def search_shodan_edge_devices(
 
     # --- Deep discovery phases (--shodan-deep) ---
 
-    # Phase 3: RIPE net-range searches (unfiltered — finds everything in gov IP space)
-    ripe_prefixes = set()
-    if orgs:
-        for org in orgs:
-            for prefix in org.get("ripe_prefixes", []):
-                ripe_prefixes.add(prefix)
-    if ripe_prefixes:
-        logger.info(
-            f"Shodan phase 3: searching {len(ripe_prefixes)} RIPE net ranges (unfiltered)"
-        )
-        for prefix in sorted(ripe_prefixes):
-            query = f"net:{prefix}"
-            matches = _shodan_search(api, query, f"net:{prefix}", max_pages=3)
-            _add_and_classify(matches, "ripe_net")
-    else:
-        logger.info(
-            "Shodan phase 3: no RIPE prefixes available "
-            "(run with --ripe first to populate)"
+    if not has_membership:
+        logger.warning(
+            f"Shodan plan '{plan}' lacks membership — skipping phases 3-5 "
+            f"(net:, org:, ssl: filters require a paid membership). "
+            f"Only phase 6 (unfiltered hostname sweep) will run."
         )
 
+    # Phase 3: RIPE net-range searches (unfiltered — finds everything in gov IP space)
+    if not has_membership:
+        logger.info("Shodan phase 3: skipped (net: filter requires membership)")
+    else:
+        ripe_prefixes = set()
+        if orgs:
+            for org in orgs:
+                for prefix in org.get("ripe_prefixes", []):
+                    ripe_prefixes.add(prefix)
+        if ripe_prefixes:
+            logger.info(
+                f"Shodan phase 3: searching {len(ripe_prefixes)} RIPE net ranges (unfiltered)"
+            )
+            for prefix in sorted(ripe_prefixes):
+                query = f"net:{prefix}"
+                matches = _shodan_search(api, query, f"net:{prefix}", max_pages=3)
+                _add_and_classify(matches, "ripe_net")
+        else:
+            logger.info(
+                "Shodan phase 3: no RIPE prefixes available "
+                "(run with --ripe first to populate)"
+            )
+
     # Phase 4: Org-name searches (departments only, unfiltered)
-    if orgs:
+    if not has_membership:
+        logger.info("Shodan phase 4: skipped (org: filter requires membership)")
+    elif orgs:
         departments = [o for o in orgs if o.get("child_organisations")]
         dept_names = sorted(set(o["title"] for o in departments if o.get("title")))
         logger.info(f"Shodan phase 4: searching {len(dept_names)} department org names")
@@ -722,11 +739,14 @@ def search_shodan_edge_devices(
 
     # Phase 5: SSL certificate CN search (finds services with gov TLD certs
     # even when the hostname doesn't match)
-    logger.info(f"Shodan phase 5: SSL cert CN search for {len(broad_tlds)} TLDs")
-    for tld in broad_tlds:
-        query = f"ssl.cert.subject.CN:.{tld}"
-        matches = _shodan_search(api, query, f"ssl:{tld}", max_pages=3)
-        _add_and_classify(matches, "ssl_cert")
+    if not has_membership:
+        logger.info("Shodan phase 5: skipped (ssl: filter requires membership)")
+    else:
+        logger.info(f"Shodan phase 5: SSL cert CN search for {len(broad_tlds)} TLDs")
+        for tld in broad_tlds:
+            query = f"ssl.cert.subject.CN:.{tld}"
+            matches = _shodan_search(api, query, f"ssl:{tld}", max_pages=3)
+            _add_and_classify(matches, "ssl_cert")
 
     # Phase 6: Unfiltered hostname sweep (broad discovery — catches databases,
     # RDP, IoT, printers, webcams, or anything else that wasn't pre-filtered)
@@ -848,7 +868,9 @@ def run_shodan_enrichment(orgs: list[dict], use_cache: bool = False, deep: bool 
         results = _load_shodan_cache(cache_path)
 
     if results is None:
-        results = search_shodan_edge_devices(api, domain_to_org, orgs=orgs, deep=deep)
+        results = search_shodan_edge_devices(
+            api, domain_to_org, orgs=orgs, deep=deep, plan=info.get("plan", ""),
+        )
         _cache_shodan_results(results, cache_path)
         info = api.info()
         logger.info(f"Shodan credits remaining: {info.get('query_credits')}")

@@ -1714,6 +1714,38 @@
                     tbody.appendChild(tr);
                 }
 
+                // Shodan services — expandable section (same pattern as SOC evidence)
+                const shodanServices = d.shodan_services || [];
+                if (shodanServices.length > 0) {
+                    const svcDetails = document.createElement('details');
+                    const svcSummary = document.createElement('summary');
+                    svcSummary.style.cssText = 'font-size:0.7rem;color:#6f777b;cursor:pointer;margin-top:0.3rem;margin-bottom:0.2rem';
+                    svcSummary.textContent = 'Show ' + shodanServices.length + ' other Shodan service' + (shodanServices.length !== 1 ? 's' : '');
+                    svcDetails.appendChild(svcSummary);
+
+                    const svcList = document.createElement('div');
+                    svcList.style.cssText = 'padding:0.2rem 0;font-size:0.75rem';
+                    shodanServices.forEach(svc => {
+                        const row = document.createElement('div');
+                        row.style.cssText = 'padding:0.1rem 0';
+                        if (shodanDomain && svc.filter) {
+                            const a = document.createElement('a');
+                            a.href = 'https://www.shodan.io/search?query=' +
+                                encodeURIComponent('hostname:' + shodanDomain + ' ' + svc.filter);
+                            a.target = '_blank';
+                            a.rel = 'noopener';
+                            a.textContent = svc.vendor;
+                            a.style.color = '#1d70b8';
+                            row.appendChild(a);
+                        } else {
+                            row.textContent = svc.vendor;
+                        }
+                        svcList.appendChild(row);
+                    });
+                    svcDetails.appendChild(svcList);
+                    detailBody.appendChild(svcDetails);
+                }
+
                 // IP Ranges (from RIPE)
                 const ripeAsns = d.ripe_asns || [];
                 const ripeInetnums = d.ripe_inetnums || [];

@@ -310,6 +310,7 @@ def generate_hierarchy_chart(df, output_path: Path = None):
             'mail_providers': row.get('mail_providers', []),
             'email_domains': row.get('email_domains', []),
             'edge_devices': row.get('shodan_edge_devices', []),
+            'shodan_services': row.get('shodan_services', []),
             'ripe_asns': row.get('ripe_asns', []),
             'ripe_inetnums': row.get('ripe_inetnums', []),
             'ripe_prefixes': row.get('ripe_prefixes', []),

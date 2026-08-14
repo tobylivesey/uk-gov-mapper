@@ -425,49 +425,50 @@ EDGE_DEVICE_QUERIES = [
 ]
 
 
-def _classify_result(result: dict) -> tuple[str, str, bool]:
+def _classify_result(result: dict) -> tuple[str, str, str]:
     """Classify an unfiltered Shodan result by product/OS/port.
 
-    Returns (label, filter, is_relevant).  Keeps anything with a named
-    product/OS; only drops results where Shodan couldn't identify the
-    service (bare port numbers).
+    Returns (label, filter, category) where category is one of:
+      "edge"    — known edge device (VPN gateway, firewall, load balancer)
+      "service" — named product/service (web server, database, mail, etc.)
+      "noise"   — unidentified port, dropped by callers
     """
     product = result.get("product") or ""
     os_info = result.get("os") or ""
     port = result.get("port", 0)
 
-    # Try known edge device signatures first
+    # Known edge device signatures
     for label, device_filter in EDGE_DEVICE_QUERIES:
         if "os:" in device_filter:
             val = device_filter.split('"')[1] if '"' in device_filter else ""
             if val and val.lower() in os_info.lower():
-                return label, device_filter, True
+                return label, device_filter, "edge"
         if "product:" in device_filter:
             val = device_filter.split('"')[1] if '"' in device_filter else ""
             if val and val.lower() in product.lower():
-                return label, device_filter, True
+                return label, device_filter, "edge"
 
-    # Named services — keep
+    # Named services
     pl = product.lower()
     if any(w in pl for w in ("mysql", "postgresql", "mariadb", "mongodb", "redis", "elastic")):
-        return f"Database ({product})", f'product:"{product}"', True
+        return f"Database ({product})", f'product:"{product}"', "service"
     if port == 3389 or "rdp" in pl:
-        return "Remote Desktop (RDP)", "port:3389", True
+        return "Remote Desktop (RDP)", "port:3389", "service"
     if "vnc" in pl:
-        return f"VNC ({product})", f'product:"{product}"', True
+        return f"VNC ({product})", f'product:"{product}"', "service"
     if "ftp" in pl or port == 21:
-        return "FTP", "port:21", True
+        return "FTP", "port:21", "service"
     if "openvpn" in pl:
-        return "OpenVPN", f'product:"{product}"', True
+        return "OpenVPN", f'product:"{product}"', "service"
     if any(w in pl for w in ("nginx", "apache", "iis", "litespeed", "caddy")):
-        return f"Web Server ({product})", f'product:"{product}"', True
+        return f"Web Server ({product})", f'product:"{product}"', "service"
     if any(w in pl for w in ("postfix", "exim", "exchange", "sendmail", "smtp")):
-        return f"Mail Server ({product})", f'product:"{product}"', True
+        return f"Mail Server ({product})", f'product:"{product}"', "service"
     if "openssh" in pl or port == 22:
-        return "SSH", "port:22", True
+        return "SSH", "port:22", "service"
     if product:
-        return f"Other ({product})", f'product:"{product}"', True
-    return f"Other (port {port})", f"port:{port}", False
+        return f"Other ({product})", f'product:"{product}"', "service"
+    return f"Other (port {port})", f"port:{port}", "noise"
 
 
 def _build_domain_to_org(orgs: list[dict]) -> dict[str, dict]:
@@ -654,20 +655,22 @@ def search_shodan_edge_devices(
                 seen.add(key)
                 r["_device_label"] = device_label
                 r["_device_filter"] = device_filter
+                r["_device_category"] = "edge"
                 r["_search_phase"] = phase
                 all_results.append(r)
 
     def _add_and_classify(matches, phase):
-        """Add unfiltered results, keeping only edge devices and security-noteworthy services."""
+        """Add unfiltered results, keeping edge devices and named services, dropping noise."""
         for r in matches:
             key = f"{r['ip_str']}:{r['port']}"
             if key not in seen:
                 seen.add(key)
-                label, filt, relevant = _classify_result(r)
-                if not relevant:
+                label, filt, category = _classify_result(r)
+                if category == "noise":
                     continue
                 r["_device_label"] = label
                 r["_device_filter"] = filt
+                r["_device_category"] = category
                 r["_search_phase"] = phase
                 all_results.append(r)
 
@@ -781,6 +784,7 @@ def aggregate_shodan_results(
 
     org_data: dict[str, dict] = defaultdict(lambda: {
         "edge_devices": [],
+        "services": [],
         "ip_addresses": set(),
         "asns": set(),
         "shodan_orgs": set(),
@@ -799,12 +803,16 @@ def aggregate_shodan_results(
 
         org_id = matched_org["id"]
         data = org_data[org_id]
-        data["edge_devices"].append({
+        entry = {
             "vendor": r.get("_device_label", "Unknown"),
             "filter": r.get("_device_filter", ""),
             "ip": r["ip_str"],
             "port": r["port"],
-        })
+        }
+        if r.get("_device_category") == "service":
+            data["services"].append(entry)
+        else:
+            data["edge_devices"].append(entry)
         data["ip_addresses"].add(r["ip_str"])
         if r.get("asn"):
             data["asns"].add(r["asn"])
@@ -812,9 +820,9 @@ def aggregate_shodan_results(
             data["shodan_orgs"].add(r["org"])
 
     logger.info(f"Shodan: {len(results) - len(unmatched)}/{len(results)} results matched to {len(org_data)} orgs")
-    for oid, data in sorted(org_data.items(), key=lambda x: -len(x[1]["edge_devices"])):
+    for oid, data in sorted(org_data.items(), key=lambda x: -(len(x[1]["edge_devices"]) + len(x[1]["services"]))):
         org_title = org_by_id[oid]["title"] if oid in org_by_id else oid
-        logger.info(f"  {org_title}: {len(data['edge_devices'])} devices, {len(data['ip_addresses'])} IPs")
+        logger.info(f"  {org_title}: {len(data['edge_devices'])} edge devices, {len(data['services'])} services, {len(data['ip_addresses'])} IPs")
 
     if unmatched:
         logger.info(f"Shodan: {len(unmatched)} results unmatched to any org:")
@@ -839,6 +847,7 @@ def _cache_shodan_results(results: list[dict], cache_path: Path) -> None:
             "timestamp": r.get("timestamp", ""),
             "_device_label": r.get("_device_label", ""),
             "_device_filter": r.get("_device_filter", ""),
+            "_device_category": r.get("_device_category", "edge"),
         })
     with open(cache_path, "w", encoding="utf-8") as f:
         json.dump(clean, f, indent=2, ensure_ascii=False)
@@ -1866,24 +1875,37 @@ def enrich_orgs(
             org["cyber_roles_sample"] = []
             org["cyber_tech_stack"] = {cat: [] for cat in CATEGORIES}
 
-        # Shodan edge devices
+        # Shodan edge devices and services
         if org_id in shodan_data:
             sd = shodan_data[org_id]
-            vendors = defaultdict(lambda: {"ips": set(), "filter": ""})
+            # Deduplicate edge devices by vendor
+            edge_vendors = defaultdict(lambda: {"ips": set(), "filter": ""})
             for device in sd["edge_devices"]:
-                v = vendors[device["vendor"]]
+                v = edge_vendors[device["vendor"]]
                 v["ips"].add(device["ip"])
                 if not v["filter"]:
                     v["filter"] = device.get("filter", "")
             org["shodan_edge_devices"] = [
                 {"vendor": v, "filter": info["filter"]}
-                for v, info in sorted(vendors.items())
+                for v, info in sorted(edge_vendors.items())
+            ]
+            # Deduplicate services by vendor
+            svc_vendors = defaultdict(lambda: {"ips": set(), "filter": ""})
+            for svc in sd.get("services", []):
+                v = svc_vendors[svc["vendor"]]
+                v["ips"].add(svc["ip"])
+                if not v["filter"]:
+                    v["filter"] = svc.get("filter", "")
+            org["shodan_services"] = [
+                {"vendor": v, "filter": info["filter"]}
+                for v, info in sorted(svc_vendors.items())
             ]
             org["shodan_ip_count"] = len(sd["ip_addresses"])
             org["shodan_asns"] = sorted(sd["asns"])
             org["shodan_orgs"] = sorted(sd["shodan_orgs"])
         else:
             org["shodan_edge_devices"] = []
+            org["shodan_services"] = []
             org["shodan_ip_count"] = 0
             org["shodan_asns"] = []
             org["shodan_orgs"] = []

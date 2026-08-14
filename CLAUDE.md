@@ -42,6 +42,7 @@ python -m scripts.enrich_jobs
    python -m scripts.enrich_mailservers     # DNS MX lookups for email domains
    python -m scripts.enrich_parent_domains  # Inherit domains from parent orgs
    python -m scripts.enrich_govuk_domains   # Fill gaps from official domain list
+   python -m scripts.enrich_github          # GitHub org discovery & repo counts
    python -m scripts.enrich_cyber --shodan --ripe  # Cyber, Shodan edge devices & RIPE IP ranges
    ```
    - Output: `data/orgs/uk/govuk_orgs_enriched.json`

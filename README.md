@@ -21,37 +21,68 @@ A toolkit for collecting, enriching, and visualising UK government organisation 
 ## Quick Start
 
 ```bash
-# Install dependencies
 pip install -r requirements.txt
 
-# Run the full organisation enrichment pipeline (order matters)
-python -m scripts.fetch_orgs             # 1. Fetch orgs from GOV.UK API
-python -m scripts.enrich_orgs            # 2. Enrich with OSCAR budgets, headcount & mailto domains
-python -m scripts.enrich_mailservers     # 3. DNS MX lookups for email providers
-python -m scripts.enrich_parent_domains  # 4. Inherit domains from parent orgs
-python -m scripts.enrich_govuk_domains   # 5. Fill gaps from official .gov.uk domain list
-python -m scripts.enrich_cyber --shodan --ripe  # 6. Cyber intelligence, Shodan & RIPE IP ranges
+# Run the full pipeline in one command
+python -m scripts.main --shodan --ripe
 
-# Generate the visualisations
-python -m scripts.visualise              # 7. Outputs treemap + hierarchy chart
+# Or skip GitHub enrichment (uses cached data)
+python -m scripts.main --no-github --shodan --ripe
 ```
 
-## Commands
+The pipeline runner (`scripts.main`) executes all steps in order and passes flags through to `enrich_cyber`. You can also run each step individually — see below.
+
+## Pipeline Steps
+
+Run in this order (each step reads/writes `govuk_orgs_enriched.json`):
+
+| # | Command | Description |
+|---|---------|-------------|
+| 1 | `python -m scripts.fetch_orgs` | Fetch orgs from GOV.UK API |
+| 2 | `python -m scripts.enrich_orgs` | Enrich with OSCAR budgets, headcount & mailto domains |
+| 3 | `python -m scripts.enrich_mailservers` | DNS MX lookups, identify mail providers |
+| 4 | `python -m scripts.enrich_parent_domains` | Inherit email domains from parent orgs |
+| 5 | `python -m scripts.enrich_govuk_domains` | Fill gaps from official .gov.uk domain list |
+| 6 | `python -m scripts.enrich_github` | Discover GitHub org accounts & public repo counts |
+| 7 | `python -m scripts.enrich_cyber` | Cyber intelligence from job postings (see flags below) |
+| 8 | `python -m scripts.visualise` | Generate D3 treemap + hierarchy chart |
+
+### `enrich_cyber` flags
+
+Flags can be combined freely, e.g. `--shodan --ripe --live`.
+
+| Flag | What it does | API cost |
+|------|-------------|----------|
+| *(no flags)* | Analyse cached job postings for cyber roles & tech stacks | None |
+| `--live` | Fetch fresh jobs from PSR before analysis | None (PSR is free) |
+| `--shodan` | Scan for edge devices across .gov.uk TLDs (phases 1-2) | ~150 Shodan query credits |
+| `--shodan-deep` | All of `--shodan` plus unfiltered hostname sweep (phase 6). Phases 3-5 (net/org/ssl filters) require a paid Shodan membership and are auto-skipped on the dev plan | ~200+ credits |
+| `--shodan-cache` | Reuse cached Shodan results from a previous run | None |
+| `--ripe` | Look up RIPE ASNs & IP ranges via REST API. Resumable — safe to interrupt and rerun | Rate-limited (~100 req/5 min) |
+| `--ripe-cache` | Reuse cached RIPE results from a previous run | None |
+| `--ripe-bulk` | Alternative to `--ripe`: downloads RIPE DB daily dumps instead of REST API queries. Faster, no rate limits, but larger download (~500 MB) | None |
+
+`--shodan-deep` implies `--shodan` — no need to pass both. Similarly, `--ripe-bulk` is an alternative to `--ripe`, not an addition.
+
+### `enrich_github` flags
+
+| Flag | What it does |
+|------|-------------|
+| *(no flags)* | Search GitHub API for org accounts, resume from cache if available |
+| `--cache` | Skip API calls, use cached results only |
+| `--fresh` | Ignore existing cache, start from scratch |
+
+### `scripts.main` flags
+
+| Flag | What it does |
+|------|-------------|
+| `--no-github` | Skip the GitHub enrichment step (uses existing data) |
+| Any other flags | Passed through to `enrich_cyber` (e.g. `--shodan`, `--ripe`) |
+
+### Other commands
 
 | Command | Description |
 |---------|-------------|
-| `python -m scripts.fetch_orgs` | Fetch orgs from GOV.UK API |
-| `python -m scripts.enrich_orgs` | Enrich with OSCAR budgets, headcount & mailto links |
-| `python -m scripts.enrich_mailservers` | DNS MX lookups, identify mail providers |
-| `python -m scripts.enrich_parent_domains` | Inherit email domains from parent orgs |
-| `python -m scripts.enrich_govuk_domains` | Fill gaps from official .gov.uk domain list |
-| `python -m scripts.enrich_cyber --shodan` | Cyber intelligence, tech stack & Shodan edge devices |
-| `python -m scripts.enrich_cyber --shodan-deep` | Deep Shodan: adds RIPE net, org, SSL & unfiltered sweeps (needs membership) |
-| `python -m scripts.enrich_cyber --shodan-cache` | Same but reuse cached Shodan results (0 API credits) |
-| `python -m scripts.enrich_cyber --ripe` | RIPE ASN lookup for org-owned IP ranges |
-| `python -m scripts.enrich_cyber --ripe-cache` | Same but reuse cached RIPE results (0 API calls) |
-| `python -m scripts.enrich_cyber --ripe-bulk` | Populate RIPE data from bulk DB dumps (bypasses rate limits) |
-| `python -m scripts.visualise` | Generate D3 treemap + hierarchy chart |
 | `python -m scripts.enrich_jobs --provider adzuna --token "query"` | Scrape jobs from Adzuna |
 | `python -m scripts.enrich_jobs --provider greenhouse --token "board"` | Scrape jobs from Greenhouse |
 | `python exports/mail_domain_table.py [output.json]` | Export domain data for blog |
@@ -128,6 +159,7 @@ Each organisation record includes:
 | `has_soc` | Whether SOC (Security Operations Centre) evidence was found |
 | `soc_evidence` | SOC job postings with title, date, source, and CS Jobs ID |
 | `shodan_edge_devices` | Edge devices detected via Shodan (VPN gateways, firewalls, load balancers) |
+| `shodan_services` | Other named services found via Shodan (web servers, databases, mail, etc.) |
 | `shodan_asns` | Autonomous System Numbers associated with the org |
 | `ripe_asns` | RIPE-registered ASNs owned by the org (with holder name and prefixes) |
 | `ripe_prefixes` | Announced IP prefixes (ranges) from RIPE, excluding cloud/ISP |

@@ -85,6 +85,7 @@ def export_graph(output_path: Path) -> None:
             'ripe_prefixes': row.get('ripe_prefixes', []) or [],
             'ripe_inetnums': row.get('ripe_inetnums', []) or [],
             'shodan_edge_devices': row.get('shodan_edge_devices', []) or [],
+            'shodan_services': row.get('shodan_services', []) or [],
             'github_org': row.get('github_org', ''),
             'github_repos': int(row.get('github_repos', 0) or 0),
             'github_url': row.get('github_url', ''),

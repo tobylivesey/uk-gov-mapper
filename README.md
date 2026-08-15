@@ -77,6 +77,7 @@ Flags can be combined freely, e.g. `--shodan --ripe --live`.
 | Flag | What it does |
 |------|-------------|
 | `--no-github` | Skip the GitHub enrichment step (uses existing data) |
+| `--publish` | Run exports and upload to S3 (`blog-govuk-data`) after pipeline completes |
 | Any other flags | Passed through to `enrich_cyber` (e.g. `--shodan`, `--ripe`) |
 
 ### Re-running the pipeline

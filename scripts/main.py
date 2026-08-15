@@ -19,9 +19,14 @@ Usage:
     python -m scripts.main --no-github       # skip GitHub enrichment (uses cached data)
 """
 
+import json
 import sys
 import subprocess
 import argparse
+from pathlib import Path
+
+ENRICHED_PATH = Path("data/orgs/uk/govuk_orgs_enriched.json")
+GITHUB_FIELDS = ("github_org", "github_repos", "github_url")
 
 
 STEPS = [
@@ -58,6 +63,19 @@ def main():
                         help="Skip GitHub enrichment (uses cached data)")
     args, passthrough = parser.parse_known_args()
 
+    # When skipping GitHub enrichment, save existing GitHub data so it
+    # survives enrich_orgs (which rebuilds enriched.json from scratch).
+    saved_github: dict[str, dict] = {}
+    if args.no_github and ENRICHED_PATH.exists():
+        with ENRICHED_PATH.open("r", encoding="utf-8") as f:
+            for org in json.load(f):
+                org_id = org.get("id", "")
+                gh = {k: org[k] for k in GITHUB_FIELDS if k in org}
+                if any(gh.values()):
+                    saved_github[org_id] = gh
+        if saved_github:
+            print(f"Preserved GitHub data for {len(saved_github)} orgs")
+
     steps = STEPS[:]
     if args.no_github:
         steps = [(desc, cmd) for desc, cmd in steps
@@ -80,6 +98,20 @@ def main():
         if result.returncode != 0:
             print(f"\nStep {i} failed (exit code {result.returncode}). Aborting.")
             sys.exit(result.returncode)
+
+        # Re-apply saved GitHub data after enrich_orgs wipes the enriched file
+        if saved_github and "enrich_orgs" in cmd[-1]:
+            with ENRICHED_PATH.open("r", encoding="utf-8") as f:
+                orgs = json.load(f)
+            restored = 0
+            for org in orgs:
+                gh = saved_github.get(org.get("id", ""))
+                if gh:
+                    org.update(gh)
+                    restored += 1
+            with ENRICHED_PATH.open("w", encoding="utf-8") as f:
+                json.dump(orgs, f, indent=2, ensure_ascii=False, default=str)
+            print(f"Restored GitHub data for {restored} orgs")
 
     print("\n" + "=" * 60)
     print("Pipeline complete!")

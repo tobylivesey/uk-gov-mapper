@@ -23,80 +23,101 @@ A toolkit for collecting, enriching, and visualising UK government organisation 
 ```bash
 pip install -r requirements.txt
 
-# Run the full pipeline in one command
-python -m scripts.main --shodan --ripe
-
-# Or skip GitHub enrichment (uses cached data)
-python -m scripts.main --no-github --shodan --ripe
+# Everything: full pipeline, all enrichments, export to S3
+python -m scripts.main --shodan --ripe --publish
 ```
 
-The pipeline runner (`scripts.main`) executes all steps in order and passes flags through to `enrich_cyber`. You can also run each step individually — see below.
+This single command fetches orgs from GOV.UK, enriches with budgets, headcount, mail servers, domains, GitHub, cyber intelligence, Shodan edge devices, and RIPE IP ranges, generates visualisations, exports data, and uploads to S3.
 
-## Pipeline Steps
+## How to Run
 
-Run in this order (each step reads/writes `govuk_orgs_enriched.json`):
+### Full pipeline
 
-| # | Command | Description |
-|---|---------|-------------|
-| 1 | `python -m scripts.fetch_orgs` | Fetch orgs from GOV.UK API |
-| 2 | `python -m scripts.enrich_orgs` | Enrich with OSCAR budgets, headcount & mailto domains |
-| 3 | `python -m scripts.enrich_mailservers` | DNS MX lookups, identify mail providers |
-| 4 | `python -m scripts.enrich_parent_domains` | Inherit email domains from parent orgs |
-| 5 | `python -m scripts.enrich_govuk_domains` | Fill gaps from official .gov.uk domain list |
-| 6 | `python -m scripts.enrich_github` | Discover GitHub org accounts & public repo counts |
-| 7 | `python -m scripts.enrich_cyber` | Cyber intelligence from job postings (see flags below) |
-| 8 | `python -m scripts.visualise` | Generate D3 treemap + hierarchy chart |
+`scripts.main` runs all 8 steps in order. All flags below can be combined freely.
 
-### `enrich_cyber` flags
+```bash
+# Everything from scratch, publish to S3
+python -m scripts.main --shodan --ripe --publish
 
-Flags can be combined freely, e.g. `--shodan --ripe --live`.
+# Quick re-run using cached API data (no API calls, ~5 min)
+python -m scripts.main --no-github --shodan-cache --ripe-cache --publish
 
-| Flag | What it does | API cost |
-|------|-------------|----------|
-| *(no flags)* | Analyse cached job postings for cyber roles & tech stacks | None |
-| `--live` | Fetch fresh jobs from PSR before analysis | None (PSR is free) |
-| `--shodan` | Scan for edge devices across .gov.uk TLDs (phases 1-2) | ~150 Shodan query credits |
-| `--shodan-deep` | All of `--shodan` plus unfiltered hostname sweep (phase 6). Phases 3-5 (net/org/ssl filters) require a paid Shodan membership and are auto-skipped on the dev plan | ~200+ credits |
-| `--shodan-cache` | Reuse cached Shodan results from a previous run | None |
-| `--ripe` | Look up RIPE ASNs & IP ranges via REST API. Resumable — safe to interrupt and rerun | Rate-limited (~100 req/5 min) |
-| `--ripe-cache` | Reuse cached RIPE results from a previous run | None |
-| `--ripe-bulk` | Alternative to `--ripe`: downloads RIPE DB daily dumps instead of REST API queries. Faster, no rate limits, but larger download (~500 MB) | None |
+# Fresh Shodan scan, keep existing RIPE data
+python -m scripts.main --shodan --ripe-cache --publish
 
-`--shodan-deep` implies `--shodan` — no need to pass both. Similarly, `--ripe-bulk` is an alternative to `--ripe`, not an addition.
+# Deep Shodan scan (requires paid Shodan membership for phases 3-5)
+python -m scripts.main --shodan-deep --ripe-cache --publish
 
-### `enrich_github` flags
+# Pipeline only, no export/upload
+python -m scripts.main --shodan-cache --ripe-cache
+```
 
-| Flag | What it does |
-|------|-------------|
-| *(no flags)* | Search GitHub API for org accounts, resume from cache if available |
-| `--cache` | Skip API calls, use cached results only |
-| `--fresh` | Ignore existing cache, start from scratch |
+### All flags
 
-### `scripts.main` flags
+| Flag | Scope | What it does | API cost |
+|------|-------|-------------|----------|
+| `--shodan` | Cyber | Scan for edge devices across .gov.uk TLDs (phases 1-2) | ~150 Shodan query credits |
+| `--shodan-deep` | Cyber | All of `--shodan` + unfiltered hostname sweep (phase 6). Phases 3-5 (net/org/ssl filters) need a paid Shodan membership — auto-skipped on dev plan | ~200+ credits |
+| `--shodan-cache` | Cyber | Reuse cached Shodan results (0 API calls) | None |
+| `--ripe` | Cyber | Look up RIPE ASNs & IP ranges via REST API. Resumable — safe to Ctrl+C and rerun | Rate-limited (~100 req/5 min) |
+| `--ripe-cache` | Cyber | Reuse cached RIPE results (0 API calls) | None |
+| `--ripe-bulk` | Cyber | Alternative to `--ripe`: downloads RIPE DB daily dumps (~500 MB). Faster, no rate limits | None |
+| `--live` | Cyber | Fetch fresh jobs from PSR before analysis | None |
+| `--no-github` | Pipeline | Skip GitHub enrichment (preserves existing GitHub data) | None |
+| `--publish` | Pipeline | Run exports and upload JSON to `s3://blog-govuk-data/` | None |
 
-| Flag | What it does |
-|------|-------------|
-| `--no-github` | Skip the GitHub enrichment step (uses existing data) |
-| `--publish` | Run exports and upload to S3 (`blog-govuk-data`) after pipeline completes |
-| Any other flags | Passed through to `enrich_cyber` (e.g. `--shodan`, `--ripe`) |
+**Notes:**
+- `--shodan-deep` implies `--shodan` — no need to pass both
+- `--ripe-bulk` is an alternative to `--ripe`, not an addition
+- **Omitting a flag zeros its data.** If you pass `--shodan` without `--ripe`, all RIPE fields are cleared. Always pass all flags you want to keep, or use `--*-cache` variants
 
-### Re-running the pipeline
+### Pipeline steps
 
-Each step **reads and overwrites** `govuk_orgs_enriched.json`. Re-running is safe but there are a few things to know:
+The pipeline runs these steps in order (each reads/writes `govuk_orgs_enriched.json`):
 
-- **`fetch_orgs`** and **`enrich_orgs`**: Full overwrite every time. `enrich_orgs` starts from `govuk_extant_orgs.json` (not the enriched file), so all downstream enrichments need to re-run after it.
-- **`enrich_mailservers`**: Re-does all MX lookups, no skip logic.
-- **`enrich_parent_domains`**: Only touches orgs without MX — safe to re-run.
-- **`enrich_govuk_domains`**: Skips domains already present — idempotent.
-- **`enrich_github`**: Default mode resumes from cache (skips already-discovered orgs). Use `--fresh` to re-discover everything.
-- **`enrich_cyber`**: **Important** — each flag's data is zeroed out if the flag is absent. If you run `--shodan` without `--ripe`, all RIPE fields are cleared (and vice versa). Always pass all the flags you want to keep, or use the cache variants:
-  ```bash
-  # Preserve both: pass both flags (or their cache variants)
-  python -m scripts.enrich_cyber --shodan --ripe
-  # Re-run Shodan only, keep existing RIPE data from cache
-  python -m scripts.enrich_cyber --shodan --ripe-cache
-  ```
-- **RIPE enrichment** (`--ripe`) is resumable — tracks which orgs/terms have been searched and skips them on the next run. Safe to interrupt with Ctrl+C.
+| # | Step | Description |
+|---|------|-------------|
+| 1 | `fetch_orgs` | Fetch orgs from GOV.UK API |
+| 2 | `enrich_orgs` | Enrich with OSCAR budgets, headcount & mailto domains |
+| 3 | `enrich_mailservers` | DNS MX lookups, identify mail providers |
+| 4 | `enrich_parent_domains` | Inherit email domains from parent orgs |
+| 5 | `enrich_govuk_domains` | Fill gaps from official .gov.uk domain list |
+| 6 | `enrich_github` | Discover GitHub org accounts & public repo counts |
+| 7 | `enrich_cyber` | Cyber intelligence, Shodan, RIPE (flags above apply here) |
+| 8 | `visualise` | Generate D3 treemap + hierarchy chart |
+| 9* | `exports/*` + S3 upload | Only with `--publish`: export JSON and upload to S3 |
+
+Each step can also be run standalone: `python -m scripts.<step_name>`
+
+### Running individual scripts
+
+```bash
+# Run a single enrichment step
+python -m scripts.enrich_cyber --shodan --ripe
+
+# GitHub enrichment with its own flags
+python -m scripts.enrich_github            # resume from cache
+python -m scripts.enrich_github --cache    # cached results only, no API calls
+python -m scripts.enrich_github --fresh    # ignore cache, re-discover all
+
+# Export without running the pipeline
+python exports/mail_domain_table.py
+python exports/treemap.py
+python exports/graph.py
+
+# Manual S3 upload
+aws s3 cp data/exports/govuk_domains.json s3://blog-govuk-data/
+aws s3 cp data/exports/govuk_org_treemap.json s3://blog-govuk-data/
+aws s3 cp data/exports/govuk_org_graph.json s3://blog-govuk-data/
+```
+
+### Re-running behaviour
+
+Each step overwrites its own fields in `govuk_orgs_enriched.json`:
+
+- **Steps 1-5** (orgs, mail, domains): Full overwrite, no skip logic. Step 2 rebuilds from raw API data, so all downstream steps must re-run.
+- **Step 6** (`enrich_github`): Resumes from cache by default — already-discovered orgs are skipped. `--no-github` on `scripts.main` preserves existing GitHub data.
+- **Step 7** (`enrich_cyber`): Overwrites all cyber/Shodan/RIPE fields. RIPE is resumable (tracks search progress). Use `--*-cache` to preserve data from previous API runs without re-querying.
 
 ### Other commands
 

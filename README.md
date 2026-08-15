@@ -79,6 +79,24 @@ Flags can be combined freely, e.g. `--shodan --ripe --live`.
 | `--no-github` | Skip the GitHub enrichment step (uses existing data) |
 | Any other flags | Passed through to `enrich_cyber` (e.g. `--shodan`, `--ripe`) |
 
+### Re-running the pipeline
+
+Each step **reads and overwrites** `govuk_orgs_enriched.json`. Re-running is safe but there are a few things to know:
+
+- **`fetch_orgs`** and **`enrich_orgs`**: Full overwrite every time. `enrich_orgs` starts from `govuk_extant_orgs.json` (not the enriched file), so all downstream enrichments need to re-run after it.
+- **`enrich_mailservers`**: Re-does all MX lookups, no skip logic.
+- **`enrich_parent_domains`**: Only touches orgs without MX — safe to re-run.
+- **`enrich_govuk_domains`**: Skips domains already present — idempotent.
+- **`enrich_github`**: Default mode resumes from cache (skips already-discovered orgs). Use `--fresh` to re-discover everything.
+- **`enrich_cyber`**: **Important** — each flag's data is zeroed out if the flag is absent. If you run `--shodan` without `--ripe`, all RIPE fields are cleared (and vice versa). Always pass all the flags you want to keep, or use the cache variants:
+  ```bash
+  # Preserve both: pass both flags (or their cache variants)
+  python -m scripts.enrich_cyber --shodan --ripe
+  # Re-run Shodan only, keep existing RIPE data from cache
+  python -m scripts.enrich_cyber --shodan --ripe-cache
+  ```
+- **RIPE enrichment** (`--ripe`) is resumable — tracks which orgs/terms have been searched and skips them on the next run. Safe to interrupt with Ctrl+C.
+
 ### Other commands
 
 | Command | Description |

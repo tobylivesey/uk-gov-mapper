@@ -131,11 +131,13 @@ uk-gov-mapper/
 │   ├── treemap.py                         # Export treemap hierarchy for blog
 │   └── graph.py                           # Export hierarchy graph for blog
 ├── scripts/
+│   ├── main.py                            # Pipeline runner (orchestrates all steps)
 │   ├── fetch_orgs.py                      # Fetch orgs from GOV.UK API
 │   ├── enrich_orgs.py                     # OSCAR, headcount & mailto enrichment
 │   ├── enrich_mailservers.py              # DNS MX lookups
 │   ├── enrich_parent_domains.py           # Parent domain inheritance
 │   ├── enrich_govuk_domains.py            # Official .gov.uk domain list matching
+│   ├── enrich_github.py                   # GitHub org discovery & repo counts
 │   ├── enrich_cyber.py                    # Cyber intelligence, tech stack, Shodan & RIPE enrichment
 │   ├── enrich_headcount.py                # Civil Service Statistics headcount
 │   ├── enrich_jobs.py                     # Job scraping CLI
@@ -171,6 +173,9 @@ Each organisation record includes:
 | `has_mx` | Whether any domain has MX records |
 | `mail_providers` | Detected mail providers (Microsoft 365, Google Workspace, etc.) |
 | `inherited_from_org` | Parent org name (if domain inherited) |
+| `github_org` | Matched GitHub organisation username |
+| `github_repos` | Number of public repositories |
+| `github_url` | GitHub organisation URL |
 | `cyber_job_count` | Number of cyber security job postings found |
 | `cyber_roles_sample` | Sample cyber role titles |
 | `cyber_tech_stack` | Detected security tools by category (SIEM, EDR, etc.) |

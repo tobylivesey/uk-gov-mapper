@@ -33,11 +33,11 @@ EXPORTS_DIR = Path("data/exports")
 
 EXPORT_SCRIPTS = [
     ("Exporting domain data",
-     [sys.executable, "exports/mail_domain_table.py"]),
+     [sys.executable, "-m", "exports.mail_domain_table"]),
     ("Exporting treemap hierarchy",
-     [sys.executable, "exports/treemap.py"]),
+     [sys.executable, "-m", "exports.treemap"]),
     ("Exporting graph data",
-     [sys.executable, "exports/graph.py"]),
+     [sys.executable, "-m", "exports.graph"]),
 ]
 
 EXPORT_FILES = [

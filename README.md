@@ -62,14 +62,13 @@ python -m scripts.main --shodan-cache --ripe-cache
 | `--ripe` | Cyber | Look up RIPE ASNs & IP ranges via REST API. Resumable — safe to Ctrl+C and rerun | Rate-limited (~100 req/5 min) |
 | `--ripe-cache` | Cyber | Reuse cached RIPE results (0 API calls) | None |
 | `--ripe-bulk` | Cyber | Alternative to `--ripe`: downloads RIPE DB daily dumps (~500 MB). Faster, no rate limits | None |
-| `--live` | Cyber | Fetch fresh jobs from PSR before analysis | None |
 | `--no-github` | Pipeline | Skip GitHub enrichment (preserves existing GitHub data) | None |
 | `--publish` | Pipeline | Run exports and upload JSON to `s3://blog-govuk-data/` | None |
 
 **Notes:**
 - `--shodan-deep` implies `--shodan` — no need to pass both
 - `--ripe-bulk` is an alternative to `--ripe`, not an addition
-- **Omitting a flag zeros its data.** If you pass `--shodan` without `--ripe`, all RIPE fields are cleared. Always pass all flags you want to keep, or use `--*-cache` variants
+- **Omitting a flag preserves existing data.** Only fields for enrichments you actually run are updated; others are left untouched
 
 ### Pipeline steps
 
@@ -109,6 +108,7 @@ python exports/graph.py
 aws s3 cp data/exports/govuk_domains.json s3://blog-govuk-data/
 aws s3 cp data/exports/govuk_org_treemap.json s3://blog-govuk-data/
 aws s3 cp data/exports/govuk_org_graph.json s3://blog-govuk-data/
+aws s3 cp data/github/github_orgs.json s3://blog-govuk-data/
 ```
 
 ### Re-running behaviour
